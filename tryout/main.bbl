@@ -1,0 +1,15 @@
+\begin{thebibliography}{}
+
+\bibitem[Albach 2005]{albach.GdE2}
+Albach, M., {\em {Grundlagen der Elektrotechnik 2}}.
+\newblock Pearson Studium.
+
+\bibitem[Pakin 2009]{latex.symbols}
+Pakin, S., {The Comprehensive \LaTeX\ Symbol List}.
+\newblock {\newline\texttt{http://www.ctan.org/tex-archive/info/symbols/comprehensive/symbols-a4.pdf}}.
+
+\bibitem[Patashnik 1988]{bibTeX.manual}
+Patashnik, O., {Bib\TeX ing}.
+\newblock {\newline\texttt{http://amath.colorado.edu/documentation/LaTeX/reference/faq/bibtex.pdf}}.
+
+\end{thebibliography}

@@ -1,0 +1,127 @@
+%%
+%% Berliner Hochschule für Technik --  Abschlussarbeit
+%%
+%% Titelseiten und Erklärungen 
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\maketitle
+\clearpage
+%\thispagestyle{empty}
+% Rueckseite (leer)
+%% 
+~
+\newpage
+
+\input{abstract_de.tex}
+%%\input{abstract_en.tex}
+\clearpage
+
+\ifthenelse{\boolean{@entwurfset}}
+    {
+
+    }
+    {
+      ~
+      \newpage
+      \vfill
+      \section*{Aufgabenblatt}
+      \subsection*{Hintergrund und Motivation} 
+
+      Die Descap GmbH entwickelt Produkte im Bereich Arbeitsschutz und persönlicher Schutzausrüstung.
+      In gesundheitsgefährdenden Arbeitsumgebungen ist die zuverlässige Erfassung von
+      Umweltinformationen – insbesondere von Gas- und Schadstoffkonzentrationen – von zentraler
+      Bedeutung für den Schutz von Beschäftigten. Zu diesem Zweck entwickelt Descap mobile
+      Sensorsysteme zur Gasmessung, die auch unter anspruchsvollen industriellen Bedingungen
+      einsetzbar sind.
+      Die Hardwareentwicklung dieser Systeme orientiert sich an folgenden Leitparametern:
+
+      \begin{itemize}[noitemsep]
+        \item \textbf{Mobilität:} kompakte, robuste und tragbare Bauform
+        \item \textbf{Energieeffizienz:} möglichst geringer Stromverbrauch zur Gewährleistung langer akkubetriebener Einsatzzeiten
+        \item \textbf{Kommunikation:} drahtlose Übertragung der Sensordaten an eine Basisstation in einem eigenständigen Funknetz
+      \end{itemize}
+
+      Vor diesem Hintergrund soll in der Bachelorarbeit die Eignung von LoRa- bzw. LoRaWAN-Technologien
+      für die Kommunikation zwischen mobiler Sensoreinheit und Basisstation untersucht werden.
+
+      \subsection*{Zielsetzung der Arbeit}
+
+      Ziel der Bachelorarbeit ist die theoretische und praktische Analyse einer energieeffizienten
+      Funkkommunikation auf Basis von LoRa/LoRaWAN für mobile Gasmesssysteme. Dabei sollen
+      insbesondere folgende Fragestellungen bearbeitet werden:
+
+      \begin{itemize}[noitemsep]
+        \item Welche Datenraten, Reichweiten und Energieverbräuche sind unter Nutzung unterschiedlicher LoRa-Frequenzen und -Parameter zu erwarten?
+        \item Welche Hardwarekomponenten eignen sich für den Aufbau einer robusten Sensoreinheit und einer zugehörigen Basisstation?
+        \item Wie verhalten sich Star- und Mesh-Netzwerktopologien hinsichtlich Zuverlässigkeit, Latenz und Energiebedarf in realen Einsatzumgebungen?
+        \item Inwieweit bestätigen praktische Messungen die zuvor erarbeiteten theoretischen Annahmen?
+        \item Welche technischen Grenzen weist der entwickelte Prototyp auf und unter welchen Bedingungen ist eine Integration in bestehende Schutzsensorik sinnvoll?
+      \end{itemize}
+
+      \subsection*{Methodisches Vorgehen}
+
+      Die Bearbeitung erfolgt in mehreren aufeinander aufbauenden Schritten:
+
+      \begin{enumerate}[noitemsep]
+        \item \textbf{Theoretische Analyse: }\\
+              Erarbeitung der physikalischen und protokollspezifischen Grundlagen von LoRa/LoRaWAN
+              sowie Abschätzung von Datenraten, Reichweiten und Stromverbräuchen in Abhängigkeit von
+              Frequenzband, Spreizfaktor und Sendeleistung.
+        \item \textbf{Hardwareauswahl und Implementierung: }\\
+              Auswahl geeigneter Mikrocontroller- und Funkmodule sowie prototypischer Aufbau einer
+              Sensoreinheit und einer Basisstation.
+        \item \textbf{Experimentelle Evaluation: }\\
+              Aufbau mehrerer Prototypen und Durchführung von Tests in unterschiedlichen Umgebungen.
+              Vergleich von Star- und Mesh-Topologien hinsichtlich Stabilität, Energieeffizienz und
+              Übertragungsqualität.
+        \item \textbf{Bewertung und Einordnung: }\\
+              Gegenüberstellung von Theorie und Praxis, Analyse der Systemgrenzen sowie Ableitung von
+              Empfehlungen für eine produktive Integration.
+      \end{enumerate}
+
+      \subsection*{Leistungen der DesCap GmbH}
+
+      Die Descap GmbH unterstützt die Durchführung der Bachelorarbeit durch:
+
+      \begin{itemize}[noitemsep]
+        \item Übernahme der Materialkosten
+        \item Unterstützung bei Auswahl und Implementierung der Sensorik
+        \item Organisation geeigneter Testumgebungen und Bereitstellung von Infrastruktur
+      \end{itemize}
+
+      Um den inhaltlichen Rahmen der Arbeit auf den Schwerpunkt der LoRa/LoRaWAN-Kommunikation zu
+      fokussieren, können Teilaufgaben wie Sensorintegration und Platinenlayout in Abstimmung durch
+      Descap übernommen werden.
+
+      \subsection*{Erwartete Ergebnisse}
+
+      \begin{itemize}[noitemsep]
+        \item Funktionsfähiger Kommunikationsprototyp auf Basis von LoRa/LoRaWAN
+        \item experimentell validierte Aussagen zu Reichweite, Datenrate und Energieverbrauch
+        \item Vergleichende Bewertung verschiedener Netzwerktopologien
+        \item Handlungsempfehlungen für den Einsatz in mobilen Arbeitsschutz-Sensorsystemen
+      \end{itemize}
+      
+      \vfill
+      \clearpage
+      ~
+      \newpage
+    }
+\vspace{10ex}
+\section*{Erklärung}
+Ich  versichere, dass  ich diese  Abschlussarbeit ohne  fremde  Hilfe selbstständig
+verfasst und  nur die  angegebenen Quellen und  Hilfsmittel benutzt  habe. Wörtlich
+oder dem  Sinn nach  aus anderen  Werken entnommene Stellen  sind unter  Angabe der
+Quellen kenntlich gemacht.
+\vspace{10ex}\\
+
+\hrule
+{\small{Datum}}\hfill{\small{Unterschrift}}
+
+
+\pagenumbering{roman}
+\tableofcontents
+\listoffigures
+
+
