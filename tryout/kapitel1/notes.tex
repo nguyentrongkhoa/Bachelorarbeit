@@ -1,0 +1,142 @@
+From Semtech's course:
+
+- There are many wireless technologies: Bluetooth, Cellular, Wi-Fi, LoRaWAN, Zigbee, NB-IoT, and others
+- 3 factors to keep in mind: range, bandwidth/datarate and power consumption
+- LPWAN:
+    - Low power (years on a battery or autonomous using solar panels)
+    - Long range: 2-5km in urban and >10km in rural areas
+- There are 3 LPWAN technologies: Sigfox, Narrowband-IoT (NB-IoT) and LoRa 
+- LoRa datarate: 300bps-11kbps
+- Max packet size in Europe: 222 bytes @ high data rate and 51 bytes @ low data rate
+- Devices can send anytime, since gateways are alway listening
+- Gateways can send during devices' RX windows
+- End devices can be put into sleep mode to conserve energy
+- LoRa can also be used for geolocation, albeit not as precise as GPS modules
+- LoRa vs LoRaWAN:
+    - LoRa is modulation technology
+    - LoRaWAN is the standard that defines everything related to packets and maintained by LoRa Alliance
+- LoRa uses ISM band (industrial, scientific and medical), 433 and 868MHz in Europe
+- LoRaWan network comprises: application, join and network server
+- 10 channels in total, of which 3 are fixed, i.e have to be supported by all devices
+- EU 868 duty cycle limitations: 0.1, 1 or 10\% (for gateways only)
+- Regulations differ depending on the region -> devices that work in the EU might not work in the US for example
+- With FSK modulation: data rate up to 50kbps
+- High data rate -> high loss probability
+- 2 types of roaming: active and passive
+- Classes (A, B or C) define when devices can receive downlink
+- Classes can be switched during operation
+- Class A most freq used since least power consumed
+- Class B can receive periodically using beacons
+- Class C can receive continuously -> not suitable for battery operation
+- Gateways are stateless
+- LoRaWAN networks use Aloha method for communication
+- Ethernet or ibackhaul between gateways and network servers
+- Network servers take care of: msg consolidation, routing, network control, network and gateway supervision
+- ADR: adaptive data rate
+- When adding extra gateway, devices will automatically update SF (spreading factor)
+- ADR works based on strength: devices closer to gateways use high data rate
+- ADR only works for fixed devices, not mobile devices
+- The Network Reference Model (NRM) is used to identify the interfaces between elements used in a LoRaWAN network
+- RP002 is the companion document to TS001
+- 3 factors to consider when deciding on a network:
+    - price 
+    - gateway access control 
+    - privacy
+- public networks:
+    - verify network coverage before subscription
+    - only makes sense if not too many devices
+    - cant optimize by adding own gateways
+- private networks:
+    - for large number of devices 
+    - huge overhead: gateways have to be installed and maintained
+
+- The network server is where the LoRaWAN networking protocol terminates, and where data handling takes place
+- One can use Semtech's network server for free when prototyping: up to 3 gateways and 10 end devices 
+- The join server is used when an end device is joined to a network via Over-the-Air Activation (OTAA) or when a device requests 
+  new security session keys via the Rejoin MAC command
+
+- Each end dvice consists of:
+    - MCU that runs LoRaWAN stack + power supply
+    - peripherals, e.g sensors
+    - LoRa Radio
+    - Antenna
+- Device software layers:
+    - drivers
+    - middleware
+    - application 
+
+- 1/4 wavelength for 868MHz = 8.2cm
+- distinction between indoor and outdoor gateways
+
+- LoRaMAC-Node from Semtech: free open-source project
+- Also ST's LoRaWAN stack for all STM32Lxx MCUs
+- Mbed stack for C++
+
+- LoRaWAN always adds 13 bytes to application payload
+
+- One could, for example, transmit a min|avg|max every five minutes, or you could transmit only when a sensor value changes more than a certain threshold amount. 
+  Similarly, you could have transmissions be triggered by motion or other events.
+- The data rate should be as fast as possible, to minimize your airtime. 
+  Using SF7 and BW125 (SF7BW125) is usually a good place to start.
+
+- FUOTA: firmware update over the air
+
+- Over-the-air-activation (OTAA) vs activation-by-personalization (ABP)
+- ABP: device has all the info before connecting to a network + DevEUI + DevAddr
+- OTAA: device must issue join request followed by joinaccept from network
+- While provisioning devices with ABP, the best practice is to also provision 
+  them with all the elements necessary for OTAA (i.e., DevEUI, JoinEUI, and Root Keys)
+- OTAA is preferred approach
+- All devices must keep a set of persistent values, even after power loss or reset
+
+- Transmission is very power consuming (10 times more than receiving)
+
+- To secure the end devices deployed in the field, crypto chips can be used. Crypto chips, commonly known as secure elements 
+  can securely store keys and efficiently encrypt and decrypt data.
+- In crypto chips: registers in secure element are write only
+- Crypto chips can also be used to verify the authenticity of the software that is uploaded to the device. 
+  This mitigates the threat of an attacker overwriting the device firmware
+- crypto chip stores network key and derived session keys 
+- fast encryption without burdening CPU 
+- When using LoRaWAN, ensure that the join server runs in a secure domain that you host or that is hosted by a trusted third party, because this server stores the root keys for the cloud 
+  side of the LoRaWAN network. To prevent vendor lock-ins, check to see whether the join server is 
+  network-provider agnostic and whether it allows end devices to join a different LoRaWAN network operator over time.
+- Out-of-band key provisioning can be a good way to make sure that the people who insert the keys don’t have access to the keys of the devices themselves. 
+  It is possible, however, to create an application that uses BLE or NFC to inject the keys directly into the device.
+- To mitigate against replay attacks, enable 32-bit frame counters for uplink and downlink messages. Also, use a fixed payload length to mask event-driven 
+  activities and help prevent hackers from deriving event-specific information from the payload
+
+- Signal strength testing vs radio planning
+- Lookup how to calculate LoRa link budget
+- 6dB loss for doubling distance
+- FSPL: -150dB/800km
+- lookup multipath fading, Fresnel Zone
+- 5 to 10 dB of safety margin for link budget
+- According to two ray model: -12dB @ 2x distance
+- max antenna gain: +2.15dBi (=dipole gain)
+
+- if the internal walls are not brick or concrete, it should be possible to cover most of the 
+  building’s interior with a single gateway on the same floor as the end devices.
+- You can use radio planning tools to improve the coverage of your network
+- There are some tools on the market that have LoRa modules available, such as Forsk Atoll, Infovista Planet, or iBwave
+- outdoor gateways are more expensive than indoor due to waterproofness, cavity filters etc
+- for indoor: put gateways near glass
+
+- Development stacks:
+  - The things stack 
+  - ChirpStack (more offgrid promising)
+  - zephyr with integrated LoRaWAN stack 
+  
+- Hardware to buy:
+  - nordic power profiler kit II (PPK2)
+  - RTL-SDR (software defined radio)
+  - For gateway: Dragino LPS8 / MikroTik LR8 / DIY Rasp pi
+  - MCU: STM32WL55 (industrial favorite) / Heltech Wifi Lora 32 (ESP-based with OLED) / RakWireless WisBlock (for low-power)
+
+- Software tools:
+  - draw.io / Lucidchart
+  - Node-Red for data visualization
+  - MQTT for debugging
+  - octopart for price comparison
+  - semtech lora calculator
+  - RF line of sight calculator
