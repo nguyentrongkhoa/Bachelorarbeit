@@ -123,15 +123,19 @@ From Semtech's course:
 - for indoor: put gateways near glass
 
 - Development stacks:
-  - The things stack 
-  - ChirpStack (more offgrid promising)
+  - The things stack (needs internet)
+  - ChirpStack (more offgrid promising), on RaspPi for example
   - zephyr with integrated LoRaWAN stack 
   
 - Hardware to buy:
   - nordic power profiler kit II (PPK2)
   - RTL-SDR (software defined radio)
-  - For gateway: Dragino LPS8 / MikroTik LR8 / DIY Rasp pi
+  - For gateway: Dragino LPS8 / MikroTik LR8 / DIY Rasp pi / Pycom LoPy4 / TTGo Lora 32
   - MCU: STM32WL55 (industrial favorite) / Heltech Wifi Lora 32 (ESP-based with OLED) / RakWireless WisBlock (for low-power)
+  - Klassifikation MCUs: Prototypen vs produktionsfertig
+  - STM32WL55: output transmit power up to 22dBm @V_DDPA=3.3V
+  - STLink
+
 
 - Software tools:
   - draw.io / Lucidchart
