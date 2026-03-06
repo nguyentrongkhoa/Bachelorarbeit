@@ -122,7 +122,13 @@ From Semtech's course:
 - outdoor gateways are more expensive than indoor due to waterproofness, cavity filters etc
 - for indoor: put gateways near glass
 - MAPL: max allowable path loss
+- Friis eq for free space path loss (FSPL): 20log... 
 - uplink and downlink budget are not equal, due to different elevations
+- Propagation models:
+  1. Log path loss (allrounder)
+  2. okumura: most used for 150-1500MHz
+  3. Cost 231: goes into more details on city architecture
+  4. ITU-R P.1238 (indoor)
 - RF planning methodology:
   1. analyze link budget 
   2. RF coverage simulation
@@ -132,6 +138,20 @@ From Semtech's course:
   2. SDR# combined with RTL-SDR for spectrum analysis
   3. GNU Radio 
   4. QGIS - geographic information system
+
+Radio interface system planning book
+- microcell: anntenna height below rooftop level
+- macro: (Radio Interface system planning book)
+- important when radio planning: coverage, capacity, quality
+- radio system planning phases:
+  - dimensioning
+  - detailed radio system planning 
+  - optimisation
+- diversities to combat fading:
+  - space
+  - time 
+  - freq
+  - polarization 
 
 - Development stacks:
   - The things stack (needs internet)
@@ -155,3 +175,5 @@ From Semtech's course:
   - octopart for price comparison
   - semtech lora calculator
   - RF line of sight calculator
+
+- Use ZephyrRTOS instead of HAL for STM32WL55
