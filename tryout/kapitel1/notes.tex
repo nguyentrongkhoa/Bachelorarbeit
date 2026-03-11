@@ -178,3 +178,16 @@ Radio interface system planning book
   - RF line of sight calculator
 
 - Use ZephyrRTOS instead of HAL for STM32WL55
+
+Renode:
+- There is no off the shelf platform files for STM32WL55 
+- Maybe use STM32L4 CPU since registers are similar (according to gemini)
+
+Zephyr:
+- Workspace application = zephyrproject/<app> (always)
+- Repository application = zephyrproject/zephyr/<app>
+- Devicetree:
+  - sources + bindings + include files (.dtsi) that describes for instance the SoC the boards runs on + overlays to override properties
+  - generates devicetree.h header file that can be used by all modules 
+  - DT bindings: each node in DTS will be matched to a corresponding binding
+  - binding name convention: foo-company,bar-device.yaml (MUST be inside one of the /dts/bindings)
