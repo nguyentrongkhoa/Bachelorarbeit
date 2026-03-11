@@ -4,9 +4,10 @@ zephyr nucleo board name: [nucleo_wl55jc](https://docs.zephyrproject.org/latest/
 
 [How to build and flash](https://docs.zephyrproject.org/latest/develop/application/index.html#build-an-application)
 1. Navigate to app directory <app>
-2. `west build -b nucleo_wl55jc samples/hello_world`, zephyr.elf will be created
-3. directory structure: zephyrproject/<app>/build/zephyr/zephyr.elf
-4. `west flash` (run from <app>/build and not <app>)
+2. Configure default board: `west config build.board nucleo_wl55jc`
+3. `west build -b nucleo_wl55jc samples/hello_world`, zephyr.elf will be created
+4. directory structure: zephyrproject/<app>/build/zephyr/zephyr.elf
+5. `west flash` (run from <app>/build and not <app>)
 
 How to clean build directory:
 1. Navigate to <app>/build
@@ -74,3 +75,8 @@ To avoid getting lost in the 4,000+ pages of Zephyr documentation, focus on thes
 ---
 
 > **Engineer's Note:** Always prioritize the **Devicetree** first. If Zephyr doesn't "see" your sensor at the bus level, your C code will never be able to initialize the driver.
+
+Simulate with renode:
+`west simulate --runner=renode`
+
+[Developing with VSCode](https://docs.zephyrproject.org/latest/develop/tools/vscode.html)
