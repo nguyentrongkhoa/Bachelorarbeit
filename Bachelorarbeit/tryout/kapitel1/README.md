@@ -80,3 +80,26 @@ Simulate with renode:
 `west simulate --runner=renode`
 
 [Developing with VSCode](https://docs.zephyrproject.org/latest/develop/tools/vscode.html)
+
+find . -name "*:Zone.Identifier" -type f -delete
+
+mon_projet_zephyr/
+├── boards/             # Tes définitions de cartes custom (.dts)
+├── src/                # Ton code source C (main.c)
+├── renode/             # <--- DOSSIER DÉDIÉ AUX FICHIERS DE SIMULATION
+│   ├── platforms/      # Tes fichiers .repl (Hardware virtuel)
+│   │   └── stm32wl.repl
+│   ├── scripts/        # Tes fichiers .resc (Scénarios de test)
+│   │   └── blinky.resc
+│   └── monitor.py      # (Optionnel) Scripts Python pour simuler ton capteur de gaz
+├── prj.conf            # Configuration Kconfig
+├── CMakeLists.txt
+└── app.overlay         # Ton overlay Devicetree
+
+[Renode platform description C# classes](https://github.com/renode/renode-infrastructure/tree/master/src/Emulator)
+
+[Renode script bluetooth](https://github.com/renode/renode/blob/master/scripts/multi-node/nrf52840-ble-zephyr.resc)
+
+Renode wireless "commands":
+    1. connector
+    2. emulate
