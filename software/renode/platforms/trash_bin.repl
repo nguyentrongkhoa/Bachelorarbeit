@@ -1,0 +1,37 @@
+// --- Communication Peripherals ---
+// USARTs follow the standard STM32 UART model 
+usart1: UART.STM32_UART @ sysbus 0x40013800
+    IRQ -> nvic@37
+
+usart2: UART.STM32_UART @ sysbus 0x40004400
+    IRQ -> nvic@38
+
+lpuart1: UART.STM32_UART @ sysbus 0x40002C00
+    IRQ -> nvic@39
+
+// SPI Peripherals [cite: 10, 24]
+spi1: SPI.STM32SPI @ sysbus 0x40013000
+    IRQ -> nvic@35
+
+spi2: SPI.STM32SPI @ sysbus 0x40003800
+    IRQ -> nvic@36
+
+// --- Radio Interface (SUBGHZSPI) ---
+// This is the internal SPI link to the Semtech radio 
+subghzspi: SPI.STM32SPI @ sysbus 0x58010000
+    IRQ -> nvic@44
+
+// --- Timers ---
+timer1: Timers.STM32_Timer @ sysbus 0x40012C00
+    IRQ -> nvic@24
+
+timer2: Timers.STM32_Timer @ sysbus 0x40000000
+    IRQ -> nvic@28
+
+// --- Debug & System ---
+//syscfg: STM32.STM32WL_SYSCFG @ sysbus 0x40010000
+    
+// System configuration and EXTI management [cite: 21]
+// https://github.com/renode/renode-infrastructure/blob/master/src/Emulator/Peripherals/Peripherals/IRQControllers/STM32_EXTICore.cs
+exti: IRQControllers.STM32_EXTICore @ sysbus 0x40010400
+    numLines: 48

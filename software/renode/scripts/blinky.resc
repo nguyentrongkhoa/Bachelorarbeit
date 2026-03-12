@@ -1,0 +1,23 @@
+:name: blinky_test
+:description: This script runs the blinky demo on the nucleo_wl55jc board.
+
+using sysbus
+
+mach create "blinky_test"
+
+machine LoadPlatformDescription @descap_lorawan/software/renode/platforms/nucleo_wl55jc.repl
+
+sysbus LoadELF @zephyr/build/zephyr/zephyr.elf
+
+logLevel 3
+logLevel -1 gpioPortB.LED1
+logLevel -1 gpioPortB.LED2
+logLevel -1 gpioPortB.LED3
+
+$bin?=@https://dl.antmicro.com/projects/renode/renode-nrf52840-zephyr_shell_module.elf-gf8d05cf-s_1310072-c00fbffd6b65c6238877c4fe52e8228c2a38bf1f
+
+macro reset
+"""
+    sysbus LoadELF $bin
+"""
+runMacro $reset

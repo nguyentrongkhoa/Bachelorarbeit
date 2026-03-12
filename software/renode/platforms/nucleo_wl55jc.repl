@@ -1,9 +1,15 @@
-// On inclut la définition de base du processeur (déjà fournie par Renode)
-using "platforms/cpus/stm32wle5.repl"
+using "stm32wl55.repl"
 
-// On ajoute une LED connectée sur le port GPIOB, pin 15
-led: Miscellaneous.LED @ gpioPortB 15
+// PB15 (pin B4 on Nucleo board)
+LED1: Miscellaneous.LED @ gpioPortB 15
+LED2: Miscellaneous.LED @ gpioPortB 9
+LED3: Miscellaneous.LED @ gpioPortB 11
 
-// On peut aussi ajouter un bouton pour tester plus tard
-button: Buttons.Button @ gpioPortA 0
+// User buttons
+// Note: B1 can be configured to connect to one of 3 pins: PA0 (main), PC13
+B1: Miscellaneous.Button @ gpioPortA 0
     -> gpioPortA@0
+B2: Miscellaneous.Button @ gpioPortA 1
+    -> gpioPortA@1
+B3: Miscellaneous.Button @ gpioPortC 6
+    -> gpioPortC@6
