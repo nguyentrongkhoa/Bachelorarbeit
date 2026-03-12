@@ -1,0 +1,9 @@
+// On inclut la définition de base du processeur (déjà fournie par Renode)
+using "platforms/cpus/stm32wle5.repl"
+
+// On ajoute une LED connectée sur le port GPIOB, pin 15
+led: Miscellaneous.LED @ gpioPortB 15
+
+// On peut aussi ajouter un bouton pour tester plus tard
+button: Buttons.Button @ gpioPortA 0
+    -> gpioPortA@0

@@ -1,0 +1,12 @@
+mach create "mon-stm32wl"
+machine LoadPlatformDescription @mon_projet.repl
+
+# On charge le fichier .elf généré par Zephyr
+sysbus LoadELF @build/zephyr/zephyr.elf
+
+# On active le log pour voir la LED
+logLevel 3
+showAnalyzer gpioPortB.led
+
+# On lance la simulation
+start
