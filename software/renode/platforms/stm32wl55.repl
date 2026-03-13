@@ -3,7 +3,7 @@
 
 // The STM32WL55 is a dual-core MCU, but here we define the main Cortex-M4
 cpu: CPU.CortexM @ sysbus
-    cpuType: "cortex-m4f"
+    cpuType: "cortex-m4"
     nvic: nvic
 
 nvic: IRQControllers.NVIC @ sysbus 0xE000E100
