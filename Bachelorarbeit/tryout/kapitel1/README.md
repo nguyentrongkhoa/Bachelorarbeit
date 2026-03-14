@@ -1,5 +1,6 @@
 zephyr only on linux or WSL
 install zephyr using [this start guide](https://docs.zephyrproject.org/latest/develop/getting_started/index.html) using wsl
+download [cube programmer](https://www.st.com/en/development-tools/stm32cubeprog.html)
 zephyr nucleo board name: [nucleo_wl55jc](https://docs.zephyrproject.org/latest/boards/st/nucleo_wl55jc/doc/nucleo_wl55jc.html)
 
 [How to build and flash](https://docs.zephyrproject.org/latest/develop/application/index.html#build-an-application)
