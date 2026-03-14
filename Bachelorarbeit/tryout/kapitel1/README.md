@@ -1,106 +1,173 @@
-zephyr only on linux or WSL
-install zephyr using [this start guide](https://docs.zephyrproject.org/latest/develop/getting_started/index.html) using wsl
-download [cube programmer](https://www.st.com/en/development-tools/stm32cubeprog.html)
-zephyr nucleo board name: [nucleo_wl55jc](https://docs.zephyrproject.org/latest/boards/st/nucleo_wl55jc/doc/nucleo_wl55jc.html)
-
-[How to build and flash](https://docs.zephyrproject.org/latest/develop/application/index.html#build-an-application)
-1. Navigate to app directory <app>
-2. Configure default board: `west config build.board nucleo_wl55jc`
-3. `west build -b nucleo_wl55jc samples/hello_world`, zephyr.elf will be created
-4. directory structure: zephyrproject/<app>/build/zephyr/zephyr.elf
-5. `west flash` (run from <app>/build and not <app>)
-
-How to clean build directory:
-1. Navigate to <app>/build
-2. `west build -t clean` or `west build -t pristine` to delete all generated files in the build subfolder
-
-How to build and structure app (from template):
-[Example application](https://github.com/zephyrproject-rtos/example-application)
-`cd <home>/zephyrproject`
-`git clone https://github.com/zephyrproject-rtos/example-application my-app`
-
-Build app from scratch
-
-[west](https://docs.zephyrproject.org/latest/develop/west/index.html): 
-`west init` and `west update`
-
------------------------------
-# 🚀 STM32WL Project: Gas Sensor & LoRaWAN (Zephyr + Renode)
-
-This project focuses on developing a low-power firmware for the **STM32WL55CC1** using the **Zephyr RTOS** ecosystem and **Renode** simulation.
+# STM32WL Gas Sensor & LoRaWAN Firmware
+> Low-power firmware for the **STM32WL55CC** using **Zephyr RTOS** and **Renode** simulation.
 
 ---
 
-## 🗺️ Survival Roadmap (Efficiency Focus)
+## Prerequisites
 
-To avoid getting lost in the 4,000+ pages of Zephyr documentation, focus on these **5 core pillars**:
-
-### 1. Hardware Description: **Devicetree (.dts)**
-* **Concept:** Software-independent description of the hardware (Pins, I2C, UART).
-* **Key Skill:** Learning how to use `app.overlay` files to add your gas sensor without modifying the Zephyr kernel source.
-
-
-### 2. Feature Configuration: **Kconfig (prj.conf)**
-* **Concept:** A menu-driven system to enable/disable software modules.
-* **Key Skill:** Mastering flags like `CONFIG_I2C=y`, `CONFIG_LORA=y`, and `CONFIG_LOG=y`.
-
-### 3. System Orchestration: **Kernel Services**
-* **Concept:** Managing multi-threading and timing.
-* **Key Tools:** * `Threads`: Separate the sensor reading logic from the LoRa transmission logic.
-    * `Mutex`: Protect the I2C bus from simultaneous access.
-    * `Semaphores`: Signal a thread to wake up after an interrupt (ISR).
-
-
-### 4. The Master Tool: **West**
-* **Concept:** The meta-tool that handles building, flashing, and debugging.
-* **Main Commands:**
-    * `west build -b nucleo_wl55jc`: Compile for the target board.
-    * `west flash`: Upload the binary via OpenOCD/ST-LINK.
-
-### 5. Virtual Hardware: **Renode**
-* **Concept:** Simulate the entire system (including LoRa radio) without physical hardware.
-* **Key File:** `.repl` (Platform description defining the virtual PCB layout).
+- **OS:** Linux or Windows with WSL2 (Zephyr toolchain runs on Linux only)
+- **Zephyr:** Install via the [official getting started guide](https://docs.zephyrproject.org/latest/develop/getting_started/index.html)
+- **STM32CubeProgrammer:** Download from [st.com](https://www.st.com/en/development-tools/stm32cubeprog.html) — needed to flash via USB
+- **WSL2 USB passthrough:** Required to flash from WSL2 — follow [Microsoft's guide](https://learn.microsoft.com/en-us/windows/wsl/connect-usb)
+- **VS Code (optional):** See [Zephyr VS Code integration](https://docs.zephyrproject.org/latest/develop/tools/vscode.html)
 
 ---
 
-## 🛠️ Essential "Cheat Sheet" (WSL2)
+## Project Structure
+
+```
+my_zephyr_project/
+├── boards/             # Custom board definitions (.dts)
+├── src/                # Application source code (main.c)
+├── renode/             # Renode simulation files
+│   ├── platforms/      # Virtual hardware descriptions (.repl)
+│   │   └── stm32wl.repl
+│   ├── scripts/        # Simulation scenarios (.resc)
+│   │   └── blinky.resc
+│   └── monitor.py      # Optional: Python scripts to simulate gas sensor input
+├── prj.conf            # Kconfig feature flags
+├── CMakeLists.txt
+└── app.overlay         # Devicetree overlay for custom peripherals
+```
+
+---
+
+## Getting Started
+
+### 1. Initialize the workspace
+
+```bash
+cd ~
+west init zephyrproject
+cd zephyrproject
+west update
+```
+
+Or use the example application template as a starting point:
+
+```bash
+cd ~/zephyrproject
+git clone https://github.com/zephyrproject-rtos/example-application my-app
+```
+
+### 2. Set the default board
+
+```bash
+cd my-app
+west config build.board nucleo_wl55jc
+```
+
+The Zephyr board name for the NUCLEO-WL55JC is [`nucleo_wl55jc`](https://docs.zephyrproject.org/latest/boards/st/nucleo_wl55jc/doc/nucleo_wl55jc.html).
+
+### 3. Build
+
+```bash
+west build -b nucleo_wl55jc samples/hello_world
+```
+
+The compiled binary will be at:
+```
+zephyrproject/my-app/build/zephyr/zephyr.elf
+```
+
+### 4. Flash to hardware
+
+Make sure the NUCLEO is visible to WSL2 via USB passthrough, then run from the build directory:
+
+```bash
+cd build
+west flash --runner openocd
+```
+
+---
+
+## Build Commands Reference
 
 | Action | Command |
 | :--- | :--- |
-| **Initialize Workspace** | `west init -m <repo_url>` |
-| **Clean Build** | `west build -p always -b nucleo_wl55jc` |
-| **Remove Build Artifacts** | `rm -rf build/` |
-| **Launch Simulation** | `renode your_script.resc` |
-| **Flash to Hardware** | `west flash --runner openocd` |
+| Initialize workspace | `west init -m <repo_url>` |
+| Update dependencies | `west update` |
+| Clean build (keep config) | `west build -t clean` |
+| Pristine build (delete all artifacts) | `west build -p always -b nucleo_wl55jc` |
+| Manual artifact removal | `rm -rf build/` |
+| Flash to hardware | `west flash --runner openocd` |
+| Launch Renode simulation | `renode your_script.resc` |
+| Simulate via west | `west simulate --runner=renode` |
 
 ---
 
-> **Engineer's Note:** Always prioritize the **Devicetree** first. If Zephyr doesn't "see" your sensor at the bus level, your C code will never be able to initialize the driver.
+## Zephyr: The 5 Core Concepts
 
-Simulate with renode:
-`west simulate --runner=renode`
+To avoid getting lost in the 4,000+ pages of Zephyr documentation, focus on these five pillars in order.
 
-[Developing with VSCode](https://docs.zephyrproject.org/latest/develop/tools/vscode.html)
+### 1. Devicetree (`.dts` / `app.overlay`)
+The hardware description layer — tells Zephyr what peripherals exist and on which pins/buses. Always start here. If Zephyr doesn't see your sensor at the bus level, your C code will never be able to initialize the driver.
 
+Use an `app.overlay` file to add your gas sensor without touching the Zephyr kernel source:
+```dts
+&i2c1 {
+    my_gas_sensor: gas_sensor@48 {
+        compatible = "your,sensor";
+        reg = <0x48>;
+    };
+};
+```
+
+### 2. Kconfig (`prj.conf`)
+Enables and configures software modules at compile time. Key flags for this project:
+```conf
+CONFIG_I2C=y          # Enable I2C bus (gas sensor)
+CONFIG_LORA=y         # Enable LoRa radio driver
+CONFIG_LORAWAN=y      # Enable LoRaWAN stack
+CONFIG_LOG=y          # Enable logging subsystem
+CONFIG_PM=y           # Enable power management
+CONFIG_PM_DEVICE=y    # Enable per-device power states
+```
+
+### 3. Kernel Services (Threading & Synchronization)
+Separate concerns into dedicated threads to keep the system responsive and safe:
+- **Threads** — run sensor reading and LoRa transmission independently
+- **Mutex** — protect the I2C bus from simultaneous access by multiple threads
+- **Semaphores** — wake up a thread from an ISR when new sensor data is ready
+
+### 4. West (Build & Flash Tool)
+The meta-tool that ties everything together. All build, flash, and simulation commands go through `west`. See the command reference table above.
+
+### 5. Renode (Virtual Hardware Simulation)
+Simulate the full system — including the LoRa radio — before touching real hardware. Defined by a `.repl` platform file:
+
+```bash
+renode renode/scripts/blinky.resc
+```
+
+Useful for early firmware development and CI testing. The STM32WL platform classes are available in the [Renode infrastructure repository](https://github.com/renode/renode-infrastructure/tree/master/src/Emulator). For a multi-node wireless simulation reference, see the [nRF52840 BLE example script](https://github.com/renode/renode/blob/master/scripts/multi-node/nrf52840-ble-zephyr.resc).
+
+Renode wireless simulation uses two key commands:
+- `connector` — links virtual radio peripherals between nodes
+- `emulate` — starts the wireless medium simulation
+
+---
+
+## Useful Links
+
+| Resource | URL |
+| :--- | :--- |
+| Zephyr Getting Started | https://docs.zephyrproject.org/latest/develop/getting_started/index.html |
+| Zephyr LoRaWAN API | https://docs.zephyrproject.org/latest/connectivity/lora_lorawan/index.html |
+| Zephyr Power Management | https://docs.zephyrproject.org/latest/subsystems/power_management/index.html |
+| NUCLEO-WL55JC board docs | https://docs.zephyrproject.org/latest/boards/st/nucleo_wl55jc/doc/nucleo_wl55jc.html |
+| West documentation | https://docs.zephyrproject.org/latest/develop/west/index.html |
+| Build & flash guide | https://docs.zephyrproject.org/latest/develop/application/index.html |
+| WSL2 USB passthrough | https://learn.microsoft.com/en-us/windows/wsl/connect-usb |
+| STM32CubeProgrammer | https://www.st.com/en/development-tools/stm32cubeprog.html |
+| Renode infrastructure | https://github.com/renode/renode-infrastructure/tree/master/src/Emulator |
+| Example application | https://github.com/zephyrproject-rtos/example-application |
+
+---
+
+## Miscellaneous
+
+Remove Windows Zone.Identifier metadata files that WSL sometimes creates:
+```bash
 find . -name "*:Zone.Identifier" -type f -delete
-
-mon_projet_zephyr/
-├── boards/             # Tes définitions de cartes custom (.dts)
-├── src/                # Ton code source C (main.c)
-├── renode/             # <--- DOSSIER DÉDIÉ AUX FICHIERS DE SIMULATION
-│   ├── platforms/      # Tes fichiers .repl (Hardware virtuel)
-│   │   └── stm32wl.repl
-│   ├── scripts/        # Tes fichiers .resc (Scénarios de test)
-│   │   └── blinky.resc
-│   └── monitor.py      # (Optionnel) Scripts Python pour simuler ton capteur de gaz
-├── prj.conf            # Configuration Kconfig
-├── CMakeLists.txt
-└── app.overlay         # Ton overlay Devicetree
-
-[Renode platform description C# classes](https://github.com/renode/renode-infrastructure/tree/master/src/Emulator)
-
-[Renode script bluetooth](https://github.com/renode/renode/blob/master/scripts/multi-node/nrf52840-ble-zephyr.resc)
-
-Renode wireless "commands":
-    1. connector
-    2. emulate
+```
