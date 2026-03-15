@@ -1,138 +1,173 @@
-# Zephyr Example Application
+# STM32WL Gas Sensor & LoRaWAN Firmware
+> Low-power firmware for the **STM32WL55CC** using **Zephyr RTOS** and **Renode** simulation.
 
-<a href="https://github.com/zephyrproject-rtos/example-application/actions/workflows/build.yml?query=branch%3Amain">
-  <img src="https://github.com/zephyrproject-rtos/example-application/actions/workflows/build.yml/badge.svg?event=push">
-</a>
-<a href="https://github.com/zephyrproject-rtos/example-application/actions/workflows/docs.yml?query=branch%3Amain">
-  <img src="https://github.com/zephyrproject-rtos/example-application/actions/workflows/docs.yml/badge.svg?event=push">
-</a>
-<a href="https://zephyrproject-rtos.github.io/example-application">
-  <img alt="Documentation" src="https://img.shields.io/badge/documentation-3D578C?logo=sphinx&logoColor=white">
-</a>
-<a href="https://zephyrproject-rtos.github.io/example-application/doxygen">
-  <img alt="API Documentation" src="https://img.shields.io/badge/API-documentation-3D578C?logo=c&logoColor=white">
-</a>
+---
 
-This repository contains a Zephyr example application. The main purpose of this
-repository is to serve as a reference on how to structure Zephyr-based
-applications. Some of the features demonstrated in this example are:
+## Prerequisites
 
-- Basic [Zephyr application][app_dev] skeleton
-- [Zephyr workspace applications][workspace_app]
-- [Zephyr modules][modules]
-- [West T2 topology][west_t2]
-- [Custom boards][board_porting]
-- Custom [devicetree bindings][bindings]
-- Out-of-tree [drivers][drivers]
-- Out-of-tree libraries
-- Example CI configuration (using GitHub Actions)
-- Custom [west extension][west_ext]
-- Custom [Zephyr runner][runner_ext]
-- Doxygen and Sphinx documentation boilerplate
+- **OS:** Linux or Windows with WSL2 (Zephyr toolchain runs on Linux only)
+- **Zephyr:** Install via the [official getting started guide](https://docs.zephyrproject.org/latest/develop/getting_started/index.html)
+- **STM32CubeProgrammer:** Download from [st.com](https://www.st.com/en/development-tools/stm32cubeprog.html) — needed to flash via USB
+- **WSL2 USB passthrough:** Required to flash from WSL2 — follow [Microsoft's guide](https://learn.microsoft.com/en-us/windows/wsl/connect-usb)
+- **VS Code (optional):** See [Zephyr VS Code integration](https://docs.zephyrproject.org/latest/develop/tools/vscode.html)
 
-This repository is versioned together with the [Zephyr main tree][zephyr]. This
-means that every time that Zephyr is tagged, this repository is tagged as well
-with the same version number, and the [manifest](west.yml) entry for `zephyr`
-will point to the corresponding Zephyr tag. For example, the `example-application`
-v2.6.0 will point to Zephyr v2.6.0. Note that the `main` branch always
-points to the development branch of Zephyr, also `main`.
+---
 
-[app_dev]: https://docs.zephyrproject.org/latest/develop/application/index.html
-[workspace_app]: https://docs.zephyrproject.org/latest/develop/application/index.html#zephyr-workspace-app
-[modules]: https://docs.zephyrproject.org/latest/develop/modules.html
-[west_t2]: https://docs.zephyrproject.org/latest/develop/west/workspaces.html#west-t2
-[board_porting]: https://docs.zephyrproject.org/latest/guides/porting/board_porting.html
-[bindings]: https://docs.zephyrproject.org/latest/guides/dts/bindings.html
-[drivers]: https://docs.zephyrproject.org/latest/reference/drivers/index.html
-[zephyr]: https://github.com/zephyrproject-rtos/zephyr
-[west_ext]: https://docs.zephyrproject.org/latest/develop/west/extensions.html
-[runner_ext]: https://docs.zephyrproject.org/latest/develop/modules.html#external-runners
+## Project Structure
+
+```
+my_zephyr_project/
+├── boards/             # Custom board definitions (.dts)
+├── src/                # Application source code (main.c)
+├── renode/             # Renode simulation files
+│   ├── platforms/      # Virtual hardware descriptions (.repl)
+│   │   └── stm32wl.repl
+│   ├── scripts/        # Simulation scenarios (.resc)
+│   │   └── blinky.resc
+│   └── monitor.py      # Optional: Python scripts to simulate gas sensor input
+├── prj.conf            # Kconfig feature flags
+├── CMakeLists.txt
+└── app.overlay         # Devicetree overlay for custom peripherals
+```
+
+---
 
 ## Getting Started
 
-Before getting started, make sure you have a proper Zephyr development
-environment. Follow the official
-[Zephyr Getting Started Guide](https://docs.zephyrproject.org/latest/getting_started/index.html).
+### 1. Initialize the workspace
 
-### Initialization
-
-The first step is to initialize the workspace folder (``my-workspace``) where
-the ``example-application`` and all Zephyr modules will be cloned. Run the following
-command:
-
-```shell
-# initialize my-workspace for the example-application (main branch)
-west init -m https://github.com/zephyrproject-rtos/example-application --mr main my-workspace
-# update Zephyr modules
-cd my-workspace
+```bash
+cd ~
+west init zephyrproject
+cd zephyrproject
 west update
 ```
 
-### Building and running
+Or use the example application template as a starting point:
 
-To build the application, run the following command:
-
-```shell
-cd example-application
-west build -b $BOARD app
+```bash
+cd ~/zephyrproject
+git clone https://github.com/zephyrproject-rtos/example-application my-app
 ```
 
-where `$BOARD` is the target board.
+### 2. Set the default board
 
-You can use the `custom_plank` board found in this
-repository. Note that Zephyr sample boards may be used if an
-appropriate overlay is provided (see `app/boards`).
-
-A sample debug configuration is also provided. To apply it, run the following
-command:
-
-```shell
-west build -b $BOARD app -- -DEXTRA_CONF_FILE=debug.conf
+```bash
+cd my-app
+west config build.board nucleo_wl55jc
 ```
 
-Once you have built the application, run the following command to flash it:
+The Zephyr board name for the NUCLEO-WL55JC is [`nucleo_wl55jc`](https://docs.zephyrproject.org/latest/boards/st/nucleo_wl55jc/doc/nucleo_wl55jc.html).
 
-```shell
-west flash
+### 3. Build
+
+```bash
+west build -b nucleo_wl55jc samples/hello_world
 ```
 
-### Testing
-
-To execute Twister integration tests, run the following command:
-
-```shell
-west twister -T tests --integration
+The compiled binary will be at:
+```
+zephyrproject/my-app/build/zephyr/zephyr.elf
 ```
 
-### Documentation
+### 4. Flash to hardware
 
-A minimal documentation setup is provided for Doxygen and Sphinx. To build the
-documentation first change to the ``doc`` folder:
+Make sure the NUCLEO is visible to WSL2 via USB passthrough, then run from the build directory:
 
-```shell
-cd doc
+```bash
+cd build
+west flash --runner openocd
 ```
 
-Before continuing, check if you have Doxygen installed. It is recommended to
-use the same Doxygen version used in [CI](.github/workflows/docs.yml). To
-install Sphinx, make sure you have a Python installation in place and run:
+---
 
-```shell
-pip install -r requirements.txt
+## Build Commands Reference
+
+| Action | Command |
+| :--- | :--- |
+| Initialize workspace | `west init -m <repo_url>` |
+| Update dependencies | `west update` |
+| Clean build (keep config) | `west build -t clean` |
+| Pristine build (delete all artifacts) | `west build -p always -b nucleo_wl55jc` |
+| Manual artifact removal | `rm -rf build/` |
+| Flash to hardware | `west flash --runner openocd` |
+| Launch Renode simulation | `renode your_script.resc` |
+| Simulate via west | `west simulate --runner=renode` |
+
+---
+
+## Zephyr: The 5 Core Concepts
+
+To avoid getting lost in the 4,000+ pages of Zephyr documentation, focus on these five pillars in order.
+
+### 1. Devicetree (`.dts` / `app.overlay`)
+The hardware description layer — tells Zephyr what peripherals exist and on which pins/buses. Always start here. If Zephyr doesn't see your sensor at the bus level, your C code will never be able to initialize the driver.
+
+Use an `app.overlay` file to add your gas sensor without touching the Zephyr kernel source:
+```dts
+&i2c1 {
+    my_gas_sensor: gas_sensor@48 {
+        compatible = "your,sensor";
+        reg = <0x48>;
+    };
+};
 ```
 
-API documentation (Doxygen) can be built using the following command:
-
-```shell
-doxygen
+### 2. Kconfig (`prj.conf`)
+Enables and configures software modules at compile time. Key flags for this project:
+```conf
+CONFIG_I2C=y          # Enable I2C bus (gas sensor)
+CONFIG_LORA=y         # Enable LoRa radio driver
+CONFIG_LORAWAN=y      # Enable LoRaWAN stack
+CONFIG_LOG=y          # Enable logging subsystem
+CONFIG_PM=y           # Enable power management
+CONFIG_PM_DEVICE=y    # Enable per-device power states
 ```
 
-The output will be stored in the ``_build_doxygen`` folder. Similarly, the
-Sphinx documentation (HTML) can be built using the following command:
+### 3. Kernel Services (Threading & Synchronization)
+Separate concerns into dedicated threads to keep the system responsive and safe:
+- **Threads** — run sensor reading and LoRa transmission independently
+- **Mutex** — protect the I2C bus from simultaneous access by multiple threads
+- **Semaphores** — wake up a thread from an ISR when new sensor data is ready
 
-```shell
-make html
+### 4. West (Build & Flash Tool)
+The meta-tool that ties everything together. All build, flash, and simulation commands go through `west`. See the command reference table above.
+
+### 5. Renode (Virtual Hardware Simulation)
+Simulate the full system — including the LoRa radio — before touching real hardware. Defined by a `.repl` platform file:
+
+```bash
+renode renode/scripts/blinky.resc
 ```
 
-The output will be stored in the ``_build_sphinx`` folder. You may check for
-other output formats other than HTML by running ``make help``.
+Useful for early firmware development and CI testing. The STM32WL platform classes are available in the [Renode infrastructure repository](https://github.com/renode/renode-infrastructure/tree/master/src/Emulator). For a multi-node wireless simulation reference, see the [nRF52840 BLE example script](https://github.com/renode/renode/blob/master/scripts/multi-node/nrf52840-ble-zephyr.resc).
+
+Renode wireless simulation uses two key commands:
+- `connector` — links virtual radio peripherals between nodes
+- `emulate` — starts the wireless medium simulation
+
+---
+
+## Useful Links
+
+| Resource | URL |
+| :--- | :--- |
+| Zephyr Getting Started | https://docs.zephyrproject.org/latest/develop/getting_started/index.html |
+| Zephyr LoRaWAN API | https://docs.zephyrproject.org/latest/connectivity/lora_lorawan/index.html |
+| Zephyr Power Management | https://docs.zephyrproject.org/latest/subsystems/power_management/index.html |
+| NUCLEO-WL55JC board docs | https://docs.zephyrproject.org/latest/boards/st/nucleo_wl55jc/doc/nucleo_wl55jc.html |
+| West documentation | https://docs.zephyrproject.org/latest/develop/west/index.html |
+| Build & flash guide | https://docs.zephyrproject.org/latest/develop/application/index.html |
+| WSL2 USB passthrough | https://learn.microsoft.com/en-us/windows/wsl/connect-usb |
+| STM32CubeProgrammer | https://www.st.com/en/development-tools/stm32cubeprog.html |
+| Renode infrastructure | https://github.com/renode/renode-infrastructure/tree/master/src/Emulator |
+| Example application | https://github.com/zephyrproject-rtos/example-application |
+
+---
+
+## Miscellaneous
+
+Remove Windows Zone.Identifier metadata files that WSL sometimes creates:
+```bash
+find . -name "*:Zone.Identifier" -type f -delete
+```
