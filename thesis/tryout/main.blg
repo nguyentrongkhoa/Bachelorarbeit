@@ -3,9 +3,15 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: myapalike.bst
 Database file #1: LoRa.bib
+Warning--I didn't find a database entry for "lorawan_spec"
+Warning--I didn't find a database entry for "semtech_lora_basics"
+Warning--I didn't find a database entry for "stm32wl_ds"
+Warning--I didn't find a database entry for "dobkin2012rf"
+Warning--I didn't find a database entry for "haslett2008essentials"
+Warning--I didn't find a database entry for "walter2006radio"
 You've used 1 entry,
             1921 wiz_defined-function locations,
-            482 strings with 4032 characters,
+            488 strings with 4121 characters,
 and the built_in function-call counts, 336 in all, are:
 = -- 32
 > -- 13
@@ -44,3 +50,4 @@ warning$ -- 0
 while$ -- 2
 width$ -- 0
 write$ -- 14
+(There were 6 warnings)

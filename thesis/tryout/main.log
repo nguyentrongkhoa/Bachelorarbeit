@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.3.15)  16 MAR 2026 09:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.3.15)  16 MAR 2026 10:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -787,6 +787,9 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 \c@mv@tabular=\count395
 \c@mv@boldtabular=\count396
+ (/usr/share/texlive/texmf-dist/tex/latex/draftwatermark/draftwatermark.sty
+Package: draftwatermark 2020/12/08 3.0 Put a gray textual watermark on document pages
+)
 \c@lstlisting=\count397
  (./titelseiten.tex
 LaTeX Font Info:    Trying to load font information for T1+phv on input line 8.
@@ -802,7 +805,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--8
 \T1/phv/b/n/14.4 LoRaWan-Kommunikation für mo-bi-le Sen-
  []
 
-<BHT-Logo-vertikal.pdf, id=36, 53.01094pt x 126.0707pt>
+<BHT-Logo-vertikal.pdf, id=112, 53.01094pt x 126.0707pt>
 File: BHT-Logo-vertikal.pdf Graphic file (type pdf)
 <use BHT-Logo-vertikal.pdf>
 Package pdftex.def Info: BHT-Logo-vertikal.pdf  used on input line 8.
@@ -812,7 +815,7 @@ Overfull \hbox (1.82535pt too wide) in paragraph at lines 8--8
 [][] [] 
  []
 
-<BHT-Elements.pdf, id=37, 32.04338pt x 161.86708pt>
+<BHT-Elements.pdf, id=113, 32.04338pt x 161.86708pt>
 File: BHT-Elements.pdf Graphic file (type pdf)
 <use BHT-Elements.pdf>
 Package pdftex.def Info: BHT-Elements.pdf  used on input line 8.
@@ -829,16 +832,18 @@ LaTeX Font Info:    Trying to load font information for U+trsy on input line 8.
  (/usr/share/texlive/texmf-dist/tex/latex/trsym/utrsy.fd
 File: utrsy.fd 2000/06/25v1.0transformation symbol font definitions
 )
-<BHT-Studiere-vertikal.pdf, id=38, 8.48169pt x 86.94461pt>
+<BHT-Studiere-vertikal.pdf, id=114, 8.48169pt x 86.94461pt>
 File: BHT-Studiere-vertikal.pdf Graphic file (type pdf)
 <use BHT-Studiere-vertikal.pdf>
 Package pdftex.def Info: BHT-Studiere-vertikal.pdf  used on input line 8.
 (pdftex.def)             Requested size: 11.87424pt x 121.7216pt.
- [1
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 85.35826pt on input line 9.
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}
 
 \openout5 = `main.ist'.
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} <./BHT-Logo-vertikal.pdf> <./BHT-Elements.pdf
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} <./BHT-Logo-vertikal.pdf> <./BHT-Elements.pdf
 
 pdfTeX warning: pdflatex (file ./BHT-Elements.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 > <./BHT-Studiere-vertikal.pdf
@@ -849,55 +854,33 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/sl' in size <10.95> not
 (Font)              Font shape `T1/LinuxLibertineT-TLF/m/it' tried instead on input line 14.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 10.95pt on input line 14.
- [2{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}
+ [2
 
 ] (./abstract_de.tex
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 14.4pt on input line 7.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 14.4pt on input line 7.
-) [3{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}] [4
-
-]
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 110.
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 12.0pt on input line 110.
-LaTeX Font Info:    Trying to load font information for TS1+LinuxLibertineT-TLF on input line 110.
- (/usr/share/texlive/texmf-dist/tex/latex/libertine/TS1LinuxLibertineT-TLF.fd
-File: TS1LinuxLibertineT-TLF.fd 2017/03/20 (autoinst) Font definitions for TS1/LinuxLibertineT-TLF.
-)
-LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 110.
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 10.95pt on input line 110.
-
-Overfull \hbox (27.85056pt too wide) in paragraph at lines 110--110
-[]\T1/LinuxLibertineT-TLF/m/n/10.95 Vor die-sem Hin-ter-grund soll in der Ba-che-lor-ar-beit die Eig-nung von LoRa- bzw. LoRaWAN-Technologien
- []
-
-[5{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_naooyc.enc}]
-Overfull \hbox (11.43768pt too wide) in paragraph at lines 110--110
-[]\T1/LinuxLibertineT-TLF/m/n/10.95 Um den in-halt-li-chen Rah-men der Ar-beit auf den Schwer-punkt der LoRa/LoRaWAN-Kommunikation
- []
-
-[6] [7
-
-]
+) [3{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}]
 Underfull \hbox (badness 10000) in paragraph at lines 113--118
 
  []
 
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 10.0pt on input line 120.
-[1] [2
+[1
+
+] [2
 
 ]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 24.88pt on input line 124.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 24.88pt on input line 124.
- (./main.toc)
+ (./main.toc
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
+(Font)              scaled to size 10.95pt on input line 2.
+)
 \tf@toc=\write9
 \openout9 = `main.toc'.
 
@@ -930,30 +913,114 @@ Overfull \hbox (0.38582pt too wide) in paragraph at lines 9--16
 \T1/LinuxLibertineT-TLF/m/n/10.95 Pro-to-koll-stacks und sei-ner Netz-werkar-chi-tek-tur. An-schlie-ÿend wer-den Si-cher-heits-me-cha-nis-men,
  []
 
-\@gls@deffile=\write11
-\openout11 = `main.glsdefs'.
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 12.0pt on input line 45.
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
+(Font)              scaled to size 12.0pt on input line 45.
+LaTeX Font Info:    Trying to load font information for T1+fvm on input line 80.
+(/usr/share/texlive/texmf-dist/tex/latex/bera/t1fvm.fd
+File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
+)
+LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
+(Font)              scaled to size 9.08852pt on input line 80.
 
-) (./kapitel2/ch2.tex
 pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.8 \chapter
-            {Zweiter Abschnitt}\label{ch.test} [3]
-pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.8 \chapter
-            {Zweiter Abschnitt}\label{ch.test} [4
+l.84 
+      [3]
+
+LaTeX Warning: Citation `lorawan_spec' on page 4 undefined on input line 113.
+
+
+LaTeX Warning: Citation `lorawan_spec' on page 4 undefined on input line 132.
+
+[4]
+
+LaTeX Warning: Citation `lorawan_spec' on page 5 undefined on input line 142.
+
+
+LaTeX Warning: Citation `semtech_lora_basics' on page 5 undefined on input line 149.
+
+
+LaTeX Warning: Citation `lorawan_spec' on page 5 undefined on input line 192.
+
+
+LaTeX Warning: Citation `semtech_lora_basics' on page 5 undefined on input line 207.
+
+[5]
+
+LaTeX Warning: Citation `semtech_lora_basics' on page 6 undefined on input line 216.
+
+
+LaTeX Warning: Citation `lorawan_spec' on page 6 undefined on input line 238.
+
+
+LaTeX Warning: Citation `semtech_lora_basics' on page 6 undefined on input line 245.
+
+
+LaTeX Warning: Citation `semtech_lora_basics' on page 6 undefined on input line 262.
+
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 8.0pt on input line 263.
+LaTeX Font Info:    Trying to load font information for TS1+LinuxLibertineT-TLF on input line 265.
+(/usr/share/texlive/texmf-dist/tex/latex/libertine/TS1LinuxLibertineT-TLF.fd
+File: TS1LinuxLibertineT-TLF.fd 2017/03/20 (autoinst) Font definitions for TS1/LinuxLibertineT-TLF.
+)
+LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 10.95pt on input line 265.
+
+
+LaTeX Warning: Citation `stm32wl_ds' on page 6 undefined on input line 265.
+
+[6]
+
+LaTeX Warning: Citation `semtech_lora_basics' on page 7 undefined on input line 298.
+
+
+LaTeX Warning: Reference `chap:evaluation' on page 7 undefined on input line 307.
+
+
+LaTeX Warning: Citation `semtech_lora_basics' on page 7 undefined on input line 329.
+
+[7{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_naooyc.enc}]
+
+LaTeX Warning: Citation `dobkin2012rf' on page 8 undefined on input line 349.
+
+
+LaTeX Warning: Citation `haslett2008essentials' on page 8 undefined on input line 374.
+
+
+LaTeX Warning: Citation `haslett2008essentials' on page 8 undefined on input line 384.
+
+
+LaTeX Warning: Citation `walter2006radio' on page 8 undefined on input line 407.
+
+[8]
+
+LaTeX Warning: Reference `chap:hardware' on page 9 undefined on input line 425.
+
+\@gls@deffile=\write11
+\openout11 = `main.glsdefs'.
+
+) (./kapitel2/ch2.tex [9] [10
 
 ]
 Kapitel 2.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.28 \blindtext
-               [3] \anno{Lesen, bitte!} [5]
-<kapitel1/pictures/schaltbild.pdf, id=146, 450.88501pt x 209.3166pt>
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 17.28pt on input line 16.
+LaTeX Font Info:    Trying to load font information for T1+LinuxBiolinumT-TLF on input line 16.
+(/usr/share/texlive/texmf-dist/tex/latex/libertine/T1LinuxBiolinumT-TLF.fd
+File: T1LinuxBiolinumT-TLF.fd 2017/03/20 (autoinst) Font definitions for T1/LinuxBiolinumT-TLF.
+)
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
+(Font)              scaled to size 8.0pt on input line 16.
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/sl' in size <8> not available
+(Font)              Font shape `T1/LinuxBiolinumT-TLF/m/it' tried instead on input line 16.
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/it' will be
+(Font)              scaled to size 8.0pt on input line 16.
+ [11{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}]
+<kapitel1/pictures/schaltbild.pdf, id=279, 450.88501pt x 209.3166pt>
 File: kapitel1/pictures/schaltbild.pdf Graphic file (type pdf)
 <use kapitel1/pictures/schaltbild.pdf>
 Package pdftex.def Info: kapitel1/pictures/schaltbild.pdf  used on input line 32.
@@ -963,64 +1030,75 @@ Overfull \hbox (24.09258pt too wide) in paragraph at lines 32--33
  [] 
  []
 
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.39 \Blindtext[2][2]
-                      [6]
+[12]
 Underfull \vbox (badness 3260) has occurred while \output is active []
 
+ [13 <./kapitel1/pictures/schaltbild.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 41--41
+\T1/LinuxBiolinumT-TLF/m/it/8 Es ist auch
+ []
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.7}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.39 \Blindtext[2][2]
-                      [7 <./kapitel1/pictures/schaltbild.pdf>]) (./anhang.tex [8]
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--41
+\T1/LinuxBiolinumT-TLF/m/it/8 mög-lich län-ge-re
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--41
+\T1/LinuxBiolinumT-TLF/m/it/8 Rand-no-ti-zen zu
+ []
+
+
+Underfull \hbox (badness 5533) in paragraph at lines 41--41
+\T1/LinuxBiolinumT-TLF/m/it/8 ma-chen. Ob die
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--41
+\T1/LinuxBiolinumT-TLF/m/it/8 wer-den, ist so
+ []
+
+) (./anhang.tex [14]
 Anhang A.
-LaTeX Font Info:    Trying to load font information for T1+fvm on input line 13.
-(/usr/share/texlive/texmf-dist/tex/latex/bera/t1fvm.fd
-File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
-)
-LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 9.08852pt on input line 13.
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 14.
 
 Overfull \hbox (15.25049pt too wide) in paragraph at lines 31--33
 []\T1/fvm/m/n/10.95 bhtThesis.bib \T1/LinuxLibertineT-TLF/m/n/10.95 bein-hal-tet die zu zi-tie-ren-den Li-te-ra-tur-stel-len und wird von bibT[]Xausgewertet 
  []
 
-[9
+[15
 
-]) [10] (./main.bbl) (./main.acr [11
+]) [16] (./main.bbl) (./main.acr [17
 
 
-] [12
+] [18
 
-]) (./main.gls) [13
+]) (./main.gls) [19
 
 ] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B5A7B2611ABE264016121EFAC68B0838;1195.
+(rerunfilecheck)             Checksum: 46D7BB668B70BF203186DFDDDA2678AC;5619.
  ) 
 Here is how much of TeX's memory you used:
- 23703 strings out of 474222
- 428721 string characters out of 5748733
- 1936975 words of memory out of 5000000
- 45478 multiletter control sequences out of 15000+600000
- 652766 words of font info for 98 fonts, out of 8000000 for 9000
+ 23952 strings out of 474222
+ 434284 string characters out of 5748733
+ 1938975 words of memory out of 5000000
+ 45682 multiletter control sequences out of 15000+600000
+ 677822 words of font info for 113 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 94i,11n,93p,2406b,1219s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on main.pdf (24 pages, 369485 bytes).
+ 94i,13n,93p,2407b,1219s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinBiolinumTI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on main.pdf (26 pages, 484095 bytes).
 PDF statistics:
- 277 PDF objects out of 1000 (max. 8388607)
- 212 compressed objects within 3 object streams
- 53 named destinations out of 1000 (max. 500000)
- 85 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 451 PDF objects out of 1000 (max. 8388607)
+ 371 compressed objects within 4 object streams
+ 83 named destinations out of 1000 (max. 500000)
+ 237 words of extra memory for PDF output out of 10000 (max. 10000000)
 
