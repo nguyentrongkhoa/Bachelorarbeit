@@ -1,7 +1,4 @@
 % =============================================================================
-% Kapitel 3: Grundlagen
-% =============================================================================
-% Kompilierung: pdflatex + biber (oder biblatex mit bibtex backend)
 % Benötigte Pakete: inputenc, fontenc, babel, amsmath, booktabs,
 %                   graphicx, hyperref, biblatex, siunitx, acronym
 % =============================================================================
@@ -29,3 +26,34 @@ Modulationstechnik, während LoRaWAN den darüber liegenden Netzwerkstandard bes
 der von der LoRa Alliance definiert und gepflegt wird~% TODO: \cite{semtech_lora_basics}. 
 
 \cite{akyildizWirelessSensorNetworks2010} % TODO: remove this
+
+LoRa basiert auf dem Verfahren der \textit{Chirp Spread Spectrum}"=Modulation (CSS).
+Dabei wird das zu übertragende Signal auf ein breiteres Frequenzband gespreizt, indem
+sogenannte Chirps -- Signale mit kontinuierlich steigender oder fallender Frequenz --
+als Trägersymbole verwendet. Dieses Verfahren verleiht LoRa eine hohe Robustheit
+gegenüber Mehrwegeausbreitung, Schmalbandstörungen und dem Doppler"=Effekt, wie er
+bei mobilen Endgeräten auftritt~% TODO: \cite{augustin2016study}.
+
+Gegenüber klassischen Schmalband"=Modulationsverfahren wie \acrshort{fsk} besitzt CSS einen
+wesentlichen Vorteil: Das Signal kann noch korrekt demoduliert werden, selbst wenn der
+Empfangspegel deutlich unterhalb des Rauschpegels liegt. Das resultierende
+Signal"=zu"=Rausch"=Verhältnis (\acrshort{snr}) kann dabei negative Werte von bis zu
+\qty{-20}{dB} annehmen. Mit FSK lassen sich Datenraten von bis zu \qty{50}{kbps}
+erzielen; LoRa liefert demgegenüber typische Nutzdatenraten zwischen \qty{300}{bps}
+und \qty{11}{kbps}~ % TODO: \cite{semtech_lora_basics}. 
+
+% Format : \newacronym{label}{abbreviation}{full term}
+% TODO: remember to run makeglossaries main 
+\newacronym{lora}{LoRa}{Long Range}
+\newacronym{sf}{SF}{Spreading Factor}
+\newacronym{bw}{BW}{Bandwidth}
+\newacronym{cr}{CR}{Coding Rate}
+\newacronym{snr}{SNR}{Signal-to-Noise Ratio}
+\newacronym{fsk}{FSK}{Frequency Shift Keying}
+\newacronym{adr}{ADR}{Adaptive Data Rate}
+\newacronym{otaa}{OTAA}{Over-the-Air Activation}
+\newacronym{abp}{ABP}{Activation by Personalization}
+\newacronym{mapl}{MAPL}{Maximum Allowable Path Loss}
+\newacronym{fspl}{FSPL}{Free Space Path Loss}
+\newacronym{srtm}{SRTM}{Shuttle Radar Topography Mission}
+\newacronym{dguv}{DGUV}{Deutsche Gesetzliche Unfallversicherung}

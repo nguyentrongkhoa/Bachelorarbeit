@@ -1,0 +1,364 @@
+\glsdefs@newdocentry{lora}%
+{%
+name={\acronymfont {\glsentryshort {lora}}},%
+sort={LoRa},%
+type={acronym},%
+first={LoRa},%
+firstplural={LoRas},%
+text={LoRa},%
+plural={LoRas},%
+description={Long Range},%
+descriptionplural={Long Range},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Long Range},%
+longplural={Long Ranges},%
+short={LoRa},%
+shortplural={LoRas},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{sf}%
+{%
+name={\acronymfont {\glsentryshort {sf}}},%
+sort={SF},%
+type={acronym},%
+first={SF},%
+firstplural={SFs},%
+text={SF},%
+plural={SFs},%
+description={Spreading Factor},%
+descriptionplural={Spreading Factor},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Spreading Factor},%
+longplural={Spreading Factors},%
+short={SF},%
+shortplural={SFs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{bw}%
+{%
+name={\acronymfont {\glsentryshort {bw}}},%
+sort={BW},%
+type={acronym},%
+first={BW},%
+firstplural={BWs},%
+text={BW},%
+plural={BWs},%
+description={Bandwidth},%
+descriptionplural={Bandwidth},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Bandwidth},%
+longplural={Bandwidths},%
+short={BW},%
+shortplural={BWs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{cr}%
+{%
+name={\acronymfont {\glsentryshort {cr}}},%
+sort={CR},%
+type={acronym},%
+first={CR},%
+firstplural={CRs},%
+text={CR},%
+plural={CRs},%
+description={Coding Rate},%
+descriptionplural={Coding Rate},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Coding Rate},%
+longplural={Coding Rates},%
+short={CR},%
+shortplural={CRs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{snr}%
+{%
+name={\acronymfont {\glsentryshort {snr}}},%
+sort={SNR},%
+type={acronym},%
+first={SNR},%
+firstplural={SNRs},%
+text={SNR},%
+plural={SNRs},%
+description={Signal-to-Noise Ratio},%
+descriptionplural={Signal-to-Noise Ratio},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Signal-to-Noise Ratio},%
+longplural={Signal-to-Noise Ratios},%
+short={SNR},%
+shortplural={SNRs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{fsk}%
+{%
+name={\acronymfont {\glsentryshort {fsk}}},%
+sort={FSK},%
+type={acronym},%
+first={FSK},%
+firstplural={FSKs},%
+text={FSK},%
+plural={FSKs},%
+description={Frequency Shift Keying},%
+descriptionplural={Frequency Shift Keying},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Frequency Shift Keying},%
+longplural={Frequency Shift Keyings},%
+short={FSK},%
+shortplural={FSKs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{adr}%
+{%
+name={\acronymfont {\glsentryshort {adr}}},%
+sort={ADR},%
+type={acronym},%
+first={ADR},%
+firstplural={ADRs},%
+text={ADR},%
+plural={ADRs},%
+description={Adaptive Data Rate},%
+descriptionplural={Adaptive Data Rate},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Adaptive Data Rate},%
+longplural={Adaptive Data Rates},%
+short={ADR},%
+shortplural={ADRs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{otaa}%
+{%
+name={\acronymfont {\glsentryshort {otaa}}},%
+sort={OTAA},%
+type={acronym},%
+first={OTAA},%
+firstplural={OTAAs},%
+text={OTAA},%
+plural={OTAAs},%
+description={Over-the-Air Activation},%
+descriptionplural={Over-the-Air Activation},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Over-the-Air Activation},%
+longplural={Over-the-Air Activations},%
+short={OTAA},%
+shortplural={OTAAs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{abp}%
+{%
+name={\acronymfont {\glsentryshort {abp}}},%
+sort={ABP},%
+type={acronym},%
+first={ABP},%
+firstplural={ABPs},%
+text={ABP},%
+plural={ABPs},%
+description={Activation by Personalization},%
+descriptionplural={Activation by Personalization},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Activation by Personalization},%
+longplural={Activation by Personalizations},%
+short={ABP},%
+shortplural={ABPs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{mapl}%
+{%
+name={\acronymfont {\glsentryshort {mapl}}},%
+sort={MAPL},%
+type={acronym},%
+first={MAPL},%
+firstplural={MAPLs},%
+text={MAPL},%
+plural={MAPLs},%
+description={Maximum Allowable Path Loss},%
+descriptionplural={Maximum Allowable Path Loss},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Maximum Allowable Path Loss},%
+longplural={Maximum Allowable Path Losss},%
+short={MAPL},%
+shortplural={MAPLs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{fspl}%
+{%
+name={\acronymfont {\glsentryshort {fspl}}},%
+sort={FSPL},%
+type={acronym},%
+first={FSPL},%
+firstplural={FSPLs},%
+text={FSPL},%
+plural={FSPLs},%
+description={Free Space Path Loss},%
+descriptionplural={Free Space Path Loss},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Free Space Path Loss},%
+longplural={Free Space Path Losss},%
+short={FSPL},%
+shortplural={FSPLs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{srtm}%
+{%
+name={\acronymfont {\glsentryshort {srtm}}},%
+sort={SRTM},%
+type={acronym},%
+first={SRTM},%
+firstplural={SRTMs},%
+text={SRTM},%
+plural={SRTMs},%
+description={Shuttle Radar Topography Mission},%
+descriptionplural={Shuttle Radar Topography Mission},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Shuttle Radar Topography Mission},%
+longplural={Shuttle Radar Topography Missions},%
+short={SRTM},%
+shortplural={SRTMs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{dguv}%
+{%
+name={\acronymfont {\glsentryshort {dguv}}},%
+sort={DGUV},%
+type={acronym},%
+first={DGUV},%
+firstplural={DGUVs},%
+text={DGUV},%
+plural={DGUVs},%
+description={Deutsche Gesetzliche Unfallversicherung},%
+descriptionplural={Deutsche Gesetzliche Unfallversicherung},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Deutsche Gesetzliche Unfallversicherung},%
+longplural={Deutsche Gesetzliche Unfallversicherungs},%
+short={DGUV},%
+shortplural={DGUVs},%
+counter={page},%
+parent={},%
+%
+}%
+
