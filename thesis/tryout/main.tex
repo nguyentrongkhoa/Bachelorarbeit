@@ -9,19 +9,22 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[11pt, a4paper]{book}
 %\documentclass[11pt, a4paper, oneside]{book}
-%% Übersetzen als Entwurf
-%% Übersetzen für die Abgabe
+\usepackage{indentfirst}
 \usepackage{float} % muss an erster Stelle stehen, sonst gibt es Stress
 \usepackage{enumitem}
-\usepackage[ngerman]{babel} %
+% babel is loaded by bhtThesis.sty already (with ngerman), so do not reload it here to avoid option clash.
+% \usepackage[ngerman]{babel}
 \usepackage{fontenc, amsmath, booktabs, hyperref, siunitx}
+\usepackage{tabularx}
+\usepackage{booktabs}
 \usepackage[acronym]{glossaries}
 \usepackage[entwurf]{bhtThesis}
-\usepackage[backend=biber, style=authoryear, language=ngerman]{biblatex}
 \usepackage{csquotes} % Recommended for biblatex
+\usepackage[backend=biber, style=authoryear, language=ngerman]{biblatex}
 \addbibresource{LoRa.bib}
 %\usepackage[abgabe]{bhtThesis} % TODO: uncomment 
 \typeout{BHT-Abschlussarbeit V2.0 26.08.21 S.Tschirley}
+\linespread{1.5}
 
 \usepackage{blindtext}   %für Blindtext in Kapitel 2
 \usepackage{listings}
@@ -96,7 +99,7 @@
 %% Die Kapitel der Arbeitw
 
 \input{kapitel1/ch1.tex}
-\input{kapitel2/ch2.tex}
+%\input{kapitel2/ch2.tex}
 
 \begin{appendix}
   \input{anhang.tex}

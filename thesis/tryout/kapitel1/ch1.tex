@@ -24,8 +24,6 @@ RF"=Planung und Signalausbreitung behandelt. Abschließend wird ein kurzer Über
 LoRa bezeichnet die reine Modulationstechnologie, währen
 der von der LoRa Alliance definiert und gepflegt wird~% TODO: \cite{semtech_lora_basics}. 
 
-\cite{akyildizWirelessSensorNetworks2010} % TODO: remove this
-
 LoRa basiert auf dem Verfahren der \acrfull{css}"=Modulation.
 Dabei wird das zu übertragende Signal auf ein breiteres Frequenzband gespreizt, indem
 sogenannte Chirps-Signale mit kontinuierlich steigender oder fallender Frequenz
@@ -126,22 +124,43 @@ Diese übernimmt wie bereits beschrieben die physikalische Modulation und Demodu
 in die Luft gesendet bzw. von der Luft empfangen werden können. Zusätzlich können Endgeräte mit anwendungsspezifischen Peripheriegeräten 
 wie Sensoren oder Aktoren ausgestattet sein. 
 
+\subsubsection*{Geräteklassen}
+
 Das Dokument \citetitle{LoRaWANL21042020} definiert drei Geräteklassen (A, B und C), die festlegen,
 wann ein Endgerät Downlink"=Nachrichten, also vom Server zu Endgerät, empfangen kann. Die Klasse kann während des
 Betriebs gewechselt werden.
 
 \textbf{Klasse A} ist die energieeffizienteste und am weitesten verbreitete Klasse, denn jedes LoRaWAN-Gerät muss sie implementieren.
 Nach jeder Uplink"=Übertragung öffnet das Gerät zwei kurze Fenster (RX1 und RX2) für das Empfangen von Downlink"=Nachrichten. 
-Außerhalb dieser Fenster befindet sich das Gerät im Schlafmodus, um den Stromverbrauch zu minimieren.
+Außerhalb dieser Fenster befindet sich das Gerät im Schlafmodus, um den Stromverbrauch zu minimieren. Eine erneute Uplink-Kommunikation 
+darf erst nach Empfang einer Downlink-Nachricht oder nach Ablauf von RX2 erfolgen. Diese Klasse eignet sich besonders für batteriebetriebene Sensoren, die 
+nur gelegentlich Daten senden müssen, wie es bei vielen Schutzsensoren der Fall ist. % TODO: add pic on page 12 TS001
 
-
-\textbf{Klasse B} ermöglicht periodischen Empfang durch zeitgesteuerte Empfangsfenster,
-die mittels Gateway"=Beacons synchronisiert werden. Dies erhöht die Reaktionsfähigkeit
-auf Kosten eines höheren Energieverbrauchs.
+Im Vergleich zur Klasse A ist die \textbf{Klasse B} flexibler, da sie einen periodischen Empfang durch zeitgesteuerte \acrshort{rx}-Fenster ermöglicht,
+die mittels Gateway"=\textbf{B}eacons synchronisiert werden. Dadurch würde unmittelbar der Network Server erfahren, sobald Endgeräte empfangsbereits sind.
+Dies erhöht die Reaktionsfähigkeit auf Kosten eines höheren Energieverbrauchs. Wenn ein Gerät sich als Klasse-B-Gerät Network-Server gegenüber 
+identifizieren will, muss der entsprechende \texttt{ClassB}-Bit in einem Uplink-Signal gesetzt werden. 
 
 \textbf{Klasse C} ermöglicht einen kontinuierlichen Empfang, indem das Endgerät nur während des Sendens nicht empfängt. 
 Das hat konsequenterweise den Nachteil, dass Klasse-C-Geräte für batteriebetriebene Geräte ungeeignet sind
-und typischerweise bei netzgespeisten Aktoren eingesetzt werden.
+und für das Thema Off-Grid-Schutzsensorik eine eher untergeordnete Rolle spielen.
+
+\begin{table}[ht]
+    \centering
+    \caption{Zusammenfassung der LoRaWAN-Klassen und ihrer Merkmale}
+    \label{tab:lorawan_mnemonics}
+    \begin{tabularx}{\textwidth}{l l X X}
+        \toprule
+        \textbf{Klasse} & \textbf{Merkhilfe} & \textbf{Hauptmerkmal} & \textbf{Energieprofil} \\
+        \midrule
+        \textbf{A} & \textbf{A}ll & Grundfunktion: Muss von \textbf{allen} Geräten unterstützt werden. & \textbf{Maximal} (Schlafmodus standardmäßig) \\
+        \addlinespace
+        \textbf{B} & \textbf{B}eacon & Synchronisation durch Gateway-\textbf{B}eacons (erfordert \texttt{ClassB}-Bit). & \textbf{Medium} (periodisches Aufwachen) \\
+        \addlinespace
+        \textbf{C} & \textbf{C}ontinuous & \textbf{C}ontinuierlicher Empfang (fast immer aktiv). & \textbf{Minimal} (nicht für Batteriebetrieb) \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
 
 \subsection{Gateways}
 
@@ -149,8 +168,7 @@ Nach den Endgeräten schließen befinden sich direkt im Anschluss die \textbf{Ga
 wirken. Bei der uplinkmäßigen Übertragung, also von Endgerät zu Server, empfangen sie die Signale der Endgeräte und leiten 
 diese über eine Ethernet- oder Mobilfunkverbindung an die Netzwerkserver weiter. Umgekehrt gilt für die Downlink-Richtung, 
 dass Gateways die Signale der Server Endgeräten zur Verfügung stellen. Da Gateways permanent auf allen Kanälen lauschen, 
-können Endgeräte jederzeit senden, solange regulatorische Gegebenheiten es erlauben. Empfangen können Endgeräte hingegen
-ausschließlich innerhalb der sogennanten \acrshort{rx}"=Fenster, die von der jeweiligen Geräteklasse (A, B oder C) abhängen. 
+können Endgeräte jederzeit senden, solange regulatorische Gegebenheiten es erlauben. % TODO: write about indoor and outdoor gateways
 
 Gateways sind zustandslos (\textit{stateless}) -- sie speichern keine
 sitzungsspezifischen Informationen und unterscheiden nicht zwischen verschiedenen
@@ -158,12 +176,12 @@ Endgeräten~\cite{lorawan_spec}. In Europa werden je nach Band insgesamt 10 Kan�
 definiert, von denen drei obligatorisch von allen Geräten unterstützt werden müssen.
 Bei Systemen für den Außeneinsatz sind Outdoor"=Gateways erforderlich, die aufgrund
 wasserdichter Gehäuse und Hohlraumfilter teurer sind als Indoor"=Varianten. Als
-Faustegel empfiehlt sich für Indoor"=Installationen die Platzierung des Gateways in
+Faustregel empfiehlt sich für Indoor"=Installationen die Platzierung des Gateways in
 der Nähe von Fensterfronten, um den Signaldurchgang zu verbessern.
 
-\subsection{\acrfull{ns}}
+\subsection{Network-Server}
 
-Der \textbf{Network Server} ist der zentrale Knotenpunkt des LoRaWAN"=Netzwerks. Er
+Der \textbf{Network-Server} (\acrshort{ns}) ist der zentrale Knotenpunkt des LoRaWAN"=Netzwerks. Er
 übernimmt Nachrichtenkonsolidierung (falls ein Paket von mehreren Gateways empfangen
 wurde), Routing, Netzwerksteuerung sowie die Überwachung von Gateways und
 Endgeräten~\cite{lorawan_spec}. Das \textit{Network Reference Model} (NRM) definiert
@@ -453,6 +471,11 @@ zu berücksichtigen und werden in Kapitel~\ref{chap:hardware} eingehend behandel
 \newacronym{adr}{ADR}{Adaptive Data Rate}
 \newacronym{otaa}{OTAA}{Over-the-Air Activation}
 \newacronym{abp}{ABP}{Activation by Personalization}
+\newacronym{DevAddr}{DevAddr}{Device Address}
+\newacronym{NwkSKey}{NwkSKey}{Network Session Key}
+\newacronym{AppSKey}{AppSKey}{Application Session Key}
+\newacronym{NwkAddr}{NwkAddr}{Network Address}
+\newacronym{eui}{EUI}{Extended Unique Identifier}
 \newacronym{mapl}{MAPL}{Maximum Allowable Path Loss}
 \newacronym{fspl}{FSPL}{Free Space Path Loss}
 \newacronym{srtm}{SRTM}{Shuttle Radar Topography Mission}

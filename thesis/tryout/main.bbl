@@ -19,54 +19,6 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
-    \entry{akyildizWirelessSensorNetworks2010}{book}{}
-      \name{author}{2}{}{%
-        {{un=0,uniquepart=base,hash=ce2d3528af429676c9ea7c983d5f9932}{%
-           family={Akyildiz},
-           familyi={A\bibinitperiod},
-           given={Ian\bibnamedelima Fuat},
-           giveni={I\bibinitperiod\bibinitdelim F\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=68e7a3c2701bfbad2d4a0e9b3bca0a1c}{%
-           family={Vuran},
-           familyi={V\bibinitperiod},
-           given={Mehmet\bibnamedelima Can},
-           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{language}{1}{%
-        {eng}%
-      }
-      \list{location}{1}{%
-        {Chichester, West Sussex, U.K}%
-      }
-      \list{publisher}{1}{%
-        {John Wiley \& Sons}%
-      }
-      \strng{namehash}{f347d01180557a893bcb450882ad6de2}
-      \strng{fullhash}{f347d01180557a893bcb450882ad6de2}
-      \strng{bibnamehash}{f347d01180557a893bcb450882ad6de2}
-      \strng{authorbibnamehash}{f347d01180557a893bcb450882ad6de2}
-      \strng{authornamehash}{f347d01180557a893bcb450882ad6de2}
-      \strng{authorfullhash}{f347d01180557a893bcb450882ad6de2}
-      \field{sortinit}{A}
-      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{annotation}{Includes bibliographical references and index}
-      \field{isbn}{978-0-470-03601-3 978-0-470-51519-8 978-0-470-51518-1}
-      \field{series}{Ian {F}. {Akyildiz} series in communications and networking}
-      \field{title}{Wireless sensor networks}
-      \field{year}{2010}
-      \verb{doi}
-      \verb 10.1002/9780470515181
-      \endverb
-      \verb{file}
-      \verb PDF:C\:\\Users\\khoa1\\Zotero\\storage\\BGFLYD4F\\Akyildiz and Vuran - 2010 - Wireless sensor networks.pdf:application/pdf
-      \endverb
-    \endentry
     \entry{LoRaWANL21042020}{report}{}
       \list{institution}{1}{%
         {LoRa Alliance}%

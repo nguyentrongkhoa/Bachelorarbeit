@@ -558,6 +558,146 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{DevAddr}%
+{%
+name={\acronymfont {\glsentryshort {DevAddr}}},%
+sort={DevAddr},%
+type={acronym},%
+first={DevAddr},%
+firstplural={DevAddrs},%
+text={DevAddr},%
+plural={DevAddrs},%
+description={Device Address},%
+descriptionplural={Device Address},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Device Address},%
+longplural={Device Addresss},%
+short={DevAddr},%
+shortplural={DevAddrs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{NwkSKey}%
+{%
+name={\acronymfont {\glsentryshort {NwkSKey}}},%
+sort={NwkSKey},%
+type={acronym},%
+first={NwkSKey},%
+firstplural={NwkSKeys},%
+text={NwkSKey},%
+plural={NwkSKeys},%
+description={Network Session Key},%
+descriptionplural={Network Session Key},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Network Session Key},%
+longplural={Network Session Keys},%
+short={NwkSKey},%
+shortplural={NwkSKeys},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{AppSKey}%
+{%
+name={\acronymfont {\glsentryshort {AppSKey}}},%
+sort={AppSKey},%
+type={acronym},%
+first={AppSKey},%
+firstplural={AppSKeys},%
+text={AppSKey},%
+plural={AppSKeys},%
+description={Application Session Key},%
+descriptionplural={Application Session Key},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Application Session Key},%
+longplural={Application Session Keys},%
+short={AppSKey},%
+shortplural={AppSKeys},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{NwkAddr}%
+{%
+name={\acronymfont {\glsentryshort {NwkAddr}}},%
+sort={NwkAddr},%
+type={acronym},%
+first={NwkAddr},%
+firstplural={NwkAddrs},%
+text={NwkAddr},%
+plural={NwkAddrs},%
+description={Network Address},%
+descriptionplural={Network Address},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Network Address},%
+longplural={Network Addresss},%
+short={NwkAddr},%
+shortplural={NwkAddrs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{eui}%
+{%
+name={\acronymfont {\glsentryshort {eui}}},%
+sort={EUI},%
+type={acronym},%
+first={EUI},%
+firstplural={EUIs},%
+text={EUI},%
+plural={EUIs},%
+description={Extended Unique Identifier},%
+descriptionplural={Extended Unique Identifier},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Extended Unique Identifier},%
+longplural={Extended Unique Identifiers},%
+short={EUI},%
+shortplural={EUIs},%
+counter={page},%
+parent={},%
+%
+}%
+
 \glsdefs@newdocentry{mapl}%
 {%
 name={\acronymfont {\glsentryshort {mapl}}},%
