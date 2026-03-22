@@ -67,6 +67,24 @@
       \verb PDF:C\:\\Users\\khoa1\\Zotero\\storage\\BGFLYD4F\\Akyildiz and Vuran - 2010 - Wireless sensor networks.pdf:application/pdf
       \endverb
     \endentry
+    \entry{LoRaWANL21042020}{report}{}
+      \list{institution}{1}{%
+        {LoRa Alliance}%
+      }
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labeltitlesource}{title}
+      \field{month}{10}
+      \field{number}{TS001-1.0.4}
+      \field{title}{{LoRaWAN}® {L2} 1.0.4 {Specification} ({TS001}-1.0.4)}
+      \field{type}{Technical {Documentation}}
+      \field{year}{2020}
+      \verb{file}
+      \verb PDF:C\:\\Users\\khoa1\\Zotero\\storage\\DR9DSW6W\\2020 - LoRaWAN® L2 1.0.4 Specification (TS001-1.0.4).pdf:application/pdf
+      \endverb
+    \endentry
   \enddatalist
   \missing{dobkin2012rf}
   \missing{haslett2008essentials}

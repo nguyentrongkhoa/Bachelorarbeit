@@ -115,7 +115,7 @@ Diese beginnen alle mit dem Präfix "TS", gefolgt von einer dreistelligen Dokume
 \subsection{Netzwerkarchitektur}
 \label{subsec:netzwerkarchitektur}
 
-Eine LoRaWAN"=Kommunikationskette setzt sich aus drei Gliedern zusammen: Endgeräten/\acrfull{ed}, Gateways und Servern. 
+Eine LoRaWAN"=Kommunikationskette setzt sich aus drei Gliedern zusammen: Endgeräten (\textit{End Devices}), Gateways und Servern. 
 Die Server"=Seite gliedert sich weiter in \acrfull{ns}, \acrfull{js} und \acrfull{as}. % TODO: add pic
 
 \subsection{Endgeräte}
@@ -130,18 +130,19 @@ Das Dokument \citetitle{LoRaWANL21042020} definiert drei Geräteklassen (A, B un
 wann ein Endgerät Downlink"=Nachrichten, also vom Server zu Endgerät, empfangen kann. Die Klasse kann während des
 Betriebs gewechselt werden.
 
-\textbf{Klasse A} ist die energieeffizienteste und am weitesten verbreitete Klasse, denn jedes LoRaWAN-Gerät muss sie implementieren.
-Nach jeder Uplink"=Übertragung öffnet das Gerät zwei kurze Fenster (RX1 und RX2) für das Empfangen von Downlink"=Nachrichten. 
-Außerhalb dieser Fenster befindet sich das Gerät im Schlafmodus, um den Stromverbrauch zu minimieren.
-
+\textbf{Klasse A} ist die energieeffizienteste und am weitesten verbreitete Klasse.
+Nach jeder Uplink"=Übertragung öffnet das Gerät zwei kurze Empfangsfenster
+(RX1 und RX2). Außerhalb dieser Fenster befindet sich das Gerät im Schlafmodus.
+Downlink"=Nachrichten können vom Network Server ausschließlich innerhalb dieser
+Fenster gesendet werden.
 
 \textbf{Klasse B} ermöglicht periodischen Empfang durch zeitgesteuerte Empfangsfenster,
 die mittels Gateway"=Beacons synchronisiert werden. Dies erhöht die Reaktionsfähigkeit
 auf Kosten eines höheren Energieverbrauchs.
 
-\textbf{Klasse C} ermöglicht einen kontinuierlichen Empfang, indem das Endgerät nur während des Sendens nicht empfängt. 
-Das hat konsequenterweise den Nachteil, dass Klasse-C-Geräte für batteriebetriebene Geräte ungeeignet sind
-und typischerweise bei netzgespeisten Aktoren eingesetzt werden.
+\textbf{Klasse C} ermöglicht kontinuierlichen Empfang, indem das Endgerät nur während
+des Sendens nicht empfängt. Diese Klasse ist für batteriebetriebene Geräte ungeeignet
+und wird typischerweise bei netzgespeisten Aktoren eingesetzt.
 
 \subsection{Gateways}
 
@@ -443,7 +444,6 @@ zu berücksichtigen und werden in Kapitel~\ref{chap:hardware} eingehend behandel
 \newacronym{fsk}{FSK}{Frequency Shift Keying}
 \newacronym{mcu}{MCU}{Microcontroller Unit}
 \newacronym{ism}{ISM}{Industrial, Scientific, and Medical}
-\newacronym{ed}{ED}{End Device}
 \newacronym{ns}{NS}{Network Server}
 \newacronym{js}{JS}{Join Server}
 \newacronym{as}{AS}{Application Server}

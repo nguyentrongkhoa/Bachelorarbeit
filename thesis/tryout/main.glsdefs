@@ -278,6 +278,118 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{ed}%
+{%
+name={\acronymfont {\glsentryshort {ed}}},%
+sort={ED},%
+type={acronym},%
+first={ED},%
+firstplural={EDs},%
+text={ED},%
+plural={EDs},%
+description={End Device},%
+descriptionplural={End Device},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={End Device},%
+longplural={End Devices},%
+short={ED},%
+shortplural={EDs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{ns}%
+{%
+name={\acronymfont {\glsentryshort {ns}}},%
+sort={NS},%
+type={acronym},%
+first={NS},%
+firstplural={NSs},%
+text={NS},%
+plural={NSs},%
+description={Network Server},%
+descriptionplural={Network Server},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Network Server},%
+longplural={Network Servers},%
+short={NS},%
+shortplural={NSs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{js}%
+{%
+name={\acronymfont {\glsentryshort {js}}},%
+sort={JS},%
+type={acronym},%
+first={JS},%
+firstplural={JSs},%
+text={JS},%
+plural={JSs},%
+description={Join Server},%
+descriptionplural={Join Server},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Join Server},%
+longplural={Join Servers},%
+short={JS},%
+shortplural={JSs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{as}%
+{%
+name={\acronymfont {\glsentryshort {as}}},%
+sort={AS},%
+type={acronym},%
+first={AS},%
+firstplural={ASs},%
+text={AS},%
+plural={ASs},%
+description={Application Server},%
+descriptionplural={Application Server},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Application Server},%
+longplural={Application Servers},%
+short={AS},%
+shortplural={ASs},%
+counter={page},%
+parent={},%
+%
+}%
+
 \glsdefs@newdocentry{ts}%
 {%
 name={\acronymfont {\glsentryshort {ts}}},%
@@ -287,8 +399,8 @@ first={TS},%
 firstplural={TSs},%
 text={TS},%
 plural={TSs},%
-description={technical specification},%
-descriptionplural={technical specification},%
+description={Technical Specification},%
+descriptionplural={Technical Specification},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -297,8 +409,8 @@ user3={},%
 user4={},%
 user5={},%
 user6={},%
-long={technical specification},%
-longplural={technical specifications},%
+long={Technical Specification},%
+longplural={Technical Specifications},%
 short={TS},%
 shortplural={TSs},%
 counter={page},%

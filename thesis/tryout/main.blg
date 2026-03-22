@@ -1,23 +1,23 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [1] Config.pm:310> INFO - Logfile is 'main.blg'
-[522] biber:340> INFO - === Sun Mar 22, 2026, 07:32:03
-[601] Biber.pm:419> INFO - Reading 'main.bcf'
-[912] Biber.pm:979> INFO - Found 7 citekeys in bib section 0
-[938] Biber.pm:4419> INFO - Processing section 0
-[958] Biber.pm:4610> INFO - Looking for bibtex file 'LoRa.bib' for section 0
-[1006] bibtex.pm:1713> INFO - LaTeX decoding ...
-[1256] bibtex.pm:1519> INFO - Found BibTeX data source 'LoRa.bib'
-[1523] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[1524] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[1524] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'de-DE'
-[1524] Biber.pm:4245> INFO - No sort tailoring available for locale 'de-DE'
-[1534] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[1539] bbl.pm:763> INFO - Output to main.bbl
-[1540] Biber.pm:131> WARN - ISBN '978-0-470-03601-3 978-0-470-51519-8 978-0-470-51518-1' in entry 'akyildizWirelessSensorNetworks2010' is invalid - run biber with '--validate_datamodel' for details.
-[1541] Biber.pm:131> WARN - I didn't find a database entry for 'lorawan_spec' (section 0)
-[1542] Biber.pm:131> WARN - I didn't find a database entry for 'semtech_lora_basics' (section 0)
-[1542] Biber.pm:131> WARN - I didn't find a database entry for 'stm32wl_ds' (section 0)
-[1543] Biber.pm:131> WARN - I didn't find a database entry for 'dobkin2012rf' (section 0)
-[1544] Biber.pm:131> WARN - I didn't find a database entry for 'haslett2008essentials' (section 0)
-[1545] Biber.pm:131> WARN - I didn't find a database entry for 'walter2006radio' (section 0)
-[1545] Biber.pm:133> INFO - WARNINGS: 7
+[216] biber:340> INFO - === Sun Mar 22, 2026, 11:14:48
+[246] Biber.pm:419> INFO - Reading 'main.bcf'
+[417] Biber.pm:979> INFO - Found 8 citekeys in bib section 0
+[450] Biber.pm:4419> INFO - Processing section 0
+[474] Biber.pm:4610> INFO - Looking for bibtex file 'LoRa.bib' for section 0
+[487] bibtex.pm:1713> INFO - LaTeX decoding ...
+[673] bibtex.pm:1519> INFO - Found BibTeX data source 'LoRa.bib'
+[813] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[813] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[813] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'de-DE'
+[813] Biber.pm:4245> INFO - No sort tailoring available for locale 'de-DE'
+[821] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[824] bbl.pm:763> INFO - Output to main.bbl
+[825] Biber.pm:131> WARN - ISBN '978-0-470-03601-3 978-0-470-51519-8 978-0-470-51518-1' in entry 'akyildizWirelessSensorNetworks2010' is invalid - run biber with '--validate_datamodel' for details.
+[825] Biber.pm:131> WARN - I didn't find a database entry for 'lorawan_spec' (section 0)
+[825] Biber.pm:131> WARN - I didn't find a database entry for 'semtech_lora_basics' (section 0)
+[826] Biber.pm:131> WARN - I didn't find a database entry for 'stm32wl_ds' (section 0)
+[826] Biber.pm:131> WARN - I didn't find a database entry for 'dobkin2012rf' (section 0)
+[826] Biber.pm:131> WARN - I didn't find a database entry for 'haslett2008essentials' (section 0)
+[826] Biber.pm:131> WARN - I didn't find a database entry for 'walter2006radio' (section 0)
+[826] Biber.pm:133> INFO - WARNINGS: 7
