@@ -138,7 +138,9 @@ From Semtech's course:
   2. SDR# combined with RTL-SDR for spectrum analysis
   3. GNU Radio 
   4. QGIS - geographic information system
-
+- Radio planning test:
+  1. send packets containing sequence number and GPS coordinates to keep track of packet loss \cite{petajajarviCoverageLPWANsRange2015}
+  2. heat map can be generated using Google Maps JavaScript API % cite same as above
 Radio interface system planning book
 - microcell: anntenna height below rooftop level
 - macro: (Radio Interface system planning book)
@@ -167,7 +169,7 @@ Radio interface system planning book
   - Klassifikation MCUs: Prototypen vs produktionsfertig
   - STM32WL55: output transmit power up to 22dBm @V_DDPA=3.3V
   - STLink
-  - Segger J-Link may be even better
+
 
 - Software tools:
   - draw.io / Lucidchart
@@ -177,17 +179,7 @@ Radio interface system planning book
   - semtech lora calculator
   - RF line of sight calculator
 
-- Use ZephyrRTOS instead of HAL for STM32WL55
+PCB design:
+  - for printed PCB: look at reference designs
+  - most notable: DN024 from TI: monopole 868MHz
 
-Renode:
-- There is no off the shelf platform files for STM32WL55 
-- Maybe use STM32L4 CPU since registers are similar (according to LoRa Alliance)
-
-Zephyr:
-- Workspace application = zephyrproject/<app> (always)
-- Repository application = zephyrproject/zephyr/<app>
-- Devicetree:
-  - sources + bindings + include files (.dtsi) that describes for instance the SoC the boards runs on + overlays to override properties
-  - generates devicetree.h header file that can be used by all modules 
-  - DT bindings: each node in DTS will be matched to a corresponding binding
-  - binding name convention: foo-company,bar-device.yaml (MUST be inside one of the /dts/bindings)

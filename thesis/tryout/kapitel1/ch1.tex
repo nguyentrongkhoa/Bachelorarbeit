@@ -5,7 +5,7 @@
 
 \chapter{Grundlagen}
 \label{chap:grundlagen}
-
+% TODO: update this when done proofreading
 Dieses Kapitel legt das theoretische Fundament für die in den folgenden Kapiteln
 beschriebene Entwicklung. Es gliedert sich in fünf Abschnitte: Zunächst werden die
 physikalischen Grundlagen der LoRa"=Modulationstechnologie erläutert, gefolgt von
@@ -15,21 +15,20 @@ RF"=Planung und Signalausbreitung behandelt. Abschließend wird ein kurzer Über
 über die Normierungsanforderungen im Bereich Schutzsensorik gegeben.
 
 % -----------------------------------------------------------------------------
-\section{LoRa -- Physical Layer}
+\section{LoRa-Modulation}
 \label{sec:lora-physical}
 % -----------------------------------------------------------------------------
 
-LoRa (\textit{Long Range}) ist eine proprietäre Modulationstechnologie des Halbleiterherstellers
-Semtech und bildet die physikalische Grundlage des LoRaWAN"=Protokollstacks. Es ist wichtig,
-zwischen LoRa und LoRaWAN zu unterscheiden: LoRa bezeichnet ausschließlich die
-Modulationstechnik, während LoRaWAN den darüber liegenden Netzwerkstandard beschreibt,
+\acrfull{lora} ist ein von der Firma Semtech entwickeltes Modulationsverfahren und bildet die physikalische Grundlage des 
+\acrshort{lorawan}"=Protokolls. Da LoRa und LoRaWAN nicht unhäufig miteinander verwechselt werden, besteht die Notwendigkeit, auf ihre Unterschiede hinzuweisen: 
+LoRa bezeichnet die reine Modulationstechnologie, währen
 der von der LoRa Alliance definiert und gepflegt wird~% TODO: \cite{semtech_lora_basics}. 
 
 \cite{akyildizWirelessSensorNetworks2010} % TODO: remove this
 
-LoRa basiert auf dem Verfahren der \textit{Chirp Spread Spectrum}"=Modulation (CSS).
+LoRa basiert auf dem Verfahren der \acrfull{css}"=Modulation.
 Dabei wird das zu übertragende Signal auf ein breiteres Frequenzband gespreizt, indem
-sogenannte Chirps -- Signale mit kontinuierlich steigender oder fallender Frequenz -- % TODO: remove --
+sogenannte Chirps-Signale mit kontinuierlich steigender oder fallender Frequenz
 als Trägersymbole verwendet. Dieses Verfahren verleiht LoRa eine hohe Robustheit
 gegenüber Mehrwegeausbreitung, Schmalbandstörungen und dem Doppler"=Effekt, wie er
 bei mobilen Endgeräten auftritt~% TODO: \cite{augustin2016study}.
@@ -45,13 +44,13 @@ und \qty{11}{kbps}~ % TODO: \cite{semtech_lora_basics}.
 \subsection{Spreading Factor, Bandbreite und Coding Rate}
 \label{subsec:sf-bw-cr}
 
-Die wichtigsten Parameter zur Steuerung des LoRa"=Signals sind der Spreading Factor
-(\acrshort{sf}), die Bandbreite (\acrshort{bw}) sowie die Coding Rate (\acrshort{cr}).
+Die wichtigsten Parameter zur Steuerung des LoRa"=Signals sind der \acrfull{sf}, 
+die Bandbreite (\acrshort{bw}) sowie die Coding Rate (\acrshort{cr}).
 
 Der SF bestimmt, wie stark das Signal gespreizt wird, und kann ganzzahlige Werte
 zwischen 7 und 12 annehmen. Ein höherer SF erhöht die Empfindlichkeit des
 Empfängers und damit die erreichbare Reichweite, verlängert jedoch gleichzeitig die
-\textit{Time on Air} (Luftzeit) eines Paketes erheblich und erhöht den
+Übertragungszeit eines Paketes erheblich und erhöht den
 Energieverbrauch pro Übertragung. Tabelle~\ref{tab:sf_vergleich} fasst die
 Auswirkungen der verschiedenen Spreading Factors zusammen.
 
@@ -85,7 +84,7 @@ nimmt Werte von 4/5 bis 4/8 an.
 \subsection{Frequenzbänder und regulatorische Rahmenbedingungen}
 \label{subsec:frequenzbaender}
 
-LoRa nutzt lizenzfreie ISM"=Bänder (\textit{Industrial, Scientific and Medical}).
+LoRa nutzt sogenannte \acrfull{ism}"=Bänder, für die keine Lizenz erworben werden muss.
 In Europa werden die Frequenzbänder \SI{433}{\MHz} und \SI{868}{\MHz} verwendet,
 in Nordamerika \SI{915}{\MHz}. Da die Frequenzzuweisungen regional verschieden sind,
 können Geräte, die für den europäischen Markt entwickelt wurden, nicht ohne
@@ -104,26 +103,28 @@ Die maximale Paketgröße in Europa beträgt 222\,Bytes bei hoher Datenrate und
 13"=Byte"=Overhead zum Nutzdaten"=Payload~% TODO: \cite{lorawan_spec}.
 
 % -----------------------------------------------------------------------------
-\section{LoRaWAN -- Network Layer}
+\section{LoRaWAN -- Network Layer} % TODO: remove --
 \label{sec:lorawan-network}
 % -----------------------------------------------------------------------------
 
-LoRaWAN definiert den Netzwerkstandard, der auf der LoRa"=Physikschicht aufsetzt.
-Die Spezifikation TS001 wird durch das Begleitdokument RP002 ergänzt, das
-regionsspezifische Parameter festlegt~\cite{lorawan_spec}.
+Der Begriff \acrfull{lorawan} definiert den Netzwerkstandard, dem die LoRa-Modulationstechnologie zugrunde liegt.
+Der LoRaWAN-Standard wird von der sogenannten LoRa-Alliance - einem im Jahre 2015 gegründeten
+Bündnis internationaler Unternehmen - gepflegt und in ihren umfangreichen technischen Spezifikationen dokumentiert.
+Diese beginnen alle mit dem Präfix "TS", gefolgt von einer dreistelligen Dokumentennummer. ~\cite{lorawan_spec}.
 
 \subsection{Netzwerkarchitektur}
 \label{subsec:netzwerkarchitektur}
 
-Eine LoRaWAN"=Infrastruktur besteht aus drei logischen Ebenen: Endgeräten
+Eine LoRaWAN"=Kommunikationskette setzt sich aus drei Gliedern zusammen: Endgeräten
 (\textit{End Devices}), Gateways und Servern. Die Server"=Seite gliedert sich
 weiter in \textit{Network Server}, \textit{Join Server} und
-\textit{Application Server}.
+\textit{Application Server}. % TODO: add pic
 
-\textbf{Endgeräte} bestehen aus einem Mikrocontroller, auf dem der LoRaWAN"=Stack
-läuft, einer LoRa"=Funkeinheit, einer Antenne, einer Stromversorgung sowie
-anwendungsspezifischen Peripheriegeräten wie Gassensoren. Die Softwareschichten
-umfassen Treiber, Middleware und die eigentliche Applikation.
+Auf der untersten Ebene befinden sich die \textbf{Endgeräte}, deren Zentraleinheit Mikrokontroller (\acrshort{mcu}) mit entsprechender
+Stromversorgung darstellen. Auf dem MCU ist ein LoRaWAN"=Stack integriert, der als Schnittstelle zur LoRa-Funkeinheit fungiert.
+Diese übernimmt wie bereits beschrieben die physikalische Modulation und Demodulation der Signale, welche mithilfe einer Antenne
+in die Luft gesendet bzw. von der Luft empfangen werden können. Zusätzlich können Endgeräte mit anwendungsspezifischen Peripheriegeräten 
+wie Sensoren oder Aktoren ausgestattet sein. 
 
 \textbf{Gateways} empfangen Pakete der Endgeräte und leiten diese über eine
 IP"=Backhaul"=Verbindung (Ethernet oder Mobilfunk) an den Network Server weiter.
@@ -409,7 +410,6 @@ Für Indoor"=Installationen gilt als Faustregel: Wenn die Innenwände nicht aus 
 Mauerwerk bestehen, kann ein einzelnes Gateway auf der gleichen Etage wie die
 Endgeräte ausreichende Abdeckung liefern.
 
-
 % -----------------------------------------------------------------------------
 \section{Normierung und Anforderungen im Bereich Schutzsensorik}
 \label{sec:normierung}
@@ -427,11 +427,18 @@ zu berücksichtigen und werden in Kapitel~\ref{chap:hardware} eingehend behandel
 % Format : \newacronym{label}{abbreviation}{full term}
 % TODO: remember to run makeglossaries main 
 \newacronym{lora}{LoRa}{Long Range}
+\newacronym{lorawan}{LoRaWAN}{Long Range Wide Area Network}
+\newacronym{css}{CSS}{Chirp Spread Spectrum}
 \newacronym{sf}{SF}{Spreading Factor}
 \newacronym{bw}{BW}{Bandwidth}
 \newacronym{cr}{CR}{Coding Rate}
 \newacronym{snr}{SNR}{Signal-to-Noise Ratio}
 \newacronym{fsk}{FSK}{Frequency Shift Keying}
+\newacronym{mcu}{MCU}{Microcontroller Unit}
+\newacronym{ism}{ISM}{Industrial, Scientific, and Medical}
+\newacronym{ts}{TS}{technical specification}
+\newacronym{rx}{RX}{Receive (Empfangen)}
+\newacronym{tx}{TX}{Transmit (Senden)}
 \newacronym{adr}{ADR}{Adaptive Data Rate}
 \newacronym{otaa}{OTAA}{Over-the-Air Activation}
 \newacronym{abp}{ABP}{Activation by Personalization}

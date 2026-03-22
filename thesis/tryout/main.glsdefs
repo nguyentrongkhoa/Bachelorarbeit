@@ -26,6 +26,62 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{lorawan}%
+{%
+name={\acronymfont {\glsentryshort {lorawan}}},%
+sort={LoRaWAN},%
+type={acronym},%
+first={LoRaWAN},%
+firstplural={LoRaWANs},%
+text={LoRaWAN},%
+plural={LoRaWANs},%
+description={Long Range Wide Area Network},%
+descriptionplural={Long Range Wide Area Network},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Long Range Wide Area Network},%
+longplural={Long Range Wide Area Networks},%
+short={LoRaWAN},%
+shortplural={LoRaWANs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{css}%
+{%
+name={\acronymfont {\glsentryshort {css}}},%
+sort={CSS},%
+type={acronym},%
+first={CSS},%
+firstplural={CSSs},%
+text={CSS},%
+plural={CSSs},%
+description={Chirp Spread Spectrum},%
+descriptionplural={Chirp Spread Spectrum},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Chirp Spread Spectrum},%
+longplural={Chirp Spread Spectrums},%
+short={CSS},%
+shortplural={CSSs},%
+counter={page},%
+parent={},%
+%
+}%
+
 \glsdefs@newdocentry{sf}%
 {%
 name={\acronymfont {\glsentryshort {sf}}},%
@@ -161,6 +217,146 @@ long={Frequency Shift Keying},%
 longplural={Frequency Shift Keyings},%
 short={FSK},%
 shortplural={FSKs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{mcu}%
+{%
+name={\acronymfont {\glsentryshort {mcu}}},%
+sort={MCU},%
+type={acronym},%
+first={MCU},%
+firstplural={MCUs},%
+text={MCU},%
+plural={MCUs},%
+description={Microcontroller Unit},%
+descriptionplural={Microcontroller Unit},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Microcontroller Unit},%
+longplural={Microcontroller Units},%
+short={MCU},%
+shortplural={MCUs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{ism}%
+{%
+name={\acronymfont {\glsentryshort {ism}}},%
+sort={ISM},%
+type={acronym},%
+first={ISM},%
+firstplural={ISMs},%
+text={ISM},%
+plural={ISMs},%
+description={Industrial, Scientific, and Medical},%
+descriptionplural={Industrial, Scientific, and Medical},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Industrial, Scientific, and Medical},%
+longplural={Industrial, Scientific, and Medicals},%
+short={ISM},%
+shortplural={ISMs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{ts}%
+{%
+name={\acronymfont {\glsentryshort {ts}}},%
+sort={TS},%
+type={acronym},%
+first={TS},%
+firstplural={TSs},%
+text={TS},%
+plural={TSs},%
+description={technical specification},%
+descriptionplural={technical specification},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={technical specification},%
+longplural={technical specifications},%
+short={TS},%
+shortplural={TSs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{rx}%
+{%
+name={\acronymfont {\glsentryshort {rx}}},%
+sort={RX},%
+type={acronym},%
+first={RX},%
+firstplural={RXs},%
+text={RX},%
+plural={RXs},%
+description={Receive (Empfangen)},%
+descriptionplural={Receive (Empfangen)},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Receive (Empfangen)},%
+longplural={Receive (Empfangen)s},%
+short={RX},%
+shortplural={RXs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{tx}%
+{%
+name={\acronymfont {\glsentryshort {tx}}},%
+sort={TX},%
+type={acronym},%
+first={TX},%
+firstplural={TXs},%
+text={TX},%
+plural={TXs},%
+description={Transmit (Senden)},%
+descriptionplural={Transmit (Senden)},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Transmit (Senden)},%
+longplural={Transmit (Senden)s},%
+short={TX},%
+shortplural={TXs},%
 counter={page},%
 parent={},%
 %

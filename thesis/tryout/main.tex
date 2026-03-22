@@ -13,9 +13,13 @@
 %% Übersetzen für die Abgabe
 \usepackage{float} % muss an erster Stelle stehen, sonst gibt es Stress
 \usepackage{enumitem}
+\usepackage[ngerman]{babel} %
 \usepackage{fontenc, amsmath, booktabs, hyperref, siunitx}
 \usepackage[acronym]{glossaries}
 \usepackage[entwurf]{bhtThesis}
+\usepackage[backend=biber, style=authoryear, language=ngerman]{biblatex}
+\usepackage{csquotes} % Recommended for biblatex
+\addbibresource{LoRa.bib}
 %\usepackage[abgabe]{bhtThesis} % TODO: uncomment 
 \typeout{BHT-Abschlussarbeit V2.0 26.08.21 S.Tschirley}
 
@@ -102,10 +106,10 @@
 
 \clearpage\newpage
 \addcontentsline{toc}{chapter}{Literatur- und Quellenverzeichnis}
-\bibliographystyle{myapalike}
-\bibliography{LoRa}
+%\bibliographystyle{myapalike}
+%\bibliography{LoRa}
 
-\printglossary[type=\acronymtype]
+%\printglossary[type=\acronymtype]
 \printglossary
 
 \end{document}
