@@ -1,22 +1,21 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
-[1] Config.pm:310> INFO - Logfile is 'main.blg'
-[419] biber:340> INFO - === Mon Mar 23, 2026, 07:08:22
-[516] Biber.pm:419> INFO - Reading 'main.bcf'
-[825] Biber.pm:979> INFO - Found 8 citekeys in bib section 0
-[857] Biber.pm:4419> INFO - Processing section 0
-[885] Biber.pm:4610> INFO - Looking for bibtex file 'LoRa.bib' for section 0
-[942] bibtex.pm:1713> INFO - LaTeX decoding ...
-[1250] bibtex.pm:1519> INFO - Found BibTeX data source 'LoRa.bib'
-[1323] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[1323] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[1323] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'de-DE'
-[1323] Biber.pm:4245> INFO - No sort tailoring available for locale 'de-DE'
-[1344] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[1348] bbl.pm:763> INFO - Output to main.bbl
-[1348] Biber.pm:131> WARN - I didn't find a database entry for 'semtech_lora_basics' (section 0)
-[1349] Biber.pm:131> WARN - I didn't find a database entry for 'lorawan_spec' (section 0)
-[1349] Biber.pm:131> WARN - I didn't find a database entry for 'stm32wl_ds' (section 0)
-[1349] Biber.pm:131> WARN - I didn't find a database entry for 'dobkin2012rf' (section 0)
-[1349] Biber.pm:131> WARN - I didn't find a database entry for 'haslett2008essentials' (section 0)
-[1349] Biber.pm:131> WARN - I didn't find a database entry for 'walter2006radio' (section 0)
-[1350] Biber.pm:133> INFO - WARNINGS: 6
+[0] Config.pm:310> INFO - Logfile is 'main.blg'
+[188] biber:340> INFO - === Mon Mar 23, 2026, 13:54:34
+[220] Biber.pm:419> INFO - Reading 'main.bcf'
+[306] Biber.pm:979> INFO - Found 7 citekeys in bib section 0
+[320] Biber.pm:4419> INFO - Processing section 0
+[333] Biber.pm:4610> INFO - Looking for bibtex file 'LoRa.bib' for section 0
+[342] bibtex.pm:1713> INFO - LaTeX decoding ...
+[415] bibtex.pm:1519> INFO - Found BibTeX data source 'LoRa.bib'
+[462] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[462] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[462] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'de-DE'
+[462] Biber.pm:4245> INFO - No sort tailoring available for locale 'de-DE'
+[472] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[475] bbl.pm:763> INFO - Output to main.bbl
+[475] Biber.pm:131> WARN - I didn't find a database entry for 'semtech_lora_basics' (section 0)
+[475] Biber.pm:131> WARN - I didn't find a database entry for 'stm32wl_ds' (section 0)
+[475] Biber.pm:131> WARN - I didn't find a database entry for 'dobkin2012rf' (section 0)
+[475] Biber.pm:131> WARN - I didn't find a database entry for 'haslett2008essentials' (section 0)
+[476] Biber.pm:131> WARN - I didn't find a database entry for 'walter2006radio' (section 0)
+[476] Biber.pm:133> INFO - WARNINGS: 5

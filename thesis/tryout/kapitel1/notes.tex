@@ -183,3 +183,29 @@ PCB design:
   - for printed PCB: look at reference designs
   - most notable: DN024 from TI: monopole 868MHz
 
+% END NOTES
+
+% -----------------------------------------------------------------------------
+\section{Sicherheitsmechanismen in LoRaWAN}
+\label{sec:sicherheit}
+% -----------------------------------------------------------------------------
+
+LoRaWAN setzt auf AES"=128"=Verschlüsselung auf zwei Ebenen: Der \textit{Network
+Session Key} (NwkSKey) sichert die Kommunikation zwischen Endgerät und Network
+Server, während der \textit{Application Session Key} (AppSKey) die Ende"=zu"=Ende"=Verschlüsselung
+der Nutzdaten zwischen Endgerät und Application Server gewährleistet~\cite{lorawan_spec}.
+
+Für den sicheren Betrieb in industriellen und sicherheitskritischen Umgebungen empfiehlt
+sich der Einsatz von \textit{Secure Elements} (kryptografische Chips). Diese
+Spezialchips speichern die kryptografischen Schlüssel in schreibgeschützten Registern,
+beschleunigen Ver"= und Entschlüsselung ohne CPU"=Belastung und ermöglichen die
+Verifikation der Firmware"=Authentizität -- wodurch das Risiko eines unbefugten % TODO: remove --
+Firmware"=Overwrite durch einen Angreifer minimiert wird~\cite{semtech_lora_basics}.
+
+Zur Abwehr von Replay"=Angriffen sollten 32"=Bit"=Rahmenzähler für Uplink und Downlink
+aktiviert werden. Darüber hinaus kann eine feste Payload"=Länge dabei helfen, ereignisgesteuerte
+Aktivitäten vor Angreifern zu verschleiern, die aus variierenden Paketlängen auf den
+Systemzustand schließen könnten. Die \textit{Out"=of"=Band Key Provisioning}"=Methode
+-- etwa über BLE oder NFC -- stellt sicher, dass Produktionsmitarbeiter keinen Zugriff % TODO: remove --
+auf die Geräteschlüssel erhalten.
+

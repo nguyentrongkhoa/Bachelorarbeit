@@ -187,58 +187,53 @@ Die Informationspakete gelangen als Nächstes über eine Backhaul-Verbindung (bs
 von welchen der \textbf{Network-Server} (\acrshort{ns}) der zentrale Knotenpunkt der LoRaWAN"=Sterntopologie ist. 
 An dieser Stelle tritt das Dokument \citetitle{LoRaWanBackendInterfaces2020} zum Vorschein. 
 
-Zu den Aufgaben eines Network-Servers gehören: Überprüfung von Endgerätadressen, Paketsauthentifizierung, Anpassung der Datenraten
-(hierauf wird im Abschnitt \ref{subsec:adr} näher eingegangen), Weiterleiten von Payloads bzw. Join-Anfragen an entsprechende 
+Zu den Aufgaben eines Network-Servers gehören: Überprüfung von Endgerätadressen, Paketsauthentifizierung, Anpassung der Datenraten, Weiterleiten von Payloads bzw. Join-Anfragen an entsprechende 
 Application-Servers und Join-Server jeweils. Zusätzlich kümmern sich Network-Server um die Konsolidierung von Nachrichten, 
-die von mehreren Gateways empfangen wurden, sowie um die Überwachung der Netzwerk- und Gateway"=Leistung. % TODO: 
+die von mehreren Gateways empfangen wurden, sowie um die Überwachung der Netzwerk- und Gateway"=Leistung. % TODO: NRM model
 
-\subsection{Join-Server}
-
-Der \textbf{Join Server} verwaltet die kryptografischen Wurzelschlüssel und wird
-insbesondere beim \acrlong{otaa}"=Aktivierungsverfahren benötigt. Er muss in einer
-vertrauenswürdigen, gesicherten Umgebung betrieben werden. Um Herstellerabhängigkeiten
-(\textit{Vendor Lock"=in}) zu vermeiden, sollte darauf geachtet werden, dass der Join
-Server netzwerkunabhängig betrieben werden kann~\cite{semtech_lora_basics}.
-
-LoRaWAN"=Netzwerke verwenden das Aloha"=Zugriffsverfahren: Endgeräte senden, wann
-immer sie Daten zu übertragen haben, ohne vorherige Kanalprüfung. Gateways hören
-permanent auf allen Kanälen. Kollisionen werden durch das Spread"=Spectrum"=Verfahren
-und den Einsatz mehrerer Kanäle minimiert, aber nicht vollständig ausgeschlossen.
-
-\subsection{Aktivierungsverfahren: OTAA und ABP}
-\label{subsec:aktivierung}
-
-Für die Aufnahme eines Endgeräts in ein LoRaWAN"=Netzwerk existieren zwei Verfahren:
-\acrlong{otaa} und \acrlong{abp}.
-
-Bei \acrshort{abp} werden alle benötigten Parameter -- \texttt{DevEUI}, \texttt{DevAddr}
-sowie die Sitzungsschlüssel -- vorab im Gerät fest einprogrammiert. Das Gerät kann
-sofort ohne Join"=Prozedur senden. Dieses Verfahren ist weniger flexibel und gilt aus
-Sicherheitsperspektive als suboptimal, da keine dynamische Schlüsselerneuerung
-stattfindet.
-
-Bei OTAA initiiert das Gerät beim ersten Start eine \textit{Join Request},
-woraufhin der Network"= bzw. Join"=Server einen \textit{Join Accept} zurücksendet
-und dabei die Sitzungsschlüssel dynamisch ableitet. OTAA ist das empfohlene
-Verfahren~\cite{lorawan_spec}. Als \textit{Best Practice} empfiehlt sich, Geräte,
-die per ABP provisioniert werden, parallel mit allen für OTAA notwendigen Parametern
-(\texttt{DevEUI}, \texttt{JoinEUI} und Root Keys) auszustatten. Alle Geräte müssen
-einen persistenten Zählerstand (Frame Counter) auch über Stromausfälle und Resets
-hinaus erhalten.
-
-\subsection{Adaptive Data Rate}
+\subsubsection*{Adaptive Data Rate}
 \label{subsec:adr}
 
-\acrlong{adr} ist ein Mechanismus des Network Servers zur automatischen Anpassung von
+\acrfull{adr} ist ein Mechanismus des Network Servers zur automatischen Anpassung von
 Datenrate und Sendeleistung eines Endgeräts. Endgeräte in der Nähe eines Gateways
 werden auf höhere Datenraten (niedrigere SF"=Werte) umgeschaltet, was die Luftzeit
 verkürzt und die Netzwerkkapazität erhöht. Geräte in größerer Entfernung werden mit
 niedrigeren Datenraten betrieben, um ausreichende Verbindungsqualität sicherzustellen.
 Wird ein weiteres Gateway zum Netzwerk hinzugefügt, aktualisieren die Endgeräte ihren
-SF automatisch~\cite{semtech_lora_basics}. ADR ist ausschließlich für stationäre
-Geräte geeignet -- für mobile Anwendungen wie das hier betrachtete Schutzsensorsystem % TODO: remove --
+SF automatisch. ADR ist ausschließlich für stationäre
+Geräte geeignet, für mobile Anwendungen wie das hier betrachtete Schutzsensorsystem 
 muss ADR deaktiviert oder durch ein geeignetes mobilitätsbewusstes Verfahren ersetzt
 werden.
+
+\subsection{Join-Server}
+
+Der \textbf{Join-Server} verwaltet den Netzwerkbeitritt bzw. Aktivierung von Endgeräten. Jeder \acrshort{js} verfügt zur Identifikation über
+eine eindeutige JoinEUI (\acrlong{eui}), welche von den Endgeräten bei Join-Anfragen verwendet wird. Erfolgreiche Beitrittsanfragen bewirken
+die Erzeugung von Sitzungsschlüsseln (\acrshort{NwkSKey} und \acrshort{AppSKey}), somit ist die Anbindung von 
+Endgeräten an das LoRaWAN-Netzwerk abgeschlossen und sie können mit der Datenübertragung beginnen. % TODO: maybe rewrite this
+
+\subsubsection*{Aktivierungsverfahren: OTAA und ABP}
+\label{subsec:aktivierung}
+
+Es wird zwischen zwei Aktivierungsverfahren unterschieden: \acrfull{otaa} und \acrfull{abp}.
+
+Bei OTAA initiiert das Gerät beim ersten Start eine \textit{Join Request}, die sowohl seine \acrshort{DevEUI}
+als auch die Join-EUI des Join-Servers enthält. Zusätzlich wird noch eine DevNonce übermittelt, die bei jeder Anfrage
+inkrementiert werden soll, andernfalls würde der die Aktivierung verweigert. Bei erfolgreicher Aktivierung sendet der 
+Join-Server eine \textit{Join Accept} und stellt dabei die notwendigen Sitzungsschlüssel, \acrfull{NwkSKey} und \acrfull{AppSKey}, bereit.
+Das Gerät bekommt außerdem eine eindeutige \acrfull{DevAddr} vom Network-Server zugewiesen. Die LoRa-Alliance empfiehlt
+OTAA als bevorzugtes Aktivierungsverfahren, da die dynamische Ableitung von Sitzungsschlüsseln für Sicherheit sorgt. 
+% TODO: add pic illustrating OTAA
+
+Im Gegensatz zu OTAA werden bei \acrshort{abp} alle benötigten Parameter (\acrshort{DevEUI}, \acrshort{DevAddr} und Sitzungsschlüssel)
+vorab im Gerät fest einprogrammiert. Das Gerät kann sofort ohne Join"=Prozedur senden. Dieses Verfahren ist einfacher zu implementieren, 
+allerdings dafür weniger flexibel und gilt sicherheitstechnisch als suboptimal. 
+
+% TODO: figure out what to do with this
+LoRaWAN"=Netzwerke verwenden das Aloha"=Zugriffsverfahren: Endgeräte senden, wann
+immer sie Daten zu übertragen haben, ohne vorherige Kanalprüfung. Gateways hören
+permanent auf allen Kanälen. Kollisionen werden durch das Spread"=Spectrum"=Verfahren
+und den Einsatz mehrerer Kanäle minimiert, aber nicht vollständig ausgeschlossen.
 
 \subsection{Öffentliche vs. private Netzwerke}
 \label{subsec:netzwerktypen}
@@ -257,30 +252,6 @@ die einzig praktikable Option. Als Network"=Server"=Software kommt dabei \textbf
 zum Einsatz, da dieser vollständig lokal auf einem Raspberry Pi betrieben werden kann
 und keine Internetverbindung erfordert. Semtech bietet für Prototyping"=Zwecke zudem
 einen kostenlosen Network Server für bis zu drei Gateways und zehn Endgeräte an.
-
-% -----------------------------------------------------------------------------
-\section{Sicherheitsmechanismen in LoRaWAN}
-\label{sec:sicherheit}
-% -----------------------------------------------------------------------------
-
-LoRaWAN setzt auf AES"=128"=Verschlüsselung auf zwei Ebenen: Der \textit{Network
-Session Key} (NwkSKey) sichert die Kommunikation zwischen Endgerät und Network
-Server, während der \textit{Application Session Key} (AppSKey) die Ende"=zu"=Ende"=Verschlüsselung
-der Nutzdaten zwischen Endgerät und Application Server gewährleistet~\cite{lorawan_spec}.
-
-Für den sicheren Betrieb in industriellen und sicherheitskritischen Umgebungen empfiehlt
-sich der Einsatz von \textit{Secure Elements} (kryptografische Chips). Diese
-Spezialchips speichern die kryptografischen Schlüssel in schreibgeschützten Registern,
-beschleunigen Ver"= und Entschlüsselung ohne CPU"=Belastung und ermöglichen die
-Verifikation der Firmware"=Authentizität -- wodurch das Risiko eines unbefugten % TODO: remove --
-Firmware"=Overwrite durch einen Angreifer minimiert wird~\cite{semtech_lora_basics}.
-
-Zur Abwehr von Replay"=Angriffen sollten 32"=Bit"=Rahmenzähler für Uplink und Downlink
-aktiviert werden. Darüber hinaus kann eine feste Payload"=Länge dabei helfen, ereignisgesteuerte
-Aktivitäten vor Angreifern zu verschleiern, die aus variierenden Paketlängen auf den
-Systemzustand schließen könnten. Die \textit{Out"=of"=Band Key Provisioning}"=Methode
--- etwa über BLE oder NFC -- stellt sicher, dass Produktionsmitarbeiter keinen Zugriff % TODO: remove --
-auf die Geräteschlüssel erhalten.
 
 % -----------------------------------------------------------------------------
 \section{Energieeffizienz in eingebetteten LoRaWAN"=Systemen}
@@ -481,6 +452,7 @@ zu berücksichtigen und werden in Kapitel~\ref{chap:hardware} eingehend behandel
 \newacronym{AppSKey}{AppSKey}{Application Session Key}
 \newacronym{NwkAddr}{NwkAddr}{Network Address}
 \newacronym{eui}{EUI}{Extended Unique Identifier}
+\newacronym{DevEUI}{DevEUI}{Device EUI}
 \newacronym{mapl}{MAPL}{Maximum Allowable Path Loss}
 \newacronym{fspl}{FSPL}{Free Space Path Loss}
 \newacronym{srtm}{SRTM}{Shuttle Radar Topography Mission}

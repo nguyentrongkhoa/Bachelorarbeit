@@ -698,6 +698,34 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{DevEUI}%
+{%
+name={\acronymfont {\glsentryshort {DevEUI}}},%
+sort={DevEUI},%
+type={acronym},%
+first={DevEUI},%
+firstplural={DevEUIs},%
+text={DevEUI},%
+plural={DevEUIs},%
+description={Device EUI},%
+descriptionplural={Device EUI},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Device EUI},%
+longplural={Device EUIs},%
+short={DevEUI},%
+shortplural={DevEUIs},%
+counter={page},%
+parent={},%
+%
+}%
+
 \glsdefs@newdocentry{mapl}%
 {%
 name={\acronymfont {\glsentryshort {mapl}}},%
