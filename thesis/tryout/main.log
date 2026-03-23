@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.3.15)  23 MAR 2026 06:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.3.15)  23 MAR 2026 07:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1269,105 +1269,91 @@ Underfull \hbox (badness 1796) in paragraph at lines 162--162
 
 [6]
 
-LaTeX Warning: Citation 'lorawan_spec' on page 7 undefined on input line 188.
+LaTeX Warning: Citation 'semtech_lora_basics' on page 7 undefined on input line 201.
+
+[7]
+
+LaTeX Warning: Citation 'lorawan_spec' on page 8 undefined on input line 223.
 
 
-Overfull \hbox (16.8512pt too wide) in paragraph at lines 185--190
-\T1/LinuxLibertineT-TLF/m/n/10.95 Rou-ting, Netz-werk-steue-rung so-wie die Über-wa-chung von Ga-te-ways und End-ge-rä-ten [].
- []
+LaTeX Warning: Citation 'semtech_lora_basics' on page 8 undefined on input line 238.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\acrfull' on input line 191.
-
-
-LaTeX Warning: Citation 'semtech_lora_basics' on page 7 undefined on input line 197.
-
-
-Underfull \vbox (badness 5388) has occurred while \output is active []
-
- [7]
-
-LaTeX Warning: Citation 'lorawan_spec' on page 8 undefined on input line 219.
-
-
-LaTeX Warning: Citation 'semtech_lora_basics' on page 8 undefined on input line 234.
-
-
-LaTeX Warning: Citation 'semtech_lora_basics' on page 8 undefined on input line 243.
+LaTeX Warning: Citation 'semtech_lora_basics' on page 8 undefined on input line 247.
 
 [8]
 
-LaTeX Warning: Citation 'lorawan_spec' on page 9 undefined on input line 265.
+LaTeX Warning: Citation 'lorawan_spec' on page 9 undefined on input line 269.
 
 
-LaTeX Warning: Citation 'semtech_lora_basics' on page 9 undefined on input line 272.
+LaTeX Warning: Citation 'semtech_lora_basics' on page 9 undefined on input line 276.
 
 
-Overfull \hbox (63.04488pt too wide) in paragraph at lines 267--273
+Overfull \hbox (63.04488pt too wide) in paragraph at lines 271--277
 \T1/LinuxLibertineT-TLF/m/n/10.95 das Ri-si-ko ei-nes un-be-fug-ten Firm-wa-re-Over-wri-te durch einen An-grei-fer mi-ni-miert wird []. 
  []
 
 
-LaTeX Warning: Citation 'semtech_lora_basics' on page 9 undefined on input line 289.
+LaTeX Warning: Citation 'semtech_lora_basics' on page 9 undefined on input line 293.
 
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 290.
+(Font)              scaled to size 8.0pt on input line 294.
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 292.
+(Font)              scaled to size 10.95pt on input line 296.
 
-LaTeX Warning: Citation 'stm32wl_ds' on page 9 undefined on input line 292.
+LaTeX Warning: Citation 'stm32wl_ds' on page 9 undefined on input line 296.
 
-[9{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_naooyc.enc}]
+[9]
 
-LaTeX Warning: Citation 'semtech_lora_basics' on page 10 undefined on input line 325.
-
-
-LaTeX Warning: Reference `chap:evaluation' on page 10 undefined on input line 334.
+LaTeX Warning: Citation 'semtech_lora_basics' on page 10 undefined on input line 329.
 
 
-LaTeX Warning: Citation 'semtech_lora_basics' on page 10 undefined on input line 356.
+LaTeX Warning: Reference `chap:evaluation' on page 10 undefined on input line 338.
 
-[10]
+[10{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_naooyc.enc}]
 
-LaTeX Warning: Citation 'dobkin2012rf' on page 11 undefined on input line 376.
-
-
-LaTeX Warning: Citation 'haslett2008essentials' on page 11 undefined on input line 401.
+LaTeX Warning: Citation 'semtech_lora_basics' on page 11 undefined on input line 360.
 
 
-Overfull \hbox (5.95749pt too wide) in paragraph at lines 399--407
+LaTeX Warning: Citation 'dobkin2012rf' on page 11 undefined on input line 380.
+
+
+LaTeX Warning: Citation 'haslett2008essentials' on page 11 undefined on input line 405.
+
+
+Overfull \hbox (5.95749pt too wide) in paragraph at lines 403--411
 \T1/LinuxLibertineT-TLF/m/n/10.95 ten ein-ge-setz-te Mo-dell und eig-net sich da-mit di-rekt für das $\OT1/cmr/m/n/10.95 868$$[]$\T1/LinuxLibertineT-TLF/m/n/10.95 -Band [].
- []
-
-
-LaTeX Warning: Citation 'haslett2008essentials' on page 11 undefined on input line 411.
-
-
-Overfull \hbox (9.87518pt too wide) in paragraph at lines 411--412
-[]\T1/LinuxLibertineT-TLF/m/n/10.95 Die emp-foh-le-ne Me-tho-dik zur RF-Pla-nung folgt ei-nem drei-stu-fi-gen Pro-zess []: 
  []
 
 [11]
 
-LaTeX Warning: Citation 'walter2006radio' on page 12 undefined on input line 434.
+LaTeX Warning: Citation 'haslett2008essentials' on page 12 undefined on input line 415.
 
 
-LaTeX Warning: Reference `chap:hardware' on page 12 undefined on input line 451.
+Overfull \hbox (9.87518pt too wide) in paragraph at lines 415--416
+[]\T1/LinuxLibertineT-TLF/m/n/10.95 Die emp-foh-le-ne Me-tho-dik zur RF-Pla-nung folgt ei-nem drei-stu-fi-gen Pro-zess []: 
+ []
 
+
+LaTeX Warning: Citation 'walter2006radio' on page 12 undefined on input line 438.
+
+
+LaTeX Warning: Reference `chap:hardware' on page 12 undefined on input line 455.
+
+[12]
 \@gls@deffile=\write12
 \openout12 = `main.glsdefs'.
 
-) (./anhang.tex [12]
+) (./anhang.tex [13] [14
+
+]
 Anhang A.
 
 Overfull \hbox (15.25049pt too wide) in paragraph at lines 31--33
 []\T1/fvm/m/n/10.95 bhtThesis.bib \T1/LinuxLibertineT-TLF/m/n/10.95 bein-hal-tet die zu zi-tie-ren-den Li-te-ra-tur-stel-len und wird von bibT[]Xausgewertet 
  []
 
-[13
-
-]) [14] (./main.gls) [15
+[15]) [16] (./main.gls) [17
 
 ] (./main.aux)
  ***********
@@ -1379,16 +1365,16 @@ L3 programming layer <2024-01-22>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 5482B300C84E071B4BAC155AD541DD25;5378.
+(rerunfilecheck)             Checksum: 4D4EE969DDA6ED6440403D93B825E661;5423.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32329 strings out of 474222
- 606257 string characters out of 5748733
+ 32333 strings out of 474222
+ 606352 string characters out of 5748733
  1936975 words of memory out of 5000000
- 53999 multiletter control sequences out of 15000+600000
+ 54001 multiletter control sequences out of 15000+600000
  668321 words of font info for 112 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  94i,13n,93p,2407b,2678s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1415,6 +1401,9 @@ pdfTeX warning (dest): name{glo:mcu} has been referenced but does not exist, rep
 
 
 pdfTeX warning (dest): name{glo:as} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{glo:js} has been referenced but does not exist, replaced by a fixed one
 
 
 pdfTeX warning (dest): name{glo:ns} has been referenced but does not exist, replaced by a fixed one
@@ -1449,14 +1438,11 @@ pdfTeX warning (dest): name{glo:lorawan} has been referenced but does not exist,
 
 pdfTeX warning (dest): name{glo:lora} has been referenced but does not exist, replaced by a fixed one
 
-
-pdfTeX warning (dest): name{glo:js} has been referenced but does not exist, replaced by a fixed one
-
 </usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on main.pdf (22 pages, 394035 bytes).
+Output written on main.pdf (24 pages, 395220 bytes).
 PDF statistics:
- 408 PDF objects out of 1000 (max. 8388607)
- 350 compressed objects within 4 object streams
- 80 named destinations out of 1000 (max. 500000)
+ 413 PDF objects out of 1000 (max. 8388607)
+ 353 compressed objects within 4 object streams
+ 82 named destinations out of 1000 (max. 500000)
  224 words of extra memory for PDF output out of 10000 (max. 10000000)
 

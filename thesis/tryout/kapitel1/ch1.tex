@@ -178,17 +178,21 @@ Daher empfiehlt es sich, sie in der Nähe von Fensterfronten zu platzieren, um d
 
 Für den Außeneinsatz sind hingegen Outdoor"=Gateways erforderlich, die aufgrund wasserdichter Gehäuse und Hohlraumfilter 
 teurer sind als ihre Indoor"=Pendants. In diesem Fall gilt es zu beachten, dass Gateways möglichst hoch montiert werden sollen, 
-um die Sichtlinie zu den Endgeräten zu verbessern und damit die Reichweite zu erhöhen.
+um die Sichtlinie zu den Endgeräten zu garantieren und damit die Reichweite zu erhöhen.
 
 \subsection{Network-Server}
 
-Der \textbf{Network-Server} (\acrshort{ns}) ist der zentrale Knotenpunkt des LoRaWAN"=Netzwerks. Er
-übernimmt Nachrichtenkonsolidierung (falls ein Paket von mehreren Gateways empfangen
-wurde), Routing, Netzwerksteuerung sowie die Überwachung von Gateways und
-Endgeräten~\cite{lorawan_spec}. Das \textit{Network Reference Model} (NRM) definiert
-die standardisierten Schnittstellen zwischen diesen Elementen.
+Mit den Gateways hört auch der Geltungsbereich von LoRa auf und wir verlassen somit die Bitübertragungsschicht des OSI-Modells. % TODO: check validity of this statement
+Die Informationspakete gelangen als Nächstes über eine Backhaul-Verbindung (bswp. Ethernet oder Mobilfunk) zu den Servern, 
+von welchen der \textbf{Network-Server} (\acrshort{ns}) der zentrale Knotenpunkt der LoRaWAN"=Sterntopologie ist. 
+An dieser Stelle tritt das Dokument \citetitle{LoRaWanBackendInterfaces2020} zum Vorschein. 
 
-\subsection{\acrfull{js}}
+Zu den Aufgaben eines Network-Servers gehören: Überprüfung von Endgerätadressen, Paketsauthentifizierung, Anpassung der Datenraten
+(hierauf wird im Abschnitt \ref{subsec:adr} näher eingegangen), Weiterleiten von Payloads bzw. Join-Anfragen an entsprechende 
+Application-Servers und Join-Server jeweils. Zusätzlich kümmern sich Network-Server um die Konsolidierung von Nachrichten, 
+die von mehreren Gateways empfangen wurden, sowie um die Überwachung der Netzwerk- und Gateway"=Leistung. % TODO: 
+
+\subsection{Join-Server}
 
 Der \textbf{Join Server} verwaltet die kryptografischen Wurzelschlüssel und wird
 insbesondere beim \acrlong{otaa}"=Aktivierungsverfahren benötigt. Er muss in einer

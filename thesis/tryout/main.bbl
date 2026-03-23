@@ -19,6 +19,30 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
+    \entry{LoRaWanBackendInterfaces2020}{report}{}
+      \list{institution}{1}{%
+        {LoRa Alliance}%
+      }
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labeltitlesource}{title}
+      \field{month}{10}
+      \field{number}{TS002-1.1.0}
+      \field{title}{{LoRaWAN}® {Backend} {Interfaces} {Technical} {Documentation} ({TS002}-1.1.0)}
+      \field{type}{Technical {Documentation}}
+      \field{year}{2020}
+      \verb{file}
+      \verb PDF:C\:\\Users\\khoa1\\Zotero\\storage\\6J53BR8E\\2020 - LoRaWAN® Backend Interfaces Technical Documentation (TS002-1.1.0).pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://lora-alliance.org/wp-content/uploads/2020/11/TS002-1.1.0_LoRaWAN_Backend_Interfaces.pdf
+      \endverb
+      \verb{url}
+      \verb https://lora-alliance.org/wp-content/uploads/2020/11/TS002-1.1.0_LoRaWAN_Backend_Interfaces.pdf
+      \endverb
+    \endentry
     \entry{LoRaWANL21042020}{report}{}
       \list{institution}{1}{%
         {LoRa Alliance}%
