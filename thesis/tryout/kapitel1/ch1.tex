@@ -170,14 +170,15 @@ diese über eine Ethernet- oder Mobilfunkverbindung an die Netzwerkserver weiter
 dass Gateways die Signale der Server Endgeräten zur Verfügung stellen. Da Gateways permanent auf allen Kanälen lauschen, 
 können Endgeräte jederzeit senden, solange regulatorische Gegebenheiten es erlauben. % TODO: write about indoor and outdoor gateways
 
-Gateways sind zustandslos (\textit{stateless}) -- sie speichern keine
-sitzungsspezifischen Informationen und unterscheiden nicht zwischen verschiedenen
-Endgeräten~\cite{lorawan_spec}. In Europa werden je nach Band insgesamt 10 Kanäle
-definiert, von denen drei obligatorisch von allen Geräten unterstützt werden müssen.
-Bei Systemen für den Außeneinsatz sind Outdoor"=Gateways erforderlich, die aufgrund
-wasserdichter Gehäuse und Hohlraumfilter teurer sind als Indoor"=Varianten. Als
-Faustregel empfiehlt sich für Indoor"=Installationen die Platzierung des Gateways in
-der Nähe von Fensterfronten, um den Signaldurchgang zu verbessern.
+Aufgrund dessen, dass Gateways aus Sicht des LoRaWAN"=Protokolls transparent sind, werden sie in technischen Spezifikationen der 
+LoRa-Alliance nur flüchtig erwähnt und größtenteils "wegabstrahiert". Um diese theoretische Transparenz jedoch zu gewährleisten, 
+müsste man bei der Platzierung Gedanken machen. Indoor-Gateways zum Beispiel, also in Innenräumen installierte Gateways, 
+haben eine beschränkte Reichweite, die sie dem hohen Dämpfungsvermögen von Baumaterialien zu verdanken haben. 
+Daher empfiehlt es sich, sie in der Nähe von Fensterfronten zu platzieren, um den Signaldurchgang zu verbessern. 
+
+Für den Außeneinsatz sind hingegen Outdoor"=Gateways erforderlich, die aufgrund wasserdichter Gehäuse und Hohlraumfilter 
+teurer sind als ihre Indoor"=Pendants. In diesem Fall gilt es zu beachten, dass Gateways möglichst hoch montiert werden sollen, 
+um die Sichtlinie zu den Endgeräten zu verbessern und damit die Reichweite zu erhöhen.
 
 \subsection{Network-Server}
 

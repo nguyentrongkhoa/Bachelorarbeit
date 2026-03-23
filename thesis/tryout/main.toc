@@ -7,9 +7,9 @@
 \contentsline {subsection}{\numberline {1.2.1}Netzwerkarchitektur}{5}{subsection.1.2.1}%
 \contentsline {subsection}{\numberline {1.2.2}Endgeräte}{5}{subsection.1.2.2}%
 \contentsline {subsection}{\numberline {1.2.3}Gateways}{6}{subsection.1.2.3}%
-\contentsline {subsection}{\numberline {1.2.4}\acrfull {ns}}{7}{subsection.1.2.4}%
+\contentsline {subsection}{\numberline {1.2.4}Network-Server}{7}{subsection.1.2.4}%
 \contentsline {subsection}{\numberline {1.2.5}\acrfull {js}}{7}{subsection.1.2.5}%
-\contentsline {subsection}{\numberline {1.2.6}Aktivierungsverfahren: OTAA und ABP}{7}{subsection.1.2.6}%
+\contentsline {subsection}{\numberline {1.2.6}Aktivierungsverfahren: OTAA und ABP}{8}{subsection.1.2.6}%
 \contentsline {subsection}{\numberline {1.2.7}Adaptive Data Rate}{8}{subsection.1.2.7}%
 \contentsline {subsection}{\numberline {1.2.8}Öffentliche vs. private Netzwerke}{8}{subsection.1.2.8}%
 \contentsline {section}{\numberline {1.3}Sicherheitsmechanismen in LoRaWAN}{9}{section.1.3}%
@@ -20,7 +20,7 @@
 \contentsline {section}{\numberline {1.5}RF"=Planung und Signalausbreitung}{10}{section.1.5}%
 \contentsline {subsection}{\numberline {1.5.1}Link Budget}{10}{subsection.1.5.1}%
 \contentsline {subsection}{\numberline {1.5.2}Freiraum"=Pfadverlust und Ausbreitungsmodelle}{11}{subsection.1.5.2}%
-\contentsline {subsection}{\numberline {1.5.3}RF"=Planungsmethodik}{11}{subsection.1.5.3}%
+\contentsline {subsection}{\numberline {1.5.3}RF"=Planungsmethodik}{12}{subsection.1.5.3}%
 \contentsline {subsection}{\numberline {1.5.4}Mikrozellen und Makrozellen}{12}{subsection.1.5.4}%
 \contentsline {section}{\numberline {1.6}Normierung und Anforderungen im Bereich Schutzsensorik}{12}{section.1.6}%
 \contentsline {chapter}{\numberline {A}Angehängtes: Die Dateien des Pakets}{13}{appendix.A}%
