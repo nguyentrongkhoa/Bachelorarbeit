@@ -349,6 +349,25 @@ Zündschutzarten, Gehäuseschutz (IP"=Klassen) und Temperaturklassen. Diese
 Anforderungen sind bei der Hardwareauswahl und dem mechanischen Design des Prototyps
 zu berücksichtigen und werden in Kapitel~\ref{chap:hardware} eingehend behandelt.
 
+% TODO: see where this section fits
+\subsection{Öffentliche vs. private Netzwerke}
+\label{subsec:netzwerktypen}
+
+Bei der Wahl der Netzwerkinfrastruktur sind drei Faktoren maßgeblich: Kosten,
+Zugangskontrolle und Datenschutz~\cite{LoRaModulationBasics}.
+
+Öffentliche Netze (z.B. The Things Network) sind für kleine Gerätezahlen und
+Prototyping geeignet, erfordern jedoch eine bestehende Abdeckung und bieten keine
+Möglichkeit zur Optimierung durch eigene Gateways. Private Netzwerke eignen sich
+für große Gerätezahlen und sicherheitskritische Anwendungen, erfordern jedoch die
+Installation und den Betrieb eigener Gateways und Server"=Infrastruktur. Für das
+in dieser Arbeit betrachtete Off"=Grid"=Szenario -- den Einsatz in abgelegenen
+Gefahrgebieten ohne bestehende Infrastruktur -- ist ein privates, autarkes Netzwerk
+die einzig praktikable Option. Als Network"=Server"=Software kommt dabei \textbf{ChirpStack}
+zum Einsatz, da dieser vollständig lokal auf einem Raspberry Pi betrieben werden kann
+und keine Internetverbindung erfordert. Semtech bietet für Prototyping"=Zwecke zudem
+einen kostenlosen Network Server für bis zu drei Gateways und zehn Endgeräte an.
+
 Semtech's document on LoRa modulation basics: 
 In addition, due to the
 processing gain associated with LoRa, the output power of the transmitter can be reduced compared to

@@ -222,6 +222,62 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{dBm}%
+{%
+name={\acronymfont {\glsentryshort {dBm}}},%
+sort={dBm},%
+type={acronym},%
+first={dBm},%
+firstplural={dBms},%
+text={dBm},%
+plural={dBms},%
+description={Dezibel Milliwatt},%
+descriptionplural={Dezibel Milliwatt},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Dezibel Milliwatt},%
+longplural={Dezibel Milliwatts},%
+short={dBm},%
+shortplural={dBms},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{rssi}%
+{%
+name={\acronymfont {\glsentryshort {rssi}}},%
+sort={RSSI},%
+type={acronym},%
+first={RSSI},%
+firstplural={RSSIs},%
+text={RSSI},%
+plural={RSSIs},%
+description={Received Signal Strength Indicator},%
+descriptionplural={Received Signal Strength Indicator},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Received Signal Strength Indicator},%
+longplural={Received Signal Strength Indicators},%
+short={RSSI},%
+shortplural={RSSIs},%
+counter={page},%
+parent={},%
+%
+}%
+
 \glsdefs@newdocentry{fsk}%
 {%
 name={\acronymfont {\glsentryshort {fsk}}},%

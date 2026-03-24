@@ -42,22 +42,15 @@ Einsatz in urbanen und suburbanen Umgebungen begünstigt.
 \paragraph*{Hohe Reichweite}
 Für eine gegebene Sendeleistung kann bei LoRa die Reichweite bis zu 4 mal so groß im Vergleich zu FSK.
 
-% TODO: figure what to do with this
-Gegenüber klassischen Schmalband"=Modulationsverfahren wie \acrshort{fsk} besitzt CSS einen
-wesentlichen Vorteil: Das Signal kann noch korrekt demoduliert werden, selbst wenn der
-Empfangspegel deutlich unterhalb des Rauschpegels liegt. Das resultierende
-Signal"=zu"=Rausch"=Verhältnis (\acrshort{snr}) kann dabei negative Werte von bis zu
-\qty{-20}{dB} annehmen. Mit FSK lassen sich Datenraten von bis zu \qty{50}{kbps}
-erzielen; LoRa liefert demgegenüber typische Nutzdatenraten zwischen \qty{300}{bps}
-und \qty{11}{kbps}.
+\subsection{Wichtige Kenngrößen und Formeln} 
+\label{subsec:param}
 
-\subsection{Wichtige Kenngrößen und Formeln} % TODO: work on this
-
-\subsection{Spreading Factor, Bandbreite und Coding Rate}
-\label{subsec:sf-bw-cr}
-
-Die wichtigsten Parameter zur Steuerung des LoRa"=Signals sind der \acrfull{sf}, 
-die Bandbreite (\acrshort{bw}) sowie die Coding Rate (\acrshort{cr}). % TODO: cite sylvain montagny
+\subsubsection*{Modulationskenngrößen}
+Um die Übertragungsqualität eines LoRa-Links zu charakterisieren und zu optimieren,
+sind grundlegende Parameter maßgeblich, unter anderem der \acrfull{sf}, die Bandbreite
+(\acrshort{bw}) sowie die \acrfull{cr}. Ihre Wechselwirkung bestimmt
+den Trade-off zwischen Reichweite, Datenrate und Energieverbrauch, also die drei
+zentralen Designziele des in dieser Arbeit entwickelten Systems. % TODO: cite sylvain montagny
 
 Der SF gibt die Anzahl der Bits pro Symbol bzw Chirp an und kann Werte von 7 bis 12 annehmen. 
 Wenn zum Beispiel mit SF12 übertragen wird, enthält jeder Chirp 12 Bits. Es gibt in diesem Fall also $2^{12} = 4096$ mögliche Symbole, 
@@ -78,7 +71,7 @@ Die Symbolrate $F_{\text{sym}}$ kann durch Kehrwertbildung ermittelt werden:
   \label{eq:fsym}
 \end{equation}
 
-Da jedes Symbol genau SF Bits mit sich trägt, ergibt sich die Bitrate $R_b$ zu:
+Da jedes Symbol per Definition SF Bits mit sich trägt, ergibt sich die Bitrate $R_b$ zu:
 
 \begin{equation}
   R_b = F_{\text{sym}} \cdot \text{SF} = \frac{\text{BW} \cdot \text{SF}}{2^\text{SF}}
@@ -123,12 +116,13 @@ Unter Berücksichtigung der Coderaten lässt sich die effektive Bitrate $R_\text
 \end{equation}
 
 Tabelle~\ref{tab:sf_vergleich} stellt den Zusammenhang zwischen wichtigen Kenngrößen dar. Hierbei wird von einer \qty{125}{kHz}-BW 
-und einer CR von 4/5 ausgegangen, da dies die Standardkonfiguration für LoRaWAN ist. 
+und einer CR von 4/5 ausgegangen, da dies die Standardkonfiguration für LoRaWAN ist. Die Payloadgröße wird willkürlich auf 50 Bytes 
+festgelegt, weil es dem maximal zulässigen Wert für SF12 entspricht. 
 
 % TODO: explain what Empfindlichkeit means
 \begin{table}[htbp]
   \centering
-  \caption{Wichtige LoRa-Parameter in einem Blick (BW=\qty{125}{kHz}, CR=4/5)}
+  \caption{Wichtige LoRa-Parameter in einem Blick}
   \label{tab:sf_vergleich}
   \begin{tabular}{@{}lrrrl@{}}
     \toprule
@@ -147,26 +141,72 @@ und einer CR von 4/5 ausgegangen, da dies die Standardkonfiguration für LoRaWAN
   \end{tabular}
 \end{table}
 
+\subsubsection*{Linkqualität und Reichweite}
+Die bisher vorgestellten Parameter SF, BW und CR beschreiben das LoRa-Signal
+auf der Senderseite. Um jedoch beurteilen zu können, ob eine Übertragungsstrecke
+unter realen Bedingungen zuverlässig funktioniert, sind empfängerseitige
+Kenngrößen sowie eine Abschätzung der maximal überbrückbaren Distanz erforderlich.
+
+Die \textbf{Empfangsempfindlichkeit} gibt die minimale Signalleistung an, bei der ein Empfänger ein Signal noch korrekt
+demodulieren kann. Sie ist direkt vom gewählten SF abhängig: Ein höherer SF ermöglicht eine bessere Empfangsempfindlichkeit, 
+wie bereits aus Tabelle~\ref{tab:sf_vergleich} ersichtlich ist. 
+
+Der \textbf{\acrfull{rssi}} ist ein Maß für die empfangene Signalleistung in
+dBm und wird vom Empfänger nach jeder Übertragung gemessen. Er gibt
+Auskunft darüber, wie stark das Signal am Empfänger ankommt, berücksichtigt
+jedoch nicht den Rauschpegel. Ergänzend dazu beschreibt das
+\textbf{\acrfull{snr}} das Verhältnis zwischen Nutz- und Rauschsignal. Während
+RSSI allein keine zuverlässige Aussage über die Demodulierbarkeit eines Signals
+erlaubt, ermöglicht erst die gemeinsame Betrachtung beider Größen eine fundierte
+Bewertung der Linkqualität, insbesondere bei schwachen Signalen nahe der
+Empfangsempfindlichkeitsgrenze.
+
+% TODO: maybe delete MAPL completely if text is too long
+Das \textbf{\acrfull{mapl}} beschreibt den maximal tolerierbaren Pfadverlust
+entlang der Übertragungsstrecke und ergibt sich aus der Differenz zwischen
+Sendeleistung und Empfangsempfindlichkeit unter Berücksichtigung aller Gewinne
+und Verluste: 
+
+\begin{equation}
+  \text{MAPL} = P_\text{TX} + G_\text{TX} + G_\text{RX}
+                - L_\text{Kabel} - \text{NF} - \text{SNR}_\text{min}
+                - \text{Sicherheitsmarge}
+  \label{eq:mapl}
+\end{equation}
+
+wobei $P_\text{TX}$ die Sendeleistung in \si{dBm}, $G_\text{TX}$ und
+$G_\text{RX}$ die Antennengewinne in \si{dBi}, NF das Rauschen des Empfängers
+und $\text{SNR}_\text{min}$ das minimal tolerierte Signal"=zu"=Rausch"=Verhältnis
+bezeichnen. Als maximaler Antennengewinn einer einfachen Dipolantenne gilt
+$G = \SI{2.15}{dBi}$. Eine Sicherheitsmarge von 5 bis \SI{10}{dB} wird
+empfohlen, um Schwundeffekte und nicht modellierte Hindernisse zu
+kompensieren~\cite{LoRaModulationBasics}.
+
+Aus dem MAPL lässt sich schließlich unter Verwendung des
+Freiraum"=Pfadverlustmodells (vgl. Abschnitt~\ref{subsec:pfadverlust}) die % TODO: correct section reference
+\textbf{theoretische Reichweite} der Übertragungsstrecke abschätzen. Für den Chip SX1272 von Semtech zum Beispiel kommt man 
+auf einen theoretischen Wert von \qty{1946}{km}. % TODO: cite sylvain montagny
+
+% TODO: write about link budget here
+
 \subsection{Frequenzbänder und regulatorische Rahmenbedingungen}
 \label{subsec:frequenzbaender}
 
-LoRa nutzt sogenannte \acrfull{ism}"=Bänder, für die keine Lizenz erworben werden muss.
+LoRa nutzt sogenannte \acrshort{ism}"=Bänder (für \acrlong{ism}), für die keine Lizenz erworben werden muss.
 In Europa werden die Frequenzbänder \SI{433}{\MHz} und \SI{868}{\MHz} verwendet,
 in Nordamerika \SI{915}{\MHz}. Da die Frequenzzuweisungen regional verschieden sind,
-können Geräte, die für den europäischen Markt entwickelt wurden, nicht ohne
-Anpassungen in anderen Regionen betrieben werden~% TODO: \cite{lorawan_spec}.
+können Geräte, die für den europäischen Markt entwickelt wurden, nicht ohne Anpassungen in anderen Regionen betrieben werden.
 
-Für das \SI{868}{\MHz}"=Band in Europa gilt eine Duty"=Cycle"=Begrenzung: Endgeräte
-dürfen je nach Subband 0{,}1\,\%, 1\,\% oder 10\,\% der Zeit senden. Die
-10\,\%"=Ausnahme gilt ausschließlich für Gateways~% TODO: \cite{lorawan_spec}. In der Praxis
-bedeutet eine 1\,\%"=Beschränkung beispielsweise, dass ein Gerät nach einer
+Für das \SI{868}{\MHz}"=Band in Europa gilt eine Duty"=Cycle"=Begrenzung: Endgeräte dürfen je nach Subband 0{,}1\,\%, 1\,\% der 
+Zeit senden; für Gateways gilt die Schwelle 10\%. In der Praxis
+bedeutet eine 1\,\%"=Beschränkung bswp., dass ein Gerät nach einer
 Sendedauer von \SI{1}{\s} mindestens \SI{99}{\s} warten muss, bevor es erneut auf
 demselben Kanal sendet. Für zeitkritische Warn"= und Alarmsysteme ist diese
 Einschränkung bei der Systemauslegung zwingend zu berücksichtigen.
 
 Die maximale Paketgröße in Europa beträgt 222\,Bytes bei hoher Datenrate und
 51\,Bytes bei niedriger Datenrate. Dabei addiert LoRaWAN stets einen
-13"=Byte"=Overhead zum Nutzdaten"=Payload~% TODO: \cite{lorawan_spec}.
+13"=Byte"=Overhead zum Nutzdaten"=Payload. 
 
 % -----------------------------------------------------------------------------
 \section{LoRaWAN -- Network Layer} % TODO: remove --
@@ -215,7 +255,7 @@ und für das Thema Off-Grid-Schutzsensorik eine eher untergeordnete Rolle spiele
 
 \begin{table}[ht]
     \centering
-    \caption{Zusammenfassung der LoRaWAN-Klassen und ihrer Merkmale}
+    \caption{LoRaWAN-Klassen und ihrer Merkmale}
     \label{tab:lorawan_mnemonics}
     \begin{tabularx}{\textwidth}{l l X X}
         \toprule
@@ -302,47 +342,6 @@ vorab im Gerät fest einprogrammiert. Das Gerät kann sofort ohne Join"=Prozedur
 allerdings dafür weniger flexibel und gilt sicherheitstechnisch als suboptimal. Wenn beispielsweise ein Gerät kompromittiert wird, 
 können die fest eingebauten Schlüssel nicht mehr geändert werden, was zu einem dauerhaften Sicherheitsrisiko führt.
 
-% TODO: see where this section fits
-\subsection{Öffentliche vs. private Netzwerke}
-\label{subsec:netzwerktypen}
-
-Bei der Wahl der Netzwerkinfrastruktur sind drei Faktoren maßgeblich: Kosten,
-Zugangskontrolle und Datenschutz~\cite{semtech_lora_basics}.
-
-Öffentliche Netze (z.B. The Things Network) sind für kleine Gerätezahlen und
-Prototyping geeignet, erfordern jedoch eine bestehende Abdeckung und bieten keine
-Möglichkeit zur Optimierung durch eigene Gateways. Private Netzwerke eignen sich
-für große Gerätezahlen und sicherheitskritische Anwendungen, erfordern jedoch die
-Installation und den Betrieb eigener Gateways und Server"=Infrastruktur. Für das
-in dieser Arbeit betrachtete Off"=Grid"=Szenario -- den Einsatz in abgelegenen
-Gefahrgebieten ohne bestehende Infrastruktur -- ist ein privates, autarkes Netzwerk
-die einzig praktikable Option. Als Network"=Server"=Software kommt dabei \textbf{ChirpStack}
-zum Einsatz, da dieser vollständig lokal auf einem Raspberry Pi betrieben werden kann
-und keine Internetverbindung erfordert. Semtech bietet für Prototyping"=Zwecke zudem
-einen kostenlosen Network Server für bis zu drei Gateways und zehn Endgeräte an.
-
-\subsection{Link Budget}
-\label{subsec:link-budget}
-
-Das Link Budget beschreibt die Gesamtbilanz aller Signalgewinne und -verluste
-entlang der Übertragungsstrecke. Das \textit{Maximum Allowable Path Loss} (MAPL)
-ergibt sich aus:
-
-\begin{equation}
-  \text{MAPL} = P_\text{TX} + G_\text{TX} + G_\text{RX} - L_\text{cable}
-                - \text{NF} - \text{SNR}_\text{min} - \text{Margin}
-  \label{eq:mapl}
-\end{equation}
-
-wobei $P_\text{TX}$ die Sendeleistung in \si{dBm}, $G_\text{TX}$ und $G_\text{RX}$
-die Antennengewinne in \si{dBi}, NF das Rauschen des Empfängers und
-$\text{SNR}_\text{min}$ das minimale empfängerseitig tolerierte Signal"=zu"=Rausch"=Verhältnis
-beschreiben. Als maximaler Antennengewinn für eine einfache Dipolantenne gilt
-$G = \SI{2.15}{dBi}$. Ein Sicherheitsabstand von 5 bis \SI{10}{\dB} wird empfohlen,
-um Schwundeffekte und Hindernisse zu kompensieren~\cite{semtech_lora_basics}.
-Uplink und Downlink"=Budget sind aufgrund unterschiedlicher Antennenhöhen in der Regel
-nicht symmetrisch.
-
 % Format : \newacronym{label}{abbreviation}{full term}
 % TODO: remember to run makeglossaries main 
 \newacronym{lora}{LoRa}{Long Range}
@@ -353,6 +352,8 @@ nicht symmetrisch.
 \newacronym{bw}{BW}{Bandwidth (Bandbreite)}
 \newacronym{cr}{CR}{Coderate}
 \newacronym{snr}{SNR}{Signal-to-Noise Ratio}
+\newacronym{dBm}{dBm}{Dezibel Milliwatt}
+\newacronym{rssi}{RSSI}{Received Signal Strength Indicator}
 \newacronym{fsk}{FSK}{Frequency Shift Keying}
 \newacronym{mcu}{MCU}{Microcontroller Unit}
 \newacronym{ism}{ISM}{Industrial, Scientific, and Medical}
