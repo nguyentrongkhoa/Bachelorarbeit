@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1774343213.32668 "main.bcf" "main.bbl" "main" 1774343884.23878 0
+["biber main"] 1774343213.32668 "main.bcf" "main.bbl" "main" 1774351608.73445 0
   "LoRa.bib" 1774340066.4549 51657 64d2aa7eb35f5abbaba9bc312d387d60 ""
-  "main.bcf" 1774343883.78205 107851 92fb7c218aeb1beadb359a7102c5321d "pdflatex"
+  "main.bcf" 1774351608.33103 107851 92fb7c218aeb1beadb359a7102c5321d "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1774343877.04949 "/home/tom/zephyrproject/descap_lorawan/thesis/tryout/main.tex" "main.pdf" "main" 1774343884.23968 0
+["pdflatex"] 1774351604.04982 "/home/tom/zephyrproject/descap_lorawan/thesis/tryout/main.tex" "main.pdf" "main" 1774351608.73545 0
   "/etc/texmf/web2c/texmf.cnf" 1773605240.045 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/tom/zephyrproject/descap_lorawan/thesis/tryout/main.tex" 1774342404.39077 3378 362b0787acc2e6ce3b0d55ce575b4da9 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -57,7 +57,9 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/trsym/trsy10.tfm" 1275666996 116 968f218fd9dfecb267e5a71f98ed51da ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1248133631 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1248133631 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb" 1136849748 29228 440002646d60f9d1a0cdf5878b9a308f ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb" 1354061736 614791 ea39341e4db76f25cb20c361802d3cd5 ""
@@ -231,19 +233,19 @@
   "abstract_de.tex" 1771675946.13777 323 a0161c3507852da06c61f3b7b1b97975 ""
   "anhang.tex" 1771675946.18654 2263 94f992e24a7608bbf3ffbf67d933e978 ""
   "bhtThesis.sty" 1774175586.51523 14008 684a2402a6d7dab5ea84941c979e7954 ""
-  "kapitel1/ch1.tex" 1774343869.68838 21021 e321643f9e4b99cc4c9b699858ee7ca6 ""
+  "kapitel1/ch1.tex" 1774351598.40718 22793 6e8cbb8e8410d0aecb34ff912b74f8a5 ""
   "main.acr" 1773653696.18997 1501 2aaed51376da8401b9105966d753e3d3 ""
-  "main.aux" 1774343883.76156 4725 a4c146c64352235683af713fdced588e "pdflatex"
+  "main.aux" 1774351608.31503 5392 f5813875ca55a2ca28ce81a26f13960b "pdflatex"
   "main.bbl" 1774343216.77582 2845 741093184ddb8df74f3175b8b378b0c7 "biber main"
-  "main.cb" 1774343878.60633 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.cb2" 1774343878.59813 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.cb" 1774351605.03931 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.cb2" 1774351605.03531 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   "main.gls" 1773653696.18997 6 9f404503043ec80c08484be9f659189e ""
-  "main.glsdefs" 1774343883.75746 15627 77a1150378dc48ff7d02ad3a7a0f7b09 "pdflatex"
-  "main.lof" 1774343883.78614 70 a31aa18fa202e40667328a6661888bef "pdflatex"
-  "main.out" 1774343883.76975 2650 b16bb14e4f59b8effa4e9075d28383fe "pdflatex"
-  "main.run.xml" 1774343883.78614 2335 4994924e6d8541e4ed79284d6ad14ead "pdflatex"
+  "main.glsdefs" 1774351608.31103 16127 af9e64a9b25300b0f17811921ce06d47 "pdflatex"
+  "main.lof" 1774351608.33503 70 a31aa18fa202e40667328a6661888bef "pdflatex"
+  "main.out" 1774351608.32303 2644 1e8f79dd4e1c9a27c25994aa918c6e8d "pdflatex"
+  "main.run.xml" 1774351608.33503 2335 4994924e6d8541e4ed79284d6ad14ead "pdflatex"
   "main.tex" 1774342404.39077 3378 362b0787acc2e6ce3b0d55ce575b4da9 ""
-  "main.toc" 1774343883.78614 1296 9ddad385cb42016b3af47f234c54eda6 "pdflatex"
+  "main.toc" 1774351608.33503 1356 d96ee248d2a2af96b98bcf62b9b9f82a "pdflatex"
   "personalMacros.tex" 1771675946.07852 150 6e250442b75bf14149b4086972af6b8f ""
   "titelseiten.tex" 1771920651.09197 5635 b45af3e032748127ccb5c591a659acbe ""
   (generated)

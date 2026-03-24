@@ -1,15 +1,16 @@
 \babel@toc {ngerman}{}\relax 
 \contentsline {chapter}{\numberline {1}Grundlagen}{3}{chapter.1}%
 \contentsline {section}{\numberline {1.1}LoRa-Modulation}{3}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}Spreading Factor, Bandbreite und Coding Rate}{4}{subsection.1.1.1}%
-\contentsline {subsection}{\numberline {1.1.2}Frequenzbänder und regulatorische Rahmenbedingungen}{5}{subsection.1.1.2}%
-\contentsline {section}{\numberline {1.2}LoRaWAN -- Network Layer}{5}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Endgeräte}{6}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}Gateways}{6}{subsection.1.2.2}%
-\contentsline {subsection}{\numberline {1.2.3}Network-Server}{7}{subsection.1.2.3}%
-\contentsline {subsection}{\numberline {1.2.4}Join-Server}{8}{subsection.1.2.4}%
-\contentsline {subsection}{\numberline {1.2.5}Öffentliche vs. private Netzwerke}{9}{subsection.1.2.5}%
-\contentsline {subsection}{\numberline {1.2.6}Einfluss des Spreading Factors auf den Energieverbrauch}{9}{subsection.1.2.6}%
-\contentsline {subsection}{\numberline {1.2.7}Link Budget}{10}{subsection.1.2.7}%
-\contentsline {chapter}{\numberline {A}Angehängtes: Die Dateien des Pakets}{11}{appendix.A}%
-\contentsline {chapter}{Literatur- und Quellenverzeichnis}{13}{section*.14}%
+\contentsline {subsection}{\numberline {1.1.1}Allgemeines}{3}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Wichtige Kenngrößen und Formeln}{4}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}Spreading Factor, Bandbreite und Coding Rate}{4}{subsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.1.4}Frequenzbänder und regulatorische Rahmenbedingungen}{5}{subsection.1.1.4}%
+\contentsline {section}{\numberline {1.2}LoRaWAN -- Network Layer}{6}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Endgeräte}{7}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Gateways}{7}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Network-Server}{8}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}Join-Server}{9}{subsection.1.2.4}%
+\contentsline {subsection}{\numberline {1.2.5}Öffentliche vs. private Netzwerke}{10}{subsection.1.2.5}%
+\contentsline {subsection}{\numberline {1.2.6}Link Budget}{10}{subsection.1.2.6}%
+\contentsline {chapter}{\numberline {A}Angehängtes: Die Dateien des Pakets}{13}{appendix.A}%
+\contentsline {chapter}{Literatur- und Quellenverzeichnis}{15}{section*.14}%

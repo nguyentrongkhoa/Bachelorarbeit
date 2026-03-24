@@ -68,50 +68,84 @@ die jeweils eine eindeutige Bitfolge repräsentieren. Die Übertragungszeit pro 
   \label{eq:tsym}
 \end{equation}
 
-% TODO: check this
 Die Bandbreite (\acrshort{bw}) kann 125, 250 oder \qty{500}{kHz} betragen. Eine größere Bandbreite ermöglicht höhere 
-Datenraten, reduziert jedoch die Empfindlichkeit des Empfängers und damit die Reichweite.
+Datenraten und somit auch schnellere Übertragungen, reduziert jedoch die Empfindlichkeit des Empfängers sowie die Reichweite.
 
-Die \acrlong{toa} bzw. Gesamtübertragungszeit eines LoRa-Pakets folgt unmittelbar:
+Die Symbolrate $F_{\text{sym}}$ kann durch Kehrwertbildung ermittelt werden:
+
+\begin{equation}
+  F_{\text{sym}} = \frac{1}{T_\text{sym}} = \frac{\text{BW}}{2^\text{SF}}
+  \label{eq:fsym}
+\end{equation}
+
+Da jedes Symbol genau SF Bits mit sich trägt, ergibt sich die Bitrate $R_b$ zu:
+
+\begin{equation}
+  R_b = F_{\text{sym}} \cdot \text{SF} = \frac{\text{BW} \cdot \text{SF}}{2^\text{SF}}
+  \label{eq:rb}
+\end{equation}
+
+Die \acrfull{toa} bzw. Gesamtübertragungszeit eines LoRa-Pakets folgt unmittelbar:
 
 \begin{equation}
   T = n_{sym} \cdot T_\text{sym} = n_{sym} \cdot \frac{2^\text{SF}}{\text{BW}}
   \label{eq:ToA}
 \end{equation}
 
-Der SF bestimmt, wie stark das Signal gespreizt wird, und kann ganzzahlige Werte
-zwischen 7 und 12 annehmen. Ein höherer SF erhöht die Empfindlichkeit des
-Empfängers und damit die erreichbare Reichweite, verlängert jedoch gleichzeitig die
-Übertragungszeit eines Paketes erheblich und erhöht den
-Energieverbrauch pro Übertragung. Tabelle~\ref{tab:sf_vergleich} fasst die
-Auswirkungen der verschiedenen \acrshort{sf}s zusammen \cite{LoRaModulationBasics}.
+Zwecks Fehlerentdeckung und -korrektur werden zusätzlich zum Payload Redundanzbits übertragen, deren Anteil durch die 
+\acrfull{cr} definiert ist. Bei LoRa können CR-Werte von 4/5 bis 4/8 eingestellt werden. Eine CR von 4/6 bedeutet bswp., dass
+von insgesamt 8 übertragenen Bits nur 4 Nutzdatenbits sind, während die restlichen 2 Bits als Redundanz dienen. 
 
 \begin{table}[htbp]
+    \centering
+    \caption{Übersicht der LoRa-Coderaten}
+    \label{tab:lora_CR}
+    \begin{tabularx}{\textwidth}{l X X}
+        \toprule
+        \textbf{Einstellung} & \textbf{Redundanz-Overhead} & \textbf{Schutzlevel \& Anwendung} \\
+        \midrule
+        \texttt{CR 4/5} & 25\,\%  & Standard in LoRaWAN; geringster Overhead, ideal für gute Funkbedingungen \\
+        \addlinespace
+        \texttt{CR 4/6} & 50\,\%  & Erhöhter Schutz bei moderaten Störungen \\
+        \addlinespace
+        \texttt{CR 4/7} & 75\,\%  & Hohe Robustheit gegen Burstrauschen; deutlich längere Sendezeit \\
+        \addlinespace
+        \texttt{CR 4/8} & 100\,\% & Maximaler Schutz \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+Unter Berücksichtigung der Coderaten lässt sich die effektive Bitrate $R_\text{eff}$ folgendermaßen ausdrücken:
+
+\begin{equation}
+  R_\text{eff} = R_b \cdot \text{CR} = \frac{\text{BW} \cdot \text{SF}}{2^\text{SF}} \cdot \text{CR}
+  \label{eq:rb_eff}
+\end{equation}
+
+Tabelle~\ref{tab:sf_vergleich} stellt den Zusammenhang zwischen wichtigen Kenngrößen dar. Hierbei wird von einer \qty{125}{kHz}-BW 
+und einer CR von 4/5 ausgegangen, da dies die Standardkonfiguration für LoRaWAN ist. 
+
+% TODO: explain what Empfindlichkeit means
+\begin{table}[htbp]
   \centering
-  \caption{Vergleich der LoRa Spreading Factors bei \qty{125}{kHz} Bandbreite}
+  \caption{Wichtige LoRa-Parameter in einem Blick (BW=\qty{125}{kHz}, CR=4/5)}
   \label{tab:sf_vergleich}
   \begin{tabular}{@{}lrrrl@{}}
     \toprule
-    \textbf{SF} & \textbf{Datenrate} & \textbf{Empfindlichkeit} &
+    \textbf{SF} & \textbf{Bitrate} & \textbf{Empfindlichkeit} &
     \textbf{Time on Air} & \textbf{Typischer Einsatz} \\
                 & [bps]        & [dBm]              &
-    (20\,Byte) [ms] & \\
+    (50\,Bytes) [ms] & \\
     \midrule
-    SF7  & 5470 & $-123$ &  41 & Kurze Distanz, Energie sparen \\
-    SF8  & 3125 & $-126$ &  72 & Ausgewogener Betrieb \\
-    SF9  & 1760 & $-129$ & 144 & Mittlere Distanz \\
-    SF10 &  980 & $-132$ & 289 & Grenzbereich Stadtgebiet \\
-    SF11 &  440 & $-134$ & 578 & Ländliche Umgebung \\
-    SF12 &  250 & $-137$ & 991 & Maximale Reichweite \\
+    SF7  & 5469 & $-123$ &  73,14 & Kurze Distanz, energiesparend \\
+    SF8  & 3125 & $-126$ & 128,00 & Ausgewogener Betrieb \\
+    SF9  & 1758 & $-129$ & 227,53 & Mittlere Distanz \\
+    SF10 &  977 & $-132$ & 409,42 & Grenzbereich Stadtgebiet \\
+    SF11 &  537 & $-134$ & 744,88 & Ländliche Umgebung \\
+    SF12 &  293 & $-136$ & 1365,19 & Maximale Reichweite \\
     \bottomrule
   \end{tabular}
 \end{table}
-
-Als Faustregel gilt: SF7 zusammen mit einer Bandbreite von \qty{125}{kHz}
-(\texttt{SF7BW125}) stellt den optimalen Ausgangspunkt für die meisten Anwendungen
-dar, da die Luftzeit und damit der Energieverbrauch minimiert werden. 
-Die Coding Rate beschreibt den Anteil der redundanten Bits zur Fehlerkorrektur und
-nimmt Werte von 4/5 bis 4/8 an.
 
 \subsection{Frequenzbänder und regulatorische Rahmenbedingungen}
 \label{subsec:frequenzbaender}
@@ -287,16 +321,6 @@ zum Einsatz, da dieser vollständig lokal auf einem Raspberry Pi betrieben werde
 und keine Internetverbindung erfordert. Semtech bietet für Prototyping"=Zwecke zudem
 einen kostenlosen Network Server für bis zu drei Gateways und zehn Endgeräte an.
 
-\subsection{Einfluss des Spreading Factors auf den Energieverbrauch}
-\label{subsec:sf-energie}
-
-Die Wahl des Spreading Factors hat direkten Einfluss auf den Energieverbrauch pro
-übertragenem Byte. SF12 erzielt zwar die größte Reichweite, verlängert jedoch die
-Luftzeit und damit die Zeit, in der der Sender aktiv ist, um etwa das 24"=fache
-gegenüber SF7 (vgl. Tabelle~\ref{tab:sf_vergleich}). Die energieoptimale Strategie
-besteht darin, den niedrigstmöglichen SF zu verwenden, der noch eine zuverlässige
-Übertragung gewährleistet.
-
 \subsection{Link Budget}
 \label{subsec:link-budget}
 
@@ -322,12 +346,12 @@ nicht symmetrisch.
 % Format : \newacronym{label}{abbreviation}{full term}
 % TODO: remember to run makeglossaries main 
 \newacronym{lora}{LoRa}{Long Range}
-\newacronym{lorawan}{LoRaWAN}{Long Range Wide Area Network}
+\newacronym{lorawan}{LoRaWAN}{Long-Range Wide-Area-Network}
 \newacronym{css}{CSS}{Chirp Spread Spectrum}
 \newacronym{sf}{SF}{Spreading Factor}
 \newacronym{toa}{ToA}{Time-on-Air}
-\newacronym{bw}{BW}{Bandwidth}
-\newacronym{cr}{CR}{Coding Rate}
+\newacronym{bw}{BW}{Bandwidth (Bandbreite)}
+\newacronym{cr}{CR}{Coderate}
 \newacronym{snr}{SNR}{Signal-to-Noise Ratio}
 \newacronym{fsk}{FSK}{Frequency Shift Keying}
 \newacronym{mcu}{MCU}{Microcontroller Unit}

@@ -35,8 +35,8 @@ first={LoRaWAN},%
 firstplural={LoRaWANs},%
 text={LoRaWAN},%
 plural={LoRaWANs},%
-description={Long Range Wide Area Network},%
-descriptionplural={Long Range Wide Area Network},%
+description={Long-Range Wide-Area-Network},%
+descriptionplural={Long-Range Wide-Area-Network},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -45,8 +45,8 @@ user3={},%
 user4={},%
 user5={},%
 user6={},%
-long={Long Range Wide Area Network},%
-longplural={Long Range Wide Area Networks},%
+long={Long-Range Wide-Area-Network},%
+longplural={Long-Range Wide-Area-Networks},%
 short={LoRaWAN},%
 shortplural={LoRaWANs},%
 counter={page},%
@@ -110,6 +110,34 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{toa}%
+{%
+name={\acronymfont {\glsentryshort {toa}}},%
+sort={ToA},%
+type={acronym},%
+first={ToA},%
+firstplural={ToAs},%
+text={ToA},%
+plural={ToAs},%
+description={Time-on-Air},%
+descriptionplural={Time-on-Air},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Time-on-Air},%
+longplural={Time-on-Airs},%
+short={ToA},%
+shortplural={ToAs},%
+counter={page},%
+parent={},%
+%
+}%
+
 \glsdefs@newdocentry{bw}%
 {%
 name={\acronymfont {\glsentryshort {bw}}},%
@@ -119,8 +147,8 @@ first={BW},%
 firstplural={BWs},%
 text={BW},%
 plural={BWs},%
-description={Bandwidth},%
-descriptionplural={Bandwidth},%
+description={Bandwidth (Bandbreite)},%
+descriptionplural={Bandwidth (Bandbreite)},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -129,8 +157,8 @@ user3={},%
 user4={},%
 user5={},%
 user6={},%
-long={Bandwidth},%
-longplural={Bandwidths},%
+long={Bandwidth (Bandbreite)},%
+longplural={Bandwidth (Bandbreite)s},%
 short={BW},%
 shortplural={BWs},%
 counter={page},%
@@ -147,8 +175,8 @@ first={CR},%
 firstplural={CRs},%
 text={CR},%
 plural={CRs},%
-description={Coding Rate},%
-descriptionplural={Coding Rate},%
+description={Coderate},%
+descriptionplural={Coderate},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -157,8 +185,8 @@ user3={},%
 user4={},%
 user5={},%
 user6={},%
-long={Coding Rate},%
-longplural={Coding Rates},%
+long={Coderate},%
+longplural={Coderates},%
 short={CR},%
 shortplural={CRs},%
 counter={page},%
