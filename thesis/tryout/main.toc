@@ -2,23 +2,14 @@
 \contentsline {chapter}{\numberline {1}Grundlagen}{3}{chapter.1}%
 \contentsline {section}{\numberline {1.1}LoRa-Modulation}{3}{section.1.1}%
 \contentsline {subsection}{\numberline {1.1.1}Spreading Factor, Bandbreite und Coding Rate}{4}{subsection.1.1.1}%
-\contentsline {subsection}{\numberline {1.1.2}Frequenzbänder und regulatorische Rahmenbedingungen}{4}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.2}Frequenzbänder und regulatorische Rahmenbedingungen}{5}{subsection.1.1.2}%
 \contentsline {section}{\numberline {1.2}LoRaWAN -- Network Layer}{5}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Netzwerkarchitektur}{5}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}Endgeräte}{5}{subsection.1.2.2}%
-\contentsline {subsection}{\numberline {1.2.3}Gateways}{6}{subsection.1.2.3}%
-\contentsline {subsection}{\numberline {1.2.4}Network-Server}{7}{subsection.1.2.4}%
-\contentsline {subsection}{\numberline {1.2.5}Join-Server}{8}{subsection.1.2.5}%
-\contentsline {subsection}{\numberline {1.2.6}Öffentliche vs. private Netzwerke}{9}{subsection.1.2.6}%
-\contentsline {section}{\numberline {1.3}Energieeffizienz in eingebetteten LoRaWAN"=Systemen}{9}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}Sleep"=Modi und Power Management}{9}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}Einfluss des Spreading Factors auf den Energieverbrauch}{9}{subsection.1.3.2}%
-\contentsline {subsection}{\numberline {1.3.3}Strategien zur Datenmengereduktion}{10}{subsection.1.3.3}%
-\contentsline {section}{\numberline {1.4}RF"=Planung und Signalausbreitung}{10}{section.1.4}%
-\contentsline {subsection}{\numberline {1.4.1}Link Budget}{10}{subsection.1.4.1}%
-\contentsline {subsection}{\numberline {1.4.2}Freiraum"=Pfadverlust und Ausbreitungsmodelle}{11}{subsection.1.4.2}%
-\contentsline {subsection}{\numberline {1.4.3}RF"=Planungsmethodik}{11}{subsection.1.4.3}%
-\contentsline {subsection}{\numberline {1.4.4}Mikrozellen und Makrozellen}{12}{subsection.1.4.4}%
-\contentsline {section}{\numberline {1.5}Normierung und Anforderungen im Bereich Schutzsensorik}{12}{section.1.5}%
-\contentsline {chapter}{\numberline {A}Angehängtes: Die Dateien des Pakets}{13}{appendix.A}%
-\contentsline {chapter}{Literatur- und Quellenverzeichnis}{15}{section*.9}%
+\contentsline {subsection}{\numberline {1.2.1}Endgeräte}{6}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Gateways}{6}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Network-Server}{7}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}Join-Server}{8}{subsection.1.2.4}%
+\contentsline {subsection}{\numberline {1.2.5}Öffentliche vs. private Netzwerke}{9}{subsection.1.2.5}%
+\contentsline {subsection}{\numberline {1.2.6}Einfluss des Spreading Factors auf den Energieverbrauch}{9}{subsection.1.2.6}%
+\contentsline {subsection}{\numberline {1.2.7}Link Budget}{10}{subsection.1.2.7}%
+\contentsline {chapter}{\numberline {A}Angehängtes: Die Dateien des Pakets}{11}{appendix.A}%
+\contentsline {chapter}{Literatur- und Quellenverzeichnis}{13}{section*.14}%

@@ -278,6 +278,34 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{phy}%
+{%
+name={\acronymfont {\glsentryshort {phy}}},%
+sort={PHY},%
+type={acronym},%
+first={PHY},%
+firstplural={PHYs},%
+text={PHY},%
+plural={PHYs},%
+description={Physical Layer (Bitübertragungsschicht)},%
+descriptionplural={Physical Layer (Bitübertragungsschicht)},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Physical Layer (Bitübertragungsschicht)},%
+longplural={Physical Layer (Bitübertragungsschicht)s},%
+short={PHY},%
+shortplural={PHYs},%
+counter={page},%
+parent={},%
+%
+}%
+
 \glsdefs@newdocentry{ed}%
 {%
 name={\acronymfont {\glsentryshort {ed}}},%

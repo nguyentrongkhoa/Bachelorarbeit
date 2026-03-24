@@ -209,3 +209,158 @@ Systemzustand schließen könnten. Die \textit{Out"=of"=Band Key Provisioning}"=
 -- etwa über BLE oder NFC -- stellt sicher, dass Produktionsmitarbeiter keinen Zugriff % TODO: remove --
 auf die Geräteschlüssel erhalten.
 
+\subsection{Strategien zur Datenmengereduktion}
+\label{subsec:datenreduktion}
+
+Neben der Wahl des Spreading Factors lässt sich der Energieverbrauch durch die
+Reduktion der Sendefrequenz und der Datenmenge weiter minimieren. Anstatt Rohdaten
+kontinuierlich zu übertragen, können aggregierte Werte -- beispielsweise Minimum,
+Durchschnitt und Maximum über ein Zeitfenster von fünf Minuten -- gesendet werden.
+Alternativ können Übertragungen ereignisgesteuert erfolgen, etwa wenn ein Messwert
+einen definierten Schwellwert überschreitet oder eine Bewegung detektiert wird.
+\textit{Firmware Updates Over the Air} (FUOTA) ermöglicht darüber hinaus die
+Aktualisierung der Gerätesoftware ohne physischen Zugang~\cite{semtech_lora_basics}.
+
+% -----------------------------------------------------------------------------
+\section{RF"=Planung und Signalausbreitung}
+\label{sec:rf-planung}
+% -----------------------------------------------------------------------------
+
+RF"=Planung (\textit{Radio Frequency Planning}) bezeichnet die systematische
+Vorgehensweise zur Vorhersage der Funkabdeckung eines drahtlosen Systems.
+Sie bildet die methodische Grundlage für den in Kapitel~\ref{chap:evaluation}
+durchgeführten Vergleich zwischen theoretisch vorhergesagter und praktisch
+gemessener Reichweite.
+
+% -----------------------------------------------------------------------------
+\section{Energieeffizienz in eingebetteten LoRaWAN"=Systemen}
+\label{sec:energieeffizienz}
+% -----------------------------------------------------------------------------
+
+Energieeffizienz ist eine der zentralen Anforderungen an das in dieser Arbeit
+entwickelte System. Der Großteil des Energieverbrauchs entfällt auf den Sendevorgang:
+Typischerweise verbraucht das Senden etwa zehnmal mehr Energie als der
+Empfangsbetrieb~\cite{semtech_lora_basics}. Für den STM32WLE5 beträgt die Stromaufnahme
+im Sendebetrieb bei maximaler Ausgangsleistung von \SI{22}{dBm} (bei $V_\text{DDPA} =
+\SI{3.3}{\V}$) bis zu \SI{87}{\mA}, im Empfangsbetrieb typischerweise \SI{5.5}{\mA},
+während der Deep"=Stop"=Modus lediglich \SI{1.08}{\uA} benötigt~\cite{stm32wl_ds}.
+
+\subsection{Sleep"=Modi und Power Management}
+\label{subsec:sleep}
+
+Zephyr RTOS bietet ein umfassendes Power"=Management"=Framework, das es ermöglicht,
+den Mikrocontroller zwischen Messzyklen in einen energiesparenden Schlafzustand zu
+versetzen. Das \textit{Tickless Idle}"=Konzept deaktiviert den System"=Tick"=Timer
+in Ruhephasen vollständig; einzelne Peripheriekomponenten können über
+\texttt{PM\_DEVICE\_STATE\_SUSPEND} individuell abgeschaltet werden. Der STM32WLE5
+unterstützt mehrere Schlafmodi mit unterschiedlichen Aufwachzeiten und
+Stromverbräuchen, vom einfachen Sleep über Stop"=Modi bis hin zum Standby.
+
+\subsection{Freiraum"=Pfadverlust und Ausbreitungsmodelle}
+\label{subsec:pfadverlust}
+
+Der Freiraum"=Pfadverlust (\textit{Free Space Path Loss}, FSPL) beschreibt den
+Signalverlust in einer hindernisfreien Umgebung und berechnet sich nach der
+Friis"=Gleichung:
+
+\begin{equation}
+  \text{FSPL} \, [\si{\dB}] = 20 \log_{10}(d) + 20 \log_{10}(f)
+                              + 20 \log_{10}\!\left(\frac{4\pi}{c}\right)
+  \label{eq:fspl}
+\end{equation}
+
+mit der Distanz $d$ in Metern und der Frequenz $f$ in Hertz. Bei Verdopplung der
+Entfernung steigt der Pfadverlust im Freiraummodell um \SI{6}{\dB}; das
+\textit{Two"=Ray Ground Reflection Model} ergibt bei Bodennähe sogar einen Verlust
+von \SI{12}{\dB} bei doppelter Distanz~\cite{dobkin2012rf}. Für sehr große Distanzen
+ergibt sich für das \SI{868}{\MHz}"=Band bei beispielsweise \SI{800}{\km} ein
+theoretischer FSPL von \SI{-150}{\dB}.
+
+Für realitätsnähere Vorhersagen werden empirische Ausbreitungsmodelle verwendet.
+Tabelle~\ref{tab:ausbreitungsmodelle} gibt einen Überblick der gängigsten Modelle.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Übersicht der Ausbreitungsmodelle und deren Einsatzbereich}
+  \label{tab:ausbreitungsmodelle}
+  \begin{tabular}{@{}lll@{}}
+    \toprule
+    \textbf{Modell} & \textbf{Einsatzbereich} & \textbf{Bemerkung} \\
+    \midrule
+    Log"=Distance Path Loss & Allgemein & Einfachstes empirisches Modell \\
+    Okumura"=Hata            & 150--1500\,MHz, Außenbereich & Meistgenutztes Modell \\
+    COST 231                 & 1500--2000\,MHz              & Detaillierte Stadtarchitektur \\
+    ITU"=R P.1238            & Innenbereich                 & Für Gebäudeplanung \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Das \textbf{Okumura"=Hata}"=Modell ist für den Frequenzbereich von 150 bis
+\SI{1500}{\MHz} das am häufigsten eingesetzte Modell und eignet sich damit direkt für
+das \SI{868}{\MHz}"=Band~\cite{haslett2008essentials}. Für Innenräume, wie sie
+bei der Messung in Industriegebäuden auftreten, ist das \textbf{ITU"=R P.1238}"=Modell
+geeigneter. Bei der Interpretation von Messergebnissen sind zudem
+Mehrwegeausbreitung (\textit{Multipath Fading}) und die Fresnel"=Zone zu
+berücksichtigen: Eine freie Fresnel"=Zone erfordert, dass das Gelände innerhalb einer
+ellipsoidförmigen Zone um die direkte Sichtlinie frei von Hindernissen ist.
+
+\subsection{RF"=Planungsmethodik}
+\label{subsec:rf-methodik}
+
+Die empfohlene Methodik zur RF"=Planung folgt einem dreistufigen Prozess~\cite{haslett2008essentials}:
+
+\begin{enumerate}
+  \item \textbf{Link"=Budget"=Analyse:} Berechnung des MAPL anhand der Systemparameter
+        (Sendeleistung, Antennengewinn, Empfängerempfindlichkeit, Sicherheitsmarge).
+  \item \textbf{RF"=Coverage"=Simulation:} Verwendung von Ausbreitungsmodellen und
+        digitalem Geländemodell zur kartografischen Darstellung der vorhergesagten Abdeckung.
+  \item \textbf{Feldmessungen:} Verifikation der Simulation durch reale Messungen in den
+        Zielumgebungen.
+\end{enumerate}
+
+Für die Coverage"=Simulation steht mit \textbf{SPLAT!} ein quelloffenes Linux"=Werkzeug
+zur Verfügung, das das Longley"=Rice"=Modell mit \acrfull{srtm}"=Geländedaten kombiniert.
+Die gemessenen RSSI"=Werte können anschließend mit Python und der Bibliothek Folium
+als georeferenzierte Heatmap über OpenStreetMap visualisiert und mit der
+SPLAT!"=Simulation überlagert werden.
+
+\subsection{Mikrozellen und Makrozellen}
+\label{subsec:zellen}
+
+In der Netzplanung wird zwischen \textit{Mikrozellen} -- bei denen die Antenne
+unterhalb der Dachlinie installiert wird -- und \textit{Makrozellen} mit Antennen
+oberhalb der Dachlinie unterschieden. Diese Unterscheidung beeinflusst das
+gewählte Ausbreitungsmodell und die erreichbaren Abdeckungsradien~\cite{walter2006radio}.
+Für Indoor"=Installationen gilt als Faustregel: Wenn die Innenwände nicht aus Beton oder
+Mauerwerk bestehen, kann ein einzelnes Gateway auf der gleichen Etage wie die
+Endgeräte ausreichende Abdeckung liefern.
+
+% -----------------------------------------------------------------------------
+\section{Normierung und Anforderungen im Bereich Schutzsensorik}
+\label{sec:normierung}
+% -----------------------------------------------------------------------------
+
+Der Einsatz mobiler Gasmesssysteme in industriellen Umgebungen unterliegt einer
+Reihe normativer Vorgaben. Relevant sind insbesondere die Regelungen der
+\acrshort{dguv} sowie die ATEX"=Richtlinie 2014/34/EU für Geräte in
+explosionsgefährdeten Bereichen. Die EN"=60079"=Normenreihe definiert die Anforderungen
+an elektrische Betriebsmittel in explosionsgefährdeten Bereichen hinsichtlich
+Zündschutzarten, Gehäuseschutz (IP"=Klassen) und Temperaturklassen. Diese
+Anforderungen sind bei der Hardwareauswahl und dem mechanischen Design des Prototyps
+zu berücksichtigen und werden in Kapitel~\ref{chap:hardware} eingehend behandelt.
+
+Semtech's document on LoRa modulation basics: 
+In addition, due to the
+processing gain associated with LoRa, the output power of the transmitter can be reduced compared to
+a conventional FSK link while maintaining the same or better link budget.
+
+Due to the high BT product (BT > 1) and their asynchronous nature a LoRa signal is very resistant to both
+in-band and out-of-band interference mechanisms.
+
+The chirp pulse is relatively broadband and thus LoRa offers immunity to multipath and fading, making it
+ideal for use in urban and suburban environments, where both mechanisms dominate.
+
+For a fixed output power and throughput, the link budget of LoRa exceeds that of conventional FSK.
+When taken into conjunction with the proven robustness to interference and fading mechanisms, this
+improvement in link budget can readily translate to x4 and beyond enhancement in range.
+

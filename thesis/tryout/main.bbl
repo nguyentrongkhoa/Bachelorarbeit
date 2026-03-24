@@ -19,6 +19,21 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
+    \entry{LoRaModulationBasics}{report}{}
+      \list{institution}{1}{%
+        {Semtech}%
+      }
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labeldatesource}{nodate}
+      \field{labeltitlesource}{title}
+      \field{number}{AN1200.02}
+      \field{title}{{LoRa}™ {Modulation} {Basics}}
+      \field{type}{Application {Note}}
+      \verb{file}
+      \verb PDF:C\:\\Users\\khoa1\\Zotero\\storage\\P2U75EW3\\LoRa™ Modulation Basics.pdf:application/pdf
+      \endverb
+    \endentry
     \entry{LoRaWanBackendInterfaces2020}{report}{}
       \list{institution}{1}{%
         {LoRa Alliance}%
@@ -62,11 +77,7 @@
       \endverb
     \endentry
   \enddatalist
-  \missing{dobkin2012rf}
-  \missing{haslett2008essentials}
   \missing{semtech_lora_basics}
-  \missing{stm32wl_ds}
-  \missing{walter2006radio}
 \endrefsection
 \endinput
 

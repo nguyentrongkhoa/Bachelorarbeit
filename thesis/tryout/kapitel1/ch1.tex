@@ -18,39 +18,73 @@ RF"=Planung und Signalausbreitung behandelt. Abschließend wird ein kurzer Über
 \section{LoRa-Modulation}
 \label{sec:lora-physical}
 % -----------------------------------------------------------------------------
+\subsection{Allgemeines}
 
-\acrfull{lora} ist ein von der Firma Semtech entwickeltes Modulationsverfahren und bildet die physikalische Grundlage des 
-\acrshort{lorawan}"=Protokolls. Da LoRa und LoRaWAN nicht unhäufig miteinander verwechselt werden, besteht die Notwendigkeit, auf ihre Unterschiede hinzuweisen: 
-LoRa bezeichnet die reine Modulationstechnologie, währen
-der von der LoRa Alliance definiert und gepflegt wird~% TODO: \cite{semtech_lora_basics}. 
-
-LoRa basiert auf dem Verfahren der \acrfull{css}"=Modulation.
-Dabei wird das zu übertragende Signal auf ein breiteres Frequenzband gespreizt, indem
+\acrshort{lora} ist eine von der Firma Semtech entwickelte Modulationstechnologie und bildet die physikalische Grundlage des 
+\acrshort{lorawan}"=Protokolls.  Es basiert auf der \acrfull{css}"=Modulation.
+bei der das zu übertragende Signal auf ein breiteres Frequenzband gespreizt wird, indem
 sogenannte Chirps-Signale mit kontinuierlich steigender oder fallender Frequenz
-als Trägersymbole verwendet. Dieses Verfahren verleiht LoRa eine hohe Robustheit
-gegenüber Mehrwegeausbreitung, Schmalbandstörungen und dem Doppler"=Effekt, wie er
-bei mobilen Endgeräten auftritt~% TODO: \cite{augustin2016study}.
+als Trägersymbole verwendet. % TODO: \cite{augustin2016study}. add pics of chirps
 
+Ursprünglich für Militäranwendungen gedacht, hat das CSS-Verfahren in den letzten 20 Jahren in der Nachrichtentechnik 
+zunehmend an Bedeutung gewonnen dank seiner hervorragenden Eigenschaften \cite{LoRaModulationBasics}: 
+
+\paragraph*{Niedriger Energieverbrauch}
+Ähnlich wie \acrshort{fsk} besitzt LoRa eine konstante Einhüllende, wodurch kostengünstige, energieeffiziente
+Leistungsverstärker verwendet werden können.
+\paragraph*{Hohe Störfestigkeit} 
+Da ein LoRa-Symbol lang und "ausgespreizt" ist, haben kurz Rauschimpulse nur einen verschwindenen Einfluss auf die Demodulation. 
+Aus diesem Grund sind LoRa-Signale sehr resistent gegenüber In-Band- und Out-of-Band-Interferenzen.
+Eine Gleichkanalsunterdrückung von über \SI{20}{\dB} kann erreicht werden, verglichen mit nur \SI{-6}{\dB} bei FSK.
+\paragraph*{Mehrwegeausbreitung und Fading}
+Das breitbandige Chirp-Signal bietet eine hohe Immunität gegenüber Mehrwegeausbreitung und Fading, was den
+Einsatz in urbanen und suburbanen Umgebungen begünstigt.
+\paragraph*{Hohe Reichweite}
+Für eine gegebene Sendeleistung kann bei LoRa die Reichweite bis zu 4 mal so groß im Vergleich zu FSK.
+
+% TODO: figure what to do with this
 Gegenüber klassischen Schmalband"=Modulationsverfahren wie \acrshort{fsk} besitzt CSS einen
 wesentlichen Vorteil: Das Signal kann noch korrekt demoduliert werden, selbst wenn der
 Empfangspegel deutlich unterhalb des Rauschpegels liegt. Das resultierende
 Signal"=zu"=Rausch"=Verhältnis (\acrshort{snr}) kann dabei negative Werte von bis zu
 \qty{-20}{dB} annehmen. Mit FSK lassen sich Datenraten von bis zu \qty{50}{kbps}
 erzielen; LoRa liefert demgegenüber typische Nutzdatenraten zwischen \qty{300}{bps}
-und \qty{11}{kbps}~ % TODO: \cite{semtech_lora_basics}. 
+und \qty{11}{kbps}.
+
+\subsection{Wichtige Kenngrößen und Formeln} % TODO: work on this
 
 \subsection{Spreading Factor, Bandbreite und Coding Rate}
 \label{subsec:sf-bw-cr}
 
 Die wichtigsten Parameter zur Steuerung des LoRa"=Signals sind der \acrfull{sf}, 
-die Bandbreite (\acrshort{bw}) sowie die Coding Rate (\acrshort{cr}).
+die Bandbreite (\acrshort{bw}) sowie die Coding Rate (\acrshort{cr}). % TODO: cite sylvain montagny
+
+Der SF gibt die Anzahl der Bits pro Symbol bzw Chirp an und kann Werte von 7 bis 12 annehmen. 
+Wenn zum Beispiel mit SF12 übertragen wird, enthält jeder Chirp 12 Bits. Es gibt in diesem Fall also $2^{12} = 4096$ mögliche Symbole, 
+die jeweils eine eindeutige Bitfolge repräsentieren. Die Übertragungszeit pro Symbol lässt sich berechnen durch:
+
+\begin{equation}
+  T_\text{sym} = \frac{2^\text{SF}}{\text{BW}}
+  \label{eq:tsym}
+\end{equation}
+
+% TODO: check this
+Die Bandbreite (\acrshort{bw}) kann 125, 250 oder \qty{500}{kHz} betragen. Eine größere Bandbreite ermöglicht höhere 
+Datenraten, reduziert jedoch die Empfindlichkeit des Empfängers und damit die Reichweite.
+
+Die \acrlong{toa} bzw. Gesamtübertragungszeit eines LoRa-Pakets folgt unmittelbar:
+
+\begin{equation}
+  T = n_{sym} \cdot T_\text{sym} = n_{sym} \cdot \frac{2^\text{SF}}{\text{BW}}
+  \label{eq:ToA}
+\end{equation}
 
 Der SF bestimmt, wie stark das Signal gespreizt wird, und kann ganzzahlige Werte
 zwischen 7 und 12 annehmen. Ein höherer SF erhöht die Empfindlichkeit des
 Empfängers und damit die erreichbare Reichweite, verlängert jedoch gleichzeitig die
 Übertragungszeit eines Paketes erheblich und erhöht den
 Energieverbrauch pro Übertragung. Tabelle~\ref{tab:sf_vergleich} fasst die
-Auswirkungen der verschiedenen Spreading Factors zusammen.
+Auswirkungen der verschiedenen \acrshort{sf}s zusammen \cite{LoRaModulationBasics}.
 
 \begin{table}[htbp]
   \centering
@@ -75,7 +109,7 @@ Auswirkungen der verschiedenen Spreading Factors zusammen.
 
 Als Faustregel gilt: SF7 zusammen mit einer Bandbreite von \qty{125}{kHz}
 (\texttt{SF7BW125}) stellt den optimalen Ausgangspunkt für die meisten Anwendungen
-dar, da die Luftzeit und damit der Energieverbrauch minimiert werden~% TODO: \cite{semtech_lora_basics}.
+dar, da die Luftzeit und damit der Energieverbrauch minimiert werden. 
 Die Coding Rate beschreibt den Anteil der redundanten Bits zur Fehlerkorrektur und
 nimmt Werte von 4/5 bis 4/8 an.
 
@@ -110,7 +144,7 @@ Der LoRaWAN-Standard wird von der sogenannten LoRa-Alliance - einem im Jahre 201
 Bündnis internationaler Unternehmen - gepflegt und in ihren umfangreichen technischen Spezifikationen dokumentiert.
 Diese beginnen alle mit dem Präfix "TS", gefolgt von einer dreistelligen Dokumentennummer. 
 
-\subsection{Netzwerkarchitektur}
+\subsection*{Netzwerkarchitektur}
 \label{subsec:netzwerkarchitektur}
 
 Eine LoRaWAN"=Kommunikationskette setzt sich aus drei Gliedern zusammen: Endgeräten/\acrfull{ed}, Gateways und Servern. 
@@ -166,9 +200,13 @@ und für das Thema Off-Grid-Schutzsensorik eine eher untergeordnete Rolle spiele
 
 Nach den Endgeräten schließen befinden sich direkt im Anschluss die \textbf{Gateways}, welche ebenfalls auf der Physical layer % TODO: translate
 wirken. Bei der uplinkmäßigen Übertragung, also von Endgerät zu Server, empfangen sie die Signale der Endgeräte und leiten 
-diese über eine Ethernet- oder Mobilfunkverbindung an die Netzwerkserver weiter. Umgekehrt gilt für die Downlink-Richtung, 
+diese an die Netzwerkserver weiter. Umgekehrt gilt für die Downlink-Richtung, 
 dass Gateways die Signale der Server Endgeräten zur Verfügung stellen. Da Gateways permanent auf allen Kanälen lauschen, 
-können Endgeräte jederzeit senden, solange regulatorische Gegebenheiten es erlauben. % TODO: write about indoor and outdoor gateways
+können Endgeräte jederzeit senden, solange regulatorische Gegebenheiten es erlauben. 
+
+Die Kommunikation zwischen Endgeräten und Gateways basiert auf dem ALOHA"=Protokoll. Das bedeutet, dass ein Endgerät nicht an 
+ein bestimmtes Gateway gebunden ist, sondern eine beliebige Anzahl an Gateways in Reichweite nutzen kann, um mit dem Netzwerk 
+Daten auszutauschen.
 
 Aufgrund dessen, dass Gateways aus Sicht des LoRaWAN"=Protokolls transparent sind, werden sie in technischen Spezifikationen der 
 LoRa-Alliance nur flüchtig erwähnt und größtenteils "wegabstrahiert". Um diese theoretische Transparenz jedoch zu gewährleisten, 
@@ -227,14 +265,10 @@ OTAA als bevorzugtes Aktivierungsverfahren, da die dynamische Ableitung von Sitz
 
 Im Gegensatz zu OTAA werden bei \acrshort{abp} alle benötigten Parameter (\acrshort{DevEUI}, \acrshort{DevAddr} und Sitzungsschlüssel)
 vorab im Gerät fest einprogrammiert. Das Gerät kann sofort ohne Join"=Prozedur senden. Dieses Verfahren ist einfacher zu implementieren, 
-allerdings dafür weniger flexibel und gilt sicherheitstechnisch als suboptimal. 
+allerdings dafür weniger flexibel und gilt sicherheitstechnisch als suboptimal. Wenn beispielsweise ein Gerät kompromittiert wird, 
+können die fest eingebauten Schlüssel nicht mehr geändert werden, was zu einem dauerhaften Sicherheitsrisiko führt.
 
-% TODO: figure out what to do with this
-LoRaWAN"=Netzwerke verwenden das Aloha"=Zugriffsverfahren: Endgeräte senden, wann
-immer sie Daten zu übertragen haben, ohne vorherige Kanalprüfung. Gateways hören
-permanent auf allen Kanälen. Kollisionen werden durch das Spread"=Spectrum"=Verfahren
-und den Einsatz mehrerer Kanäle minimiert, aber nicht vollständig ausgeschlossen.
-
+% TODO: see where this section fits
 \subsection{Öffentliche vs. private Netzwerke}
 \label{subsec:netzwerktypen}
 
@@ -253,30 +287,6 @@ zum Einsatz, da dieser vollständig lokal auf einem Raspberry Pi betrieben werde
 und keine Internetverbindung erfordert. Semtech bietet für Prototyping"=Zwecke zudem
 einen kostenlosen Network Server für bis zu drei Gateways und zehn Endgeräte an.
 
-% -----------------------------------------------------------------------------
-\section{Energieeffizienz in eingebetteten LoRaWAN"=Systemen}
-\label{sec:energieeffizienz}
-% -----------------------------------------------------------------------------
-
-Energieeffizienz ist eine der zentralen Anforderungen an das in dieser Arbeit
-entwickelte System. Der Großteil des Energieverbrauchs entfällt auf den Sendevorgang:
-Typischerweise verbraucht das Senden etwa zehnmal mehr Energie als der
-Empfangsbetrieb~\cite{semtech_lora_basics}. Für den STM32WLE5 beträgt die Stromaufnahme
-im Sendebetrieb bei maximaler Ausgangsleistung von \SI{22}{dBm} (bei $V_\text{DDPA} =
-\SI{3.3}{\V}$) bis zu \SI{87}{\mA}, im Empfangsbetrieb typischerweise \SI{5.5}{\mA},
-während der Deep"=Stop"=Modus lediglich \SI{1.08}{\uA} benötigt~\cite{stm32wl_ds}.
-
-\subsection{Sleep"=Modi und Power Management}
-\label{subsec:sleep}
-
-Zephyr RTOS bietet ein umfassendes Power"=Management"=Framework, das es ermöglicht,
-den Mikrocontroller zwischen Messzyklen in einen energiesparenden Schlafzustand zu
-versetzen. Das \textit{Tickless Idle}"=Konzept deaktiviert den System"=Tick"=Timer
-in Ruhephasen vollständig; einzelne Peripheriekomponenten können über
-\texttt{PM\_DEVICE\_STATE\_SUSPEND} individuell abgeschaltet werden. Der STM32WLE5
-unterstützt mehrere Schlafmodi mit unterschiedlichen Aufwachzeiten und
-Stromverbräuchen, vom einfachen Sleep über Stop"=Modi bis hin zum Standby.
-
 \subsection{Einfluss des Spreading Factors auf den Energieverbrauch}
 \label{subsec:sf-energie}
 
@@ -286,29 +296,6 @@ Luftzeit und damit die Zeit, in der der Sender aktiv ist, um etwa das 24"=fache
 gegenüber SF7 (vgl. Tabelle~\ref{tab:sf_vergleich}). Die energieoptimale Strategie
 besteht darin, den niedrigstmöglichen SF zu verwenden, der noch eine zuverlässige
 Übertragung gewährleistet.
-
-\subsection{Strategien zur Datenmengereduktion}
-\label{subsec:datenreduktion}
-
-Neben der Wahl des Spreading Factors lässt sich der Energieverbrauch durch die
-Reduktion der Sendefrequenz und der Datenmenge weiter minimieren. Anstatt Rohdaten
-kontinuierlich zu übertragen, können aggregierte Werte -- beispielsweise Minimum,
-Durchschnitt und Maximum über ein Zeitfenster von fünf Minuten -- gesendet werden.
-Alternativ können Übertragungen ereignisgesteuert erfolgen, etwa wenn ein Messwert
-einen definierten Schwellwert überschreitet oder eine Bewegung detektiert wird.
-\textit{Firmware Updates Over the Air} (FUOTA) ermöglicht darüber hinaus die
-Aktualisierung der Gerätesoftware ohne physischen Zugang~\cite{semtech_lora_basics}.
-
-% -----------------------------------------------------------------------------
-\section{RF"=Planung und Signalausbreitung}
-\label{sec:rf-planung}
-% -----------------------------------------------------------------------------
-
-RF"=Planung (\textit{Radio Frequency Planning}) bezeichnet die systematische
-Vorgehensweise zur Vorhersage der Funkabdeckung eines drahtlosen Systems.
-Sie bildet die methodische Grundlage für den in Kapitel~\ref{chap:evaluation}
-durchgeführten Vergleich zwischen theoretisch vorhergesagter und praktisch
-gemessener Reichweite.
 
 \subsection{Link Budget}
 \label{subsec:link-budget}
@@ -332,111 +319,20 @@ um Schwundeffekte und Hindernisse zu kompensieren~\cite{semtech_lora_basics}.
 Uplink und Downlink"=Budget sind aufgrund unterschiedlicher Antennenhöhen in der Regel
 nicht symmetrisch.
 
-\subsection{Freiraum"=Pfadverlust und Ausbreitungsmodelle}
-\label{subsec:pfadverlust}
-
-Der Freiraum"=Pfadverlust (\textit{Free Space Path Loss}, FSPL) beschreibt den
-Signalverlust in einer hindernisfreien Umgebung und berechnet sich nach der
-Friis"=Gleichung:
-
-\begin{equation}
-  \text{FSPL} \, [\si{\dB}] = 20 \log_{10}(d) + 20 \log_{10}(f)
-                              + 20 \log_{10}\!\left(\frac{4\pi}{c}\right)
-  \label{eq:fspl}
-\end{equation}
-
-mit der Distanz $d$ in Metern und der Frequenz $f$ in Hertz. Bei Verdopplung der
-Entfernung steigt der Pfadverlust im Freiraummodell um \SI{6}{\dB}; das
-\textit{Two"=Ray Ground Reflection Model} ergibt bei Bodennähe sogar einen Verlust
-von \SI{12}{\dB} bei doppelter Distanz~\cite{dobkin2012rf}. Für sehr große Distanzen
-ergibt sich für das \SI{868}{\MHz}"=Band bei beispielsweise \SI{800}{\km} ein
-theoretischer FSPL von \SI{-150}{\dB}.
-
-Für realitätsnähere Vorhersagen werden empirische Ausbreitungsmodelle verwendet.
-Tabelle~\ref{tab:ausbreitungsmodelle} gibt einen Überblick der gängigsten Modelle.
-
-\begin{table}[htbp]
-  \centering
-  \caption{Übersicht der Ausbreitungsmodelle und deren Einsatzbereich}
-  \label{tab:ausbreitungsmodelle}
-  \begin{tabular}{@{}lll@{}}
-    \toprule
-    \textbf{Modell} & \textbf{Einsatzbereich} & \textbf{Bemerkung} \\
-    \midrule
-    Log"=Distance Path Loss & Allgemein & Einfachstes empirisches Modell \\
-    Okumura"=Hata            & 150--1500\,MHz, Außenbereich & Meistgenutztes Modell \\
-    COST 231                 & 1500--2000\,MHz              & Detaillierte Stadtarchitektur \\
-    ITU"=R P.1238            & Innenbereich                 & Für Gebäudeplanung \\
-    \bottomrule
-  \end{tabular}
-\end{table}
-
-Das \textbf{Okumura"=Hata}"=Modell ist für den Frequenzbereich von 150 bis
-\SI{1500}{\MHz} das am häufigsten eingesetzte Modell und eignet sich damit direkt für
-das \SI{868}{\MHz}"=Band~\cite{haslett2008essentials}. Für Innenräume, wie sie
-bei der Messung in Industriegebäuden auftreten, ist das \textbf{ITU"=R P.1238}"=Modell
-geeigneter. Bei der Interpretation von Messergebnissen sind zudem
-Mehrwegeausbreitung (\textit{Multipath Fading}) und die Fresnel"=Zone zu
-berücksichtigen: Eine freie Fresnel"=Zone erfordert, dass das Gelände innerhalb einer
-ellipsoidförmigen Zone um die direkte Sichtlinie frei von Hindernissen ist.
-
-\subsection{RF"=Planungsmethodik}
-\label{subsec:rf-methodik}
-
-Die empfohlene Methodik zur RF"=Planung folgt einem dreistufigen Prozess~\cite{haslett2008essentials}:
-
-\begin{enumerate}
-  \item \textbf{Link"=Budget"=Analyse:} Berechnung des MAPL anhand der Systemparameter
-        (Sendeleistung, Antennengewinn, Empfängerempfindlichkeit, Sicherheitsmarge).
-  \item \textbf{RF"=Coverage"=Simulation:} Verwendung von Ausbreitungsmodellen und
-        digitalem Geländemodell zur kartografischen Darstellung der vorhergesagten Abdeckung.
-  \item \textbf{Feldmessungen:} Verifikation der Simulation durch reale Messungen in den
-        Zielumgebungen.
-\end{enumerate}
-
-Für die Coverage"=Simulation steht mit \textbf{SPLAT!} ein quelloffenes Linux"=Werkzeug
-zur Verfügung, das das Longley"=Rice"=Modell mit \acrfull{srtm}"=Geländedaten kombiniert.
-Die gemessenen RSSI"=Werte können anschließend mit Python und der Bibliothek Folium
-als georeferenzierte Heatmap über OpenStreetMap visualisiert und mit der
-SPLAT!"=Simulation überlagert werden.
-
-\subsection{Mikrozellen und Makrozellen}
-\label{subsec:zellen}
-
-In der Netzplanung wird zwischen \textit{Mikrozellen} -- bei denen die Antenne
-unterhalb der Dachlinie installiert wird -- und \textit{Makrozellen} mit Antennen
-oberhalb der Dachlinie unterschieden. Diese Unterscheidung beeinflusst das
-gewählte Ausbreitungsmodell und die erreichbaren Abdeckungsradien~\cite{walter2006radio}.
-Für Indoor"=Installationen gilt als Faustregel: Wenn die Innenwände nicht aus Beton oder
-Mauerwerk bestehen, kann ein einzelnes Gateway auf der gleichen Etage wie die
-Endgeräte ausreichende Abdeckung liefern.
-
-% -----------------------------------------------------------------------------
-\section{Normierung und Anforderungen im Bereich Schutzsensorik}
-\label{sec:normierung}
-% -----------------------------------------------------------------------------
-
-Der Einsatz mobiler Gasmesssysteme in industriellen Umgebungen unterliegt einer
-Reihe normativer Vorgaben. Relevant sind insbesondere die Regelungen der
-\acrshort{dguv} sowie die ATEX"=Richtlinie 2014/34/EU für Geräte in
-explosionsgefährdeten Bereichen. Die EN"=60079"=Normenreihe definiert die Anforderungen
-an elektrische Betriebsmittel in explosionsgefährdeten Bereichen hinsichtlich
-Zündschutzarten, Gehäuseschutz (IP"=Klassen) und Temperaturklassen. Diese
-Anforderungen sind bei der Hardwareauswahl und dem mechanischen Design des Prototyps
-zu berücksichtigen und werden in Kapitel~\ref{chap:hardware} eingehend behandelt.
-
 % Format : \newacronym{label}{abbreviation}{full term}
 % TODO: remember to run makeglossaries main 
 \newacronym{lora}{LoRa}{Long Range}
 \newacronym{lorawan}{LoRaWAN}{Long Range Wide Area Network}
 \newacronym{css}{CSS}{Chirp Spread Spectrum}
 \newacronym{sf}{SF}{Spreading Factor}
+\newacronym{toa}{ToA}{Time-on-Air}
 \newacronym{bw}{BW}{Bandwidth}
 \newacronym{cr}{CR}{Coding Rate}
 \newacronym{snr}{SNR}{Signal-to-Noise Ratio}
 \newacronym{fsk}{FSK}{Frequency Shift Keying}
 \newacronym{mcu}{MCU}{Microcontroller Unit}
 \newacronym{ism}{ISM}{Industrial, Scientific, and Medical}
+\newacronym{phy}{PHY}{Physical Layer (Bitübertragungsschicht)}
 \newacronym{ed}{ED}{End Device}
 \newacronym{ns}{NS}{Network Server}
 \newacronym{js}{JS}{Join Server}

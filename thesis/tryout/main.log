@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.3.15)  23 MAR 2026 13:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.3.15)  24 MAR 2026 10:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1062,35 +1062,7 @@ Package biblatex Info: ... file 'main.bbl' found.
 
 Package biblatex Warning: The following entry could not be found
 (biblatex)                in the database:
-(biblatex)                dobkin2012rf
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                haslett2008essentials
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
 (biblatex)                semtech_lora_basics
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                stm32wl_ds
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                walter2006radio
 (biblatex)                Please verify the spelling and rerun
 (biblatex)                LaTeX afterwards.
 
@@ -1112,7 +1084,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--8
 \T1/phv/b/n/14.4 LoRaWan-Kommunikation für mo-bi-le Sen-
  []
 
-<BHT-Logo-vertikal.pdf, id=96, 53.01094pt x 126.0707pt>
+<BHT-Logo-vertikal.pdf, id=60, 53.01094pt x 126.0707pt>
 File: BHT-Logo-vertikal.pdf Graphic file (type pdf)
 <use BHT-Logo-vertikal.pdf>
 Package pdftex.def Info: BHT-Logo-vertikal.pdf  used on input line 8.
@@ -1122,7 +1094,7 @@ Overfull \hbox (1.82535pt too wide) in paragraph at lines 8--8
 [][] [] 
  []
 
-<BHT-Elements.pdf, id=97, 32.04338pt x 161.86708pt>
+<BHT-Elements.pdf, id=61, 32.04338pt x 161.86708pt>
 File: BHT-Elements.pdf Graphic file (type pdf)
 <use BHT-Elements.pdf>
 Package pdftex.def Info: BHT-Elements.pdf  used on input line 8.
@@ -1139,7 +1111,7 @@ LaTeX Font Info:    Trying to load font information for U+trsy on input line 8.
  (/usr/share/texlive/texmf-dist/tex/latex/trsym/utrsy.fd
 File: utrsy.fd 2000/06/25v1.0transformation symbol font definitions
 )
-<BHT-Studiere-vertikal.pdf, id=98, 8.48169pt x 86.94461pt>
+<BHT-Studiere-vertikal.pdf, id=62, 8.48169pt x 86.94461pt>
 File: BHT-Studiere-vertikal.pdf Graphic file (type pdf)
 <use BHT-Studiere-vertikal.pdf>
 Package pdftex.def Info: BHT-Studiere-vertikal.pdf  used on input line 8.
@@ -1220,115 +1192,75 @@ Overfull \hbox (0.38582pt too wide) in paragraph at lines 9--16
 \T1/LinuxLibertineT-TLF/m/n/10.95 Pro-to-koll-stacks und sei-ner Netz-werkar-chi-tek-tur. An-schlie-ÿend wer-den Si-cher-heits-me-cha-nis-men,
  []
 
+LaTeX Font Info:    Trying to load font information for TS1+LinuxLibertineT-TLF on input line 29.
+(/usr/share/texlive/texmf-dist/tex/latex/libertine/TS1LinuxLibertineT-TLF.fd
+File: TS1LinuxLibertineT-TLF.fd 2017/03/20 (autoinst) Font definitions for TS1/LinuxLibertineT-TLF.
+)
+LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/it' will be
+(Font)              scaled to size 10.95pt on input line 29.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.41 
-      [3]
+l.38 \paragraph
+               *{Mehrwegeausbreitung und Fading} [3{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_u7qtuy.enc}]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 42.
+(Font)              scaled to size 12.0pt on input line 53.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 12.0pt on input line 42.
-LaTeX Font Info:    Trying to load font information for T1+fvm on input line 77.
+(Font)              scaled to size 12.0pt on input line 53.
+LaTeX Font Info:    Trying to load font information for T1+fvm on input line 88.
  (/usr/share/texlive/texmf-dist/tex/latex/bera/t1fvm.fd
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 9.08852pt on input line 77.
+(Font)              scaled to size 9.08852pt on input line 88.
  [4]
-LaTeX Font Info:    Trying to load font information for TS1+LinuxLibertineT-TLF on input line 129.
- (/usr/share/texlive/texmf-dist/tex/latex/libertine/TS1LinuxLibertineT-TLF.fd
-File: TS1LinuxLibertineT-TLF.fd 2017/03/20 (autoinst) Font definitions for TS1/LinuxLibertineT-TLF.
-)
-LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 10.95pt on input line 129.
- [5{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_u7qtuy.enc}]
-Underfull \hbox (badness 10000) in paragraph at lines 162--162
+Underfull \vbox (badness 1112) has occurred while \output is active []
+
+ [5]
+Underfull \hbox (badness 10000) in paragraph at lines 173--173
 []|\T1/LinuxLibertineT-TLF/b/n/10.95 Maximal \T1/LinuxLibertineT-TLF/m/n/10.95 (Schlaf-mo-dus stan-
  []
 
 
-Underfull \hbox (badness 2221) in paragraph at lines 162--162
+Underfull \hbox (badness 2221) in paragraph at lines 173--173
 []|\T1/LinuxLibertineT-TLF/b/n/10.95 Medium \T1/LinuxLibertineT-TLF/m/n/10.95 (pe-ri-odi-sches Auf-wa-
  []
 
 
-Underfull \hbox (badness 1796) in paragraph at lines 162--162
+Underfull \hbox (badness 1796) in paragraph at lines 173--173
 []|\T1/LinuxLibertineT-TLF/b/n/10.95 C\T1/LinuxLibertineT-TLF/m/n/10.95 ontinuierlicher Emp-fang (fast
  []
 
-[6] [7]
+[6] [7] [8]
 
-LaTeX Warning: Citation 'semtech_lora_basics' on page 8 undefined on input line 242.
+LaTeX Warning: Citation 'semtech_lora_basics' on page 9 undefined on input line 253.
 
 
-Underfull \vbox (badness 5533) has occurred while \output is active []
+Underfull \vbox (badness 6380) has occurred while \output is active []
 
- [8]
-
-LaTeX Warning: Citation 'semtech_lora_basics' on page 9 undefined on input line 264.
-
+ [9]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 265.
-LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 267.
-
-LaTeX Warning: Citation 'stm32wl_ds' on page 9 undefined on input line 267.
-
-[9{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_naooyc.enc}]
-
-LaTeX Warning: Citation 'semtech_lora_basics' on page 10 undefined on input line 300.
+(Font)              scaled to size 8.0pt on input line 285.
 
 
-LaTeX Warning: Reference `chap:evaluation' on page 10 undefined on input line 309.
-
-
-LaTeX Warning: Citation 'semtech_lora_basics' on page 10 undefined on input line 331.
-
-
-Underfull \vbox (badness 1082) has occurred while \output is active []
-
- [10]
-
-LaTeX Warning: Citation 'dobkin2012rf' on page 11 undefined on input line 351.
-
-
-LaTeX Warning: Citation 'haslett2008essentials' on page 11 undefined on input line 376.
-
-
-Overfull \hbox (5.95749pt too wide) in paragraph at lines 374--382
-\T1/LinuxLibertineT-TLF/m/n/10.95 ten ein-ge-setz-te Mo-dell und eig-net sich da-mit di-rekt für das $\OT1/cmr/m/n/10.95 868$$[]$\T1/LinuxLibertineT-TLF/m/n/10.95 -Band [].
- []
-
-
-LaTeX Warning: Citation 'haslett2008essentials' on page 11 undefined on input line 386.
-
-
-Overfull \hbox (9.87518pt too wide) in paragraph at lines 386--387
-[]\T1/LinuxLibertineT-TLF/m/n/10.95 Die emp-foh-le-ne Me-tho-dik zur RF-Pla-nung folgt ei-nem drei-stu-fi-gen Pro-zess []: 
- []
-
-[11]
-
-LaTeX Warning: Citation 'walter2006radio' on page 12 undefined on input line 409.
-
-
-LaTeX Warning: Reference `chap:hardware' on page 12 undefined on input line 426.
+LaTeX Warning: Citation 'semtech_lora_basics' on page 10 undefined on input line 295.
 
 \@gls@deffile=\write12
 \openout12 = `main.glsdefs'.
 
-) (./anhang.tex [12]
+) (./anhang.tex [10]
 Anhang A.
+LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 10.95pt on input line 17.
 
 Overfull \hbox (15.25049pt too wide) in paragraph at lines 31--33
 []\T1/fvm/m/n/10.95 bhtThesis.bib \T1/LinuxLibertineT-TLF/m/n/10.95 bein-hal-tet die zu zi-tie-ren-den Li-te-ra-tur-stel-len und wird von bibT[]Xausgewertet 
  []
 
-[13
+[11
 
-]) [14] (./main.acr) (./main.gls) [15
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_naooyc.enc}]) [12] (./main.acr) (./main.gls) [13
 
 
 
@@ -1337,22 +1269,18 @@ Overfull \hbox (15.25049pt too wide) in paragraph at lines 31--33
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 2C21B7A3011B95DF4AE19F224E85E00C;4793.
+(rerunfilecheck)             Checksum: B16BB14E4F59B8EFFA4E9075D28383FE;2650.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32372 strings out of 474222
- 607009 string characters out of 5748733
+ 32368 strings out of 474222
+ 606895 string characters out of 5748733
  1936975 words of memory out of 5000000
- 54034 multiletter control sequences out of 15000+600000
- 663066 words of font info for 110 fonts, out of 8000000 for 9000
+ 54040 multiletter control sequences out of 15000+600000
+ 662356 words of font info for 108 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  94i,13n,93p,2407b,2461s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
@@ -1392,6 +1320,9 @@ pdfTeX warning (dest): name{glo:ed} has been referenced but does not exist, repl
 pdfTeX warning (dest): name{glo:ism} has been referenced but does not exist, replaced by a fixed one
 
 
+pdfTeX warning (dest): name{cite.0@LoRaModulationBasics} has been referenced but does not exist, replaced by a fixed one
+
+
 pdfTeX warning (dest): name{glo:css} has been referenced but does not exist, replaced by a fixed one
 
 
@@ -1400,11 +1331,11 @@ pdfTeX warning (dest): name{glo:lorawan} has been referenced but does not exist,
 
 pdfTeX warning (dest): name{glo:lora} has been referenced but does not exist, replaced by a fixed one
 
-</usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on main.pdf (22 pages, 393751 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on main.pdf (20 pages, 355565 bytes).
 PDF statistics:
- 423 PDF objects out of 1000 (max. 8388607)
- 365 compressed objects within 4 object streams
- 86 named destinations out of 1000 (max. 500000)
- 200 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 360 PDF objects out of 1000 (max. 8388607)
+ 308 compressed objects within 4 object streams
+ 76 named destinations out of 1000 (max. 500000)
+ 128 words of extra memory for PDF output out of 10000 (max. 10000000)
 
