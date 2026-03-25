@@ -1,46 +1,388 @@
-%%
-%% Berliner Hochschule für Technik --  Abschlussarbeit
-%%
-%% Kapitel 2
-%%
-%%
+% =============================================================================
+% Kapitel 2: Notwendigkeit und Anwendungsfelder von Off-Grid Schutzsensorik
+% =============================================================================
 
-\chapter{Zweiter Abschnitt}\label{ch.test}
+\chapter{Notwendigkeit und Anwendungsfelder von Off-Grid Schutzsensorik}
+\label{chap:motivation}
 
-In diesem Abschnitt folgt reichlich Blindtext, um das Aussehen voller Seiten zu
-dokumentieren. 
+% TODO: update intro when done proofreading
+Dieses Kapitel legt die anwendungsseitige Grundlage der Arbeit. Es wird zunächst
+dargelegt, warum konventionelle Funkkommunikationstechnologien in Gefahrgebieten
+strukturell versagen und welche Anforderungen sich daraus an ein autonomes
+Kommunikationssystem ergeben. Anschließend werden vier repräsentative
+Anwendungsfelder analysiert, in denen diese Anforderungen auftreten. Das Kapitel
+schließt mit einer tabellarischen Gegenüberstellung der Anwendungsfelder, aus der
+die technischen Designziele für das in Kapitel~\ref{chap:hardware} entwickelte
+System abgeleitet werden.
 
-\section{Grundlegendes}
 
-\begin{neu}
-  \blindtext \anno{Sachen gibt's!}
-\end{neu}
-\blindtext 
+% -----------------------------------------------------------------------------
+\section{Versagen konventioneller Kommunikationsinfrastruktur in Gefahrgebieten}
+\label{sec:komm-versagen}
+% -----------------------------------------------------------------------------
 
-\section{Weiterführendes} 
+Moderne drahtlose Kommunikationstechnologien wie WLAN, Bluetooth und % TODO: def acro
+Mobilfunknetze der vierten und fünften Generation sind für den Einsatz in
+erschlossenen, infrastrukturell versorgten Umgebungen konzipiert. In
+Gefahrgebieten -- definiert als Orte, an denen Personen physischen, chemischen
+oder biologischen Risiken ausgesetzt sind und an denen gleichzeitig keine oder
+nur unzuverlässige Kommunikationsinfrastruktur vorhanden ist -- stoßen diese
+Technologien an fundamentale Grenzen.
 
-\begin{neu}
-  \blindtext
-\end{neu}
+WLAN nach IEEE 802.11 ist auf Reichweiten von typischerweise 30 bis
+\SI{100}{\m} im Innenbereich begrenzt und erfordert die Installation von
+Access-Points in regelmäßigen Abständen. Dies setzt eine stabile,
+netzgespeiste Infrastruktur voraus, die in Katastrophengebieten, im Untertagebergbau
+oder in abgelegenen Industrieanlagen häufig nicht vorhanden ist. Bluetooth ist
+mit einer Reichweite von bis zu \SI{10}{\m} (Klasse 2) für
+weiträumige Gefahrgebiete von vornherein ungeeignet. Mobilfunknetze
+bieten zwar eine großflächige Abdeckung, weisen jedoch in Katastrophenszenarien
+eine systemimmanente Schwäche auf: Basisstationen werden häufig durch dasselbe
+Ereignis zerstört oder überlastet, das den Notfall verursacht -- Erdbeben, Überschwemmungen
+oder Brände~\cite{sciullo2020locate}. Untertageumgebungen wie Bergwerksstollen
+stellen eine besondere Herausforderung dar, da Funksignale durch Gestein stark
+gedämpft werden und herkömmliche Mobilfunk- oder WLAN-Signale bereits nach wenigen
+Metern vollständig absorbiert werden.
 
-\blindtext
-\blindenumerate
-\blindtext[3] \anno{Lesen, bitte!}
+Das Konzept der \textbf{Off-Grid-Kommunikation} bezeichnet drahtlose
+Netzwerke, die vollständig autark -- ohne Anbindung an bestehende
+Telekommunikationsinfrastruktur -- operieren. Für Schutzsensorsysteme in
+Gefahrgebieten ergeben sich daraus drei grundlegende Anforderungen, die in
+Tabelle~\ref{tab:komm_anforderungen} zusammengefasst sind.
 
-\begin{figure}[bht]
-  \begin{center}
-    \includegraphics[scale=1]{schaltbild}
-    \caption{Die verwendete Filterschaltung}
-    \label{fig.Filterschaltung}
-  \end{center}
-\end{figure}
+\begin{table}[htbp]
+    \centering
+    \caption{Grundlegende Kommunikationsanforderungen für Off-Grid Schutzsensorik}
+    \label{tab:komm_anforderungen}
+    \begin{tabularx}{\textwidth}{l X}
+        \toprule
+        \textbf{Anforderung} & \textbf{Begründung} \\
+        \midrule
+        Infrastrukturunabhängigkeit &
+        Das Netzwerk muss ohne externe Basisstationen, Internetanbindung
+        oder Netzspannung operieren. \\
+        \addlinespace
+        Energieautarkie &
+        Endgeräte müssen über akkubetriebene oder energy-harvesting-gestützte
+        Quellen dauerhaft betrieben werden können, da Netzstrom im Einsatzgebiet
+        nicht verfügbar ist. \\
+        \addlinespace
+        Reichweite und Gebäudedurchdringung &
+        Das System muss Distanzen von mehreren hundert Metern bis zu einigen
+        Kilometern überbrücken und dabei Hindernisse wie Betonwände,
+        Tunnelwände oder Waldvegetation durchdringen. \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
 
-\blinditemize[8]
-\Blindtext[2][2]
-\blinddescription \anno{Es ist auch möglich längere Randnotizen zu machen. Ob die 
-  dann aber gelesen werden, ist so eine Sache}  
+LoRaWAN auf Basis der LoRa"=Modulationstechnologie adressiert alle drei
+Anforderungen: Es operiert im lizenzfreien ISM"=Band, erreicht Reichweiten
+von 2 bis \SI{5}{\km} in städtischen und über \SI{10}{\km} in ländlichen
+Umgebungen, benötigt im Sendebetrieb lediglich wenige Milliampere und kann
+vollständig ohne Internetanbindung in einem privaten, autarken Netzwerk betrieben
+werden. Die folgenden Abschnitte zeigen anhand konkreter Anwendungsfelder, in welchen Szenarien diese 
+Eigenschaften entscheidend sind.
 
-\section{Abwegiges}
+% -----------------------------------------------------------------------------
+\section{Use Case 1: Industrie und Bergbau}
+\label{sec:uc-industrie}
+% -----------------------------------------------------------------------------
 
-\blindtext
+\subsection{Gefährdungslage}
 
+Der Untertagbergbau gehört zu den gefährlichsten Arbeitsbereichen weltweit.
+\citeauthor{bls_mining2023} berichten, dass die Todesrate in der US-amerikanischen
+Kohleindustrie mit \num{19,6} Todesfällen pro \num{100000} Vollzeitbeschäftigten
+im Jahr 2021 mehr als das Fünffache des Durchschnittswerts der Privatwirtschaft
+(\num{3,8}) beträgt~\cite{bls_mining2023}. Als häufigste Unfallursachen identifiziert
+eine Analyse chinesischer Bergwerksunfälle zwischen 2017 und 2022 Dacheinbrüche
+sowie Gasexplosionen~\cite{sciencedirect_coal2024}. Methan und
+Kohlenmonoxid akkumulieren in schlecht belüfteten Stollen und können
+bei Erreichen der unteren Explosionsgrenze -- für Methan bei \SI{5}{\percent}
+Volumenanteil in Luft -- zu verheerenden Explosionen führen~\cite{wiki_mining}.
+
+In chemischen Anlagen und Raffinerien stellt die ATEX"=Richtlinie 2014/34/EU
+den regulatorischen Rahmen für Geräte in explosionsgefährdeten Bereichen dar.
+Diese Umgebungen sind in Zonen unterteilt (Zone 0 bis 2 für Gase, Zone 20 bis 22
+für Stäube), die Anforderungen an die Zündschutzart von elektrischen Betriebsmitteln
+stellen. Ein verteiltes Gasmesssystem muss daher nicht nur funktional zuverlässig,
+sondern auch normkonform ausgelegt sein.
+
+\subsection{Kommunikationsherausforderung}
+
+Im Untertagebergbau fehlt typischerweise jede Form von Mobilfunkabdeckung.
+Funksignale werden durch Gestein stark gedämpft; die Signaldämpfung in Stollen
+kann je nach Gesteinsart und Geometrie mehrere zehn Dezibel pro \SI{100}{\m}
+betragen~\cite{niosh_wsn}. Bestehende kabelgebundene Systeme sind in ihrer
+Skalierbarkeit eingeschränkt und bieten keine Mobilität der Endgeräte. Gleichzeitig
+ist eine zeitkritische Alarmübertragung erforderlich: Im Falle einer
+Gaskonzentration oberhalb des Schwellwerts muss ein Warnsignal innerhalb von
+Sekunden die gesamte betroffene Belegschaft erreichen.
+
+\subsection{LoRaWAN als Lösungsansatz}
+
+\citeauthor{baert2018lorawan} demonstrieren in ihrer Arbeit zu industriellen
+IoT"=Anwendungen mit LoRaWAN, dass LoRa"=Signale aufgrund der CSS"=Modulation
+auch in Umgebungen mit starker Mehrwegeausbreitung und
+Signaldämpfung -- wie sie in Tunneln und Stollen auftreten -- noch zuverlässig
+demoduliert werden können~\cite{baert2018lorawan}. \citeauthor{smartmininghelmet}
+berichten in einer Prototypstudie, dass LoRa"=Kommunikation in simulierten
+Untertagebedingungen eine zuverlässige Datenübertragung bis zu \SI{300}{\m}
+bei einem Stromverbrauch ermöglichte, der einen ununterbrochenen Betrieb von
+über 12 Stunden erlaubt~\cite{smartmininghelmet}.
+
+Ein LoRaWAN"=basiertes Schutzsensorsystem für dieses Anwendungsfeld würde aus
+mobilen Endgeräten (Gasdetektoren, am Körper oder Helm getragen), einem oder
+mehreren portablen Gateways sowie einem lokal betriebenen Network-Server bestehen.
+Die mobilen Endgeräte erfassen kontinuierlich Gaskonzentrationen und übertragen
+bei Überschreitung eines Schwellwerts ein Alarmpaket. Da ADR für mobile % TODO: define ADR acronym
+Geräte nicht geeignet ist (vgl. Abschnitt~\ref{subsec:adr}), muss der Spreading
+Factor entweder manuell konfiguriert oder durch ein adaptives, mobilitätsbewusstes
+Verfahren gesteuert werden.
+
+Hinsichtlich der ATEX"=Konformität ist zu beachten, dass der in dieser Arbeit
+entwickelte Prototyp auf Basis des STM32WL55 nicht für den Einsatz in
+explosionsgefährdeten Bereichen zertifiziert ist. Die ATEX"=Zertifizierung stellt
+einen separaten Schritt dar, der für eine Serienproduktion durch
+Descap GmbH erforderlich wäre.
+
+% -----------------------------------------------------------------------------
+\section{Use Case 2: Katastrophenschutz und Feuerwehr}
+\label{sec:uc-katastrophenschutz}
+% -----------------------------------------------------------------------------
+
+\subsection{Gefährdungslage}
+
+Einsatzkräfte des Katastrophenschutzes und der Feuerwehr operieren per Definition
+in Umgebungen, in denen die Infrastruktur entweder nicht vorhanden oder durch
+das Ereignis selbst zerstört worden ist. Laut NFPA kamen im Jahr 2023
+in den USA 89 Feuerwehrleute im Dienst ums Leben -- der zweithöchste Wert seit
+2013~\cite{nfpa2023}. Als besonders gefährlich gelten Waldbrände: Einsatzkräfte
+können sich in sich schnell verändernden Brandgebieten ohne Sichtverbindung und
+ohne Mobilfunknetz befinden. Der Verlust der Kommunikation zu Teamkollegen
+oder zur Einsatzleitung ist in diesen Szenarien lebensbedrohlich.
+
+Bei Einsturzszenarien nach Erdbeben oder Gebäudeeinstürzen müssen Such- und
+Rettungsteams in eingestürzten Gebäudestrukturen operieren, in denen
+Mobilfunksignale durch Stahlbeton vollständig abgeschirmt werden. Auch
+Überflutungsgebiete erfordern eine vom terrestrischen Netz unabhängige
+Kommunikation, da Basisstationen und Stromversorgung häufig vom selben Ereignis
+betroffen sind wie die Einsatzkräfte.
+
+\subsection{Kommunikationsherausforderung}
+
+Die Anforderungen an Kommunikationssysteme in Katastrophenschutzszenarien
+unterscheiden sich in einem wesentlichen Punkt von industriellen Anwendungen:
+Das System muss \textbf{rasch deployierbar} sein. Im Gegensatz zu fest
+installierten Industriesystemen muss ein mobiles LoRaWAN"=Netz innerhalb von
+Minuten nach Eintreffen am Einsatzort betriebsbereit sein. Dies setzt voraus,
+dass das Gateway batteriebetrieben, kompakt und von nicht"=technischem Personal
+in Betrieb zu nehmen ist.
+
+Darüber hinaus ist im Katastrophenschutz die Personenverfolgung (\textit{Personnel
+Tracking}) eine zentrale Funktion: Die Einsatzleitung muss jederzeit wissen,
+wo sich einzelne Trupps befinden. LoRa unterstützt nativ eine
+TDOA"=basierte (\textit{Time Difference of Arrival}) Ortung, die ohne
+GPS"=Empfänger am Endgerät auskommt und damit für Innenraumeinsätze
+relevant ist~\cite{semtech_lora_basics}.
+
+\subsection{LoRaWAN als Lösungsansatz}
+
+\citeauthor{sciullo2020locate} präsentieren mit \textit{LOCATE} ein
+LoRaWAN"=basiertes mobiles Einsatzmanagementsystem, das explizit für
+Katastrophenschutzszenarien ohne bestehende Infrastruktur entwickelt wurde.
+Das System nutzt eine Mesh"=Topologie, bei der einzelne Einsatzkräfte als
+Relaisknoten fungieren und damit die Netzabdeckung dynamisch in das
+Einsatzgebiet hinein erweitern~\cite{sciullo2020locate}. Dies ist ein
+wesentlicher Vorteil gegenüber der klassischen Stern"=Topologie, bei der alle
+Endgeräte in direkter Reichweite eines Gateways sein müssen.
+
+Für Waldbrandeinsätze bietet die Doppler"=Resistenz von LoRa (vgl.
+Abschnitt~\ref{sec:lora-physical}) einen praktischen Vorteil: Auch bei
+bewegten Einsatzkräften bleibt die Verbindungsqualität stabil, ohne dass
+eine Frequenznachführung erforderlich ist.
+
+
+% -----------------------------------------------------------------------------
+\section{Use Case 3: Militär und Sicherheit}
+\label{sec:uc-militar}
+% -----------------------------------------------------------------------------
+
+\subsection{Gefährdungslage}
+
+Militärische und sicherheitsbehördliche Operationen in abgelegenen oder
+feindlich kontrollierten Gebieten stellen besondere Anforderungen an
+Kommunikationssysteme. EOD"=Teams, die mit der Entschärfung von % TODO: def acro
+Sprengvorrichtungen beauftragt sind, operieren häufig in Umgebungen, die
+gezielt elektromagnetisch gestört werden (\textit{Electronic Warfare},
+Jamming). Grenzüberwachungsmissionen in infrastrukturschwachen Regionen --
+etwa in Wüsten- oder Gebirgsterrain -- können sich über hunderte von Kilometern
+erstrecken, ohne dass eine Mobilfunkabdeckung vorhanden ist.
+UN"=Friedensmissionen in Entwicklungsländern sehen sich mit dem
+vollständigen Fehlen ziviler Telekommunikationsinfrastruktur konfrontiert.
+
+\subsection{Kommunikationsherausforderung}
+
+Klassische Militärfunksysteme wie VHF"=Handfunkgeräte sind zuverlässig, % TODO: def acro
+aber schwer, energiehungrig und durch ihre charakteristischen Emissionen
+detektierbar. Für sicherheitskritische IoT"=Anwendungen -- etwa ein verteiltes
+Netzwerk von Bewegungs- oder Schadstoffsensoren entlang einer
+Überwachungslinie -- sind dedizierte Funkgeräte weder skalierbar noch praktikabel.
+
+LoRaWAN bietet in diesem Kontext zwei relevante Eigenschaften: Erstens
+ist der \textit{RF Footprint} eines LoRa"=Endgeräts aufgrund der geringen
+Sendeleistung (typischerweise \SIrange{14}{22}{dBm}) und der auf den ersten
+Blick rauschartig erscheinenden CSS"=Modulation schwer zu detektieren.
+Zweitens ermöglicht die niedrige Datenrate eine sehr stromsparende,
+intermittierende Übertragung, die mit kleinen Primärzellen oder solarbetriebenen
+Akkus über Monate betrieben werden kann~\cite{morin2017device}.
+
+\subsection{LoRaWAN als Lösungsansatz}
+
+Ein autonomes Sensornetzwerk für Grenz- oder Perimeterschutz könnte aus
+solarbetriebenen LoRa"=Knoten bestehen, die in regelmäßigen Abständen entlang
+einer Überwachungslinie platziert werden und nur bei Detektion eines Ereignisses
+ein Uplink"=Paket senden. Die geringe Duty"=Cycle"=Auslastung (Abschnitt~\ref{subsec:frequenzbaender})
+fügt sich dabei gut in dieses ereignisgesteuerte Übertragungsschema ein.
+Ein portables Gateway, betrieben von einem Fahrzeug oder einem vorgeschobenen
+Posten, sammelt die Sensordaten und leitet sie an eine taktische
+Lagezentrale weiter -- ohne Anbindung an öffentliche Kommunikationsnetze.
+
+Es sei darauf hingewiesen, dass militärische Anwendungen spezifische
+Anforderungen an Verschlüsselung und Zertifizierung stellen, die über den
+im Rahmen dieser Arbeit betrachteten zivilen AES"=128"=Standard hinausgehen.
+Der in dieser Arbeit entwickelte Prototyp ist als Basis für zivile
+Schutzsensorik konzipiert; eine Erweiterung in Richtung militärischer
+Normen (z.B. NATO STANAG) würde weitergehende Untersuchungen erfordern.
+
+
+% -----------------------------------------------------------------------------
+\section{Use Case 4: Umweltmonitoring in Extremgebieten}
+\label{sec:uc-umwelt}
+% -----------------------------------------------------------------------------
+
+\subsection{Gefährdungslage}
+
+Umweltmessstationen in Extremlagen -- darunter Vulkane, Gletscher,
+Hochwasser"=Frühwarnsysteme in Entwicklungsländern und Waldbrandfrühwarnsysteme --
+stehen vor einem grundlegenden Widerspruch: Die Gebiete, in denen Messungen am
+dringendsten benötigt werden, sind häufig diejenigen, die am schlechtesten
+erschlossen sind. Vulkane erfordern Sensoren in unmittelbarer Nähe der
+Ausbruchszone, wo keine Infrastruktur existiert und physischer Zugang
+für Menschen lebensgefährlich ist. Gletschermessstationen in arktischen oder
+hochalpinen Regionen müssen über Monate hinweg -- teils durch polare Nacht
+mit eingeschränkter Solarenergie -- autonom operieren.
+
+Hochwasser"=Frühwarnsysteme in Entwicklungsländern sind auf einfach
+installierbare, kostengünstige und wartungsarme Sensorknoten angewiesen, die
+keine telekommunikationstechnische Infrastruktur voraussetzen. Das Fehlen
+eines solchen Systems hatte in der Vergangenheit wiederholt katastrophale
+Folgen: Frühwarnsysteme können die Vorlaufzeit für Evakuierungen von
+Minuten auf Stunden verlängern~\cite{adeel2019wsn}.
+
+\subsection{Kommunikationsherausforderung}
+
+Die dominante Herausforderung in diesem Anwendungsfeld ist
+\textbf{Energieautarkie über lange Zeiträume}. Ein Sensorknoten, der an einem
+Vulkanhang oder in einem Flussbett installiert ist, kann nicht regelmäßig
+für einen Batteriewechsel aufgesucht werden. Das System muss daher entweder
+mit Primärbatterien über mehrere Jahre oder mit solarbetriebenen Akkus
+betrieben werden. Dies erfordert einen durchschnittlichen Stromverbrauch im
+Bereich weniger Mikroampere -- ein Wert, der nur durch konsequente Nutzung
+von Schlafmodi und sehr niedrige Sendefrequenz erreichbar ist.
+
+Gleichzeitig gibt es in diesen Gebieten keine Mobilfunkabdeckung und keine
+Möglichkeit, einen kabelgebundenen Network-Server zu betreiben. Das Gateway
+muss daher ebenfalls solar- oder batteriebetrieben und wetterfest sein.
+
+\subsection{LoRaWAN als Lösungsansatz}
+
+\citeauthor{lorawan_aqms2022} zeigen, dass ein LoRaWAN"=basiertes
+Luftqualitätsmesssystem mit solarbetriebenen Knoten einen dauerhaften,
+netzunabhängigen Betrieb ermöglicht~\cite{lorawan_aqms2022}. Die Verwendung von
+SF12 -- dem Spreading Factor mit der höchsten Empfängerempfindlichkeit von
+bis zu \SI{-148}{dBm} -- ermöglicht Reichweiten von mehreren Kilometern auch
+bei ungünstigen Ausbreitungsbedingungen, wie sie in Berggebieten durch
+Abschattung auftreten. Class-A"=Betrieb mit langen Schlafphasen zwischen den
+Messzyklen minimiert den Energieverbrauch auf ein Niveau, das mit kleinen
+Solarpanelen vereinbar ist.
+
+Ein realistisches Systemszenario für dieses Anwendungsfeld könnte einen Knoten
+vorsehen, der alle \SI{5}{\min} eine aggregierte Messung (Minimum, Mittelwert,
+Maximum) überträgt~\cite{semtech_lora_basics}. Bei SF12, BW~\SI{125}{kHz}
+und einer Payload von 12~Bytes beträgt die Time"=on"=Air pro Übertragung
+ca. \SI{1318}{ms}, was bei einer Wiederholrate von \SI{5}{\min} einer
+Duty"=Cycle"=Auslastung von \SI{0.44}{\percent} entspricht -- unterhalb der
+in Europa zulässigen 1\,\%.
+
+
+% -----------------------------------------------------------------------------
+\section{Vergleich und Ableitung der Systemanforderungen}
+\label{sec:anforderungsableitung}
+% -----------------------------------------------------------------------------
+
+Die vier analysierten Anwendungsfelder unterscheiden sich in ihren konkreten
+Rahmenbedingungen erheblich, teilen jedoch eine gemeinsame Grundstruktur:
+fehlende Infrastruktur, strenge Energiebudgets und die Notwendigkeit einer
+zuverlässigen Datenübertragung über nicht-triviale Distanzen. Tabelle~\ref{tab:usecases}
+fasst die wesentlichen Merkmale der Anwendungsfelder zusammen.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Vergleich der Anwendungsfelder hinsichtlich Systemanforderungen}
+    \label{tab:usecases}
+    \begin{tabularx}{\textwidth}{l X X X X}
+        \toprule
+        & \textbf{Industrie /} & \textbf{Katastrophen-} & \textbf{Militär /}
+        & \textbf{Umwelt-} \\
+        & \textbf{Bergbau} & \textbf{schutz} & \textbf{Sicherheit}
+        & \textbf{monitoring} \\
+        \midrule
+        Infrastruktur & Keine (Untertagebau) & Zerstört / keine & Keine / feindlich
+        & Keine \\
+        \addlinespace
+        Reichweite & \SIrange{100}{500}{\m} & \SIrange{500}{2000}{\m}
+        & \SIrange{1}{10}{\km} & \SIrange{2}{15}{\km} \\
+        \addlinespace
+        Batterielaufzeit & 8--24\,h & 4--48\,h & Monate & Monate--Jahre \\
+        \addlinespace
+        Latenztoleranz & Niedrig ($<$\,\SI{5}{\s}) & Mittel ($<$\,\SI{30}{\s})
+        & Hoch ($<$\,\SI{5}{\min}) & Sehr hoch ($<$\,\SI{30}{\min}) \\
+        \addlinespace
+        Mobilität & Hoch & Hoch & Mittel & Keine \\
+        \addlinespace
+        Topologie & Stern / Mesh & Mesh & Stern & Stern \\
+        \addlinespace
+        Normierung & ATEX, DGUV & --- & STANAG (optional) & --- \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+Aus dem Vergleich lassen sich folgende Designziele für das in dieser Arbeit
+entwickelte System ableiten:
+
+\begin{itemize}
+    \item \textbf{Autonomer Betrieb:} Das System muss ohne Internetanbindung
+    und ohne externe Netzspannung vollständig funktionsfähig sein. Als
+    Network"=Server kommt ChirpStack auf einem Einplatinenrechner (Raspberry Pi)
+    zum Einsatz.
+
+    \item \textbf{Energieeffizienz:} Die Sensoreinheit muss im Akkubetrieb
+    eine Mindestlaufzeit von 8 Stunden erreichen, um einen Arbeitsschicht-konformen
+    Betrieb zu ermöglichen. Dies erfordert die konsequente Nutzung von
+    Schlafmodi auf dem STM32WLE5 (vgl. Abschnitt~\ref{sec:energieeffizienz}).
+
+    \item \textbf{Konfigurierbare Reichweite:} Der Spreading Factor muss
+    softwareseitig konfigurierbar sein, um den Trade-off zwischen Reichweite
+    und Energieverbrauch für das jeweilige Einsatzszenario optimieren zu können.
+
+    \item \textbf{Topologievergleich:} Da Stern- und Mesh"=Topologie je nach
+    Anwendungsfeld unterschiedliche Stärken aufweisen, werden beide
+    Konfigurationen im experimentellen Teil der Arbeit
+    (Kapitel~\ref{chap:evaluation}) untersucht und verglichen.
+
+    \item \textbf{Skalierbarkeit auf Industrieanforderungen:} Der Prototyp soll
+    so ausgelegt sein, dass eine spätere Integration in zertifizierungsfähige
+    Hardware (ATEX"=Zonen) architekturell möglich ist, auch wenn die
+    Zertifizierung selbst nicht Gegenstand dieser Arbeit ist.
+\end{itemize}

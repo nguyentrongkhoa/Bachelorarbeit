@@ -27,13 +27,13 @@ sogenannte Chirps-Signale mit kontinuierlich steigender oder fallender Frequenz
 als Trägersymbole verwendet. % TODO: \cite{augustin2016study}. add pics of chirps
 
 Ursprünglich für Militäranwendungen gedacht, hat das CSS-Verfahren in den letzten 20 Jahren in der Nachrichtentechnik 
-zunehmend an Bedeutung gewonnen dank seiner hervorragenden Eigenschaften \cite{LoRaModulationBasics}: 
+zunehmend an Bedeutung gewonnen dank seiner hervorragenden Eigenschaften\footfullcite{LoRaModulationBasics}:
 
 \paragraph*{Niedriger Energieverbrauch}
 Ähnlich wie \acrshort{fsk} besitzt LoRa eine konstante Einhüllende, wodurch kostengünstige, energieeffiziente
 Leistungsverstärker verwendet werden können.
 \paragraph*{Hohe Störfestigkeit} 
-Da ein LoRa-Symbol lang und "ausgespreizt" ist, haben kurz Rauschimpulse nur einen verschwindenen Einfluss auf die Demodulation. 
+Da ein LoRa-Symbol lang und ausgespreizt ist, haben kurz Rauschimpulse nur einen verschwindenen Einfluss auf die Demodulation. 
 Aus diesem Grund sind LoRa-Signale sehr resistent gegenüber In-Band- und Out-of-Band-Interferenzen.
 Eine Gleichkanalsunterdrückung von über \SI{20}{\dB} kann erreicht werden, verglichen mit nur \SI{-6}{\dB} bei FSK.
 \paragraph*{Mehrwegeausbreitung und Fading}
@@ -162,10 +162,9 @@ Bewertung der Linkqualität, insbesondere bei schwachen Signalen nahe der
 Empfangsempfindlichkeitsgrenze.
 
 % TODO: maybe delete MAPL completely if text is too long
-Das \textbf{\acrfull{mapl}} beschreibt den maximal tolerierbaren Pfadverlust
+Das \textbf{\acrfull{mapl}}, oft auch als \textbf{Link-Budget} bekannt, beschreibt den maximal tolerierbaren Pfadverlust
 entlang der Übertragungsstrecke und ergibt sich aus der Differenz zwischen
-Sendeleistung und Empfangsempfindlichkeit unter Berücksichtigung aller Gewinne
-und Verluste: 
+Sendeleistung und Empfangsempfindlichkeit unter Berücksichtigung aller Gewinne und Verluste: 
 
 \begin{equation}
   \text{MAPL} = P_\text{TX} + G_\text{TX} + G_\text{RX}
@@ -187,8 +186,6 @@ Freiraum"=Pfadverlustmodells (vgl. Abschnitt~\ref{subsec:pfadverlust}) die % TOD
 \textbf{theoretische Reichweite} der Übertragungsstrecke abschätzen. Für den Chip SX1272 von Semtech zum Beispiel kommt man 
 auf einen theoretischen Wert von \qty{1946}{km}. % TODO: cite sylvain montagny
 
-% TODO: write about link budget here
-
 \subsection{Frequenzbänder und regulatorische Rahmenbedingungen}
 \label{subsec:frequenzbaender}
 
@@ -206,7 +203,7 @@ Einschränkung bei der Systemauslegung zwingend zu berücksichtigen.
 
 Die maximale Paketgröße in Europa beträgt 222\,Bytes bei hoher Datenrate und
 51\,Bytes bei niedriger Datenrate. Dabei addiert LoRaWAN stets einen
-13"=Byte"=Overhead zum Nutzdaten"=Payload. 
+13"=Byte"=Overhead zum Nutzdaten"=Payload. % TODO: add 14dBm somewhere
 
 % -----------------------------------------------------------------------------
 \section{LoRaWAN -- Network Layer} % TODO: remove --
