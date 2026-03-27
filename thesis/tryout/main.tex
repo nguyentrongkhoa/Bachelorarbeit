@@ -20,7 +20,7 @@
 \usepackage[acronym]{glossaries}
 \usepackage[entwurf]{bhtThesis}
 \usepackage{csquotes} % Recommended for biblatex
-\usepackage[backend=biber, style=authoryear, language=ngerman]{biblatex}
+\usepackage[backend=biber, style=ieee, language=ngerman]{biblatex}
 \addbibresource{LoRa.bib}
 %\usepackage[abgabe]{bhtThesis} % TODO: uncomment 
 \typeout{BHT-Abschlussarbeit V2.0 26.08.21 S.Tschirley}
@@ -86,7 +86,7 @@
   \end{tabular}
 }
 
-\makeglossaries
+\makeglossaries % can only be used in preamble
 
 %%\renewcommand{\baselinestretch}{1.05} 
 \begin{document}
@@ -94,11 +94,15 @@
 
 \input{titelseiten.tex}
 
+% TODO: remember to run makeglossaries main in the cmd line (when you are in /tryout/ folder), \makeglossaries is not enough
+\printglossary[type=\acronymtype]
+\printglossary
+
 \pagenumbering{arabic}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Die Kapitel der Arbeitw
 
-\input{kapitel2/ch2.tex}
+\input{kapitel2/notes.tex}
 \input{kapitel1/ch1.tex}
 
 \begin{appendix}
@@ -112,7 +116,7 @@
 %\bibliographystyle{myapalike}
 %\bibliography{LoRa}
 
-\printglossary[type=\acronymtype]
-\printglossary
+% if this does not print, clean all auxiliary files and recompile
+\printbibliography
 
 \end{document}

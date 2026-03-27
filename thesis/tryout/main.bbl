@@ -18,14 +18,66 @@
 
 
 \refsection{0}
-  \datalist[entry]{nyt/global//global/global}
+  \datalist[entry]{none/global//global/global}
+    \entry{sciulloDesignPerformanceEvaluation2020}{article}{}
+      \name{author}{3}{}{%
+        {{hash=a88060b87b3721c22d62af8fdd776a3a}{%
+           family={Sciullo},
+           familyi={S\bibinitperiod},
+           given={Luca},
+           giveni={L\bibinitperiod}}}%
+        {{hash=f6e2856afb5b3ec595ce93f8bf4c895c}{%
+           family={Trotta},
+           familyi={T\bibinitperiod},
+           given={Angelo},
+           giveni={A\bibinitperiod}}}%
+        {{hash=307301bba3d1eb9581ebf989a35ca2d0}{%
+           family={Felice},
+           familyi={F\bibinitperiod},
+           given={Marco\bibnamedelima Di},
+           giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{7667d7dd57c75a8d3535393a662451c3}
+      \strng{fullhash}{7667d7dd57c75a8d3535393a662451c3}
+      \strng{bibnamehash}{7667d7dd57c75a8d3535393a662451c3}
+      \strng{authorbibnamehash}{7667d7dd57c75a8d3535393a662451c3}
+      \strng{authornamehash}{7667d7dd57c75a8d3535393a662451c3}
+      \strng{authorfullhash}{7667d7dd57c75a8d3535393a662451c3}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{15708705}
+      \field{journaltitle}{Ad Hoc Networks}
+      \field{month}{1}
+      \field{title}{Design and performance evaluation of a {LoRa}-based mobile emergency management system ({LOCATE})}
+      \field{urlday}{25}
+      \field{urlmonth}{3}
+      \field{urlyear}{2026}
+      \field{volume}{96}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \field{pages}{101993}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.adhoc.2019.101993
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S1570870518309004
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S1570870518309004
+      \endverb
+    \endentry
     \entry{LoRaModulationBasics}{report}{}
       \list{institution}{1}{%
         {Semtech}%
       }
-      \field{sortinit}{L}
-      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
-      \field{labeldatesource}{nodate}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labeltitlesource}{title}
       \field{number}{AN1200.02}
       \field{title}{{LoRa}™ {Modulation} {Basics}}
@@ -34,14 +86,28 @@
       \verb PDF:C\:\\Users\\khoa1\\Zotero\\storage\\P2U75EW3\\LoRa™ Modulation Basics.pdf:application/pdf
       \endverb
     \endentry
+    \entry{LoRaWANL21042020}{report}{}
+      \list{institution}{1}{%
+        {LoRa Alliance}%
+      }
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{month}{10}
+      \field{number}{TS001-1.0.4}
+      \field{title}{{LoRaWAN}® {L2} 1.0.4 {Specification} ({TS001}-1.0.4)}
+      \field{type}{Technical {Documentation}}
+      \field{year}{2020}
+      \verb{file}
+      \verb PDF:C\:\\Users\\khoa1\\Zotero\\storage\\DR9DSW6W\\2020 - LoRaWAN® L2 1.0.4 Specification (TS001-1.0.4).pdf:application/pdf
+      \endverb
+    \endentry
     \entry{LoRaWanBackendInterfaces2020}{report}{}
       \list{institution}{1}{%
         {LoRa Alliance}%
       }
-      \field{sortinit}{L}
-      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labeltitlesource}{title}
       \field{month}{10}
       \field{number}{TS002-1.1.0}
@@ -58,37 +124,12 @@
       \verb https://lora-alliance.org/wp-content/uploads/2020/11/TS002-1.1.0_LoRaWAN_Backend_Interfaces.pdf
       \endverb
     \endentry
-    \entry{LoRaWANL21042020}{report}{}
-      \list{institution}{1}{%
-        {LoRa Alliance}%
-      }
-      \field{sortinit}{L}
-      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labeltitlesource}{title}
-      \field{month}{10}
-      \field{number}{TS001-1.0.4}
-      \field{title}{{LoRaWAN}® {L2} 1.0.4 {Specification} ({TS001}-1.0.4)}
-      \field{type}{Technical {Documentation}}
-      \field{year}{2020}
-      \verb{file}
-      \verb PDF:C\:\\Users\\khoa1\\Zotero\\storage\\DR9DSW6W\\2020 - LoRaWAN® L2 1.0.4 Specification (TS001-1.0.4).pdf:application/pdf
-      \endverb
-    \endentry
   \enddatalist
-  \missing{adeel2019wsn}
-  \missing{baert2018lorawan}
-  \missing{bls_mining2023}
-  \missing{lorawan_aqms2022}
+  \missing{chirpstack_docs}
+  \missing{mekki2019comparative}
   \missing{morin2017device}
-  \missing{nfpa2023}
-  \missing{niosh_wsn}
-  \missing{sciencedirect_coal2024}
+  \missing{rumbleCRCHandbookChemistry2021}
   \missing{sciullo2020locate}
-  \missing{semtech_lora_basics}
-  \missing{smartmininghelmet}
-  \missing{wiki_mining}
 \endrefsection
 \endinput
 

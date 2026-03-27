@@ -1,3 +1,115 @@
+\glsdefs@newdocentry{wlan}%
+{%
+name={\acronymfont {\glsentryshort {wlan}}},%
+sort={WLAN},%
+type={acronym},%
+first={WLAN},%
+firstplural={WLANs},%
+text={WLAN},%
+plural={WLANs},%
+description={Wireless Local Area Network},%
+descriptionplural={Wireless Local Area Network},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Wireless Local Area Network},%
+longplural={Wireless Local Area Networks},%
+short={WLAN},%
+shortplural={WLANs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{lpwan}%
+{%
+name={\acronymfont {\glsentryshort {lpwan}}},%
+sort={LPWAN},%
+type={acronym},%
+first={LPWAN},%
+firstplural={LPWANs},%
+text={LPWAN},%
+plural={LPWANs},%
+description={Low Power Wide Area Network},%
+descriptionplural={Low Power Wide Area Network},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Low Power Wide Area Network},%
+longplural={Low Power Wide Area Networks},%
+short={LPWAN},%
+shortplural={LPWANs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{lte}%
+{%
+name={\acronymfont {\glsentryshort {lte}}},%
+sort={LTE},%
+type={acronym},%
+first={LTE},%
+firstplural={LTEs},%
+text={LTE},%
+plural={LTEs},%
+description={Long Term Evolution},%
+descriptionplural={Long Term Evolution},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Long Term Evolution},%
+longplural={Long Term Evolutions},%
+short={LTE},%
+shortplural={LTEs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{nbiot}%
+{%
+name={\acronymfont {\glsentryshort {nbiot}}},%
+sort={NB-IoT},%
+type={acronym},%
+first={NB-IoT},%
+firstplural={NB-IoTs},%
+text={NB-IoT},%
+plural={NB-IoTs},%
+description={Narrow Band Internet of Things},%
+descriptionplural={Narrow Band Internet of Things},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Narrow Band Internet of Things},%
+longplural={Narrow Band Internet of Thingss},%
+short={NB-IoT},%
+shortplural={NB-IoTs},%
+counter={page},%
+parent={},%
+%
+}%
+
 \glsdefs@newdocentry{lora}%
 {%
 name={\acronymfont {\glsentryshort {lora}}},%
