@@ -76,8 +76,8 @@
       \list{institution}{1}{%
         {Semtech}%
       }
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labeltitlesource}{title}
       \field{number}{AN1200.02}
       \field{title}{{LoRa}™ {Modulation} {Basics}}
@@ -90,8 +90,8 @@
       \list{institution}{1}{%
         {LoRa Alliance}%
       }
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labeltitlesource}{title}
       \field{month}{10}
       \field{number}{TS001-1.0.4}
@@ -106,8 +106,8 @@
       \list{institution}{1}{%
         {LoRa Alliance}%
       }
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labeltitlesource}{title}
       \field{month}{10}
       \field{number}{TS002-1.1.0}

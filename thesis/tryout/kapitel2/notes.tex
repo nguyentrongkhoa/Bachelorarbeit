@@ -190,15 +190,16 @@ einer Alternative. % TODO: maybe polish this transition sentence
 \section{LPWAN als Lösungsansatz für Off-Grid-Szenarien}
 \label{sec:lpwan-solution}
 % -----------------------------------------------------------------------------
-% TODO: write here
+\acrfull{lpwan}"=Technologien wurden entwickelt, um genau diese Lücke zu schließen.
+Sie kombinieren Reichweiten von mehreren Kilometern mit einem Energieverbrauch,
+der einen jahrelangen Akkubetrieb ermöglicht -- auf Kosten einer bewusst niedrig
+gehaltenen Datenrate, die für die periodische Übertragung von Sensormesswerten
+jedoch vollkommen ausreichend is. Im Folgenden werden die drei etablierten
+LPWAN=Standards, nämlich \textbf{SigFox}, \textbf{NB-IoT} und \textbf{LoRaWAN}, sich gegenübergestellt, 
+um die für diese Arbeit getroffene Technologiewahl zu begründen. % TODO:
 
 \subsection{Vergleich prominenter LPWAN-Technologien}
 \label{subsec:lpwan-vergleich}
-
-Im \acrshort{lpwan}"=Segment existieren drei etablierte Standards: Sigfox, \acrshort{nbiot}
-und LoRaWAN. Obwohl alle drei auf niedrige Datenraten und langen Akkubetrieb
-ausgelegt sind, unterscheiden sie sich fundamental in ihrer Netzarchitektur
-und damit in ihrer Eignung für Off"=Grid"=Szenarien~\cite{mekki2019comparative}.
 
 \textbf{Sigfox} betreibt ein proprietäres, öffentliches Netzwerk, das auf
 der Infrastruktur des Unternehmens Sigfox S.A. basiert. Endgeräte können
@@ -206,7 +207,7 @@ ausschließlich über dieses öffentliche Netz kommunizieren; der Aufbau eines
 privaten, autarken Netzes ist technisch nicht vorgesehen. Für
 Off"=Grid"=Szenarien ohne Internetanbindung scheidet Sigfox damit aus.
 
-\textbf{\acrshort{nbiot}} ist ein von 3GPP standardisiertes \acrshort{lpwan}"=Protokoll,
+\textbf{\acrshort{nbiot}} ist ein von 3GPP standardisiertes LPWAN"=Protokoll,
 das im lizenzierten Mobilfunkspektrum (LTE"=Band) operiert und von
 Mobilfunkbetreibern als Managed Service angeboten wird. Obwohl \acrshort{nbiot}
 exzellente Gebäudedurchdringung und garantierte Dienstgüte (\textit{Quality
