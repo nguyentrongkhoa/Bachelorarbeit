@@ -82,6 +82,34 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{ble}%
+{%
+name={\acronymfont {\glsentryshort {ble}}},%
+sort={BLE},%
+type={acronym},%
+first={BLE},%
+firstplural={BLEs},%
+text={BLE},%
+plural={BLEs},%
+description={Bluetooth Low Energy},%
+descriptionplural={Bluetooth Low Energy},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Bluetooth Low Energy},%
+longplural={Bluetooth Low Energys},%
+short={BLE},%
+shortplural={BLEs},%
+counter={page},%
+parent={},%
+%
+}%
+
 \glsdefs@newdocentry{nbiot}%
 {%
 name={\acronymfont {\glsentryshort {nbiot}}},%

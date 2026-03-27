@@ -1,21 +1,19 @@
-[0] Config.pm:307> INFO - This is Biber 2.19
+[1] Config.pm:307> INFO - This is Biber 2.19
 [1] Config.pm:310> INFO - Logfile is 'main.blg'
-[361] biber:340> INFO - === Fri Mar 27, 2026, 13:05:11
-[413] Biber.pm:419> INFO - Reading 'main.bcf'
-[585] Biber.pm:979> INFO - Found 9 citekeys in bib section 0
-[616] Biber.pm:4419> INFO - Processing section 0
-[651] Biber.pm:4610> INFO - Looking for bibtex file 'LoRa.bib' for section 0
-[704] bibtex.pm:1713> INFO - LaTeX decoding ...
-[942] bibtex.pm:1519> INFO - Found BibTeX data source 'LoRa.bib'
-[1039] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[1040] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[1040] Biber.pm:4239> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'de-DE'
-[1040] Biber.pm:4245> INFO - No sort tailoring available for locale 'de-DE'
-[1054] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[1057] bbl.pm:763> INFO - Output to main.bbl
-[1058] Biber.pm:131> WARN - I didn't find a database entry for 'rumbleCRCHandbookChemistry2021' (section 0)
-[1058] Biber.pm:131> WARN - I didn't find a database entry for 'sciullo2020locate' (section 0)
-[1058] Biber.pm:131> WARN - I didn't find a database entry for 'morin2017device' (section 0)
-[1058] Biber.pm:131> WARN - I didn't find a database entry for 'mekki2019comparative' (section 0)
-[1058] Biber.pm:131> WARN - I didn't find a database entry for 'chirpstack_docs' (section 0)
-[1059] Biber.pm:133> INFO - WARNINGS: 5
+[231] biber:340> INFO - === Fri Mar 27, 2026, 13:47:47
+[272] Biber.pm:419> INFO - Reading 'main.bcf'
+[454] Biber.pm:979> INFO - Found 7 citekeys in bib section 0
+[499] Biber.pm:4419> INFO - Processing section 0
+[546] Biber.pm:4610> INFO - Looking for bibtex file 'LoRa.bib' for section 0
+[620] bibtex.pm:1713> INFO - LaTeX decoding ...
+[961] bibtex.pm:1519> INFO - Found BibTeX data source 'LoRa.bib'
+[1064] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1065] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1065] Biber.pm:4239> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'de-DE'
+[1065] Biber.pm:4245> INFO - No sort tailoring available for locale 'de-DE'
+[1081] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[1085] bbl.pm:763> INFO - Output to main.bbl
+[1085] Biber.pm:131> WARN - I didn't find a database entry for 'rumbleCRCHandbookChemistry2021' (section 0)
+[1085] Biber.pm:131> WARN - I didn't find a database entry for 'mekki2019comparative' (section 0)
+[1086] Biber.pm:131> WARN - I didn't find a database entry for 'chirpstack_docs' (section 0)
+[1086] Biber.pm:133> INFO - WARNINGS: 3

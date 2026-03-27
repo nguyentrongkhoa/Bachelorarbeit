@@ -108,17 +108,11 @@ Off"=Grid"=Schutzsensorik erfüllen muss:
             & Hoch
             & Hoch
             & Keine \\
-        \addlinespace
-        Normierung
-            & ATEX, DGUV
-            & ---
-            & --- \\
         \bottomrule
     \end{tabularx}
 \end{table}
 
-Die drei übergeordneten Anforderungen, die alle Szenarien gemeinsam haben, sind
-damit: 
+Die drei übergeordneten Anforderungen, die alle Szenarien gemeinsam haben, sind damit: 
 \begin{itemize}
     \item \textbf{Infrastrukturunabhängigkeit}: das Netz muss ohne externe
     Basisstationen oder Internetanbindung vollständig funktionsfähig sein.
@@ -141,7 +135,7 @@ strukturelle Defizite auf, die einen zuverlässigen Einsatz in Gefahrgebieten
 ausschließen.
 
 \begin{itemize}
-    \item \textbf{Reichweite:} \acrshort{wlan} nach IEEE\,802.11 erreicht im
+    \item \textbf{Reichweite:} WLAN nach IEEE\,802.11 erreicht im
     Innenbereich typischerweise 30 bis \SI{100}{\m} und erfordert die Installation
     von Access"=Points in regelmäßigen Abständen -- eine Voraussetzung, die im
     Untertagebau oder in Katastrophengebieten nicht erfüllbar ist. Bluetooth ist
@@ -151,24 +145,21 @@ ausschließen.
     \item \textbf{Infrastrukturabhängigkeit:} Mobilfunknetze bieten zwar eine
     großflächige Abdeckung, weisen jedoch einen systemimmanenten
     \textit{Single"=Point"=of"=Failure} auf: Basisstationen werden häufig durch
-    dasselbe Ereignis zerstört oder überlastet, das den Notfall verursacht --
-    Erdbeben, Überschwemmungen oder Brände~\cite{sciullo2020locate}. Private
+    dasselbe Ereignis zerstört oder überlastet, das den Notfall verursacht, wie zum Beispiel
+    Erdbeben, Überschwemmungen oder Brände~\cite{sciulloDesignPerformanceEvaluation2020}. Private % TODO: maybe remove this citation
     \acrshort{lte}"= oder 5G"=Campusnetze könnten diese Abhängigkeit prinzipiell
     aufheben, erfordern jedoch lizenziertes Spektrum, einen dedizierten
     Core"=Network"=Betrieb und eine erhebliche Infrastrukturinvestition, die
     für mobile Einsatzszenarien nicht praktikabel ist.
 
     \item \textbf{Energieverbrauch:} Die für hohe Datenraten optimierten
-    Protokolle -- insbesondere LTE und 5G -- verursachen einen hohen
+    Protokolle, insbesondere LTE und 5G, verursachen einen hohen
     Strombedarf, der den Langzeitbetrieb kleiner, batteriebetriebener Sensorknoten
     unmöglich macht. Ein LTE"=Modul im Sendebetrieb verbraucht typischerweise
-    mehrere hundert Milliampere~\cite{morin2017device}, was bei einer
-    \SI{1000}{mAh}"=Zelle eine Betriebsdauer von wenigen Stunden ergäbe.
+    mehrere hundert Milliampere, was bei einer \SI{1000}{mAh}"=Zelle eine Betriebsdauer von wenigen Stunden ergäbe.
 \end{itemize}
 
-Tabelle~\ref{tab:tech_vergleich_kurz} veranschaulicht diese Einschränkungen
-im direkten Vergleich.
-
+% TODO: fact check, especially when it comes to LTE
 \begin{table}[htbp]
     \centering
     \caption{Eignung gängiger Funktechnologien für Off-Grid-Gefahrgebiete}
@@ -181,30 +172,25 @@ im direkten Vergleich.
         WLAN (802.11)
             & \SIrange{30}{100}{\m}
             & Nein  & Mittel & Nein \\
-        Bluetooth (BLE)
+        \acrshort{ble} (Bluetooth)
             & bis \SI{100}{\m}
             & Ja    & Hoch   & Nein \\
         LTE / 5G
             & \SIrange{1}{10}{\km}
             & Nein  & Gering & Nein \\
-        \acrshort{lpwan}
-            & \SIrange{2}{15}{\km}
-            & \textbf{Ja} & \textbf{Sehr hoch} & \textbf{Ja} \\
         \bottomrule
     \end{tabularx}
 \end{table}
 
-Aus dem Vergleich ergibt sich, dass \acrfull{lpwan}"=Technologien als einzige
-Technologieklasse alle drei Kernanforderungen -- Infrastrukturunabhängigkeit,
-ausreichende Reichweite und hohe Energieeffizienz -- gleichzeitig erfüllen
-können. Die Auswahl der geeigneten \acrfull{lpwan}"=Technologie wird im folgenden
-Abschnitt begründet.
-
+Aus Tabelle~\ref{tab:tech_vergleich_kurz} ist ersichtlich, dass keine konventionelle Kommunikationstechnologie
+alle drei genannten Kernanforderungen gleichzeitig erfüllen können. Für den Einsatz in Gefahrgebieten bedarf es also 
+einer Alternative. % TODO: maybe polish this transition sentence
 
 % -----------------------------------------------------------------------------
 \section{LPWAN als Lösungsansatz für Off-Grid-Szenarien}
 \label{sec:lpwan-solution}
 % -----------------------------------------------------------------------------
+% TODO: write here
 
 \subsection{Vergleich prominenter LPWAN-Technologien}
 \label{subsec:lpwan-vergleich}
@@ -297,4 +283,5 @@ ausführlich behandelt.
 \newacronym{wlan}{WLAN}{Wireless Local Area Network}
 \newacronym{lpwan}{LPWAN}{Low Power Wide Area Network}
 \newacronym{lte}{LTE}{Long Term Evolution}
+\newacronym{ble}{BLE}{Bluetooth Low Energy}
 \newacronym{nbiot}{NB-IoT}{Narrow Band Internet of Things}

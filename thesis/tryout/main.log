@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.3.15)  27 MAR 2026 13:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.3.15)  27 MAR 2026 13:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1100,21 +1100,7 @@ Package biblatex Warning: The following entry could not be found
 
 Package biblatex Warning: The following entry could not be found
 (biblatex)                in the database:
-(biblatex)                morin2017device
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
 (biblatex)                rumbleCRCHandbookChemistry2021
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                sciullo2020locate
 (biblatex)                Please verify the spelling and rerun
 (biblatex)                LaTeX afterwards.
 
@@ -1269,46 +1255,40 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has b
                    \relax 
 l.48 
       [3]
-LaTeX Font Info:    Trying to load font information for TS1+LinuxLibertineT-TLF on input line 123.
+LaTeX Font Info:    Trying to load font information for TS1+LinuxLibertineT-TLF on input line 117.
  (/usr/share/texlive/texmf-dist/tex/latex/libertine/TS1LinuxLibertineT-TLF.fd
 File: TS1LinuxLibertineT-TLF.fd 2017/03/20 (autoinst) Font definitions for TS1/LinuxLibertineT-TLF.
 )
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 123.
+(Font)              scaled to size 10.95pt on input line 117.
  [4{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_naooyc.enc}]
-Overfull \hbox (3.22437pt too wide) in paragraph at lines 144--150
-[]\T1/LinuxLibertineT-TLF/b/n/10.95 Reichweite: [][]\T1/LinuxLibertineT-TLF/m/n/10.95 WLAN[] nach IE-EE802.11 er-reicht im In-nen-be-reich ty-pi-scher-wei-se 30 bis $\OT1/cmr/m/n/10.95 100$$m$
+Overfull \hbox (3.22437pt too wide) in paragraph at lines 138--144
+[]\T1/LinuxLibertineT-TLF/b/n/10.95 Reichweite: \T1/LinuxLibertineT-TLF/m/n/10.95 WLAN nach IE-EE802.11 er-reicht im In-nen-be-reich ty-pi-scher-wei-se 30 bis $\OT1/cmr/m/n/10.95 100$$m$
  []
 
-
-LaTeX Warning: Citation 'sciullo2020locate' on page 5 undefined on input line 155.
-
-
-LaTeX Warning: Citation 'morin2017device' on page 5 undefined on input line 165.
-
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 194--194
+Underfull \hbox (badness 10000) in paragraph at lines 182--182
 []|\T1/LinuxLibertineT-TLF/b/n/10.95 Infra-struk-tur-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 194--194
+Underfull \hbox (badness 10000) in paragraph at lines 182--182
 []|\T1/LinuxLibertineT-TLF/b/n/10.95 Energie-ef-fi-zi-
  []
 
 
-LaTeX Warning: Citation 'mekki2019comparative' on page 6 undefined on input line 215.
+LaTeX Warning: Citation 'mekki2019comparative' on page 6 undefined on input line 201.
 
 
-LaTeX Warning: Citation 'mekki2019comparative' on page 6 undefined on input line 228.
+LaTeX Warning: Citation 'mekki2019comparative' on page 6 undefined on input line 214.
 
 [6]
-Underfull \hbox (badness 2556) in paragraph at lines 277--277
+Underfull \hbox (badness 2556) in paragraph at lines 263--263
 []|\T1/LinuxLibertineT-TLF/b/n/10.95 Öffentlich oder
  []
 
 
-LaTeX Warning: Citation 'chirpstack_docs' on page 7 undefined on input line 286.
+LaTeX Warning: Citation 'chirpstack_docs' on page 7 undefined on input line 272.
 
 \@gls@deffile=\write12
 \openout12 = `main.glsdefs'.
@@ -1376,7 +1356,7 @@ Overfull \hbox (15.25049pt too wide) in paragraph at lines 31--33
 
 [19]) [20]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/sc' will be
-(Font)              scaled to size 10.95pt on input line 119.
+(Font)              scaled to size 10.95pt on input line 121.
  [21
 
 
@@ -1396,18 +1376,21 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32801 strings out of 474222
- 614770 string characters out of 5748733
- 1939975 words of memory out of 5000000
- 54410 multiletter control sequences out of 15000+600000
+ 32832 strings out of 474222
+ 615205 string characters out of 5748733
+ 1938975 words of memory out of 5000000
+ 54440 multiletter control sequences out of 15000+600000
  674527 words of font info for 122 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  94i,13n,93p,2407b,2473s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{glo:ble} has been referenced but does not exist, replaced by a fixed one
+
 </usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on main.pdf (31 pages, 422145 bytes).
+Output written on main.pdf (31 pages, 421524 bytes).
 PDF statistics:
- 536 PDF objects out of 1000 (max. 8388607)
- 465 compressed objects within 5 object streams
- 116 named destinations out of 1000 (max. 500000)
+ 533 PDF objects out of 1000 (max. 8388607)
+ 462 compressed objects within 5 object streams
+ 117 named destinations out of 1000 (max. 500000)
  192 words of extra memory for PDF output out of 10000 (max. 10000000)
 
