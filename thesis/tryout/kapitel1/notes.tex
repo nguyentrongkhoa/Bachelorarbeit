@@ -1,38 +1,3 @@
-From Semtech's course:
-
-- There are many wireless technologies: Bluetooth, Cellular, Wi-Fi, LoRaWAN, Zigbee, NB-IoT, and others
-- 3 factors to keep in mind: range, bandwidth/datarate and power consumption
-- LPWAN:
-    - Low power (years on a battery or autonomous using solar panels)
-    - Long range: 2-5km in urban and >10km in rural areas
-- There are 3 LPWAN technologies: Sigfox, Narrowband-IoT (NB-IoT) and LoRa 
-- LoRa datarate: 300bps-11kbps
-- Max packet size in Europe: 222 bytes @ high data rate and 51 bytes @ low data rate
-- Devices can send anytime, since gateways are alway listening
-- Gateways can send during devices' RX windows
-- End devices can be put into sleep mode to conserve energy
-- LoRa can also be used for geolocation, albeit not as precise as GPS modules
-- LoRa vs LoRaWAN:
-    - LoRa is modulation technology
-    - LoRaWAN is the standard that defines everything related to packets and maintained by LoRa Alliance
-- LoRa uses ISM band (industrial, scientific and medical), 433 and 868MHz in Europe
-- LoRaWan network comprises: application, join and network server
-- 10 channels in total, of which 3 are fixed, i.e have to be supported by all devices
-- EU 868 duty cycle limitations: 0.1, 1 or 10\% (for gateways only)
-- Regulations differ depending on the region -> devices that work in the EU might not work in the US for example
-- With FSK modulation: data rate up to 50kbps
-- High data rate -> high loss probability
-- 2 types of roaming: active and passive
-- Classes (A, B or C) define when devices can receive downlink
-- Classes can be switched during operation
-- Class A most freq used since least power consumed
-- Class B can receive periodically using beacons
-- Class C can receive continuously -> not suitable for battery operation
-- Gateways are stateless
-- LoRaWAN networks use Aloha method for communication
-- Ethernet or ibackhaul between gateways and network servers
-- Network servers take care of: msg consolidation, routing, network control, network and gateway supervision
-- ADR: adaptive data rate
 - When adding extra gateway, devices will automatically update SF (spreading factor)
 - ADR works based on strength: devices closer to gateways use high data rate
 - ADR only works for fixed devices, not mobile devices
@@ -134,7 +99,7 @@ From Semtech's course:
   2. RF coverage simulation
   3. field tests
 - Tools (open source):
-  1. SPLAT! (coverage simulation, only Linux, poor docu), Radio mobile, CloudRF (Web-based commercial product with free plan)
+  1. Radio mobile, CloudRF (Web-based commercial product with free plan)
   2. SDR# combined with RTL-SDR for spectrum analysis
   3. GNU Radio 
   4. QGIS - geographic information system
@@ -184,30 +149,6 @@ PCB design:
   - most notable: DN024 from TI: monopole 868MHz
 
 % END NOTES
-
-% -----------------------------------------------------------------------------
-\section{Sicherheitsmechanismen in LoRaWAN}
-\label{sec:sicherheit}
-% -----------------------------------------------------------------------------
-
-LoRaWAN setzt auf AES"=128"=Verschlüsselung auf zwei Ebenen: Der \textit{Network
-Session Key} (NwkSKey) sichert die Kommunikation zwischen Endgerät und Network
-Server, während der \textit{Application Session Key} (AppSKey) die Ende"=zu"=Ende"=Verschlüsselung
-der Nutzdaten zwischen Endgerät und Application Server gewährleistet~\cite{lorawan_spec}.
-
-Für den sicheren Betrieb in industriellen und sicherheitskritischen Umgebungen empfiehlt
-sich der Einsatz von \textit{Secure Elements} (kryptografische Chips). Diese
-Spezialchips speichern die kryptografischen Schlüssel in schreibgeschützten Registern,
-beschleunigen Ver"= und Entschlüsselung ohne CPU"=Belastung und ermöglichen die
-Verifikation der Firmware"=Authentizität -- wodurch das Risiko eines unbefugten % TODO: remove --
-Firmware"=Overwrite durch einen Angreifer minimiert wird~\cite{semtech_lora_basics}.
-
-Zur Abwehr von Replay"=Angriffen sollten 32"=Bit"=Rahmenzähler für Uplink und Downlink
-aktiviert werden. Darüber hinaus kann eine feste Payload"=Länge dabei helfen, ereignisgesteuerte
-Aktivitäten vor Angreifern zu verschleiern, die aus variierenden Paketlängen auf den
-Systemzustand schließen könnten. Die \textit{Out"=of"=Band Key Provisioning}"=Methode
--- etwa über BLE oder NFC -- stellt sicher, dass Produktionsmitarbeiter keinen Zugriff % TODO: remove --
-auf die Geräteschlüssel erhalten.
 
 \subsection{Strategien zur Datenmengereduktion}
 \label{subsec:datenreduktion}
@@ -335,20 +276,6 @@ Für Indoor"=Installationen gilt als Faustregel: Wenn die Innenwände nicht aus 
 Mauerwerk bestehen, kann ein einzelnes Gateway auf der gleichen Etage wie die
 Endgeräte ausreichende Abdeckung liefern.
 
-% -----------------------------------------------------------------------------
-\section{Normierung und Anforderungen im Bereich Schutzsensorik}
-\label{sec:normierung}
-% -----------------------------------------------------------------------------
-
-Der Einsatz mobiler Gasmesssysteme in industriellen Umgebungen unterliegt einer
-Reihe normativer Vorgaben. Relevant sind insbesondere die Regelungen der
-\acrshort{dguv} sowie die ATEX"=Richtlinie 2014/34/EU für Geräte in
-explosionsgefährdeten Bereichen. Die EN"=60079"=Normenreihe definiert die Anforderungen
-an elektrische Betriebsmittel in explosionsgefährdeten Bereichen hinsichtlich
-Zündschutzarten, Gehäuseschutz (IP"=Klassen) und Temperaturklassen. Diese
-Anforderungen sind bei der Hardwareauswahl und dem mechanischen Design des Prototyps
-zu berücksichtigen und werden in Kapitel~\ref{chap:hardware} eingehend behandelt.
-
 % TODO: see where this section fits
 \subsection{Öffentliche vs. private Netzwerke}
 \label{subsec:netzwerktypen}
@@ -368,18 +295,5 @@ zum Einsatz, da dieser vollständig lokal auf einem Raspberry Pi betrieben werde
 und keine Internetverbindung erfordert. Semtech bietet für Prototyping"=Zwecke zudem
 einen kostenlosen Network Server für bis zu drei Gateways und zehn Endgeräte an.
 
-Semtech's document on LoRa modulation basics: 
-In addition, due to the
-processing gain associated with LoRa, the output power of the transmitter can be reduced compared to
-a conventional FSK link while maintaining the same or better link budget.
 
-Due to the high BT product (BT > 1) and their asynchronous nature a LoRa signal is very resistant to both
-in-band and out-of-band interference mechanisms.
-
-The chirp pulse is relatively broadband and thus LoRa offers immunity to multipath and fading, making it
-ideal for use in urban and suburban environments, where both mechanisms dominate.
-
-For a fixed output power and throughput, the link budget of LoRa exceeds that of conventional FSK.
-When taken into conjunction with the proven robustness to interference and fading mechanisms, this
-improvement in link budget can readily translate to x4 and beyond enhancement in range.
 
