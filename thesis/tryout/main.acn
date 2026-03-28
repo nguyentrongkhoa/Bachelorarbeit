@@ -40,3 +40,6 @@
 \glossaryentry{ABP?\glossentry{abp}|setentrycounter[]{page}"\glsnumberformat}{17}
 \glossaryentry{DevEUI?\glossentry{DevEUI}|setentrycounter[]{page}"\glsnumberformat}{17}
 \glossaryentry{DevAddr?\glossentry{DevAddr}|setentrycounter[]{page}"\glsnumberformat}{17}
+\glossaryentry{SoC?\glossentry{soc}|setentrycounter[]{page}"\glsnumberformat}{20}
+\glossaryentry{FSK?\glossentry{fsk}|setentrycounter[]{page}"\glsnumberformat}{20}
+\glossaryentry{BPSK?\glossentry{bpsk}|setentrycounter[]{page}"\glsnumberformat}{20}

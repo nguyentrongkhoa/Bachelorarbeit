@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.3.15)  28 MAR 2026 13:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.3.15)  28 MAR 2026 15:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1104,7 +1104,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--8
 \T1/phv/b/n/14.4 LoRaWan-Kommunikation für mo-bi-le Sen-
  []
 
-<BHT-Logo-vertikal.pdf, id=92, 53.01094pt x 126.0707pt>
+<BHT-Logo-vertikal.pdf, id=180, 53.01094pt x 126.0707pt>
 File: BHT-Logo-vertikal.pdf Graphic file (type pdf)
 <use BHT-Logo-vertikal.pdf>
 Package pdftex.def Info: BHT-Logo-vertikal.pdf  used on input line 8.
@@ -1114,7 +1114,7 @@ Overfull \hbox (1.82535pt too wide) in paragraph at lines 8--8
 [][] [] 
  []
 
-<BHT-Elements.pdf, id=93, 32.04338pt x 161.86708pt>
+<BHT-Elements.pdf, id=181, 32.04338pt x 161.86708pt>
 File: BHT-Elements.pdf Graphic file (type pdf)
 <use BHT-Elements.pdf>
 Package pdftex.def Info: BHT-Elements.pdf  used on input line 8.
@@ -1131,7 +1131,7 @@ LaTeX Font Info:    Trying to load font information for U+trsy on input line 8.
  (/usr/share/texlive/texmf-dist/tex/latex/trsym/utrsy.fd
 File: utrsy.fd 2000/06/25v1.0transformation symbol font definitions
 )
-<BHT-Studiere-vertikal.pdf, id=94, 8.48169pt x 86.94461pt>
+<BHT-Studiere-vertikal.pdf, id=182, 8.48169pt x 86.94461pt>
 File: BHT-Studiere-vertikal.pdf Graphic file (type pdf)
 <use BHT-Studiere-vertikal.pdf>
 Package pdftex.def Info: BHT-Studiere-vertikal.pdf  used on input line 8.
@@ -1199,17 +1199,17 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 24.88pt on input line 124.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 24.88pt on input line 124.
- (./main.toc)
+ (./main.toc [3])
 \tf@toc=\write10
 \openout10 = `main.toc'.
 
- [3] [4{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc}
-
-] (./main.lof)
+ [4{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc}] (./main.lof)
 \tf@lof=\write11
 \openout11 = `main.lof'.
 
-) (./main.acr [5] [6
+) (./main.acr [5
+
+] [6
 
 ] [7
 
@@ -1390,7 +1390,153 @@ Underfull \hbox (badness 1796) in paragraph at lines 267--267
 []|\T1/LinuxLibertineT-TLF/b/n/10.95 C\T1/LinuxLibertineT-TLF/m/n/10.95 ontinuierlicher Emp-fang (fast
  []
 
-[14{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_u7qtuy.enc}] [15] [16]) (./anhang.tex [17] [18
+[14{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_u7qtuy.enc}] [15] [16]) (./kapitel3/ch3.tex [17] [18
+
+]
+Kapitel 3.
+
+LaTeX Warning: Reference `chap:motivation' on page 19 undefined on input line 9.
+
+
+LaTeX Warning: Reference `chap:evaluation' on page 19 undefined on input line 30.
+
+[19]
+
+LaTeX Warning: Citation 'stm32wl_ds' on page 20 undefined on input line 90.
+
+
+Underfull \hbox (badness 2027) in paragraph at lines 150--150
+[]|\T1/LinuxLibertineT-TLF/b/n/10.95 Heltec Wi-Fi Lo-Ra
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
+[]|\T1/LinuxLibertineT-TLF/b/n/10.95 STM32WL55 (ge-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
+[]|\T1/LinuxLibertineT-TLF/m/n/10.95 nRF52840 (Cortex-
+ []
+
+
+Underfull \hbox (badness 1708) in paragraph at lines 150--150
+[]|\T1/LinuxLibertineT-TLF/m/n/10.95 Prototyping / Semi-
+ []
+
+[20]
+Overfull \hbox (13.52599pt too wide) in paragraph at lines 204--204
+[]|\T1/LinuxLibertineT-TLF/b/n/10.95 Stromversorgung| 
+ []
+
+
+Underfull \hbox (badness 2065) in paragraph at lines 204--204
+[]|\T1/LinuxLibertineT-TLF/m/n/10.95 PoE-fähig, weit
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--204
+[]|\T1/LinuxLibertineT-TLF/m/n/10.95 Wetterfest
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--204
+\T1/LinuxLibertineT-TLF/m/n/10.95 (IP54), Rou-te-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--204
+[]|\T1/LinuxLibertineT-TLF/m/n/10.95 USB / Ak-ku
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--204
+[]|\T1/LinuxLibertineT-TLF/b/n/10.95 Vollständige
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--204
+\T1/LinuxLibertineT-TLF/b/n/10.95 Kon-trol-le,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--204
+\T1/LinuxLibertineT-TLF/b/n/10.95 Network-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--204
+\T1/LinuxLibertineT-TLF/b/n/10.95 Server on-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--204
+[]|\T1/LinuxLibertineT-TLF/m/n/10.95 1 (single-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--204
+[]|\T1/LinuxLibertineT-TLF/m/n/10.95 Nur für Tests
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--204
+[]|\T1/LinuxLibertineT-TLF/m/n/10.95 1 (single-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--204
+[]|\T1/LinuxLibertineT-TLF/m/n/10.95 Nur für Tests
+ []
+
+
+LaTeX Warning: Reference `chap:evaluation' on page 21 undefined on input line 218.
+
+[21] [22]
+
+LaTeX Warning: Reference `fig:sw_stack' on page 23 undefined on input line 247.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 337--337
+[]|\T1/LinuxLibertineT-TLF/m/n/10.95 RTOS, Lo-Ra-WAN-Stack,
+ []
+
+
+Underfull \hbox (badness 4072) in paragraph at lines 337--337
+[]|\T1/LinuxLibertineT-TLF/m/n/10.95 Lokaler, off-li-ne-fä-hi-ger Lo-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 337--337
+[]|\T1/LinuxLibertineT-TLF/m/n/10.95 Visuelle Ver-knüp-fung von
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 337--337
+\T1/LinuxLibertineT-TLF/m/n/10.95 MQTT-Da-ten und Das-h-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 337--337
+[]|\T1/LinuxLibertineT-TLF/m/n/10.95 LoRa-Chirps vi-sua-li-sie-ren,
+ []
+
+
+Underfull \hbox (badness 2846) in paragraph at lines 337--337
+[]|\T1/LinuxLibertineT-TLF/m/n/10.95 RSSI-Mess-punk-te als Heat-
+ []
+
+
+Underfull \hbox (badness 3746) in paragraph at lines 337--337
+[]|\T1/LinuxLibertineT-TLF/m/n/10.95 Blockschaltbilder, Ar-chi-tek-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 337--337
+[]|\T1/LinuxLibertineT-TLF/m/n/10.95 Komponentenpreise und
+ []
+
+[23]) (./anhang.tex [24] [25] [26
 
 ]
 Anhang A.
@@ -1399,10 +1545,10 @@ Overfull \hbox (15.25049pt too wide) in paragraph at lines 31--33
 []\T1/fvm/m/n/10.95 bhtThesis.bib \T1/LinuxLibertineT-TLF/m/n/10.95 bein-hal-tet die zu zi-tie-ren-den Li-te-ra-tur-stel-len und wird von bibT[]Xausgewertet 
  []
 
-[19]) [20]
+[27]) [28]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/sc' will be
-(Font)              scaled to size 10.95pt on input line 121.
- [21
+(Font)              scaled to size 10.95pt on input line 122.
+ [29
 
 
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_ncsllp.enc}] (./main.aux)
@@ -1415,27 +1561,29 @@ L3 programming layer <2024-01-22>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: F2F32A3CE6E3E960E48486215D613DFB;4222.
+(rerunfilecheck)             Checksum: C878F1EC7DDD72AA26C497524BFAE82C;8570.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                main
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32827 strings out of 474222
- 614401 string characters out of 5748733
+ 32976 strings out of 474222
+ 616673 string characters out of 5748733
  1945975 words of memory out of 5000000
- 54429 multiletter control sequences out of 15000+600000
- 666374 words of font info for 118 fonts, out of 8000000 for 9000
+ 54540 multiletter control sequences out of 15000+600000
+ 676780 words of font info for 122 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 94i,13n,93p,2424b,2471s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{glo:ble} has been referenced but does not exist, replaced by a fixed one
-
+ 94i,15n,93p,2424b,2651s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on main.pdf (35 pages, 418085 bytes).
+Output written on main.pdf (43 pages, 437454 bytes).
 PDF statistics:
- 550 PDF objects out of 1000 (max. 8388607)
- 477 compressed objects within 5 object streams
- 129 named destinations out of 1000 (max. 500000)
- 192 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 716 PDF objects out of 1000 (max. 8388607)
+ 633 compressed objects within 7 object streams
+ 163 named destinations out of 1000 (max. 500000)
+ 368 words of extra memory for PDF output out of 10000 (max. 10000000)
 

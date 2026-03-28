@@ -470,9 +470,9 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/libertine/LinLibertineTB-tl
 INPUT ./main.toc
 INPUT ./main.toc
 INPUT main.toc
-OUTPUT main.toc
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/libertine/LinLibertineTB-tlf-t1.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/libertine/LinLibertineTB-tlf-t1--base.tfm
+OUTPUT main.toc
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/libertine/LinLibertineTI-tlf-t1.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/libertine/LinLibertineTI-tlf-t1--base.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc
@@ -529,6 +529,13 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/libertine/LinLibertineTI-tl
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/libertine/LinLibertineTI-tlf-ts1.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/libertine/LinLibertineTI-tlf-ts1--base.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_u7qtuy.enc
+INPUT ./kapitel3/ch3.tex
+INPUT ./kapitel3/ch3.tex
+INPUT kapitel3/ch3.tex
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/libertine/LinLibertineT-tlf-ts1.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/libertine/LinLibertineT-tlf-ts1.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/libertine/LinLibertineTB-tlf-t1.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/libertine/LinLibertineTB-tlf-t1.tfm
 INPUT ./anhang.tex
 INPUT ./anhang.tex
 INPUT anhang.tex

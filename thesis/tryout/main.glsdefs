@@ -1146,3 +1146,59 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{soc}%
+{%
+name={\acronymfont {\glsentryshort {soc}}},%
+sort={SoC},%
+type={acronym},%
+first={SoC},%
+firstplural={SoCs},%
+text={SoC},%
+plural={SoCs},%
+description={System-on-Chip},%
+descriptionplural={System-on-Chip},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={System-on-Chip},%
+longplural={System-on-Chips},%
+short={SoC},%
+shortplural={SoCs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{bpsk}%
+{%
+name={\acronymfont {\glsentryshort {bpsk}}},%
+sort={BPSK},%
+type={acronym},%
+first={BPSK},%
+firstplural={BPSKs},%
+text={BPSK},%
+plural={BPSKs},%
+description={Binary Phase Shift Keying},%
+descriptionplural={Binary Phase Shift Keying},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Binary Phase Shift Keying},%
+longplural={Binary Phase Shift Keyings},%
+short={BPSK},%
+shortplural={BPSKs},%
+counter={page},%
+parent={},%
+%
+}%
+
