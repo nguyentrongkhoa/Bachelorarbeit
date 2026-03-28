@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1774618971.6607 "main.bcf" "main.bbl" "main" 1774694373.11145 0
-  "LoRa.bib" 1774603864.67385 59337 d733e9448d10f1fa3bccee283d216788 ""
-  "main.bcf" 1774694372.78089 107953 f5095ed4696fd77a928bb22681958910 "pdflatex"
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1774698136.73485 -1
+  "LoRa.bib" 1774694469.82812 59761 8227dd39707dcc6349a3b7eda89c1f4f ""
+  "main.bcf" 1774698135.50305 108027 4dfe512fbd0b259e95199fe57a0c55fc "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1774694365.6695 "/home/tom/zephyrproject/descap_lorawan/thesis/tryout/main.tex" "main.pdf" "main" 1774694373.11227 0
+["pdflatex"] 1774698127.04635 "/home/tom/zephyrproject/descap_lorawan/thesis/tryout/main.tex" "main.pdf" "main" 1774698136.7378 0
   "/etc/texmf/web2c/texmf.cnf" 1773605240.045 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/tom/zephyrproject/descap_lorawan/thesis/tryout/main.tex" 1774694337.98204 3658 143f8561430156c79c252bc211a3ceb9 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -246,19 +246,19 @@
   "anhang.tex" 1771675946.18654 2263 94f992e24a7608bbf3ffbf67d933e978 ""
   "bhtThesis.sty" 1774175586.51523 14008 684a2402a6d7dab5ea84941c979e7954 ""
   "kapitel1/ch1.tex" 1774596689.8284 23182 816088a029b977e43404f556f60e9a12 ""
-  "kapitel2/ch2.tex" 1774694328.72081 14294 3601a35bdddab180a9acb4fef6b19639 ""
+  "kapitel2/ch2.tex" 1774698115.24349 18496 ce53f617224b477170bf1df95dc5306c ""
   "main.acr" 1774612745.97699 4325 2283f8b49db2f094cbbbc254f5f29029 ""
-  "main.aux" 1774694372.75992 8761 67262e048e2a1b44977c5ed62fb28496 "pdflatex"
-  "main.bbl" 1774618974.82413 4731 0d84602ff53ddad0f6c9417a7cbeb0d3 "biber main"
-  "main.cb" 1774694368.04948 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.cb2" 1774694368.02851 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.aux" 1774698135.44838 9369 efa85f61f1d14473a351b67d41542d65 "pdflatex"
+  "main.bbl" 1774694771.62571 9433 17a02e0b79ea138e8ba16ca9a032c469 "biber main"
+  "main.cb" 1774698127.58471 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.cb2" 1774698127.57628 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   "main.gls" 1774612745.57031 6 9f404503043ec80c08484be9f659189e ""
-  "main.glsdefs" 1774694372.75572 20772 ec6a2da38ad44c3c17b99370c206f6c5 "pdflatex"
-  "main.lof" 1774694372.78509 90 297d35755e89b907bcaebe5a863273fd "pdflatex"
-  "main.out" 1774694372.76831 4495 77b20072a52295b8bf9a533bae385d4e "pdflatex"
-  "main.run.xml" 1774694372.78509 2426 876580090a193b1543ea980d4eafbac2 "pdflatex"
+  "main.glsdefs" 1774698135.43576 20772 ec6a2da38ad44c3c17b99370c206f6c5 "pdflatex"
+  "main.lof" 1774698135.50725 90 297d35755e89b907bcaebe5a863273fd "pdflatex"
+  "main.out" 1774698135.4652 4485 78d88b06659df844273598ceb76bc1ee "pdflatex"
+  "main.run.xml" 1774698135.50725 2426 876580090a193b1543ea980d4eafbac2 "pdflatex"
   "main.tex" 1774694337.98204 3658 143f8561430156c79c252bc211a3ceb9 ""
-  "main.toc" 1774694372.78509 2088 7627e8c8712c92ac8b5a89f3cb68b66a "pdflatex"
+  "main.toc" 1774698135.50725 2086 7e3b561edd120cbc8fdc54aad8a58f61 "pdflatex"
   "personalMacros.tex" 1771675946.07852 150 6e250442b75bf14149b4086972af6b8f ""
   "titelseiten.tex" 1774421168.87594 5629 778ebfa1edacbbdb516303546c18ae11 ""
   (generated)

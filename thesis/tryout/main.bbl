@@ -19,6 +19,38 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global}
+    \entry{rumbleCRCHandbookChemistry2021}{book}{}
+      \name{editor}{1}{}{%
+        {{hash=a603b361cf794f53dc70c92a42f29777}{%
+           family={Rumble},
+           familyi={R\bibinitperiod},
+           given={John\bibnamedelima R.},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {eng}%
+      }
+      \list{location}{1}{%
+        {Boca Raton London New York}%
+      }
+      \list{publisher}{1}{%
+        {CRC Press}%
+      }
+      \strng{namehash}{a603b361cf794f53dc70c92a42f29777}
+      \strng{fullhash}{a603b361cf794f53dc70c92a42f29777}
+      \strng{bibnamehash}{a603b361cf794f53dc70c92a42f29777}
+      \strng{editorbibnamehash}{a603b361cf794f53dc70c92a42f29777}
+      \strng{editornamehash}{a603b361cf794f53dc70c92a42f29777}
+      \strng{editorfullhash}{a603b361cf794f53dc70c92a42f29777}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{editor}
+      \field{labeltitlesource}{title}
+      \field{edition}{102nd edition 2021-2022}
+      \field{isbn}{978-0-367-41724-6 978-0-367-71260-0}
+      \field{title}{{CRC} handbook of chemistry and physics}
+      \field{year}{2021}
+    \endentry
     \entry{sciulloDesignPerformanceEvaluation2020}{article}{}
       \name{author}{3}{}{%
         {{hash=a88060b87b3721c22d62af8fdd776a3a}{%
@@ -72,12 +104,53 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S1570870518309004
       \endverb
     \endentry
+    \entry{chaudhariLPWANTechnologiesIoT2020}{book}{}
+      \name{editor}{2}{}{%
+        {{hash=35bee6c965a5dd97dcfc119729892d13}{%
+           family={Chaudhari},
+           familyi={C\bibinitperiod},
+           given={Bharat\bibnamedelima S.},
+           giveni={B\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=be40462df5b62be844b9d60fd82ee253}{%
+           family={Zennaro},
+           familyi={Z\bibinitperiod},
+           given={Marco},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {eng}%
+      }
+      \list{location}{1}{%
+        {London, England}%
+      }
+      \list{publisher}{1}{%
+        {Academic Press}%
+      }
+      \strng{namehash}{f94c7a96dcde01c5b5ee68c7c7d82640}
+      \strng{fullhash}{f94c7a96dcde01c5b5ee68c7c7d82640}
+      \strng{bibnamehash}{f94c7a96dcde01c5b5ee68c7c7d82640}
+      \strng{editorbibnamehash}{f94c7a96dcde01c5b5ee68c7c7d82640}
+      \strng{editornamehash}{f94c7a96dcde01c5b5ee68c7c7d82640}
+      \strng{editorfullhash}{f94c7a96dcde01c5b5ee68c7c7d82640}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{editor}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Front Cover -- LPWAN Technologies for IoT and M2M Applications -- Copyright Page -- Contents -- List of contributors -- About the editors -- Preface -- Acknowledgment -- 1 Introduction to low-power wide-area networks -- 1.1 Introduction -- 1.2 Intelligent applications and services -- 1.2.1 Application requirements -- 1.3 Wireless access -- 1.4 Low-power wide-area network application characteristics -- 1.4.1 Coverage -- 1.4.1.1 Traffic characteristics -- 1.4.1.2 Coverage -- 1.4.1.3 Location identification -- 1.4.1.4 Security and privacy -- 1.4.2 Capacity -- 1.4.2.1 Capacity and scalability -- 1.4.3 Cost -- 1.4.3.1 Cost-effectiveness -- 1.4.4 Low-power operations -- 1.4.4.1 Energy-efficient operations and low-power sources -- 1.4.4.2 Reduced hardware complexity -- 1.4.5 Additional specific requirements -- 1.4.5.1 Range of solution options -- 1.4.5.2 Operations, interrelationships, and interworkings -- 1.5 Summarized objectives and expectations for low-power wide-area network -- References -- 2 Design considerations and network architectures for low-power wide-area networks -- 2.1 Introduction -- 2.2 Design considerations for low-power wide-area networks -- 2.2.1 Traffic characteristics -- 2.2.2 Capacity and densification -- 2.2.3 Energy-efficient operations and low-power sources -- 2.2.4 Coverage -- 2.2.5 Localization -- 2.2.6 Security and privacy -- 2.2.7 Reduced device hardware complexity -- 2.2.8 Range of solutions options -- 2.2.9 Operations, interrelationships, and interworking -- 2.3 Internet of things/low-power wide-area network layer model -- 2.4 Low-power wide-area network topologies and architecture -- 2.4.1 Low-power wide-area network topologies -- 2.4.2 Major architectures in low-power wide-area network technologies -- 2.4.3 Mixed hybrid architectures -- 2.5 Introduction to proprietary and standards-based solutions}
+      \field{annotation}{Description based on print version record}
+      \field{isbn}{978-0-12-818880-4 978-0-12-818881-1}
+      \field{title}{{LPWAN} technologies for {IoT} and {M2M} applications}
+      \field{year}{2020}
+      \verb{file}
+      \verb PDF:C\:\\Users\\khoa1\\Zotero\\storage\\I9A6CRRD\\Chaudhari and Zennaro - 2020 - LPWAN technologies for IoT and M2M applications.pdf:application/pdf
+      \endverb
+    \endentry
     \entry{LoRaModulationBasics}{report}{}
       \list{institution}{1}{%
         {Semtech}%
       }
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labeltitlesource}{title}
       \field{number}{AN1200.02}
       \field{title}{{LoRa}™ {Modulation} {Basics}}
@@ -90,8 +163,8 @@
       \list{institution}{1}{%
         {LoRa Alliance}%
       }
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labeltitlesource}{title}
       \field{month}{10}
       \field{number}{TS001-1.0.4}
@@ -106,8 +179,8 @@
       \list{institution}{1}{%
         {LoRa Alliance}%
       }
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labeltitlesource}{title}
       \field{month}{10}
       \field{number}{TS002-1.1.0}
@@ -127,7 +200,6 @@
   \enddatalist
   \missing{chirpstack_docs}
   \missing{mekki2019comparative}
-  \missing{rumbleCRCHandbookChemistry2021}
 \endrefsection
 \endinput
 

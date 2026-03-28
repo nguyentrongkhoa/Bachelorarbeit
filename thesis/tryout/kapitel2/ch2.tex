@@ -201,6 +201,147 @@ Für eine ausführliche Behandlung wird auf \cite{chaudhariLPWANTechnologiesIoT2
 \subsection{SigFox vs NB-IoT vs LoRaWAN: Ein Vergleich}
 \label{subsec:lpwan-vergleich}
 
+\begin{table}[htbp]
+    \centering
+    \caption{Detaillierter Vergleich führender LPWAN-Technologien~\cite{chaudhari2020lpwan}}
+    \label{tab:lpwan_vergleich}
+    \begin{tabularx}{\textwidth}{l X X X}
+        \toprule
+        \textbf{Kriterium} & \textbf{Sigfox} & \textbf{NB-IoT} & \textbf{LoRaWAN} \\
+        \midrule
+
+        % -- Physikalische Schicht --
+        \multicolumn{4}{l}{\textit{Physikalische Schicht}} \\
+        \addlinespace
+        Frequenzband
+            & 433, 868\,MHz (EU), 915\,MHz (US)
+            & 900\,MHz
+            & 433, 868\,MHz (EU), 915\,MHz (US) \\
+        \addlinespace
+        Spektrum
+            & Unlizenziert
+            & Lizenziert (LTE)
+            & Unlizenziert \\
+        \addlinespace
+        Modulationsverfahren
+            & UNB (DBPSK, GFSK)
+            & NB (QPSK)
+            & SS (CSS) \\
+        \addlinespace
+        Max. Datenrate
+            & \SI{0,1}{kbps}
+            & \SI{250}{kbps}
+            & \SI{50}{kbps} \\
+        \addlinespace
+        Reichweite
+            & bis \SI{40}{\km}
+            & bis \SI{15}{\km}
+            & bis \SI{20}{\km} \\
+        \addlinespace
+
+        % -- Link-Schicht --
+        \multicolumn{4}{l}{\textit{Link-Schicht}} \\
+        \addlinespace
+        MAC-Protokoll
+            & ALOHA (FDMA)
+            & OFDMA (DL) / SC-FDMA (UL)
+            & ALOHA (TDMA) \\
+        \addlinespace
+        Max. Paketgröße
+            & 12\,Bytes (UL) / 8\,Bytes (DL)
+            & \SI{125}{\byte}
+            & 51\,Bytes (UL) / 14\,Bytes (DL) \\
+        \addlinespace
+        Bidirektionalität
+            & Eingeschränkt (DL komplex)
+            & Symmetrisch
+            & Vollständig (Klasse A/B/C) \\
+        \addlinespace
+        Latenz
+            & \SI{10}{\s}
+            & \SI{0,2}{\s}
+            & \SI{5}{\s} \\
+        \addlinespace
+        Duty-Cycle-Beschränkung
+            & 1\,\% (868\,MHz EU)
+            & Keine (lizenziert)
+            & 1\,\% (868\,MHz EU) \\
+        \addlinespace
+
+        % -- Netzwerkarchitektur --
+        \multicolumn{4}{l}{\textit{Netzwerkarchitektur}} \\
+        \addlinespace
+        Topologie
+            & Stern (öffentlich)
+            & Stern (öffentlich)
+            & Stern \textbf{oder Mesh} (privat möglich) \\
+        \addlinespace
+        Betriebsart
+            & Nur öffentlich
+            & Nur öffentlich (Provider)
+            & \textbf{Öffentlich oder privat} \\
+        \addlinespace
+        Internetanbindung erforderlich
+            & Ja
+            & Ja
+            & \textbf{Nein} \\
+        \addlinespace
+        ADR-Unterstützung
+            & Nein
+            & Nein
+            & \textbf{Ja} \\
+        \addlinespace
+
+        % -- Deployment --
+        \multicolumn{4}{l}{\textit{Deployment \& Kosten}} \\
+        \addlinespace
+        Kommunikationsmodul
+            & ca. 10€
+            & ca. 70€
+            & ca. 10€ \\
+        \addlinespace
+        Gateway-Kosten
+            & n/a (öffentl. Netz)
+            & n/a (öffentl. Netz)
+            & ca. 200€ \\
+        \addlinespace
+        Datenplan (min./max.)
+            & 1€ / 14€
+            & 6€ / 50€
+            & 5€ / 20€ \\
+        \addlinespace
+        Entwicklungs-Kits
+            & Ab 30€
+            & Ab 45€
+            & Ab 30€ \\
+        \addlinespace
+        Dokumentation
+            & Vollständig öffentlich
+            & Teilweise öffentlich
+            & \textbf{Vollständig öffentlich} \\
+        \addlinespace
+        Community
+            & City User Group
+            & Mobile IoT Innovators
+            & \textbf{The Things Network (sehr groß)} \\
+        \addlinespace
+
+        % -- Off-Grid-Eignung --
+        \multicolumn{4}{l}{\textit{Off-Grid-Eignung (Gesamtbewertung)}} \\
+        \addlinespace
+        Autarker Netzbetrieb
+            & Nein
+            & Nein
+            & \textbf{Ja} \\
+        \addlinespace
+        Geeignet für Gefahrgebiete
+            & Nein
+            & Nein
+            & \textbf{Ja} \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
 SigFox betreibt ein proprietäres, öffentliches Netzwerk, das auf
 der Infrastruktur des Unternehmens Sigfox S.A. basiert. Endgeräte können
 ausschließlich über dieses öffentliche Netz kommunizieren; der Aufbau eines
