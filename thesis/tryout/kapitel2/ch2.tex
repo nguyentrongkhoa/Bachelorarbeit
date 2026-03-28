@@ -2,16 +2,15 @@
 % Kapitel 2: Notwendigkeit und Anwendungsfelder von Off-Grid Schutzsensorik
 % =============================================================================
 
-\chapter{Einleitung und Motivation}
-\label{chap:motivation}
+\chapter{Einleitung}
+\label{chap:einleitung}
 
-Dieses Kapitel legt die anwendungsseitige Grundlage der Arbeit. Zunächst werden
+Dieses Kapitel widmet sich der Frage, warum LoRaWAN die Technologie der Wahl ist. Zunächst werden
 repräsentative Einsatzszenarien analysiert, um die spezifischen Anforderungen an
 Schutzsensorik in Gefahrgebieten zu definieren. Darauf aufbauend wird dargelegt,
 warum konventionelle Kommunikationstechnologien in diesen Umgebungen strukturell
-versagen. Abschließend erfolgt ein Vergleich von \acrshort{lpwan}"=Technologien, um die
-Wahl von LoRaWAN für das in dieser Arbeit entwickelte System zu begründen.
-
+versagen. Abschließend erfolgt ein Vergleich von LPWAN"=Technologien, um die Entscheidung
+zugunstens LoRaWAN für das in dieser Arbeit entwickelte System zu begründen.
 
 % -----------------------------------------------------------------------------
 \section{Mögliche Einsatzszenarien}
@@ -196,14 +195,17 @@ der einen jahrelangen Akkubetrieb ermöglicht, jedoch auf Kosten einer bewusst n
 gehaltenen Datenrate, die für die periodische Übertragung von Sensormesswerten
 jedoch vollkommen ausreichend is. Im Folgenden werden die drei bekanntesten etablierten
 LPWAN=Standards, nämlich \textbf{SigFox}, \textbf{NB-IoT} und \textbf{LoRaWAN}, sich gegenübergestellt.
-Für eine ausführliche Behandlung wird auf \cite{chaudhariLPWANTechnologiesIoT2020} verwiesen.
 
 \subsection{SigFox vs NB-IoT vs LoRaWAN: Ein Vergleich}
 \label{subsec:lpwan-vergleich}
 
+Chaudhari und Borkar haben sich in \cite{chaudhariLPWANTechnologiesIoT2020} intensiv mit den Vor- und Nachteilen diverser LPWAN"=Technologien 
+auseinandergesetzt, sowohl aus theoretischer als auch aus praktischer Sicht. Tabelle \ref{tab:lpwan_vergleich} stellt 
+die wichtigsten Erkenntnisse ihrer Analyse dar, mit Fokus nur auf die drei o.g. Standards.  
+
 \begin{table}[htbp]
     \centering
-    \caption{Detaillierter Vergleich führender LPWAN-Technologien~\cite{chaudhari2020lpwan}}
+    \caption{Detaillierter Vergleich führender LPWAN-Standards}
     \label{tab:lpwan_vergleich}
     \begin{tabularx}{\textwidth}{l X X X}
         \toprule
@@ -223,11 +225,6 @@ Für eine ausführliche Behandlung wird auf \cite{chaudhariLPWANTechnologiesIoT2
             & Lizenziert (LTE)
             & Unlizenziert \\
         \addlinespace
-        Modulationsverfahren
-            & UNB (DBPSK, GFSK)
-            & NB (QPSK)
-            & SS (CSS) \\
-        \addlinespace
         Max. Datenrate
             & \SI{0,1}{kbps}
             & \SI{250}{kbps}
@@ -242,20 +239,10 @@ Für eine ausführliche Behandlung wird auf \cite{chaudhariLPWANTechnologiesIoT2
         % -- Link-Schicht --
         \multicolumn{4}{l}{\textit{Link-Schicht}} \\
         \addlinespace
-        MAC-Protokoll
-            & ALOHA (FDMA)
-            & OFDMA (DL) / SC-FDMA (UL)
-            & ALOHA (TDMA) \\
-        \addlinespace
         Max. Paketgröße
             & 12\,Bytes (UL) / 8\,Bytes (DL)
             & \SI{125}{\byte}
             & 51\,Bytes (UL) / 14\,Bytes (DL) \\
-        \addlinespace
-        Bidirektionalität
-            & Eingeschränkt (DL komplex)
-            & Symmetrisch
-            & Vollständig (Klasse A/B/C) \\
         \addlinespace
         Latenz
             & \SI{10}{\s}
@@ -286,14 +273,9 @@ Für eine ausführliche Behandlung wird auf \cite{chaudhariLPWANTechnologiesIoT2
             & Ja
             & \textbf{Nein} \\
         \addlinespace
-        ADR-Unterstützung
-            & Nein
-            & Nein
-            & \textbf{Ja} \\
-        \addlinespace
 
         % -- Deployment --
-        \multicolumn{4}{l}{\textit{Deployment \& Kosten}} \\
+        \multicolumn{4}{l}{\textit{Entwicklung, Inbetriebnahme \& Kosten}} \\
         \addlinespace
         Kommunikationsmodul
             & ca. 10€
@@ -320,107 +302,19 @@ Für eine ausführliche Behandlung wird auf \cite{chaudhariLPWANTechnologiesIoT2
             & Teilweise öffentlich
             & \textbf{Vollständig öffentlich} \\
         \addlinespace
-        Community
-            & City User Group
-            & Mobile IoT Innovators
-            & \textbf{The Things Network (sehr groß)} \\
-        \addlinespace
-
-        % -- Off-Grid-Eignung --
-        \multicolumn{4}{l}{\textit{Off-Grid-Eignung (Gesamtbewertung)}} \\
-        \addlinespace
-        Autarker Netzbetrieb
-            & Nein
-            & Nein
-            & \textbf{Ja} \\
-        \addlinespace
-        Geeignet für Gefahrgebiete
-            & Nein
-            & Nein
-            & \textbf{Ja} \\
-        \bottomrule
+        %\bottomrule
     \end{tabularx}
 \end{table}
 
-SigFox betreibt ein proprietäres, öffentliches Netzwerk, das auf
-der Infrastruktur des Unternehmens Sigfox S.A. basiert. Endgeräte können
-ausschließlich über dieses öffentliche Netz kommunizieren; der Aufbau eines
-privaten, autarken Netzes ist technisch nicht vorgesehen, und damit scheidet SigFox für 
-Off"=Grid"=Szenarien ohne Internetanbindung aus.
-
-NB-IoT (\acrlong{nbiot}) ist ein von 3GPP standardisiertes LPWAN"=Protokoll,
-das im lizenzierten Mobilfunkspektrum (LTE"=Band) operiert und von
-Mobilfunkbetreibern als Managed Service angeboten wird. Obwohl \acrshort{nbiot}
-exzellente Gebäudedurchdringung und garantierte Dienstgüte (\textit{\acrfull{qos}}) bietet, 
-erfordert es zwingend eine aktive SIM"=Karte und eine
-Verbindung zum Kernnetz des Mobilfunkbetreibers~\cite{mekki2019comparative}.
-In Gebieten ohne Mobilfunkabdeckung, dem Kernszenario dieser Arbeit, ist
-NB-IoT daher ebenfalls nicht einsetzbar.
-
-\textbf{LoRaWAN} operiert im lizenzfreien \acrshort{ism}"=Band und ermöglicht als
-einzige der drei Technologien den vollständig autarken Betrieb eines privaten
-Netzwerks ohne Internetanbindung und ohne Abhängigkeit von einem
-Netzwerkbetreiber. Gateway, Network"=Server und Application"=Server können
-lokal -- etwa auf einem batteriebetriebenen Einplatinenrechner -- betrieben
-werden. Tabelle~\ref{tab:lpwan_vergleich} fasst den Vergleich zusammen.
-
-\begin{table}[htbp]
-    \centering
-    \caption{Technischer Vergleich führender LPWAN-Standards}
-    \label{tab:lpwan_vergleich}
-    \begin{tabularx}{\textwidth}{l X X X}
-        \toprule
-        \textbf{Merkmal} & \textbf{Sigfox} & \textbf{NB-IoT} & \textbf{LoRaWAN} \\
-        \midrule
-        Spektrum
-            & Unlizenziert
-            & Lizenziert (LTE)
-            & Unlizenziert \\
-        \addlinespace
-        Betriebsart
-            & Nur öffentlich
-            & Nur öffentlich
-            & \textbf{Öffentlich oder privat} \\
-        \addlinespace
-        Internetanbindung erforderlich
-            & Ja
-            & Ja
-            & \textbf{Nein} \\
-        \addlinespace
-        Autarker Netzbetrieb möglich
-            & Nein
-            & Nein
-            & \textbf{Ja} \\
-        \addlinespace
-        Typische Reichweite
-            & \SIrange{3}{10}{\km}
-            & \SIrange{1}{10}{\km}
-            & \SIrange{2}{15}{\km} \\
-        \addlinespace
-        Off-Grid-Eignung
-            & Nein
-            & Nein
-            & \textbf{Hervorragend} \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
-
-\subsection{Begründung der Technologiewahl: LoRaWAN}
+\subsection{Fazit}
 \label{subsec:technologiewahl}
 
-Für das in dieser Arbeit entwickelte System wurde LoRaWAN gewählt, da es als
-einzige der betrachteten Technologien den Aufbau eines vollständig privaten
-Netzwerks ohne Internetverbindung ermöglicht. Als Network"=Server kommt
-\textbf{ChirpStack} zum Einsatz~\cite{chirpstack_docs}, da dieser quelloffen,
-auf ressourcenarmer Hardware (z.\,B. Raspberry Pi) betreibbar und vollständig
-offline"=fähig ist -- im Gegensatz zu The Things Stack, dessen kostenlose
-Community"=Edition eine permanente Verbindung zu den TTN"=Cloud"=Servern erfordert.
-
-Darüber hinaus ermöglicht die Integration des LoRa"=Transceivers im
-\textbf{STM32WL}"=System"=on"=Chip eine hochintegrierte und energieeffiziente
-Hardwarebasis, bei der kein separates Funkmodul erforderlich ist. Die technischen
-Grundlagen von LoRa und LoRaWAN werden im folgenden Kapitel~\ref{chap:grundlagen}
-ausführlich behandelt.
+Die Vielfältigkeit der LPWAN-Welt zeugt einerseits von den zahlreichen Möglichkeiten dieser Technologie, 
+andererseits erschwert sie die Auswahl einer optimalen Lösung. Unsere hollistische Betrachtung der Anforderungen aus 
+Abschnitt~\ref{sec:einsatzszenarien} und der technischen Eigenschaften der drei führenden LPWAN-Standards zeigt, 
+dass LoRaWAN die beste Passung für die in dieser Arbeit adressierten Off-Grid-Gefahrgebiete bietet. Im nächsten Kapitel 
+werden die theoretischen Grundsteine von LoRa und LoRaWAN gelegt, um die spätere Implementierung und Evaluierung des Prototyps 
+zu fundieren.
 
 \newacronym{wlan}{WLAN}{Wireless Local Area Network}
 \newacronym{lpwan}{LPWAN}{Low Power Wide Area Network}

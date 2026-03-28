@@ -1,5 +1,5 @@
 \babel@toc {ngerman}{}\relax 
-\contentsline {chapter}{\numberline {1}Einleitung und Motivation}{3}{chapter.1}%
+\contentsline {chapter}{\numberline {1}Einleitung}{3}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Mögliche Einsatzszenarien}{3}{section.1.1}%
 \contentsline {subsection}{\numberline {1.1.1}Industrie und Bergbau}{3}{subsection.1.1.1}%
 \contentsline {subsection}{\numberline {1.1.2}Katastrophenschutz und Rettungswesen}{4}{subsection.1.1.2}%
@@ -8,7 +8,7 @@
 \contentsline {section}{\numberline {1.2}Grenzen konventioneller Kommunikationsinfrastrukturen}{5}{section.1.2}%
 \contentsline {section}{\numberline {1.3}LPWAN als Lösungsansatz für Off-Grid-Einsatz}{6}{section.1.3}%
 \contentsline {subsection}{\numberline {1.3.1}SigFox vs NB-IoT vs LoRaWAN: Ein Vergleich}{6}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}Begründung der Technologiewahl: LoRaWAN}{8}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.2}Fazit}{6}{subsection.1.3.2}%
 \contentsline {chapter}{\numberline {2}Grundlagen}{9}{chapter.2}%
 \contentsline {section}{\numberline {2.1}LoRa-Modulation}{9}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Allgemeines}{9}{subsection.2.1.1}%
@@ -20,4 +20,4 @@
 \contentsline {subsection}{\numberline {2.2.3}Network-Server}{15}{subsection.2.2.3}%
 \contentsline {subsection}{\numberline {2.2.4}Join-Server}{16}{subsection.2.2.4}%
 \contentsline {chapter}{\numberline {A}Angehängtes: Die Dateien des Pakets}{19}{appendix.A}%
-\contentsline {chapter}{Literatur- und Quellenverzeichnis}{21}{section*.18}%
+\contentsline {chapter}{Literatur- und Quellenverzeichnis}{21}{section*.24}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.3.15)  28 MAR 2026 12:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.3.15)  28 MAR 2026 13:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -416,6 +416,270 @@ Package: supertabular 2020/02/02 v4.1g the supertabular environment
 )) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-tree.sty
 Package: glossary-tree 2023/09/29 v4.53 (NLCT)
 \glstreeindent=\skip69
+)) (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2022-09-14 v5.2n context-sensitive quotations (JAW)
+\csq@reset=\count335
+\csq@gtype=\count336
+\csq@glevel=\count337
+\csq@qlevel=\count338
+\csq@maxlvl=\count339
+\csq@tshold=\count340
+\csq@ltx@everypar=\toks40
+ (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2022-09-14 v5.2n csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+ (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 
+)) (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
+Package: biblatex 2023/03/05 v3.19 programmable bibliographies (PK/MW)
+ (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count341
+ (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+\c@tabx@nest=\count342
+\c@listtotal=\count343
+\c@listcount=\count344
+\c@liststart=\count345
+\c@liststop=\count346
+\c@citecount=\count347
+\c@citetotal=\count348
+\c@multicitecount=\count349
+\c@multicitetotal=\count350
+\c@instcount=\count351
+\c@maxnames=\count352
+\c@minnames=\count353
+\c@maxitems=\count354
+\c@minitems=\count355
+\c@citecounter=\count356
+\c@maxcitecounter=\count357
+\c@savedcitecounter=\count358
+\c@uniquelist=\count359
+\c@uniquename=\count360
+\c@refsection=\count361
+\c@refsegment=\count362
+\c@maxextratitle=\count363
+\c@maxextratitleyear=\count364
+\c@maxextraname=\count365
+\c@maxextradate=\count366
+\c@maxextraalpha=\count367
+\c@abbrvpenalty=\count368
+\c@highnamepenalty=\count369
+\c@lownamepenalty=\count370
+\c@maxparens=\count371
+\c@parenlevel=\count372
+\blx@tempcnta=\count373
+\blx@tempcntb=\count374
+\blx@tempcntc=\count375
+\c@blx@maxsection=\count376
+\blx@maxsegment@0=\count377
+\blx@notetype=\count378
+\blx@parenlevel@text=\count379
+\blx@parenlevel@foot=\count380
+\blx@sectionciteorder@0=\count381
+\blx@sectionciteorderinternal@0=\count382
+\blx@entrysetcounter=\count383
+\blx@biblioinstance=\count384
+\labelnumberwidth=\skip70
+\labelalphawidth=\skip71
+\biblabelsep=\skip72
+\bibitemsep=\skip73
+\bibnamesep=\skip74
+\bibinitsep=\skip75
+\bibparsep=\skip76
+\bibhang=\skip77
+\blx@bcfin=\read2
+\blx@bcfout=\write3
+\blx@langwohyphens=\language89
+\c@mincomprange=\count385
+\c@maxcomprange=\count386
+\c@mincompwidth=\count387
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-dm.def
+File: blx-dm.def 2023/03/05 v3.19 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'ieee.dbx' not found.
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count388
+\c@savedafterword=\count389
+\c@annotator=\count390
+\c@savedannotator=\count391
+\c@author=\count392
+\c@savedauthor=\count393
+\c@bookauthor=\count394
+\c@savedbookauthor=\count395
+\c@commentator=\count396
+\c@savedcommentator=\count397
+\c@editor=\count398
+\c@savededitor=\count399
+\c@editora=\count400
+\c@savededitora=\count401
+\c@editorb=\count402
+\c@savededitorb=\count403
+\c@editorc=\count404
+\c@savededitorc=\count405
+\c@foreword=\count406
+\c@savedforeword=\count407
+\c@holder=\count408
+\c@savedholder=\count409
+\c@introduction=\count410
+\c@savedintroduction=\count411
+\c@namea=\count412
+\c@savednamea=\count413
+\c@nameb=\count414
+\c@savednameb=\count415
+\c@namec=\count416
+\c@savednamec=\count417
+\c@translator=\count418
+\c@savedtranslator=\count419
+\c@shortauthor=\count420
+\c@savedshortauthor=\count421
+\c@shorteditor=\count422
+\c@savedshorteditor=\count423
+\c@labelname=\count424
+\c@savedlabelname=\count425
+\c@institution=\count426
+\c@savedinstitution=\count427
+\c@lista=\count428
+\c@savedlista=\count429
+\c@listb=\count430
+\c@savedlistb=\count431
+\c@listc=\count432
+\c@savedlistc=\count433
+\c@listd=\count434
+\c@savedlistd=\count435
+\c@liste=\count436
+\c@savedliste=\count437
+\c@listf=\count438
+\c@savedlistf=\count439
+\c@location=\count440
+\c@savedlocation=\count441
+\c@organization=\count442
+\c@savedorganization=\count443
+\c@origlocation=\count444
+\c@savedoriglocation=\count445
+\c@origpublisher=\count446
+\c@savedorigpublisher=\count447
+\c@publisher=\count448
+\c@savedpublisher=\count449
+\c@language=\count450
+\c@savedlanguage=\count451
+\c@origlanguage=\count452
+\c@savedoriglanguage=\count453
+\c@pageref=\count454
+\c@savedpageref=\count455
+\shorthandwidth=\skip78
+\shortjournalwidth=\skip79
+\shortserieswidth=\skip80
+\shorttitlewidth=\skip81
+\shortauthorwidth=\skip82
+\shorteditorwidth=\skip83
+\locallabelnumberwidth=\skip84
+\locallabelalphawidth=\skip85
+\localshorthandwidth=\skip86
+\localshortjournalwidth=\skip87
+\localshortserieswidth=\skip88
+\localshorttitlewidth=\skip89
+\localshortauthorwidth=\skip90
+\localshorteditorwidth=\skip91
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.def
+File: biblatex.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
+\c@textcitecount=\count456
+\c@textcitetotal=\count457
+\c@textcitemaxnames=\count458
+\c@biburlbigbreakpenalty=\count459
+\c@biburlbreakpenalty=\count460
+\c@biburlnumpenalty=\count461
+\c@biburlucpenalty=\count462
+\c@biburllcpenalty=\count463
+\biburlbigskip=\muskip18
+\biburlnumskip=\muskip19
+\biburlucskip=\muskip20
+\biburllcskip=\muskip21
+\c@smartand=\count464
+)
+Package biblatex Info: Trying to load bibliography style 'ieee'...
+Package biblatex Info: ... file 'ieee.bbx' found.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex-ieee/ieee.bbx
+File: ieee.bbx 2021/12/06 v1.3f biblatex bibliography style
+Package biblatex Info: Trying to load bibliography style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.bbx' found.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/numeric-comp.bbx
+File: numeric-comp.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+File: numeric.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+File: standard.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count465
+\c@bbx:relatedtotal=\count466
+))))
+Package biblatex Info: Trying to load citation style 'ieee'...
+Package biblatex Info: ... file 'ieee.cbx' found.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex-ieee/ieee.cbx
+File: ieee.cbx 2021/12/06 v1.3f biblatex citation style
+Package biblatex Info: Trying to load citation style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.cbx' found.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/cbx/numeric-comp.cbx
+File: numeric-comp.cbx 2023/03/05 v3.19 biblatex citation style (PK/MW)
+\c@cbx@tempcnta=\count467
+\c@cbx@tempcntb=\count468
+\c@cbx@tempcntc=\count469
+\c@cbx@tempcntd=\count470
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\cites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.cfg
+File: biblatex.cfg 
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Document encoding is UTF8 ....
+ (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2024-01-22 L3 programming layer (loader) 
+ (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count471
+\l__pdf_internal_box=\box72
+))
+Package biblatex Info: ... and expl3
+(biblatex)             2024-01-22 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2023-10-10 L3 Experimental document command parser
+)
+Package: blx-case-expl3 2023/03/05 v3.19 expl3 case changing code for biblatex
 )) (./bhtThesis.sty
 Package: bhtThesis 2021/08/26 v2.0 BHT Abschlussarbeit-Style
  2021/08/26 v2.0 BHT-Thesis-Style, S. Tschirley, tschirley@bht-berlin.de (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty
@@ -439,29 +703,28 @@ File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 \Gin@req@width=\dimen192
 ) (/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
-\c@tracingmulticols=\count335
-\mult@box=\box72
+\c@tracingmulticols=\count472
+\mult@box=\box73
 \multicol@leftmargin=\dimen193
-\c@unbalance=\count336
-\c@collectmore=\count337
-\doublecol@number=\count338
-\multicoltolerance=\count339
-\multicolpretolerance=\count340
+\c@unbalance=\count473
+\c@collectmore=\count474
+\doublecol@number=\count475
+\multicoltolerance=\count476
+\multicolpretolerance=\count477
 \full@width=\dimen194
 \page@free=\dimen195
 \premulticols=\dimen196
 \postmulticols=\dimen197
-\multicolsep=\skip70
-\multicolbaselineskip=\skip71
-\partial@page=\box73
-\last@line=\box74
-\mc@boxedresult=\box75
+\multicolsep=\skip92
+\multicolbaselineskip=\skip93
+\partial@page=\box74
+\last@line=\box75
+\mc@boxedresult=\box76
 \maxbalancingoverflow=\dimen198
-\mult@rightbox=\box76
-\mult@grightbox=\box77
-\mult@firstbox=\box78
-\mult@gfirstbox=\box79
-\@tempa=\box80
+\mult@rightbox=\box77
+\mult@grightbox=\box78
+\mult@firstbox=\box79
+\mult@gfirstbox=\box80
 \@tempa=\box81
 \@tempa=\box82
 \@tempa=\box83
@@ -497,15 +760,16 @@ Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
 \@tempa=\box113
 \@tempa=\box114
 \@tempa=\box115
-\c@minrows=\count341
-\c@columnbadness=\count342
-\c@finalcolumnbadness=\count343
+\@tempa=\box116
+\c@minrows=\count478
+\c@columnbadness=\count479
+\c@finalcolumnbadness=\count480
 \last@try=\dimen199
 \multicolovershoot=\dimen256
 \multicolundershoot=\dimen257
-\mult@nat@firstbox=\box116
-\colbreak@box=\box117
-\mc@col@check@num=\count344
+\mult@nat@firstbox=\box117
+\colbreak@box=\box118
+\mc@col@check@num=\count481
 ) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
  (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
@@ -524,45 +788,45 @@ Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
 ) (/usr/share/texlive/texmf-dist/tex/latex/changebar/changebar.sty
 Package: changebar 2024/01/09 v3.7d Indicate changes with marginal bars
-\cb@nextpoint=\count345
-\cb@topleft=\count346
-\cb@topright=\count347
-\cb@botleft=\count348
-\cb@botright=\count349
-\cb@cnta=\count350
-\cb@cntb=\count351
+\cb@nextpoint=\count482
+\cb@topleft=\count483
+\cb@topright=\count484
+\cb@botleft=\count485
+\cb@botright=\count486
+\cb@cnta=\count487
+\cb@cntb=\count488
 \cb@dima=\dimen258
 \cb@curbarwd=\dimen259
-\cb@page=\count352
-\cb@pagecount=\count353
+\cb@page=\count489
+\cb@pagecount=\count490
 \cb@odd@left=\dimen260
 \cb@odd@right=\dimen261
 \cb@even@left=\dimen262
 \cb@even@right=\dimen263
-\cb@writexy=\write3
-\cb@readxy=\read2
-\openout3 = `main.cb2'.
+\cb@writexy=\write4
+\cb@readxy=\read3
+\openout4 = `main.cb2'.
 
-\changebarwidth=\skip72
-\deletebarwidth=\skip73
-\changebarsep=\skip74
-\c@changebargrey=\count354
-\cb@write=\write4
-\cb@read=\read3
-\openout4 = `main.cb'.
+\changebarwidth=\skip94
+\deletebarwidth=\skip95
+\changebarsep=\skip96
+\c@changebargrey=\count491
+\cb@write=\write5
+\cb@read=\read4
+\openout5 = `main.cb'.
 
 ) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
-\inpenc@prehook=\toks40
-\inpenc@posthook=\toks41
+\inpenc@prehook=\toks41
+\inpenc@posthook=\toks42
 ) (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2024/01/07 v24.1 The Babel package
-\babel@savecnt=\count355
+\babel@savecnt=\count492
 \U@D=\dimen264
-\l@unhyphenated=\language89
+\l@unhyphenated=\language90
  (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
-\bbl@readstream=\read4
-\bbl@dirlevel=\count356
+\bbl@readstream=\read5
+\bbl@dirlevel=\count493
  (/usr/share/texlive/texmf-dist/tex/generic/babel-german/ngerman.ldf
 Language: ngerman 2024/01/19 v2.14 German support for babel (post-1996 orthography)
  (/usr/share/texlive/texmf-dist/tex/generic/babel-german/ngermanb.ldf
@@ -630,279 +894,15 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )) (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
-\f@nch@headwidth=\skip75
-\f@nch@O@elh=\skip76
-\f@nch@O@erh=\skip77
-\f@nch@O@olh=\skip78
-\f@nch@O@orh=\skip79
-\f@nch@O@elf=\skip80
-\f@nch@O@erf=\skip81
-\f@nch@O@olf=\skip82
-\f@nch@O@orf=\skip83
-)) (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.sty
-Package: csquotes 2022-09-14 v5.2n context-sensitive quotations (JAW)
-\csq@reset=\count357
-\csq@gtype=\count358
-\csq@glevel=\count359
-\csq@qlevel=\count360
-\csq@maxlvl=\count361
-\csq@tshold=\count362
-\csq@ltx@everypar=\toks42
- (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.def
-File: csquotes.def 2022-09-14 v5.2n csquotes generic definitions (JAW)
-)
-Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
-Package csquotes Info: ... configuration file loaded successfully.
- (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.cfg
-File: csquotes.cfg 
-)) (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
-Package: biblatex 2023/03/05 v3.19 programmable bibliographies (PK/MW)
- (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.sty
-Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count363
- (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.def
-File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
-))
-\c@tabx@nest=\count364
-\c@listtotal=\count365
-\c@listcount=\count366
-\c@liststart=\count367
-\c@liststop=\count368
-\c@citecount=\count369
-\c@citetotal=\count370
-\c@multicitecount=\count371
-\c@multicitetotal=\count372
-\c@instcount=\count373
-\c@maxnames=\count374
-\c@minnames=\count375
-\c@maxitems=\count376
-\c@minitems=\count377
-\c@citecounter=\count378
-\c@maxcitecounter=\count379
-\c@savedcitecounter=\count380
-\c@uniquelist=\count381
-\c@uniquename=\count382
-\c@refsection=\count383
-\c@refsegment=\count384
-\c@maxextratitle=\count385
-\c@maxextratitleyear=\count386
-\c@maxextraname=\count387
-\c@maxextradate=\count388
-\c@maxextraalpha=\count389
-\c@abbrvpenalty=\count390
-\c@highnamepenalty=\count391
-\c@lownamepenalty=\count392
-\c@maxparens=\count393
-\c@parenlevel=\count394
-\blx@tempcnta=\count395
-\blx@tempcntb=\count396
-\blx@tempcntc=\count397
-\c@blx@maxsection=\count398
-\blx@maxsegment@0=\count399
-\blx@notetype=\count400
-\blx@parenlevel@text=\count401
-\blx@parenlevel@foot=\count402
-\blx@sectionciteorder@0=\count403
-\blx@sectionciteorderinternal@0=\count404
-\blx@entrysetcounter=\count405
-\blx@biblioinstance=\count406
-\labelnumberwidth=\skip84
-\labelalphawidth=\skip85
-\biblabelsep=\skip86
-\bibitemsep=\skip87
-\bibnamesep=\skip88
-\bibinitsep=\skip89
-\bibparsep=\skip90
-\bibhang=\skip91
-\blx@bcfin=\read5
-\blx@bcfout=\write5
-\blx@langwohyphens=\language90
-\c@mincomprange=\count407
-\c@maxcomprange=\count408
-\c@mincompwidth=\count409
-Package biblatex Info: Trying to load biblatex default data model...
-Package biblatex Info: ... file 'blx-dm.def' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-dm.def
-File: blx-dm.def 2023/03/05 v3.19 biblatex localization (PK/MW)
-)
-Package biblatex Info: Trying to load biblatex style data model...
-Package biblatex Info: ... file 'ieee.dbx' not found.
-Package biblatex Info: Trying to load biblatex custom data model...
-Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count410
-\c@savedafterword=\count411
-\c@annotator=\count412
-\c@savedannotator=\count413
-\c@author=\count414
-\c@savedauthor=\count415
-\c@bookauthor=\count416
-\c@savedbookauthor=\count417
-\c@commentator=\count418
-\c@savedcommentator=\count419
-\c@editor=\count420
-\c@savededitor=\count421
-\c@editora=\count422
-\c@savededitora=\count423
-\c@editorb=\count424
-\c@savededitorb=\count425
-\c@editorc=\count426
-\c@savededitorc=\count427
-\c@foreword=\count428
-\c@savedforeword=\count429
-\c@holder=\count430
-\c@savedholder=\count431
-\c@introduction=\count432
-\c@savedintroduction=\count433
-\c@namea=\count434
-\c@savednamea=\count435
-\c@nameb=\count436
-\c@savednameb=\count437
-\c@namec=\count438
-\c@savednamec=\count439
-\c@translator=\count440
-\c@savedtranslator=\count441
-\c@shortauthor=\count442
-\c@savedshortauthor=\count443
-\c@shorteditor=\count444
-\c@savedshorteditor=\count445
-\c@labelname=\count446
-\c@savedlabelname=\count447
-\c@institution=\count448
-\c@savedinstitution=\count449
-\c@lista=\count450
-\c@savedlista=\count451
-\c@listb=\count452
-\c@savedlistb=\count453
-\c@listc=\count454
-\c@savedlistc=\count455
-\c@listd=\count456
-\c@savedlistd=\count457
-\c@liste=\count458
-\c@savedliste=\count459
-\c@listf=\count460
-\c@savedlistf=\count461
-\c@location=\count462
-\c@savedlocation=\count463
-\c@organization=\count464
-\c@savedorganization=\count465
-\c@origlocation=\count466
-\c@savedoriglocation=\count467
-\c@origpublisher=\count468
-\c@savedorigpublisher=\count469
-\c@publisher=\count470
-\c@savedpublisher=\count471
-\c@language=\count472
-\c@savedlanguage=\count473
-\c@origlanguage=\count474
-\c@savedoriglanguage=\count475
-\c@pageref=\count476
-\c@savedpageref=\count477
-\shorthandwidth=\skip92
-\shortjournalwidth=\skip93
-\shortserieswidth=\skip94
-\shorttitlewidth=\skip95
-\shortauthorwidth=\skip96
-\shorteditorwidth=\skip97
-\locallabelnumberwidth=\skip98
-\locallabelalphawidth=\skip99
-\localshorthandwidth=\skip100
-\localshortjournalwidth=\skip101
-\localshortserieswidth=\skip102
-\localshorttitlewidth=\skip103
-\localshortauthorwidth=\skip104
-\localshorteditorwidth=\skip105
-Package biblatex Info: Trying to load compatibility code...
-Package biblatex Info: ... file 'blx-compat.def' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-compat.def
-File: blx-compat.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
-)
-Package biblatex Info: Trying to load generic definitions...
-Package biblatex Info: ... file 'biblatex.def' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.def
-File: biblatex.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
-\c@textcitecount=\count478
-\c@textcitetotal=\count479
-\c@textcitemaxnames=\count480
-\c@biburlbigbreakpenalty=\count481
-\c@biburlbreakpenalty=\count482
-\c@biburlnumpenalty=\count483
-\c@biburlucpenalty=\count484
-\c@biburllcpenalty=\count485
-\biburlbigskip=\muskip18
-\biburlnumskip=\muskip19
-\biburlucskip=\muskip20
-\biburllcskip=\muskip21
-\c@smartand=\count486
-)
-Package biblatex Info: Trying to load bibliography style 'ieee'...
-Package biblatex Info: ... file 'ieee.bbx' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex-ieee/ieee.bbx
-File: ieee.bbx 2021/12/06 v1.3f biblatex bibliography style
-Package biblatex Info: Trying to load bibliography style 'numeric-comp'...
-Package biblatex Info: ... file 'numeric-comp.bbx' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/numeric-comp.bbx
-File: numeric-comp.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
-Package biblatex Info: Trying to load bibliography style 'numeric'...
-Package biblatex Info: ... file 'numeric.bbx' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
-File: numeric.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
-Package biblatex Info: Trying to load bibliography style 'standard'...
-Package biblatex Info: ... file 'standard.bbx' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
-File: standard.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count487
-\c@bbx:relatedtotal=\count488
-))))
-Package biblatex Info: Trying to load citation style 'ieee'...
-Package biblatex Info: ... file 'ieee.cbx' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex-ieee/ieee.cbx
-File: ieee.cbx 2021/12/06 v1.3f biblatex citation style
-Package biblatex Info: Trying to load citation style 'numeric-comp'...
-Package biblatex Info: ... file 'numeric-comp.cbx' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/cbx/numeric-comp.cbx
-File: numeric-comp.cbx 2023/03/05 v3.19 biblatex citation style (PK/MW)
-\c@cbx@tempcnta=\count489
-\c@cbx@tempcntb=\count490
-\c@cbx@tempcntc=\count491
-\c@cbx@tempcntd=\count492
-Package biblatex Info: Redefining '\cite'.
-Package biblatex Info: Redefining '\parencite'.
-Package biblatex Info: Redefining '\footcite'.
-Package biblatex Info: Redefining '\footcitetext'.
-Package biblatex Info: Redefining '\smartcite'.
-Package biblatex Info: Redefining '\supercite'.
-Package biblatex Info: Redefining '\textcite'.
-Package biblatex Info: Redefining '\textcites'.
-Package biblatex Info: Redefining '\cites'.
-Package biblatex Info: Redefining '\parencites'.
-Package biblatex Info: Redefining '\smartcites'.
-)
-Package biblatex Info: Redefining '\cite'.
-Package biblatex Info: Redefining '\supercite'.
-Package biblatex Info: Redefining '\cites'.
-)
-Package biblatex Info: Trying to load configuration file...
-Package biblatex Info: ... file 'biblatex.cfg' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.cfg
-File: biblatex.cfg 
-)
-Package biblatex Info: Input encoding 'utf8' detected.
-Package biblatex Info: Document encoding is UTF8 ....
- (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2024-01-22 L3 programming layer (loader) 
- (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count493
-\l__pdf_internal_box=\box118
-))
-Package biblatex Info: ... and expl3
-(biblatex)             2024-01-22 L3 programming layer (loader) 
-(biblatex)             is new enough (at least 2020/04/06),
-(biblatex)             setting 'casechanger=expl3'.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
-Package: xparse 2023-10-10 L3 Experimental document command parser
-)
-Package: blx-case-expl3 2023/03/05 v3.19 expl3 case changing code for biblatex
+\f@nch@headwidth=\skip97
+\f@nch@O@elh=\skip98
+\f@nch@O@erh=\skip99
+\f@nch@O@olh=\skip100
+\f@nch@O@orh=\skip101
+\f@nch@O@elf=\skip102
+\f@nch@O@erf=\skip103
+\f@nch@O@olf=\skip104
+\f@nch@O@orf=\skip105
 ))
 BHT-Abschlussarbeit V2.0 26.08.21 S.Tschirley
 (/usr/share/texlive/texmf-dist/tex/latex/blindtext/blindtext.sty
@@ -1003,15 +1003,17 @@ Package glossaries Info: Writing glossary file main.glo on input line 89.
 \openout8 = `main.acn'.
 
 Package glossaries Info: Writing glossary file main.acn on input line 89.
+
+Package csquotes Warning: Load 'inputenc' before 'csquotes' on input line 92.
+
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'ngerman'.
-(./main.aux
 
-LaTeX Warning: Label `tab:lpwan_vergleich' multiply defined.
+Package biblatex Warning: Load 'inputenc' before biblatex.
 
-)
+(./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 92.
@@ -1041,7 +1043,32 @@ Package hyperref Info: Link coloring OFF on input line 92.
 File: translations-basic-dictionary-german.trsl (german translation file `translations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' for `german'. on input line 92.
- (./main.glsdefs) (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (./main.glsdefs)
+Package biblatex Info: Trying to load language 'ngerman'...
+Package biblatex Info: ... file 'ngerman.lbx' found.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/ngerman.lbx
+File: ngerman.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
+Package biblatex Info: Trying to load language 'german'...
+Package biblatex Info: ... file 'german.lbx' found.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/german.lbx
+File: german.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load language 'german'...
+Package biblatex Info: ... file 'german.lbx' found.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/german.lbx
+File: german.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
+))
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout3 = `main.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'main.bbl' found.
+ (./main.bbl)
+Package biblatex Info: Reference section=0 on input line 92.
+Package biblatex Info: Reference segment=0 on input line 92.
+ (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count525
 \scratchdimen=\dimen271
@@ -1062,48 +1089,6 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 \c@mv@tabular=\count531
 \c@mv@boldtabular=\count532
- (/usr/share/texlive/texmf-dist/tex/latex/draftwatermark/draftwatermark.sty
-Package: draftwatermark 2020/12/08 3.0 Put a gray textual watermark on document pages
-)
-Package biblatex Info: Trying to load language 'ngerman'...
-Package biblatex Info: ... file 'ngerman.lbx' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/ngerman.lbx
-File: ngerman.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
-Package biblatex Info: Trying to load language 'german'...
-Package biblatex Info: ... file 'german.lbx' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/german.lbx
-File: german.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
-)
-Package biblatex Info: Trying to load language 'german'...
-Package biblatex Info: ... file 'german.lbx' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/german.lbx
-File: german.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
-))
-Package biblatex Info: Input encoding 'utf8' detected.
-Package biblatex Info: Automatic encoding selection.
-(biblatex)             Assuming data encoding 'utf8'.
-\openout5 = `main.bcf'.
-
-Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'main.bbl' found.
- (./main.bbl
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                chirpstack_docs
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                mekki2019comparative
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-)
-Package biblatex Info: Reference section=0 on input line 92.
-Package biblatex Info: Reference segment=0 on input line 92.
 \c@lstlisting=\count533
  (./titelseiten.tex
 LaTeX Font Info:    Trying to load font information for T1+phv on input line 8.
@@ -1151,13 +1136,11 @@ File: BHT-Studiere-vertikal.pdf Graphic file (type pdf)
 <use BHT-Studiere-vertikal.pdf>
 Package pdftex.def Info: BHT-Studiere-vertikal.pdf  used on input line 8.
 (pdftex.def)             Requested size: 11.87424pt x 121.7216pt.
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 85.35826pt on input line 9.
- [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}
+ [1
 
 \openout6 = `main.ist'.
 
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} <./BHT-Logo-vertikal.pdf> <./BHT-Elements.pdf
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} <./BHT-Logo-vertikal.pdf> <./BHT-Elements.pdf
 
 pdfTeX warning: pdflatex (file ./BHT-Elements.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 > <./BHT-Studiere-vertikal.pdf
@@ -1168,33 +1151,55 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/sl' in size <10.95> not
 (Font)              Font shape `T1/LinuxLibertineT-TLF/m/it' tried instead on input line 14.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 10.95pt on input line 14.
- [2
+ [2{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}
 
 ] (./abstract_de.tex
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 14.4pt on input line 7.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 14.4pt on input line 7.
-) [3{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}]
+) [3{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}] [4
+
+]
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 12.0pt on input line 110.
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
+(Font)              scaled to size 12.0pt on input line 110.
+LaTeX Font Info:    Trying to load font information for TS1+LinuxLibertineT-TLF on input line 110.
+ (/usr/share/texlive/texmf-dist/tex/latex/libertine/TS1LinuxLibertineT-TLF.fd
+File: TS1LinuxLibertineT-TLF.fd 2017/03/20 (autoinst) Font definitions for TS1/LinuxLibertineT-TLF.
+)
+LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 10.95pt on input line 110.
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
+(Font)              scaled to size 10.95pt on input line 110.
+
+Overfull \hbox (27.85056pt too wide) in paragraph at lines 110--110
+[]\T1/LinuxLibertineT-TLF/m/n/10.95 Vor die-sem Hin-ter-grund soll in der Ba-che-lor-ar-beit die Eig-nung von LoRa- bzw. LoRaWAN-Technologien
+ []
+
+[5{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_naooyc.enc}]
+Overfull \hbox (11.43768pt too wide) in paragraph at lines 110--110
+[]\T1/LinuxLibertineT-TLF/m/n/10.95 Um den in-halt-li-chen Rah-men der Ar-beit auf den Schwer-punkt der LoRa/LoRaWAN-Kommunikation
+ []
+
+[6] [7
+
+]
 Underfull \hbox (badness 10000) in paragraph at lines 113--118
 
  []
 
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 10.0pt on input line 120.
-[1
-
-] [2
+[1] [2
 
 ]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 24.88pt on input line 124.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 24.88pt on input line 124.
- (./main.toc
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 10.95pt on input line 2.
-)
+ (./main.toc)
 \tf@toc=\write10
 \openout10 = `main.toc'.
 
@@ -1213,12 +1218,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
 <to be read again> 
                    \relax 
 l.5 \chapter
-            {Einleitung und Motivation} [1]
+            {Einleitung} [1]
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.5 \chapter
-            {Einleitung und Motivation} [2
+            {Einleitung} [2
 
 ]
 Kapitel 1.
@@ -1226,10 +1231,11 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 20.74pt on input line 5.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 20.74pt on input line 5.
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 21.
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 12.0pt on input line 21.
+
+Overfull \hbox (4.07251pt too wide) in paragraph at lines 8--14
+\T1/LinuxLibertineT-TLF/m/n/10.95 wer-den re-prä-sen-ta-ti-ve Ein-satz-sze-na-ri-en ana-ly-siert, um die spe-zi-fi-schen An-for-de-run-gen an Schutz-
+ []
+
 
 Underfull \vbox (badness 3417) has occurred while \output is active []
 
@@ -1237,126 +1243,98 @@ Underfull \vbox (badness 3417) has occurred while \output is active []
 pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.48 
+l.47 
       [3]
-LaTeX Font Info:    Trying to load font information for TS1+LinuxLibertineT-TLF on input line 117.
- (/usr/share/texlive/texmf-dist/tex/latex/libertine/TS1LinuxLibertineT-TLF.fd
-File: TS1LinuxLibertineT-TLF.fd 2017/03/20 (autoinst) Font definitions for TS1/LinuxLibertineT-TLF.
-)
-LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 117.
- [4{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_naooyc.enc}]
-Overfull \hbox (3.22437pt too wide) in paragraph at lines 138--144
+pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.122 \end{itemize}
+                    [4]
+Overfull \hbox (3.22437pt too wide) in paragraph at lines 137--143
 []\T1/LinuxLibertineT-TLF/b/n/10.95 Reichweite: \T1/LinuxLibertineT-TLF/m/n/10.95 WLAN nach IE-EE802.11 er-reicht im In-nen-be-reich ty-pi-scher-wei-se 30 bis $\OT1/cmr/m/n/10.95 100$$m$
  []
 
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 182--182
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.159 \end{itemize}
+                    [5]
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 []|\T1/LinuxLibertineT-TLF/b/n/10.95 Infra-struk-tur-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 182--182
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 []|\T1/LinuxLibertineT-TLF/b/n/10.95 Energie-ef-fi-zi-
  []
 
 
-LaTeX Warning: Citation 'chaudhari2020lpwan' on page 6 undefined on input line 206.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 342--342
+Underfull \hbox (badness 10000) in paragraph at lines 306--306
 []|\T1/LinuxLibertineT-TLF/m/n/10.95 433, 868MHz
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 342--342
+Underfull \hbox (badness 10000) in paragraph at lines 306--306
 \T1/LinuxLibertineT-TLF/m/n/10.95 (EU), 915MHz
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 342--342
+Underfull \hbox (badness 10000) in paragraph at lines 306--306
 []|\T1/LinuxLibertineT-TLF/m/n/10.95 433, 868MHz
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 342--342
+Underfull \hbox (badness 10000) in paragraph at lines 306--306
 \T1/LinuxLibertineT-TLF/m/n/10.95 (EU), 915MHz
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 342--342
-[]|\T1/LinuxLibertineT-TLF/m/n/10.95 UNB (DB-PSK,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 342--342
-[]|\T1/LinuxLibertineT-TLF/m/n/10.95 OFDMA (DL) /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 342--342
+Underfull \hbox (badness 10000) in paragraph at lines 306--306
 []|\T1/LinuxLibertineT-TLF/m/n/10.95 12Bytes (UL) /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 342--342
+Underfull \hbox (badness 10000) in paragraph at lines 306--306
 []|\T1/LinuxLibertineT-TLF/m/n/10.95 51Bytes (UL) /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 342--342
-[]|\T1/LinuxLibertineT-TLF/m/n/10.95 Eingeschränkt
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 342--342
+Underfull \hbox (badness 10000) in paragraph at lines 306--306
 []|\T1/LinuxLibertineT-TLF/m/n/10.95 Nur öf-fent-lich
  []
 
 
-Underfull \hbox (badness 2556) in paragraph at lines 342--342
+Underfull \hbox (badness 2556) in paragraph at lines 306--306
 []|\T1/LinuxLibertineT-TLF/b/n/10.95 Öffentlich oder
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 342--342
+Underfull \hbox (badness 10000) in paragraph at lines 306--306
 []|\T1/LinuxLibertineT-TLF/m/n/10.95 Vollständig öf-
  []
 
 
-Underfull \hbox (badness 6268) in paragraph at lines 342--342
+Underfull \hbox (badness 6268) in paragraph at lines 306--306
 []|\T1/LinuxLibertineT-TLF/m/n/10.95 Teilweise öf-fent-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 342--342
+Underfull \hbox (badness 10000) in paragraph at lines 306--306
 []|\T1/LinuxLibertineT-TLF/b/n/10.95 Vollständig
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 342--342
-[]|\T1/LinuxLibertineT-TLF/b/n/10.95 The Things
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 342--342
-\T1/LinuxLibertineT-TLF/b/n/10.95 Net-work (sehr
- []
-
-
-LaTeX Warning: Float too large for page by 274.45732pt on input line 343.
-
-
-LaTeX Warning: Citation 'mekki2019comparative' on page 6 undefined on input line 356.
-
-[6] [7]
-Underfull \hbox (badness 2556) in paragraph at lines 405--405
-[]|\T1/LinuxLibertineT-TLF/b/n/10.95 Öffentlich oder
- []
-
-
-LaTeX Warning: Citation 'chirpstack_docs' on page 8 undefined on input line 414.
-
+pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.318 
+       [6]
+pdfTeX warning (ext4): destination with the same identifier (name{page.7}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.318 
+       [7]
 \@gls@deffile=\write12
 \openout12 = `main.glsdefs'.
 
@@ -1436,39 +1414,28 @@ L3 programming layer <2024-01-22>
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 78D88B06659DF844273598CEB76BC1EE;4485.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
-
+(rerunfilecheck)             Checksum: F2F32A3CE6E3E960E48486215D613DFB;4222.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32910 strings out of 474222
- 616678 string characters out of 5748733
- 1951975 words of memory out of 5000000
- 54514 multiletter control sequences out of 15000+600000
- 674527 words of font info for 122 fonts, out of 8000000 for 9000
+ 32827 strings out of 474222
+ 614401 string characters out of 5748733
+ 1945975 words of memory out of 5000000
+ 54429 multiletter control sequences out of 15000+600000
+ 666374 words of font info for 118 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 94i,13n,93p,2407b,2473s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{glo:qos} has been referenced but does not exist, replaced by a fixed one
-
+ 94i,13n,93p,2424b,2471s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{glo:ble} has been referenced but does not exist, replaced by a fixed one
 
-</usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on main.pdf (31 pages, 426999 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on main.pdf (35 pages, 418085 bytes).
 PDF statistics:
- 540 PDF objects out of 1000 (max. 8388607)
- 469 compressed objects within 5 object streams
- 121 named destinations out of 1000 (max. 500000)
+ 550 PDF objects out of 1000 (max. 8388607)
+ 477 compressed objects within 5 object streams
+ 129 named destinations out of 1000 (max. 500000)
  192 words of extra memory for PDF output out of 10000 (max. 10000000)
 
