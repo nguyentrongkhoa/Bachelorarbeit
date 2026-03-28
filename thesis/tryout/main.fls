@@ -487,9 +487,9 @@ INPUT main.acr
 INPUT ./main.gls
 INPUT ./main.gls
 INPUT main.gls
-INPUT ./kapitel2/notes.tex
-INPUT ./kapitel2/notes.tex
-INPUT kapitel2/notes.tex
+INPUT ./kapitel2/ch2.tex
+INPUT ./kapitel2/ch2.tex
+INPUT kapitel2/ch2.tex
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/libertine/LinLibertineT-tlf-t1.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/libertine/LinLibertineTB-tlf-t1.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/libertine/LinLibertineT-tlf-t1.tfm

@@ -138,6 +138,62 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{iot}%
+{%
+name={\acronymfont {\glsentryshort {iot}}},%
+sort={IoT},%
+type={acronym},%
+first={IoT},%
+firstplural={IoTs},%
+text={IoT},%
+plural={IoTs},%
+description={Internet of Things},%
+descriptionplural={Internet of Things},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Internet of Things},%
+longplural={Internet of Thingss},%
+short={IoT},%
+shortplural={IoTs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{qos}%
+{%
+name={\acronymfont {\glsentryshort {qos}}},%
+sort={QoS},%
+type={acronym},%
+first={QoS},%
+firstplural={QoSs},%
+text={QoS},%
+plural={QoSs},%
+description={Quality of Service},%
+descriptionplural={Quality of Service},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Quality of Service},%
+longplural={Quality of Services},%
+short={QoS},%
+shortplural={QoSs},%
+counter={page},%
+parent={},%
+%
+}%
+
 \glsdefs@newdocentry{lora}%
 {%
 name={\acronymfont {\glsentryshort {lora}}},%
