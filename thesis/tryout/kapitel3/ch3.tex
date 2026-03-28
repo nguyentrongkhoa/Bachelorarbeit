@@ -6,7 +6,7 @@
 \label{chap:implementierung}
 
 Dieses Kapitel beschreibt den Entwurf und die prototypische Umsetzung des
-Off"=Grid"=Schutzsensorsystems. Ausgehend von den in Kapitel~\ref{chap:motivation}
+Off"=Grid"=Schutzsensorsystems. Ausgehend von den in Kapitel~\ref{chap:einleitung}
 abgeleiteten Anforderungen werden zunächst die gewählten Hardware"=Komponenten
 vorgestellt und begründet. Anschließend wird die Systemarchitektur auf Software"=Ebene
 beschrieben, bevor auf die konkrete Implementierung der Firmware, des Network"=Servers
@@ -14,38 +14,15 @@ und der Datenvisualisierung eingegangen wird.
 
 % TODO: Blockschaltbild des Gesamtsystems einfügen (Sensoreinheit → Gateway → RPi Network-Server)
 
-
 % -----------------------------------------------------------------------------
 \section{Hardwareauswahl}
 \label{sec:hardwareauswahl}
 % -----------------------------------------------------------------------------
 
-\subsection{Klassifikation verfügbarer Hardware}
-\label{subsec:klassifikation}
-
-Für den Aufbau eines LoRaWAN"=Prototyps existiert auf dem Markt eine breite
-Auswahl an Mikrocontrollern und Entwicklungsboards. Diese lassen sich in zwei
-Kategorien einteilen: \textbf{Prototyping"=Boards} und
-\textbf{produktionsreife Module}.
-
-\textbf{Prototyping"=Boards} wie das Heltec WiFi LoRa~32 (ESP32"=basiert, mit
-integriertem OLED"=Display) zeichnen sich durch einfache Inbetriebnahme,
-eine große Community und niedrige Einstiegskosten aus. Sie eignen sich für
-schnelle Funktionsdemonstration, sind jedoch aufgrund ihres vergleichsweise
-hohen Ruhestromverbrauchs und fehlender Industriezertifizierungen für
-sicherheitskritische oder energiebeschränkte Anwendungen weniger geeignet.
-Das RakWireless WisBlock stellt eine Zwischenstufe dar: modular aufgebaut,
-auf niedrigen Energieverbrauch optimiert und durch den nRF52840"=Kern
-Bluetooth"=fähig, jedoch ebenfalls primär für den Prototyping"=Bereich konzipiert.
-
-\textbf{Produktionsreife Module} hingegen sind auf industrielle Anforderungen
-ausgelegt. Sie bieten niedrigere Ruhestromaufnahmen, sind in einem weiten
-Temperaturbereich spezifiziert und bilden die Grundlage kommerzieller
-LoRaWAN"=Produkte. Der STM32WL55 von STMicroelectronics ist in dieser Kategorie
-der Industriestandard, wie in Abschnitt~\ref{subsec:mcu} detailliert begründet wird.
-
-\subsection{Mikrocontroller: STM32WL55}
+\subsection{Mikrocontroller}
 \label{subsec:mcu}
+
+\paragraph{Mikrocontroller}
 
 Für die Sensoreinheit wird der \textbf{STM32WL55CC} von STMicroelectronics
 eingesetzt, der auf dem Entwicklungsboard \textbf{NUCLEO"=WL55JC1} verfügbar
@@ -56,7 +33,7 @@ auf einem einzigen Die vereint. Dies eliminiert den Bedarf an einem separaten
 Funkmodul und reduziert damit Platzbedarf, Kostenpunkt und potenzielle
 Fehlerquellen an der Schnittstelle zwischen MCU und Funkmodul.
 
-Die wesentlichen Eigenschaften des STM32WL55 für dieses Projekt sind:
+Wichtige Eigenschaften des STM32WL55 für dieses Projekt lassen sich dem Datenblatt entnehmen:
 
 \begin{itemize}
     \item \textbf{Integrierter Sub"=GHz"=Transceiver:} Unterstützt LoRa (CSS),
@@ -69,10 +46,10 @@ Die wesentlichen Eigenschaften des STM32WL55 für dieses Projekt sind:
 
     \item \textbf{Energieprofil:} Im Deep"=Stop"=Modus beträgt die
     Stromaufnahme lediglich \SI{1{,}08}{\micro\ampere}, was einen
-    mehrschichtigen Betrieb auf Primärzellen ermöglicht~\cite{stm32wl_ds}.
+    mehrschichtigen Betrieb auf Primärzellen ermöglicht.
 
-    \item \textbf{Zephyr RTOS Support:} Das Board \texttt{nucleo\_wl55jc}
-    ist offiziell von Zephyr unterstützt, was einen produktionsreifen
+    \item \textbf{Zephyr-Support:} Das Board \texttt{nucleo\_wl55jc}
+    ist offiziell von Zephyr-\acrshort{rtos} unterstützt, was einen produktionsreifen
     LoRaWAN"=Stack ohne proprietäre Middleware ermöglicht.
 
     \item \textbf{Integrierter ST"=LINK V3E:} Das NUCLEO"=Board enthält
@@ -80,142 +57,28 @@ Die wesentlichen Eigenschaften des STM32WL55 für dieses Projekt sind:
     Programmiergerät erforderlich ist.
 \end{itemize}
 
-Tabelle~\ref{tab:mcu_vergleich} fasst den Vergleich der betrachteten
-MCU"=Plattformen zusammen.
+\paragraph{Gateway}
+% TODO: write sth about DIY RPi as Gateway
 
-\begin{table}[htbp]
-    \centering
-    \caption{Vergleich der betrachteten Mikrocontroller-Plattformen}
-    \label{tab:mcu_vergleich}
-    \begin{tabularx}{\textwidth}{l X X X}
-        \toprule
-        \textbf{Kriterium}
-            & \textbf{Heltec WiFi LoRa 32}
-            & \textbf{RAK WisBlock}
-            & \textbf{STM32WL55 (gewählt)} \\
-        \midrule
-        Kern
-            & ESP32 (Xtensa LX6)
-            & nRF52840 (Cortex-M4)
-            & Cortex-M4 + M0+ \\
-        \addlinespace
-        LoRa-Chip
-            & Extern (SX1276)
-            & Extern (SX1262)
-            & \textbf{Integriert (SoC)} \\
-        \addlinespace
-        Max. Sendeleistung
-            & \SI{20}{dBm}
-            & \SI{22}{dBm}
-            & \textbf{\SI{22}{dBm}} \\
-        \addlinespace
-        Ruhestrom (typ.)
-            & \SI{>100}{\micro\ampere}
-            & \SI{\approx 2}{\micro\ampere}
-            & \textbf{\SI{1{,}08}{\micro\ampere}} \\
-        \addlinespace
-        Zephyr RTOS
-            & Eingeschränkt
-            & Ja
-            & \textbf{Ja (offiziell)} \\
-        \addlinespace
-        Industrietauglichkeit
-            & Nein
-            & Bedingt
-            & \textbf{Ja} \\
-        \addlinespace
-        Kategorie
-            & Prototyping
-            & Prototyping / Semi-Pro
-            & \textbf{Produktionsreif} \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
+TODO aaaa
 
-\subsection{Gateway}
-\label{subsec:gateway}
-
-Das Gateway bildet die Brücke zwischen den LoRa"=Endgeräten und dem
-Network"=Server. Da für das Off"=Grid"=Szenario ein portables, batterietaugliches
-und wetterfestes Gateway benötigt wird, wurden mehrere Kandidaten evaluiert,
-die in Tabelle~\ref{tab:gateway_vergleich} gegenübergestellt sind.
-
-\begin{table}[htbp]
-    \centering
-    \caption{Vergleich der evaluierten Gateway-Hardware}
-    \label{tab:gateway_vergleich}
-    \begin{tabularx}{\textwidth}{l X X X X}
-        \toprule
-        \textbf{Gateway}
-            & \textbf{Kanäle}
-            & \textbf{Formfaktor}
-            & \textbf{Stromversorgung}
-            & \textbf{Besonderheit} \\
-        \midrule
-        Dragino LPS8
-            & 8
-            & Indoor
-            & Netzteil
-            & PoE-fähig, weit verbreitet \\
-        \addlinespace
-        MikroTik LR8
-            & 8
-            & Outdoor
-            & PoE / Netzteil
-            & Wetterfest (IP54), RouterOS \\
-        \addlinespace
-        DIY Raspberry Pi
-            & 8 (mit RAK2287)
-            & Variabel
-            & USB / Akku möglich
-            & \textbf{Vollständige Kontrolle,}
-              \textbf{Network-Server on-board} \\
-        \addlinespace
-        Pycom LoPy4
-            & 1 (single-channel)
-            & Kompakt
-            & USB / Akku
-            & Nur für Tests geeignet \\
-        \addlinespace
-        TTGO LoRa32
-            & 1 (single-channel)
-            & Kompakt
-            & USB / Akku
-            & Nur für Tests geeignet \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
-
-Für den produktiven Off"=Grid"=Betrieb sind Single"=Channel"=Gateways wie
-LoPy4 und TTGO LoRa32 nicht geeignet, da sie nur einen der LoRaWAN"=Kanäle
-empfangen können und damit die Empfangssicherheit erheblich einschränken.
-Für die praktische Evaluation bieten sie sich jedoch aufgrund ihrer
-Kompaktheit und des niedrigen Preises als Ergänzung an.
-
-% TODO: finale Gatewayentscheidung hier eintragen sobald gekauft
-
-\subsection{Mess- und Analysehardware}
-\label{subsec:messhardware}
-
-Für die experimentelle Evaluation (Kapitel~\ref{chap:evaluation}) werden
-zusätzlich zwei Messgeräte eingesetzt:
+\paragraph{Messinstrument}
 
 Der \textbf{Nordic Power Profiler Kit~II (PPK2)} ermöglicht eine
 hochauflösende Strommessung im Bereich von \SI{100}{\nano\ampere} bis
-\SI{1}{\ampere} und ist damit das zentrale Werkzeug zur Verifikation der
+\SI{1}{\ampere} und dient damit der Verifikation der
 theoretischen Energiebudgetberechnungen. Er wird zwischen Spannungsquelle
 und NUCLEO"=Board geschaltet und zeichnet das Stromprofil über die Zeit auf,
 sodass Schlafphasen, Aufwachvorgänge und Sendepulse direkt sichtbar werden.
 
-Der \textbf{RTL-SDR V4} ist ein kostengünstiger Software Defined Radio"=Empfänger,
+\paragraph{Radioempfänger}
+
+Der \textbf{RTL-SDR V4} ist ein kostengünstiger \acrfull{sdr}"=Empfänger,
 der in Kombination mit SDR\# (Windows) oder GNU Radio (Linux) zur Spektrumanalyse
 im \SI{868}{\MHz}"=Band eingesetzt wird. LoRa"=Chirps sind im Wasserfall"=Diagramm
 als charakteristische diagonale Linien sichtbar. Mit dem GNU Radio"=Plugin
 \texttt{gr-lora} können LoRaWAN"=Pakete vollständig demoduliert und dekodiert
 werden, ohne dass ein zweites LoRa"=Endgerät als Empfänger erforderlich ist.
-Da der RTL-SDR weder bei Digi"=Key noch bei Mouser gelistet ist, muss er direkt
-beim Hersteller (rtl-sdr.com) oder über Amazon bezogen werden.
-
 
 % -----------------------------------------------------------------------------
 \section{Software-Architektur}
@@ -257,68 +120,6 @@ Off"=Grid"=Szenario strukturell nicht erfüllbar ist. Für die frühe
 Entwicklungsphase und erste Funktionstests kann TTS dennoch als schnell
 verfügbare Cloud"=Infrastruktur genutzt werden, bevor das lokale
 ChirpStack"=Setup vollständig konfiguriert ist.
-
-\subsection{Entwicklungs- und Analyse-Tools}
-\label{subsec:tools}
-
-Tabelle~\ref{tab:tools} gibt einen Überblick über alle im Rahmen dieser Arbeit
-eingesetzten Software"=Werkzeuge.
-
-\begin{table}[htbp]
-    \centering
-    \caption{Eingesetzte Software-Werkzeuge}
-    \label{tab:tools}
-    \begin{tabularx}{\textwidth}{l l X}
-        \toprule
-        \textbf{Bereich} & \textbf{Tool} & \textbf{Zweck} \\
-        \midrule
-        Firmware-Entwicklung
-            & Zephyr RTOS + West
-            & RTOS, LoRaWAN"=Stack, Build"=System \\
-        \addlinespace
-        Simulation
-            & Renode
-            & Simulation des STM32WL55 ohne Hardware \\
-        \addlinespace
-        Network"=Server
-            & ChirpStack
-            & Lokaler, offline"=fähiger LoRaWAN"=Stack \\
-        \addlinespace
-        Datenpipeline
-            & Node"=RED
-            & Visuelle Verknüpfung von MQTT"=Daten und Dashboard \\
-        \addlinespace
-        Debugging
-            & MQTT Explorer
-            & Inspektion der MQTT"=Nachrichten zwischen ChirpStack und Applikation \\
-        \addlinespace
-        Spektrumanalyse
-            & SDR\# / GNU Radio + \texttt{gr-lora}
-            & LoRa"=Chirps visualisieren, Pakete demodulieren \\
-        \addlinespace
-        Strommessung
-            & nRF PPK2 + Power Profiler App
-            & Hochauflösende Strom"=Zeit"=Profile \\
-        \addlinespace
-        RF"=Planung
-            & SPLAT!, LoRa Calculator (Semtech)
-            & Theoretische Coverage"=Karten, Airtime"=Berechnung \\
-        \addlinespace
-        Kartenvisualisierung
-            & Python + Folium / QGIS
-            & RSSI"=Messpunkte als Heatmap auf OpenStreetMap \\
-        \addlinespace
-        Systemdiagramme
-            & draw.io / Lucidchart
-            & Blockschaltbilder, Architekturdiagramme \\
-        \addlinespace
-        Preisvergleich
-            & Octopart
-            & Komponentenpreise und Verfügbarkeit \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
-
 
 % -----------------------------------------------------------------------------
 \section{Firmware-Implementierung}
@@ -380,3 +181,5 @@ eingesetzten Software"=Werkzeuge.
 
 \newacronym{soc}{SoC}{System-on-Chip}
 \newacronym{bpsk}{BPSK}{Binary Phase Shift Keying}
+\newacronym{sdr}{SDR}{Software Defined Radio}
+\newacronym{rtos}{RTOS}{Real-Time Operating System}

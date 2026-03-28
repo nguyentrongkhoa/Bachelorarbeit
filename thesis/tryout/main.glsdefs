@@ -1202,3 +1202,59 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{sdr}%
+{%
+name={\acronymfont {\glsentryshort {sdr}}},%
+sort={SDR},%
+type={acronym},%
+first={SDR},%
+firstplural={SDRs},%
+text={SDR},%
+plural={SDRs},%
+description={Software Defined Radio},%
+descriptionplural={Software Defined Radio},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Software Defined Radio},%
+longplural={Software Defined Radios},%
+short={SDR},%
+shortplural={SDRs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{rtos}%
+{%
+name={\acronymfont {\glsentryshort {rtos}}},%
+sort={RTOS},%
+type={acronym},%
+first={RTOS},%
+firstplural={RTOSs},%
+text={RTOS},%
+plural={RTOSs},%
+description={Real-Time Operating System},%
+descriptionplural={Real-Time Operating System},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Real-Time Operating System},%
+longplural={Real-Time Operating Systems},%
+short={RTOS},%
+shortplural={RTOSs},%
+counter={page},%
+parent={},%
+%
+}%
+

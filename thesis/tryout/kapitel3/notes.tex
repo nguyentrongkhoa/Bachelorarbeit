@@ -1,0 +1,106 @@
+\begin{table}[htbp]
+    \centering
+    \caption{Vergleich der evaluierten Gateway-Hardware}
+    \label{tab:gateway_vergleich}
+    \begin{tabularx}{\textwidth}{l X X X X}
+        \toprule
+        \textbf{Gateway}
+            & \textbf{Kanäle}
+            & \textbf{Formfaktor}
+            & \textbf{Stromversorgung}
+            & \textbf{Besonderheit} \\
+        \midrule
+        Dragino LPS8
+            & 8
+            & Indoor
+            & Netzteil
+            & PoE-fähig, weit verbreitet \\
+        \addlinespace
+        MikroTik LR8
+            & 8
+            & Outdoor
+            & PoE / Netzteil
+            & Wetterfest (IP54), RouterOS \\
+        \addlinespace
+        DIY Raspberry Pi
+            & 8 (mit RAK2287)
+            & Variabel
+            & USB / Akku möglich
+            & \textbf{Vollständige Kontrolle,}
+              \textbf{Network-Server on-board} \\
+        \addlinespace
+        Pycom LoPy4
+            & 1 (single-channel)
+            & Kompakt
+            & USB / Akku
+            & Nur für Tests geeignet \\
+        \addlinespace
+        TTGO LoRa32
+            & 1 (single-channel)
+            & Kompakt
+            & USB / Akku
+            & Nur für Tests geeignet \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Entwicklungs- und Analyse-Tools}
+\label{subsec:tools}
+
+Tabelle~\ref{tab:tools} gibt einen Überblick über alle im Rahmen dieser Arbeit
+eingesetzten Software"=Werkzeuge.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Eingesetzte Software-Werkzeuge}
+    \label{tab:tools}
+    \begin{tabularx}{\textwidth}{l l X}
+        \toprule
+        \textbf{Bereich} & \textbf{Tool} & \textbf{Zweck} \\
+        \midrule
+        Firmware-Entwicklung
+            & Zephyr RTOS + West
+            & RTOS, LoRaWAN"=Stack, Build"=System \\
+        \addlinespace
+        Simulation
+            & Renode
+            & Simulation des STM32WL55 ohne Hardware \\
+        \addlinespace
+        Network"=Server
+            & ChirpStack
+            & Lokaler, offline"=fähiger LoRaWAN"=Stack \\
+        \addlinespace
+        Datenpipeline
+            & Node"=RED
+            & Visuelle Verknüpfung von MQTT"=Daten und Dashboard \\
+        \addlinespace
+        Debugging
+            & MQTT Explorer
+            & Inspektion der MQTT"=Nachrichten zwischen ChirpStack und Applikation \\
+        \addlinespace
+        Spektrumanalyse
+            & SDR\# / GNU Radio + \texttt{gr-lora}
+            & LoRa"=Chirps visualisieren, Pakete demodulieren \\
+        \addlinespace
+        Strommessung
+            & nRF PPK2 + Power Profiler App
+            & Hochauflösende Strom"=Zeit"=Profile \\
+        \addlinespace
+        RF"=Planung
+            & SPLAT!, LoRa Calculator (Semtech)
+            & Theoretische Coverage"=Karten, Airtime"=Berechnung \\
+        \addlinespace
+        Kartenvisualisierung
+            & Python + Folium / QGIS
+            & RSSI"=Messpunkte als Heatmap auf OpenStreetMap \\
+        \addlinespace
+        Systemdiagramme
+            & draw.io / Lucidchart
+            & Blockschaltbilder, Architekturdiagramme \\
+        \addlinespace
+        Preisvergleich
+            & Octopart
+            & Komponentenpreise und Verfügbarkeit \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
