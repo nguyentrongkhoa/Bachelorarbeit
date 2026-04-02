@@ -45,38 +45,6 @@ blocks:
     coordinate: [200, 12]
     rotation: 0
     state: enabled
-- name: blocks_message_debug_0
-  id: blocks_message_debug
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    en_uvec: 'True'
-    log_level: info
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [936, 232.0]
-    rotation: 0
-    state: disabled
-- name: blocks_message_strobe_0
-  id: blocks_message_strobe
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    msg: pmt.intern("TEST")
-    period: '1000'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [32, 352.0]
-    rotation: 0
-    state: disabled
 - name: dc_blocker_xx_0
   id: dc_blocker_xx
   parameters:
@@ -94,7 +62,7 @@ blocks:
     bus_structure: null
     coordinate: [480, 232.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: lora_rx_0
   id: lora_rx
   parameters:
@@ -121,30 +89,6 @@ blocks:
     coordinate: [648, 188.0]
     rotation: 0
     state: enabled
-- name: lora_tx_0
-  id: lora_tx
-  parameters:
-    affinity: ''
-    alias: ''
-    bw: '125000'
-    comment: ''
-    cr: '1'
-    frame_zero_padd: '1280'
-    has_crc: 'True'
-    impl_head: 'False'
-    ldro: '2'
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    samp_rate: '500000'
-    sf: '7'
-    sync_word: '[0x12]'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [264, 308.0]
-    rotation: 0
-    state: disabled
 - name: soapy_rtlsdr_source_0
   id: soapy_rtlsdr_source
   parameters:
@@ -166,16 +110,13 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [264, 224.0]
+    coordinate: [264, 232.0]
     rotation: 0
     state: enabled
 
 connections:
-- [blocks_message_strobe_0, strobe, lora_tx_0, in]
 - [dc_blocker_xx_0, '0', lora_rx_0, '0']
-- [lora_rx_0, out, blocks_message_debug_0, log]
-- [lora_tx_0, '0', dc_blocker_xx_0, '0']
-- [soapy_rtlsdr_source_0, '0', lora_rx_0, '0']
+- [soapy_rtlsdr_source_0, '0', dc_blocker_xx_0, '0']
 
 metadata:
   file_format: 1
