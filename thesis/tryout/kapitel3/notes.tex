@@ -1,3 +1,36 @@
+- RPi can be used as gateway with ChirpStack Gateway OS
+- Roaming with Helium can be used to setup NS without Gateways
+
+Downloading gr-lora:
+    use cmake .. to install to the default /usr/local
+    or use cmake -DCMAKE_INSTALL_PREFIX=/opt/gr-lora .. to install to /
+    then cp -r /usr/local/share/gnuradio/grc/blocks/* /home/tom/miniconda3/envs/gr310/share/gnuradio/grc/blocks/
+    -  conda activate gr310
+    - run make install somehow copies the gr-lora blocks to the correct location.
+Instead of GNURadio:
+    - PySDR
+    - librtlsdr 
+
+GNURadio companion
+    - the xterm executable x-emulator-terminal is mssing: 
+
+RTL-SDR:
+    - DO NOT receive without antenna, otherwise you can damage the device
+    - max 10dBm input power, so use an attenuator if you are close to a strong transmitter
+    - 1/4 wavelength for 868MHz = 8.64cm (include calcuation)
+    
+Zephyr LoRa-Tx demo:
+    - Payload size = 13+12=25Bytes
+    - SF10 125kHz 
+    - tx_power = 4 (dBm) which is less than 10dBm so it is safe for RTL-SDR
+    - source .venv/bin/activate in /zephyrproject to use west
+    - cd /zephyr 
+    - rm -rf /build  
+    - west build -b nucleo_wl55jc samples/drivers/lora/send
+    - cd /build 
+    - west flash (remember to bind and attach usb-port to wsl if needed)
+
+% -----------------------------------------------------------
 \begin{table}[htbp]
     \centering
     \caption{Vergleich der evaluierten Gateway-Hardware}
