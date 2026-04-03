@@ -197,6 +197,74 @@
       \verb https://lora-alliance.org/wp-content/uploads/2020/11/TS002-1.1.0_LoRaWAN_Backend_Interfaces.pdf
       \endverb
     \endentry
+    \entry{tapparelOpenSourceLoRaPhysical2020}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=9726371396155a633ed9cae30f23231f}{%
+           family={Tapparel},
+           familyi={T\bibinitperiod},
+           given={Joachim},
+           giveni={J\bibinitperiod}}}%
+        {{hash=0c97fd342d219942eb864abd2a6ff495}{%
+           family={Afisiadis},
+           familyi={A\bibinitperiod},
+           given={Orion},
+           giveni={O\bibinitperiod}}}%
+        {{hash=90feb29b2834b103ae756594a41270f5}{%
+           family={Mayoraz},
+           familyi={M\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+        {{hash=1e8418ec2c47cc80191107c80b40f36e}{%
+           family={Balatsoukas-Stimming},
+           familyi={B\bibinithyphendelim S\bibinitperiod},
+           given={Alexios},
+           giveni={A\bibinitperiod}}}%
+        {{hash=b10233932de2c5fb1acc8e0dfef2936b}{%
+           family={Burg},
+           familyi={B\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Atlanta, GA, USA}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{c50f2441d997c0c4afadc738d9917ac2}
+      \strng{fullhash}{587351eda4547b54286b68580f1875c9}
+      \strng{bibnamehash}{587351eda4547b54286b68580f1875c9}
+      \strng{authorbibnamehash}{587351eda4547b54286b68580f1875c9}
+      \strng{authornamehash}{c50f2441d997c0c4afadc738d9917ac2}
+      \strng{authorfullhash}{587351eda4547b54286b68580f1875c9}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2020 {IEEE} 21st {International} {Workshop} on {Signal} {Processing} {Advances} in {Wireless} {Communications} ({SPAWC})}
+      \field{isbn}{978-1-7281-5478-7}
+      \field{month}{5}
+      \field{title}{An {Open}-{Source} {LoRa} {Physical} {Layer} {Prototype} on {GNU} {Radio}}
+      \field{urlday}{30}
+      \field{urlmonth}{3}
+      \field{urlyear}{2026}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 5}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1109/SPAWC48557.2020.9154273
+      \endverb
+      \verb{file}
+      \verb Submitted Version:C\:\\Users\\khoa1\\Zotero\\storage\\N8AF3VB5\\Tapparel et al. - 2020 - An Open-Source LoRa Physical Layer Prototype on GNU Radio.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/9154273/
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/9154273/
+      \endverb
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

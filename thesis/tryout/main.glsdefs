@@ -1286,3 +1286,31 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{gui}%
+{%
+name={\acronymfont {\glsentryshort {gui}}},%
+sort={GUI},%
+type={acronym},%
+first={GUI},%
+firstplural={GUIs},%
+text={GUI},%
+plural={GUIs},%
+description={Graphical User Interface},%
+descriptionplural={Graphical User Interface},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Graphical User Interface},%
+longplural={Graphical User Interfaces},%
+short={GUI},%
+shortplural={GUIs},%
+counter={page},%
+parent={},%
+%
+}%
+

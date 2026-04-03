@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1774729313.36155 "main.bcf" "main.bbl" "main" 1775217847.40904 0
-  "LoRa.bib" 1774694469.82812 59761 8227dd39707dcc6349a3b7eda89c1f4f ""
-  "main.bcf" 1775217845.89756 107807 27be0c6f14628e5dcf3d0fe6362359f1 "pdflatex"
+["biber main"] 1775241750.91142 "main.bcf" "main.bbl" "main" 1775241776.00272 0
+  "LoRa.bib" 1775241387.62484 60839 c02c6e690a103761d288171c88f3c04c ""
+  "main.bcf" 1775241775.7488 107896 211a1597c331b6492d945b828a46567a "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1775217836.53622 "/home/tom/zephyrproject/descap_lorawan/thesis/tryout/main.tex" "main.pdf" "main" 1775217847.41019 0
+["pdflatex"] 1775241769.18371 "/home/tom/zephyrproject/descap_lorawan/thesis/tryout/main.tex" "main.pdf" "main" 1775241776.00314 0
   "/etc/texmf/web2c/texmf.cnf" 1773605240.045 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/tom/zephyrproject/descap_lorawan/thesis/tryout/main.tex" 1775206703.56341 3710 f1b8c93db467031fa60877e01d67b1e5 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -257,22 +257,25 @@
   "bhtThesis.sty" 1774175586.51523 14008 684a2402a6d7dab5ea84941c979e7954 ""
   "kapitel1/ch1.tex" 1775216380.94165 23217 f5aa65d5303c59108959ca47c07130a2 ""
   "kapitel2/ch2.tex" 1774705914.81908 14704 c2cc8b7ff5433632380c003224d3e24c ""
-  "kapitel3/ch3.tex" 1775217825.32377 10786 6c3b7c0e38c9a9967a82fd6218870292 ""
+  "kapitel3/ch3.tex" 1775241557.60046 12850 b595ba5827d15ddba954b17a61ea10ee ""
   "kapitel3/pictures/868MHz_Dipole.jpeg" 1775102805.82105 169974 f2a22280bcd6f9d7a1042cc5df5485f9 ""
+  "kapitel3/pictures/lora_send_test_gnuradio_flowgraph.png" 1775130472.45491 25452 7b243e986ff7b6594045255d609f3094 ""
+  "kapitel3/pictures/lora_send_test_gnuradio_result.png" 1775129188.27223 38919 58830eee69d9523f78d129cc9a707e5d ""
   "kapitel3/pictures/zephyr_lora_send_calc.png" 1775216661.58663 73438 78d9f71f3bcdb9c66c40d1b28256fd6f ""
+  "kapitel3/pictures/zephyr_lora_send_in_sdr_sharp.png" 1775046727.66939 95869 b0c73dc9209fbe0d1f813d166faa6b18 ""
   "kapitel3/pictures/zephyr_lora_send_setup.jpeg" 1775102832.63503 142312 be6f844d1213f89fd3bfc94101a1fe15 ""
   "main.acr" 1774707137.60362 4447 67daa0e4453a5d97077be8460fa38d6d ""
-  "main.aux" 1775217845.81756 13005 e4bb108f2e0a3a7db1da010c94603772 "pdflatex"
-  "main.bbl" 1774729318.60031 9372 c4345591ac104cb35709ac94762c4bde "biber main"
-  "main.cb" 1775217838.87822 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.cb2" 1775217838.86622 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.aux" 1775241775.73632 14057 4bf6b8b48482e1574d4b1895aacd09e9 "pdflatex"
+  "main.bbl" 1775241752.89064 12050 4100a6fb0da437186f61199af838f408 "biber main"
+  "main.cb" 1775241770.95842 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.cb2" 1775241770.95426 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   "main.gls" 1774707137.13292 6 9f404503043ec80c08484be9f659189e ""
-  "main.glsdefs" 1775217845.79756 23257 a96951536e5e9ca3f7af2b4f396381f7 "pdflatex"
-  "main.lof" 1775217845.91356 411 0b89e531ad2af66f48c38e915616972f "pdflatex"
-  "main.out" 1775217845.84556 7483 2fc58e0a9bab4e502ec88075b3ae6cc4 "pdflatex"
-  "main.run.xml" 1775217845.90156 2426 93fe141410a974fef8dc2475c7eede99 "pdflatex"
+  "main.glsdefs" 1775241775.73216 23769 7df5f197c1d575d77d8d17cac2485d1b "pdflatex"
+  "main.lof" 1775241775.75295 781 5803df427bf7e980bef365a446c2500a "pdflatex"
+  "main.out" 1775241775.74048 7483 e9142f40fc0ec602dd0df680f0edb122 "pdflatex"
+  "main.run.xml" 1775241775.75295 2426 93fe141410a974fef8dc2475c7eede99 "pdflatex"
   "main.tex" 1775206703.56341 3710 f1b8c93db467031fa60877e01d67b1e5 ""
-  "main.toc" 1775217845.91356 3847 111c7e2d1411fd748d0b74583ee03690 "pdflatex"
+  "main.toc" 1775241775.75295 3847 563a44242ede2eae850a1c563caba797 "pdflatex"
   "personalMacros.tex" 1771675946.07852 150 6e250442b75bf14149b4086972af6b8f ""
   "titelseiten.tex" 1774421168.87594 5629 778ebfa1edacbbdb516303546c18ae11 ""
   (generated)

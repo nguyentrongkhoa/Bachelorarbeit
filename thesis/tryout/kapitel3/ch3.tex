@@ -111,13 +111,47 @@ der \acrshort{dc} erzählen jedoch eine andere Geschichte: wenn man nämlich die
 \href{https://www.semtech.com/design-support/lora-calculator}{LoRa-Rechner} eingibt (Abbildung \ref{fig:zephyr_lora_send_calc}),
 beträgt die ToA \SI{330}{\ms}. Da in diesem Fall jede Sekunde ein Paket gesendet wird, ergibt sich ein DC von 33\%,
 weit über dem zulässigen Wert von 1\% für das EU868-Band. Aus diesem Grund musste im Vorfeld das Übertragungsintervall auf 
-\SI{34}{\s} angepasst werden.  
+\SI{34}{\s} verlängert werden.  
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{kapitel3/pictures/zephyr_lora_send_calc.png}
     \caption{LoRa-Rechner}
     \label{fig:zephyr_lora_send_calc}
+\end{figure}
+
+% TODO: maybe add waterfall diagram
+Abbildung \ref{fig:zephyr_lora_send_sdrsharp} zeigt das Frequenzspektrum um \SI{865,1}{\MHz} beim erfolgreichen Empfangen in SDR\#. 
+Es lässt sich erkennen, dass die meiste Energie im Bereich \SI{865,1}{\MHz}$\pm \frac{\text{BW}}{2}$ ist. Aufgrund dessen,
+dass SDR\# LoRa-Pakete nicht dekodieren kann, wird ein weiterer Test in GNU-Radio benötigt. 
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{kapitel3/pictures/zephyr_lora_send_in_sdr_sharp.png}
+    \caption{LoRa-Verkehr in SDR\#}
+    \label{fig:zephyr_lora_send_sdrsharp}
+\end{figure}
+
+GNU-Radio ist eine Open-Source=Software für die Entwicklung von \acrshort{sdr}=Anwendungen. Die \acrshort{gui} ähnelt der von 
+Simulinks und basiert auf einem Blockdiagramm, in dem die Blöcke die Signalverarbeitungsschritte darstellen. Ein primitives 
+Flussdiagramm wie in Abbildung \ref{fig:zephyr_lora_send_gnuradio} ist schon ausreichend. Es beginnt mit einem \texttt{RTL-SDR Source} 
+Block, der die Rohdaten vom Empfänger liest und verstärkt. Anschließend werden die Daten durch einen \texttt{LoRa-Rx}-Block 
+geführt, welcher die LoRa-Pakete demoduliert und dekodiert. Die LoRa-Blöcke kommen nicht vorinstalliert mit GNU-Radio und müssen 
+über das Erweiterungsmodul \texttt{gr-lora} (entwickelt von \citeauthor{tapparelOpenSourceLoRaPhysical2020}) eingebunden werden.
+Die dekodierten Payloads werden im Terminal ausgegeben (Abbildung \ref{fig:zephyr_lora_send_gnuradio_result})
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{kapitel3/pictures/lora_send_test_gnuradio_flowgraph.png}
+    \caption{Blockdiagramm zum Empfangen von LoRa-Testpaketen in GNU-Radio}
+    \label{fig:zephyr_lora_send_gnuradio}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{kapitel3/pictures/lora_send_test_gnuradio_result.png}
+    \caption{Dekodierte Nutzdaten in GNU-Radio-Terminal}
+    \label{fig:zephyr_lora_send_gnuradio_result}
 \end{figure}
 
 % -----------------------------------------------------------------------------
@@ -223,3 +257,4 @@ ChirpStack"=Setup vollständig konfiguriert ist.
 \newacronym{bpsk}{BPSK}{Binary Phase Shift Keying}
 \newacronym{sdr}{SDR}{Software Defined Radio}
 \newacronym{rtos}{RTOS}{Real-Time Operating System}
+\newacronym{gui}{GUI}{Graphical User Interface}

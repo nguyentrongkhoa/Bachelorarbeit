@@ -5,4 +5,7 @@
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Erster Testaufbau}}{21}{figure.caption.28}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Einstellung Antennenlänge}}{22}{figure.caption.29}%
 \contentsline {figure}{\numberline {3.3}{\ignorespaces LoRa-Rechner}}{22}{figure.caption.30}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces LoRa-Verkehr in SDR\#}}{23}{figure.caption.31}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Blockdiagramm zum Empfangen von LoRa-Testpaketen in GNU-Radio}}{23}{figure.caption.32}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Dekodierte Nutzdaten in GNU-Radio-Terminal}}{24}{figure.caption.33}%
 \addvspace {10\p@ }
