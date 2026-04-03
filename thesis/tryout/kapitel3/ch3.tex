@@ -83,7 +83,7 @@ werden, ohne dass ein zweites LoRa"=Endgerät oder gar Gateway als Empfänger er
 Um die gekauften Komponenten zu überprüfen, wurde auf die Schnelle eine Reihe von Funktionstests durchgeführt.
 Zuerst erfolgte die Inbetriebnahme des Nucleo"=Boards mit Zephyr-RTOS, wobei der bereits gegebene Blinky-Code
 erfolgreich kompiliert und geflasht werden konnte. Anschließend wurde das Senden eines einfachen Pakets mit dem Nucleo 
-auf Basis des Beispielprogramms \href{https://github.com/zephyrproject-rtos/zephyr/blob/main/samples/drivers/lora/send/src/main.c}{LoRa send}
+auf Basis des Beispielprogramms LoRa\_send \footnote{https://github.com/zephyrproject-rtos/zephyr/blob/main/samples/drivers/lora/send/src/main.c}
 getestet. In unmittelbarer Nähe des STM32-Nucleos befindet sich der RTL-SDR-Dongle, welcher am einen Ende über USB-Anschluss
 mit einem Rechner verbunden und am anderen Ende mit einer Dipolantenne ausgestattet ist (siehe Abbildung \ref{fig:zephyr_lora_send_setup}). 
 Die Stablänge $\ell$ muss auf \SI{868}{\MHz} abgestimmt sein: 
@@ -98,9 +98,26 @@ $\ell = \frac{\lambda}{4} = \frac{c}{4f} = \frac{\SI{3e8}{\m\per\s}}{4 \cdot \SI
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\textwidth]{kapitel3/pictures/868MHz_Dipole.jpeg}
+    \includegraphics[angle=90,width=\textwidth]{kapitel3/pictures/868MHz_Dipole.jpeg}
     \caption{Einstellung Antennenlänge}
     \label{fig:868MHz_dipole}
+\end{figure}
+
+% TODO: maybe add pic of code
+Bevor dieser Test beginnen konnte, ist es wichtig, alle Übertragungsparameter im Quellcode sicherheitshalber zu überprüfen. Die 
+Sendeleistung wird auf \SI{4}{dBm} eingestellt, somit werden in dieser Hinsicht die EU-Grenzwerte eingehalten. Auch der RTL-SDR-Empfänger,
+welcher durch Tx-Leistungen höher als \SI{10}{dBm} beschädigt werden könnte, ist damit geschützt. Die \acrshort{toa} sowie 
+der \acrshort{dc} erzählen jedoch eine andere Geschichte: wenn man nämlich die restlichen Parameter in einen 
+\href{https://www.semtech.com/design-support/lora-calculator}{LoRa-Rechner} eingibt (Abbildung \ref{fig:zephyr_lora_send_calc}),
+beträgt die ToA \SI{330}{\ms}. Da in diesem Fall jede Sekunde ein Paket gesendet wird, ergibt sich ein DC von 33\%,
+weit über dem zulässigen Wert von 1\% für das EU868-Band. Aus diesem Grund musste im Vorfeld das Übertragungsintervall auf 
+\SI{34}{\s} angepasst werden.  
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{kapitel3/pictures/zephyr_lora_send_calc.png}
+    \caption{LoRa-Rechner}
+    \label{fig:zephyr_lora_send_calc}
 \end{figure}
 
 % -----------------------------------------------------------------------------

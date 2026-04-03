@@ -41,4 +41,4 @@
 \contentsline {subsection}{\numberline {3.6.1}MQTT-Pipeline}{23}{subsection.3.6.1}%
 \contentsline {subsection}{\numberline {3.6.2}Kartografische Auswertung der Messdaten}{23}{subsection.3.6.2}%
 \contentsline {chapter}{\numberline {A}Angehängtes: Die Dateien des Pakets}{25}{appendix.A}%
-\contentsline {chapter}{Literatur- und Quellenverzeichnis}{27}{section*.31}%
+\contentsline {chapter}{Literatur- und Quellenverzeichnis}{27}{section*.32}%

@@ -530,6 +530,34 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{dc}%
+{%
+name={\acronymfont {\glsentryshort {dc}}},%
+sort={DC},%
+type={acronym},%
+first={DC},%
+firstplural={DCs},%
+text={DC},%
+plural={DCs},%
+description={Direct Cycle},%
+descriptionplural={Direct Cycle},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Direct Cycle},%
+longplural={Direct Cycles},%
+short={DC},%
+shortplural={DCs},%
+counter={page},%
+parent={},%
+%
+}%
+
 \glsdefs@newdocentry{ism}%
 {%
 name={\acronymfont {\glsentryshort {ism}}},%

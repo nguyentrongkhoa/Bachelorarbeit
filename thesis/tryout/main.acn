@@ -45,3 +45,5 @@
 \glossaryentry{BPSK?\glossentry{bpsk}|setentrycounter[]{page}"\glsnumberformat}{19}
 \glossaryentry{RTOS?\glossentry{rtos}|setentrycounter[]{page}"\glsnumberformat}{20}
 \glossaryentry{SDR?\glossentry{sdr}|setentrycounter[]{page}"\glsnumberformat}{20}
+\glossaryentry{ToA?\glossentry{toa}|setentrycounter[]{page}"\glsnumberformat}{21}
+\glossaryentry{DC?\glossentry{dc}|setentrycounter[]{page}"\glsnumberformat}{21}

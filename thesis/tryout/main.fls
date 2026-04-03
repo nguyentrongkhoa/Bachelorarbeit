@@ -103,8 +103,6 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/glossaries/base/glossaries.sty
@@ -564,6 +562,11 @@ INPUT ./kapitel3/pictures/868MHz_Dipole.jpeg
 INPUT ./kapitel3/pictures/868MHz_Dipole.jpeg
 INPUT ./kapitel3/pictures/868MHz_Dipole.jpeg
 INPUT ./kapitel3/pictures/868MHz_Dipole.jpeg
+INPUT ./kapitel3/pictures/zephyr_lora_send_calc.png
+INPUT ./kapitel3/pictures/zephyr_lora_send_calc.png
+INPUT ./kapitel3/pictures/zephyr_lora_send_calc.png
+INPUT ./kapitel3/pictures/zephyr_lora_send_calc.png
+INPUT ./kapitel3/pictures/zephyr_lora_send_calc.png
 INPUT ./anhang.tex
 INPUT ./anhang.tex
 INPUT anhang.tex
