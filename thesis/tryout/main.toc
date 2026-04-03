@@ -21,24 +21,24 @@
 \contentsline {subsection}{\numberline {2.2.4}Join-Server}{16}{subsection.2.2.4}%
 \contentsline {chapter}{\numberline {3}Systementwurf und Implementierung}{19}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Hardwareauswahl}{19}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Mikrocontroller}{19}{subsection.3.1.1}%
-\contentsline {paragraph}{Mikrocontroller}{19}{section*.17}%
-\contentsline {paragraph}{Gateway}{20}{section*.18}%
-\contentsline {paragraph}{Messinstrument}{20}{section*.19}%
-\contentsline {paragraph}{Radioempfänger}{20}{section*.20}%
-\contentsline {section}{\numberline {3.2}Software-Architektur}{20}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Überblick der Softwareschichten}{20}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Auswahl des Network-Servers: ChirpStack}{21}{subsection.3.2.2}%
-\contentsline {section}{\numberline {3.3}Firmware-Implementierung}{21}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Zephyr RTOS und Projektstruktur}{21}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}LoRaWAN-Stack-Konfiguration}{21}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Power-Management-Implementierung}{21}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Simulation mit Renode}{21}{subsection.3.3.4}%
-\contentsline {section}{\numberline {3.4}Gateway- und Network-Server-Konfiguration}{21}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Gateway-Inbetriebnahme}{21}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}ChirpStack-Konfiguration}{21}{subsection.3.4.2}%
-\contentsline {section}{\numberline {3.5}Datenvisualisierung}{21}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}MQTT-Pipeline}{21}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Kartografische Auswertung der Messdaten}{21}{subsection.3.5.2}%
-\contentsline {chapter}{\numberline {A}Angehängtes: Die Dateien des Pakets}{23}{appendix.A}%
-\contentsline {chapter}{Literatur- und Quellenverzeichnis}{25}{section*.22}%
+\contentsline {paragraph}{Mikrokontroller}{19}{section*.24}%
+\contentsline {paragraph}{Gateway}{20}{section*.25}%
+\contentsline {paragraph}{Messinstrument}{20}{section*.26}%
+\contentsline {paragraph}{Radioempfänger}{20}{section*.27}%
+\contentsline {section}{\numberline {3.2}Erste Tests}{20}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Software-Architektur}{21}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Überblick der Softwareschichten}{21}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Auswahl des Network-Servers: ChirpStack}{23}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.4}Firmware-Implementierung}{23}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Zephyr RTOS und Projektstruktur}{23}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}LoRaWAN-Stack-Konfiguration}{23}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Power-Management-Implementierung}{23}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Simulation mit Renode}{23}{subsection.3.4.4}%
+\contentsline {section}{\numberline {3.5}Gateway- und Network-Server-Konfiguration}{23}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Gateway-Inbetriebnahme}{23}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}ChirpStack-Konfiguration}{23}{subsection.3.5.2}%
+\contentsline {section}{\numberline {3.6}Datenvisualisierung}{23}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}MQTT-Pipeline}{23}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Kartografische Auswertung der Messdaten}{23}{subsection.3.6.2}%
+\contentsline {chapter}{\numberline {A}Angehängtes: Die Dateien des Pakets}{25}{appendix.A}%
+\contentsline {chapter}{Literatur- und Quellenverzeichnis}{27}{section*.31}%

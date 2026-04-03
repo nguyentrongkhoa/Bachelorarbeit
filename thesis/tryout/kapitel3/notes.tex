@@ -7,12 +7,30 @@ Downloading gr-lora:
     then cp -r /usr/local/share/gnuradio/grc/blocks/* /home/tom/miniconda3/envs/gr310/share/gnuradio/grc/blocks/
     -  conda activate gr310
     - run make install somehow copies the gr-lora blocks to the correct location.
-Instead of GNURadio:
-    - PySDR
-    - librtlsdr 
 
 GNURadio companion
-    - the xterm executable x-emulator-terminal is mssing: 
+    Use the 2 cmd below to install driver for rtl-sdr in Linux/WSL
+        - sudo apt update
+        - sudo apt install rtl-sdr librtlsdr-dev
+        - Type rtl_test in the terminal to check if everything is installed correctly
+
+    - conda install -c conda-forge soapysdr-module-rtlsdr
+    Then follow the instructions in the terminal after having installed soapysdr-module-rtlsdr:
+        - sudo ln -s ~/miniconda3/envs/gr310/lib/udev/rules.d/rtl-sdr.rules /etc/udev/rules.d/
+        - sudo udevadm control --reload && sudo udevadm trigger
+
+    To start GNU Radio companion: 
+        - conda activate gr310 && cd ~/gr-lora_sdr/build/  
+        - gnuradio-companion & (& to run in background)
+    In case GNU Radio glitches:
+        - killall -9 gnuradio-companion python python3
+    Testing zephyr LoRa-Tx demo:
+        - IMPORTANT: set gain from Soapy-SDR source to max (49.6) to guarantee reception 
+        - set frequency to 865.1MHz, sample rate to 250kHz, since the lora_rx block cannot sample as 1MHz, 
+          and bandwidth to 125kHz
+    
+    Helpful resources:
+        - Muhamad Mustaqim's YouTube channel: https://www.youtube.com/c/MuhamadMustaqim/videos
 
 RTL-SDR:
     - DO NOT receive without antenna, otherwise you can damage the device
@@ -21,7 +39,7 @@ RTL-SDR:
     
 Zephyr LoRa-Tx demo:
     - Payload size = 13+12=25Bytes
-    - SF10 125kHz 
+    - SF10 125kHz, freq=865,1MHz; CR=4/5
     - tx_power = 4 (dBm) which is less than 10dBm so it is safe for RTL-SDR
     - source .venv/bin/activate in /zephyrproject to use west
     - cd /zephyr 
@@ -137,3 +155,26 @@ eingesetzten Software"=Werkzeuge.
         \bottomrule
     \end{tabularx}
 \end{table}
+
+% TODO: delete this
+Testreihe Staub:
+
+ffp2:
+    - keine Lüfter -> Partikel mehr verteilt -> Übereinstimmung Lunge und Wangensensoren
+ffp3 (1):
+    - Grinder zu stark an -> Partikel am SPS30 vorbeigepustet -> Sensoren schlagen zuerst aus
+    - schlechtere Sitzform im Vgl zu FFP2 -> schlechtere Filtereffizienz
+ffp3 (2):
+    - Lungenzyklen bei beiden Kurven deutlich sichtbar
+    - Zu viel Staub reingekippt -> Klumpen, und Klumpen sind für Lungenzyklen verantwortlich 
+    - Lunge hat größere Eintrittsfläche -> größere Ausschläge als Wangensensor
+maske ohne filter:
+    - Luftstrom nach unten von Lüftern dominiert Einzugsstrom vom Wangensensor
+aktivkohle:
+    - große Poren -> Grinder schießt Staub am Anfang am SPS30 vorbei -> andere Sensoren schlagen zuerst Ausschlag
+    - mehr Schwankungen im Außenbereich -> grüne Kurve verhält sich irrational 
+skip 1
+normal epm2.5:
+    - Effizienz zu gering? Vllt weil SPS30 zu wenig Staub einsaugt
+    - Staub scheint gut zerkleinert zu werden, da rote und blaue Kurven übereinstimmen
+

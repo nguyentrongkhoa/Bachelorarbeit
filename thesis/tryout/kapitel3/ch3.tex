@@ -4,6 +4,7 @@
 
 \chapter{Systementwurf und Implementierung}
 \label{chap:implementierung}
+TODO:  rewrite when done
 
 Dieses Kapitel beschreibt den Entwurf und die prototypische Umsetzung des
 Off"=Grid"=Schutzsensorsystems. Ausgehend von den in Kapitel~\ref{chap:einleitung}
@@ -12,26 +13,25 @@ vorgestellt und begründet. Anschließend wird die Systemarchitektur auf Softwar
 beschrieben, bevor auf die konkrete Implementierung der Firmware, des Network"=Servers
 und der Datenvisualisierung eingegangen wird.
 
-% TODO: Blockschaltbild des Gesamtsystems einfügen (Sensoreinheit → Gateway → RPi Network-Server)
-
+TODO: Blockschaltbild des Gesamtsystems einfügen (Sensoreinheit → Gateway → RPi Network-Server)
+ 
 % -----------------------------------------------------------------------------
 \section{Hardwareauswahl}
 \label{sec:hardwareauswahl}
 % -----------------------------------------------------------------------------
 
-\subsection{Mikrocontroller}
+\subsection*{Mikrokontroller}
 \label{subsec:mcu}
 
-\paragraph{Mikrocontroller}
+\paragraph{Mikrokontroller}
 
 Für die Sensoreinheit wird der \textbf{STM32WL55CC} von STMicroelectronics
 eingesetzt, der auf dem Entwicklungsboard \textbf{NUCLEO"=WL55JC1} verfügbar
 ist. Der STM32WL55 ist der erste am Markt verfügbare \acrfull{soc},
 der einen ARM Cortex"=M4"=Applikationsprozessor, einen ARM Cortex"=M0+ für
 den LoRa"=Stack sowie einen integrierten Sub"=GHz"=Transceiver (SX126x"=kompatibel)
-auf einem einzigen Die vereint. Dies eliminiert den Bedarf an einem separaten
-Funkmodul und reduziert damit Platzbedarf, Kostenpunkt und potenzielle
-Fehlerquellen an der Schnittstelle zwischen MCU und Funkmodul.
+auf einer einzigen Siliziumfläche vereint. Dadurch werden der Platzbedarf, Kostenpunkt und potenzielle
+Fehlerquellen an der Schnittstelle zwischen MCU und Funkmodul verringert.
 
 Wichtige Eigenschaften des STM32WL55 für dieses Projekt lassen sich dem Datenblatt entnehmen:
 
@@ -41,16 +41,17 @@ Wichtige Eigenschaften des STM32WL55 für dieses Projekt lassen sich dem Datenbl
     damit nativ kompatibel mit dem europäischen \SI{868}{\MHz}"=Band.
 
     \item \textbf{Sendeleistung:} bis zu \SI{22}{dBm} bei
-    $V_\text{DDPA} = \SI{3{,}3}{\V}$, was -- in Kombination mit SF12 --
-    Reichweiten von mehreren Kilometern im Freifeld ermöglicht.
+    $V_\text{DDPA} = \SI{3{,}3}{\V}$, was in Kombination mit SF12
+    Reichweiten von mehreren Kilometern im Freifeld ermöglicht. Es ist jedoch Vorsicht geboten,
+    dass in Europa die Sendeleistung auf \SI{14}{dBm} begrenzt ist. 
 
     \item \textbf{Energieprofil:} Im Deep"=Stop"=Modus beträgt die
     Stromaufnahme lediglich \SI{1{,}08}{\micro\ampere}, was einen
     mehrschichtigen Betrieb auf Primärzellen ermöglicht.
 
     \item \textbf{Zephyr-Support:} Das Board \texttt{nucleo\_wl55jc}
-    ist offiziell von Zephyr-\acrshort{rtos} unterstützt, was einen produktionsreifen
-    LoRaWAN"=Stack ohne proprietäre Middleware ermöglicht.
+    ist offiziell von Zephyr-\acrshort{rtos} unterstützt und begünstigt demgemäß die 
+    Firmware-Entwicklung mit dem integrierten LoRaWAN"=Stack.
 
     \item \textbf{Integrierter ST"=LINK V3E:} Das NUCLEO"=Board enthält
     einen integrierten Debugger und Programmer, sodass kein separates
@@ -58,9 +59,7 @@ Wichtige Eigenschaften des STM32WL55 für dieses Projekt lassen sich dem Datenbl
 \end{itemize}
 
 \paragraph{Gateway}
-% TODO: write sth about DIY RPi as Gateway
-
-TODO aaaa
+TODO: write sth about DIY RPi as Gateway
 
 \paragraph{Messinstrument}
 
@@ -73,12 +72,36 @@ sodass Schlafphasen, Aufwachvorgänge und Sendepulse direkt sichtbar werden.
 
 \paragraph{Radioempfänger}
 
-Der \textbf{RTL-SDR V4} ist ein kostengünstiger \acrfull{sdr}"=Empfänger,
-der in Kombination mit SDR\# (Windows) oder GNU Radio (Linux) zur Spektrumanalyse
-im \SI{868}{\MHz}"=Band eingesetzt wird. LoRa"=Chirps sind im Wasserfall"=Diagramm
-als charakteristische diagonale Linien sichtbar. Mit dem GNU Radio"=Plugin
-\texttt{gr-lora} können LoRaWAN"=Pakete vollständig demoduliert und dekodiert
-werden, ohne dass ein zweites LoRa"=Endgerät als Empfänger erforderlich ist.
+Der \textbf{RTL-SDR V3} ist ein kostengünstiger \acrfull{sdr}"=Empfänger,
+der in Kombination mit SDR\# (Windows) oder GNU-Radio (Linux) zur Spektrumanalyse
+eingesetzt wird. Mit dem GNU-Radio"=Plugin \texttt{gr-lora}
+können LoRaWAN"=Pakete vollständig demoduliert und dekodiert
+werden, ohne dass ein zweites LoRa"=Endgerät oder gar Gateway als Empfänger erforderlich ist.
+
+\section{Erste Tests}
+
+Um die gekauften Komponenten zu überprüfen, wurde auf die Schnelle eine Reihe von Funktionstests durchgeführt.
+Zuerst erfolgte die Inbetriebnahme des Nucleo"=Boards mit Zephyr-RTOS, wobei der bereits gegebene Blinky-Code
+erfolgreich kompiliert und geflasht werden konnte. Anschließend wurde das Senden eines einfachen Pakets mit dem Nucleo 
+auf Basis des Beispielprogramms \href{https://github.com/zephyrproject-rtos/zephyr/blob/main/samples/drivers/lora/send/src/main.c}{LoRa send}
+getestet. In unmittelbarer Nähe des STM32-Nucleos befindet sich der RTL-SDR-Dongle, welcher am einen Ende über USB-Anschluss
+mit einem Rechner verbunden und am anderen Ende mit einer Dipolantenne ausgestattet ist (siehe Abbildung \ref{fig:zephyr_lora_send_setup}). 
+Die Stablänge $\ell$ muss auf \SI{868}{\MHz} abgestimmt sein: 
+$\ell = \frac{\lambda}{4} = \frac{c}{4f} = \frac{\SI{3e8}{\m\per\s}}{4 \cdot \SI{868e6}{\Hz}} \approx \SI{8,64}{\cm}$
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{kapitel3/pictures/zephyr_lora_send_setup.jpeg}
+    \caption{Erster Testaufbau}
+    \label{fig:zephyr_lora_send_setup}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{kapitel3/pictures/868MHz_Dipole.jpeg}
+    \caption{Einstellung Antennenlänge}
+    \label{fig:868MHz_dipole}
+\end{figure}
 
 % -----------------------------------------------------------------------------
 \section{Software-Architektur}
