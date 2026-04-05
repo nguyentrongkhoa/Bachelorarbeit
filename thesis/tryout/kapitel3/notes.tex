@@ -48,6 +48,45 @@ Zephyr LoRa-Tx demo:
     - cd /build 
     - west flash (remember to bind and attach usb-port to wsl if needed)
 
+PCB-Prototype design:
+    - Think about matching circuits
+    - Follow ST reference design
+    - For coverage testing: use U.FL (IPEX) connectors for easy antenna swapping
+    - Use TCXO since LoRa is sensitive to freq Shift
+    - GPS/GNSS: use u-blox MAX-10S or Quectel L76-LB due to low power (with MOSFET control)
+    - MAX10S for example requires VDD to be stable before Uart goes high 
+    - Use energy harvesting IC rather than LDO or normal buck conv
+    - SPV1050 from ST: for solar charging with MPPT (max power point tracking)
+    - BQ25570 from TI: for solar charging with MPPT, but not available in Germany
+    - For battery: use 18650 Li-ion or LiFePO4 for better safety, but they are bigger than coin cells
+    - external watchdog to prevent LoRa stack form hanging
+    - SPI flash chip to log data locally in case of network failure
+    - Keep GPS traces away from 868MHz RF traces
+    - Add a small LDO (e.g. LP5907, 1 µA quiescent) between main rail and RF VDD. 
+      This reduces ripple on the RF supply which measurably improves receiver sensitivity
+    - Use a battery fuel gauge IC (e.g. MAX17048) to monitor battery state of charge without needing a shunt resistor,
+      SoC can also be included in payload for long deployments
+    - Rubber duck (helical) antenna very popular for gateways 
+    - maybe tag connect as programming interface? 
+    - 
+
+Test PCB:
+    1. RF-Test:
+        - power test with PPK2 
+        - output power test 
+        - antenna test with VNA 
+    2. Connect to gateway using TTS 
+    3. Network test:
+        - RSSI, SNR, packet loss rate PLR 
+    4. Energy harvesting test
+
+Small antenna miniturization book by John Volakis:
+    - Chu Harrington limits: 
+    - characteristic modes design (CMA): 
+    - coupling and isolation should be studied when having multiple antennas
+
+https://embedded-house.ghost.io/tag/zephyr-blog/
+
 % -----------------------------------------------------------
 \begin{table}[htbp]
     \centering
