@@ -50,25 +50,60 @@ Zephyr LoRa-Tx demo:
 
 PCB-Prototype design:
     - Think about matching circuits
-    - Follow ST reference design
+    - Follow ST reference design (MB1842 and MB1849)
     - For coverage testing: use U.FL (IPEX) connectors for easy antenna swapping
     - Use TCXO since LoRa is sensitive to freq Shift
-    - GPS/GNSS: use u-blox MAX-10S or Quectel L76-LB due to low power (with MOSFET control)
-    - MAX10S for example requires VDD to be stable before Uart goes high 
+    - GPS/GNSS: use u-blox MAX-M10S or Quectel L76-LB due to low power (with MOSFET control)
+        - MAX10S for example requires VDD to be stable before Uart goes high 
+        - Quectel L76KB very cheap and accessible (5€), but without antenna 
+        - Or choose L86-M33 with integrated antenna to reduce risks
     - Use energy harvesting IC rather than LDO or normal buck conv
     - SPV1050 from ST: for solar charging with MPPT (max power point tracking)
-    - BQ25570 from TI: for solar charging with MPPT, but not available in Germany
+    - BQ25570 from TI: for solar charging with MPPT, but not available in Germany + more expensive than SPV1050 on JLCPCB
     - For battery: use 18650 Li-ion or LiFePO4 for better safety, but they are bigger than coin cells
+    - TPS22958 from TI as load switch to disconnect battery from subcircuits
     - external watchdog to prevent LoRa stack form hanging
     - SPI flash chip to log data locally in case of network failure
     - Keep GPS traces away from 868MHz RF traces
+    
     - Add a small LDO (e.g. LP5907, 1 µA quiescent) between main rail and RF VDD. 
       This reduces ripple on the RF supply which measurably improves receiver sensitivity
-    - Use a battery fuel gauge IC (e.g. MAX17048) to monitor battery state of charge without needing a shunt resistor,
+    - Use a battery fuel gauge IC (e.g. MAX17048 - not critical comp on JLCPCB) 
+      to monitor battery state of charge without needing a shunt resistor,
       SoC can also be included in payload for long deployments
     - Rubber duck (helical) antenna very popular for gateways 
     - maybe tag connect as programming interface? 
+
+RF PCB design tips:
+    - Chip antenna:
+        - https://www.youtube.com/watch?v=UQBMROv7Dy4&list=PLXSyc11qLa1YhVCZ5xWPuPsE5MkgEy5TF&index=63 Phil's Lab
+    - General:
+        - https://www.youtube.com/watch?v=_Hfzq1QES-Q&list=PLXSyc11qLa1YhVCZ5xWPuPsE5MkgEy5TF&index=43 Phil's Lab
+
+BGA routing tips:
+    - https://www.youtube.com/watch?v=0KbINAq0hcU Phil's Lab 
+    - first row can be routed out normally
+    - second row also, but with thinner traces
+    - "dogbone" fanout:
+        - route a short trace from the pad to a via, then route the rest of the way on the inner layer
+        - this allows for more space between traces and easier routing
+    - for very dense BGAs, consider using a "via in pad" approach
+    - divide BGA into quadrants and route one quadrant at a time to reduce complexity
+    - for example: top left quadrant -> traces go up and left to vias 
+    - pwr and gnd vias close to each other + decoupling caps
+    - place ALL vias first before routing
+    - vias can be used as testpoints (although not recommended by IPC but sometimes you have no choice)
+    - vias have to be tented on the top and bottom closed when used as test pads
+
+STM32WL hardware design guide: https://www.youtube.com/watch?v=wkR07NEHPgo
     - 
+
+SPICE simulation ideas:
+    - Lipo discharge + TX bursts
+    - solar cold start
+    - gas sensor analog front end (transimpedance amplifier)
+    - load switch inrush current
+    - rf matching network
 
 Test PCB:
     1. RF-Test:
@@ -195,25 +230,5 @@ eingesetzten Software"=Werkzeuge.
     \end{tabularx}
 \end{table}
 
-% TODO: delete this
-Testreihe Staub:
 
-ffp2:
-    - keine Lüfter -> Partikel mehr verteilt -> Übereinstimmung Lunge und Wangensensoren
-ffp3 (1):
-    - Grinder zu stark an -> Partikel am SPS30 vorbeigepustet -> Sensoren schlagen zuerst aus
-    - schlechtere Sitzform im Vgl zu FFP2 -> schlechtere Filtereffizienz
-ffp3 (2):
-    - Lungenzyklen bei beiden Kurven deutlich sichtbar
-    - Zu viel Staub reingekippt -> Klumpen, und Klumpen sind für Lungenzyklen verantwortlich 
-    - Lunge hat größere Eintrittsfläche -> größere Ausschläge als Wangensensor
-maske ohne filter:
-    - Luftstrom nach unten von Lüftern dominiert Einzugsstrom vom Wangensensor
-aktivkohle:
-    - große Poren -> Grinder schießt Staub am Anfang am SPS30 vorbei -> andere Sensoren schlagen zuerst Ausschlag
-    - mehr Schwankungen im Außenbereich -> grüne Kurve verhält sich irrational 
-skip 1
-normal epm2.5:
-    - Effizienz zu gering? Vllt weil SPS30 zu wenig Staub einsaugt
-    - Staub scheint gut zerkleinert zu werden, da rote und blaue Kurven übereinstimmen
 
