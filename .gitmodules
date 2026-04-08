@@ -1,0 +1,3 @@
+[submodule "LoRa_hardware_design"]
+	path = LoRa_hardware_design
+	url = https://github.com/nguyentrongkhoa/LoRa_hardware_design
