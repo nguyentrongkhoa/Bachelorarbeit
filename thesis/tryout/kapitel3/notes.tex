@@ -49,17 +49,15 @@ Zephyr LoRa-Tx demo:
     - west flash (remember to bind and attach usb-port to wsl if needed)
 
 PCB-Prototype design:
-    - Think about matching circuits
-    - Follow ST reference design (MB1842 and MB1849)
-    - For coverage testing: use U.FL (IPEX) connectors for easy antenna swapping
+    - Antenna: ANT-SS900 from LPRS, 868MHz, 2.15dBi gain, omni
     - Use TCXO since LoRa is sensitive to freq Shift
     - GPS/GNSS: use u-blox MAX-M10S or Quectel L76-LB due to low power (with MOSFET control)
         - MAX10S for example requires VDD to be stable before Uart goes high 
         - Quectel L76KB very cheap and accessible (5€), but without antenna 
         - Or choose L86-M33 with integrated antenna to reduce risks
+        - Or L80 also with integrated antenna but lower power consumption + footprint already available in KiCad, 1€ cheaper than L86
     - Use energy harvesting IC rather than LDO or normal buck conv
     - SPV1050 from ST: for solar charging with MPPT (max power point tracking)
-    - BQ25570 from TI: for solar charging with MPPT, but not available in Germany + more expensive than SPV1050 on JLCPCB
     - For battery: use 18650 Li-ion or LiFePO4 for better safety, but they are bigger than coin cells
     - TPS22958 from TI as load switch to disconnect battery from subcircuits
     - external watchdog to prevent LoRa stack form hanging
@@ -73,12 +71,15 @@ PCB-Prototype design:
       SoC can also be included in payload for long deployments
     - Rubber duck (helical) antenna very popular for gateways 
     - maybe tag connect as programming interface? 
+    - use RF switch to switch between antenna and test points for easier debugging and testing
 
 RF PCB design tips:
     - Chip antenna:
         - https://www.youtube.com/watch?v=UQBMROv7Dy4&list=PLXSyc11qLa1YhVCZ5xWPuPsE5MkgEy5TF&index=63 Phil's Lab
     - General:
         - https://www.youtube.com/watch?v=_Hfzq1QES-Q&list=PLXSyc11qLa1YhVCZ5xWPuPsE5MkgEy5TF&index=43 Phil's Lab
+    - RF STM32 design review:
+        - https://www.youtube.com/watch?v=71bW_sKZIZw Phil's Lab
 
 BGA routing tips:
     - https://www.youtube.com/watch?v=0KbINAq0hcU Phil's Lab 
@@ -95,9 +96,18 @@ BGA routing tips:
     - vias can be used as testpoints (although not recommended by IPC but sometimes you have no choice)
     - vias have to be tented on the top and bottom closed when used as test pads
 
-STM32WL hardware design guide: https://www.youtube.com/watch?v=wkR07NEHPgo
-    - 
-
+Miscellaneous:
+    - Antenna isolation https://resources.altium.com/p/designing-antenna-isolation-your-wireless-system
+    - https://resources.altium.com/p/validation-structures-signal-integrity
+    - https://blog.powerfilmsolar.com/how-to-size-a-solar-panel-for-an-iot-device
+    - How to use external flash memory for custom design: 
+        - https://www.youtube.com/watch?v=FDWVVWqqJnU
+    
+Buy list:
+    - PV cell (Powerfilm MPT2.4-21)
+    - NanoVNA
+    - SPC02SYAN shunt jumper from Digikey 10cent a piece/TC non slipp
+    - TC non slip DMM probe tip
 SPICE simulation ideas:
     - Lipo discharge + TX bursts
     - solar cold start

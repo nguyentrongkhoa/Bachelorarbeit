@@ -155,7 +155,29 @@ Die dekodierten Payloads werden im Terminal ausgegeben (Abbildung \ref{fig:zephy
 \end{figure}
 
 \subsection{PCB-Prototyp}
-% TODO: 
+
+Im nächsten Schritt soll ein maßgeschneiderter PCB-Prototyp entworfen und gefertigt werden. 
+Abbildung \label{fig:block_diag} stellt die Schaltung blockschaltbildmäßig dar. Im Zentrum befindet sich der STM32WL55 mit seinem 
+integrierten LoRa-Transceiver, der über einen SMA-Stecker mit der externen 868MHz-Antenne angeschlossen ist. Mithilfe eines RF-Schalters
+wird zwischen Empfangs- und Sendemodus gewechselt. Die Steuersignale für den RF-Schalter (RF_SW_V1 und V2 im Blockschaltbild) 
+kommen von der MCU und werden über Pullup- sowie Pulldown-Widerstände so konfiguriert, 
+dass per Default das Empfangen aktiviert ist, da fahrlässiges Senden ohne Antenne
+das Funkmodul beschädigen könnte.  
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{kapitel3/pictures/block_diag.png}
+    \caption{Blockschaltbild PCB-Prototyp}
+    \label{fig:block_diag}
+\end{figure}
+
+Als Programmierschnittstelle wird ein STDC14-Header vorgesehen, über den sich das Board mit einem STLinkV3-Minie verbinden kann. 
+Der Einfachheit halber wurde für das Protokoll \acrfull{swd} entschieden, denn dieses nimmt lediglich zwei Pins in Anspruch 
+(SWDIO und SWCLK) im Vergleich zu JTAG, welches zusätzlich noch TMS, TDI und TDO benötigt. In diesem Design wird darüber hinaus 
+von den Pins SWO (Serial Wire Output) sowie VCP_TX und VCP_RX (Virtual COM Port) des STLinks Gebrauch gemacht, 
+um die Firmware-Entwicklung zu erleichtern. % TODO: maybe add pic of STLink
+
+Im Bereich Sensoren finden sich auf der PCB insgesamt drei. Zwei Gassensoren, nämlich BME680 und BMV080 dienen 
 
 % -----------------------------------------------------------------------------
 \section{Software-Architektur}
@@ -261,3 +283,4 @@ ChirpStack"=Setup vollständig konfiguriert ist.
 \newacronym{sdr}{SDR}{Software Defined Radio}
 \newacronym{rtos}{RTOS}{Real-Time Operating System}
 \newacronym{gui}{GUI}{Graphical User Interface}
+\newacronym{swd}{SWD}{Serial Wire Debug}
