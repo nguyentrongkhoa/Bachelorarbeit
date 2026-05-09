@@ -156,6 +156,10 @@ Die dekodierten Payloads werden im Terminal ausgegeben (Abbildung \ref{fig:zephy
 
 \subsection{PCB-Prototyp}
 
+\subsubsection{Schematic}
+
+\paragraph{Blockschaltbild}
+
 Im nächsten Schritt soll ein maßgeschneiderter PCB-Prototyp entworfen und gefertigt werden. 
 Abbildung \label{fig:block_diag} stellt die Schaltung blockschaltbildmäßig dar. Im Zentrum befindet sich der STM32WL55 mit seinem 
 integrierten LoRa-Transceiver, der über einen SMA-Stecker mit der externen 868MHz-Antenne angeschlossen ist. Mithilfe eines RF-Schalters
@@ -177,7 +181,22 @@ Der Einfachheit halber wurde für das Protokoll \acrfull{swd} entschieden, denn 
 von den Pins SWO (Serial Wire Output) sowie VCP_TX und VCP_RX (Virtual COM Port) des STLinks Gebrauch gemacht, 
 um die Firmware-Entwicklung zu erleichtern. % TODO: maybe add pic of STLink
 
-Im Bereich Sensoren finden sich auf der PCB insgesamt drei. Zwei Gassensoren, nämlich BME680 und BMV080 dienen 
+Im Bereich Sensoren finden sich auf der PCB insgesamt drei. Zwei Gassensoren, nämlich BME680 und BMV080 von Bosch dienen 
+der Luftmessung und kommunizieren mit dem STM32 über einen geteilten \acrshort{i2c}-Bus. Der BME680 ermöglicht
+das Messen von Temperatur, Luftfeuchtigkeit, Luftdruck und Gaswiderstand erschließt und eignet sich demzufolge
+für allgemeine IoT-Anwendungen. Hingegen ist der BMV080 auf die Erfassung von gesundheitsschädlichenFeinstaubteilchen spezialisiert und liefert 
+aussagekräftige Informationen über die Konzentration von PM1, PM2.5 und PM10 in der Luft. Das letzte Glied des Sensortrios bildet
+das GPS-Modul L80-R von Quectel. Es hat die Aufgabe, die Reichweite der Antenne zu bereits installierten Gateways zu bestimmen, 
+indem die eigenen GPS-Koordinaten mit denen der Gateways verglichen werden. Die Datenaustausch zwischen GPS-Modul und MCU erfolgt 
+über \acrshort{uart}.
+
+Das Projekt wird von einer LiPo-Batterie mit einer Kapazität von \SI{1500}{\mAh} versorgt, die über einen USB-C-Anschluss 
+aufgeladen werden kann. Für einen autarken Betrieb steht ebenfalls eine kleine Solarzelle zur Verfügung. % TODO: add pic of bat and solar
+
+\paragraph{Wichtige Teilschaltungen}
+
+Die vollständige Schaltung wird hier aus Platzgründen nicht aufgeführt, sondern im Anhang A. % TODO: add full schematic in appendix
+
 
 % -----------------------------------------------------------------------------
 \section{Software-Architektur}
@@ -284,3 +303,5 @@ ChirpStack"=Setup vollständig konfiguriert ist.
 \newacronym{rtos}{RTOS}{Real-Time Operating System}
 \newacronym{gui}{GUI}{Graphical User Interface}
 \newacronym{swd}{SWD}{Serial Wire Debug}
+\newacronym{i2c}{I2C}{Inter-Integrated Circuit}
+\newacronym{uart}{UART}{Universal Asynchronous Receiver Transmitter}
