@@ -220,7 +220,7 @@ Um die richtige Auswahl des LDOs treffen zu können, muss im Vorfeld der maximal
 Die energieaufwändigsten Komponenten sind die Sensoren (samt GPS) sowie das LoRa-Funkmodul auf dem STM32WL55, insbesondere im TX-Modus.
 Tabellen 23 und 25 im Datenblatt der MCU geben einen maximalen Stromverbrauch von 130mA an, wovon 120mA auf die Sendephase (bei 22 dBm)
 entfallen. Das L80-R GPS-Modul zieht 25mA im Acquisition-Modus, während der BME680 vernachlässig wenig Strom frisst. Der BMV080 
-verbraucht allerdings bis zu $\frac{180\text{W}}{3,3\text{V}}=54,5\text{mA}$ im kontinuierlichen Messmodus. m
+verbraucht allerdings bis zu $\frac{180\text{mW}}{3,3\text{V}}=54,5\text{mA}$ im kontinuierlichen Messmodus. 
 
 \begin{table}[h!]
 \centering
@@ -232,11 +232,42 @@ STM32WL55 (Radio)   & LoRa TX @ 22 dBm           & 120,0 mA                     
 STM32WL55 (MCU)     & Core + Peripherie          & 10,0 mA                        \\ \hline
 L80-R GPS Modul     & Acquisition                & 25,0 mA                        \\ \hline
 BMV080              & Kontinuierliche Messung    & 54,5 mA                        \\ \hline
-BME680              & Gas-Messung (Peak)         & < 1,0 mA                       \\ \hline
+BME680              & Gas-Messung (Peak)         & < 2,0 mA                       \\ \hline
 \hline
-\textbf{Gesamt}     & \textbf{Maximaler Peak}    & \textbf{210,5 mA}              \\ \hline
+\textbf{Gesamt}     & \textbf{Maximaler Peak}    & \textbf{211,5 mA}              \\ \hline
 \end{tabular}
 \end{table}
+
+Auf Basis dieser Informationen hat sich der TC1262-33 von Microchips als Sieger durchgesetzt. Er kann maximal 500mA liefern,
+was einem großzügigen Sicherheitsfaktor von mehr als 2 entspricht. Aufgrund der geringen Dropout-Spannung (275mV@211,5mA) 
+sowie des bescheidenen Stromverbrauchs (80-130$\mu \text{A}$) ist der TC1262-33 ideal für batteriebetriebene Anwendungen.
+Zwischen dem LDO und VDD ist zusätzlich noch ein Stecker (J10/SYS in Abbildung \ref{fig:usb}) zu sehen, wodurch der tatsächliche
+Energieverbrauch des Boards bei Bedarf mit dem PPK2 nachgemessen werden kann. 
+
+Die USB-Ladefunktion ist zwar praktisch für den ersten Prototyp zum schnellen Aufladen, aber in Gefahrgebieten oder schwer 
+zugänglichen Umgebungen könnte sie sich als Schwachstelle erweisen. Ein zuverlässiger Mechanismus zur Energieernte im autarken 
+Betrieb erweist sich also als notwendig. Das gelingt über eine kleine Solarzelle, über die der LiPo-Akku aufgeladen werden kann.
+Das Laden und Regeln übernimmt in diesem Fall nämlich der Chip SPV1050 von ST Microelectronics. Der Schaltung in Abbildung \ref{solar}
+liegt die Application Note AN4394 zugrunde. % TODO: add AN4394 to Zotero and footnote cite
+Bei dieser Konfiguration wird der SPV1050 im Boost-Modus betrieben, um mit der niedrigen Spannung der \acrshort{pv}-Zelle (0,5 bis 2,5V)
+den LiPo-Akku bis 4,2V aufzuladen. Als Zelle wurde MPT2.4-21 von PowerFilm gewählt dank der kompakten Abmessungen (54mmx21mm).
+Die Solarzelle liefert bei voller Sonneneinstrahlung bis zu 2,4V und 16mA und eine Leistung von 0,035W. % TODO: cite 
+Die approximate Ladezeit eines vollständig entleerten Akkus beträgt damit $\frac{1500\text{mAh}}{16\text{mA}} = 93,75\text{h}$, 
+was in der Praxis aufgrund von Wetterbedingungen und Ladeeffizienz wahrscheinlich eher 2-3 Wochen entspricht. Das klingt zwar nach wenig, 
+aber der evt. jahrelange Betrieb rechtfertigt die Integration dieser Solarzelle.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{kapitel3/pictures/solar.png}
+    \caption{Energiegewinnung durch Solarzelle mit SPv1050}
+    \label{fig:solar}
+\end{figure}
+
+Der SPV1050 verfügt über einen \acrfull{mppt}-Algorithmus, der die optimale Last für die Solarzelle 
+berechnet, um die Energieausbeute zu maximieren. Der Feedback für den MPPT-Algorithmus wird über den Spannungsteiler mit R17 und R18
+bereitgestellt. Des Weiteren ist erwähnenswert, dass der SPV1050 intern auch zwei LDOs besitzt: LDO1 liefert 1,8V für RF-Schaltungen,
+wird jedoch hier nicht benutzt; LDO2 kann bis zu 200mA bei 3,3V ausgeben und könnte bei künftigen Iterationen sogar VDD versorgen, soweit 
+das Stromprofil der einzelnen Komponenten bekannt ist.  
 
 % -----------------------------------------------------------------------------
 \section{Software-Architektur}
@@ -342,3 +373,5 @@ ChirpStack"=Setup vollständig konfiguriert ist.
 \newacronym{i2c}{I2C}{Inter-Integrated Circuit}
 \newacronym{uart}{UART}{Universal Asynchronous Receiver Transmitter}
 \newacronym{ldo}{LDO}{Low-Dropout-Spannungsregler}
+\newacronym{pv}{PV}{Photovoltaik}
+\newacronym{mppt}{MPPT}{Maximum Power Point Tracking}
