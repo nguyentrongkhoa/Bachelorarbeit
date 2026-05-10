@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.3.15)  3 APR 2026 20:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.3.15)  10 MAY 2026 08:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1133,7 +1133,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--8
 \T1/phv/b/n/14.4 LoRaWan-Kommunikation für mo-bi-le Sen-
  []
 
-<BHT-Logo-vertikal.pdf, id=160, 53.01094pt x 126.0707pt>
+<BHT-Logo-vertikal.pdf, id=164, 53.01094pt x 126.0707pt>
 File: BHT-Logo-vertikal.pdf Graphic file (type pdf)
 <use BHT-Logo-vertikal.pdf>
 Package pdftex.def Info: BHT-Logo-vertikal.pdf  used on input line 8.
@@ -1143,7 +1143,7 @@ Overfull \hbox (1.82535pt too wide) in paragraph at lines 8--8
 [][] [] 
  []
 
-<BHT-Elements.pdf, id=161, 32.04338pt x 161.86708pt>
+<BHT-Elements.pdf, id=165, 32.04338pt x 161.86708pt>
 File: BHT-Elements.pdf Graphic file (type pdf)
 <use BHT-Elements.pdf>
 Package pdftex.def Info: BHT-Elements.pdf  used on input line 8.
@@ -1160,7 +1160,7 @@ LaTeX Font Info:    Trying to load font information for U+trsy on input line 8.
  (/usr/share/texlive/texmf-dist/tex/latex/trsym/utrsy.fd
 File: utrsy.fd 2000/06/25v1.0transformation symbol font definitions
 )
-<BHT-Studiere-vertikal.pdf, id=162, 8.48169pt x 86.94461pt>
+<BHT-Studiere-vertikal.pdf, id=166, 8.48169pt x 86.94461pt>
 File: BHT-Studiere-vertikal.pdf Graphic file (type pdf)
 <use BHT-Studiere-vertikal.pdf>
 Package pdftex.def Info: BHT-Studiere-vertikal.pdf  used on input line 8.
@@ -1401,33 +1401,33 @@ Package textcomp Info: Symbol \textrightarrow not provided by
 (textcomp)             font family LinuxLibertineT-TLF in TS1 encoding.
 (textcomp)             Default family used instead on input line 16.
 [19{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [20]
-<kapitel3/pictures/zephyr_lora_send_setup.jpeg, id=540, 2007.5pt x 1129.21875pt>
+<kapitel3/pictures/zephyr_lora_send_setup.jpeg, id=549, 2007.5pt x 1129.21875pt>
 File: kapitel3/pictures/zephyr_lora_send_setup.jpeg Graphic file (type jpg)
 <use kapitel3/pictures/zephyr_lora_send_setup.jpeg>
 Package pdftex.def Info: kapitel3/pictures/zephyr_lora_send_setup.jpeg  used on input line 94.
 (pdftex.def)             Requested size: 426.79134pt x 240.07211pt.
-<kapitel3/pictures/868MHz_Dipole.jpeg, id=541, 1541.76pt x 2055.68pt>
+<kapitel3/pictures/868MHz_Dipole.jpeg, id=550, 1541.76pt x 2055.68pt>
 File: kapitel3/pictures/868MHz_Dipole.jpeg Graphic file (type jpg)
 <use kapitel3/pictures/868MHz_Dipole.jpeg>
 Package pdftex.def Info: kapitel3/pictures/868MHz_Dipole.jpeg  used on input line 101.
 (pdftex.def)             Requested size: 1541.75624pt x 2055.675pt.
-<kapitel3/pictures/zephyr_lora_send_calc.png, id=546, 647.41875pt x 403.5075pt>
+<kapitel3/pictures/zephyr_lora_send_calc.png, id=555, 647.41875pt x 403.5075pt>
 File: kapitel3/pictures/zephyr_lora_send_calc.png Graphic file (type png)
 <use kapitel3/pictures/zephyr_lora_send_calc.png>
 Package pdftex.def Info: kapitel3/pictures/zephyr_lora_send_calc.png  used on input line 118.
 (pdftex.def)             Requested size: 426.79134pt x 266.00175pt.
-<kapitel3/pictures/zephyr_lora_send_in_sdr_sharp.png, id=549, 890.1255pt x 237.88875pt>
+<kapitel3/pictures/zephyr_lora_send_in_sdr_sharp.png, id=558, 890.1255pt x 237.88875pt>
 File: kapitel3/pictures/zephyr_lora_send_in_sdr_sharp.png Graphic file (type png)
 <use kapitel3/pictures/zephyr_lora_send_in_sdr_sharp.png>
 Package pdftex.def Info: kapitel3/pictures/zephyr_lora_send_in_sdr_sharp.png  used on input line 130.
 (pdftex.def)             Requested size: 426.79134pt x 114.06187pt.
  [21 <./kapitel3/pictures/zephyr_lora_send_setup.jpeg>] [22 <./kapitel3/pictures/868MHz_Dipole.jpeg> <./kapitel3/pictures/zephyr_lora_send_calc.png>]
-<kapitel3/pictures/lora_send_test_gnuradio_flowgraph.png, id=569, 420.3705pt x 166.221pt>
+<kapitel3/pictures/lora_send_test_gnuradio_flowgraph.png, id=578, 420.3705pt x 166.221pt>
 File: kapitel3/pictures/lora_send_test_gnuradio_flowgraph.png Graphic file (type png)
 <use kapitel3/pictures/lora_send_test_gnuradio_flowgraph.png>
 Package pdftex.def Info: kapitel3/pictures/lora_send_test_gnuradio_flowgraph.png  used on input line 145.
 (pdftex.def)             Requested size: 426.79134pt x 168.76956pt.
-<kapitel3/pictures/lora_send_test_gnuradio_result.png, id=570, 242.70676pt x 440.24475pt>
+<kapitel3/pictures/lora_send_test_gnuradio_result.png, id=579, 242.70676pt x 440.24475pt>
 File: kapitel3/pictures/lora_send_test_gnuradio_result.png Graphic file (type png)
 <use kapitel3/pictures/lora_send_test_gnuradio_result.png>
 Package pdftex.def Info: kapitel3/pictures/lora_send_test_gnuradio_result.png  used on input line 152.
@@ -1437,21 +1437,52 @@ Package pdftex.def Info: kapitel3/pictures/lora_send_test_gnuradio_result.png  u
 LaTeX Warning: Float too large for page by 107.51591pt on input line 155.
 
 
-LaTeX Warning: Reference `fig:sw_stack' on page 23 undefined on input line 166.
+Overfull \hbox (23.68959pt too wide) in paragraph at lines 163--170
+\T1/LinuxLibertineT-TLF/m/n/10.95 Ab-bil-dung []3.7[] stellt die Schal-tung block-schalt-bild-mä-ÿig dar. Im Zen-trum be-fin-det sich der STM32WL55
+ []
 
-[23 <./kapitel3/pictures/zephyr_lora_send_in_sdr_sharp.png> <./kapitel3/pictures/lora_send_test_gnuradio_flowgraph.png>] [24 <./kapitel3/pictures/lora_send_test_gnuradio_result.png>]) (./anhang.tex [25] [26
 
-]
+Overfull \hbox (0.73714pt too wide) in paragraph at lines 163--170
+\T1/LinuxLibertineT-TLF/m/n/10.95 mit sei-nem in-te-grier-ten LoRa-Transceiver, der über einen SMA-Stecker mit der ex-ter-nen 868MHz-
+ []
+
+[23 <./kapitel3/pictures/zephyr_lora_send_in_sdr_sharp.png> <./kapitel3/pictures/lora_send_test_gnuradio_flowgraph.png>] [24 <./kapitel3/pictures/lora_send_test_gnuradio_result.png>]
+<kapitel3/pictures/block_diag.png, id=593, 514.92375pt x 305.34074pt>
+File: kapitel3/pictures/block_diag.png Graphic file (type png)
+<use kapitel3/pictures/block_diag.png>
+Package pdftex.def Info: kapitel3/pictures/block_diag.png  used on input line 173.
+(pdftex.def)             Requested size: 426.79134pt x 253.08331pt.
+
+Overfull \hbox (7.1891pt too wide) in paragraph at lines 184--192
+\T1/LinuxLibertineT-TLF/m/n/10.95 druck und Gas-wi-der-stand er-schlieÿt und eig-net sich dem-zu-fol-ge für all-ge-mei-ne IoT-Anwendungen.
+ []
+
+
+Underfull \vbox (badness 1184) has occurred while \output is active []
+
+ [25 <./kapitel3/pictures/block_diag.png>]
+<kapitel3/pictures/usb.png, id=606, 392.06474pt x 323.40825pt>
+File: kapitel3/pictures/usb.png Graphic file (type png)
+<use kapitel3/pictures/usb.png>
+Package pdftex.def Info: kapitel3/pictures/usb.png  used on input line 209.
+(pdftex.def)             Requested size: 426.79134pt x 352.05399pt.
+ [26 <./kapitel3/pictures/usb.png>]
+
+LaTeX Warning: Reference `fig:sw_stack' on page 27 undefined on input line 250.
+
+[27]) (./anhang.tex [28]
 Anhang A.
 
 Overfull \hbox (15.25049pt too wide) in paragraph at lines 31--33
 []\T1/fvm/m/n/10.95 bhtThesis.bib \T1/LinuxLibertineT-TLF/m/n/10.95 bein-hal-tet die zu zi-tie-ren-den Li-te-ra-tur-stel-len und wird von bibT[]Xausgewertet 
  []
 
-[27]) [28]
+[29
+
+]) [30]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/sc' will be
 (Font)              scaled to size 10.95pt on input line 124.
- [29
+ [31
 
 
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_ncsllp.enc}] (./main.aux)
@@ -1464,19 +1495,31 @@ L3 programming layer <2024-01-22>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: E9142F40FC0EC602DD0DF680F0EDB122;7483.
+(rerunfilecheck)             Checksum: 3E8F33610F38B9BE74BB3949415B2BC2;7653.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 34663 strings out of 474222
- 651380 string characters out of 5748733
+ 34812 strings out of 474222
+ 653781 string characters out of 5748733
  1945975 words of memory out of 5000000
- 56208 multiletter control sequences out of 15000+600000
+ 56345 multiletter control sequences out of 15000+600000
  675578 words of font info for 125 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  94i,13n,93p,2407b,2659s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{glo:ldo} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{glo:uart} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{glo:i2c} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{glo:swd} has been referenced but does not exist, replaced by a fixed one
+
 
 pdfTeX warning (dest): name{glo:gui} has been referenced but does not exist, replaced by a fixed one
 
@@ -1490,10 +1533,10 @@ pdfTeX warning (dest): name{glo:sdr} has been referenced but does not exist, rep
 pdfTeX warning (dest): name{glo:rtos} has been referenced but does not exist, replaced by a fixed one
 
 </usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on main.pdf (39 pages, 955063 bytes).
+Output written on main.pdf (41 pages, 998793 bytes).
 PDF statistics:
- 735 PDF objects out of 1000 (max. 8388607)
- 636 compressed objects within 7 object streams
- 162 named destinations out of 1000 (max. 500000)
- 358 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 771 PDF objects out of 1000 (max. 8388607)
+ 666 compressed objects within 7 object streams
+ 174 named destinations out of 1000 (max. 500000)
+ 376 words of extra memory for PDF output out of 10000 (max. 10000000)
 

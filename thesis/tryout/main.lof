@@ -8,4 +8,6 @@
 \contentsline {figure}{\numberline {3.4}{\ignorespaces LoRa-Verkehr in SDR\#}}{23}{figure.caption.31}%
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Blockdiagramm zum Empfangen von LoRa-Testpaketen in GNU-Radio}}{23}{figure.caption.32}%
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Dekodierte Nutzdaten in GNU-Radio-Terminal}}{24}{figure.caption.33}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Blockschaltbild PCB-Prototyp}}{25}{figure.caption.35}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Ladeblock mit USB-C-Anschluss und BQ24074}}{26}{figure.caption.37}%
 \addvspace {10\p@ }

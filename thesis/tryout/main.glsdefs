@@ -1314,3 +1314,115 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{swd}%
+{%
+name={\acronymfont {\glsentryshort {swd}}},%
+sort={SWD},%
+type={acronym},%
+first={SWD},%
+firstplural={SWDs},%
+text={SWD},%
+plural={SWDs},%
+description={Serial Wire Debug},%
+descriptionplural={Serial Wire Debug},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Serial Wire Debug},%
+longplural={Serial Wire Debugs},%
+short={SWD},%
+shortplural={SWDs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{i2c}%
+{%
+name={\acronymfont {\glsentryshort {i2c}}},%
+sort={I2C},%
+type={acronym},%
+first={I2C},%
+firstplural={I2Cs},%
+text={I2C},%
+plural={I2Cs},%
+description={Inter-Integrated Circuit},%
+descriptionplural={Inter-Integrated Circuit},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Inter-Integrated Circuit},%
+longplural={Inter-Integrated Circuits},%
+short={I2C},%
+shortplural={I2Cs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{uart}%
+{%
+name={\acronymfont {\glsentryshort {uart}}},%
+sort={UART},%
+type={acronym},%
+first={UART},%
+firstplural={UARTs},%
+text={UART},%
+plural={UARTs},%
+description={Universal Asynchronous Receiver Transmitter},%
+descriptionplural={Universal Asynchronous Receiver Transmitter},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Universal Asynchronous Receiver Transmitter},%
+longplural={Universal Asynchronous Receiver Transmitters},%
+short={UART},%
+shortplural={UARTs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{ldo}%
+{%
+name={\acronymfont {\glsentryshort {ldo}}},%
+sort={LDO},%
+type={acronym},%
+first={LDO},%
+firstplural={LDOs},%
+text={LDO},%
+plural={LDOs},%
+description={Low-Dropout-Spannungsregler},%
+descriptionplural={Low-Dropout-Spannungsregler},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Low-Dropout-Spannungsregler},%
+longplural={Low-Dropout-Spannungsreglers},%
+short={LDO},%
+shortplural={LDOs},%
+counter={page},%
+parent={},%
+%
+}%
+

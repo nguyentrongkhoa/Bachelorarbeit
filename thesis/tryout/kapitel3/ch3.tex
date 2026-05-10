@@ -154,16 +154,16 @@ Die dekodierten Payloads werden im Terminal ausgegeben (Abbildung \ref{fig:zephy
     \label{fig:zephyr_lora_send_gnuradio_result}
 \end{figure}
 
-\subsection{PCB-Prototyp}
+\section{PCB-Prototyp}
 
-\subsubsection{Schematic}
+\subsection{Schematic und Komponentenauswahl}
 
-\paragraph{Blockschaltbild}
+\subsubsection{Blockschaltbild}
 
 Im nächsten Schritt soll ein maßgeschneiderter PCB-Prototyp entworfen und gefertigt werden. 
-Abbildung \label{fig:block_diag} stellt die Schaltung blockschaltbildmäßig dar. Im Zentrum befindet sich der STM32WL55 mit seinem 
+Abbildung \ref{fig:block_diag} stellt die Schaltung blockschaltbildmäßig dar. Im Zentrum befindet sich der STM32WL55 mit seinem 
 integrierten LoRa-Transceiver, der über einen SMA-Stecker mit der externen 868MHz-Antenne angeschlossen ist. Mithilfe eines RF-Schalters
-wird zwischen Empfangs- und Sendemodus gewechselt. Die Steuersignale für den RF-Schalter (RF_SW_V1 und V2 im Blockschaltbild) 
+wird zwischen Empfangs- und Sendemodus gewechselt. Die Steuersignale für den RF-Schalter (RF\_SW\_V1 und V2 im Blockschaltbild) 
 kommen von der MCU und werden über Pullup- sowie Pulldown-Widerstände so konfiguriert, 
 dass per Default das Empfangen aktiviert ist, da fahrlässiges Senden ohne Antenne
 das Funkmodul beschädigen könnte.  
@@ -178,7 +178,7 @@ das Funkmodul beschädigen könnte.
 Als Programmierschnittstelle wird ein STDC14-Header vorgesehen, über den sich das Board mit einem STLinkV3-Minie verbinden kann. 
 Der Einfachheit halber wurde für das Protokoll \acrfull{swd} entschieden, denn dieses nimmt lediglich zwei Pins in Anspruch 
 (SWDIO und SWCLK) im Vergleich zu JTAG, welches zusätzlich noch TMS, TDI und TDO benötigt. In diesem Design wird darüber hinaus 
-von den Pins SWO (Serial Wire Output) sowie VCP_TX und VCP_RX (Virtual COM Port) des STLinks Gebrauch gemacht, 
+von den Pins SWO (Serial Wire Output) sowie VCP-TX und RX  (Virtual COM Port) des STLinks Gebrauch gemacht, 
 um die Firmware-Entwicklung zu erleichtern. % TODO: maybe add pic of STLink
 
 Im Bereich Sensoren finden sich auf der PCB insgesamt drei. Zwei Gassensoren, nämlich BME680 und BMV080 von Bosch dienen 
@@ -190,13 +190,53 @@ das GPS-Modul L80-R von Quectel. Es hat die Aufgabe, die Reichweite der Antenne 
 indem die eigenen GPS-Koordinaten mit denen der Gateways verglichen werden. Die Datenaustausch zwischen GPS-Modul und MCU erfolgt 
 über \acrshort{uart}.
 
-Das Projekt wird von einer LiPo-Batterie mit einer Kapazität von \SI{1500}{\mAh} versorgt, die über einen USB-C-Anschluss 
+Das Projekt wird von einer LiPo-Batterie mit einer Kapazität von 1500 mAh versorgt, die über einen USB-C-Anschluss 
 aufgeladen werden kann. Für einen autarken Betrieb steht ebenfalls eine kleine Solarzelle zur Verfügung. % TODO: add pic of bat and solar
 
-\paragraph{Wichtige Teilschaltungen}
+\subsubsection{Wichtige Teilschaltungen}
 
 Die vollständige Schaltung wird hier aus Platzgründen nicht aufgeführt, sondern im Anhang A. % TODO: add full schematic in appendix
+Wir werden uns in diesem Abschnitt ausschließlich den Teilschaltungen \textbf{POWER} bzw. \textbf{MCU} widmen.
 
+Die Versorgungsschaltung gliedert sich in drei Blöcke: Ladeblock, Energy-Harvesting aus einer Solarzelle Tracking des Batterie-SoC (state-of-charge)
+Das Laden des LiPo-Akkus erfolgt wie bereits erwähnt über einen 6-poligen USB-C-Anschluss, der an seinem Ausgangspin VBUS 5V und maximal
+900mA bereitstellt. Der 5V Ausgang dient zugleich als Eingang für den Ladechip BQ24074 von Texas Instruments, welcher u.A den Ladestrom
+als Funktion der Batteriespannung regelt. Durch den 2K-Widerstand R4 wird der Ladestrom auf ca. 880mA begrenzt, um die Grenze des USB-Steckers
+zu berücksichtigen. 
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{kapitel3/pictures/usb.png}
+    \caption{Ladeblock mit USB-C-Anschluss und BQ24074}
+    \label{fig:usb}
+\end{figure}
+
+Der BQ247074 liefert am Ausgang (Pin OUT) laut Datenblatt 4,2V bei vollem und 3,0V bei leerem Akku. Aus diesem Grund wird an 
+dieser Stelle zusätzlich noch ein \acrshort{ldo} eingesetzt, um die Spannung auf 3,3V zu regeln. Der Ausgang VO des LDOs versorgt 
+das gesamte System mit Strom, einschließlich der MCU und sämtlicher Sensoren. LDOs haben gegenüber Schaltreglern den Vorteil, 
+dass sie weniger Rauschen erzeugen, was für die empfindlichen Sensoren sowie die RF-Schaltung von Vorteil ist.
+
+Um die richtige Auswahl des LDOs treffen zu können, muss im Vorfeld der maximale Strombedarf des Systems grob abgeschätzt werden. 
+Die energieaufwändigsten Komponenten sind die Sensoren (samt GPS) sowie das LoRa-Funkmodul auf dem STM32WL55, insbesondere im TX-Modus.
+Tabellen 23 und 25 im Datenblatt der MCU geben einen maximalen Stromverbrauch von 130mA an, wovon 120mA auf die Sendephase (bei 22 dBm)
+entfallen. Das L80-R GPS-Modul zieht 25mA im Acquisition-Modus, während der BME680 vernachlässig wenig Strom frisst. Der BMV080 
+verbraucht allerdings bis zu $\frac{180\text{W}}{3,3\text{V}}=54,5\text{mA}$ im kontinuierlichen Messmodus. m
+
+\begin{table}[h!]
+\centering
+\caption{Abschätzung des maximalen Strombedarfs (Worst-Case)}
+\begin{tabular}{|l|l|r|}
+\hline
+\textbf{Komponente} & \textbf{Modus / Bedingung} & \textbf{Stromverbrauch (max.)} \\ \hline
+STM32WL55 (Radio)   & LoRa TX @ 22 dBm           & 120,0 mA                       \\ \hline
+STM32WL55 (MCU)     & Core + Peripherie          & 10,0 mA                        \\ \hline
+L80-R GPS Modul     & Acquisition                & 25,0 mA                        \\ \hline
+BMV080              & Kontinuierliche Messung    & 54,5 mA                        \\ \hline
+BME680              & Gas-Messung (Peak)         & < 1,0 mA                       \\ \hline
+\hline
+\textbf{Gesamt}     & \textbf{Maximaler Peak}    & \textbf{210,5 mA}              \\ \hline
+\end{tabular}
+\end{table}
 
 % -----------------------------------------------------------------------------
 \section{Software-Architektur}
@@ -259,10 +299,6 @@ ChirpStack"=Setup vollständig konfiguriert ist.
 % Tickless Idle, PM_DEVICE_STATE_SUSPEND für Peripherie,
 % Stromprofil: aktive Phase / TX-Phase / Sleep-Phase
 
-\subsection{Simulation mit Renode}
-% STM32WL55 Platform-File (.repl), .resc Testskript,
-% Firmware-Test ohne Hardware, west simulate --runner=renode
-
 
 % -----------------------------------------------------------------------------
 \section{Gateway- und Network-Server-Konfiguration}
@@ -305,3 +341,4 @@ ChirpStack"=Setup vollständig konfiguriert ist.
 \newacronym{swd}{SWD}{Serial Wire Debug}
 \newacronym{i2c}{I2C}{Inter-Integrated Circuit}
 \newacronym{uart}{UART}{Universal Asynchronous Receiver Transmitter}
+\newacronym{ldo}{LDO}{Low-Dropout-Spannungsregler}

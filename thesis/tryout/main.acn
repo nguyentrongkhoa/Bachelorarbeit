@@ -49,3 +49,7 @@
 \glossaryentry{DC?\glossentry{dc}|setentrycounter[]{page}"\glsnumberformat}{21}
 \glossaryentry{SDR?\glossentry{sdr}|setentrycounter[]{page}"\glsnumberformat}{21}
 \glossaryentry{GUI?\glossentry{gui}|setentrycounter[]{page}"\glsnumberformat}{21}
+\glossaryentry{SWD?\glossentry{swd}|setentrycounter[]{page}"\glsnumberformat}{25}
+\glossaryentry{I2C?\glossentry{i2c}|setentrycounter[]{page}"\glsnumberformat}{25}
+\glossaryentry{UART?\glossentry{uart}|setentrycounter[]{page}"\glsnumberformat}{25}
+\glossaryentry{LDO?\glossentry{ldo}|setentrycounter[]{page}"\glsnumberformat}{27}
