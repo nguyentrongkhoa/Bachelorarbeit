@@ -1510,3 +1510,171 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{ufbga}%
+{%
+name={\acronymfont {\glsentryshort {ufbga}}},%
+sort={UFBGA},%
+type={acronym},%
+first={UFBGA},%
+firstplural={UFBGAs},%
+text={UFBGA},%
+plural={UFBGAs},%
+description={Ultra-Fine Pitch Ball Grid Array},%
+descriptionplural={Ultra-Fine Pitch Ball Grid Array},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Ultra-Fine Pitch Ball Grid Array},%
+longplural={Ultra-Fine Pitch Ball Grid Arrays},%
+short={UFBGA},%
+shortplural={UFBGAs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{ufqfpn}%
+{%
+name={\acronymfont {\glsentryshort {ufqfpn}}},%
+sort={UFQFPN},%
+type={acronym},%
+first={UFQFPN},%
+firstplural={UFQFPNs},%
+text={UFQFPN},%
+plural={UFQFPNs},%
+description={Ultra-Fine Quad Flat Pack No-Lead},%
+descriptionplural={Ultra-Fine Quad Flat Pack No-Lead},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Ultra-Fine Quad Flat Pack No-Lead},%
+longplural={Ultra-Fine Quad Flat Pack No-Leads},%
+short={UFQFPN},%
+shortplural={UFQFPNs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{bga}%
+{%
+name={\acronymfont {\glsentryshort {bga}}},%
+sort={BGA},%
+type={acronym},%
+first={BGA},%
+firstplural={BGAs},%
+text={BGA},%
+plural={BGAs},%
+description={Ball Grid Array},%
+descriptionplural={Ball Grid Array},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Ball Grid Array},%
+longplural={Ball Grid Arrays},%
+short={BGA},%
+shortplural={BGAs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{smd}%
+{%
+name={\acronymfont {\glsentryshort {smd}}},%
+sort={SMD},%
+type={acronym},%
+first={SMD},%
+firstplural={SMDs},%
+text={SMD},%
+plural={SMDs},%
+description={Surface Mount Device},%
+descriptionplural={Surface Mount Device},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Surface Mount Device},%
+longplural={Surface Mount Devices},%
+short={SMD},%
+shortplural={SMDs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{sma}%
+{%
+name={\acronymfont {\glsentryshort {sma}}},%
+sort={SMA},%
+type={acronym},%
+first={SMA},%
+firstplural={SMAs},%
+text={SMA},%
+plural={SMAs},%
+description={Subminiature A},%
+descriptionplural={Subminiature A},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Subminiature A},%
+longplural={Subminiature As},%
+short={SMA},%
+shortplural={SMAs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{ipd}%
+{%
+name={\acronymfont {\glsentryshort {ipd}}},%
+sort={IPD},%
+type={acronym},%
+first={IPD},%
+firstplural={IPDs},%
+text={IPD},%
+plural={IPDs},%
+description={Integrated Passive Device},%
+descriptionplural={Integrated Passive Device},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Integrated Passive Device},%
+longplural={Integrated Passive Devices},%
+short={IPD},%
+shortplural={IPDs},%
+counter={page},%
+parent={},%
+%
+}%
+

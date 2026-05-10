@@ -283,7 +283,11 @@ Leitung, sobald unter einen bestimmten Schwellenwert fällt.
 \end{figure}
 
 Die MCU-Schaltung stellt die komplexeste Unterschaltung des Projekts dar. ST Microelectronics stellt für den STM32WL55 eine 
-Vielzahl von Referenzdesigns und Applikationsschaltungen zur Verfügung, Tabelle \ref{tab:ref_designs}
+Vielzahl von Referenzdesigns und Applikationsschaltungen zur Verfügung, Tabelle \ref{tab:ref_designs} fasst die für uns relevanten 
+Referenzen zusammen. Anfangs wurde das Design MB1842 als Vorlage ausgewählt, das \acrshort{ufbga}-Gehäuse erschwert
+allerdings das Routen erheblich, weil die Pads überall in der Footprintfläche verteilt sind. 
+Die \acrshort{ufqfpn}-Variante ist hingegen freundlicher, da die Pins nur an den Seiten liegen. Dazu kostet sie mit ihren 48 Pins 
+25\% weniger als das 73-Pin-\acrshort{bga}-Gehäuse (9,57\$ zu 12,77\$ auf JLCPCB). % TODO: add pics BGA and QFPn
 
 \begin{table}[h!]
 \centering
@@ -301,6 +305,18 @@ STDES-WL5U4DHB & MB1789-HP UFQFPN & 4 & SMD & [864:928 MHz] / 22 dBm  & Nein  \\
 STDES-WL514ILH & MB1849-LP UFBGA & 4 & IPD  & [864:928 MHz] / 15 dBm  & Ja  \\ \hline
 \end{tabular}
 \end{table}
+
+Die meisten Designs sehen eine externe Antenna und einen dazugehörigen \acrshort{sma}-Anschluss vor (überall wo \acrshort{smd} steht),
+aber es gibt auch die Möglichkeit, die Antenne direkt auf der PCB zu integrieren als Chip-Antenne (\acrshort{ipd}). 
+Letzteres spart zwar Kosten und Platz, zeugt jedoch von einer viel geringeren Performance. % TODO: add pic IPD and SMA
+Außerdem muss die im Kapitel \ref{chap:einleitung} angesprochene Sendeleistungsbegrenzung von 14dBm in Europa beachtet werden.
+
+All diese Überlegungen führten schließlich zum Design MB1720. Als Antenne hat sich nach der Recherche das Modell 
+AEACAC053010-S868 von der Firma Abracon durchgesetzt mit seiner omnidirektionalen Strahlungscharakteristik, 
+einem Gewinn von 2dBi und einer Impedanz von 50 Ohm. % TODO: add pic of antenna
+Bei künftigen Iterationen wird mit einer Chip-Antenne experimentiert, um die Kosten weiter zu senken. 
+
+\section{Firmware-Entwicklung}
 
 % -----------------------------------------------------------------------------
 \section{Software-Architektur}
@@ -409,3 +425,9 @@ ChirpStack"=Setup vollständig konfiguriert ist.
 \newacronym{pv}{PV}{Photovoltaik}
 \newacronym{mppt}{MPPT}{Maximum Power Point Tracking}
 \newacronym{soc2}{SoC}{State of Charge}
+\newacronym{ufbga}{UFBGA}{Ultra-Fine Pitch Ball Grid Array}
+\newacronym{ufqfpn}{UFQFPN}{Ultra-Fine Quad Flat Pack No-Lead}
+\newacronym{bga}{BGA}{Ball Grid Array}
+\newacronym{smd}{SMD}{Surface Mount Device}
+\newacronym{sma}{SMA}{Subminiature A}
+\newacronym{ipd}{IPD}{Integrated Passive Device}
