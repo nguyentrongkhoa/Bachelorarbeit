@@ -154,7 +154,7 @@ Die dekodierten Payloads werden im Terminal ausgegeben (Abbildung \ref{fig:zephy
     \label{fig:zephyr_lora_send_gnuradio_result}
 \end{figure}
 
-\section{PCB-Prototyp}
+\section{Hardware-Entwicklung}
 
 \subsection{Schematic und Komponentenauswahl}
 
@@ -267,7 +267,40 @@ Der SPV1050 verfügt über einen \acrfull{mppt}-Algorithmus, der die optimale La
 berechnet, um die Energieausbeute zu maximieren. Der Feedback für den MPPT-Algorithmus wird über den Spannungsteiler mit R17 und R18
 bereitgestellt. Des Weiteren ist erwähnenswert, dass der SPV1050 intern auch zwei LDOs besitzt: LDO1 liefert 1,8V für RF-Schaltungen,
 wird jedoch hier nicht benutzt; LDO2 kann bis zu 200mA bei 3,3V ausgeben und könnte bei künftigen Iterationen sogar VDD versorgen, soweit 
-das Stromprofil der einzelnen Komponenten bekannt ist.  
+das Stromprofil der einzelnen Komponenten bekannt ist. 
+
+Bezüglich der Batterie ist es wichtig, die Standzeit zu beobachten. Die Ladereglerchips verfolgen die Batteriespannung zwar zeitnah,
+aber allein diese gibt keine aussagekräftige Information, da eine Vielfalt anderer Faktoren wie Temperatur, Alterung und Entladungsrate 
+die tatsächliche Kapazität beeinflussen können. Daher wird der Fuel-Gauge-Chip MAX17048 von Maxim Integrated eingesetzt, 
+um den \acrfull{soc2} der Batterie zu verfolgen. Dieser schickt seine Daten über I2C an die MCU und benachrichtigt sie über die \texttt{ALERT} 
+Leitung, sobald unter einen bestimmten Schwellenwert fällt. 
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{kapitel3/pictures/fg.png}
+    \caption{Batterie-SoC-Tracking mit MAX17048}
+    \label{fig:fg}
+\end{figure}
+
+Die MCU-Schaltung stellt die komplexeste Unterschaltung des Projekts dar. ST Microelectronics stellt für den STM32WL55 eine 
+Vielzahl von Referenzdesigns und Applikationsschaltungen zur Verfügung, Tabelle \ref{tab:ref_designs}
+
+\begin{table}[h!]
+\centering
+\caption{STM32WL55 Referenzdesigns}
+\label{tab:ref_designs}
+\begin{tabular}{|l|l|c|l|l|c|}
+\hline
+\textbf{Referenz} & \textbf{Board / Gehäuse} & \textbf{Layer} & \textbf{Typ} & \textbf{Ziel-Spezifikation} & \textbf{RF Switch} \\ \hline
+STDES-WL514SBB & MB1842 UFBGA & 4 & SMD & [864:928 MHz] / 15 dBm  & Ja  \\ \hline
+STDES-WL514SBB & MB1842 UFBGA & 4 & SMD & [864:928 MHz] / 22 dBm  & Ja  \\ \hline
+STDES-WL5U4SBB & MB1720 UFQFPN & 4 & SMD & [864:928 MHz] / 15 dBm  & Ja  \\ \hline
+STDES-WL5U4SBB & MB1720 UFQFPN & 4 & SMD & [864:928 MHz] / 22 dBm  & Ja  \\ \hline
+STDES-WL5U4DLB & MB1789-LP UFQFPN & 4 & SMD & [864:928 MHz] / 15 dBm  & Nein  \\ \hline
+STDES-WL5U4DHB & MB1789-HP UFQFPN & 4 & SMD & [864:928 MHz] / 22 dBm  & Nein  \\ \hline
+STDES-WL514ILH & MB1849-LP UFBGA & 4 & IPD  & [864:928 MHz] / 15 dBm  & Ja  \\ \hline
+\end{tabular}
+\end{table}
 
 % -----------------------------------------------------------------------------
 \section{Software-Architektur}
@@ -375,3 +408,4 @@ ChirpStack"=Setup vollständig konfiguriert ist.
 \newacronym{ldo}{LDO}{Low-Dropout-Spannungsregler}
 \newacronym{pv}{PV}{Photovoltaik}
 \newacronym{mppt}{MPPT}{Maximum Power Point Tracking}
+\newacronym{soc2}{SoC}{State of Charge}

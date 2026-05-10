@@ -53,3 +53,6 @@
 \glossaryentry{I2C?\glossentry{i2c}|setentrycounter[]{page}"\glsnumberformat}{25}
 \glossaryentry{UART?\glossentry{uart}|setentrycounter[]{page}"\glsnumberformat}{25}
 \glossaryentry{LDO?\glossentry{ldo}|setentrycounter[]{page}"\glsnumberformat}{27}
+\glossaryentry{PV?\glossentry{pv}|setentrycounter[]{page}"\glsnumberformat}{28}
+\glossaryentry{MPPT?\glossentry{mppt}|setentrycounter[]{page}"\glsnumberformat}{28}
+\glossaryentry{SoC?\glossentry{soc2}|setentrycounter[]{page}"\glsnumberformat}{29}

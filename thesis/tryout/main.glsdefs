@@ -1426,3 +1426,87 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{pv}%
+{%
+name={\acronymfont {\glsentryshort {pv}}},%
+sort={PV},%
+type={acronym},%
+first={PV},%
+firstplural={PVs},%
+text={PV},%
+plural={PVs},%
+description={Photovoltaik},%
+descriptionplural={Photovoltaik},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Photovoltaik},%
+longplural={Photovoltaiks},%
+short={PV},%
+shortplural={PVs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{mppt}%
+{%
+name={\acronymfont {\glsentryshort {mppt}}},%
+sort={MPPT},%
+type={acronym},%
+first={MPPT},%
+firstplural={MPPTs},%
+text={MPPT},%
+plural={MPPTs},%
+description={Maximum Power Point Tracking},%
+descriptionplural={Maximum Power Point Tracking},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Maximum Power Point Tracking},%
+longplural={Maximum Power Point Trackings},%
+short={MPPT},%
+shortplural={MPPTs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{soc2}%
+{%
+name={\acronymfont {\glsentryshort {soc2}}},%
+sort={SoC},%
+type={acronym},%
+first={SoC},%
+firstplural={SoCs},%
+text={SoC},%
+plural={SoCs},%
+description={State of Charge},%
+descriptionplural={State of Charge},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={State of Charge},%
+longplural={State of Charges},%
+short={SoC},%
+shortplural={SoCs},%
+counter={page},%
+parent={},%
+%
+}%
+

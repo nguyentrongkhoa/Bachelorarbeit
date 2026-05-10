@@ -26,22 +26,22 @@
 \contentsline {paragraph}{Messinstrument}{20}{section*.26}%
 \contentsline {paragraph}{Radioempfänger}{20}{section*.27}%
 \contentsline {section}{\numberline {3.2}Erste Tests}{20}{section.3.2}%
-\contentsline {section}{\numberline {3.3}PCB-Prototyp}{23}{section.3.3}%
+\contentsline {section}{\numberline {3.3}Hardware-Entwicklung}{23}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Schematic und Komponentenauswahl}{23}{subsection.3.3.1}%
 \contentsline {subsubsection}{Blockschaltbild}{23}{section*.34}%
 \contentsline {subsubsection}{Wichtige Teilschaltungen}{26}{section*.36}%
-\contentsline {section}{\numberline {3.4}Software-Architektur}{27}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Überblick der Softwareschichten}{27}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Auswahl des Network-Servers: ChirpStack}{28}{subsection.3.4.2}%
-\contentsline {section}{\numberline {3.5}Firmware-Implementierung}{28}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Zephyr RTOS und Projektstruktur}{28}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}LoRaWAN-Stack-Konfiguration}{28}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3}Power-Management-Implementierung}{28}{subsection.3.5.3}%
-\contentsline {section}{\numberline {3.6}Gateway- und Network-Server-Konfiguration}{28}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Gateway-Inbetriebnahme}{28}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2}ChirpStack-Konfiguration}{28}{subsection.3.6.2}%
-\contentsline {section}{\numberline {3.7}Datenvisualisierung}{28}{section.3.7}%
-\contentsline {subsection}{\numberline {3.7.1}MQTT-Pipeline}{28}{subsection.3.7.1}%
-\contentsline {subsection}{\numberline {3.7.2}Kartografische Auswertung der Messdaten}{28}{subsection.3.7.2}%
-\contentsline {chapter}{\numberline {A}Angehängtes: Die Dateien des Pakets}{29}{appendix.A}%
-\contentsline {chapter}{Literatur- und Quellenverzeichnis}{31}{section*.40}%
+\contentsline {section}{\numberline {3.4}Software-Architektur}{29}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Überblick der Softwareschichten}{29}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Auswahl des Network-Servers: ChirpStack}{30}{subsection.3.4.2}%
+\contentsline {section}{\numberline {3.5}Firmware-Implementierung}{31}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Zephyr RTOS und Projektstruktur}{31}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}LoRaWAN-Stack-Konfiguration}{31}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Power-Management-Implementierung}{31}{subsection.3.5.3}%
+\contentsline {section}{\numberline {3.6}Gateway- und Network-Server-Konfiguration}{31}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Gateway-Inbetriebnahme}{31}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}ChirpStack-Konfiguration}{31}{subsection.3.6.2}%
+\contentsline {section}{\numberline {3.7}Datenvisualisierung}{31}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}MQTT-Pipeline}{31}{subsection.3.7.1}%
+\contentsline {subsection}{\numberline {3.7.2}Kartografische Auswertung der Messdaten}{31}{subsection.3.7.2}%
+\contentsline {chapter}{\numberline {A}Angehängtes: Die Dateien des Pakets}{33}{appendix.A}%
+\contentsline {chapter}{Literatur- und Quellenverzeichnis}{35}{section*.43}%

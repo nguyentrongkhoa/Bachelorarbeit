@@ -115,7 +115,7 @@
 \newlabel{fig:zephyr_lora_send_sdrsharp}{{3.4}{23}{LoRa-Verkehr in SDR\#}{figure.caption.31}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Blockdiagramm zum Empfangen von LoRa-Testpaketen in GNU-Radio}}{23}{figure.caption.32}\protected@file@percent }
 \newlabel{fig:zephyr_lora_send_gnuradio}{{3.5}{23}{Blockdiagramm zum Empfangen von LoRa-Testpaketen in GNU-Radio}{figure.caption.32}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}PCB-Prototyp}{23}{section.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Hardware-Entwicklung}{23}{section.3.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Schematic und Komponentenauswahl}{23}{subsection.3.3.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{Blockschaltbild}{23}{section*.34}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Dekodierte Nutzdaten in GNU-Radio-Terminal}}{24}{figure.caption.33}\protected@file@percent }
@@ -126,29 +126,35 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces Ladeblock mit USB-C-Anschluss und BQ24074}}{26}{figure.caption.37}\protected@file@percent }
 \newlabel{fig:usb}{{3.8}{26}{Ladeblock mit USB-C-Anschluss und BQ24074}{figure.caption.37}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Abschätzung des maximalen Strombedarfs (Worst-Case)}}{27}{table.caption.38}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}Software-Architektur}{27}{section.3.4}\protected@file@percent }
-\newlabel{sec:softwarearchitektur}{{3.4}{27}{Software-Architektur}{section.3.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Überblick der Softwareschichten}{27}{subsection.3.4.1}\protected@file@percent }
-\newlabel{subsec:sw-überblick}{{3.4.1}{27}{Überblick der Softwareschichten}{subsection.3.4.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}Auswahl des Network-Servers: ChirpStack}{28}{subsection.3.4.2}\protected@file@percent }
-\newlabel{subsec:chirpstack}{{3.4.2}{28}{Auswahl des Network-Servers: ChirpStack}{subsection.3.4.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.5}Firmware-Implementierung}{28}{section.3.5}\protected@file@percent }
-\newlabel{sec:firmware}{{3.5}{28}{Firmware-Implementierung}{section.3.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.1}Zephyr RTOS und Projektstruktur}{28}{subsection.3.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.2}LoRaWAN-Stack-Konfiguration}{28}{subsection.3.5.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.3}Power-Management-Implementierung}{28}{subsection.3.5.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.6}Gateway- und Network-Server-Konfiguration}{28}{section.3.6}\protected@file@percent }
-\newlabel{sec:gateway-ns}{{3.6}{28}{Gateway- und Network-Server-Konfiguration}{section.3.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.1}Gateway-Inbetriebnahme}{28}{subsection.3.6.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.2}ChirpStack-Konfiguration}{28}{subsection.3.6.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.7}Datenvisualisierung}{28}{section.3.7}\protected@file@percent }
-\newlabel{sec:visualisierung}{{3.7}{28}{Datenvisualisierung}{section.3.7}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.7.1}MQTT-Pipeline}{28}{subsection.3.7.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.7.2}Kartografische Auswertung der Messdaten}{28}{subsection.3.7.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Angehängtes: Die Dateien des Pakets}{29}{appendix.A}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces Energiegewinnung durch Solarzelle mit SPv1050}}{28}{figure.caption.39}\protected@file@percent }
+\newlabel{fig:solar}{{3.9}{28}{Energiegewinnung durch Solarzelle mit SPv1050}{figure.caption.39}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces Batterie-SoC-Tracking mit MAX17048}}{29}{figure.caption.40}\protected@file@percent }
+\newlabel{fig:fg}{{3.10}{29}{Batterie-SoC-Tracking mit MAX17048}{figure.caption.40}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Software-Architektur}{29}{section.3.4}\protected@file@percent }
+\newlabel{sec:softwarearchitektur}{{3.4}{29}{Software-Architektur}{section.3.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Überblick der Softwareschichten}{29}{subsection.3.4.1}\protected@file@percent }
+\newlabel{subsec:sw-überblick}{{3.4.1}{29}{Überblick der Softwareschichten}{subsection.3.4.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces STM32WL55 Referenzdesigns}}{30}{table.caption.41}\protected@file@percent }
+\newlabel{tab:ref_designs}{{3.2}{30}{STM32WL55 Referenzdesigns}{table.caption.41}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}Auswahl des Network-Servers: ChirpStack}{30}{subsection.3.4.2}\protected@file@percent }
+\newlabel{subsec:chirpstack}{{3.4.2}{30}{Auswahl des Network-Servers: ChirpStack}{subsection.3.4.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.5}Firmware-Implementierung}{31}{section.3.5}\protected@file@percent }
+\newlabel{sec:firmware}{{3.5}{31}{Firmware-Implementierung}{section.3.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.1}Zephyr RTOS und Projektstruktur}{31}{subsection.3.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.2}LoRaWAN-Stack-Konfiguration}{31}{subsection.3.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.3}Power-Management-Implementierung}{31}{subsection.3.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.6}Gateway- und Network-Server-Konfiguration}{31}{section.3.6}\protected@file@percent }
+\newlabel{sec:gateway-ns}{{3.6}{31}{Gateway- und Network-Server-Konfiguration}{section.3.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.1}Gateway-Inbetriebnahme}{31}{subsection.3.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.2}ChirpStack-Konfiguration}{31}{subsection.3.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.7}Datenvisualisierung}{31}{section.3.7}\protected@file@percent }
+\newlabel{sec:visualisierung}{{3.7}{31}{Datenvisualisierung}{section.3.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.7.1}MQTT-Pipeline}{31}{subsection.3.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.7.2}Kartografische Auswertung der Messdaten}{31}{subsection.3.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Angehängtes: Die Dateien des Pakets}{33}{appendix.A}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{Literatur- und Quellenverzeichnis}{31}{section*.40}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Literatur- und Quellenverzeichnis}{35}{section*.43}\protected@file@percent }
 \abx@aux@read@bbl@mdfivesum{4100A6FB0DA437186F61199AF838F408}
 \abx@aux@defaultrefcontext{0}{rumbleCRCHandbookChemistry2021}{none/global//global/global}
 \abx@aux@defaultrefcontext{0}{sciulloDesignPerformanceEvaluation2020}{none/global//global/global}
@@ -157,4 +163,4 @@
 \abx@aux@defaultrefcontext{0}{LoRaWANL21042020}{none/global//global/global}
 \abx@aux@defaultrefcontext{0}{LoRaWanBackendInterfaces2020}{none/global//global/global}
 \abx@aux@defaultrefcontext{0}{tapparelOpenSourceLoRaPhysical2020}{none/global//global/global}
-\gdef \@abspage@last{41}
+\gdef \@abspage@last{45}
