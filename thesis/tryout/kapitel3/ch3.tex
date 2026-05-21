@@ -316,6 +316,352 @@ AEACAC053010-S868 von der Firma Abracon durchgesetzt mit seiner omnidirektionale
 einem Gewinn von 2dBi und einer Impedanz von 50 Ohm. % TODO: add pic of antenna
 Bei künftigen Iterationen wird mit einer Chip-Antenne experimentiert, um die Kosten weiter zu senken. 
 
+% ─── Taktversorgung ───────────────────────────────────────────────────────────
+\subsubsection{Taktversorgung}
+\label{subsubsec:takt}
+
+Der STM32WL55 benötigt zwei unabhängige Taktquellen: einen Hochfrequenz"=Takt
+(\acrfull{hse}) für den RF"=Transceiver und einen Niederfrequenz"=Takt (\acrfull{lse})
+für den Echtzeittaktgeber (\acrfull{rtc}).
+
+Als HSE"=Referenz wird ein \SI{32}{\MHz}"=\acrshort{tcxo} vom Typ
+\textbf{NDK NT2016SF} verwendet. Gegenüber einem passiven Quarzresonator bietet
+der TCXO eine deutlich höhere Frequenzstabilität: Während ein Standard"=Quarz
+über den Betriebstemperaturbereich Abweichungen von $\pm$20--30\,ppm aufweist,
+hält der NT2016SF eine Stabilität von $\pm$\SI{0{,}5}{ppm} ein. % TODO: cite ndk datasheet
+Bei \SI{868}{\MHz} entsprechen 30\,ppm einer absoluten Frequenzabweichung von
+\SI{26}{\kHz}, dadurch könnte der Kanalabstand bei hohen Spreizfaktoren überschritten und
+Demodulationsfehler hervorgerufen werden. Der TCXO vermeidet dieses Problem zuverlässig.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{kapitel3/pictures/hse.png}
+    \caption{Taktversorgung mit HSE}
+    \label{fig:hse}
+\end{figure}
+
+Die Versorgungsspannung des TCXO wird über das Signal \texttt{VDD\_TCXO}
+bereitgestellt, das an den GPIO"=Pin PB0 der MCU angebunden ist.
+Dadurch kann der TCXO im Deep"=Stop"=Modus vollständig abgeschaltet werden,
+um den Ruhestromverbrauch zu minimieren. Die Ausgangsleitung des TCXO ist
+über C9 (1\,nF) entkoppelt und gelangt an den \texttt{OSC\_IN}"=Pin der MCU.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{kapitel3/pictures/lse.png}
+    \caption{Taktversorgung mit LSE}
+    \label{fig:lse}
+\end{figure}
+
+Für den RTC ist ein passiver Quarzresonator mit der Nennfrequenz
+\SI{32768}{\Hz} bestückt. Hierfür wurde der Typ FC-135 von Seiko Epson mit einer Nennlastkapazität von 12,5\,pF ausgewählt.
+Die symmetrischen Lastkapazitäten C4 und C8 lassen sich durch folgende Formel bestimmen:
+\[ C_1 = C_2 = 2 \cdot (C_L - C_S),\]
+wobei $C_L$ die Nennlastkapazität des Quarzes und $C_S$ die parasitäre Kapazität ist, 
+die typischerweise zwischen 2 und 5\,pF liegt. Unter der Annahme von $C_S = 3,5\,\text{pF}$ ergibt sich ein Wert
+von 18pF. 
+
+% ─── Impedanzanpassung ───────────────────────────────────────────────────────
+\subsubsection{HF-Impedanzanpassung}
+\label{subsubsec:impedanzanpassung}
+
+Die HF"=Impedanzanpassung stellt den sendeseitigen Leistungsübergang zwischen
+dem integrierten Leistungsverstärker des STM32WL55 und der nachgelagerten RF"=Schalterplatine
+sowie den empfangsseitigen Übergang von der Antenne zur internen \acrfull{lna}
+sicher. Sämtliche Bauteile dieser Sektion entstammen der Murata GJM15"=Serie
+(Kondensatoren) und der Murata LQW15AN"=Serie (Induktivitäten), da diese
+Komponenten im relevanten Frequenzbereich bei \SI{868}{\MHz} einen besonders
+hohen Gütefaktor ($Q > 100$) aufweisen und damit die Verluste im Anpassnetzwerk
+minimieren.
+
+\paragraph{Sendepfad (TX)}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{kapitel3/pictures/tx_matching.png}
+    \caption{TX-Impedanzanpassung}
+    \label{fig:tx_matching}
+\end{figure}
+
+Der Sendepfad führt vom Niedrigleistungsausgang \texttt{RFO\_LP} (max \SI{15}{dBm}) der MCU
+über das Anpassnetzwerk zum Signal \texttt{LORA\_TX}, das zur Antennen"=Teilschaltung
+weitergeleitet wird. Das Anpassnetzwerk besteht aus folgenden Elementen,
+deren Werte und Funktion in Anlehnung an den Applikationshinweis AN5406 von
+STMicroelectronics ausgelegt wurden:
+
+\begin{itemize}
+    \item \textbf{C18} (47\,nF): Entkoppelkondensator auf der VR\_PA"=Versorgungsleitung.
+    Er filtert Versorgungsrauschen vom internen PA"=Spannungsregler und ist
+    gemäß AN5406 in unmittelbarer Nähe des \texttt{VR\_PA}"=Pins zu platzieren.
+    \item \textbf{C19} (68\,pF) und \textbf{L3} (47\,nH): Bandsperre zur
+    Unterdrückung der zweiten Harmonischen bei \SI{1736}{\MHz}. Die % TODO: maybe add simulation to show bandsperre @ 1736 MHz
+    Kombination aus Parallelresonanzkreis wirkt als Sperrkreis bei $2f_0$
+    und reduziert so die Oberwellenemissionen, die für die
+    Konformität mit EN\,300\,220 relevant sind.
+    \item \textbf{L4} (2{,}7\,nH) und \textbf{C20} (8{,}2\,pF): L-Netzwerk
+    zur Impedanztransformation. Sie überführen die komplexe Ausgangsimpedanz
+    des PA in die Systemimpedanz von \SI{50}{\ohm}.
+    \item \textbf{C21} (3\,pF) und \textbf{C22} (0{,}75\,pF): Feinabstimmung
+    der Anpassung. Die sehr kleinen Kapazitätswerte sind empfindlich gegenüber
+    parasitären Effekten und machen eine sorgfältige HF"=gerechte Leiterbahnführung
+    auf der Leiterkartenebene erforderlich.
+    \item \textbf{C25} (3\,pF): DC"=Blockkondensator am Ausgang des
+    Anpassnetzwerks, der Gleichspannung von der Antennenseite fernhält.
+\end{itemize} % TODO: proofread this table
+
+Der Hochleistungsausgang \texttt{RFO\_HP} (bis \SI{22}{dBm}) wird in dieser Designvariante nicht aktiv genutzt aufgrund
+der bereits erwähnten 14dBm-Grenze in der EU. Bei künftigen Iterationen könnte dieser Ausgang durchaus sinnvoll sein,
+um Leistungsverlusten im aktuellen Design entgegenzuwirken. 
+
+\paragraph{Empfangspfad (RX)}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{kapitel3/pictures/rx_matching.png}
+    \caption{RX-Impedanzanpassung}
+    \label{fig:rx_matching}
+\end{figure}
+
+Der Empfangspfad führt vom Signal \texttt{LORA\_RX} über ein Balun"=Netzwerk
+zu den differenziellen Eingängen \texttt{RFI\_P} und \texttt{RFI\_N} des
+internen LNA. Das differentielle Eingangspaar erfordert eine Konvertierung
+des einseitigen (single"=ended) \SI{50}{\ohm}"=Signals der Antenne in ein
+symmetrisches Differenzsignal:
+
+\begin{itemize}
+    \item \textbf{C26} (3\,pF): Einkoppelkondensator am Eingang des
+    Balun"=Netzwerks. Blockiert Gleichspannung und dient als erstes
+    Anpasselement.
+    \item \textbf{L6} (10\,nH): Serien"=Induktivität im Signalpfad zu
+    \texttt{RFI\_P}. Bildet zusammen mit den Shunt"=Kapazitäten den
+    Impedanztransformator.
+    \item \textbf{C24} (4{,}7\,pF): Shunt"=Kapazität gegen Masse im
+    RFI\_P"=Pfad. Vervollständigt die Impedanztransformation zur
+    differenziellen Eingangsimpedanz des LNA.
+    \item \textbf{C23} (68\,pF): Shunt"=Kapazität im RFI\_N"=Pfad,
+    symmetrisch zur GJM15"=Kapazität im RFI\_P"=Zweig.
+    \item \textbf{L5} (10\,nH): Serien"=Induktivität im RFI\_N"=Pfad
+    zur Symmetrierung des Differenzsignals.
+\end{itemize} % TODO: think if this table is necessary
+
+% ─── SMPS ────────────────────────────────────────────────────────────────────
+\subsubsection{Interner Schaltregler (SMPS)}
+\label{subsubsec:smps}
+
+Der STM32WL55 integriert einen internen Abwärtswandler, der
+die digitale Kernversorgung aus der externen Versorgungsspannung
+(\texttt{VDDSMPS}) erzeugt. Der SMPS"=Betrieb reduziert den
+Leistungsverbrauch im Aktivbetrieb gegenüber einer reinen LDO"=Versorgung
+erheblich und ist der primäre Grund für den sehr niedrigen Ruhestrom
+von \SI{1{,}08}{\micro\ampere} im Deep"=Stop"=Modus.
+
+Die externe Beschaltung des SMPS umfasst:
+
+\begin{itemize}
+    \item \textbf{L1} (15\,µH, MLZ2012M): Schaltinduktivität zwischen
+    \texttt{VDDSMPS} und \texttt{VLXSMPS}. Der exakte Bauteilwert ist
+    durch den internen Regler vorgegeben und darf nicht frei substituiert
+    werden, da abweichende Induktivitätswerte die Stabilitätsreserve des
+    Regelkreises beeinflussen.
+    \item \textbf{C13} (470\,nF): Rückkopplungskapazität am \texttt{VFBSMPS}"=Pin.
+    Sie bestimmt die Ausgangsregelspannung des SMPS und ist ebenfalls
+    ein stabilitätskritisches Bauteil.
+    \item \textbf{C50} (100\,nF): Hochfrequenz"=Bypass am \texttt{VFBSMPS}"=Knoten.
+\end{itemize}
+
+Eine ausführliche Warnung im Schaltplan weist darauf hin, dass der SMPS
+eine Taktquelle benötigt: Fällt diese aus, schaltet der Regler automatisch
+in den LDO"=Betrieb um. Da die SMPS"=Taktdetektion standardmäßig
+deaktiviert ist, muss sie in der Firmware explizit aktiviert werden.
+
+% ─── Spannungsversorgung und Entkopplung ─────────────────────────────────────
+\subsubsection{Spannungsversorgung und Entkopplung}
+\label{subsubsec:entkopplung}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{kapitel3/pictures/decoupling.png}
+    \caption{Entkopplungsschema der MCU}
+    \label{fig:decoupling}
+\end{figure}
+
+Die Entkopplungsstrategie folgt dem in der Referenz MB1720 empfohlenen Schema:
+Je VDD"=Versorgungsdomäne wird eine Kombination aus einem Bulk"=Kondensator
+(4{,}7\,µF) und einem lokalen HF"=Bypass"=Kondensator (100\,nF) eingesetzt.
+Diese Kondensatoren sind auf dem PCB in unmittelbarer Nähe der
+jeweiligen Versorgungspins zu platzieren, um den induktiven Anteil der
+Versorgungsleitungen zu minimieren.
+
+Tabelle~\ref{tab:entkopplung_mcu} fasst die Entkopplungskapazitäten und
+ihre Zuordnung zu den Versorgungsdomänen zusammen.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Entkopplungskondensatoren und ihre Funktionen}
+    \label{tab:entkopplung_mcu}
+    \begin{tabularx}{\textwidth}{l l l X}
+        \toprule
+        \textbf{Bauteil} & \textbf{Wert} & \textbf{Domäne} & \textbf{Funktion} \\
+        \midrule
+        C43 & 4{,}7\,µF  & VDD        & Bulk-Entkopplung digitale Kernversorgung \\
+        C46 & 100\,nF    & VDD        & HF-Bypass digitale Kernversorgung \\
+        C47 & 4{,}7\,µF  & VDDSMPS    & Bulk-Entkopplung SMPS-Eingang \\
+        C48 & 33\,pF     & VBAT / RTC & HF-Bypass RTC-Backup-Domäne \\
+        C49 & 33\,pF     & VDDRF1V55  & HF-Bypass interner 1{,}55-V-LDO-Ausgang \\
+        C51 & 10\,nF     & VDDSMPS    & Zwischenfrequenz-Bypass SMPS \\
+        C52 & 1\,µF      & VDDSMPS    & Mittlere Bulk-Entkopplung SMPS \\
+        C44 & 100\,nF    & VDDA       & Bypass analoge Versorgungsdomäne (ADC) \\
+        C50 & 100\,nF    & VFBSMPS    & HF-Bypass SMPS-Rückkopplungsknoten \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+Die analoge Versorgungsdomäne \texttt{VDDA} (Pin 41 des STM32WL55CCUx)
+ist mit C44 (100\,nF) entkoppelt und über die Pulldown"=Widerstände R28 und
+R29 (je \qty{100}{\kilo\ohm}) referenziert. Diese Widerstände stellen sicher, dass
+\texttt{VDDA} und \texttt{VREF+} im nicht bestückten Zustand definierte
+Pegel aufweisen und nicht floaten.
+
+% ─── Reset-Schaltung ─────────────────────────────────────────────────────────
+\subsubsection{Reset-Schaltung}
+\label{subsubsec:reset}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{kapitel3/pictures/mcu_rst.png}
+    \caption{MCU-Reset-Schaltung}
+    \label{fig:mcu_rst}
+\end{figure}
+
+Die Reset"=Schaltung besteht aus dem Pullup"=Widerstand R1 (\qty{10}{\kilo\ohm}) zwischen
+\texttt{VDD} und \texttt{NRST}, dem manuellen Reset"=Taster SW1 sowie dem
+Entkoppelkondensator C6 (100\,nF). Der Widerstand R1 hält den Reset"=Pin im
+Normalbetrieb auf High"=Pegel, während SW1 einen manuellen Reset durch
+Kurzschluss gegen Masse ermöglicht. C6 filtert kurze Spannungseinbrüche auf
+\texttt{NRST} und verhindert dadurch unbeabsichtigte Resets. 
+
+\paragraph{BOOT0-Konfiguration}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{kapitel3/pictures/boot0.png}
+    \caption{BOOT0-Konfiguration}
+    \label{fig:boot0}
+\end{figure}
+
+Der STM32WL55 hat verschiedene Boot-Modi, die durch den Pegel am Pin BOOT0 (\texttt{PH3}) bestimmt werden.
+Dieser wird im Design der Einfachheit halber direkt auf Masse
+gezogen, sodass der Mikrocontroller beim Einschalten oder nach jedem Reset stets aus dem internen
+Flash"=Speicher Code ausführt. 
+
+% ─── I2C-Schnittstelle ────────────────────────────────────────────────────────
+\subsubsection{I2C-Schnittstelle und Pullup-Beschaltung}
+\label{subsubsec:i2c}
+
+Die I2C1"=Schnittstelle (\texttt{SDA1}, \texttt{SCL1}) verbindet die MCU
+mit dem Kraftstoffmessgerät MAX17048 sowie dem Gas"=Sensor BME680. Die
+Pullup"=Widerstände R26 und R27 (je \qty{4,7}{\kilo\ohm}) ziehen beide Leitungen auf
+\texttt{VDD}. Für den I2C"=Betrieb im Standard"=Mode (\SI{100}{\kHz}) ist
+dieser Wert unkritisch. Bei einem geplanten Übergang zu Fast Mode
+(\SI{400}{\kHz}) wäre eine Reduktion auf \qty{2,2}{\kilo\ohm} zu prüfen, da die
+RC"=Zeitkonstante ($\tau = R \cdot C_\text{Bus}$) mit den geschätzten
+Busleitungskapazitäten von 50--100\,pF bei \qty{4,7}{\kilo\ohm} an die Grenze
+der zulässigen Anstiegszeit stößt.
+
+Der Header J6 (\texttt{I2C1}) erlaubt den direkten Anschluss
+eines Oszilloskops zur Visualisierung des I2C-Protokolls. Da alle Kanäle des Oszilloskops
+eine gemeinsame Masse haben, wird hier nur ein GND-Anschluss anstatt zwei für SCL und SDA vorgesehen. 
+
+% ─── ESD-Schutz ──────────────────────────────────────────────────────────────
+\subsubsection{ESD-Schutz}
+\label{subsubsec:esd}
+
+Die Oszilloskop-Testheaders für I2C sowie UART (J6 und J9) können gefährliche elektrostatische Entladungen (\acrshort{esd}) von 
+externen Messgeräten oder Bedienern auf die empfindlichen MCU-Pins übertragen. Aus diesem Grund wird eine Schutzdiodenarray (D4) vom Typ
+\textbf{PESD3V3L4UG} vorgesehen. Das Bauteil besteht aus vier Schutzdioden, welche die Überspannungsspitzen 
+auf \SI{3{,}3}{\V} abklemmen. Die Dioden sind so angeordnet, dass sie sowohl positive als auch negative ESD"=Impulse 
+ableiten können. 
+
+% ─── SPI Flash ────────────────────────────────────────────────────────────────
+\subsubsection{SPI-Flash-Speicher}
+\label{subsubsec:spi-flash}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{kapitel3/pictures/spi_flash.png}
+    \caption{SPI-Flash-Speicher}
+    \label{fig:spi_flash}
+\end{figure}
+
+Für die persistente Datenspeicherung, sei es für Debugmeldungen oder für Sensordaten, ist ein SPI"=Flash"=Speicher 
+\textbf{W25Q16JVSS} (U8, 16\,Mbit) bestückt. Das Bauteil wird über die
+SPI1"=Peripherie der MCU angebunden (\texttt{NSS1}, \texttt{SCK1},
+\texttt{MOSI1}, \texttt{MISO1}). Der bei Flash-Speichern übliche Limit von 100.000 Schreibzyklen sollte 
+keine Hürde für den vorgesehenen Einsatz darstellen. 
+
+Jenseits des Prototypens kann der SPI-Flash-Speicher zusätzlich noch für 
+drahtlose Firmware-Updates über das LoRaWAN-Netzwerk (\acrshort{fuota} - Firmware Update Over The Air) 
+genutzt werden. Da der interne Flash"=Speicher
+des STM32WL55CCUx (256\,kB) nicht ausreicht, um gleichzeitig die laufende
+Firmware und ein neu empfangenes Firmware"=Image vorzuhalten, übernimmt
+der externe W25Q16JVSS (2\,MB) die Rolle eines Zwischenspeichers.
+
+% ─── Blinky-LED und MCO ───────────────────────────────────────────────────────
+\subsubsection{Status-LED und Taktausgang}
+\label{subsubsec:led-mco}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{kapitel3/pictures/blinky.png}
+    \caption{Status-LED}
+    \label{fig:blinky}
+\end{figure}
+
+Eine Status"=LED D3 (\textit{blinky}) ist über den Vorwiderstand R30
+(\qty{1}{\kilo\ohm}) an den GPIO"=Pin PA0 angebunden. Sie dient beim ersten 
+Prototypen hauptsächlich der schnellen Überprüfung des Flashprozesses: nach Erhalt
+der PCBs wird ein einfaches blinky-Programm in die MCU eingeschleust, das die LED in 
+einem festen Intervall blinken lässt. Ist dies erst erfolgreich, kann die eigentliche Firmware-Entwicklung mit der 
+Sensoranbindung und LoRaWAN"=Funktionalität implementiert werden.
+
+Der Taktausgang \texttt{MCO} (\textit{Master Clock Output}) des STM32WL55
+ist auf Testpunkt TP40 geführt. Dieser Ausgang kann in der Firmware so
+konfiguriert werden, dass er eine abgeleitete Taktfrequenz ausgibt,
+was eine messtechnische Verifikation der TCXO"=Frequenz mit einem
+Frequenzzähler oder Oszilloskop erlaubt.
+
+% ─── Zusammenfassung ──────────────────────────────────────────────────────────
+\subsubsection{Zusammenfassung der Signalnetze}
+\label{subsubsec:netze-zusammenfassung}
+
+Tabelle~\ref{tab:mcu_netze} gibt einen Überblick über die wichtigsten
+Signalnetze, die die MCU"=Teilschaltung mit den übrigen Teilschaltungen
+des Prototyps verbinden.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Externe Signalnetze der MCU-Teilschaltung}
+    \label{tab:mcu_netze}
+    \begin{tabularx}{\textwidth}{l l X}
+        \toprule
+        \textbf{Signal} & \textbf{Zielschaltung} & \textbf{Funktion} \\
+        \midrule
+        \texttt{LORA\_TX}       & Antenne (Sheet 5)     & Sendepfad 868\,MHz zum RF-Schalter \\
+        \texttt{LORA\_RX}       & Antenne (Sheet 5)     & Empfangspfad 868\,MHz vom RF-Schalter \\
+        \texttt{RF\_SW\_V1/V2}  & Antenne (Sheet 5)     & Steuersignale AS179-92LF RF-Schalter \\
+        \texttt{SDA1 / SCL1}    & GPS/Sensoren (Sheet 6)& I2C1-Bus (BME680, MAX17048) \\
+        \texttt{GPS\_RESET}     & GPS/Sensoren (Sheet 6)& Aktiv-Low Reset Quectel L80-R \\
+        \texttt{TX1 / RX1}      & GPS/Sensoren (Sheet 6)& UART1 zu GPS-Modul L80-R \\
+        \texttt{SCK1/MOSI1/MISO1/NSS1} & MCU-intern   & SPI1 zu Flash W25Q16JVSS \\
+        \texttt{SWDIO / SWCLK / SWO / NRST} & Prog. (Sheet 3) & SWD-Debugschnittstelle \\
+        \texttt{VCP\_TX / VCP\_RX} & Prog. (Sheet 3)    & Virtueller COM-Port (STLink V3) \\
+        \texttt{SDA\_FG / SCL\_FG (= SDA1/SCL1)} & Power (Sheet 4) & I2C1 zu Fuel Gauge MAX17048 \\
+        \texttt{\~{ALRT}}       & Power (Sheet 4)       & Low-Aktiv Interrupt MAX17048 \\
+        \texttt{\~{BATT\_CHG} / \~{BATT\_CONN}} & Power (Sheet 4) & Ladestatus BQ24074 \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
 \section{Firmware-Entwicklung}
 
 % -----------------------------------------------------------------------------
@@ -431,3 +777,13 @@ ChirpStack"=Setup vollständig konfiguriert ist.
 \newacronym{smd}{SMD}{Surface Mount Device}
 \newacronym{sma}{SMA}{Subminiature A}
 \newacronym{ipd}{IPD}{Integrated Passive Device}
+\newacronym{hse}{HSE}{High Speed External}
+\newacronym{tcxo}{TCXO}{Temperature Compensated Crystal Oscillator}
+\newacronym{lse}{LSE}{Low Speed External}
+\newacronym{rtc}{RTC}{Real-Time Clock}
+\newacronym{smps}{SMPS}{Switched-Mode Power Supply}
+\newacronym{vcp}{VCP}{Virtual COM Port}
+\newacronym{esd}{ESD}{Electrostatic Discharge}
+\newacronym{lna}{LNA}{Low Noise Amplifier}
+\newacronym{esd}{ESD}{Electrostatic Discharge}
+\newacronym{fuota}{FUOTA}{Field Update Over The Air}

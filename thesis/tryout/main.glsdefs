@@ -1678,3 +1678,255 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{hse}%
+{%
+name={\acronymfont {\glsentryshort {hse}}},%
+sort={HSE},%
+type={acronym},%
+first={HSE},%
+firstplural={HSEs},%
+text={HSE},%
+plural={HSEs},%
+description={High Speed External},%
+descriptionplural={High Speed External},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={High Speed External},%
+longplural={High Speed Externals},%
+short={HSE},%
+shortplural={HSEs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{tcxo}%
+{%
+name={\acronymfont {\glsentryshort {tcxo}}},%
+sort={TCXO},%
+type={acronym},%
+first={TCXO},%
+firstplural={TCXOs},%
+text={TCXO},%
+plural={TCXOs},%
+description={Temperature Compensated Crystal Oscillator},%
+descriptionplural={Temperature Compensated Crystal Oscillator},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Temperature Compensated Crystal Oscillator},%
+longplural={Temperature Compensated Crystal Oscillators},%
+short={TCXO},%
+shortplural={TCXOs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{lse}%
+{%
+name={\acronymfont {\glsentryshort {lse}}},%
+sort={LSE},%
+type={acronym},%
+first={LSE},%
+firstplural={LSEs},%
+text={LSE},%
+plural={LSEs},%
+description={Low Speed External},%
+descriptionplural={Low Speed External},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Low Speed External},%
+longplural={Low Speed Externals},%
+short={LSE},%
+shortplural={LSEs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{rtc}%
+{%
+name={\acronymfont {\glsentryshort {rtc}}},%
+sort={RTC},%
+type={acronym},%
+first={RTC},%
+firstplural={RTCs},%
+text={RTC},%
+plural={RTCs},%
+description={Real-Time Clock},%
+descriptionplural={Real-Time Clock},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Real-Time Clock},%
+longplural={Real-Time Clocks},%
+short={RTC},%
+shortplural={RTCs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{smps}%
+{%
+name={\acronymfont {\glsentryshort {smps}}},%
+sort={SMPS},%
+type={acronym},%
+first={SMPS},%
+firstplural={SMPSs},%
+text={SMPS},%
+plural={SMPSs},%
+description={Switched-Mode Power Supply},%
+descriptionplural={Switched-Mode Power Supply},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Switched-Mode Power Supply},%
+longplural={Switched-Mode Power Supplys},%
+short={SMPS},%
+shortplural={SMPSs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{vcp}%
+{%
+name={\acronymfont {\glsentryshort {vcp}}},%
+sort={VCP},%
+type={acronym},%
+first={VCP},%
+firstplural={VCPs},%
+text={VCP},%
+plural={VCPs},%
+description={Virtual COM Port},%
+descriptionplural={Virtual COM Port},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Virtual COM Port},%
+longplural={Virtual COM Ports},%
+short={VCP},%
+shortplural={VCPs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{esd}%
+{%
+name={\acronymfont {\glsentryshort {esd}}},%
+sort={ESD},%
+type={acronym},%
+first={ESD},%
+firstplural={ESDs},%
+text={ESD},%
+plural={ESDs},%
+description={Electrostatic Discharge},%
+descriptionplural={Electrostatic Discharge},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Electrostatic Discharge},%
+longplural={Electrostatic Discharges},%
+short={ESD},%
+shortplural={ESDs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{lna}%
+{%
+name={\acronymfont {\glsentryshort {lna}}},%
+sort={LNA},%
+type={acronym},%
+first={LNA},%
+firstplural={LNAs},%
+text={LNA},%
+plural={LNAs},%
+description={Low Noise Amplifier},%
+descriptionplural={Low Noise Amplifier},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Low Noise Amplifier},%
+longplural={Low Noise Amplifiers},%
+short={LNA},%
+shortplural={LNAs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{fuota}%
+{%
+name={\acronymfont {\glsentryshort {fuota}}},%
+sort={FUOTA},%
+type={acronym},%
+first={FUOTA},%
+firstplural={FUOTAs},%
+text={FUOTA},%
+plural={FUOTAs},%
+description={Field Update Over The Air},%
+descriptionplural={Field Update Over The Air},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Field Update Over The Air},%
+longplural={Field Update Over The Airs},%
+short={FUOTA},%
+shortplural={FUOTAs},%
+counter={page},%
+parent={},%
+%
+}%
+

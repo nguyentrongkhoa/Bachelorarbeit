@@ -132,30 +132,75 @@
 \newlabel{fig:fg}{{3.10}{29}{Batterie-SoC-Tracking mit MAX17048}{figure.caption.40}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces STM32WL55 Referenzdesigns}}{30}{table.caption.41}\protected@file@percent }
 \newlabel{tab:ref_designs}{{3.2}{30}{STM32WL55 Referenzdesigns}{table.caption.41}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}Firmware-Entwicklung}{30}{section.3.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.5}Software-Architektur}{30}{section.3.5}\protected@file@percent }
-\newlabel{sec:softwarearchitektur}{{3.5}{30}{Software-Architektur}{section.3.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.1}Überblick der Softwareschichten}{30}{subsection.3.5.1}\protected@file@percent }
-\newlabel{subsec:sw-überblick}{{3.5.1}{30}{Überblick der Softwareschichten}{subsection.3.5.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.2}Auswahl des Network-Servers: ChirpStack}{31}{subsection.3.5.2}\protected@file@percent }
-\newlabel{subsec:chirpstack}{{3.5.2}{31}{Auswahl des Network-Servers: ChirpStack}{subsection.3.5.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.6}Firmware-Implementierung}{31}{section.3.6}\protected@file@percent }
-\newlabel{sec:firmware}{{3.6}{31}{Firmware-Implementierung}{section.3.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.1}Zephyr RTOS und Projektstruktur}{31}{subsection.3.6.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.2}LoRaWAN-Stack-Konfiguration}{31}{subsection.3.6.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.3}Power-Management-Implementierung}{31}{subsection.3.6.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.7}Gateway- und Network-Server-Konfiguration}{31}{section.3.7}\protected@file@percent }
-\newlabel{sec:gateway-ns}{{3.7}{31}{Gateway- und Network-Server-Konfiguration}{section.3.7}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.7.1}Gateway-Inbetriebnahme}{31}{subsection.3.7.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.7.2}ChirpStack-Konfiguration}{31}{subsection.3.7.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.8}Datenvisualisierung}{31}{section.3.8}\protected@file@percent }
-\newlabel{sec:visualisierung}{{3.8}{31}{Datenvisualisierung}{section.3.8}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.8.1}MQTT-Pipeline}{31}{subsection.3.8.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.8.2}Kartografische Auswertung der Messdaten}{31}{subsection.3.8.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Angehängtes: Die Dateien des Pakets}{33}{appendix.A}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Taktversorgung}{30}{section*.42}\protected@file@percent }
+\newlabel{subsubsec:takt}{{3.3.1}{30}{Taktversorgung}{section*.42}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces Taktversorgung mit HSE}}{31}{figure.caption.43}\protected@file@percent }
+\newlabel{fig:hse}{{3.11}{31}{Taktversorgung mit HSE}{figure.caption.43}{}}
+\@writefile{toc}{\contentsline {subsubsection}{HF-Impedanzanpassung}{31}{section*.45}\protected@file@percent }
+\newlabel{subsubsec:impedanzanpassung}{{3.3.1}{31}{HF-Impedanzanpassung}{section*.45}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces Taktversorgung mit LSE}}{32}{figure.caption.44}\protected@file@percent }
+\newlabel{fig:lse}{{3.12}{32}{Taktversorgung mit LSE}{figure.caption.44}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.13}{\ignorespaces TX-Impedanzanpassung}}{32}{figure.caption.47}\protected@file@percent }
+\newlabel{fig:tx_matching}{{3.13}{32}{TX-Impedanzanpassung}{figure.caption.47}{}}
+\@writefile{toc}{\contentsline {paragraph}{Sendepfad (TX)}{33}{figure.caption.47}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Empfangspfad (RX)}{33}{figure.caption.49}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.14}{\ignorespaces RX-Impedanzanpassung}}{34}{figure.caption.49}\protected@file@percent }
+\newlabel{fig:rx_matching}{{3.14}{34}{RX-Impedanzanpassung}{figure.caption.49}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Interner Schaltregler (SMPS)}{35}{section*.50}\protected@file@percent }
+\newlabel{subsubsec:smps}{{3.3.1}{35}{Interner Schaltregler (SMPS)}{section*.50}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Spannungsversorgung und Entkopplung}{35}{section*.51}\protected@file@percent }
+\newlabel{subsubsec:entkopplung}{{3.3.1}{35}{Spannungsversorgung und Entkopplung}{section*.51}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.15}{\ignorespaces Entkopplungsschema der MCU}}{36}{figure.caption.52}\protected@file@percent }
+\newlabel{fig:decoupling}{{3.15}{36}{Entkopplungsschema der MCU}{figure.caption.52}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.3}{\ignorespaces Entkopplungskondensatoren und ihre Funktionen}}{37}{table.caption.53}\protected@file@percent }
+\newlabel{tab:entkopplung_mcu}{{3.3}{37}{Entkopplungskondensatoren und ihre Funktionen}{table.caption.53}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Reset-Schaltung}{37}{section*.54}\protected@file@percent }
+\newlabel{subsubsec:reset}{{3.3.1}{37}{Reset-Schaltung}{section*.54}{}}
+\@writefile{toc}{\contentsline {paragraph}{BOOT0-Konfiguration}{37}{figure.caption.57}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{I2C-Schnittstelle und Pullup-Beschaltung}{37}{section*.58}\protected@file@percent }
+\newlabel{subsubsec:i2c}{{3.3.1}{37}{I2C-Schnittstelle und Pullup-Beschaltung}{section*.58}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.16}{\ignorespaces MCU-Reset-Schaltung}}{38}{figure.caption.55}\protected@file@percent }
+\newlabel{fig:mcu_rst}{{3.16}{38}{MCU-Reset-Schaltung}{figure.caption.55}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.17}{\ignorespaces BOOT0-Konfiguration}}{38}{figure.caption.57}\protected@file@percent }
+\newlabel{fig:boot0}{{3.17}{38}{BOOT0-Konfiguration}{figure.caption.57}{}}
+\@writefile{toc}{\contentsline {subsubsection}{ESD-Schutz}{39}{section*.59}\protected@file@percent }
+\newlabel{subsubsec:esd}{{3.3.1}{39}{ESD-Schutz}{section*.59}{}}
+\@writefile{toc}{\contentsline {subsubsection}{SPI-Flash-Speicher}{39}{section*.60}\protected@file@percent }
+\newlabel{subsubsec:spi-flash}{{3.3.1}{39}{SPI-Flash-Speicher}{section*.60}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Status-LED und Taktausgang}{39}{section*.62}\protected@file@percent }
+\newlabel{subsubsec:led-mco}{{3.3.1}{39}{Status-LED und Taktausgang}{section*.62}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.18}{\ignorespaces SPI-Flash-Speicher}}{40}{figure.caption.61}\protected@file@percent }
+\newlabel{fig:spi_flash}{{3.18}{40}{SPI-Flash-Speicher}{figure.caption.61}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.19}{\ignorespaces Status-LED}}{40}{figure.caption.63}\protected@file@percent }
+\newlabel{fig:blinky}{{3.19}{40}{Status-LED}{figure.caption.63}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Zusammenfassung der Signalnetze}{41}{section*.64}\protected@file@percent }
+\newlabel{subsubsec:netze-zusammenfassung}{{3.3.1}{41}{Zusammenfassung der Signalnetze}{section*.64}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.4}{\ignorespaces Externe Signalnetze der MCU-Teilschaltung}}{41}{table.caption.65}\protected@file@percent }
+\newlabel{tab:mcu_netze}{{3.4}{41}{Externe Signalnetze der MCU-Teilschaltung}{table.caption.65}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Firmware-Entwicklung}{42}{section.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.5}Software-Architektur}{42}{section.3.5}\protected@file@percent }
+\newlabel{sec:softwarearchitektur}{{3.5}{42}{Software-Architektur}{section.3.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.1}Überblick der Softwareschichten}{42}{subsection.3.5.1}\protected@file@percent }
+\newlabel{subsec:sw-überblick}{{3.5.1}{42}{Überblick der Softwareschichten}{subsection.3.5.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.2}Auswahl des Network-Servers: ChirpStack}{42}{subsection.3.5.2}\protected@file@percent }
+\newlabel{subsec:chirpstack}{{3.5.2}{42}{Auswahl des Network-Servers: ChirpStack}{subsection.3.5.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.6}Firmware-Implementierung}{43}{section.3.6}\protected@file@percent }
+\newlabel{sec:firmware}{{3.6}{43}{Firmware-Implementierung}{section.3.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.1}Zephyr RTOS und Projektstruktur}{43}{subsection.3.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.2}LoRaWAN-Stack-Konfiguration}{43}{subsection.3.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.3}Power-Management-Implementierung}{43}{subsection.3.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.7}Gateway- und Network-Server-Konfiguration}{43}{section.3.7}\protected@file@percent }
+\newlabel{sec:gateway-ns}{{3.7}{43}{Gateway- und Network-Server-Konfiguration}{section.3.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.7.1}Gateway-Inbetriebnahme}{43}{subsection.3.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.7.2}ChirpStack-Konfiguration}{43}{subsection.3.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.8}Datenvisualisierung}{43}{section.3.8}\protected@file@percent }
+\newlabel{sec:visualisierung}{{3.8}{43}{Datenvisualisierung}{section.3.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.8.1}MQTT-Pipeline}{43}{subsection.3.8.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.8.2}Kartografische Auswertung der Messdaten}{43}{subsection.3.8.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Angehängtes: Die Dateien des Pakets}{45}{appendix.A}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{Literatur- und Quellenverzeichnis}{35}{section*.43}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Literatur- und Quellenverzeichnis}{47}{section*.67}\protected@file@percent }
 \abx@aux@read@bbl@mdfivesum{4100A6FB0DA437186F61199AF838F408}
 \abx@aux@defaultrefcontext{0}{rumbleCRCHandbookChemistry2021}{none/global//global/global}
 \abx@aux@defaultrefcontext{0}{sciulloDesignPerformanceEvaluation2020}{none/global//global/global}
@@ -164,4 +209,4 @@
 \abx@aux@defaultrefcontext{0}{LoRaWANL21042020}{none/global//global/global}
 \abx@aux@defaultrefcontext{0}{LoRaWanBackendInterfaces2020}{none/global//global/global}
 \abx@aux@defaultrefcontext{0}{tapparelOpenSourceLoRaPhysical2020}{none/global//global/global}
-\gdef \@abspage@last{45}
+\gdef \@abspage@last{57}

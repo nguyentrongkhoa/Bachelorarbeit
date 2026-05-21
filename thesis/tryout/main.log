@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.3.15)  10 MAY 2026 19:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.3.15)  21 MAY 2026 16:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1401,33 +1401,33 @@ Package textcomp Info: Symbol \textrightarrow not provided by
 (textcomp)             font family LinuxLibertineT-TLF in TS1 encoding.
 (textcomp)             Default family used instead on input line 16.
 [19{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [20]
-<kapitel3/pictures/zephyr_lora_send_setup.jpeg, id=558, 2007.5pt x 1129.21875pt>
+<kapitel3/pictures/zephyr_lora_send_setup.jpeg, id=576, 2007.5pt x 1129.21875pt>
 File: kapitel3/pictures/zephyr_lora_send_setup.jpeg Graphic file (type jpg)
 <use kapitel3/pictures/zephyr_lora_send_setup.jpeg>
 Package pdftex.def Info: kapitel3/pictures/zephyr_lora_send_setup.jpeg  used on input line 94.
 (pdftex.def)             Requested size: 426.79134pt x 240.07211pt.
-<kapitel3/pictures/868MHz_Dipole.jpeg, id=559, 1541.76pt x 2055.68pt>
+<kapitel3/pictures/868MHz_Dipole.jpeg, id=577, 1541.76pt x 2055.68pt>
 File: kapitel3/pictures/868MHz_Dipole.jpeg Graphic file (type jpg)
 <use kapitel3/pictures/868MHz_Dipole.jpeg>
 Package pdftex.def Info: kapitel3/pictures/868MHz_Dipole.jpeg  used on input line 101.
 (pdftex.def)             Requested size: 1541.75624pt x 2055.675pt.
-<kapitel3/pictures/zephyr_lora_send_calc.png, id=564, 647.41875pt x 403.5075pt>
+<kapitel3/pictures/zephyr_lora_send_calc.png, id=582, 647.41875pt x 403.5075pt>
 File: kapitel3/pictures/zephyr_lora_send_calc.png Graphic file (type png)
 <use kapitel3/pictures/zephyr_lora_send_calc.png>
 Package pdftex.def Info: kapitel3/pictures/zephyr_lora_send_calc.png  used on input line 118.
 (pdftex.def)             Requested size: 426.79134pt x 266.00175pt.
-<kapitel3/pictures/zephyr_lora_send_in_sdr_sharp.png, id=567, 890.1255pt x 237.88875pt>
+<kapitel3/pictures/zephyr_lora_send_in_sdr_sharp.png, id=585, 890.1255pt x 237.88875pt>
 File: kapitel3/pictures/zephyr_lora_send_in_sdr_sharp.png Graphic file (type png)
 <use kapitel3/pictures/zephyr_lora_send_in_sdr_sharp.png>
 Package pdftex.def Info: kapitel3/pictures/zephyr_lora_send_in_sdr_sharp.png  used on input line 130.
 (pdftex.def)             Requested size: 426.79134pt x 114.06187pt.
  [21 <./kapitel3/pictures/zephyr_lora_send_setup.jpeg>] [22 <./kapitel3/pictures/868MHz_Dipole.jpeg> <./kapitel3/pictures/zephyr_lora_send_calc.png>]
-<kapitel3/pictures/lora_send_test_gnuradio_flowgraph.png, id=587, 420.3705pt x 166.221pt>
+<kapitel3/pictures/lora_send_test_gnuradio_flowgraph.png, id=605, 420.3705pt x 166.221pt>
 File: kapitel3/pictures/lora_send_test_gnuradio_flowgraph.png Graphic file (type png)
 <use kapitel3/pictures/lora_send_test_gnuradio_flowgraph.png>
 Package pdftex.def Info: kapitel3/pictures/lora_send_test_gnuradio_flowgraph.png  used on input line 145.
 (pdftex.def)             Requested size: 426.79134pt x 168.76956pt.
-<kapitel3/pictures/lora_send_test_gnuradio_result.png, id=588, 242.70676pt x 440.24475pt>
+<kapitel3/pictures/lora_send_test_gnuradio_result.png, id=606, 242.70676pt x 440.24475pt>
 File: kapitel3/pictures/lora_send_test_gnuradio_result.png Graphic file (type png)
 <use kapitel3/pictures/lora_send_test_gnuradio_result.png>
 Package pdftex.def Info: kapitel3/pictures/lora_send_test_gnuradio_result.png  used on input line 152.
@@ -1447,7 +1447,7 @@ Overfull \hbox (0.73714pt too wide) in paragraph at lines 163--170
  []
 
 [23 <./kapitel3/pictures/zephyr_lora_send_in_sdr_sharp.png> <./kapitel3/pictures/lora_send_test_gnuradio_flowgraph.png>] [24 <./kapitel3/pictures/lora_send_test_gnuradio_result.png>]
-<kapitel3/pictures/block_diag.png, id=602, 514.92375pt x 305.34074pt>
+<kapitel3/pictures/block_diag.png, id=620, 514.92375pt x 305.34074pt>
 File: kapitel3/pictures/block_diag.png Graphic file (type png)
 <use kapitel3/pictures/block_diag.png>
 Package pdftex.def Info: kapitel3/pictures/block_diag.png  used on input line 173.
@@ -1461,7 +1461,7 @@ Overfull \hbox (7.1891pt too wide) in paragraph at lines 184--192
 Underfull \vbox (badness 1184) has occurred while \output is active []
 
  [25 <./kapitel3/pictures/block_diag.png>]
-<kapitel3/pictures/usb.png, id=615, 392.06474pt x 323.40825pt>
+<kapitel3/pictures/usb.png, id=633, 392.06474pt x 323.40825pt>
 File: kapitel3/pictures/usb.png Graphic file (type png)
 <use kapitel3/pictures/usb.png>
 Package pdftex.def Info: kapitel3/pictures/usb.png  used on input line 209.
@@ -1474,7 +1474,7 @@ LaTeX Warning: Reference `solar' on page 27 undefined on input line 250.
 Underfull \vbox (badness 1292) has occurred while \output is active []
 
  [27]
-<kapitel3/pictures/solar.png, id=632, 510.10574pt x 421.575pt>
+<kapitel3/pictures/solar.png, id=650, 510.10574pt x 421.575pt>
 File: kapitel3/pictures/solar.png Graphic file (type png)
 <use kapitel3/pictures/solar.png>
 Package pdftex.def Info: kapitel3/pictures/solar.png  used on input line 261.
@@ -1483,7 +1483,7 @@ Package pdftex.def Info: kapitel3/pictures/solar.png  used on input line 261.
 Underfull \vbox (badness 4072) has occurred while \output is active []
 
  [28 <./kapitel3/pictures/solar.png>]
-<kapitel3/pictures/fg.png, id=642, 561.297pt x 304.7385pt>
+<kapitel3/pictures/fg.png, id=660, 561.297pt x 304.7385pt>
 File: kapitel3/pictures/fg.png Graphic file (type png)
 <use kapitel3/pictures/fg.png>
 Package pdftex.def Info: kapitel3/pictures/fg.png  used on input line 280.
@@ -1497,10 +1497,100 @@ Overfull \hbox (41.24432pt too wide) in paragraph at lines 296--307
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [29 <./kapitel3/pictures/fg.png>]
+<kapitel3/pictures/hse.png, id=686, 221.02576pt x 151.767pt>
+File: kapitel3/pictures/hse.png Graphic file (type png)
+<use kapitel3/pictures/hse.png>
+Package pdftex.def Info: kapitel3/pictures/hse.png  used on input line 338.
+(pdftex.def)             Requested size: 426.79134pt x 293.08676pt.
+<kapitel3/pictures/lse.png, id=687, 221.02576pt x 181.8795pt>
+File: kapitel3/pictures/lse.png Graphic file (type png)
+<use kapitel3/pictures/lse.png>
+Package pdftex.def Info: kapitel3/pictures/lse.png  used on input line 351.
+(pdftex.def)             Requested size: 426.79134pt x 351.2389pt.
+ [30]
+<kapitel3/pictures/tx_matching.png, id=701, 452.892pt x 236.082pt>
+File: kapitel3/pictures/tx_matching.png Graphic file (type png)
+<use kapitel3/pictures/tx_matching.png>
+Package pdftex.def Info: kapitel3/pictures/tx_matching.png  used on input line 381.
+(pdftex.def)             Requested size: 426.79134pt x 222.48265pt.
+ [31 <./kapitel3/pictures/hse.png>] [32 <./kapitel3/pictures/lse.png> <./kapitel3/pictures/tx_matching.png>]
+<kapitel3/pictures/rx_matching.png, id=715, 187.902pt x 193.9245pt>
+File: kapitel3/pictures/rx_matching.png Graphic file (type png)
+<use kapitel3/pictures/rx_matching.png>
+Package pdftex.def Info: kapitel3/pictures/rx_matching.png  used on input line 420.
+(pdftex.def)             Requested size: 426.79134pt x 440.53087pt.
+ [33] [34 <./kapitel3/pictures/rx_matching.png>]
+<kapitel3/pictures/decoupling.png, id=728, 278.2395pt x 272.217pt>
+File: kapitel3/pictures/decoupling.png Graphic file (type png)
+<use kapitel3/pictures/decoupling.png>
+Package pdftex.def Info: kapitel3/pictures/decoupling.png  used on input line 483.
+(pdftex.def)             Requested size: 426.79134pt x 417.58304pt.
+ [35] [36 <./kapitel3/pictures/decoupling.png>]
+<kapitel3/pictures/mcu_rst.png, id=742, 189.70876pt x 166.82326pt>
+File: kapitel3/pictures/mcu_rst.png Graphic file (type png)
+<use kapitel3/pictures/mcu_rst.png>
+Package pdftex.def Info: kapitel3/pictures/mcu_rst.png  used on input line 531.
+(pdftex.def)             Requested size: 426.79134pt x 375.3463pt.
+<kapitel3/pictures/boot0.png, id=743, 296.307pt x 46.37325pt>
+File: kapitel3/pictures/boot0.png Graphic file (type png)
+<use kapitel3/pictures/boot0.png>
+Package pdftex.def Info: kapitel3/pictures/boot0.png  used on input line 547.
+(pdftex.def)             Requested size: 426.79134pt x 66.80005pt.
+ [37] [38 <./kapitel3/pictures/mcu_rst.png> <./kapitel3/pictures/boot0.png>]
+<kapitel3/pictures/spi_flash.png, id=758, 422.17725pt x 376.40625pt>
+File: kapitel3/pictures/spi_flash.png Graphic file (type png)
+<use kapitel3/pictures/spi_flash.png>
+Package pdftex.def Info: kapitel3/pictures/spi_flash.png  used on input line 591.
+(pdftex.def)             Requested size: 426.79134pt x 380.53488pt.
+<kapitel3/pictures/blinky.png, id=760, 251.13824pt x 90.3375pt>
+File: kapitel3/pictures/blinky.png Graphic file (type png)
+<use kapitel3/pictures/blinky.png>
+Package pdftex.def Info: kapitel3/pictures/blinky.png  used on input line 615.
+(pdftex.def)             Requested size: 426.79134pt x 153.52896pt.
+ [39] [40 <./kapitel3/pictures/spi_flash.png> <./kapitel3/pictures/blinky.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 662--662
+[]|\T1/LinuxLibertineT-TLF/m/n/10.95 Steuersignale AS179-92LF
+ []
 
-LaTeX Warning: Reference `fig:sw_stack' on page 30 undefined on input line 330.
 
-[30]) (./anhang.tex [31] [32
+Underfull \hbox (badness 10000) in paragraph at lines 662--662
+[]|\T1/LinuxLibertineT-TLF/m/n/10.95 I2C1-Bus (BME680,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 662--662
+[]|\T1/LinuxLibertineT-TLF/m/n/10.95 Aktiv-Low Re-set Quec-tel
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 662--662
+[]|\T1/LinuxLibertineT-TLF/m/n/10.95 Virtueller COM-Port
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 662--662
+[]|\T1/LinuxLibertineT-TLF/m/n/10.95 I2C1 zu Fuel Gau-ge
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 662--662
+[]|\T1/LinuxLibertineT-TLF/m/n/10.95 Low-Aktiv In-ter-rupt
+ []
+
+
+LaTeX Warning: Reference `fig:sw_stack' on page 41 undefined on input line 676.
+
+
+Underfull \vbox (badness 6961) has occurred while \output is active []
+
+ [41]
+
+Package glossaries Warning: Entry `esd' has already been defined in the document environment (ignoring new definition) on input line 788.
+
+) (./anhang.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [42] [43] [44
 
 ]
 Anhang A.
@@ -1509,10 +1599,10 @@ Overfull \hbox (15.25049pt too wide) in paragraph at lines 31--33
 []\T1/fvm/m/n/10.95 bhtThesis.bib \T1/LinuxLibertineT-TLF/m/n/10.95 bein-hal-tet die zu zi-tie-ren-den Li-te-ra-tur-stel-len und wird von bibT[]Xausgewertet 
  []
 
-[33]) [34]
+[45]) [46]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/sc' will be
 (Font)              scaled to size 10.95pt on input line 124.
- [35
+ [47
 
 
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_ncsllp.enc}] (./main.aux)
@@ -1525,19 +1615,40 @@ L3 programming layer <2024-01-22>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 749AAB8A871CFD416C2B183CB4AE118D;7848.
+(rerunfilecheck)             Checksum: B3D348D18CF97D8E8CF6856AAC4F4619;7848.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 35118 strings out of 474222
- 658480 string characters out of 5748733
+ 35518 strings out of 474222
+ 665617 string characters out of 5748733
  1945975 words of memory out of 5000000
- 56634 multiletter control sequences out of 15000+600000
+ 56991 multiletter control sequences out of 15000+600000
  675578 words of font info for 125 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  94i,13n,93p,2407b,2659s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{glo:fuota} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{glo:esd} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{glo:lna} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{glo:tcxo} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{glo:rtc} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{glo:lse} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{glo:hse} has been referenced but does not exist, replaced by a fixed one
+
 
 pdfTeX warning (dest): name{glo:ipd} has been referenced but does not exist, replaced by a fixed one
 
@@ -1590,10 +1701,10 @@ pdfTeX warning (dest): name{glo:sdr} has been referenced but does not exist, rep
 pdfTeX warning (dest): name{glo:rtos} has been referenced but does not exist, replaced by a fixed one
 
 </usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on main.pdf (45 pages, 1132452 bytes).
+Output written on main.pdf (57 pages, 1235709 bytes).
 PDF statistics:
- 828 PDF objects out of 1000 (max. 8388607)
- 714 compressed objects within 8 object streams
- 191 named destinations out of 1000 (max. 500000)
- 394 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 958 PDF objects out of 1000 (max. 8388607)
+ 813 compressed objects within 9 object streams
+ 234 named destinations out of 1000 (max. 500000)
+ 439 words of extra memory for PDF output out of 10000 (max. 10000000)
 
