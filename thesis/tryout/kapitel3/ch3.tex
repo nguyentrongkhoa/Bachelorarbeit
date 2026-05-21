@@ -316,6 +316,15 @@ AEACAC053010-S868 von der Firma Abracon durchgesetzt mit seiner omnidirektionale
 einem Gewinn von 2dBi und einer Impedanz von 50 Ohm. % TODO: add pic of antenna
 Bei künftigen Iterationen wird mit einer Chip-Antenne experimentiert, um die Kosten weiter zu senken. 
 
+Die vom Referenzdesign angepasste MCU-Schaltung für den ersten Prototyp sieht in ihrer Gesamheit folgendermaßen aus:
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{kapitel3/pictures/mcu_schematic.png}
+    \caption{MCU-Schaltung mit STM32WL55}
+    \label{fig:mcu_schematic}
+\end{figure}
+
 % ─── Taktversorgung ───────────────────────────────────────────────────────────
 \subsubsection{Taktversorgung}
 \label{subsubsec:takt}
@@ -335,7 +344,7 @@ Demodulationsfehler hervorgerufen werden. Der TCXO vermeidet dieses Problem zuve
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\textwidth]{kapitel3/pictures/hse.png}
+    \includegraphics[width=0.5\textwidth]{kapitel3/pictures/hse.png}
     \caption{Taktversorgung mit HSE}
     \label{fig:hse}
 \end{figure}
@@ -348,7 +357,19 @@ um den Ruhestromverbrauch zu minimieren. Die Ausgangsleitung des TCXO ist
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\textwidth]{kapitel3/pictures/lse.png}
+    \includegraphics[width=0.5\textwidth]{kapitel3/pictures/mco.png}
+    \caption{Überprüfung der TCXO"=Frequenz über MCO-Ausgang}
+    \label{fig:mco}
+\end{figure}
+
+Zur messtechnischen Verifikation der TCXO"=Frequenz wird der Pin \texttt{MCO} (\textit{Master Clock Output}) des STM32WL55
+ist an den Header J18 geführt. Dieser Ausgang kann in der Firmware so
+konfiguriert werden, dass er eine abgeleitete Taktfrequenz ausgibt,
+die mit dem Oszilloskop gemessen werden kann. 
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{kapitel3/pictures/lse.png}
     \caption{Taktversorgung mit LSE}
     \label{fig:lse}
 \end{figure}
@@ -417,7 +438,7 @@ um Leistungsverlusten im aktuellen Design entgegenzuwirken.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\textwidth]{kapitel3/pictures/rx_matching.png}
+    \includegraphics[width=0.5\textwidth]{kapitel3/pictures/rx_matching.png}
     \caption{RX-Impedanzanpassung}
     \label{fig:rx_matching}
 \end{figure}
@@ -472,7 +493,7 @@ Die externe Beschaltung des SMPS umfasst:
 Eine ausführliche Warnung im Schaltplan weist darauf hin, dass der SMPS
 eine Taktquelle benötigt: Fällt diese aus, schaltet der Regler automatisch
 in den LDO"=Betrieb um. Da die SMPS"=Taktdetektion standardmäßig
-deaktiviert ist, muss sie in der Firmware explizit aktiviert werden.
+deaktiviert ist, muss sie in der Firmware explizit aktiviert werden. % TODO: maybe remove SMPS completely
 
 % ─── Spannungsversorgung und Entkopplung ─────────────────────────────────────
 \subsubsection{Spannungsversorgung und Entkopplung}
@@ -480,7 +501,7 @@ deaktiviert ist, muss sie in der Firmware explizit aktiviert werden.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\textwidth]{kapitel3/pictures/decoupling.png}
+    \includegraphics[width=0.75\textwidth]{kapitel3/pictures/decoupling.png}
     \caption{Entkopplungsschema der MCU}
     \label{fig:decoupling}
 \end{figure}
@@ -514,7 +535,7 @@ ihre Zuordnung zu den Versorgungsdomänen zusammen.
         C50 & 100\,nF    & VFBSMPS    & HF-Bypass SMPS-Rückkopplungsknoten \\
         \bottomrule
     \end{tabularx}
-\end{table}
+\end{table} % TODO: maybe this table is superfluous
 
 Die analoge Versorgungsdomäne \texttt{VDDA} (Pin 41 des STM32WL55CCUx)
 ist mit C44 (100\,nF) entkoppelt und über die Pulldown"=Widerstände R28 und
@@ -528,7 +549,7 @@ Pegel aufweisen und nicht floaten.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\textwidth]{kapitel3/pictures/mcu_rst.png}
+    \includegraphics[width=0.5\textwidth]{kapitel3/pictures/mcu_rst.png}
     \caption{MCU-Reset-Schaltung}
     \label{fig:mcu_rst}
 \end{figure}
@@ -544,7 +565,7 @@ Kurzschluss gegen Masse ermöglicht. C6 filtert kurze Spannungseinbrüche auf
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\textwidth]{kapitel3/pictures/boot0.png}
+    \includegraphics[width=0.5\textwidth]{kapitel3/pictures/boot0.png}
     \caption{BOOT0-Konfiguration}
     \label{fig:boot0}
 \end{figure}
@@ -568,6 +589,13 @@ RC"=Zeitkonstante ($\tau = R \cdot C_\text{Bus}$) mit den geschätzten
 Busleitungskapazitäten von 50--100\,pF bei \qty{4,7}{\kilo\ohm} an die Grenze
 der zulässigen Anstiegszeit stößt.
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.75\textwidth]{kapitel3/pictures/i2c1.png}
+    \caption{I2C-Schnittstelle}
+    \label{fig:i2c1}
+\end{figure}
+
 Der Header J6 (\texttt{I2C1}) erlaubt den direkten Anschluss
 eines Oszilloskops zur Visualisierung des I2C-Protokolls. Da alle Kanäle des Oszilloskops
 eine gemeinsame Masse haben, wird hier nur ein GND-Anschluss anstatt zwei für SCL und SDA vorgesehen. 
@@ -575,6 +603,13 @@ eine gemeinsame Masse haben, wird hier nur ein GND-Anschluss anstatt zwei für S
 % ─── ESD-Schutz ──────────────────────────────────────────────────────────────
 \subsubsection{ESD-Schutz}
 \label{subsubsec:esd}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{kapitel3/pictures/esd.png}
+    \caption{ESD-Schutz für Testheaders}
+    \label{fig:esd}
+\end{figure}
 
 Die Oszilloskop-Testheaders für I2C sowie UART (J6 und J9) können gefährliche elektrostatische Entladungen (\acrshort{esd}) von 
 externen Messgeräten oder Bedienern auf die empfindlichen MCU-Pins übertragen. Aus diesem Grund wird eine Schutzdiodenarray (D4) vom Typ
@@ -588,7 +623,7 @@ ableiten können.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\textwidth]{kapitel3/pictures/spi_flash.png}
+    \includegraphics[width=0.75\textwidth]{kapitel3/pictures/spi_flash.png}
     \caption{SPI-Flash-Speicher}
     \label{fig:spi_flash}
 \end{figure}
@@ -607,7 +642,7 @@ Firmware und ein neu empfangenes Firmware"=Image vorzuhalten, übernimmt
 der externe W25Q16JVSS (2\,MB) die Rolle eines Zwischenspeichers.
 
 % ─── Blinky-LED und MCO ───────────────────────────────────────────────────────
-\subsubsection{Status-LED und Taktausgang}
+\subsubsection{Status-LED}
 \label{subsubsec:led-mco}
 
 \begin{figure}[htbp]
@@ -623,12 +658,6 @@ Prototypen hauptsächlich der schnellen Überprüfung des Flashprozesses: nach E
 der PCBs wird ein einfaches blinky-Programm in die MCU eingeschleust, das die LED in 
 einem festen Intervall blinken lässt. Ist dies erst erfolgreich, kann die eigentliche Firmware-Entwicklung mit der 
 Sensoranbindung und LoRaWAN"=Funktionalität implementiert werden.
-
-Der Taktausgang \texttt{MCO} (\textit{Master Clock Output}) des STM32WL55
-ist auf Testpunkt TP40 geführt. Dieser Ausgang kann in der Firmware so
-konfiguriert werden, dass er eine abgeleitete Taktfrequenz ausgibt,
-was eine messtechnische Verifikation der TCXO"=Frequenz mit einem
-Frequenzzähler oder Oszilloskop erlaubt.
 
 % ─── Zusammenfassung ──────────────────────────────────────────────────────────
 \subsubsection{Zusammenfassung der Signalnetze}
