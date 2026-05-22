@@ -12,13 +12,20 @@
 \contentsline {figure}{\numberline {3.8}{\ignorespaces Ladeblock mit USB-C-Anschluss und BQ24074}}{26}{figure.caption.37}%
 \contentsline {figure}{\numberline {3.9}{\ignorespaces Energiegewinnung durch Solarzelle mit SPv1050}}{28}{figure.caption.39}%
 \contentsline {figure}{\numberline {3.10}{\ignorespaces Batterie-SoC-Tracking mit MAX17048}}{29}{figure.caption.40}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Taktversorgung mit HSE}}{31}{figure.caption.43}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Taktversorgung mit LSE}}{32}{figure.caption.44}%
-\contentsline {figure}{\numberline {3.13}{\ignorespaces TX-Impedanzanpassung}}{32}{figure.caption.47}%
-\contentsline {figure}{\numberline {3.14}{\ignorespaces RX-Impedanzanpassung}}{34}{figure.caption.49}%
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Entkopplungsschema der MCU}}{36}{figure.caption.52}%
-\contentsline {figure}{\numberline {3.16}{\ignorespaces MCU-Reset-Schaltung}}{38}{figure.caption.55}%
-\contentsline {figure}{\numberline {3.17}{\ignorespaces BOOT0-Konfiguration}}{38}{figure.caption.57}%
-\contentsline {figure}{\numberline {3.18}{\ignorespaces SPI-Flash-Speicher}}{40}{figure.caption.61}%
-\contentsline {figure}{\numberline {3.19}{\ignorespaces Status-LED}}{40}{figure.caption.63}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces MCU-Schaltung mit STM32WL55}}{31}{figure.caption.42}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Taktversorgung mit HSE}}{31}{figure.caption.44}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Überprüfung der TCXO"=Frequenz über MCO-Ausgang}}{32}{figure.caption.45}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Taktversorgung mit LSE}}{32}{figure.caption.46}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces TX-Impedanzanpassung}}{33}{figure.caption.49}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces RX-Impedanzanpassung}}{34}{figure.caption.51}%
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Entkopplungsschema der MCU}}{36}{figure.caption.54}%
+\contentsline {figure}{\numberline {3.18}{\ignorespaces MCU-Reset-Schaltung}}{37}{figure.caption.57}%
+\contentsline {figure}{\numberline {3.19}{\ignorespaces BOOT0-Konfiguration}}{37}{figure.caption.59}%
+\contentsline {figure}{\numberline {3.20}{\ignorespaces I2C-Schnittstelle}}{38}{figure.caption.61}%
+\contentsline {figure}{\numberline {3.21}{\ignorespaces ESD-Schutz für Testheaders}}{38}{figure.caption.63}%
+\contentsline {figure}{\numberline {3.22}{\ignorespaces SPI-Flash-Speicher}}{39}{figure.caption.65}%
+\contentsline {figure}{\numberline {3.23}{\ignorespaces Status-LED}}{40}{figure.caption.67}%
+\contentsline {figure}{\numberline {3.24}{\ignorespaces PCB-Stackup mit vier Lagen: Top (L1), Inner 1 (L2), Inner 2 (L3), Bottom (L4)}}{42}{figure.caption.71}%
+\contentsline {figure}{\numberline {3.25}{\ignorespaces Optimale Power-Plane-Auslegung laut AN5407}}{43}{figure.caption.72}%
+\contentsline {figure}{\numberline {3.26}{\ignorespaces 2D-Ansicht der fertigen Leiterplatte}}{44}{figure.caption.73}%
 \addvspace {10\p@ }

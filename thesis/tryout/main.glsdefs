@@ -1930,3 +1930,59 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{hf}%
+{%
+name={\acronymfont {\glsentryshort {hf}}},%
+sort={HF},%
+type={acronym},%
+first={HF},%
+firstplural={HFs},%
+text={HF},%
+plural={HFs},%
+description={High Frequency},%
+descriptionplural={High Frequency},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={High Frequency},%
+longplural={High Frequencys},%
+short={HF},%
+shortplural={HFs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{emv}%
+{%
+name={\acronymfont {\glsentryshort {emv}}},%
+sort={EMV},%
+type={acronym},%
+first={EMV},%
+firstplural={EMVs},%
+text={EMV},%
+plural={EMVs},%
+description={Elektromagnetische Verträglichkeit},%
+descriptionplural={Elektromagnetische Verträglichkeit},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Elektromagnetische Verträglichkeit},%
+longplural={Elektromagnetische Verträglichkeits},%
+short={EMV},%
+shortplural={EMVs},%
+counter={page},%
+parent={},%
+%
+}%
+

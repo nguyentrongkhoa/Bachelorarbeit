@@ -66,6 +66,8 @@
 \glossaryentry{LSE?\glossentry{lse}|setentrycounter[]{page}"\glsnumberformat}{30}
 \glossaryentry{RTC?\glossentry{rtc}|setentrycounter[]{page}"\glsnumberformat}{30}
 \glossaryentry{TCXO?\glossentry{tcxo}|setentrycounter[]{page}"\glsnumberformat}{30}
-\glossaryentry{LNA?\glossentry{lna}|setentrycounter[]{page}"\glsnumberformat}{31}
-\glossaryentry{ESD?\glossentry{esd}|setentrycounter[]{page}"\glsnumberformat}{39}
+\glossaryentry{LNA?\glossentry{lna}|setentrycounter[]{page}"\glsnumberformat}{33}
+\glossaryentry{ESD?\glossentry{esd}|setentrycounter[]{page}"\glsnumberformat}{38}
 \glossaryentry{FUOTA?\glossentry{fuota}|setentrycounter[]{page}"\glsnumberformat}{39}
+\glossaryentry{HF?\glossentry{hf}|setentrycounter[]{page}"\glsnumberformat}{40}
+\glossaryentry{EMV?\glossentry{emv}|setentrycounter[]{page}"\glsnumberformat}{42}

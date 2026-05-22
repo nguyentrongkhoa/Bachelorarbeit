@@ -691,6 +691,65 @@ des Prototyps verbinden.
     \end{tabularx}
 \end{table}
 
+\subsection{PCB-Layout}
+
+\subsubsection*{Aufbau}
+
+Für das Design wurde ein \textit{4-Layer-Stackup} (vierlagige Leiterplatte) gewählt. Die zwei geläufigsten Anordnungen bei diesem 
+Aufbau sind SGN-GND-GND-SGN und SGN-GND-PWR-SGN, und es wurde für das Letztere entschieden aus persönlichem Vorzug. Die vier
+Lagen haben folgende Funktionen:
+
+\begin{itemize}
+    \item \textbf{Top Layer (L1):} Platzierung der Bauteile und primäre Signalleitungen (inklusive der \acrshort{hf}-Leitungen)
+    \item \textbf{Inner Layer 1 (L2):} Durchgehende Massenfläche (Ground Plane) als Potenzial
+    \item \textbf{Inner Layer 2 (L3):} Stromversorgungsbussysteme (Power Plane) zur niederimpedanten Verteilung der Betriebsspannung (3,3V).
+    \item \textbf{Bottom Layer (L4):} Sekundäre Signalleitungen 
+\end{itemize}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{kapitel3/pictures/stackup.png}
+    \caption{PCB-Stackup mit vier Lagen: Top (L1), Inner 1 (L2), Inner 2 (L3), Bottom (L4)}
+    \label{fig:stackup}
+\end{figure}
+
+Dieser Aufbau kostet im Vergleich zu einem einfachen zweilagigen Design zwar geringfügig mehr bei JLCPCB, 
+bietet aber entscheidende Vorteile für Hochfrequenzanwendungen. Die durchgehende Massenfläche L2 dient als Rückstrompfad für
+HF-Signale, sodass die elektrischen Feldlinien sich nicht unkontrolliert ausbreiten und andere Komponenten stören.
+Der geringe L1-L2-Abstand (0,1 mm) beim 4-Layer-Stackup sorgt auch für kleinere Stromschleifen. Beim 2-Layer hingegen beträgt 
+dieser Abstand 1,5mm, dadurch würde diese SGN-GND-Schleifen in diesem Fall 15-mal so stark Störungen abstrahlen/empfangen.  % TODO: add pic  
+
+Aus Abbildung \ref{fig:stackup} ist ersichtlich, dass die Signalschichten L1 und L4 bezüglich GND (L2) asymmetrisch sind. L1
+ist viel näher an GND und soll daher für alle empfindlichen Leitungen (dazu RF-Leiterbahnen) verwendet werden. L4 hingegen 
+ist weiter von GND entfernt und eignet sich daher für weniger kritische Signale, wie z.B. die I2C-Leitungen zu den Sensoren.
+
+Auf L3 ist die ebenfalls durchgehende 3,3V Versorgungsschicht untergebracht. Aus \acrshort{emv}-technischer Sicht ist es jedoch
+suboptimal, da an den PCB-Kanten gestrahlt werden kann. Der Anwendungshinweis AN5407 von ST empfiehlt daher, Abstand % TODO: cite page 27 of AN5407
+von der Power Plane zur Boardrand zu lassen und einen GND-Ring vorzusehen, welcher über Via-Stitching mit L2 verbunden werden soll 
+(Abbildung \ref{fig:power_plane})
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{kapitel3/pictures/power_plane.png}
+    \caption{Optimale Power-Plane-Auslegung laut AN5407}
+    \label{fig:power_plane}
+\end{figure}
+
+Aufgrund dessen, dass JLCPCB eine teurere Preisklasse für Leiterplatten größer als \qty{100}{\milli\meter}x\qty{100}{\milli\meter}
+ansetzt, wurde das Design trotz der Vielzahl an Modulen möglichst kompakt gehalten. Die finalen Dimensionen betragen 
+\qty{90}{\milli\meter}x\qty{100}{\milli\meter}. 
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{kapitel3/pictures/board_2d.png}
+    \caption{2D-Ansicht der fertigen Leiterplatte}
+    \label{fig:board_2d}
+\end{figure}
+
+\subsection{Fertigung und Bestückung}
+
+\subsection{Inbetriebnahme}
+
 \section{Firmware-Entwicklung}
 
 % -----------------------------------------------------------------------------
@@ -816,3 +875,5 @@ ChirpStack"=Setup vollständig konfiguriert ist.
 \newacronym{lna}{LNA}{Low Noise Amplifier}
 \newacronym{esd}{ESD}{Electrostatic Discharge}
 \newacronym{fuota}{FUOTA}{Field Update Over The Air}
+\newacronym{hf}{HF}{High Frequency}
+\newacronym{emv}{EMV}{Elektromagnetische Verträglichkeit}
