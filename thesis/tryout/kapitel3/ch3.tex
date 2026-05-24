@@ -89,14 +89,14 @@ mit einem Rechner verbunden und am anderen Ende mit einer Dipolantenne ausgestat
 Die Stablänge $\ell$ muss auf \SI{868}{\MHz} abgestimmt sein: 
 $\ell = \frac{\lambda}{4} = \frac{c}{4f} = \frac{\SI{3e8}{\m\per\s}}{4 \cdot \SI{868e6}{\Hz}} \approx \SI{8,64}{\cm}$
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{kapitel3/pictures/zephyr_lora_send_setup.jpeg}
     \caption{Erster Testaufbau}
     \label{fig:zephyr_lora_send_setup}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[angle=90,width=\textwidth]{kapitel3/pictures/868MHz_Dipole.jpeg}
     \caption{Einstellung Antennenlänge}
@@ -113,7 +113,7 @@ beträgt die ToA \SI{330}{\ms}. Da in diesem Fall jede Sekunde ein Paket gesende
 weit über dem zulässigen Wert von 1\% für das EU868-Band. Aus diesem Grund musste im Vorfeld das Übertragungsintervall auf 
 \SI{34}{\s} verlängert werden.  
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{kapitel3/pictures/zephyr_lora_send_calc.png}
     \caption{LoRa-Rechner}
@@ -125,7 +125,7 @@ Abbildung \ref{fig:zephyr_lora_send_sdrsharp} zeigt das Frequenzspektrum um \SI{
 Es lässt sich erkennen, dass die meiste Energie im Bereich \SI{865,1}{\MHz}$\pm \frac{\text{BW}}{2}$ ist. Aufgrund dessen,
 dass SDR\# LoRa-Pakete nicht dekodieren kann, wird ein weiterer Test in GNU-Radio benötigt. 
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{kapitel3/pictures/zephyr_lora_send_in_sdr_sharp.png}
     \caption{LoRa-Verkehr in SDR\#}
@@ -140,14 +140,14 @@ geführt, welcher die LoRa-Pakete demoduliert und dekodiert. Die LoRa-Blöcke ko
 über das Erweiterungsmodul \texttt{gr-lora} (entwickelt von \citeauthor{tapparelOpenSourceLoRaPhysical2020}) eingebunden werden.
 Die dekodierten Payloads werden im Terminal ausgegeben (Abbildung \ref{fig:zephyr_lora_send_gnuradio_result})
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{kapitel3/pictures/lora_send_test_gnuradio_flowgraph.png}
     \caption{Blockdiagramm zum Empfangen von LoRa-Testpaketen in GNU-Radio}
     \label{fig:zephyr_lora_send_gnuradio}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{kapitel3/pictures/lora_send_test_gnuradio_result.png}
     \caption{Dekodierte Nutzdaten in GNU-Radio-Terminal}
@@ -168,7 +168,7 @@ kommen von der MCU und werden über Pullup- sowie Pulldown-Widerstände so konfi
 dass per Default das Empfangen aktiviert ist, da fahrlässiges Senden ohne Antenne
 das Funkmodul beschädigen könnte.  
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{kapitel3/pictures/block_diag.png}
     \caption{Blockschaltbild PCB-Prototyp}
@@ -204,7 +204,7 @@ Das Laden des LiPo-Akkus erfolgt wie bereits erwähnt über einen 6-poligen USB-
 als Funktion der Batteriespannung regelt. Durch den 2K-Widerstand R4 wird der Ladestrom auf ca. 880mA begrenzt, um die Grenze des USB-Steckers
 zu berücksichtigen. 
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{kapitel3/pictures/usb.png}
     \caption{Ladeblock mit USB-C-Anschluss und BQ24074}
@@ -256,7 +256,7 @@ Die approximate Ladezeit eines vollständig entleerten Akkus beträgt damit $\fr
 was in der Praxis aufgrund von Wetterbedingungen und Ladeeffizienz wahrscheinlich eher 2-3 Wochen entspricht. Das klingt zwar nach wenig, 
 aber der evt. jahrelange Betrieb rechtfertigt die Integration dieser Solarzelle.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{kapitel3/pictures/solar.png}
     \caption{Energiegewinnung durch Solarzelle mit SPv1050}
@@ -275,7 +275,7 @@ die tatsächliche Kapazität beeinflussen können. Daher wird der Fuel-Gauge-Chi
 um den \acrfull{soc2} der Batterie zu verfolgen. Dieser schickt seine Daten über I2C an die MCU und benachrichtigt sie über die \texttt{ALERT} 
 Leitung, sobald unter einen bestimmten Schwellenwert fällt. 
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{kapitel3/pictures/fg.png}
     \caption{Batterie-SoC-Tracking mit MAX17048}
@@ -318,7 +318,7 @@ Bei künftigen Iterationen wird mit einer Chip-Antenne experimentiert, um die Ko
 
 Die vom Referenzdesign angepasste MCU-Schaltung für den ersten Prototyp sieht in ihrer Gesamheit folgendermaßen aus:
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{kapitel3/pictures/mcu_schematic.png}
     \caption{MCU-Schaltung mit STM32WL55}
@@ -342,7 +342,7 @@ Bei \SI{868}{\MHz} entsprechen 30\,ppm einer absoluten Frequenzabweichung von
 \SI{26}{\kHz}, dadurch könnte der Kanalabstand bei hohen Spreizfaktoren überschritten und
 Demodulationsfehler hervorgerufen werden. Der TCXO vermeidet dieses Problem zuverlässig.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{kapitel3/pictures/hse.png}
     \caption{Taktversorgung mit HSE}
@@ -355,7 +355,7 @@ Dadurch kann der TCXO im Deep"=Stop"=Modus vollständig abgeschaltet werden,
 um den Ruhestromverbrauch zu minimieren. Die Ausgangsleitung des TCXO ist
 über C9 (1\,nF) entkoppelt und gelangt an den \texttt{OSC\_IN}"=Pin der MCU.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{kapitel3/pictures/mco.png}
     \caption{Überprüfung der TCXO"=Frequenz über MCO-Ausgang}
@@ -367,7 +367,7 @@ ist an den Header J18 geführt. Dieser Ausgang kann in der Firmware so
 konfiguriert werden, dass er eine abgeleitete Taktfrequenz ausgibt,
 die mit dem Oszilloskop gemessen werden kann. 
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{kapitel3/pictures/lse.png}
     \caption{Taktversorgung mit LSE}
@@ -397,7 +397,7 @@ minimieren.
 
 \paragraph{Sendepfad (TX)}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{kapitel3/pictures/tx_matching.png}
     \caption{TX-Impedanzanpassung}
@@ -436,7 +436,7 @@ um Leistungsverlusten im aktuellen Design entgegenzuwirken.
 
 \paragraph{Empfangspfad (RX)}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{kapitel3/pictures/rx_matching.png}
     \caption{RX-Impedanzanpassung}
@@ -499,7 +499,7 @@ deaktiviert ist, muss sie in der Firmware explizit aktiviert werden. % TODO: may
 \subsubsection{Spannungsversorgung und Entkopplung}
 \label{subsubsec:entkopplung}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{kapitel3/pictures/decoupling.png}
     \caption{Entkopplungsschema der MCU}
@@ -516,7 +516,7 @@ Versorgungsleitungen zu minimieren.
 Tabelle~\ref{tab:entkopplung_mcu} fasst die Entkopplungskapazitäten und
 ihre Zuordnung zu den Versorgungsdomänen zusammen.
 
-\begin{table}[htbp]
+\begin{table}[H]
     \centering
     \caption{Entkopplungskondensatoren und ihre Funktionen}
     \label{tab:entkopplung_mcu}
@@ -547,7 +547,7 @@ Pegel aufweisen und nicht floaten.
 \subsubsection{Reset-Schaltung}
 \label{subsubsec:reset}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{kapitel3/pictures/mcu_rst.png}
     \caption{MCU-Reset-Schaltung}
@@ -563,7 +563,7 @@ Kurzschluss gegen Masse ermöglicht. C6 filtert kurze Spannungseinbrüche auf
 
 \paragraph{BOOT0-Konfiguration}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{kapitel3/pictures/boot0.png}
     \caption{BOOT0-Konfiguration}
@@ -589,7 +589,7 @@ RC"=Zeitkonstante ($\tau = R \cdot C_\text{Bus}$) mit den geschätzten
 Busleitungskapazitäten von 50--100\,pF bei \qty{4,7}{\kilo\ohm} an die Grenze
 der zulässigen Anstiegszeit stößt.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{kapitel3/pictures/i2c1.png}
     \caption{I2C-Schnittstelle}
@@ -604,7 +604,7 @@ eine gemeinsame Masse haben, wird hier nur ein GND-Anschluss anstatt zwei für S
 \subsubsection{ESD-Schutz}
 \label{subsubsec:esd}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{kapitel3/pictures/esd.png}
     \caption{ESD-Schutz für Testheaders}
@@ -621,7 +621,7 @@ ableiten können.
 \subsubsection{SPI-Flash-Speicher}
 \label{subsubsec:spi-flash}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{kapitel3/pictures/spi_flash.png}
     \caption{SPI-Flash-Speicher}
@@ -645,7 +645,7 @@ der externe W25Q16JVSS (2\,MB) die Rolle eines Zwischenspeichers.
 \subsubsection{Status-LED}
 \label{subsubsec:led-mco}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{kapitel3/pictures/blinky.png}
     \caption{Status-LED}
@@ -667,7 +667,7 @@ Tabelle~\ref{tab:mcu_netze} gibt einen Überblick über die wichtigsten
 Signalnetze, die die MCU"=Teilschaltung mit den übrigen Teilschaltungen
 des Prototyps verbinden.
 
-\begin{table}[htbp]
+\begin{table}[H]
     \centering
     \caption{Externe Signalnetze der MCU-Teilschaltung}
     \label{tab:mcu_netze}
@@ -706,7 +706,7 @@ Lagen haben folgende Funktionen:
     \item \textbf{Bottom Layer (L4):} Sekundäre Signalleitungen 
 \end{itemize}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{kapitel3/pictures/stackup.png}
     \caption{PCB-Stackup mit vier Lagen: Top (L1), Inner 1 (L2), Inner 2 (L3), Bottom (L4)}
@@ -716,8 +716,8 @@ Lagen haben folgende Funktionen:
 Dieser Aufbau kostet im Vergleich zu einem einfachen zweilagigen Design zwar geringfügig mehr bei JLCPCB, 
 bietet aber entscheidende Vorteile für Hochfrequenzanwendungen. Die durchgehende Massenfläche L2 dient als Rückstrompfad für
 HF-Signale, sodass die elektrischen Feldlinien sich nicht unkontrolliert ausbreiten und andere Komponenten stören.
-Der geringe L1-L2-Abstand (0,1 mm) beim 4-Layer-Stackup sorgt auch für kleinere Stromschleifen. Beim 2-Layer hingegen beträgt 
-dieser Abstand 1,5mm, dadurch würde diese SGN-GND-Schleifen in diesem Fall 15-mal so stark Störungen abstrahlen/empfangen.  % TODO: add pic  
+Der geringe L1-L2-Abstand (0,2mm) beim 4-Layer-Stackup sorgt auch für kleinere Stromschleifen. Beim 2-Layer hingegen beträgt 
+dieser Abstand 1,5mm, dadurch würde diese SGN-GND-Schleifen in diesem Fall 7,5-mal so stark Störungen abstrahlen/empfangen.  % TODO: add pic  
 
 Aus Abbildung \ref{fig:stackup} ist ersichtlich, dass die Signalschichten L1 und L4 bezüglich GND (L2) asymmetrisch sind. L1
 ist viel näher an GND und soll daher für alle empfindlichen Leitungen (dazu RF-Leiterbahnen) verwendet werden. L4 hingegen 
@@ -728,7 +728,7 @@ suboptimal, da an den PCB-Kanten gestrahlt werden kann. Der Anwendungshinweis AN
 von der Power Plane zur Boardrand zu lassen und einen GND-Ring vorzusehen, welcher über Via-Stitching mit L2 verbunden werden soll 
 (Abbildung \ref{fig:power_plane})
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{kapitel3/pictures/power_plane.png}
     \caption{Optimale Power-Plane-Auslegung laut AN5407}
@@ -739,12 +739,60 @@ Aufgrund dessen, dass JLCPCB eine teurere Preisklasse für Leiterplatten größe
 ansetzt, wurde das Design trotz der Vielzahl an Modulen möglichst kompakt gehalten. Die finalen Dimensionen betragen 
 \qty{90}{\milli\meter}x\qty{100}{\milli\meter}. 
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{kapitel3/pictures/board_2d.png}
     \caption{2D-Ansicht der fertigen Leiterplatte}
     \label{fig:board_2d}
 \end{figure}
+
+\subsubsection*{Impedanzkontrolle}
+
+Sämtliche RF-Leiterbahnen (lilafarbene Verbindungen im Schaltplan) müssen auf eine charakteristische Impedanz von \SI{50}{\ohm} ausgelegt werden, um die Leistungsverluste
+durch Signalreflexionen an den Übergängen (bswp. zur MCU oder Antenne) zu vermeiden. Die Berechnung der Leiterbahngeometrie 
+erfolgt mit einem Impedanzrechner, der die Stackup-Parameter (Lagenabstände, Dielektrizitätskonstante) 
+sowie die Leiterbahnbreite und -dicke berücksichtigt.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{kapitel3/pictures/imp_calc_kicad.png}
+    \caption{Impedanzberechnung in KiCad}
+    \label{fig:imp_calc_kicad}
+\end{figure}
+
+KiCad verfügt über einen eingebauten Rechner und die einzutragenden Informationen (gelb markiert) ergeben eine Leiterbahnbreite
+$W=\qty{0,35}{\milli\meter}$. Leichte Abweichungen von der \qty{50}{\ohm} können allerdings entstehen aufgrund von bswp.
+mechanischen Toleranzen oder Varianz der Dielektrizitätskonstante $\epsilon_r$ des verwendeten FR4-Materials. 
+
+Impedanzkritische Verbindungen müssen knickfrei sein. KiCad stellt diverse Erweiterungen bereits, mit denen eckige
+Übergangsstellen in Verrundungen verwandelt werden können. Problematisch bleiben allerdings die Übergänge von 
+Leiterbahnen zu Pads von SMD-Komponenten, da diese meist viel größer sind als die berechnete \qty{0,35}{\milli\meter}.
+Daher werden alle RF-SMD-Bauteile in der Größe 0402 (0,5mm Padbreite) gewählt, und die \qty{0,15}{\milli\meter} Differenz wird 
+durch ein Teardrop-Muster überbrückt werden. 
+
+\begin{figure}[H]
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth, height=5cm, keepaspectratio]{kapitel3/pictures/round_tracks.png}
+         \caption{Rundungen an Leiterbahnübergängen} 
+         \label{subfig:round_tracks}
+     \end{subfigure}
+
+     %\hfill 
+     
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth, height=5cm, keepaspectratio]{kapitel3/pictures/teardrop.png}
+         \caption{Teardrops an Übergängen zu SMD-Pads} 
+         \label{subfig:teardrop}
+     \end{subfigure}
+     
+     \caption{Layout-Richtlinien für impedanzkontrollierte Leiterbahnen} 
+     \label{fig:layout_guidelines}
+\end{figure}
+
+Zu guter Letzt widmet AN5407 hinsichtlich Impedanz Kontrolle 
 
 \subsection{Fertigung und Bestückung}
 
