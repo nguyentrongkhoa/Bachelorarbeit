@@ -737,14 +737,7 @@ von der Power Plane zur Boardrand zu lassen und einen GND-Ring vorzusehen, welch
 
 Aufgrund dessen, dass JLCPCB eine teurere Preisklasse für Leiterplatten größer als \qty{100}{\milli\meter}x\qty{100}{\milli\meter}
 ansetzt, wurde das Design trotz der Vielzahl an Modulen möglichst kompakt gehalten. Die finalen Dimensionen betragen 
-\qty{90}{\milli\meter}x\qty{100}{\milli\meter}. 
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{kapitel3/pictures/board_2d.png}
-    \caption{2D-Ansicht der fertigen Leiterplatte}
-    \label{fig:board_2d}
-\end{figure}
+90x100 mm.
 
 \subsubsection*{Impedanzkontrolle}
 
@@ -792,9 +785,69 @@ durch ein Teardrop-Muster überbrückt werden.
      \label{fig:layout_guidelines}
 \end{figure}
 
-Zu guter Letzt widmet AN5407 hinsichtlich Impedanz Kontrolle 
+\subsubsection*{Fertiges Layout}
+
+Abbildung \ref{fig:board_2d} zeigt die fertige PCB im KiCad-Layout-Fenster. Hier entspricht die räumliche Trennung den Teilschaltungen,
+wie sie in der Schematic aufgeführt sind. Oben links ist das Lademodul mit USB-Stecker und Kraftstoffsensor. Darunter befindet sich
+die Energiegewinnungsschaltung mit 2 großen rechteckigen Pads zum Löten der Solarzelle. Die MCU ist mittig platziert mit ihren
+Peripherien und Sensoren ringsum. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{kapitel3/pictures/board_2d.png}
+    \caption{2D-Ansicht der fertigen Leiterplatte}
+    \label{fig:board_2d}
+\end{figure}
+
+\begin{figure}[H]
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth, height=5cm, keepaspectratio]{kapitel3/pictures/3d_top.png}
+         \caption{Oben} 
+         \label{subfig:3d_top}
+     \end{subfigure}
+     
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth, height=5cm, keepaspectratio]{kapitel3/pictures/3d_bottom.png}
+         \caption{Unten} 
+         \label{subfig:3d_bottom}
+     \end{subfigure}
+     
+     \caption{3D-Ansichten der fertigen PCB} 
+     \label{fig:3d_pcb}
+\end{figure}
 
 \subsection{Fertigung und Bestückung}
+
+Es wurden insgesamt 5 PCBs bestellt bei JLCPCB, wovon nur 2 bestückt werden, um die Bauteilkosten zu reduzieren. 
+Spezielle Komponenten, die entweder nicht bei JLCPCB bzw. LCSC erhältlich sind oder deren Bestückung die Kosten in die Höhe 
+treiben, mussten zusätzlich über Mouser angeschafft werden. Dazu zählen z.B die Antenne, der dazugehörige SMA-Anschluss,
+die Solarzelle sowie THT-Pin-Headers, die händisch gelötet werden müssen. Eine approximative Kostenübersicht setzt sich 
+zusammen aus:  
+
+\begin{table}[H]
+    \centering
+    \caption{Kostenaufstellung pro PCB}
+    \label{tab:kosten_pcb}
+    \begin{tabular}{@{}lr@{}}
+        \toprule
+        \textbf{Posten} & \textbf{Kosten [€]} \\
+        \midrule
+        PCB-Fertigung (\$1,40) & 1,29 \\
+        PCBA-Bestückung \& interne Komponenten (\$79,00) & 72,68 \\
+        SMA-Antennenanschluss (\$2,50) & 2,30 \\
+        868\,MHz-Antenne & 5,66 \\
+        Solarzelle & 4,63 \\
+        \midrule
+        \textbf{Gesamtkosten pro Stück} & \textbf{86,56} \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+Die 5 PCBs sind etwa zwei Wochen nach Bestellungsaufgabe in Berlin eingetroffen. 
+\textbf{Der komplette Designprozess (von Schematic bis PCB-Erhalt) des ersten Prototyps hat also um die 6 Wochen gedauert.}
 
 \subsection{Inbetriebnahme}
 

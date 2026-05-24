@@ -27,7 +27,8 @@
 \contentsline {figure}{\numberline {3.23}{\ignorespaces Status-LED}}{42}{figure.caption.67}%
 \contentsline {figure}{\numberline {3.24}{\ignorespaces PCB-Stackup mit vier Lagen: Top (L1), Inner 1 (L2), Inner 2 (L3), Bottom (L4)}}{44}{figure.caption.71}%
 \contentsline {figure}{\numberline {3.25}{\ignorespaces Optimale Power-Plane-Auslegung laut AN5407}}{45}{figure.caption.72}%
-\contentsline {figure}{\numberline {3.26}{\ignorespaces 2D-Ansicht der fertigen Leiterplatte}}{46}{figure.caption.73}%
-\contentsline {figure}{\numberline {3.27}{\ignorespaces Impedanzberechnung in KiCad}}{47}{figure.caption.75}%
-\contentsline {figure}{\numberline {3.28}{\ignorespaces Gemeinsame Hauptunterschrift für beide Abbildungen.}}{48}{figure.caption.76}%
+\contentsline {figure}{\numberline {3.26}{\ignorespaces Impedanzberechnung in KiCad}}{46}{figure.caption.74}%
+\contentsline {figure}{\numberline {3.27}{\ignorespaces Layout-Richtlinien für impedanzkontrollierte Leiterbahnen}}{47}{figure.caption.75}%
+\contentsline {figure}{\numberline {3.28}{\ignorespaces 2D-Ansicht der fertigen Leiterplatte}}{48}{figure.caption.77}%
+\contentsline {figure}{\numberline {3.29}{\ignorespaces 3D-Ansichten der fertigen PCB}}{49}{figure.caption.78}%
 \addvspace {10\p@ }
