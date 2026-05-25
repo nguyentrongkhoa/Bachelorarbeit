@@ -801,14 +801,14 @@ Peripherien und Sensoren ringsum.
 
 \begin{figure}[H]
      \centering
-     \begin{subfigure}[b]{0.45\textwidth}
+     \begin{subfigure}[H]{0.45\textwidth}
          \centering
          \includegraphics[width=\textwidth, height=5cm, keepaspectratio]{kapitel3/pictures/3d_top.png}
          \caption{Oben} 
          \label{subfig:3d_top}
      \end{subfigure}
      
-     \begin{subfigure}[b]{0.45\textwidth}
+     \begin{subfigure}[H]{0.45\textwidth}
          \centering
          \includegraphics[width=\textwidth, height=5cm, keepaspectratio]{kapitel3/pictures/3d_bottom.png}
          \caption{Unten} 
@@ -849,9 +849,31 @@ zusammen aus:
 Die 5 PCBs sind etwa zwei Wochen nach Bestellungsaufgabe in Berlin eingetroffen. 
 \textbf{Der komplette Designprozess (von Schematic bis PCB-Erhalt) des ersten Prototyps hat also um die 6 Wochen gedauert.}
 
-\subsection{Inbetriebnahme}
+% \subsection{Inbetriebnahme}
+% TODO: maybe do a subsection on testing
 
 \section{Firmware-Entwicklung}
+
+Als Allererstes wird getestet, ob die konzipierte Programmierschnittstelle vom Computer überhaupt erkannt werden kann. 
+Dafür wird das Board mit einem LiPo-Akku versorgt und der STDC14-Stecker mit einem STLinkV3-Minie angeschlossen (blau, links
+in Abbildung \ref{fig:flash_setup}).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth, angle=90]{kapitel3/pictures/flash.jpeg}
+    \caption{Testaufbau Programmierschnittstelle}
+    \label{fig:flash_setup}
+\end{figure}
+
+Mit der Software \texttt{STM32 Cube Programmer} lässt sich eine erfolgreiche Verbindung zwischen PCB und Computer herstellen:
+die Software enumeriert in \textit{Target information} die korrekte MCU (STM32WL55CCUx) und zeigt die verfügbaren Speicherbereiche an.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{kapitel3/pictures/cube_programmer.png}
+    \caption{STM32 Cube Programmer: Verbindung erfolgreich}
+    \label{fig:cube_programmer}
+\end{figure}
 
 % -----------------------------------------------------------------------------
 \section{Software-Architektur}
