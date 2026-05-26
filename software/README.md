@@ -36,6 +36,14 @@ my_zephyr_project/
 
 ### 1. Initialize the workspace
 
+First activate the virtual environment so that west is recognized as a command:
+
+```bash
+source ~/zephyrproject/.venv/bin/activate
+```
+
+Then initialize an empty workspace
+
 ```bash
 cd ~
 west init zephyrproject
