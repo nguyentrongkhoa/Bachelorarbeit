@@ -1,6 +1,6 @@
 #include <zephyr/kernel.h>
 #include <zephyr/drivers/gpio.h>
-#include <zephyr/errno.h> // to use error codes like -ENODEV
+//#include <zephyr/lib/libc/minimal/include/errno.h> // to use error codes like -ENODEV
 
 #include "led.h"
 
@@ -18,7 +18,7 @@ int led_init(void) {
     }
 }
     
-void led_blink(void, int delay_ms) {
+void led_blink(int delay_ms) {
 	while (1) {
 		gpio_pin_toggle_dt(&status_led);
 		k_msleep(delay_ms);

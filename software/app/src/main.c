@@ -8,16 +8,11 @@
 #include <zephyr/drivers/gpio.h>
 #include <zephyr/logging/log.h>
 
-int main(void)
-{
-	static const struct gpio_dt_spec status_led = GPIO_DT_SPEC_GET(DT_ALIAS(led0), gpios);
-	if (!gpio_is_ready_dt(&status_led)) {
-		return -ENODEV;
-	}
-	gpio_pin_configure_dt(&status_led, GPIO_OUTPUT_ACTIVE);
-	while (1) {
-		gpio_pin_toggle_dt(&status_led);
-		k_msleep(1000);
+#include "gps.h"
+
+int main(void) {
+	while(1) {
+		gps_print_raw_data();
 	}
 }
 

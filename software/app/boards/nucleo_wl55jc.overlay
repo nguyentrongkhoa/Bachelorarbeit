@@ -1,6 +1,7 @@
 / {
 	aliases {
 		led0 = &status_led;
+		gps-uart = &usart1;
 	};
 
 	leds {
@@ -13,7 +14,7 @@
 };
 
 /* UART1 configuration for GPS-module */
-&uart1 {
+&usart1 {
 	status = "okay";
 	current-speed = <9600>; /* default setting of L80-R */
 	pinctrl-0 = <&usart1_tx_pa9 &usart1_rx_pa10>;

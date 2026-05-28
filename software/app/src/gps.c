@@ -1,5 +1,6 @@
 #include "gps.h"
 #include <zephyr/drivers/uart.h>
+#include <zephyr/kernel.h>
 
 // Get the UART device for the GPS module using the device tree alias
 static const struct device *uart_dev = DEVICE_DT_GET(DT_ALIAS(gps_uart));
