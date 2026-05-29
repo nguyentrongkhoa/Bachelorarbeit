@@ -2,7 +2,6 @@
 #define GPS_H
 
 #include <zephyr/types.h>
-#include <zephyr/errno.h>
 #include <zephyr/device.h>
 
 int gps_init(void);
