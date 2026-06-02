@@ -2,6 +2,8 @@
 	aliases {
 		led0 = &status_led;
 		gps-uart = &usart1;
+		rf-v1 = &rf_switch_v1;
+        rf-v2 = &rf_switch_v2;
 	};
 
 	leds {
@@ -10,6 +12,20 @@
 			gpios = <&gpioa 0 GPIO_ACTIVE_HIGH>;
 			label = "Status LED on PA0";
 		};
+	};
+
+	rf_switch {
+		compatible = "gpio-leds";
+
+		rf_switch_v1: v1 {
+            gpios = <&gpiob 8 GPIO_ACTIVE_HIGH>;
+            label = "RF Switch V1 Control";
+        };
+
+        rf_switch_v2: v2 {
+            gpios = <&gpiob 12 GPIO_ACTIVE_HIGH>;
+            label = "RF Switch V2 Control";
+        };
 	};
 };
 

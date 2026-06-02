@@ -13,16 +13,24 @@
 
 #include "gps.h"
 #include "led.h"
+#include "lora.h"
 
-LOG_MODULE_REGISTER(module, LOG_LEVEL_DBG);
-// Get the GPIO device for the status LED using the device tree alias
-static const struct gpio_dt_spec status_led = GPIO_DT_SPEC_GET(DT_ALIAS(led0), gpios);
+LOG_MODULE_REGISTER(main, LOG_LEVEL_DBG);
+
+#define MAX_DATA_LEN 5
+char data[MAX_DATA_LEN] = {'h', 'e', 'l', 'l', 'o'};
 
 int main(void) {
 	k_msleep(2000);
+	LOG_DBG("Program started");
+
 	led_init();
 	gps_init();
+	lora_init();
+	rf_switch_init();
+
 	while(1) {
+		lora_tx_test();
 		led_toggle();
 		k_msleep(1000);
 		gps_print_raw_data();

@@ -13,6 +13,7 @@ target_sources(app PRIVATE
   src/main.c 
   src/led.c 
   src/gps.c
+  src/lora.c
 )
 
 zephyr_include_directories(include)
