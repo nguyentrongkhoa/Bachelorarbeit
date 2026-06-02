@@ -1,4 +1,5 @@
 #include "gps.h"
+
 #include <zephyr/drivers/uart.h>
 #include <zephyr/kernel.h>
 
@@ -10,6 +11,7 @@ int gps_init(void) {
         printk("Error: GPS UART device is not ready\n");
         return -ENODEV; // no such device error
     }
+    printk("GPS UART device is ready\n");
     return 0;
 }
 

@@ -6,5 +6,6 @@
 
 int led_init(void);
 void led_blink(int delay_ms);
+void led_toggle(void);
 
 #endif
