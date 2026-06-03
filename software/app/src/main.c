@@ -22,7 +22,7 @@ char data[MAX_DATA_LEN] = {'h', 'e', 'l', 'l', 'o'};
 
 int main(void) {
 	k_msleep(2000);
-	LOG_DBG("Program started");
+	printk("Program started");
 
 	led_init();
 	gps_init();
@@ -32,7 +32,7 @@ int main(void) {
 	while(1) {
 		lora_tx_test();
 		led_toggle();
-		k_msleep(1000);
+		k_msleep(2000);
 		gps_print_raw_data();
 	}
 }

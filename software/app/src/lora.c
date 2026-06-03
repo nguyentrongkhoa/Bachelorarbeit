@@ -27,7 +27,7 @@ int lora_init(void) {
 	config.coding_rate = CR_4_5;
 	config.iq_inverted = false;
 	config.public_network = false;
-	config.tx_power = 4; // dBm
+	config.tx_power = 14; // dBm
 	config.tx = true;
 
 	ret = lora_config(lora_dev, &config);
@@ -44,7 +44,7 @@ void lora_tx_test(void) {
     const struct device *const lora_dev = DEVICE_DT_GET(DEFAULT_RADIO_NODE);
     int ret;
 
-    ret = lora_send(lora_dev, "hello", 5);
+    ret = lora_send(lora_dev, "LoRa ist geil", 13);
     if (ret < 0) {
         LOG_ERR("LoRa send failed");
         return;
