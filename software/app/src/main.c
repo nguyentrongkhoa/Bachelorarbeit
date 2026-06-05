@@ -7,9 +7,12 @@
 #include <zephyr/logging/log.h>
 #include <errno.h>
 #include <zephyr/sys/util.h>
+#include <zephyr/sys/printk.h>
 #include <zephyr/drivers/lora.h>
 #include <zephyr/drivers/sensor.h>
 #include <zephyr/drivers/gpio.h>
+
+#include <stdio.h>
 
 #include "gps.h"
 #include "led.h"
@@ -21,8 +24,7 @@ LOG_MODULE_REGISTER(main, LOG_LEVEL_DBG);
 char data[MAX_DATA_LEN] = {'h', 'e', 'l', 'l', 'o'};
 
 int main(void) {
-	k_msleep(2000);
-	printk("Program started");
+	k_msleep(5000);
 
 	led_init();
 	gps_init();
@@ -31,6 +33,7 @@ int main(void) {
 
 	while(1) {
 		lora_tx_test();
+		printf("Packet sent\n");
 		led_toggle();
 		k_msleep(2000);
 		gps_print_raw_data();
