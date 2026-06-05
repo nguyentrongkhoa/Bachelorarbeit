@@ -246,5 +246,13 @@ eingesetzten Software"=Werkzeuge.
     \end{tabularx}
 \end{table}
 
+Firmware-Entwicklung procedure:
+
+1. Test if board is recognized by stlink using stm32 cube programmer
+2. Flash blinky
+3. Test lora-tx using arbitrary message and capture using RTL-SDR
+4. Read I2C sensor data from BME680 and send lora
+
+
 
 
