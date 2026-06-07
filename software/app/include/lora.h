@@ -1,6 +1,8 @@
 #ifndef CUSTOM_LORA_H
 #define CUSTOM_LORA_H
 
+extern const struct device *const lora_dev;
+
 int lora_init(void);
 int rf_switch_init(void);
 void config_rf_switch_tx(void);
