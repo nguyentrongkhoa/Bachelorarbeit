@@ -24,7 +24,7 @@ int lora_init(void) {
 
 	config.frequency = 868000000;
 	config.bandwidth = BW_125_KHZ;
-	config.datarate = SF_10;
+	config.datarate = SF_9;
 	config.preamble_len = 8;
 	config.coding_rate = CR_4_5;
 	config.iq_inverted = false;
