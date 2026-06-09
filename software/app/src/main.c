@@ -30,13 +30,9 @@ uint8_t dev_eui64[8]; // 8 bytes or 64 bits
 char dev_eui64_str[17]; // 16 characters for EUI-64 in hex + null terminator
 int ret; // return status
 
-#define DEV_EUI  {0x00, 0x80, 0xE1, 0x15, 0x06, 0x92, 0x66, 0x73}
-#define JOIN_EUI {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00} // default for TTN
-#define APP_KEY  {0x3A, 0xC3, 0xC1, 0x95, 0x56, 0x82, 0x07, 0x3B, 0x3C, 0xD0, 0xED, 0xAD, 0xB6, 0xFF, 0x1B, 0xDE} // obtained on TTN when registering a new end device
-uint8_t dev_eui[]  = DEV_EUI;
-uint8_t join_eui[] = JOIN_EUI;
-uint8_t app_key[]  = APP_KEY;
-struct lorawan_join_config join_cfg;
+#define LORAWAN_DEV_EUI  {0x00, 0x80, 0xE1, 0x15, 0x06, 0x92, 0x66, 0x73}
+#define LORAWAN_JOIN_EUI {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00} // default for TTN
+#define LORAWAN_APP_KEY  {0x3A, 0xC3, 0xC1, 0x95, 0x56, 0x82, 0x07, 0x3B, 0x3C, 0xD0, 0xED, 0xAD, 0xB6, 0xFF, 0x1B, 0xDE} // obtained on TTN when registering a new end device
 
 int main(void) {
 	led_init();
@@ -54,6 +50,29 @@ int main(void) {
 		snprintf(&dev_eui64_str[i * 2], 3, "%02X", dev_eui64[i]);
 	}
 	LOG_INF("Device EUI-64: %s\n", dev_eui64_str);
+
+	uint8_t dev_eui[]  = LORAWAN_DEV_EUI;
+	uint8_t join_eui[] = LORAWAN_JOIN_EUI;
+	uint8_t app_key[]  = LORAWAN_APP_KEY;
+	struct lorawan_join_config join_cfg;
+
+	#if defined(CONFIG_LORAWAN_REGION_EU868)
+		/* If more than one region Kconfig is selected, app should set region
+		* before calling lorawan_start()
+		*/
+		ret = lorawan_set_region(LORAWAN_REGION_EU868);
+		if (ret < 0) {
+			LOG_ERR("lorawan_set_region failed: %d", ret);
+			return 0;
+		}
+	#endif
+
+	ret = lorawan_start();
+	if (ret < 0) {
+		LOG_ERR("lorawan_start failed: %d", ret);
+		return 0;
+	}
+
 	// commence OTAA joining process
 	join_cfg.mode = LORAWAN_ACT_OTAA;
 	join_cfg.dev_eui = dev_eui;
@@ -66,7 +85,7 @@ int main(void) {
 	ret = lorawan_join(&join_cfg);
 	if(ret < 0) {
 		LOG_ERR("Failed to join LoRaWAN network");
-		return -1;
+		// return -1;
 	}
 	// done joining network, now data can be sent in the while(1) loop
 
