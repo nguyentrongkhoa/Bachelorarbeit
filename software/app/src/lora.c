@@ -54,26 +54,3 @@ void lora_tx_test(void) {
     LOG_INF("LoRa packet sent");
 }
 
-// Retrieve RF-switch GPIOs from device tree
-static const struct gpio_dt_spec rf_v1 = GPIO_DT_SPEC_GET(DT_ALIAS(rf_v1), gpios);
-static const struct gpio_dt_spec rf_v2 = GPIO_DT_SPEC_GET(DT_ALIAS(rf_v2), gpios);
-
-int rf_switch_init(void) {
-    if (!gpio_is_ready_dt(&rf_v1) || !gpio_is_ready_dt(&rf_v2)) {
-        LOG_ERR("GPIO-Controller for RF-Schalter not ready");
-        return -ENODEV;
-    }
-    return 0;
-}
-
-// RX is the default state, since accidentally transmitting without antenna is harmful for the device
-void config_rf_switch_rx(void) {
-    gpio_pin_set_dt(&rf_v1, 1);
-    gpio_pin_set_dt(&rf_v2, 0);
-}
-
-void config_rf_switch_tx(void) {
-    gpio_pin_set_dt(&rf_v1, 0);
-    gpio_pin_set_dt(&rf_v2, 1);
-}
-

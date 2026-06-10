@@ -41,7 +41,7 @@ int main(void) {
 	led_init();
 	gps_init();
 	// lora_init();
-	rf_switch_init();
+	// rf_switch_init();
 	// ---------------------------
 	// retrieve 64-bit/8-byte DevEUI to connect to TTN
 	ret = hwinfo_get_device_eui64(dev_eui64);
