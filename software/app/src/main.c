@@ -30,9 +30,13 @@ uint8_t dev_eui64[8]; // 8 bytes or 64 bits
 char dev_eui64_str[17]; // 16 characters for EUI-64 in hex + null terminator
 int ret; // return status
 
-#define LORAWAN_DEV_EUI  {0x00, 0x80, 0xE1, 0x15, 0x06, 0x92, 0x66, 0x73}
-#define LORAWAN_JOIN_EUI {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00} // default for TTN
-#define LORAWAN_APP_KEY  {0x3A, 0xC3, 0xC1, 0x95, 0x56, 0x82, 0x07, 0x3B, 0x3C, 0xD0, 0xED, 0xAD, 0xB6, 0xFF, 0x1B, 0xDE} // obtained on TTN when registering a new end device
+// #define LORAWAN_DEV_EUI  {0x00, 0x80, 0xE1, 0x15, 0x06, 0x92, 0x66, 0x73}
+// #define LORAWAN_JOIN_EUI {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00} // default for TTN
+// #define LORAWAN_APP_KEY  {0x3A, 0xC3, 0xC1, 0x95, 0x56, 0x82, 0x07, 0x3B, 0x3C, 0xD0, 0xED, 0xAD, 0xB6, 0xFF, 0x1B, 0xDE} // obtained on TTN when registering a new end device
+
+static uint8_t LORAWAN_DEV_EUI[]  = {0x00, 0x80, 0xE1, 0x15, 0x06, 0x92, 0x66, 0x73};
+static uint8_t LORAWAN_JOIN_EUI[] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+static uint8_t LORAWAN_APP_KEY[]  = {0x3A, 0xC3, 0xC1, 0x95, 0x56, 0x82, 0x07, 0x3B, 0x3C, 0xD0, 0xED, 0xAD, 0xB6, 0xFF, 0x1B, 0xDE};
 
 int main(void) {
 	led_init();
@@ -51,9 +55,9 @@ int main(void) {
 	}
 	LOG_INF("Device EUI-64: %s\n", dev_eui64_str);
 
-	uint8_t dev_eui[]  = LORAWAN_DEV_EUI;
-	uint8_t join_eui[] = LORAWAN_JOIN_EUI;
-	uint8_t app_key[]  = LORAWAN_APP_KEY;
+	// uint8_t dev_eui[]  = LORAWAN_DEV_EUI;
+	// uint8_t join_eui[] = LORAWAN_JOIN_EUI;
+	// uint8_t app_key[]  = LORAWAN_APP_KEY;
 	struct lorawan_join_config join_cfg;
 
 	#if defined(CONFIG_LORAWAN_REGION_EU868)
@@ -75,13 +79,14 @@ int main(void) {
 
 	// commence OTAA joining process
 	join_cfg.mode = LORAWAN_ACT_OTAA;
-	join_cfg.dev_eui = dev_eui;
-	join_cfg.otaa.join_eui = join_eui;
-	join_cfg.otaa.app_key = app_key;
-	join_cfg.otaa.nwk_key = app_key;
+	join_cfg.dev_eui = LORAWAN_DEV_EUI;
+	join_cfg.otaa.join_eui = LORAWAN_JOIN_EUI;
+	join_cfg.otaa.app_key = LORAWAN_APP_KEY;
+	join_cfg.otaa.nwk_key = LORAWAN_APP_KEY;
 	join_cfg.otaa.dev_nonce = 0u;
 
 	LOG_DBG("Attempting to join network using OTAA");
+	config_rf_switch_tx();
 	ret = lorawan_join(&join_cfg);
 	if(ret < 0) {
 		LOG_ERR("Failed to join LoRaWAN network");
