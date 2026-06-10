@@ -55,6 +55,10 @@ int main(void) {
 	}
 	LOG_INF("Device EUI-64: %s\n", dev_eui64_str);
 	// -------------------------------------------------------------
+	uint8_t dev_eui[]  = LORAWAN_DEV_EUI;
+	uint8_t join_eui[] = LORAWAN_JOIN_EUI;
+	uint8_t app_key[]  = LORAWAN_APP_KEY;
+	struct lorawan_join_config join_cfg;
 
 	// START: BME680
 	const struct device *const dev = DEVICE_DT_GET_ANY(bosch_bme680);
