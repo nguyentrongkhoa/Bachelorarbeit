@@ -10,7 +10,7 @@ LOG_MODULE_REGISTER(lora_module, LOG_LEVEL_DBG);
 #define DEFAULT_RADIO_NODE DT_ALIAS(lora0)
 BUILD_ASSERT(DT_NODE_HAS_STATUS_OKAY(DEFAULT_RADIO_NODE), "No default LoRa radio specified in DT");
 
-const struct device *const lora_dev = DEVICE_DT_GET(DEFAULT_RADIO_NODE);
+extern const struct device *const lora_dev = DEVICE_DT_GET(DEFAULT_RADIO_NODE);
 
 int lora_init(void) {
 	// lora_dev = DEVICE_DT_GET(DEFAULT_RADIO_NODE);

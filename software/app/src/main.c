@@ -40,7 +40,7 @@ int main(void) {
 	// ---------------------------
 	led_init();
 	gps_init();
-	lora_init();
+	// lora_init();
 	rf_switch_init();
 	// ---------------------------
 	// retrieve 64-bit/8-byte DevEUI to connect to TTN
@@ -59,6 +59,12 @@ int main(void) {
 	uint8_t join_eui[] = LORAWAN_JOIN_EUI;
 	uint8_t app_key[]  = LORAWAN_APP_KEY;
 	struct lorawan_join_config join_cfg;
+
+	// init LoRa module
+	if (!device_is_ready(lora_dev)) {
+		LOG_ERR("%s: device not ready.", lora_dev->name);
+		return 0;
+	}
 
 	#if defined(CONFIG_LORAWAN_REGION_EU868)
 		/* If more than one region Kconfig is selected, app should set region
