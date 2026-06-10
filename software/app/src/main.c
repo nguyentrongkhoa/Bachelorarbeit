@@ -71,6 +71,12 @@ int main(void) {
 		}
 	#endif
 
+	ret = lorawan_start();
+	if (ret < 0) {
+		LOG_ERR("lorawan_start failed: %d", ret);
+		return -1;
+	}
+
 	// START: BME680
 	const struct device *const dev = DEVICE_DT_GET_ANY(bosch_bme680);
 
