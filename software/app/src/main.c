@@ -60,6 +60,17 @@ int main(void) {
 	uint8_t app_key[]  = LORAWAN_APP_KEY;
 	struct lorawan_join_config join_cfg;
 
+	#if defined(CONFIG_LORAWAN_REGION_EU868)
+		/* If more than one region Kconfig is selected, app should set region
+		* before calling lorawan_start()
+		*/
+		ret = lorawan_set_region(LORAWAN_REGION_EU868);
+		if (ret < 0) {
+			LOG_ERR("lorawan_set_region failed: %d", ret);
+			return 0;
+		}
+	#endif
+
 	// START: BME680
 	const struct device *const dev = DEVICE_DT_GET_ANY(bosch_bme680);
 
