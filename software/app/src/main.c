@@ -80,8 +80,24 @@ int main(void) {
 	ret = lorawan_start();
 	if (ret < 0) {
 		LOG_ERR("lorawan_start failed: %d", ret);
-		return -1;
+		return 0;
 	}
+
+	// commence OTAA joining process
+	join_cfg.mode = LORAWAN_ACT_OTAA;
+	join_cfg.dev_eui = dev_eui;
+	join_cfg.otaa.join_eui = join_eui;
+	join_cfg.otaa.app_key = app_key;
+	join_cfg.otaa.nwk_key = app_key;
+	join_cfg.otaa.dev_nonce = 0u;
+
+	LOG_DBG("Attempting to join network using OTAA");
+	ret = lorawan_join(&join_cfg);
+	if(ret < 0) {
+		LOG_ERR("Failed to join LoRaWAN network");
+		// return -1;
+	}
+	// done joining network, now data can be sent in the while(1) loop
 
 	// START: BME680
 	const struct device *const dev = DEVICE_DT_GET_ANY(bosch_bme680);
