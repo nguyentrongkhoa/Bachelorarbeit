@@ -47,9 +47,9 @@
 
     lora: radio@0 {
         status = "okay";
-        rx-enable-gpios = <&gpiob 8 GPIO_ACTIVE_HIGH>; 
-        tx-enable-gpios = <&gpiob 12 GPIO_ACTIVE_HIGH>; 
-        dio3-tcxo-voltage = <SX126X_DIO3_TCXO_1V7>;
+        tx-enable-gpios = <&gpiob 8 GPIO_ACTIVE_HIGH>; 
+        rx-enable-gpios = <&gpiob 12 GPIO_ACTIVE_HIGH>; 
+        dio3-tcxo-voltage = <SX126X_DIO3_TCXO_3V3>;
         tcxo-power-startup-delay-ms = <5>;
         power-amplifier-output = "rfo-lp";
         rfo-lp-max-power = <15>;
