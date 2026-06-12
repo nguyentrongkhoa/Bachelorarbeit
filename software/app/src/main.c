@@ -13,9 +13,26 @@
  */
 
 // START sample code
-#include <zephyr/device.h>
-#include <zephyr/lorawan/lorawan.h>
 #include <zephyr/kernel.h>
+#include <zephyr/logging/log.h>
+#include <zephyr/sys/util.h>
+#include <zephyr/sys/printk.h>
+
+#include <zephyr/drivers/lora.h>
+#include <zephyr/drivers/sensor.h>
+#include <zephyr/drivers/gpio.h>
+#include <zephyr/drivers/hwinfo.h>
+
+#include <zephyr/lorawan/lorawan.h>
+
+#include <stdio.h>
+#include <string.h>
+#include <stdint.h>
+#include <errno.h>
+
+#include "gps.h"
+#include "led.h"
+#include "lora.h"
 
 /* Customize based on network configuration */
 #define LORAWAN_DEV_EUI	 { 0x00, 0x80, 0xE1, 0x15, 0x06, 0x92, 0x66, 0x73 }
