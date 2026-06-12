@@ -147,37 +147,11 @@ int main(void)
 }
 // END sample code
 
-#include <zephyr/kernel.h>
-#include <zephyr/logging/log.h>
-#include <errno.h>
-#include <zephyr/sys/util.h>
-#include <zephyr/sys/printk.h>
-
-#include <zephyr/drivers/lora.h>
-#include <zephyr/drivers/sensor.h>
-#include <zephyr/drivers/gpio.h>
-#include <zephyr/drivers/hwinfo.h>
-
-#include <zephyr/lorawan/lorawan.h>
-
-#include <stdio.h>
-#include <string.h>
-#include <stdint.h>
-
-#include "gps.h"
-#include "led.h"
-#include "lora.h"
-
 LOG_MODULE_REGISTER(main, LOG_LEVEL_DBG);
 
 uint8_t dev_eui64[8]; // 8 bytes or 64 bits
 char dev_eui64_str[17]; // 16 characters for EUI-64 in hex + null terminator
 int ret; // return status
-
-#define LORAWAN_DEV_EUI  {0x00, 0x80, 0xE1, 0x15, 0x06, 0x92, 0x66, 0x73}
-#define LORAWAN_JOIN_EUI {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00} // default for TTN
-#define LORAWAN_APP_KEY  {0x3A, 0xC3, 0xC1, 0x95, 0x56, 0x82, 0x07, 0x3B, \ 
-	                      0x3C, 0xD0, 0xED, 0xAD, 0xB6, 0xFF, 0x1B, 0xDE} // obtained on TTN when registering a new end device
 
 int main(void) {
 	k_msleep(5000);
