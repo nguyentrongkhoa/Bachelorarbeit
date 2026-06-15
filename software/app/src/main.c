@@ -5,6 +5,7 @@
 // START sample code
 #include <zephyr/kernel.h>
 #include <zephyr/logging/log.h>
+#include <zephyr/settings/settings.h>
 #include <zephyr/sys/util.h>
 #include <zephyr/sys/printk.h>
 
@@ -37,9 +38,31 @@ LOG_MODULE_REGISTER(lorawan_class_a);
 
 uint8_t dev_eui64[8]; // 8 bytes or 64 bits
 char dev_eui64_str[17]; // 16 characters for EUI-64 in hex + null terminator
+static uint8_t ttn_dev_nonce = 0u;
 int ret; // return status
 
-char data[] = {'h', 'e', 'l', 'l', 'o', 'w', 'o', 'r', 'l', 'd'};
+// this function will be called by zephyr when data is being read
+static int lorawan_settings_set(const char *name, size_t len, settings_read_cb read_cb, void *cb_arg)
+{
+    const char *next;
+	// check if the path "devnonce" already exists (the prefix "lorawan/" is filtered by the handler)
+	// if yes, read the data from the NVS into the variable "ttn_dev_nonce" 
+    if (settings_name_steq(name, "devnonce", &next) && !next) {
+        if (len == sizeof(ttn_dev_nonce)) {
+            // Daten physisch aus dem NVS in die Variable lesen
+            read_cb(cb_arg, &ttn_dev_nonce, sizeof(ttn_dev_nonce));
+            LOG_INF("DevNonce successfully loaded: %d", ttn_dev_nonce);
+            return 0;
+        }
+    }
+    return -ENOENT;
+}
+
+// link the path lorawan/ to the callback function above
+static struct settings_handler lorawan_settings_handler = {
+    .name = "lorawan",
+    .h_set = lorawan_settings_set
+};
 
 static void dl_callback(uint8_t port, uint8_t flags, int16_t rssi, int8_t snr, uint8_t len, const uint8_t *hex_data)
 {
@@ -65,6 +88,7 @@ int main(void)
 
 	// START LoRaWAN setup block
 	// ---------------------------------------------------------------
+
 	// retrieve 64-bit/8-byte DevEUI to connect to TTN
 	ret = hwinfo_get_device_eui64(dev_eui64);
 	if (ret < 0) {
@@ -76,6 +100,13 @@ int main(void)
 		snprintf(&dev_eui64_str[i * 2], 3, "%02X", dev_eui64[i]);
 	}
 	LOG_INF("Device EUI-64: %s\n", dev_eui64_str);
+
+	// load settings to retrieve dev_nonce from NVS (if it exists)
+	ret = settings_subsys_init();
+	ret = settings_register(&lorawan_settings_handler);
+	// this will call the callback function "lorawan_settings_set" 
+	// which will load the dev_nonce from NVS into the variable "ttn_dev_nonce"
+	ret = settings_load(); 
 
 	const struct device *lora_dev;
 	struct lorawan_join_config join_cfg;
@@ -119,7 +150,7 @@ int main(void)
 	join_cfg.otaa.join_eui = join_eui;
 	join_cfg.otaa.app_key = app_key;
 	join_cfg.otaa.nwk_key = app_key;
-	join_cfg.otaa.dev_nonce = 2u; // TODO: manually increment this each time the dev wants to join the network
+	join_cfg.otaa.dev_nonce = ttn_dev_nonce;
 
 	LOG_INF("Joining network over OTAA");
 	ret = lorawan_join(&join_cfg);
@@ -132,6 +163,10 @@ int main(void)
 		led_toggle();
 		k_msleep(100); // ms
 	}
+	// increment dev_nonce and save back to NVS for subsequent join attempts
+	ttn_dev_nonce++;
+	ret = settings_save_one("lorawan/devnonce", &ttn_dev_nonce, sizeof(ttn_dev_nonce)); 
+
 	ret = lorawan_send(2, "Start session", 13, LORAWAN_MSG_CONFIRMED);
 	// END LoRaWAN setup block
 	// ------------------------------------------------------
