@@ -87,12 +87,15 @@ static void lorwan_datarate_changed(enum lorawan_datarate dr)
 // copied from sample code: https://github.com/zephyrproject-rtos/zephyr/blob/main/samples/drivers/gnss/src/main.c
 #define GNSS_MODEM DEVICE_DT_GET(DT_ALIAS(gnss))
 
+K_SEM_DEFINE(gps_fix_sem, 0, 1); // start=0, max=1
+
 static void gnss_data_cb(const struct device *dev, const struct gnss_data *data)
 {
 	uint64_t timepulse_ns;
 	k_ticks_t timepulse;
 	// if there is a 2D or 3D fix, i.e if PPS LED blinks
 	if (data->info.fix_status != GNSS_FIX_STATUS_NO_FIX) {
+		k_sem_give(&gps_fix_sem); // signal that main() can start
 		if (gnss_get_latest_timepulse(dev, &timepulse) == 0) {
 			timepulse_ns = k_ticks_to_ns_near64(timepulse);
 			printf("Got a fix (type: %d) @ %lld ns\n", data->info.fix_status,
@@ -108,7 +111,7 @@ static void gnss_data_cb(const struct device *dev, const struct gnss_data *data)
 		char gps_string_payload[32];
 		snprintk(gps_string_payload, sizeof(gps_string_payload), "lat: %.9f, long: %.6f", lat, lon);
 
-		lorawan_send(2, gps_string_payload, strlen(gps_string_payload), LORAWAN_MSG_UNCONFIRMED);
+		// lorawan_send(2, gps_string_payload, strlen(gps_string_payload), LORAWAN_MSG_UNCONFIRMED);
 	}
 }
 GNSS_DATA_CALLBACK_DEFINE(GNSS_MODEM, gnss_data_cb);
@@ -209,6 +212,8 @@ int main(void)
 	join_cfg.otaa.nwk_key = app_key;
 	join_cfg.otaa.dev_nonce = ttn_dev_nonce;
 
+	// only start joining network after GPS has been fixed to avoid RF interference 
+	k_sem_take(&gps_fix_sem, K_FOREVER); 
 	LOG_INF("Joining network over OTAA");
 	ret = lorawan_join(&join_cfg);
 	if (ret < 0) {
