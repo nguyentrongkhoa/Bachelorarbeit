@@ -12,6 +12,7 @@
 #include <zephyr/drivers/lora.h>
 #include <zephyr/drivers/sensor.h>
 #include <zephyr/drivers/gpio.h>
+#include <zephyr/drivers/gnss.h> // for GPS
 #include <zephyr/drivers/hwinfo.h>
 
 #include <zephyr/lorawan/lorawan.h>
@@ -80,6 +81,47 @@ static void lorwan_datarate_changed(enum lorawan_datarate dr)
 	lorawan_get_payload_sizes(&unused, &max_size);
 	LOG_INF("New Datarate: DR_%d, Max Payload %d", dr, max_size);
 }
+
+// --------------------------------------------------------------
+// START GPS
+#define GNSS_MODEM DEVICE_DT_GET(DT_ALIAS(gnss))
+
+static void gnss_data_cb(const struct device *dev, const struct gnss_data *data)
+{
+	uint64_t timepulse_ns;
+	k_ticks_t timepulse;
+
+	if (data->info.fix_status != GNSS_FIX_STATUS_NO_FIX) {
+		if (gnss_get_latest_timepulse(dev, &timepulse) == 0) {
+			timepulse_ns = k_ticks_to_ns_near64(timepulse);
+			printf("Got a fix (type: %d) @ %lld ns\n", data->info.fix_status,
+			       timepulse_ns);
+		} else {
+			printf("Got a fix (type: %d)\n", data->info.fix_status);
+		}
+	}
+}
+GNSS_DATA_CALLBACK_DEFINE(GNSS_MODEM, gnss_data_cb);
+
+#if CONFIG_GNSS_SATELLITES
+static void gnss_satellites_cb(const struct device *dev, const struct gnss_satellite *satellites,
+			       uint16_t size)
+{
+	unsigned int tracked_count = 0;
+	unsigned int corrected_count = 0;
+
+	for (unsigned int i = 0; i != size; ++i) {
+		tracked_count += satellites[i].is_tracked;
+		corrected_count += satellites[i].is_corrected;
+	}
+	printf("%u satellite%s reported (of which %u tracked, of which %u has RTK corrections)!\n",
+	       size, size > 1 ? "s" : "", tracked_count, corrected_count);
+}
+#endif
+GNSS_SATELLITES_CALLBACK_DEFINE(GNSS_MODEM, gnss_satellites_cb);
+// END GPS
+// ---------------------------------------------------------------
+
 
 int main(void)
 {
