@@ -10,7 +10,7 @@ LOG_MODULE_REGISTER(lora_module, LOG_LEVEL_DBG);
 #define DEFAULT_RADIO_NODE DT_ALIAS(lora0)
 BUILD_ASSERT(DT_NODE_HAS_STATUS_OKAY(DEFAULT_RADIO_NODE), "No default LoRa radio specified in DT");
 
-const struct device *const lora_dev = DEVICE_DT_GET(DEFAULT_RADIO_NODE);
+extern const struct device *const lora_dev = DEVICE_DT_GET(DEFAULT_RADIO_NODE);
 
 int lora_init(void) {
 	// lora_dev = DEVICE_DT_GET(DEFAULT_RADIO_NODE);
@@ -52,28 +52,5 @@ void lora_tx_test(void) {
         return;
     }
     LOG_INF("LoRa packet sent");
-}
-
-// Retrieve RF-switch GPIOs from device tree
-static const struct gpio_dt_spec rf_v1 = GPIO_DT_SPEC_GET(DT_ALIAS(rf_v1), gpios);
-static const struct gpio_dt_spec rf_v2 = GPIO_DT_SPEC_GET(DT_ALIAS(rf_v2), gpios);
-
-int rf_switch_init(void) {
-    if (!gpio_is_ready_dt(&rf_v1) || !gpio_is_ready_dt(&rf_v2)) {
-        LOG_ERR("GPIO-Controller for RF-Schalter not ready");
-        return -ENODEV;
-    }
-    return 0;
-}
-
-// RX is the default state, since accidentally transmitting without antenna is harmful for the device
-void config_rf_switch_rx(void) {
-    gpio_pin_set_dt(&rf_v1, 1);
-    gpio_pin_set_dt(&rf_v2, 0);
-}
-
-void config_rf_switch_tx(void) {
-    gpio_pin_set_dt(&rf_v1, 0);
-    gpio_pin_set_dt(&rf_v2, 1);
 }
 

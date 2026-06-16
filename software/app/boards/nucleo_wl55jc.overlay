@@ -2,9 +2,9 @@
 	aliases {
 		led0 = &status_led;
 		gps-uart = &usart1;
-		rf-v1 = &rf_switch_v1;
-        rf-v2 = &rf_switch_v2;
 		sensor-i2c = &i2c1;
+		lora0 = &lora;
+        gnss = &quectel;
 	};
 
 	chosen {
@@ -19,20 +19,6 @@
 			label = "Status LED on PA0";
 		};
 	};
-
-	rf_switch {
-		compatible = "gpio-leds";
-
-		rf_switch_v1: v1 {
-            gpios = <&gpiob 8 GPIO_ACTIVE_HIGH>;
-            label = "RF Switch V1 Control";
-        };
-
-        rf_switch_v2: v2 {
-            gpios = <&gpiob 12 GPIO_ACTIVE_HIGH>;
-            label = "RF Switch V2 Control";
-        };
-	};
 };
 
 /* UART1 configuration for GPS-module */
@@ -41,6 +27,12 @@
 	current-speed = <9600>; /* default setting of L80-R */
 	pinctrl-0 = <&usart1_tx_pa9 &usart1_rx_pa10>;
 	pinctrl-names = "default";
+
+    quectel: l80_r {
+        compatible = "gnss-nmea-generic";
+        label = "l80_r";
+        status = "okay";
+    };
 };
 
 /* I2C1 configuration for gas sensors */
@@ -54,5 +46,36 @@
         compatible = "bosch,bme680";
         reg = <0x76>;                            
         label = "BME680_ENVIRONMENT_SENSOR";
+    };
+};
+
+&subghzspi {
+    status = "okay";
+
+    lora: radio@0 {
+        status = "okay";
+        tx-enable-gpios = <&gpiob 8 GPIO_ACTIVE_HIGH>; 
+        rx-enable-gpios = <&gpiob 12 GPIO_ACTIVE_HIGH>; 
+        dio3-tcxo-voltage = <SX126X_DIO3_TCXO_3V3>;
+        tcxo-power-startup-delay-ms = <5>;
+        power-amplifier-output = "rfo-lp";
+        rfo-lp-max-power = <15>;
+        rfo-hp-max-power = <22>;
+    };
+};
+
+&flash0 {
+    partitions {
+        compatible = "fixed-partitions";
+        #address-cells = <1>;
+        #size-cells = <1>;
+
+        /* 256KB total flash on STM32WL55
+         * Leave room for bootloader if using MCUboot,
+         * otherwise use the end of flash for settings */
+        nvs_partition: partition@3e000 {
+            label = "storage";
+            reg = <0x0003e000 0x00002000>; /* 8KB at end of flash */
+        };
     };
 };
