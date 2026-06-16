@@ -83,14 +83,15 @@ static void lorwan_datarate_changed(enum lorawan_datarate dr)
 }
 
 // --------------------------------------------------------------
-// START GPS
+// START GPS 
+// copied from sample code: https://github.com/zephyrproject-rtos/zephyr/blob/main/samples/drivers/gnss/src/main.c
 #define GNSS_MODEM DEVICE_DT_GET(DT_ALIAS(gnss))
 
 static void gnss_data_cb(const struct device *dev, const struct gnss_data *data)
 {
 	uint64_t timepulse_ns;
 	k_ticks_t timepulse;
-
+	// if there is a 2D or 3D fix, i.e if PPS LED blinks
 	if (data->info.fix_status != GNSS_FIX_STATUS_NO_FIX) {
 		if (gnss_get_latest_timepulse(dev, &timepulse) == 0) {
 			timepulse_ns = k_ticks_to_ns_near64(timepulse);
@@ -99,6 +100,15 @@ static void gnss_data_cb(const struct device *dev, const struct gnss_data *data)
 		} else {
 			printf("Got a fix (type: %d)\n", data->info.fix_status);
 		}
+		// read longitude and latitude (in nanodegrees, ranging from 0 to +-180E9), hence int64_t
+		int64_t lat = data->nav_data.latitude;
+		int64_t lon = data->nav_data.longitude;
+		int32_t alt = data->nav_data.altitude; // in mm above sea level
+
+		char gps_string_payload[32];
+		snprintk(gps_string_payload, sizeof(gps_string_payload), "lat: %.9f, long: %.6f", lat, lon);
+
+		lorawan_send(2, gps_string_payload, strlen(gps_string_payload), LORAWAN_MSG_UNCONFIRMED);
 	}
 }
 GNSS_DATA_CALLBACK_DEFINE(GNSS_MODEM, gnss_data_cb);
@@ -119,6 +129,11 @@ static void gnss_satellites_cb(const struct device *dev, const struct gnss_satel
 }
 #endif
 GNSS_SATELLITES_CALLBACK_DEFINE(GNSS_MODEM, gnss_satellites_cb);
+
+#define GNSS_SYSTEMS_PRINTF(define, supported, enabled) \
+	printf("\t%20s: Supported: %3s Enabled: %3s\n",     \
+	       STRINGIFY(define), (supported & define) ? "Yes" : "No", \
+			 (enabled & define) ? "Yes" : "No");
 // END GPS
 // ---------------------------------------------------------------
 
@@ -269,5 +284,4 @@ int main(void)
 		}
 	}
 }
-// END sample code
 
