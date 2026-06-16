@@ -4,6 +4,7 @@
 		gps-uart = &usart1;
 		sensor-i2c = &i2c1;
 		lora0 = &lora;
+        gnss = &quectel;
 	};
 
 	chosen {
@@ -26,6 +27,12 @@
 	current-speed = <9600>; /* default setting of L80-R */
 	pinctrl-0 = <&usart1_tx_pa9 &usart1_rx_pa10>;
 	pinctrl-names = "default";
+
+    quectel: l80_r {
+        compatible = "gnss-nmea-generic";
+        label = "l80_r";
+        status = "okay";
+    };
 };
 
 /* I2C1 configuration for gas sensors */

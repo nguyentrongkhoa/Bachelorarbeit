@@ -12,6 +12,7 @@
 #include <zephyr/drivers/lora.h>
 #include <zephyr/drivers/sensor.h>
 #include <zephyr/drivers/gpio.h>
+#include <zephyr/drivers/gnss.h> // for GPS
 #include <zephyr/drivers/hwinfo.h>
 
 #include <zephyr/lorawan/lorawan.h>
@@ -80,6 +81,65 @@ static void lorwan_datarate_changed(enum lorawan_datarate dr)
 	lorawan_get_payload_sizes(&unused, &max_size);
 	LOG_INF("New Datarate: DR_%d, Max Payload %d", dr, max_size);
 }
+
+// --------------------------------------------------------------
+// START GPS 
+// copied from sample code: https://github.com/zephyrproject-rtos/zephyr/blob/main/samples/drivers/gnss/src/main.c
+#define GNSS_MODEM DEVICE_DT_GET(DT_ALIAS(gnss))
+
+K_SEM_DEFINE(gps_fix_sem, 0, 1); // start=0, max=1
+
+static void gnss_data_cb(const struct device *dev, const struct gnss_data *data)
+{
+	uint64_t timepulse_ns;
+	k_ticks_t timepulse;
+	// if there is a 2D or 3D fix, i.e if PPS LED blinks
+	if (data->info.fix_status != GNSS_FIX_STATUS_NO_FIX) {
+		k_sem_give(&gps_fix_sem); // signal that main() can start
+		if (gnss_get_latest_timepulse(dev, &timepulse) == 0) {
+			timepulse_ns = k_ticks_to_ns_near64(timepulse);
+			printf("Got a fix (type: %d) @ %lld ns\n", data->info.fix_status,
+			       timepulse_ns);
+		} else {
+			printf("Got a fix (type: %d)\n", data->info.fix_status);
+		}
+		// read longitude and latitude (in nanodegrees, ranging from 0 to +-180E9), hence int64_t
+		int64_t lat = data->nav_data.latitude;
+		int64_t lon = data->nav_data.longitude;
+		int32_t alt = data->nav_data.altitude; // in mm above sea level
+
+		char gps_string_payload[32];
+		snprintk(gps_string_payload, sizeof(gps_string_payload), "lat: %.9f, long: %.6f", lat, lon);
+
+		// lorawan_send(2, gps_string_payload, strlen(gps_string_payload), LORAWAN_MSG_UNCONFIRMED);
+	}
+}
+GNSS_DATA_CALLBACK_DEFINE(GNSS_MODEM, gnss_data_cb);
+
+#if CONFIG_GNSS_SATELLITES
+static void gnss_satellites_cb(const struct device *dev, const struct gnss_satellite *satellites,
+			       uint16_t size)
+{
+	unsigned int tracked_count = 0;
+	unsigned int corrected_count = 0;
+
+	for (unsigned int i = 0; i != size; ++i) {
+		tracked_count += satellites[i].is_tracked;
+		corrected_count += satellites[i].is_corrected;
+	}
+	printf("%u satellite%s reported (of which %u tracked, of which %u has RTK corrections)!\n",
+	       size, size > 1 ? "s" : "", tracked_count, corrected_count);
+}
+#endif
+GNSS_SATELLITES_CALLBACK_DEFINE(GNSS_MODEM, gnss_satellites_cb);
+
+#define GNSS_SYSTEMS_PRINTF(define, supported, enabled) \
+	printf("\t%20s: Supported: %3s Enabled: %3s\n",     \
+	       STRINGIFY(define), (supported & define) ? "Yes" : "No", \
+			 (enabled & define) ? "Yes" : "No");
+// END GPS
+// ---------------------------------------------------------------
+
 
 int main(void)
 {
@@ -152,6 +212,8 @@ int main(void)
 	join_cfg.otaa.nwk_key = app_key;
 	join_cfg.otaa.dev_nonce = ttn_dev_nonce;
 
+	// only start joining network after GPS has been fixed to avoid RF interference 
+	k_sem_take(&gps_fix_sem, K_FOREVER); 
 	LOG_INF("Joining network over OTAA");
 	ret = lorawan_join(&join_cfg);
 	if (ret < 0) {
@@ -227,5 +289,4 @@ int main(void)
 		}
 	}
 }
-// END sample code
 
