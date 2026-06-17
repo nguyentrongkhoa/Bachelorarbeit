@@ -1,0 +1,641 @@
+[
+  {
+    "end_device_ids": {
+      "device_id": "rev-a-1",
+      "application_ids": {
+        "application_id": "descap-lorawan"
+      },
+      "dev_eui": "0080E11506926673",
+      "dev_addr": "260B78C5"
+    },
+    "received_at": "2026-06-16T19:27:46.537561321Z",
+    "uplink_message": {
+      "f_port": 2,
+      "f_cnt": 1,
+      "frm_payload": "U3RhcnQgc2Vzc2lvbg==",
+      "decoded_payload": {
+        "temperature": "Start session"
+      },
+      "rx_metadata": [
+        {
+          "gateway_ids": {
+            "gateway_id": "zlb-ttn-in-02",
+            "eui": "AC1F09FFFE1F2E9F"
+          },
+          "time": "2026-06-16T19:27:46.349792957Z",
+          "timestamp": 2916155008,
+          "rssi": -136,
+          "channel_rssi": -136,
+          "snr": -21.25,
+          "received_at": "2026-06-16T19:27:46.317645187Z"
+        }
+      ],
+      "settings": {
+        "data_rate": {
+          "lora": {
+            "bandwidth": 125000,
+            "spreading_factor": 12,
+            "coding_rate": "4/5"
+          }
+        },
+        "frequency": "867700000",
+        "timestamp": 2916155008,
+        "time": "2026-06-16T19:27:46.349792957Z"
+      },
+      "received_at": "2026-06-16T19:27:46.334328507Z",
+      "confirmed": true,
+      "consumed_airtime": "1.646592s",
+      "locations": {
+        "user": {
+          "latitude": 52.51334497665632,
+          "longitude": 13.403619137526483,
+          "altitude": 12,
+          "source": "SOURCE_REGISTRY"
+        }
+      },
+      "network_ids": {
+        "net_id": "000013",
+        "ns_id": "EC656E0000000181",
+        "tenant_id": "ttn",
+        "cluster_id": "eu1",
+        "cluster_address": "eu1.cloud.thethings.network"
+      }
+    }
+  },
+  {
+    "end_device_ids": {
+      "device_id": "rev-a-1",
+      "application_ids": {
+        "application_id": "descap-lorawan"
+      },
+      "dev_eui": "0080E11506926673",
+      "dev_addr": "260B78C5"
+    },
+    "received_at": "2026-06-16T19:28:05.542290353Z",
+    "uplink_message": {
+      "f_port": 2,
+      "f_cnt": 3,
+      "frm_payload": "dGVzdA==",
+      "decoded_payload": {
+        "temperature": "test"
+      },
+      "rx_metadata": [
+        {
+          "gateway_ids": {
+            "gateway_id": "zlb-ttn-in-02",
+            "eui": "AC1F09FFFE1F2E9F"
+          },
+          "time": "2026-06-16T19:28:05.351212024Z",
+          "timestamp": 2935200540,
+          "rssi": -131,
+          "channel_rssi": -131,
+          "snr": -16.5,
+          "received_at": "2026-06-16T19:28:05.319090481Z"
+        }
+      ],
+      "settings": {
+        "data_rate": {
+          "lora": {
+            "bandwidth": 125000,
+            "spreading_factor": 12,
+            "coding_rate": "4/5"
+          }
+        },
+        "frequency": "868500000",
+        "timestamp": 2935200540,
+        "time": "2026-06-16T19:28:05.351212024Z"
+      },
+      "received_at": "2026-06-16T19:28:05.335997237Z",
+      "confirmed": true,
+      "consumed_airtime": "1.318912s",
+      "packet_error_rate": 0.33333334,
+      "locations": {
+        "user": {
+          "latitude": 52.51334497665632,
+          "longitude": 13.403619137526483,
+          "altitude": 12,
+          "source": "SOURCE_REGISTRY"
+        }
+      },
+      "network_ids": {
+        "net_id": "000013",
+        "ns_id": "EC656E0000000181",
+        "tenant_id": "ttn",
+        "cluster_id": "eu1",
+        "cluster_address": "eu1.cloud.thethings.network"
+      }
+    }
+  },
+  {
+    "end_device_ids": {
+      "device_id": "rev-a-1",
+      "application_ids": {
+        "application_id": "descap-lorawan"
+      },
+      "dev_eui": "0080E11506926673",
+      "dev_addr": "260B78C5"
+    },
+    "received_at": "2026-06-16T19:28:15.047333821Z",
+    "uplink_message": {
+      "f_port": 2,
+      "f_cnt": 4,
+      "frm_payload": "dGVzdA==",
+      "decoded_payload": {
+        "temperature": "test"
+      },
+      "rx_metadata": [
+        {
+          "gateway_ids": {
+            "gateway_id": "zlb-ttn-in-02",
+            "eui": "AC1F09FFFE1F2E9F"
+          },
+          "time": "2026-06-16T19:28:14.858431100Z",
+          "timestamp": 2944707708,
+          "rssi": -133,
+          "channel_rssi": -133,
+          "snr": -18.25,
+          "received_at": "2026-06-16T19:28:14.826318930Z"
+        }
+      ],
+      "settings": {
+        "data_rate": {
+          "lora": {
+            "bandwidth": 125000,
+            "spreading_factor": 12,
+            "coding_rate": "4/5"
+          }
+        },
+        "frequency": "867900000",
+        "timestamp": 2944707708,
+        "time": "2026-06-16T19:28:14.858431100Z"
+      },
+      "received_at": "2026-06-16T19:28:14.843096314Z",
+      "confirmed": true,
+      "consumed_airtime": "1.318912s",
+      "packet_error_rate": 0.25,
+      "locations": {
+        "user": {
+          "latitude": 52.51334497665632,
+          "longitude": 13.403619137526483,
+          "altitude": 12,
+          "source": "SOURCE_REGISTRY"
+        }
+      },
+      "network_ids": {
+        "net_id": "000013",
+        "ns_id": "EC656E0000000181",
+        "tenant_id": "ttn",
+        "cluster_id": "eu1",
+        "cluster_address": "eu1.cloud.thethings.network"
+      }
+    }
+  },
+  {
+    "end_device_ids": {
+      "device_id": "rev-a-1",
+      "application_ids": {
+        "application_id": "descap-lorawan"
+      },
+      "dev_eui": "0080E11506926673",
+      "dev_addr": "260B78C5"
+    },
+    "received_at": "2026-06-16T19:28:48.083727572Z",
+    "uplink_message": {
+      "f_port": 2,
+      "f_cnt": 7,
+      "frm_payload": "dGVzdA==",
+      "decoded_payload": {
+        "temperature": "test"
+      },
+      "rx_metadata": [
+        {
+          "gateway_ids": {
+            "gateway_id": "zlb-ttn-in-02",
+            "eui": "AC1F09FFFE1F2E9F"
+          },
+          "time": "2026-06-16T19:28:47.895925045Z",
+          "timestamp": 2977737095,
+          "rssi": -131,
+          "channel_rssi": -131,
+          "snr": -16.5,
+          "received_at": "2026-06-16T19:28:47.863729483Z"
+        }
+      ],
+      "settings": {
+        "data_rate": {
+          "lora": {
+            "bandwidth": 125000,
+            "spreading_factor": 12,
+            "coding_rate": "4/5"
+          }
+        },
+        "frequency": "868300000",
+        "timestamp": 2977737095,
+        "time": "2026-06-16T19:28:47.895925045Z"
+      },
+      "received_at": "2026-06-16T19:28:47.880456769Z",
+      "confirmed": true,
+      "consumed_airtime": "1.318912s",
+      "packet_error_rate": 0.42857143,
+      "locations": {
+        "user": {
+          "latitude": 52.51334497665632,
+          "longitude": 13.403619137526483,
+          "altitude": 12,
+          "source": "SOURCE_REGISTRY"
+        }
+      },
+      "network_ids": {
+        "net_id": "000013",
+        "ns_id": "EC656E0000000181",
+        "tenant_id": "ttn",
+        "cluster_id": "eu1",
+        "cluster_address": "eu1.cloud.thethings.network"
+      }
+    }
+  },
+  {
+    "end_device_ids": {
+      "device_id": "rev-a-1",
+      "application_ids": {
+        "application_id": "descap-lorawan"
+      },
+      "dev_eui": "0080E11506926673",
+      "dev_addr": "260B78C5"
+    },
+    "received_at": "2026-06-16T19:28:57.468948646Z",
+    "uplink_message": {
+      "f_port": 2,
+      "f_cnt": 8,
+      "frm_payload": "dGVzdA==",
+      "decoded_payload": {
+        "temperature": "test"
+      },
+      "rx_metadata": [
+        {
+          "gateway_ids": {
+            "gateway_id": "zlb-ttn-in-02",
+            "eui": "AC1F09FFFE1F2E9F"
+          },
+          "time": "2026-06-16T19:28:57.274185895Z",
+          "timestamp": 2987114176,
+          "rssi": -132,
+          "channel_rssi": -132,
+          "snr": -16.75,
+          "received_at": "2026-06-16T19:28:57.242251236Z"
+        }
+      ],
+      "settings": {
+        "data_rate": {
+          "lora": {
+            "bandwidth": 125000,
+            "spreading_factor": 12,
+            "coding_rate": "4/5"
+          }
+        },
+        "frequency": "867900000",
+        "timestamp": 2987114176,
+        "time": "2026-06-16T19:28:57.274185895Z"
+      },
+      "received_at": "2026-06-16T19:28:57.258864329Z",
+      "confirmed": true,
+      "consumed_airtime": "1.318912s",
+      "packet_error_rate": 0.375,
+      "locations": {
+        "user": {
+          "latitude": 52.51334497665632,
+          "longitude": 13.403619137526483,
+          "altitude": 12,
+          "source": "SOURCE_REGISTRY"
+        }
+      },
+      "network_ids": {
+        "net_id": "000013",
+        "ns_id": "EC656E0000000181",
+        "tenant_id": "ttn",
+        "cluster_id": "eu1",
+        "cluster_address": "eu1.cloud.thethings.network"
+      }
+    }
+  },
+  {
+    "end_device_ids": {
+      "device_id": "rev-a-1",
+      "application_ids": {
+        "application_id": "descap-lorawan"
+      },
+      "dev_eui": "0080E11506926673",
+      "dev_addr": "260B78C5"
+    },
+    "received_at": "2026-06-16T19:29:06.971137285Z",
+    "uplink_message": {
+      "f_port": 2,
+      "f_cnt": 9,
+      "frm_payload": "dGVzdA==",
+      "decoded_payload": {
+        "temperature": "test"
+      },
+      "rx_metadata": [
+        {
+          "gateway_ids": {
+            "gateway_id": "zlb-ttn-in-02",
+            "eui": "AC1F09FFFE1F2E9F"
+          },
+          "time": "2026-06-16T19:29:06.779992103Z",
+          "timestamp": 2996620206,
+          "rssi": -137,
+          "channel_rssi": -137,
+          "snr": -22.5,
+          "received_at": "2026-06-16T19:29:06.747858970Z"
+        }
+      ],
+      "settings": {
+        "data_rate": {
+          "lora": {
+            "bandwidth": 125000,
+            "spreading_factor": 12,
+            "coding_rate": "4/5"
+          }
+        },
+        "frequency": "867500000",
+        "timestamp": 2996620206,
+        "time": "2026-06-16T19:29:06.779992103Z"
+      },
+      "received_at": "2026-06-16T19:29:06.764529788Z",
+      "confirmed": true,
+      "consumed_airtime": "1.318912s",
+      "packet_error_rate": 0.33333334,
+      "locations": {
+        "user": {
+          "latitude": 52.51334497665632,
+          "longitude": 13.403619137526483,
+          "altitude": 12,
+          "source": "SOURCE_REGISTRY"
+        }
+      },
+      "network_ids": {
+        "net_id": "000013",
+        "ns_id": "EC656E0000000181",
+        "tenant_id": "ttn",
+        "cluster_id": "eu1",
+        "cluster_address": "eu1.cloud.thethings.network"
+      }
+    }
+  },
+  {
+    "end_device_ids": {
+      "device_id": "rev-a-1",
+      "application_ids": {
+        "application_id": "descap-lorawan"
+      },
+      "dev_eui": "0080E11506926673",
+      "dev_addr": "260B78C5"
+    },
+    "received_at": "2026-06-16T19:29:27.596941745Z",
+    "uplink_message": {
+      "f_port": 2,
+      "f_cnt": 11,
+      "frm_payload": "dGVzdA==",
+      "decoded_payload": {
+        "temperature": "test"
+      },
+      "rx_metadata": [
+        {
+          "gateway_ids": {
+            "gateway_id": "zlb-ttn-in-02",
+            "eui": "AC1F09FFFE1F2E9F"
+          },
+          "time": "2026-06-16T19:29:27.405965089Z",
+          "timestamp": 3017254803,
+          "rssi": -131,
+          "channel_rssi": -131,
+          "snr": -17,
+          "received_at": "2026-06-16T19:29:27.374115839Z"
+        }
+      ],
+      "settings": {
+        "data_rate": {
+          "lora": {
+            "bandwidth": 125000,
+            "spreading_factor": 12,
+            "coding_rate": "4/5"
+          }
+        },
+        "frequency": "868300000",
+        "timestamp": 3017254803,
+        "time": "2026-06-16T19:29:27.405965089Z"
+      },
+      "received_at": "2026-06-16T19:29:27.390982222Z",
+      "confirmed": true,
+      "consumed_airtime": "1.318912s",
+      "packet_error_rate": 0.36363637,
+      "locations": {
+        "user": {
+          "latitude": 52.51334497665632,
+          "longitude": 13.403619137526483,
+          "altitude": 12,
+          "source": "SOURCE_REGISTRY"
+        }
+      },
+      "network_ids": {
+        "net_id": "000013",
+        "ns_id": "EC656E0000000181",
+        "tenant_id": "ttn",
+        "cluster_id": "eu1",
+        "cluster_address": "eu1.cloud.thethings.network"
+      }
+    }
+  },
+  {
+    "end_device_ids": {
+      "device_id": "rev-a-1",
+      "application_ids": {
+        "application_id": "descap-lorawan"
+      },
+      "dev_eui": "0080E11506926673",
+      "dev_addr": "260B78C5"
+    },
+    "received_at": "2026-06-16T19:29:37.110554833Z",
+    "uplink_message": {
+      "f_port": 2,
+      "f_cnt": 12,
+      "frm_payload": "dGVzdA==",
+      "decoded_payload": {
+        "temperature": "test"
+      },
+      "rx_metadata": [
+        {
+          "gateway_ids": {
+            "gateway_id": "zlb-ttn-in-02",
+            "eui": "AC1F09FFFE1F2E9F"
+          },
+          "time": "2026-06-16T19:29:36.918247938Z",
+          "timestamp": 3026758681,
+          "rssi": -131,
+          "channel_rssi": -131,
+          "snr": -16,
+          "received_at": "2026-06-16T19:29:36.886143075Z"
+        }
+      ],
+      "settings": {
+        "data_rate": {
+          "lora": {
+            "bandwidth": 125000,
+            "spreading_factor": 12,
+            "coding_rate": "4/5"
+          }
+        },
+        "frequency": "868100000",
+        "timestamp": 3026758681,
+        "time": "2026-06-16T19:29:36.918247938Z"
+      },
+      "received_at": "2026-06-16T19:29:36.904005031Z",
+      "confirmed": true,
+      "consumed_airtime": "1.318912s",
+      "packet_error_rate": 0.33333334,
+      "locations": {
+        "user": {
+          "latitude": 52.51334497665632,
+          "longitude": 13.403619137526483,
+          "altitude": 12,
+          "source": "SOURCE_REGISTRY"
+        }
+      },
+      "network_ids": {
+        "net_id": "000013",
+        "ns_id": "EC656E0000000181",
+        "tenant_id": "ttn",
+        "cluster_id": "eu1",
+        "cluster_address": "eu1.cloud.thethings.network"
+      }
+    }
+  },
+  {
+    "end_device_ids": {
+      "device_id": "rev-a-1",
+      "application_ids": {
+        "application_id": "descap-lorawan"
+      },
+      "dev_eui": "0080E11506926673",
+      "dev_addr": "260B78C5"
+    },
+    "received_at": "2026-06-16T19:30:09.197194647Z",
+    "uplink_message": {
+      "f_port": 2,
+      "f_cnt": 15,
+      "frm_payload": "dGVzdA==",
+      "decoded_payload": {
+        "temperature": "test"
+      },
+      "rx_metadata": [
+        {
+          "gateway_ids": {
+            "gateway_id": "zlb-ttn-in-02",
+            "eui": "AC1F09FFFE1F2E9F"
+          },
+          "time": "2026-06-16T19:30:09.002274036Z",
+          "timestamp": 3058847345,
+          "rssi": -133,
+          "channel_rssi": -133,
+          "snr": -19,
+          "received_at": "2026-06-16T19:30:08.970159639Z"
+        }
+      ],
+      "settings": {
+        "data_rate": {
+          "lora": {
+            "bandwidth": 125000,
+            "spreading_factor": 12,
+            "coding_rate": "4/5"
+          }
+        },
+        "frequency": "868500000",
+        "timestamp": 3058847345,
+        "time": "2026-06-16T19:30:09.002274036Z"
+      },
+      "received_at": "2026-06-16T19:30:08.989261761Z",
+      "confirmed": true,
+      "consumed_airtime": "1.318912s",
+      "packet_error_rate": 0.4,
+      "locations": {
+        "user": {
+          "latitude": 52.51334497665632,
+          "longitude": 13.403619137526483,
+          "altitude": 12,
+          "source": "SOURCE_REGISTRY"
+        }
+      },
+      "network_ids": {
+        "net_id": "000013",
+        "ns_id": "EC656E0000000181",
+        "tenant_id": "ttn",
+        "cluster_id": "eu1",
+        "cluster_address": "eu1.cloud.thethings.network"
+      }
+    }
+  },
+  {
+    "end_device_ids": {
+      "device_id": "rev-a-1",
+      "application_ids": {
+        "application_id": "descap-lorawan"
+      },
+      "dev_eui": "0080E11506926673",
+      "dev_addr": "260B78C5"
+    },
+    "received_at": "2026-06-16T19:30:18.696052121Z",
+    "uplink_message": {
+      "f_port": 2,
+      "f_cnt": 16,
+      "frm_payload": "dGVzdA==",
+      "decoded_payload": {
+        "temperature": "test"
+      },
+      "rx_metadata": [
+        {
+          "gateway_ids": {
+            "gateway_id": "zlb-ttn-in-02",
+            "eui": "AC1F09FFFE1F2E9F"
+          },
+          "time": "2026-06-16T19:30:18.507237911Z",
+          "timestamp": 3068351769,
+          "rssi": -131,
+          "channel_rssi": -131,
+          "snr": -15.75,
+          "received_at": "2026-06-16T19:30:18.475220731Z"
+        }
+      ],
+      "settings": {
+        "data_rate": {
+          "lora": {
+            "bandwidth": 125000,
+            "spreading_factor": 12,
+            "coding_rate": "4/5"
+          }
+        },
+        "frequency": "868100000",
+        "timestamp": 3068351769,
+        "time": "2026-06-16T19:30:18.507237911Z"
+      },
+      "received_at": "2026-06-16T19:30:18.491958263Z",
+      "confirmed": true,
+      "consumed_airtime": "1.318912s",
+      "packet_error_rate": 0.375,
+      "locations": {
+        "user": {
+          "latitude": 52.51334497665632,
+          "longitude": 13.403619137526483,
+          "altitude": 12,
+          "source": "SOURCE_REGISTRY"
+        }
+      },
+      "network_ids": {
+        "net_id": "000013",
+        "ns_id": "EC656E0000000181",
+        "tenant_id": "ttn",
+        "cluster_id": "eu1",
+        "cluster_address": "eu1.cloud.thethings.network"
+      }
+    }
+  }
+]
