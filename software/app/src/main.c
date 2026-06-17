@@ -27,10 +27,11 @@
 // #include "lora.h"
 
 /* Customize based on network configuration */
-#define LORAWAN_DEV_EUI	 { 0x00, 0x80, 0xE1, 0x15, 0x06, 0x92, 0x66, 0x73 }
+#define LORAWAN_DEV_EUI	 { 0x00, 0x80, 0xE1, 0x15, 0x06, 0x92, 0x66, 0x73 } // for rev-a-1
+//#define LORAWAN_DEV_EUI{ 0x00, 0x08, 0x0E, 0x11, 0x50, 0x69, 0x28, 0x0E } // for rev-a-2
 #define LORAWAN_JOIN_EUI { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }
-// #define LORAWAN_APP_KEY	 { 0x3A, 0xC3, 0xC1, 0x95, 0x56, 0x82, 0x07, 0x3B, 0x3C, 0xD0, 0xED, 0xAD, 0xB6, 0xFF, 0x1B, 0xDE} // for rev-a-1
-#define LORAWAN_APP_KEY  { 0x6E, 0x8E, 0xE1, 0x43, 0xDF, 0xA3, 0x03, 0x03, 0x05, 0x71, 0xBA, 0x95, 0xC5, 0x6B, 0x7F, 0x8C} // for rev-a-2
+#define LORAWAN_APP_KEY	 { 0x3A, 0xC3, 0xC1, 0x95, 0x56, 0x82, 0x07, 0x3B, 0x3C, 0xD0, 0xED, 0xAD, 0xB6, 0xFF, 0x1B, 0xDE} // for rev-a-1
+//#define LORAWAN_APP_KEY{ 0x6E, 0x8E, 0xE1, 0x43, 0xDF, 0xA3, 0x03, 0x03, 0x05, 0x71, 0xBA, 0x95, 0xC5, 0x6B, 0x7F, 0x8C} // for rev-a-2
 
 #define DELAY K_MSEC(10000)
 
@@ -155,9 +156,18 @@ int main(void)
 	join_cfg.otaa.dev_nonce = ttn_dev_nonce;
 
 	LOG_INF("Joining network over OTAA");
-	ret = lorawan_join(&join_cfg);
-	if (ret < 0) {
-		LOG_ERR("lorawan_join_network failed: %d", ret);
+
+	// repeatedly trying to join the network until successful
+	while(1) {
+		ret = lorawan_join(&join_cfg);
+		if(ret < 0) {
+			LOG_ERR("lorawan_join_network failed: %d", ret);
+			k_msleep(20000);
+		}
+		else if(ret == 0) {
+			LOG_INF("Successfully joined network!");
+			break;
+		}
 	}
 	// blink status_led to signalize successful network join
 	for(int i=0; i<=10; i++) {
@@ -168,7 +178,7 @@ int main(void)
 	ttn_dev_nonce++;
 	ret = settings_save_one("lorawan/devnonce", &ttn_dev_nonce, sizeof(ttn_dev_nonce)); 
 
-	ret = lorawan_send(2, "Start session", 13, LORAWAN_MSG_CONFIRMED);
+	ret = lorawan_send(1, "Start session", 13, LORAWAN_MSG_CONFIRMED);
 	// END LoRaWAN setup block
 	// ------------------------------------------------------
 
@@ -223,8 +233,8 @@ int main(void)
 			led_toggle();
 			k_msleep(1000);
 		}
-		ret = lorawan_send(2, "b", 1, LORAWAN_MSG_UNCONFIRMED);
-		if(ret = 0) {
+		ret = lorawan_send(1, "b", 1, LORAWAN_MSG_UNCONFIRMED);
+		if(ret == 0) {
 			led_toggle();
 		}
 		k_msleep(1000);
