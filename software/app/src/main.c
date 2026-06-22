@@ -27,9 +27,11 @@
 // #include "lora.h"
 
 /* Customize based on network configuration */
-#define LORAWAN_DEV_EUI	 { 0x00, 0x80, 0xE1, 0x15, 0x06, 0x92, 0x66, 0x73 }
+#define LORAWAN_DEV_EUI	 { 0x00, 0x80, 0xE1, 0x15, 0x06, 0x92, 0x66, 0x73 } // for rev-a-1
+//#define LORAWAN_DEV_EUI{ 0x00, 0x08, 0x0E, 0x11, 0x50, 0x69, 0x28, 0x0E } // for rev-a-2
 #define LORAWAN_JOIN_EUI { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }
-#define LORAWAN_APP_KEY	 { 0x3A, 0xC3, 0xC1, 0x95, 0x56, 0x82, 0x07, 0x3B, 0x3C, 0xD0, 0xED, 0xAD, 0xB6, 0xFF, 0x1B, 0xDE}
+#define LORAWAN_APP_KEY	 { 0x3A, 0xC3, 0xC1, 0x95, 0x56, 0x82, 0x07, 0x3B, 0x3C, 0xD0, 0xED, 0xAD, 0xB6, 0xFF, 0x1B, 0xDE} // for rev-a-1
+//#define LORAWAN_APP_KEY{ 0x6E, 0x8E, 0xE1, 0x43, 0xDF, 0xA3, 0x03, 0x03, 0x05, 0x71, 0xBA, 0x95, 0xC5, 0x6B, 0x7F, 0x8C} // for rev-a-2
 
 #define DELAY K_MSEC(10000)
 
@@ -81,65 +83,6 @@ static void lorwan_datarate_changed(enum lorawan_datarate dr)
 	lorawan_get_payload_sizes(&unused, &max_size);
 	LOG_INF("New Datarate: DR_%d, Max Payload %d", dr, max_size);
 }
-
-// --------------------------------------------------------------
-// START GPS 
-// copied from sample code: https://github.com/zephyrproject-rtos/zephyr/blob/main/samples/drivers/gnss/src/main.c
-#define GNSS_MODEM DEVICE_DT_GET(DT_ALIAS(gnss))
-
-K_SEM_DEFINE(gps_fix_sem, 0, 1); // start=0, max=1
-
-static void gnss_data_cb(const struct device *dev, const struct gnss_data *data)
-{
-	uint64_t timepulse_ns;
-	k_ticks_t timepulse;
-	// if there is a 2D or 3D fix, i.e if PPS LED blinks
-	if (data->info.fix_status != GNSS_FIX_STATUS_NO_FIX) {
-		k_sem_give(&gps_fix_sem); // signal that main() can start
-		if (gnss_get_latest_timepulse(dev, &timepulse) == 0) {
-			timepulse_ns = k_ticks_to_ns_near64(timepulse);
-			printf("Got a fix (type: %d) @ %lld ns\n", data->info.fix_status,
-			       timepulse_ns);
-		} else {
-			printf("Got a fix (type: %d)\n", data->info.fix_status);
-		}
-		// read longitude and latitude (in nanodegrees, ranging from 0 to +-180E9), hence int64_t
-		int64_t lat = data->nav_data.latitude;
-		int64_t lon = data->nav_data.longitude;
-		int32_t alt = data->nav_data.altitude; // in mm above sea level
-
-		char gps_string_payload[32];
-		snprintk(gps_string_payload, sizeof(gps_string_payload), "lat: %.9f, long: %.6f", lat, lon);
-
-		// lorawan_send(2, gps_string_payload, strlen(gps_string_payload), LORAWAN_MSG_UNCONFIRMED);
-	}
-}
-GNSS_DATA_CALLBACK_DEFINE(GNSS_MODEM, gnss_data_cb);
-
-#if CONFIG_GNSS_SATELLITES
-static void gnss_satellites_cb(const struct device *dev, const struct gnss_satellite *satellites,
-			       uint16_t size)
-{
-	unsigned int tracked_count = 0;
-	unsigned int corrected_count = 0;
-
-	for (unsigned int i = 0; i != size; ++i) {
-		tracked_count += satellites[i].is_tracked;
-		corrected_count += satellites[i].is_corrected;
-	}
-	printf("%u satellite%s reported (of which %u tracked, of which %u has RTK corrections)!\n",
-	       size, size > 1 ? "s" : "", tracked_count, corrected_count);
-}
-#endif
-GNSS_SATELLITES_CALLBACK_DEFINE(GNSS_MODEM, gnss_satellites_cb);
-
-#define GNSS_SYSTEMS_PRINTF(define, supported, enabled) \
-	printf("\t%20s: Supported: %3s Enabled: %3s\n",     \
-	       STRINGIFY(define), (supported & define) ? "Yes" : "No", \
-			 (enabled & define) ? "Yes" : "No");
-// END GPS
-// ---------------------------------------------------------------
-
 
 int main(void)
 {
@@ -206,19 +149,25 @@ int main(void)
 	lorawan_register_dr_changed_callback(lorwan_datarate_changed);
 
 	join_cfg.mode = LORAWAN_ACT_OTAA;
-	join_cfg.dev_eui = dev_eui;
+	join_cfg.dev_eui = dev_eui64;
 	join_cfg.otaa.join_eui = join_eui;
 	join_cfg.otaa.app_key = app_key;
 	join_cfg.otaa.nwk_key = app_key;
 	join_cfg.otaa.dev_nonce = ttn_dev_nonce;
 
-	// only start joining network after GPS has been fixed to avoid RF interference 
-	k_sem_take(&gps_fix_sem, K_FOREVER); 
 	LOG_INF("Joining network over OTAA");
-	ret = lorawan_join(&join_cfg);
-	if (ret < 0) {
-		LOG_ERR("lorawan_join_network failed: %d", ret);
-		return 0;
+
+	// repeatedly trying to join the network until successful
+	while(1) {
+		ret = lorawan_join(&join_cfg);
+		if(ret < 0) {
+			LOG_ERR("lorawan_join_network failed: %d", ret);
+			k_msleep(20000);
+		}
+		else if(ret == 0) {
+			LOG_INF("Successfully joined network!");
+			break;
+		}
 	}
 	// blink status_led to signalize successful network join
 	for(int i=0; i<=10; i++) {
@@ -229,7 +178,7 @@ int main(void)
 	ttn_dev_nonce++;
 	ret = settings_save_one("lorawan/devnonce", &ttn_dev_nonce, sizeof(ttn_dev_nonce)); 
 
-	ret = lorawan_send(2, "Start session", 13, LORAWAN_MSG_CONFIRMED);
+	ret = lorawan_send(1, "Start session", 13, LORAWAN_MSG_CONFIRMED);
 	// END LoRaWAN setup block
 	// ------------------------------------------------------
 
@@ -250,7 +199,6 @@ int main(void)
 	while (1) {
 		if (sensor_sample_fetch(bme680_dev) < 0) {
             LOG_INF("Error: cannot read sensor data!\n");
-            k_msleep(2000);
             continue;
         }
 		else {
@@ -265,7 +213,7 @@ int main(void)
 			// This is preferred when testing using GNURadio since it interpretes raw bytes as ASCII strings
 			// ----------------------------------------------------------
 			snprintk(bme680_tx_string, sizeof(bme680_tx_string), "%.2f", temp_double);
-			ret = lorawan_send(2, bme680_tx_string, strlen(bme680_tx_string), LORAWAN_MSG_CONFIRMED);
+			// ret = lorawan_send(2, bme680_tx_string, strlen(bme680_tx_string), LORAWAN_MSG_CONFIRMED);
 			/*
 			* Note: The stack may return -EAGAIN if the provided data
 			* length exceeds the maximum possible one for the region and
@@ -274,19 +222,22 @@ int main(void)
 			*/
 			if (ret == -EAGAIN) {
 				LOG_ERR("lorawan_send failed: %d. Continuing...", ret);
-				k_sleep(DELAY);
 				continue;
 			}
 
 			if (ret < 0) {
 				LOG_ERR("lorawan_send failed: %d", ret);
-				return 0;
 			}
 
 			LOG_INF("Data sent!");
 			led_toggle();
-			k_msleep(2000);
+			k_msleep(1000);
 		}
+		ret = lorawan_send(1, "b", 1, LORAWAN_MSG_UNCONFIRMED);
+		if(ret == 0) {
+			led_toggle();
+		}
+		k_msleep(1000);
 	}
 }
 
