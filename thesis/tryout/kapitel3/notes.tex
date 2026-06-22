@@ -252,6 +252,19 @@ Firmware-Entwicklung procedure:
 2. Flash blinky
 3. Test lora-tx using arbitrary message and capture using RTL-SDR
 4. Read I2C sensor data from BME680 and send lora
+5. GPS test: use gpsd to read gps data and send lora
+6. Extract dev_eui
+7. Register device on TTN (joineui=0, dev_eui=extracted, app_eui=generated)
+8. Tailor DTS overlay
+9. OTAA join and uplink test
+10. FUOTA 
+
+Random points:
+- why choose Zephyr: 
+    - built-in LoRaWAN stack with support for STM32WL55
+    - large library of sensor drivers
+- explain Zephyr ecosystem and filesystem structure: conf, dts, overlay, bindings ...
+
 
 
 
