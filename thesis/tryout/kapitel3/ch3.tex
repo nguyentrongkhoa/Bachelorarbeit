@@ -854,26 +854,41 @@ Die 5 PCBs sind etwa zwei Wochen nach Bestellungsaufgabe in Berlin eingetroffen.
 
 \section{Firmware-Entwicklung}
 
-Als Allererstes wird getestet, ob die konzipierte Programmierschnittstelle vom Computer überhaupt erkannt werden kann. 
-Dafür wird das Board mit einem LiPo-Akku versorgt und der STDC14-Stecker mit einem STLinkV3-Minie angeschlossen (blau, links
-in Abbildung \ref{fig:flash_setup}).
+\subsection{Wahl des Betriebssystems: Zephyr-RTOS} % TODO: remove zephyr mentions in earlier chapters
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth, angle=90]{kapitel3/pictures/flash.jpeg}
-    \caption{Testaufbau Programmierschnittstelle}
-    \label{fig:flash_setup}
-\end{figure}
+Für die Implementierung der Firmware auf dem STM32WL55 wurde die Entscheidung getroffen, 
+anstelle von Bare-Metal oder \acrshort{hal}-Verwendung (Hardware Abstraction Layer von ST Microelectronics) 
+ein Echtzeitbetriebssystem (Real-Time Operating System - \acrshort{rtos}) einzusetzen. Der Bare-Metal-Ansatz, bei dem
+jedes Register bitweise manuell eingestellt werden muss, bietet zwar die maximale Kontrolle über die Hardware, 
+ist aber im eingeschränkten gegebenen Zeitrahmen dieser Bachelorarbeit nicht realisierbar aufgrund der Komplexität 
+der geplanten Funktionen.
+Bei einem MCU-Wechsel, selbst innerhalb der STM32WL-Familie, müsste die Firmware komplett neugeschrieben 
+und Datenblätter neugelesen werden, was keine nachhaltige Entwicklungsstragie darstellt.
 
-Mit der Software \texttt{STM32 Cube Programmer} lässt sich eine erfolgreiche Verbindung zwischen PCB und Computer herstellen:
-die Software enumeriert in \textit{Target information} die korrekte MCU (STM32WL55CCUx) und zeigt die verfügbaren Speicherbereiche an.
+Das letzte Problem lässt sich durch HAL beheben, da es eine einheitliche API über verschiedene STM32-Modelle hinweg schafft und somit registerspezifische Details wegabstrahiert
+sind. Ähnlich wie beim Bare-Metal-Ansatz befindet sich der Hauptcode in einer \verb|while(1)|-Superschleife und wird sequenziell
+abgearbeitet. Eine reine HAL-Implementierung für komplexe Anwendungen (hohe Peripherienanzahl bswp.) könnte schnell
+zu gegenseiten Ressourcenblockaden führen. Gerade das LoRaWAN-Protokoll stellt sehr stringente Timing-Anforderungen, wie in Kapitel
+\ref{chap:grundlagen} beschrieben, und erfordert eine präzise Koordination von Sende- und Empfangsfenstern. Es sind also 
+Multitasking-Features unbedingt notwendig, die ein RTOS zur Verfügung stellen. 
+% TODO: cite Brian Amos book hands on rtos on microcontrollers
+Ein RTOS hat an erster Stelle dafür zu sorgen, dass zeitkritische Tasks innerhalb einer vordefinierten Frist gestartet und 
+beendet werden (daher die Bezeichnung real-time). Ein RTOS ist also zeitlich deterministisch, im Gegensatz zu konventionellen
+Betriebssystemen wie Windows oder Linux, die nicht garantieren können, wann genau eine Task ausgeführt wird.
+Um diesen Determinismus zu gewährleisten, macht sich der RTOS-Kernel das Konzept von \textbf{Preemptive Scheduling} zunutze:
+dabei bekommt jede Task eine Priorität zugewiesen, und der Scheduler sorgt dafür, 
+dass immer die Task mit der höchsten Priorität ausgeführt wird. Eine laufende Task mit niedriger Priorität wird also unterbrochen 
+(\emph{präemptiert}), sobald eine höherprioritäre Task bereit ist, ausgeführt zu werden.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\textwidth]{kapitel3/pictures/cube_prog.png}
-    \caption{STM32 Cube Programmer: Verbindung erfolgreich}
-    \label{fig:cube_prog}
-\end{figure}
+Zusätzlich verfügt ein RTOS über Mechanismen, mit denen Tasks sich untereinander austauschen und synchronisieren können. Dazu zählen z.B. Queues, 
+Semaphoren oder Mutex. 
+
+\subsection{Zephyr-Architektur: DeviceTree, KConfig, Treibermodelle}
+
+\subsection{Sensorintegration}
+
+\subsection{LoRaWAN-Netzwerkanbindung}
+
 
 
 \subsection{Kartografische Auswertung der Messdaten}
@@ -911,3 +926,4 @@ die Software enumeriert in \textit{Target information} die korrekte MCU (STM32WL
 \newacronym{fuota}{FUOTA}{Field Update Over The Air}
 \newacronym{hf}{HF}{High Frequency}
 \newacronym{emv}{EMV}{Elektromagnetische Verträglichkeit}
+\newacronym{hal}{HAL}{Hardware Abstraction Layer}

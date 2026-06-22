@@ -1986,3 +1986,31 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{hal}%
+{%
+name={\acronymfont {\glsentryshort {hal}}},%
+sort={HAL},%
+type={acronym},%
+first={HAL},%
+firstplural={HALs},%
+text={HAL},%
+plural={HALs},%
+description={Hardware Abstraction Layer},%
+descriptionplural={Hardware Abstraction Layer},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Hardware Abstraction Layer},%
+longplural={Hardware Abstraction Layers},%
+short={HAL},%
+shortplural={HALs},%
+counter={page},%
+parent={},%
+%
+}%
+
