@@ -50,8 +50,9 @@
 \contentsline {subsection}{\numberline {3.4.2}Zephyr-Architektur: Devicetree, KConfig, Treibermodelle}{51}{subsection.3.4.2}%
 \contentsline {subsubsection}{Devicetree zur Hardware-Beschreibung}{51}{section*.80}%
 \contentsline {subsubsection}{KConfig zur Software-Konfiguration}{52}{section*.81}%
-\contentsline {subsection}{\numberline {3.4.3}Sensorintegration}{52}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}LoRaWAN-Netzwerkanbindung}{52}{subsection.3.4.4}%
-\contentsline {subsection}{\numberline {3.4.5}Kartografische Auswertung der Messdaten}{52}{subsection.3.4.5}%
-\contentsline {chapter}{\numberline {A}Angehängtes: Die Dateien des Pakets}{53}{appendix.A}%
-\contentsline {chapter}{Literatur- und Quellenverzeichnis}{55}{section*.83}%
+\contentsline {subsubsection}{Treibermodell als Brücke zwischen Hardware und Software}{53}{section*.82}%
+\contentsline {subsection}{\numberline {3.4.3}Sensorintegration}{53}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}LoRaWAN-Netzwerkanbindung}{53}{subsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.4.5}Kartografische Auswertung der Messdaten}{53}{subsection.3.4.5}%
+\contentsline {chapter}{\numberline {A}Angehängtes: Die Dateien des Pakets}{55}{appendix.A}%
+\contentsline {chapter}{Literatur- und Quellenverzeichnis}{57}{section*.84}%

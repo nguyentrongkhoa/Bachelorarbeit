@@ -906,10 +906,50 @@ für die im vorigen Abschnitt beschriebene Plattformunabhängigkeit.
 
 \subsubsection{Devicetree zur Hardware-Beschreibung}
 
-Der Devicetree (\acrshort{dt}) ist eine hierarchische Datenstruktur, die die physische Hardware des Zielsystems abstrahiert abbildet. 
+Der Devicetree (\acrshort{dt}) ist eine Baumdatenstruktur, die die physische Hardware des Zielsystems abstrahiert abbildet. 
 Ursprünglich aus dem Linux-Kernel übernommen, beschreibt der DT alle Komponenten des Mikrocontrollers, von den CPU-Kernen über die 
 Speicherbereiche (Flash, RAM) bis hin zu den Peripherieschnittstellen (I$^2$C, SPI, UART) und den daran angeschlossenen 
 externen Komponenten (Sensoren, Funkmodule).
+
+Wie der Begriff "Baum" schon suggeriert, werden sämtliche Hardware-Bausteine durch sogenannte \emph{Nodes} (Knoten) dargestellt, die sich
+einer hierarchischen Struktur unterordnen. Jeder Node kann wiederum \emph{Properties} (Eigenschaften) besitzen, welche
+in Form von Schlüssel-Wert-Paaren angegeben werden. Ein kurzer DT-Ausschnitt in Listing \ref{lst:dts_syntax} hilft, die Syntax 
+zu veranschaulichen:
+
+\begin{lstlisting}[
+    language=C,
+    caption={Zephyr Devicetree-Syntax},
+    label={lst:dts_syntax},
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{purple},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    numbersep=8pt,
+    backgroundcolor=\color{gray!8},
+    showstringspaces=false,
+    breaklines=true,
+    frame=single,
+    rulecolor=\color{gray!30},
+    tabsize=4
+]
+/ {
+    soc {
+        i2c0: i2c@40003000 {
+            compatible = "vendor,i2c-controller";
+            reg = <0x40003000 0x400>;
+            status = "okay";
+            
+            sensor: sensor@76 {
+                compatible = "vendor,sensor-model";
+                reg = <0x76>;
+            };
+        };
+    };
+};
+\end{lstlisting}
 
 Für den Entwickler ist dabei das Konzept der DT-Overlays von zentraler Bedeutung: Während die Basis-Hardware des 
 STM32WL55-Boards in den vom Betriebssystem bereitgestellten Standard-Dateien fest definiert ist, erlaubt es eine Overlay-Datei (mit Endung \verb|.overlay|), 
@@ -922,8 +962,25 @@ Hardwarekonfiguration zugreifen kann.
 \subsubsection{KConfig zur Software-Konfiguration}
 
 Während der Devicetree definiert, welche Hardware existiert, steuert das Kconfig-System, welche Softwarefeatures und Treiber 
-in das finale Firmware-Image kompiliert werden. Über eine Konfigurationsdatei (prj.conf) kann der Entwickler den Funktionsumfang 
+in das finale Firmware-Image kompiliert werden. Über die Konfigurationsdatei \verb|prj.conf| kann der Entwickler den Funktionsumfang 
 des Betriebssystems granular bestimmen.
+
+Dies erlaubt ein hocheffizientes Ressourcenmanagement auf dem STM32WL55: Module, die für den spezifischen Anwendungsfall benötigt 
+werden (wie z.B. GPIO-Treiber), müssen in \verb|prj.conf| explizit aktiviert werden (\verb|CONFIG_GPIO=y|).  
+Das Kconfig-System stellt somit sicher, dass das resultierende Image, welches auf dem Mikrokontroller
+hochgeladen wird, einen minimalen Footprint aufweist und die Speicherrestriktionen einhält.
+
+\subsubsection{Treibermodell als Brücke zwischen Hardware und Software}
+
+Das Bindeglied zwischen den Hardware-Strukturen des Devicetrees und den Software-Schaltern von Kconfig bildet das 
+generische Treibermodell von Zephyr. Es stellt standardisierte \acrshort{api}s bereit, die plattform- und herstellerunabhängig operieren.
+
+Anstatt Peripherie über proprietäre Registerbefehle des jeweiligen Chipherstellers anzusprechen, interagiert die Anwendungsschicht 
+ausschließlich mit abstrakten Subsystemen (wie der \verb|sensor_driver_api| oder \verb|uart_driver_api|). 
+Für die Anwendungslogik ist es dadurch irrelevant, welcher konkrete Sensor- oder Bus-Typ physisch verbaut ist. Ein Wechsel des 
+Hardware-Bausteins erfordert lediglich eine Anpassung des compatible-Eintrags im DT; der Applikationscode 
+greift über identische Funktionsaufrufe auf die Daten zu, da der Kernel den hardwarespezifischen Treiber vollautomatisch 
+unter der standardisierten API kapselt.
 
 \subsection{Sensorintegration}
 
@@ -967,3 +1024,4 @@ des Betriebssystems granular bestimmen.
 \newacronym{emv}{EMV}{Elektromagnetische Verträglichkeit}
 \newacronym{hal}{HAL}{Hardware Abstraction Layer}
 \newacronym{dt}{DT}{Devicetree}
+\newacronym{api}{API}{Application Programming Interface}
