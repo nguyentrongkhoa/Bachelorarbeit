@@ -878,17 +878,56 @@ Betriebssystemen wie Windows oder Linux, die nicht garantieren können, wann gen
 Um diesen Determinismus zu gewährleisten, macht sich der RTOS-Kernel das Konzept von \textbf{Preemptive Scheduling} zunutze:
 dabei bekommt jede Task eine Priorität zugewiesen, und der Scheduler sorgt dafür, 
 dass immer die Task mit der höchsten Priorität ausgeführt wird. Eine laufende Task mit niedriger Priorität wird also unterbrochen 
-(\emph{präemptiert}), sobald eine höherprioritäre Task bereit ist, ausgeführt zu werden.
+(\emph{präemptiert}), sobald eine höherprioritäre Task bereit ist, ausgeführt zu werden. % TODO: write better transition
 
-Zusätzlich verfügt ein RTOS über Mechanismen, mit denen Tasks sich untereinander austauschen und synchronisieren können. Dazu zählen z.B. Queues, 
-Semaphoren oder Mutex. 
+Obwohl der Markt für eingebettete Echtzeitbetriebssysteme eine große Vielfalt an etablierten Lösungen bietet, 
+darunter das weit verbreitete FreeRTOS oder die herstellereigene Middleware STM32CubeOS, fiel die Wahl für dieses Projekt 
+gezielt auf Zephyr RTOS. Der entscheidende Vorteil von Zephyr liegt in seiner modernen, modular aufgebauten Architektur, 
+die speziell für vernetzte, ressourcenbeschränkte IoT-Knoten optimiert ist.
 
-\subsection{Zephyr-Architektur: DeviceTree, KConfig, Treibermodelle}
+Im Gegensatz zu FreeRTOS, das primär einen minimalen Kernel bereitstellt und die manuelle Integration von Netzwerk-Stacks 
+erfordert, bringt Zephyr den industriell erprobten Semtech-LoRaWAN-Stack (LoRaMac-node) als natives Subsystem direkt mit. 
+Dies reduziert nicht nur die Fehleranfälligkeit bei der Implementierung drastisch, sondern stellt auch die Einhaltung 
+regionaler Funkrestriktionen (wie des Duty-Cycles im EU868-Band) auf Betriebssystemebene sicher.
+
+Ein weiteres Kernargument für Zephyr ist das Board-Agnostic-Prinzip. Durch die strikte Abstraktion der Hardware 
+über das Devicetree-System ist die Firmware nicht monolithisch an einen spezifischen Mikrocontroller gebunden. 
+Sollte im Produktlebenszyklus ein Wechsel des System-on-Chip notwendig werden, bleibt der Applikationscode unverändert; 
+lediglich das Hardware-Overlay muss an die neue Pinbelegung angepasst werden. Diese inhärente Portierbarkeit, kombiniert mit 
+einer reichhaltigen Bibliothek an integrierten Peripherietreibern für die verwendete Sensorik (wie den BME680), 
+qualifiziert Zephyr RTOS als zukunftssichere und nachhaltige Entwicklungsplattform für den hier entwickelten Prototyp.
+
+\subsection{Zephyr-Architektur: Devicetree, KConfig, Treibermodelle}
+
+Die Besonderheit von Zephyr RTOS liegt in seiner strikten und konsequenten Trennung zwischen Hardwarebeschreibung, 
+Softwarekonfiguration und dem eigentlichen Applikationsquellcode. Diese dreigeteilte Architektur spiegelt sich im 
+Zusammenspiel von Devicetree, Kconfig und dem generischen Treibermodell wider und bildet das Fundament 
+für die im vorigen Abschnitt beschriebene Plattformunabhängigkeit.
+
+\subsubsection{Devicetree zur Hardware-Beschreibung}
+
+Der Devicetree (\acrshort{dt}) ist eine hierarchische Datenstruktur, die die physische Hardware des Zielsystems abstrahiert abbildet. 
+Ursprünglich aus dem Linux-Kernel übernommen, beschreibt der DT alle Komponenten des Mikrocontrollers, von den CPU-Kernen über die 
+Speicherbereiche (Flash, RAM) bis hin zu den Peripherieschnittstellen (I$^2$C, SPI, UART) und den daran angeschlossenen 
+externen Komponenten (Sensoren, Funkmodule).
+
+Für den Entwickler ist dabei das Konzept der DT-Overlays von zentraler Bedeutung: Während die Basis-Hardware des 
+STM32WL55-Boards in den vom Betriebssystem bereitgestellten Standard-Dateien fest definiert ist, erlaubt es eine Overlay-Datei (mit Endung \verb|.overlay|), 
+projektspezifische Änderungen vorzunehmen, ohne den Kernel-Quellcode zu modifizieren. In dieser Arbeit wird das Overlay genutzt, 
+um dem Zephyr-Kernel mitzuteilen, auf welche GPIO-Pins die serielle Schnittstelle des GPS-Empfängers abgebildet ist und unter 
+welcher hexadezimalen Adresse der Umweltsensor BME680 auf dem I2C-Bus zu finden ist. Zur Kompilierzeit parst das 
+Build-System diese Textdateien und generiert daraus C-Präprozessor-Makros, über die die Firmware direkt auf die 
+Hardwarekonfiguration zugreifen kann.
+
+\subsubsection{KConfig zur Software-Konfiguration}
+
+Während der Devicetree definiert, welche Hardware existiert, steuert das Kconfig-System, welche Softwarefeatures und Treiber 
+in das finale Firmware-Image kompiliert werden. Über eine Konfigurationsdatei (prj.conf) kann der Entwickler den Funktionsumfang 
+des Betriebssystems granular bestimmen.
 
 \subsection{Sensorintegration}
 
 \subsection{LoRaWAN-Netzwerkanbindung}
-
 
 
 \subsection{Kartografische Auswertung der Messdaten}
@@ -927,3 +966,4 @@ Semaphoren oder Mutex.
 \newacronym{hf}{HF}{High Frequency}
 \newacronym{emv}{EMV}{Elektromagnetische Verträglichkeit}
 \newacronym{hal}{HAL}{Hardware Abstraction Layer}
+\newacronym{dt}{DT}{Devicetree}

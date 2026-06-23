@@ -2014,3 +2014,31 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{dt}%
+{%
+name={\acronymfont {\glsentryshort {dt}}},%
+sort={DT},%
+type={acronym},%
+first={DT},%
+firstplural={DTs},%
+text={DT},%
+plural={DTs},%
+description={Devicetree},%
+descriptionplural={Devicetree},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Devicetree},%
+longplural={Devicetrees},%
+short={DT},%
+shortplural={DTs},%
+counter={page},%
+parent={},%
+%
+}%
+
