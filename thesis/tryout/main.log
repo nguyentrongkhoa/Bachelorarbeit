@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.3.15)  23 JUN 2026 11:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.3.15)  24 JUN 2026 09:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -928,49 +928,341 @@ Package biblatex Info: ... and expl3
 Package: xparse 2023-10-10 L3 Experimental document command parser
 )
 Package: blx-case-expl3 2023/03/05 v3.19 expl3 case changing code for biblatex
+)) (/usr/share/texlive/texmf-dist/tex/latex/forest/forest.sty
+Package: forest 2017/07/14 v2.1.5 Drawing (linguistic) trees
+ (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks43
+\pgfutil@tempdima=\dimen273
+\pgfutil@tempdimb=\dimen274
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box119
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
 ))
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks44
+\pgfkeys@temptoks=\toks45
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks46
+))
+\pgf@x=\dimen275
+\pgf@y=\dimen276
+\pgf@xa=\dimen277
+\pgf@ya=\dimen278
+\pgf@xb=\dimen279
+\pgf@yb=\dimen280
+\pgf@xc=\dimen281
+\pgf@yc=\dimen282
+\pgf@xd=\dimen283
+\pgf@yd=\dimen284
+\w@pgf@writea=\write6
+\r@pgf@reada=\read6
+\c@pgf@counta=\count498
+\c@pgf@countb=\count499
+\c@pgf@countc=\count500
+\c@pgf@countd=\count501
+\t@pgf@toka=\toks47
+\t@pgf@tokb=\toks48
+\t@pgf@tokc=\toks49
+\pgf@sys@id@count=\count502
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+)
+Driver file for pgf: pgfsys-pdftex.def
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count503
+\pgfsyssoftpath@bigbuffer@items=\count504
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen285
+\pgfmath@count=\count505
+\pgfmath@box=\box120
+\pgfmath@toks=\toks50
+\pgfmath@stack@operand=\toks51
+\pgfmath@stack@operation=\toks52
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count506
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen286
+\pgf@picmaxx=\dimen287
+\pgf@picminy=\dimen288
+\pgf@picmaxy=\dimen289
+\pgf@pathminx=\dimen290
+\pgf@pathmaxx=\dimen291
+\pgf@pathminy=\dimen292
+\pgf@pathmaxy=\dimen293
+\pgf@xx=\dimen294
+\pgf@xy=\dimen295
+\pgf@yx=\dimen296
+\pgf@yy=\dimen297
+\pgf@zx=\dimen298
+\pgf@zy=\dimen299
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen300
+\pgf@path@lasty=\dimen301
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen302
+\pgf@shorten@start@additional=\dimen303
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box121
+\pgf@hbox=\box122
+\pgf@layerbox@main=\box123
+\pgf@picture@serial@count=\count507
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen304
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen305
+\pgf@pt@y=\dimen306
+\pgf@pt@temp=\dimen307
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen308
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen309
+\pgf@sys@shading@range@num=\count508
+\pgf@shadingcount=\count509
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box124
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box125
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen310
+\pgf@nodesepend=\dimen311
+) (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen312
+\pgffor@skip=\dimen313
+\pgffor@stack=\toks53
+\pgffor@toks=\toks54
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count510
+\pgfplotmarksize=\dimen314
+)
+\tikz@lastx=\dimen315
+\tikz@lasty=\dimen316
+\tikz@lastxsaved=\dimen317
+\tikz@lastysaved=\dimen318
+\tikz@lastmovetox=\dimen319
+\tikz@lastmovetoy=\dimen320
+\tikzleveldistance=\dimen321
+\tikzsiblingdistance=\dimen322
+\tikz@figbox=\box126
+\tikz@figbox@bg=\box127
+\tikz@tempbox=\box128
+\tikz@tempbox@bg=\box129
+\tikztreelevel=\count511
+\tikznumberofchildren=\count512
+\tikznumberofcurrentchild=\count513
+\tikz@fig@count=\count514
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count515
+\pgfmatrixcurrentcolumn=\count516
+\pgf@matrix@numberofcolumns=\count517
+)
+\tikz@expandcount=\count518
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.code.tex
+File: tikzlibraryshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.misc.code.tex
+File: pgflibraryshapes.misc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.symbols.code.tex
+File: pgflibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.arrows.code.tex
+File: pgflibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.callouts.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.callouts.code.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodepartlowerbox=\box130
+\pgfnodeparttwobox=\box131
+\pgfnodepartthreebox=\box132
+\pgfnodepartfourbox=\box133
+\pgfnodeparttwentybox=\box134
+\pgfnodepartnineteenbox=\box135
+\pgfnodeparteighteenbox=\box136
+\pgfnodepartseventeenbox=\box137
+\pgfnodepartsixteenbox=\box138
+\pgfnodepartfifteenbox=\box139
+\pgfnodepartfourteenbox=\box140
+\pgfnodepartthirteenbox=\box141
+\pgfnodeparttwelvebox=\box142
+\pgfnodepartelevenbox=\box143
+\pgfnodeparttenbox=\box144
+\pgfnodepartninebox=\box145
+\pgfnodeparteightbox=\box146
+\pgfnodepartsevenbox=\box147
+\pgfnodepartsixbox=\box148
+\pgfnodepartfivebox=\box149
+))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfit.code.tex
+File: tikzlibraryfit.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryintersections.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex)
+\pgf@intersect@solutions=\count519
+) (/usr/share/texlive/texmf-dist/tex/latex/pgfopts/pgfopts.sty
+Package: pgfopts 2014/07/10 v2.1a LaTeX package options with pgfkeys
+\pgfopts@list@add@a@toks=\toks55
+\pgfopts@list@add@b@toks=\toks56
+) (/usr/share/texlive/texmf-dist/tex/latex/elocalloc/elocalloc.sty
+Package: elocalloc 2016/12/15 v0.03 local allocation for LaTeX 2015+ (DPC)
+) (/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+ (/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+)) (/usr/share/texlive/texmf-dist/tex/latex/inlinedef/inlinedef.sty
+Package: inlinedef 2008/07/10 v1.0 Inlined expansions within definitions
+\ID@toks=\toks57
+\ID@count=\count520
+)
+\ID@usercommands=\toks58
+\safeloop@depth=\count521
+\safeRKloop@depth=\count522
+\forest@temp@dimen=\dimen323
+\forest@temp@count=\count523
+\forest@n=\count524
+\forest@temp@global@count=\count525
+\forest@temp@toks=\toks59
+\forest@temparray@M=\count526
+\forest@temparray@N=\count527
+\forest@global@temparray@M=\count528
+\forest@global@temparray@N=\count529
+\forest@isnum@count=\count530
+\forest@isdim@nonintpart=\count531
+\forest@isdim@dimen=\dimen324
+\forest@sort@m=\count532
+\forest@sort@k=\count533
+\forest@sort@p=\count534
+\bracket@content=\toks60
+\bracket@afterthought=\toks61
+\forest@node@maxid=\count535
+\forest@process@left@M=\count536
+\forest@process@left@N=\count537
+\forest@process@right@M=\count538
+\forest@process@right@N=\count539
+\forest@process@saved@M=\count540
+\forest@process@saved@N=\count541
+\forest@process@result@M=\count542
+\forest@process@result@N=\count543
+\forest@process@n=\count544
+\forest@nodewalk@branch@toks=\toks62
+\forest@nodewalk@shortsteps@resolution=\toks63
+\forest@do@dynamics=\toks64
+\forest@box=\box150
+\forest@xg=\dimen325
+\forest@yg=\dimen326
+\forest@xs=\dimen327
+\forest@ys=\dimen328
+\forest@pi@toks=\toks65
+\forest@segment@toks=\toks66
+\forest@PIi@toks=\toks67
+\forest@PIii@toks=\toks68
+\forest@copy@in=\read7
+\forest@copy@out=\write7
+\forest@externalize@max@outer@n=\count545
+\forest@externalize@inner@n=\count546
+) (/usr/share/texlive/texmf-dist/tex/latex/forest/forest-lib-linguistics.sty
+Package: forest-lib-linguistics 2017/07/14 v0.1.2
+\standardnodestrutbox=\box151
+)
 BHT-Abschlussarbeit V2.0 26.08.21 S.Tschirley
 (/usr/share/texlive/texmf-dist/tex/latex/blindtext/blindtext.sty
 Package: blindtext 2012/01/06 V2.0 blindtext-Package
  (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
-\c@blindtext=\count498
-\c@Blindtext=\count499
-\c@blind@countparstart=\count500
-\blind@countxx=\count501
-\blindtext@numBlindtext=\count502
-\blind@countyy=\count503
-\c@blindlist=\count504
-\c@blindlistlevel=\count505
-\c@blindlist@level=\count506
-\blind@listitem=\count507
-\c@blind@listcount=\count508
-\c@blind@levelcount=\count509
-\blind@mathformula=\count510
-\blind@Mathformula=\count511
-\c@blind@randomcount=\count512
-\c@blind@randommax=\count513
-\c@blind@pangramcount=\count514
-\c@blind@pangrammax=\count515
+\c@blindtext=\count547
+\c@Blindtext=\count548
+\c@blind@countparstart=\count549
+\blind@countxx=\count550
+\blindtext@numBlindtext=\count551
+\blind@countyy=\count552
+\c@blindlist=\count553
+\c@blindlistlevel=\count554
+\c@blindlist@level=\count555
+\blind@listitem=\count556
+\c@blind@listcount=\count557
+\c@blind@levelcount=\count558
+\blind@mathformula=\count559
+\blind@Mathformula=\count560
+\c@blind@randomcount=\count561
+\c@blind@randommax=\count562
+\c@blind@pangramcount=\count563
+\c@blind@pangrammax=\count564
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count516
-\lst@gtempboxa=\box119
-\lst@token=\toks43
-\lst@length=\count517
-\lst@currlwidth=\dimen273
-\lst@column=\count518
-\lst@pos=\count519
-\lst@lostspace=\dimen274
-\lst@width=\dimen275
-\lst@newlines=\count520
-\lst@lineno=\count521
-\lst@maxwidth=\dimen276
+\lst@mode=\count565
+\lst@gtempboxa=\box152
+\lst@token=\toks69
+\lst@length=\count566
+\lst@currlwidth=\dimen329
+\lst@column=\count567
+\lst@pos=\count568
+\lst@lostspace=\dimen330
+\lst@width=\dimen331
+\lst@newlines=\count569
+\lst@lineno=\count570
+\lst@maxwidth=\dimen332
  (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
-\c@lstnumber=\count522
-\lst@skipnumbers=\count523
-\lst@framebox=\box120
+\c@lstnumber=\count571
+\lst@skipnumbers=\count572
+\lst@framebox=\box153
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2023/02/27 1.9 listings configuration
 ))
@@ -982,20 +1274,20 @@ Package: trsym 2000/06/25v1.0transformation symbol font
 Package: bytefield 2023/09/24 v2.8 Network protocol diagrams
  (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count524
-\calc@Bcount=\count525
-\calc@Adimen=\dimen277
-\calc@Bdimen=\dimen278
+\calc@Acount=\count573
+\calc@Bcount=\count574
+\calc@Adimen=\dimen333
+\calc@Bdimen=\dimen334
 \calc@Askip=\skip106
 \calc@Bskip=\skip107
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count526
+\calc@Ccount=\count575
 \calc@Cskip=\skip108
 )
 \bytefield@height=\skip109
 \bytefield@height@increment=\skip110
-\entire@bytefield@picture=\box121
+\entire@bytefield@picture=\box154
 \bf@bitwidth=\skip111
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 6.0pt on input line 80.
@@ -1004,9 +1296,9 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 \units@tall=\skip114
 \units@high=\skip115
 \header@xpos=\skip116
-\c@header@val=\count527
-\c@max@header@val=\count528
-\curly@box=\box122
+\c@header@val=\count576
+\c@max@header@val=\count577
+\curly@box=\box155
 \wordlabelr@start=\skip117
 \wordlabelr@end=\skip118
 \wordlabell@start=\skip119
@@ -1014,18 +1306,18 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 \total@lbox@width=\skip121
 \label@box@width=\skip122
 \label@box@height=\skip123
-\word@label@box=\box123
+\word@label@box=\box156
 ) (./personalMacros.tex)
 -----------------------------------------------------------
 ----> main.tex ---- Zentrales Dokument---------------------
 -----------------------------------------------------------
-\glswrite=\write6
-\glo@main@file=\write7
-\openout7 = `main.glo'.
+\glswrite=\write8
+\glo@main@file=\write9
+\openout9 = `main.glo'.
 
 Package glossaries Info: Writing glossary file main.glo on input line 91.
-\glo@acronym@file=\write8
-\openout8 = `main.acn'.
+\glo@acronym@file=\write10
+\openout10 = `main.acn'.
 
 Package glossaries Info: Writing glossary file main.acn on input line 91.
 Package csquotes Info: Checking for multilingual support...
@@ -1035,33 +1327,33 @@ Package csquotes Info: Redefining alias 'default' -> 'ngerman'.
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-Package hyperref Info: Link coloring OFF on input line 94.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+Package hyperref Info: Link coloring OFF on input line 95.
  (./main.out) (./main.out)
-\@outlinefile=\write9
-\openout9 = `main.out'.
+\@outlinefile=\write11
+\openout11 = `main.out'.
 
  (/usr/share/texlive/texmf-dist/tex/latex/translations/translations-basic-dictionary-german.trsl
 File: translations-basic-dictionary-german.trsl (german translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `german'. on input line 94.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `german'. on input line 95.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: longtable package is loaded.
@@ -1072,25 +1364,25 @@ Package caption Info: supertabular package is loaded.
 Package caption Info: End \AtBeginDocument code.
  (./main.glsdefs) (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count529
-\scratchdimen=\dimen279
-\scratchbox=\box124
-\nofMPsegments=\count530
-\nofMParguments=\count531
-\everyMPshowfont=\toks44
-\MPscratchCnt=\count532
-\MPscratchDim=\dimen280
-\MPnumerator=\count533
-\makeMPintoPDFobject=\count534
-\everyMPtoPDFconversion=\toks45
+\scratchcounter=\count578
+\scratchdimen=\dimen335
+\scratchbox=\box157
+\nofMPsegments=\count579
+\nofMParguments=\count580
+\everyMPshowfont=\toks70
+\MPscratchCnt=\count581
+\MPscratchDim=\dimen336
+\MPnumerator=\count582
+\makeMPintoPDFobject=\count583
+\everyMPtoPDFconversion=\toks71
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-\c@mv@tabular=\count535
-\c@mv@boldtabular=\count536
+\c@mv@tabular=\count584
+\c@mv@boldtabular=\count585
  (/usr/share/texlive/texmf-dist/tex/latex/draftwatermark/draftwatermark.sty
 Package: draftwatermark 2020/12/08 3.0 Put a gray textual watermark on document pages
 )
@@ -1116,9 +1408,9 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (./main.bbl)
-Package biblatex Info: Reference section=0 on input line 94.
-Package biblatex Info: Reference segment=0 on input line 94.
-\c@lstlisting=\count537
+Package biblatex Info: Reference section=0 on input line 95.
+Package biblatex Info: Reference segment=0 on input line 95.
+\c@lstlisting=\count586
  (./titelseiten.tex
 LaTeX Font Info:    Trying to load font information for T1+phv on input line 8.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
@@ -1133,7 +1425,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--8
 \T1/phv/b/n/14.4 LoRaWan-Kommunikation für mo-bi-le Sen-
  []
 
-<BHT-Logo-vertikal.pdf, id=144, 53.01094pt x 126.0707pt>
+<BHT-Logo-vertikal.pdf, id=147, 53.01094pt x 126.0707pt>
 File: BHT-Logo-vertikal.pdf Graphic file (type pdf)
 <use BHT-Logo-vertikal.pdf>
 Package pdftex.def Info: BHT-Logo-vertikal.pdf  used on input line 8.
@@ -1143,7 +1435,7 @@ Overfull \hbox (1.82535pt too wide) in paragraph at lines 8--8
 [][] [] 
  []
 
-<BHT-Elements.pdf, id=145, 32.04338pt x 161.86708pt>
+<BHT-Elements.pdf, id=148, 32.04338pt x 161.86708pt>
 File: BHT-Elements.pdf Graphic file (type pdf)
 <use BHT-Elements.pdf>
 Package pdftex.def Info: BHT-Elements.pdf  used on input line 8.
@@ -1160,7 +1452,7 @@ LaTeX Font Info:    Trying to load font information for U+trsy on input line 8.
  (/usr/share/texlive/texmf-dist/tex/latex/trsym/utrsy.fd
 File: utrsy.fd 2000/06/25v1.0transformation symbol font definitions
 )
-<BHT-Studiere-vertikal.pdf, id=146, 8.48169pt x 86.94461pt>
+<BHT-Studiere-vertikal.pdf, id=149, 8.48169pt x 86.94461pt>
 File: BHT-Studiere-vertikal.pdf Graphic file (type pdf)
 <use BHT-Studiere-vertikal.pdf>
 Package pdftex.def Info: BHT-Studiere-vertikal.pdf  used on input line 8.
@@ -1169,7 +1461,7 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 85.35826pt on input line 9.
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}
 
-\openout6 = `main.ist'.
+\openout8 = `main.ist'.
 
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} <./BHT-Logo-vertikal.pdf> <./BHT-Elements.pdf
 
@@ -1209,14 +1501,14 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 10.95pt on input line 2.
  [3])
-\tf@toc=\write10
-\openout10 = `main.toc'.
+\tf@toc=\write12
+\openout12 = `main.toc'.
 
  [4{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc}] (./main.lof [5
 
 ])
-\tf@lof=\write11
-\openout11 = `main.lof'.
+\tf@lof=\write13
+\openout13 = `main.lof'.
 
 ) (./main.acr [6] [7
 
@@ -1334,8 +1626,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 306--306
  []
 
 [6] [7]
-\@gls@deffile=\write12
-\openout12 = `main.glsdefs'.
+\@gls@deffile=\write14
+\openout14 = `main.glsdefs'.
 
 ) (./kapitel1/ch1.tex [8]
 Kapitel 2.
@@ -1400,23 +1692,23 @@ Package textcomp Info: Symbol \textrightarrow not provided by
 (textcomp)             font family LinuxLibertineT-TLF in TS1 encoding.
 (textcomp)             Default family used instead on input line 16.
 [19{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [20]
-<kapitel3/pictures/zephyr_lora_send_setup.jpeg, id=566, 2007.5pt x 1129.21875pt>
+<kapitel3/pictures/zephyr_lora_send_setup.jpeg, id=571, 2007.5pt x 1129.21875pt>
 File: kapitel3/pictures/zephyr_lora_send_setup.jpeg Graphic file (type jpg)
 <use kapitel3/pictures/zephyr_lora_send_setup.jpeg>
 Package pdftex.def Info: kapitel3/pictures/zephyr_lora_send_setup.jpeg  used on input line 94.
 (pdftex.def)             Requested size: 426.79134pt x 240.07211pt.
-<kapitel3/pictures/868MHz_Dipole.jpeg, id=567, 1541.76pt x 2055.68pt>
+<kapitel3/pictures/868MHz_Dipole.jpeg, id=572, 1541.76pt x 2055.68pt>
 File: kapitel3/pictures/868MHz_Dipole.jpeg Graphic file (type jpg)
 <use kapitel3/pictures/868MHz_Dipole.jpeg>
 Package pdftex.def Info: kapitel3/pictures/868MHz_Dipole.jpeg  used on input line 101.
 (pdftex.def)             Requested size: 1541.75624pt x 2055.675pt.
  [21 <./kapitel3/pictures/zephyr_lora_send_setup.jpeg> <./kapitel3/pictures/868MHz_Dipole.jpeg>]
-<kapitel3/pictures/zephyr_lora_send_calc.png, id=580, 647.41875pt x 403.5075pt>
+<kapitel3/pictures/zephyr_lora_send_calc.png, id=585, 647.41875pt x 403.5075pt>
 File: kapitel3/pictures/zephyr_lora_send_calc.png Graphic file (type png)
 <use kapitel3/pictures/zephyr_lora_send_calc.png>
 Package pdftex.def Info: kapitel3/pictures/zephyr_lora_send_calc.png  used on input line 118.
 (pdftex.def)             Requested size: 426.79134pt x 266.00175pt.
-<kapitel3/pictures/zephyr_lora_send_in_sdr_sharp.png, id=583, 890.1255pt x 237.88875pt>
+<kapitel3/pictures/zephyr_lora_send_in_sdr_sharp.png, id=588, 890.1255pt x 237.88875pt>
 File: kapitel3/pictures/zephyr_lora_send_in_sdr_sharp.png Graphic file (type png)
 <use kapitel3/pictures/zephyr_lora_send_in_sdr_sharp.png>
 Package pdftex.def Info: kapitel3/pictures/zephyr_lora_send_in_sdr_sharp.png  used on input line 130.
@@ -1425,12 +1717,12 @@ Package pdftex.def Info: kapitel3/pictures/zephyr_lora_send_in_sdr_sharp.png  us
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [22 <./kapitel3/pictures/zephyr_lora_send_calc.png>]
-<kapitel3/pictures/lora_send_test_gnuradio_flowgraph.png, id=594, 420.3705pt x 166.221pt>
+<kapitel3/pictures/lora_send_test_gnuradio_flowgraph.png, id=599, 420.3705pt x 166.221pt>
 File: kapitel3/pictures/lora_send_test_gnuradio_flowgraph.png Graphic file (type png)
 <use kapitel3/pictures/lora_send_test_gnuradio_flowgraph.png>
 Package pdftex.def Info: kapitel3/pictures/lora_send_test_gnuradio_flowgraph.png  used on input line 145.
 (pdftex.def)             Requested size: 426.79134pt x 168.76956pt.
-<kapitel3/pictures/lora_send_test_gnuradio_result.png, id=595, 242.70676pt x 440.24475pt>
+<kapitel3/pictures/lora_send_test_gnuradio_result.png, id=600, 242.70676pt x 440.24475pt>
 File: kapitel3/pictures/lora_send_test_gnuradio_result.png Graphic file (type png)
 <use kapitel3/pictures/lora_send_test_gnuradio_result.png>
 Package pdftex.def Info: kapitel3/pictures/lora_send_test_gnuradio_result.png  used on input line 152.
@@ -1451,7 +1743,7 @@ Overfull \hbox (0.73714pt too wide) in paragraph at lines 163--170
 \T1/LinuxLibertineT-TLF/m/n/10.95 mit sei-nem in-te-grier-ten LoRa-Transceiver, der über einen SMA-Stecker mit der ex-ter-nen 868MHz-
  []
 
-<kapitel3/pictures/block_diag.png, id=609, 514.92375pt x 305.34074pt>
+<kapitel3/pictures/block_diag.png, id=614, 514.92375pt x 305.34074pt>
 File: kapitel3/pictures/block_diag.png Graphic file (type png)
 <use kapitel3/pictures/block_diag.png>
 Package pdftex.def Info: kapitel3/pictures/block_diag.png  used on input line 173.
@@ -1462,7 +1754,7 @@ Overfull \hbox (7.1891pt too wide) in paragraph at lines 184--192
  []
 
 [25 <./kapitel3/pictures/block_diag.png>]
-<kapitel3/pictures/usb.png, id=621, 392.06474pt x 323.40825pt>
+<kapitel3/pictures/usb.png, id=626, 392.06474pt x 323.40825pt>
 File: kapitel3/pictures/usb.png Graphic file (type png)
 <use kapitel3/pictures/usb.png>
 Package pdftex.def Info: kapitel3/pictures/usb.png  used on input line 209.
@@ -1481,7 +1773,7 @@ Underfull \vbox (badness 3954) has occurred while \output is active []
 
 LaTeX Warning: Reference `solar' on page 28 undefined on input line 250.
 
-<kapitel3/pictures/solar.png, id=639, 510.10574pt x 421.575pt>
+<kapitel3/pictures/solar.png, id=644, 510.10574pt x 421.575pt>
 File: kapitel3/pictures/solar.png Graphic file (type png)
 <use kapitel3/pictures/solar.png>
 Package pdftex.def Info: kapitel3/pictures/solar.png  used on input line 261.
@@ -1490,7 +1782,7 @@ Package pdftex.def Info: kapitel3/pictures/solar.png  used on input line 261.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [28]
-<kapitel3/pictures/fg.png, id=648, 561.297pt x 304.7385pt>
+<kapitel3/pictures/fg.png, id=653, 561.297pt x 304.7385pt>
 File: kapitel3/pictures/fg.png Graphic file (type png)
 <use kapitel3/pictures/fg.png>
 Package pdftex.def Info: kapitel3/pictures/fg.png  used on input line 280.
@@ -1504,23 +1796,23 @@ Overfull \hbox (41.24432pt too wide) in paragraph at lines 296--307
  []
 
 [30 <./kapitel3/pictures/fg.png>]
-<kapitel3/pictures/mcu_schematic.png, id=676, 645.612pt x 446.8695pt>
+<kapitel3/pictures/mcu_schematic.png, id=681, 645.612pt x 446.8695pt>
 File: kapitel3/pictures/mcu_schematic.png Graphic file (type png)
 <use kapitel3/pictures/mcu_schematic.png>
 Package pdftex.def Info: kapitel3/pictures/mcu_schematic.png  used on input line 323.
 (pdftex.def)             Requested size: 426.79134pt x 295.41208pt.
  [31 <./kapitel3/pictures/mcu_schematic.png>]
-<kapitel3/pictures/hse.png, id=694, 221.02576pt x 151.767pt>
+<kapitel3/pictures/hse.png, id=699, 221.02576pt x 151.767pt>
 File: kapitel3/pictures/hse.png Graphic file (type png)
 <use kapitel3/pictures/hse.png>
 Package pdftex.def Info: kapitel3/pictures/hse.png  used on input line 347.
 (pdftex.def)             Requested size: 213.39566pt x 146.53296pt.
-<kapitel3/pictures/mco.png, id=695, 289.68225pt x 103.587pt>
+<kapitel3/pictures/mco.png, id=700, 289.68225pt x 103.587pt>
 File: kapitel3/pictures/mco.png Graphic file (type png)
 <use kapitel3/pictures/mco.png>
 Package pdftex.def Info: kapitel3/pictures/mco.png  used on input line 360.
 (pdftex.def)             Requested size: 213.39566pt x 76.31018pt.
-<kapitel3/pictures/lse.png, id=696, 221.02576pt x 181.8795pt>
+<kapitel3/pictures/lse.png, id=701, 221.02576pt x 181.8795pt>
 File: kapitel3/pictures/lse.png Graphic file (type png)
 <use kapitel3/pictures/lse.png>
 Package pdftex.def Info: kapitel3/pictures/lse.png  used on input line 372.
@@ -1529,7 +1821,7 @@ Package pdftex.def Info: kapitel3/pictures/lse.png  used on input line 372.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [32 <./kapitel3/pictures/hse.png> <./kapitel3/pictures/mco.png>]
-<kapitel3/pictures/tx_matching.png, id=704, 452.892pt x 236.082pt>
+<kapitel3/pictures/tx_matching.png, id=709, 452.892pt x 236.082pt>
 File: kapitel3/pictures/tx_matching.png Graphic file (type png)
 <use kapitel3/pictures/tx_matching.png>
 Package pdftex.def Info: kapitel3/pictures/tx_matching.png  used on input line 402.
@@ -1538,13 +1830,13 @@ Package pdftex.def Info: kapitel3/pictures/tx_matching.png  used on input line 4
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [33 <./kapitel3/pictures/lse.png>] [34 <./kapitel3/pictures/tx_matching.png>]
-<kapitel3/pictures/rx_matching.png, id=719, 187.902pt x 193.9245pt>
+<kapitel3/pictures/rx_matching.png, id=724, 187.902pt x 193.9245pt>
 File: kapitel3/pictures/rx_matching.png Graphic file (type png)
 <use kapitel3/pictures/rx_matching.png>
 Package pdftex.def Info: kapitel3/pictures/rx_matching.png  used on input line 441.
 (pdftex.def)             Requested size: 213.39566pt x 220.24768pt.
  [35 <./kapitel3/pictures/rx_matching.png>]
-<kapitel3/pictures/decoupling.png, id=726, 278.2395pt x 272.217pt>
+<kapitel3/pictures/decoupling.png, id=731, 278.2395pt x 272.217pt>
 File: kapitel3/pictures/decoupling.png Graphic file (type png)
 <use kapitel3/pictures/decoupling.png>
 Package pdftex.def Info: kapitel3/pictures/decoupling.png  used on input line 504.
@@ -1556,23 +1848,23 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [37 <./kapitel3/pictures/decoupling.png>]
-<kapitel3/pictures/mcu_rst.png, id=740, 189.70876pt x 166.82326pt>
+<kapitel3/pictures/mcu_rst.png, id=745, 189.70876pt x 166.82326pt>
 File: kapitel3/pictures/mcu_rst.png Graphic file (type png)
 <use kapitel3/pictures/mcu_rst.png>
 Package pdftex.def Info: kapitel3/pictures/mcu_rst.png  used on input line 552.
 (pdftex.def)             Requested size: 213.39566pt x 187.65533pt.
  [38 <./kapitel3/pictures/mcu_rst.png>]
-<kapitel3/pictures/boot0.png, id=747, 296.307pt x 46.37325pt>
+<kapitel3/pictures/boot0.png, id=752, 296.307pt x 46.37325pt>
 File: kapitel3/pictures/boot0.png Graphic file (type png)
 <use kapitel3/pictures/boot0.png>
 Package pdftex.def Info: kapitel3/pictures/boot0.png  used on input line 568.
 (pdftex.def)             Requested size: 213.39566pt x 33.3979pt.
-<kapitel3/pictures/i2c1.png, id=748, 425.79076pt x 145.7445pt>
+<kapitel3/pictures/i2c1.png, id=753, 425.79076pt x 145.7445pt>
 File: kapitel3/pictures/i2c1.png Graphic file (type png)
 <use kapitel3/pictures/i2c1.png>
 Package pdftex.def Info: kapitel3/pictures/i2c1.png  used on input line 594.
 (pdftex.def)             Requested size: 320.09349pt x 109.56607pt.
-<kapitel3/pictures/esd.png, id=749, 187.29974pt x 160.1985pt>
+<kapitel3/pictures/esd.png, id=754, 187.29974pt x 160.1985pt>
 File: kapitel3/pictures/esd.png Graphic file (type png)
 <use kapitel3/pictures/esd.png>
 Package pdftex.def Info: kapitel3/pictures/esd.png  used on input line 609.
@@ -1581,7 +1873,7 @@ Package pdftex.def Info: kapitel3/pictures/esd.png  used on input line 609.
 Underfull \vbox (badness 5231) has occurred while \output is active []
 
  [39 <./kapitel3/pictures/boot0.png> <./kapitel3/pictures/i2c1.png>]
-<kapitel3/pictures/spi_flash.png, id=760, 422.17725pt x 376.40625pt>
+<kapitel3/pictures/spi_flash.png, id=765, 422.17725pt x 376.40625pt>
 File: kapitel3/pictures/spi_flash.png Graphic file (type png)
 <use kapitel3/pictures/spi_flash.png>
 Package pdftex.def Info: kapitel3/pictures/spi_flash.png  used on input line 626.
@@ -1590,7 +1882,7 @@ Package pdftex.def Info: kapitel3/pictures/spi_flash.png  used on input line 626
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [40 <./kapitel3/pictures/esd.png>]
-<kapitel3/pictures/blinky.png, id=769, 251.13824pt x 90.3375pt>
+<kapitel3/pictures/blinky.png, id=774, 251.13824pt x 90.3375pt>
 File: kapitel3/pictures/blinky.png Graphic file (type png)
 <use kapitel3/pictures/blinky.png>
 Package pdftex.def Info: kapitel3/pictures/blinky.png  used on input line 650.
@@ -1632,7 +1924,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 691--691
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [42 <./kapitel3/pictures/blinky.png>] [43]
-<kapitel3/pictures/stackup.png, id=793, 374.39874pt x 135.50626pt>
+<kapitel3/pictures/stackup.png, id=798, 374.39874pt x 135.50626pt>
 File: kapitel3/pictures/stackup.png Graphic file (type png)
 <use kapitel3/pictures/stackup.png>
 Package pdftex.def Info: kapitel3/pictures/stackup.png  used on input line 711.
@@ -1642,7 +1934,7 @@ Overfull \hbox (14.31122pt too wide) in paragraph at lines 726--730
 []\T1/LinuxLibertineT-TLF/m/n/10.95 Auf L3 ist die eben-falls durch-ge-hen-de 3,3V Ver-sor-gungs-schicht un-ter-ge-bracht. Aus [][]EMV[]-technischer
  []
 
-<kapitel3/pictures/power_plane.png, id=797, 326.4195pt x 239.6955pt>
+<kapitel3/pictures/power_plane.png, id=802, 326.4195pt x 239.6955pt>
 File: kapitel3/pictures/power_plane.png Graphic file (type png)
 <use kapitel3/pictures/power_plane.png>
 Package pdftex.def Info: kapitel3/pictures/power_plane.png  used on input line 733.
@@ -1655,7 +1947,7 @@ Overfull \hbox (14.46489pt too wide) in paragraph at lines 738--741
 []\T1/LinuxLibertineT-TLF/m/n/10.95 Aufgrund des-sen, dass JLCP-CB ei-ne teu-re-re Preis-klas-se für Lei-ter-plat-ten grö-ÿer als $\OT1/cmr/m/n/10.95 100$$[]$\T1/LinuxLibertineT-TLF/m/n/10.95 x$\OT1/cmr/m/n/10.95 100$$[]$
  []
 
-<kapitel3/pictures/imp_calc_kicad.png, id=804, 597.432pt x 372.1905pt>
+<kapitel3/pictures/imp_calc_kicad.png, id=809, 597.432pt x 372.1905pt>
 File: kapitel3/pictures/imp_calc_kicad.png Graphic file (type png)
 <use kapitel3/pictures/imp_calc_kicad.png>
 Package pdftex.def Info: kapitel3/pictures/imp_calc_kicad.png  used on input line 751.
@@ -1664,12 +1956,12 @@ Package pdftex.def Info: kapitel3/pictures/imp_calc_kicad.png  used on input lin
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [45 <./kapitel3/pictures/power_plane.png>]
-<kapitel3/pictures/round_tracks.png, id=812, 281.853pt x 181.8795pt>
+<kapitel3/pictures/round_tracks.png, id=817, 281.853pt x 181.8795pt>
 File: kapitel3/pictures/round_tracks.png Graphic file (type png)
 <use kapitel3/pictures/round_tracks.png>
 Package pdftex.def Info: kapitel3/pictures/round_tracks.png  used on input line 770.
 (pdftex.def)             Requested size: 192.05746pt x 123.93451pt.
-<kapitel3/pictures/teardrop.png, id=813, 324.0105pt x 204.765pt>
+<kapitel3/pictures/teardrop.png, id=818, 324.0105pt x 204.765pt>
 File: kapitel3/pictures/teardrop.png Graphic file (type png)
 <use kapitel3/pictures/teardrop.png>
 Package pdftex.def Info: kapitel3/pictures/teardrop.png  used on input line 779.
@@ -1678,7 +1970,7 @@ Package pdftex.def Info: kapitel3/pictures/teardrop.png  used on input line 779.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [46 <./kapitel3/pictures/imp_calc_kicad.png>]
-<kapitel3/pictures/board_2d.png, id=820, 507.0945pt x 428.802pt>
+<kapitel3/pictures/board_2d.png, id=825, 507.0945pt x 428.802pt>
 File: kapitel3/pictures/board_2d.png Graphic file (type png)
 <use kapitel3/pictures/board_2d.png>
 Package pdftex.def Info: kapitel3/pictures/board_2d.png  used on input line 797.
@@ -1687,12 +1979,12 @@ Package pdftex.def Info: kapitel3/pictures/board_2d.png  used on input line 797.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [47 <./kapitel3/pictures/round_tracks.png> <./kapitel3/pictures/teardrop.png>]
-<kapitel3/pictures/3d_top.png, id=828, 1342.01375pt x 756.8275pt>
+<kapitel3/pictures/3d_top.png, id=833, 1342.01375pt x 756.8275pt>
 File: kapitel3/pictures/3d_top.png Graphic file (type png)
 <use kapitel3/pictures/3d_top.png>
 Package pdftex.def Info: kapitel3/pictures/3d_top.png  used on input line 806.
 (pdftex.def)             Requested size: 192.03757pt x 108.29941pt.
-<kapitel3/pictures/3d_bottom.png, id=829, 1342.01375pt x 756.8275pt>
+<kapitel3/pictures/3d_bottom.png, id=834, 1342.01375pt x 756.8275pt>
 File: kapitel3/pictures/3d_bottom.png Graphic file (type png)
 <use kapitel3/pictures/3d_bottom.png>
 Package pdftex.def Info: kapitel3/pictures/3d_bottom.png  used on input line 813.
@@ -1708,15 +2000,28 @@ File: lstlang1.sty 2023/02/27 1.9 listings language file
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
 )
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 936.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 937.
  [51]
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 8.30002pt on input line 936.
- [52]
+(Font)              scaled to size 8.30002pt on input line 937.
 
-Package glossaries Warning: Entry `esd' has already been defined in the document environment (ignoring new definition) on input line 1020.
+Overfull \hbox (15.63809pt too wide) in paragraph at lines 962--968
+\T1/LinuxLibertineT-TLF/m/n/10.95 chen-ket-te im For-mat [][][][][][], die als ein-deu-ti-ger Schlüs-sel für das Treiber-Matching
+ []
 
-) (./anhang.tex [53] [54
+LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
+(Font)              scaled to size 7.47002pt on input line 990.
+[52]
+Underfull \vbox (badness 1325) has occurred while \output is active []
+
+ [53]
+LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
+(Font)              scaled to size 70.8475pt on input line 1076.
+ [54]
+
+Package glossaries Warning: Entry `esd' has already been defined in the document environment (ignoring new definition) on input line 1124.
+
+) (./anhang.tex [55] [56
 
 ]
 Anhang A.
@@ -1725,10 +2030,10 @@ Overfull \hbox (15.25049pt too wide) in paragraph at lines 31--33
 []\T1/fvm/m/n/10.95 bhtThesis.bib \T1/LinuxLibertineT-TLF/m/n/10.95 bein-hal-tet die zu zi-tie-ren-den Li-te-ra-tur-stel-len und wird von bibT[]Xausgewertet 
  []
 
-[55]) [56]
+[57]) [58]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/sc' will be
-(Font)              scaled to size 10.95pt on input line 124.
- [57
+(Font)              scaled to size 10.95pt on input line 125.
+ [59
 
 
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_ncsllp.enc}] (./main.aux)
@@ -1741,19 +2046,22 @@ L3 programming layer <2024-01-22>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 411C715FEF892535847882EE4C91C0E4;6723.
+(rerunfilecheck)             Checksum: EBE60BDD7CDEF79E139C376578730880;6723.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36209 strings out of 474222
- 675577 string characters out of 5748733
- 1987975 words of memory out of 5000000
- 57632 multiletter control sequences out of 15000+600000
- 676893 words of font info for 129 fonts, out of 8000000 for 9000
+ 56862 strings out of 474222
+ 1199289 string characters out of 5748733
+ 2099572 words of memory out of 5000000
+ 77969 multiletter control sequences out of 15000+600000
+ 679229 words of font info for 140 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 94i,13n,93p,2407b,2661s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 133i,13n,135p,2407b,2672s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{glo:ttn} has been referenced but does not exist, replaced by a fixed one
+
 
 pdfTeX warning (dest): name{glo:api} has been referenced but does not exist, replaced by a fixed one
 
@@ -1842,10 +2150,10 @@ pdfTeX warning (dest): name{glo:sdr} has been referenced but does not exist, rep
 pdfTeX warning (dest): name{glo:rtos} has been referenced but does not exist, replaced by a fixed one
 
 </usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on main.pdf (67 pages, 1677458 bytes).
+Output written on main.pdf (69 pages, 1688272 bytes).
 PDF statistics:
- 1063 PDF objects out of 1200 (max. 8388607)
- 883 compressed objects within 9 object streams
- 275 named destinations out of 1000 (max. 500000)
- 451 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1117 PDF objects out of 1200 (max. 8388607)
+ 934 compressed objects within 10 object streams
+ 307 named destinations out of 1000 (max. 500000)
+ 463 words of extra memory for PDF output out of 10000 (max. 10000000)
 

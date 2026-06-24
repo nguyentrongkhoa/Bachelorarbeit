@@ -914,7 +914,7 @@ externen Komponenten (Sensoren, Funkmodule).
 Wie der Begriff "Baum" schon suggeriert, werden sämtliche Hardware-Bausteine durch sogenannte \emph{Nodes} (Knoten) dargestellt, die sich
 einer hierarchischen Struktur unterordnen. Jeder Node kann wiederum \emph{Properties} (Eigenschaften) besitzen, welche
 in Form von Schlüssel-Wert-Paaren angegeben werden. Ein kurzer DT-Ausschnitt in Listing \ref{lst:dts_syntax} hilft, die Syntax 
-zu veranschaulichen:
+zu verdeutlichen: % TODO: change "listing" to german
 
 \begin{lstlisting}[
     language=C,
@@ -941,17 +941,64 @@ zu veranschaulichen:
             compatible = "vendor,i2c-controller";
             reg = <0x40003000 0x400>;
             status = "okay";
-            
-            sensor: sensor@76 {
-                compatible = "vendor,sensor-model";
-                reg = <0x76>;
-            };
+        };
+        uart0: uart@40002000 {
+            compatible = "vendor,uart-controller";
+            reg = <0x40002000 0x200>;
+            status = "okay";
         };
     };
 };
 \end{lstlisting}
 
-Für den Entwickler ist dabei das Konzept der DT-Overlays von zentraler Bedeutung: Während die Basis-Hardware des 
+Der Schrägstrich \codebox{/} in Zeile 1 repräsentiert den sogenannten Root-Node, der in jedem DT genau einmal vorkommen muss. 
+Er bildet die oberste Ebene des gesamten Hardware-Baums, von dem alle weiteren internen und externen 
+Komponenten als Child-Nodes abzweigen. In Zeile 3 \codebox{i2c0: i2c@40003000} wird ein Peripherie-Node definiert. 
+Der vordere Teil \codebox{i2c0} ist ein frei wählbares Label, das im späteren Applikationscode oder 
+in Overlays als Kurzreferenz genutzt werden kann. Der Teil nach dem Doppelpunkt, \codebox{i2c@40003000}, 
+spezifiziert den eigentlichen Nodenamen, gefolgt von der Unit-Address (hier die hexadezimale Basisadresse des I2C-Controllers 
+im Speicher des Mikrocontrollers).
+
+Die \codebox{compatible}-Property in Zeile 4 ist besonders wichtig. 
+Es handelt sich dabei um eine Zeichenkette im Format \codebox{"Hersteller,Modell"},
+die als eindeutiger Schlüssel für das Treiber-Matching dient, über den der Kernel erkennt, welcher hardwarespezifische C-Treiber 
+für diese Komponente geladen werden muss. Die \codebox{reg}-Property in Zeile 5 gibt den Speicherbereich an, 
+der dem I2C-Controller zugeordnet ist, während die \codebox{status} in Zeile 6 den Betriebszustand des Controllers beschreibt.
+Der \codebox{uart}-Node wird genauso aufgebaut wie der \codebox{i2c}-Node. 
+
+\begin{figure}[htbp]
+\centering
+\begin{forest}
+  for tree={
+    font=\ttfamily\small,
+    draw,                          % Zeichnet Rahmen um die Knoten
+    fill=gray!5,                   % Leicht grauer Hintergrund
+    rounded corners=2pt,           % Leicht abgerundete Ecken
+    node options={inner sep=6pt},  % Innenabstand im Kasten
+    edge={semithick, gray!70},     % Stil der Verbindungslinien
+    l sep+=10pt,                   % Vertikaler Abstand der Ebenen
+    s sep+=15pt                    % Horizontaler Abstand der Knoten
+  }
+  [/ (Root Node)
+    [soc
+      [i2c@40003000 \\ \footnotesize(Label: i2c0)
+        [sensor@76 \\ \footnotesize(Label: sensor)]
+      ]
+      [uart@40002000... \\ \footnotesize(Andere Peripherie)]
+    ]
+  ]
+\end{forest}
+\caption{Hierarchische Baumstruktur des beispielhaften Devicetrees.}
+\label{fig:dt_hierarchy}
+\end{figure}
+
+Abbildung \ref{fig:dt_hierarchy} zeigt den daraus resultierenden Baum. 
+Diese im primären Devicetree definierte Struktur beschreibt standardmäßig jedoch nur die vom Chiphersteller fest integrierten 
+On-Chip-Peripherieblöcke. Da eine reale eingebettete Anwendung in der Praxis um externe Sensoren und Aktoren auf der 
+Leiterplatte erweitert wird, stellt sich die Frage, wie diese systemspezifische Hardwaretopologie in die bestehende 
+Baumstruktur integriert werden kann.
+
+Für den Entwickler ist genau an dieser Schnittstelle das Konzept der \textbf{DT-Overlays} von zentraler Bedeutung. Während die Basis-Hardware des 
 STM32WL55-Boards in den vom Betriebssystem bereitgestellten Standard-Dateien fest definiert ist, erlaubt es eine Overlay-Datei (mit Endung \verb|.overlay|), 
 projektspezifische Änderungen vorzunehmen, ohne den Kernel-Quellcode zu modifizieren. In dieser Arbeit wird das Overlay genutzt, 
 um dem Zephyr-Kernel mitzuteilen, auf welche GPIO-Pins die serielle Schnittstelle des GPS-Empfängers abgebildet ist und unter 
@@ -966,11 +1013,11 @@ in das finale Firmware-Image kompiliert werden. Über die Konfigurationsdatei \v
 des Betriebssystems granular bestimmen.
 
 Dies erlaubt ein hocheffizientes Ressourcenmanagement auf dem STM32WL55: Module, die für den spezifischen Anwendungsfall benötigt 
-werden (wie z.B. GPIO-Treiber), müssen in \verb|prj.conf| explizit aktiviert werden (\verb|CONFIG_GPIO=y|).  
+werden (wie z.B. GPIO-Treiber), müssen in \verb|prj.conf| explizit aktiviert werden (\codebox{CONFIG\_GPIO=y}).  
 Das Kconfig-System stellt somit sicher, dass das resultierende Image, welches auf dem Mikrokontroller
 hochgeladen wird, einen minimalen Footprint aufweist und die Speicherrestriktionen einhält.
 
-\subsubsection{Treibermodell als Brücke zwischen Hardware und Software}
+\subsubsection{Treibermodelle als Brücke zwischen Hardware und Software}
 
 Das Bindeglied zwischen den Hardware-Strukturen des Devicetrees und den Software-Schaltern von Kconfig bildet das 
 generische Treibermodell von Zephyr. Es stellt standardisierte \acrshort{api}s bereit, die plattform- und herstellerunabhängig operieren.
@@ -978,14 +1025,70 @@ generische Treibermodell von Zephyr. Es stellt standardisierte \acrshort{api}s b
 Anstatt Peripherie über proprietäre Registerbefehle des jeweiligen Chipherstellers anzusprechen, interagiert die Anwendungsschicht 
 ausschließlich mit abstrakten Subsystemen (wie der \verb|sensor_driver_api| oder \verb|uart_driver_api|). 
 Für die Anwendungslogik ist es dadurch irrelevant, welcher konkrete Sensor- oder Bus-Typ physisch verbaut ist. Ein Wechsel des 
-Hardware-Bausteins erfordert lediglich eine Anpassung des compatible-Eintrags im DT; der Applikationscode 
+Hardware-Bausteins erfordert lediglich eine Anpassung des \codebox{compatible}-Eintrags im DT; der Applikationscode 
 greift über identische Funktionsaufrufe auf die Daten zu, da der Kernel den hardwarespezifischen Treiber vollautomatisch 
-unter der standardisierten API kapselt.
+unter der standardisierten API kapselt. % TODO: maybe reread this
 
 \subsection{Sensorintegration}
 
 \subsection{LoRaWAN-Netzwerkanbindung}
 
+Mit dem Grundwissen über Zephyr im vorangegangenen Abschnitt ist es nun möglich, die Entwicklung des Anwendungscodes
+zu starten. Als Allererstes muss das PCB mit einem LoRaWAN-Netzwerk verbunden werden. Da der Aufbau und die Inbetriebnahme eines 
+Privatnetzwerks den zeitlichen Rahmen dieser Arbeit sprengen würde, wird auf das öffentliche The Things Network (\acrshort{ttn}) 
+zurückgegriffen. 
+
+Wie aus Kapitel \ref{chap:grundlagen} bekannt, sind drei Informationen für die Registrierung eines Endgeräts im Netzwerk erforderlich: 
+DevEUI, JoinEUI und AppKey. Das Extrahieren der DevEUI erfolgt mithilfe des Zephyr-Subsystems \codebox{hwinfo}, dessen Aktivierung
+vorab in der \verb|prj.conf| hinterlegt werden muss (\codebox{CONFIG\_HWINFO=y}). 
+
+\begin{lstlisting}[
+    language=C,
+    caption={Auslesen der hardwarebasierten EUI-64 mittels des Zephyr hwinfo-Subsystems},
+    label={lst:hwinfo_deveui},
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{purple},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    numbersep=8pt,
+    backgroundcolor=\color{gray!8},
+    showstringspaces=false,
+    breaklines=true,
+    frame=single,
+    rulecolor=\color{gray!30},
+    tabsize=4
+]
+// Einbinden des Hardware-Informations-Subsystems von Zephyr
+#include <zephyr/drivers/hwinfo.h>
+
+// Globale Variablen zur Speicherung der EUI-64
+uint8_t dev_eui64[8];       // 8 Bytes bzw. 64 Bits fuer die Rohdaten
+char dev_eui64_str[17];     // 16 Zeichen fuer Hex-String + Null-Terminator
+int ret;                    // globaler Status-Rueckgabewert
+
+int main(void)
+{
+    // ... (Initialisierung von Peripherie)
+
+    // Abfrage der eindeutigen 64-Bit DevEUI von der Hardware
+    ret = hwinfo_get_device_eui64(dev_eui64);
+    if (ret < 0) {
+        LOG_ERR("Cannot retrieve 64-bit DevEUI\n");
+        return -1; // Stoppt die weitere Ausfuehrung komplett
+    }
+
+    // Konvertierung der Rohdaten (Byte-Array) in einen hexadezimalen String
+    for (int i = 0; i < 8; i++) {
+        snprintf(&dev_eui64_str[i * 2], 3, "%02X", dev_eui64[i]);
+    }
+    LOG_INF("Device EUI-64: %s\n", dev_eui64_str);
+
+    // ... (Folgender LoRaWAN-Setup-Block)
+}
+\end{lstlisting}
 
 \subsection{Kartografische Auswertung der Messdaten}
 % GPS-Koordinaten + RSSI als CSV exportieren,
@@ -1024,4 +1127,5 @@ unter der standardisierten API kapselt.
 \newacronym{emv}{EMV}{Elektromagnetische Verträglichkeit}
 \newacronym{hal}{HAL}{Hardware Abstraction Layer}
 \newacronym{dt}{DT}{Devicetree}
-\newacronym{api}{API}{Application Programming Interface}
+\newacronym{api}{API}{Application Programming Interface}\
+\newacronym{ttn}{TTN}{The Things Network}

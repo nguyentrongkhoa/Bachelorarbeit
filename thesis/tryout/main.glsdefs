@@ -2070,3 +2070,31 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{ttn}%
+{%
+name={\acronymfont {\glsentryshort {ttn}}},%
+sort={TTN},%
+type={acronym},%
+first={TTN},%
+firstplural={TTNs},%
+text={TTN},%
+plural={TTNs},%
+description={The Things Network},%
+descriptionplural={The Things Network},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={The Things Network},%
+longplural={The Things Networks},%
+short={TTN},%
+shortplural={TTNs},%
+counter={page},%
+parent={},%
+%
+}%
+
