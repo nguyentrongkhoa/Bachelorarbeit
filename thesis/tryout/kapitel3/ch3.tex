@@ -1153,7 +1153,38 @@ Zu guter Letzt müssen beim Join-Verfahren die TX- und RX-Fenster zeitlich abges
 der LoRaWAN-Stack Auskünfte über die Pinverbindungen des RF-Schalters braucht. Da muss die Hardware-Beschreibung in der 
 \verb|.overlay|-Datei erweitert werden.
 
-
+\begin{lstlisting}[language=devicetree, 
+    caption={Persistente Speicherung und Inkrementierung des DevNonce},
+    label={lst:dev_nonce_incr},
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{purple},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    numbersep=8pt,
+    backgroundcolor=\color{gray!8},
+    showstringspaces=false,
+    breaklines=true,
+    frame=single,
+    rulecolor=\color{gray!30},
+    tabsize=4
+]
+&subghzspi {
+    status = "okay";
+    lora: radio@0 {
+        status = "okay";
+        tx-enable-gpios = <&gpiob 8 GPIO_ACTIVE_HIGH>;
+        rx-enable-gpios = <&gpiob 12 GPIO_ACTIVE_HIGH>;
+        dio3-tcxo-voltage = <SX126X_DIO3_TCXO_3V3>;
+        tcxo-power-startup-delay-ms = <5>;
+        power-amplifier-output = "rfo-lp";
+        rfo-lp-max-power = <15>;
+        rfo-hp-max-power = <22>;
+    };
+};
+\end{lstlisting}
 
 \subsection{Kartografische Auswertung der Messdaten}
 % GPS-Koordinaten + RSSI als CSV exportieren,
