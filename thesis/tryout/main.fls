@@ -874,6 +874,11 @@ INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/bera/fvmr8t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/bera/fvmr8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/bera/fvmr8t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/bera/fvmr8r.tfm
+INPUT ./kapitel3/pictures/ttn_register.png
+INPUT ./kapitel3/pictures/ttn_register.png
+INPUT ./kapitel3/pictures/ttn_register.png
+INPUT ./kapitel3/pictures/ttn_register.png
+INPUT ./kapitel3/pictures/ttn_register.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/bera/fvmr8t.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/bera/fvmr8t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/bera/fvmr8r.tfm

@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1782285524.06719 -1
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1782292347.97013 -1
   "LoRa.bib" 1775241387.62484 60839 c02c6e690a103761d288171c88f3c04c ""
-  "main.bcf" 1782285523.35282 107896 211a1597c331b6492d945b828a46567a "pdflatex"
+  "main.bcf" 1782292347.14485 107896 211a1597c331b6492d945b828a46567a "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1782285510.55333 "/home/tom/zephyrproject/descap_lorawan/thesis/tryout/main.tex" "main.pdf" "main" 1782285524.06791 0
+["pdflatex"] 1782292331.76024 "/home/tom/zephyrproject/descap_lorawan/thesis/tryout/main.tex" "main.pdf" "main" 1782292347.97175 0
   "/etc/texmf/web2c/texmf.cnf" 1773605240.045 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/tom/zephyrproject/descap_lorawan/thesis/tryout/main.tex" 1782213948.69167 3798 da33be7f981090c22146bd1315d5af2b ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -348,7 +348,7 @@
   "bhtThesis.sty" 1774175586.51523 14008 684a2402a6d7dab5ea84941c979e7954 ""
   "kapitel1/ch1.tex" 1775216380.94165 23217 f5aa65d5303c59108959ca47c07130a2 ""
   "kapitel2/ch2.tex" 1774705914.81908 14704 c2cc8b7ff5433632380c003224d3e24c ""
-  "kapitel3/ch3.tex" 1782285494.25682 63560 cadeb748029bbd7ea50e8bf7ec706ce3 ""
+  "kapitel3/ch3.tex" 1782292328.19284 63536 37aff863e76ba7ed8fd7ce6a73d1150e ""
   "kapitel3/pictures/3d_bottom.png" 1779646715.30199 57440 d92bf510684242bf7e05ff367c46547d ""
   "kapitel3/pictures/3d_top.png" 1779646674.14452 63880 ed95869779f927a0bb9ef9b2b1a65891 ""
   "kapitel3/pictures/868MHz_Dipole.jpeg" 1775102805.82105 169974 f2a22280bcd6f9d7a1042cc5df5485f9 ""
@@ -375,23 +375,24 @@
   "kapitel3/pictures/spi_flash.png" 1779372921.45635 33352 4c99c9362002ffa66d8cf80b3ed80def ""
   "kapitel3/pictures/stackup.png" 1779438738.32283 3988 ff1504db9e7e7050166cc8c01e0db061 ""
   "kapitel3/pictures/teardrop.png" 1779644249.21626 12151 cd1e9c4a89233e5cbb057455f4afb421 ""
+  "kapitel3/pictures/ttn_register.png" 1782290632.61207 34244 dd1334e9c0b66d94fdb25daee3ffe173 ""
   "kapitel3/pictures/tx_matching.png" 1779192904.9558 19203 c935a7044a531cb0746349d5a5aa9758 ""
   "kapitel3/pictures/usb.png" 1778321962.90163 34775 2513d1293b59aaa731a5dcac9e5ca3df ""
   "kapitel3/pictures/zephyr_lora_send_calc.png" 1775216661.58663 73438 78d9f71f3bcdb9c66c40d1b28256fd6f ""
   "kapitel3/pictures/zephyr_lora_send_in_sdr_sharp.png" 1775046727.66939 95869 b0c73dc9209fbe0d1f813d166faa6b18 ""
   "kapitel3/pictures/zephyr_lora_send_setup.jpeg" 1775102832.63503 142312 be6f844d1213f89fd3bfc94101a1fe15 ""
   "main.acr" 1774707137.60362 4447 67daa0e4453a5d97077be8460fa38d6d ""
-  "main.aux" 1782285523.32082 24221 4edb6d89ad785dbca1ecf074549fd495 "pdflatex"
+  "main.aux" 1782292347.11685 24541 4c6cc65db1953e3b54f1bd95d202a436 "pdflatex"
   "main.bbl" 1775241752.89064 12050 4100a6fb0da437186f61199af838f408 "biber main"
-  "main.cb" 1782285512.61682 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.cb2" 1782285512.60482 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.cb" 1782292333.79285 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.cb2" 1782292333.77685 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   "main.gls" 1774707137.13292 6 9f404503043ec80c08484be9f659189e ""
-  "main.glsdefs" 1782285523.30882 38067 ddd10d949b763fcd0bd708787277801b "pdflatex"
-  "main.lof" 1782285523.35682 3542 390e028a4145b36c4e8b4a312c69b4de "pdflatex"
-  "main.out" 1782285523.33682 6723 ebe60bdd7cdef79e139c376578730880 "pdflatex"
-  "main.run.xml" 1782285523.35682 2426 93fe141410a974fef8dc2475c7eede99 "pdflatex"
+  "main.glsdefs" 1782292347.10885 38067 ddd10d949b763fcd0bd708787277801b "pdflatex"
+  "main.lof" 1782292347.14885 3704 7d1118452f10318c6ae195395d58825d "pdflatex"
+  "main.out" 1782292347.12885 6723 1f20eebef6470dfd4ce46dde7a88d548 "pdflatex"
+  "main.run.xml" 1782292347.14885 2426 93fe141410a974fef8dc2475c7eede99 "pdflatex"
   "main.tex" 1782213948.69167 3798 da33be7f981090c22146bd1315d5af2b ""
-  "main.toc" 1782285523.35682 4822 823a1f024428f864cd78ba1687711161 "pdflatex"
+  "main.toc" 1782292347.14885 4822 8940e133857d759c52dd96a8809002ce "pdflatex"
   "personalMacros.tex" 1771675946.07852 150 6e250442b75bf14149b4086972af6b8f ""
   "titelseiten.tex" 1774421168.87594 5629 778ebfa1edacbbdb516303546c18ae11 ""
   (generated)

@@ -1039,13 +1039,25 @@ Privatnetzwerks den zeitlichen Rahmen dieser Arbeit sprengen würde, wird auf da
 zurückgegriffen. 
 
 Wie aus Kapitel \ref{chap:grundlagen} bekannt, sind drei Informationen für die Registrierung eines Endgeräts im Netzwerk erforderlich: 
-DevEUI, JoinEUI und AppKey. Das Extrahieren der DevEUI erfolgt mithilfe des Zephyr-Subsystems \codebox{hwinfo}, dessen Aktivierung
-vorab in der \verb|prj.conf| hinterlegt werden muss (\codebox{CONFIG\_HWINFO=y}). 
+DevEUI, AppKey und JoinEUI. Zum Extrahieren der DevEUI wird Zephyr das Subsystem \codebox{hwinfo} zur Verfügung gestellt. % TODO: explain subsystem 
+TTN übernimmt die Rolle des Join-Servers und generiert selber den AppKey für unsere Applikation. Da kein externer Join-Server
+nötig ist, wird die JoinEUI als Nullvektor \codebox{00 00 00 00 00 00 00 00} definiert.  
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{kapitel3/pictures/ttn_register.png}
+    \caption{Registrierung eines neuen Endgeräts im LoRaWAN-Netzwerk bei The Things Network}
+    \label{fig:ttn_register}
+\end{figure}
+
+Zur Aktivierung mit dem \acrshort{otaa}-Verfahren wird der LoRaWAN \codebox{class\_a} 
+\href{https://github.com/zephyrproject-rtos/zephyr/blob/main/samples/subsys/lorawan/class_a/src/main.c}{Beispielcode}
+von Zephyr als Basis verwendet. Es muss nur 
 
 \begin{lstlisting}[
     language=C,
-    caption={Auslesen der hardwarebasierten EUI-64 mittels des Zephyr hwinfo-Subsystems},
-    label={lst:hwinfo_deveui},
+    caption={Statischer DevNonce-Ansatz im originalen Zephyr-Beispielcode},
+    label={lst:dev_nonce_static},
     basicstyle=\ttfamily\small,
     keywordstyle=\color{blue},
     commentstyle=\color{gray},
@@ -1059,35 +1071,19 @@ vorab in der \verb|prj.conf| hinterlegt werden muss (\codebox{CONFIG\_HWINFO=y})
     breaklines=true,
     frame=single,
     rulecolor=\color{gray!30},
-    tabsize=4
+    tabsize=4,
+    firstnumber=86
 ]
-// Einbinden des Hardware-Informations-Subsystems von Zephyr
-#include <zephyr/drivers/hwinfo.h>
+// ... 
 
-// Globale Variablen zur Speicherung der EUI-64
-uint8_t dev_eui64[8];       // 8 Bytes bzw. 64 Bits fuer die Rohdaten
-char dev_eui64_str[17];     // 16 Zeichen fuer Hex-String + Null-Terminator
-int ret;                    // globaler Status-Rueckgabewert
+join_cfg.mode = LORAWAN_ACT_OTAA;
+join_cfg.dev_eui = dev_eui64;
+join_cfg.otaa.join_eui = join_eui;
+join_cfg.otaa.app_key = app_key;
+join_cfg.otaa.nwk_key = app_key;
+join_cfg.otaa.dev_nonce = 0u; // Zähler wird bei jedem Reset zurückgesetzt
 
-int main(void)
-{
-    // ... (Initialisierung von Peripherie)
-
-    // Abfrage der eindeutigen 64-Bit DevEUI von der Hardware
-    ret = hwinfo_get_device_eui64(dev_eui64);
-    if (ret < 0) {
-        LOG_ERR("Cannot retrieve 64-bit DevEUI\n");
-        return -1; // Stoppt die weitere Ausfuehrung komplett
-    }
-
-    // Konvertierung der Rohdaten (Byte-Array) in einen hexadezimalen String
-    for (int i = 0; i < 8; i++) {
-        snprintf(&dev_eui64_str[i * 2], 3, "%02X", dev_eui64[i]);
-    }
-    LOG_INF("Device EUI-64: %s\n", dev_eui64_str);
-
-    // ... (Folgender LoRaWAN-Setup-Block)
-}
+// ...
 \end{lstlisting}
 
 \subsection{Kartografische Auswertung der Messdaten}
