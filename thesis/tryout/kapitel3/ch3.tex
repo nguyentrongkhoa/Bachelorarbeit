@@ -1151,11 +1151,11 @@ Somit kann das Board bei Bedarf gültige Rejoin-Anfragen senden, etwa beim Verbi
 
 Zu guter Letzt müssen beim Join-Verfahren die TX- und RX-Fenster zeitlich abgestimmt sowie koordiniert werden, weswegen 
 der LoRaWAN-Stack Auskünfte über die Pinverbindungen des RF-Schalters braucht. Da muss die Hardware-Beschreibung in der 
-\verb|.overlay|-Datei erweitert werden.
+\verb|.overlay|-Datei entsprechend erweitert werden, wie in Zeilen 5 und 6 im Listing \ref{lst:rf_sw_overlay} gezeigt wird. 
 
 \begin{lstlisting}[language=devicetree, 
-    caption={Persistente Speicherung und Inkrementierung des DevNonce},
-    label={lst:dev_nonce_incr},
+    caption={Devicetree-Overlay zur Konfiguration des RF-Schalters},
+    label={lst:rf_sw_overlay},
     basicstyle=\ttfamily\small,
     keywordstyle=\color{blue},
     commentstyle=\color{gray},
@@ -1177,11 +1177,6 @@ der LoRaWAN-Stack Auskünfte über die Pinverbindungen des RF-Schalters braucht.
         status = "okay";
         tx-enable-gpios = <&gpiob 8 GPIO_ACTIVE_HIGH>;
         rx-enable-gpios = <&gpiob 12 GPIO_ACTIVE_HIGH>;
-        dio3-tcxo-voltage = <SX126X_DIO3_TCXO_3V3>;
-        tcxo-power-startup-delay-ms = <5>;
-        power-amplifier-output = "rfo-lp";
-        rfo-lp-max-power = <15>;
-        rfo-hp-max-power = <22>;
     };
 };
 \end{lstlisting}
