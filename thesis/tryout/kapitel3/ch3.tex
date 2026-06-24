@@ -1143,8 +1143,8 @@ int main(void)
 \end{lstlisting}
 
 In Zeilen 9 bis 11 im Listing \ref{lst:dev_nonce_incr} wird der im Flash-Speicher hinterlegte Wert auf die Variable \codebox{dev\_nonce}
-übertragen. Das Programm versucht anschließend, mit der neugeladenen \codebox{dev\_nonce} sowie DevEUI, JoinEUI und AppKey 
-(diese werden im Struct \codebox{join\_cfg} verpackt) dem Netzwerk beizutreten. Schlägt der Versuch fehl, wird eine Wartezeit von 20 Sekunden
+übertragen. Das Programm versucht anschließend, unter Verwendung der neugeladenen \codebox{dev\_nonce} sowie DevEUI, JoinEUI und AppKey 
+(diese werden im Struct \codebox{join\_cfg} zusammengefasst) dem Netzwerk beizutreten. Schlägt der Versuch fehl, wird eine Wartezeit von 20 Sekunden
 zum Nächstversuch eingehalten, um nicht gegen Duty-Cycle-Beschränkungen zu verstoßen. Ein erfolgreicher Verbindungsaufbau bewirkt,
 dass in Zeilen 21 und 22 die \codebox{dev\_nonce} inkrementiert und wiederum im Flash zurückgespeichert wird. % TODO: refer to ... for duty cycle limits
 Somit kann das Board bei Bedarf gültige Rejoin-Anfragen senden, etwa beim Verbindungsabbruch oder nach einem Reset-Ereignis. 
@@ -1152,6 +1152,7 @@ Somit kann das Board bei Bedarf gültige Rejoin-Anfragen senden, etwa beim Verbi
 Zu guter Letzt müssen beim Join-Verfahren die TX- und RX-Fenster zeitlich abgestimmt sowie koordiniert werden, weswegen 
 der LoRaWAN-Stack Auskünfte über die Pinverbindungen des RF-Schalters braucht. Da muss die Hardware-Beschreibung in der 
 \verb|.overlay|-Datei erweitert werden.
+
 
 
 \subsection{Kartografische Auswertung der Messdaten}
