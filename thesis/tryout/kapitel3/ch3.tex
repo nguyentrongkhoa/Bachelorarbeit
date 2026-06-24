@@ -1186,19 +1186,21 @@ wurden für den vorliegenden Prototyp ausschließlich der Gassensor BME680 sowie
 BMV080 wurde verzichtet, da dieser laut Schaltplan (vgl. Abschnitt~\ref{subsec:mcu-schaltung}) am selben I2C"=Bus wie der BME680 % TODO: check ref
 betrieben wird und eine gleichzeitige Inbetriebnahme beider Sensoren den Rahmen dieser Arbeit nicht zusätzlich gerechtfertigt hätte.
 
-Für den BME680 stellt Zephyr einen nativen Sensortreiber bereit, der über
-die Property \codebox{compatible = "bosch,bme680"} im Devicetree"=Overlay
-referenziert wird. Der BME680 kann die Temperatur, Feuchtigkeit, Gaskonzentration sowie den Luftdruck erfassen; als
-Proof-of-Concept wird jedoch nur die Temperatur abgefragt und ins LoRaWAN-Netzwerk gestellt. Die Rohdaten vom Sensor
-werden anschließend in ASCII-Zeichenketten umgewandelt zwecks Lesbarkeit, obwohl das die Payloadgröße und konsequenterweise
-die Übertragungszeit erhöht.
+Für den Umgebungssensor BME680 stellt Zephyr einen nativen Hardware-Treiber bereit, welcher über die Property 
+\codebox{compatible = "bosch,bme680"} im Devicetree-Overlay referenziert wird. Der Sensor ist theoretisch in der Lage, 
+Umgebungstemperatur, relative Luftfeuchtigkeit, den Luftdruck sowie flüchtige organische Gaskonzentrationen 
+simultan zu erfassen. Im Rahmen dieses \mbox{Proof-of-Concept} wird jedoch primär die Temperatur abgefragt und an das 
+LoRaWAN-Netzwerk übermittelt. Die Konvertierung der sensorinternen Rohdaten erfolgt hierbei zunächst in ASCII-Zeichenketten. 
+Dies erhöht zwar die resultierende Payload-Größe und konsequenterweise die Übertragungszeit, erleichtert jedoch 
+die Evaluierung der LoRaWAN"=Nachrichten.
 
-Für das GPS"=Modul L80"=R existiert hingegen kein herstellerspezifischer
-Zephyr"=Treiber. Da das Modul Positionsdaten über das standardisierte
-NMEA"=0183"=Protokoll via UART ausgibt, wurde stattdessen der generische
-NMEA"=Treiber von Zephyr (\texttt{CONFIG\_GNSS\_NMEA\_GENERIC}) verwendet, der
-die empfangenen Datensätze (insbesondere GGA"= und RMC"=Sätze) parst und über
-die einheitliche GNSS"=API des Betriebssystems bereitstellt. 
+Das GPS-Modul gibt die geografischen Positionsdaten standardmäßig über das serielle NMEA"=0183"=Protokoll 
+via UART aus. Aufgrund dieser Standardisierung ist kein herstellerspezifischer Treiber notwendig; 
+der im Zephyr-Kernel integrierte, generische NMEA-Treiber ist für den Anwendungszweck vollständig ausreichend. 
+Die Akquisition der Positionsdaten samt den dazugehörigen Zeitstempeln erfolgt in einem separaten Software-Thread parallel 
+zur Sensordatenerfassung. Diese entkoppelte Task-Struktur stellt sicher, dass die Geokoordinaten kontinuierlich 
+aktualisiert werden, um im Zuge der späteren Feldtests empirische Aussagen über die Antennenreichweite 
+sowie die TTN"=Netzwerkabdeckung treffen zu können.
 
 \subsection{Kartografische Auswertung der Messdaten}
 % GPS-Koordinaten + RSSI als CSV exportieren,
