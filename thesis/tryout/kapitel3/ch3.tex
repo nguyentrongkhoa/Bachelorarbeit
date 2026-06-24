@@ -1029,8 +1029,6 @@ Hardware-Bausteins erfordert lediglich eine Anpassung des \codebox{compatible}-E
 greift über identische Funktionsaufrufe auf die Daten zu, da der Kernel den hardwarespezifischen Treiber vollautomatisch 
 unter der standardisierten API kapselt. % TODO: maybe reread this
 
-\subsection{Sensorintegration}
-
 \subsection{LoRaWAN-Netzwerkanbindung}
 
 Mit dem Grundwissen über Zephyr im vorangegangenen Abschnitt ist es nun möglich, die Entwicklung des Anwendungscodes
@@ -1180,6 +1178,27 @@ der LoRaWAN-Stack Auskünfte über die Pinverbindungen des RF-Schalters braucht.
     };
 };
 \end{lstlisting}
+
+\subsection{Integration von Peripherien}
+
+Nachdem die LoRaWAN"=Netzwerkanbindung erfolgreich etabliert war, wurde im nächsten Schritt die Anbindung der Sensorik realisiert. Aus Vereinfachungsgründen
+wurden für den vorliegenden Prototyp ausschließlich der Gassensor BME680 sowie das GPS"=Modul L80"=R integriert; auf den Partikelsensors
+BMV080 wurde verzichtet, da dieser laut Schaltplan (vgl. Abschnitt~\ref{subsec:mcu-schaltung}) am selben I2C"=Bus wie der BME680 % TODO: check ref
+betrieben wird und eine gleichzeitige Inbetriebnahme beider Sensoren den Rahmen dieser Arbeit nicht zusätzlich gerechtfertigt hätte.
+
+Für den BME680 stellt Zephyr einen nativen Sensortreiber bereit, der über
+die Property \codebox{compatible = "bosch,bme680"} im Devicetree"=Overlay
+referenziert wird. Der BME680 kann die Temperatur, Feuchtigkeit, Gaskonzentration sowie den Luftdruck erfassen; als
+Proof-of-Concept wird jedoch nur die Temperatur abgefragt und ins LoRaWAN-Netzwerk gestellt. Die Rohdaten vom Sensor
+werden anschließend in ASCII-Zeichenketten umgewandelt zwecks Lesbarkeit, obwohl das die Payloadgröße und konsequenterweise
+die Übertragungszeit erhöht.
+
+Für das GPS"=Modul L80"=R existiert hingegen kein herstellerspezifischer
+Zephyr"=Treiber. Da das Modul Positionsdaten über das standardisierte
+NMEA"=0183"=Protokoll via UART ausgibt, wurde stattdessen der generische
+NMEA"=Treiber von Zephyr (\texttt{CONFIG\_GNSS\_NMEA\_GENERIC}) verwendet, der
+die empfangenen Datensätze (insbesondere GGA"= und RMC"=Sätze) parst und über
+die einheitliche GNSS"=API des Betriebssystems bereitstellt. 
 
 \subsection{Kartografische Auswertung der Messdaten}
 % GPS-Koordinaten + RSSI als CSV exportieren,

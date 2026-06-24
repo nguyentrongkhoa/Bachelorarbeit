@@ -51,8 +51,8 @@
 \contentsline {subsubsection}{Devicetree zur Hardware-Beschreibung}{51}{section*.80}%
 \contentsline {subsubsection}{KConfig zur Software-Konfiguration}{53}{section*.82}%
 \contentsline {subsubsection}{Treibermodelle als Brücke zwischen Hardware und Software}{54}{section*.83}%
-\contentsline {subsection}{\numberline {3.4.3}Sensorintegration}{54}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}LoRaWAN-Netzwerkanbindung}{54}{subsection.3.4.4}%
-\contentsline {subsection}{\numberline {3.4.5}Kartografische Auswertung der Messdaten}{57}{subsection.3.4.5}%
+\contentsline {subsection}{\numberline {3.4.3}LoRaWAN-Netzwerkanbindung}{54}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Integration von Peripherien}{57}{subsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.4.5}Kartografische Auswertung der Messdaten}{58}{subsection.3.4.5}%
 \contentsline {chapter}{\numberline {A}Angehängtes: Die Dateien des Pakets}{59}{appendix.A}%
 \contentsline {chapter}{Literatur- und Quellenverzeichnis}{61}{section*.86}%
