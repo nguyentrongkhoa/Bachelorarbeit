@@ -1149,6 +1149,11 @@ zum Nächstversuch eingehalten, um nicht gegen Duty-Cycle-Beschränkungen zu ver
 dass in Zeilen 21 und 22 die \codebox{dev\_nonce} inkrementiert und wiederum im Flash zurückgespeichert wird. % TODO: refer to ... for duty cycle limits
 Somit kann das Board bei Bedarf gültige Rejoin-Anfragen senden, etwa beim Verbindungsabbruch oder nach einem Reset-Ereignis. 
 
+Zu guter Letzt müssen beim Join-Verfahren die TX- und RX-Fenster zeitlich abgestimmt sowie koordiniert werden, weswegen 
+der LoRaWAN-Stack Auskünfte über die Pinverbindungen des RF-Schalters braucht. Da muss die Hardware-Beschreibung in der 
+\verb|.overlay|-Datei erweitert werden.
+
+
 \subsection{Kartografische Auswertung der Messdaten}
 % GPS-Koordinaten + RSSI als CSV exportieren,
 % Python + Folium: Heatmap über OpenStreetMap,
