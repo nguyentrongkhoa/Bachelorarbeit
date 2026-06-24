@@ -1052,7 +1052,7 @@ nötig ist, wird die JoinEUI als Nullvektor \codebox{00 00 00 00 00 00 00 00} de
 
 Zur Aktivierung mit dem \acrshort{otaa}-Verfahren wird der LoRaWAN \codebox{class\_a} 
 \href{https://github.com/zephyrproject-rtos/zephyr/blob/main/samples/subsys/lorawan/class_a/src/main.c}{Beispielcode}
-von Zephyr als Basis verwendet. Es muss nur 
+von Zephyr als Basis verwendet. In Zeile 95 des Codes wird auf ein Problem hingewiesen:
 
 \begin{lstlisting}[
     language=C,
@@ -1081,10 +1081,73 @@ join_cfg.dev_eui = dev_eui64;
 join_cfg.otaa.join_eui = join_eui;
 join_cfg.otaa.app_key = app_key;
 join_cfg.otaa.nwk_key = app_key;
-join_cfg.otaa.dev_nonce = 0u; // Zähler wird bei jedem Reset zurückgesetzt
+join_cfg.otaa.dev_nonce = 0u; 
 
 // ...
 \end{lstlisting}
+
+Die \codebox{dev\_nonce} muss gemäß LoRaWAN-Join-Spezifikationen bei jedem Netzwerk-Join inkrementiert werden, sie wird hier allerdings
+statisch auf \codebox{0u} festgelegt. Das führt dazu, dass mit diesem Bepispielcode maximal ein Join zulässig ist. Der Code muss
+an dieser Stelle also mit einem besseren Handhabungsmechanismus bezogen auf \codebox{dev\_nonce} ergänzt werden.  
+
+\begin{lstlisting}[
+    language=C,
+    caption={Persistente Speicherung und Inkrementierung des DevNonce},
+    label={lst:dev_nonce_incr},
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{purple},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    numbersep=8pt,
+    backgroundcolor=\color{gray!8},
+    showstringspaces=false,
+    breaklines=true,
+    frame=single,
+    rulecolor=\color{gray!30},
+    tabsize=4
+]
+#include <zephyr/settings/settings.h>
+
+// ...
+
+int main(void)
+{
+    // ...
+    // Initialisierung des Settings-Subsystems und Laden des DevNonce aus dem Flash-Speicher
+    ret = settings_subsys_init();
+    ret = settings_register(&lorawan_settings_handler);
+    ret = settings_load(); 
+    // ...
+    // Versucht solange, bis Join-Request erfolgreich ist 
+    while(1) {
+        ret = lorawan_join(&join_cfg);
+		if(ret == 0) {
+			break;
+        }
+        k_msleep(20000); 
+	}
+    // Inkrementierung und persistente Rücksicherung des Zählers
+    ttn_dev_nonce++;
+    ret = settings_save_one("lorawan/devnonce", &ttn_dev_nonce, sizeof(ttn_dev_nonce));
+    // ... 
+    //Hauptschleife
+    while(1) {
+        // ... 
+    }
+}
+
+// ...
+\end{lstlisting}
+
+In Zeilen 9 bis 11 im Listing \ref{lst:dev_nonce_incr} wird der im Flash-Speicher hinterlegte Wert auf die Variable \codebox{dev\_nonce}
+übertragen. Das Programm versucht anschließend, mit der neugeladenen \codebox{dev\_nonce} sowie DevEUI, JoinEUI und AppKey 
+(diese werden im Struct \codebox{join\_cfg} verpackt) dem Netzwerk beizutreten. Schlägt der Versuch fehl, wird eine Wartezeit von 20 Sekunden
+zum Nächstversuch eingehalten, um nicht gegen Duty-Cycle-Beschränkungen zu verstoßen. Ein erfolgreicher Verbindungsaufbau bewirkt,
+dass in Zeilen 21 und 22 die \codebox{dev\_nonce} inkrementiert und wiederum im Flash zurückgespeichert wird. % TODO: refer to ... for duty cycle limits
+Somit kann das Board bei Bedarf gültige Rejoin-Anfragen senden, etwa beim Verbindungsabbruch oder nach einem Reset-Ereignis. 
 
 \subsection{Kartografische Auswertung der Messdaten}
 % GPS-Koordinaten + RSSI als CSV exportieren,
