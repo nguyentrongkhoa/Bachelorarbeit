@@ -911,7 +911,7 @@ Ursprünglich aus dem Linux-Kernel übernommen, beschreibt der DT alle Komponent
 Speicherbereiche (Flash, RAM) bis hin zu den Peripherieschnittstellen (I$^2$C, SPI, UART) und den daran angeschlossenen 
 externen Komponenten (Sensoren, Funkmodule).
 
-Wie der Begriff "Baum" schon suggeriert, werden sämtliche Hardware-Bausteine durch sogenannte \emph{Nodes} (Knoten) dargestellt, die sich
+Wie der Begriff \enquote{Baum} schon suggeriert, werden sämtliche Hardware-Bausteine durch sogenannte \emph{Nodes} (Knoten) dargestellt, die sich
 einer hierarchischen Struktur unterordnen. Jeder Node kann wiederum \emph{Properties} (Eigenschaften) besitzen, welche
 in Form von Schlüssel-Wert-Paaren angegeben werden. Ein kurzer DT-Ausschnitt in Listing \ref{lst:dts_syntax} hilft, die Syntax 
 zu verdeutlichen: % TODO: change "listing" to german
@@ -1206,13 +1206,38 @@ sowie die TTN"=Netzwerkabdeckung treffen zu können.
 
 In diesem Kapitel werden die empirischen Messergebnisse des entwickelten LoRaWAN-Prototyps präsentiert und dokumentiert. 
 Die Evaluierung gliedert sich in die funktionale Überprüfung der TTN-Infrastruktur, die kartografische Analyse der 
-Funkreichweite im urbanen Raum sowie die messtechnische Bestimmung des elektrischen Energiebedarfs im Laborbetrieb.
+Funkreichweite im Berliner Stadtgebiet sowie die messtechnische Bestimmung des elektrischen Energiebedarfs im Laborbetrieb.
 
-\subsection{Validierung der Netzwerkanbindung und Datenintegrität}
+\subsection{Validierung der Netzwerkanbindung}
 
-Vor der Durchführung empirischer Feldversuche im urbanen Raum wurde die grundlegende Funktionalität der 
-Kommunikationsarchitektur verifiziert. Der Fokus lag hierbei auf der fehlerfreien Initiierung des 
-\acrshort{otaa}-Verfahrens sowie der Korrektheit der übertragenen Datenpakete auf der Serverseite von TTN
+Vor der Durchführung der großflächigen Feldversuche im urbanen Raum wurde die grundlegende Funktionalität der 
+Kommunikationsarchitektur verifiziert. Der Fokus lag hierbei auf der fehlerfreien Initiierung des \acrshort{otaa}-Aktivierungsverfahrens sowie der 
+Korrektheit der empfangenen Datenpakete auf der TTN-Serverseite der Applikation.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{kapitel3/pictures/ttn_first_test.png}
+    \caption{Screenshot von TTN-Konsole nach erfolgreichem Join-Request}
+    \label{fig:ttn_first_test}
+\end{figure}
+
+Nachdem die Join-Anfrage über OTAA vom Netzwerkserver erfolgreich verarbeitet
+wurde, zeigt die TTN-Konsole für das Endgerät \codebox{rev-a-1} die korrekte
+DevEUI, JoinEUI sowie den Zeitstempel des Paketempfangs
+an (Abbildung~\ref{fig:ttn_first_test}). Diese Übereinstimmung mit den in
+der Firmware hinterlegten Werten  bestätigt, dass das Aktivierungsverfahren wie spezifiziert abgelaufen ist.
+
+Die in Zeile 36 sichtbare Payload wird im Base64"=Format kodiert
+übertragen (\codebox{MjIuNDE=}) und entspricht im Klartext dem
+Temperaturwert \enquote{22.41} (\si{\celsius}). Damit ist die
+End"=zu"=Ende"=Datenintegrität von der Sensormessung über die
+Firmware"=Kodierung bis zur Darstellung auf Serverseite nachgewiesen --
+eine Grundvoraussetzung für die in Kapitel~\ref{chap:evaluation} % TODO: ...
+folgenden quantitativen Auswertungen.
+
+Anhand der in der Konsole angezeigten Gateway"=ID in Zeile 40 lässt sich das empfangende Gateway als das öffentliche
+TTN"=Gateway der Zentral"= und Landesbibliothek Berlin (ZLB) identifizieren, was damit übereinstimmt, dass 
+die Join"=Anfrage in unmittelbarer Nähe auf der Museumsinsel initiiert wurde.
 
 \subsection{Kartografische Evaluierung der TTN-Netzwerkabdeckung}
 
