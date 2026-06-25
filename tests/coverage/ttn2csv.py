@@ -6,18 +6,11 @@ API into a flat CSV file with one row per uplink, ready to import into
 GPSVisualizer, QGIS, Excel, or any other timestamp-matching tool.
 
 Usage:
-    python ttn_to_csv.py ttn_data.json
-    python ttn_to_csv.py ttn_data.json --output my_uplinks.csv
-
-Get the input file via:
-    curl -G "https://EU1.cloud.thethings.network/api/v3/as/applications/<APP_ID>/packages/storage/uplink_message" \\
-      -H "Authorization: Bearer <API_KEY>" \\
-      -d "limit=10000" \\
-      -d "order=received_at" \\
-      -o ttn_data.json
+    python ttn2csv.py ttn_data/msg_log.json --output my_uplinks.csv
 
 Output CSV columns:
     timestamp   - ISO 8601 UTC (matches GPS track timestamps)
+    epoch       - number of milliseconds from a certain date, derived from timestamp
     rssi        - dBm, from the gateway with strongest signal
     snr         - dB, from the same gateway
     fcnt        - LoRaWAN frame counter
@@ -31,7 +24,7 @@ import json
 import csv
 import re
 import sys
-
+from datetime import datetime
 
 def clean_iso(ts: str) -> str:
     """Truncate TTN's nanosecond timestamps to microseconds for portability."""
@@ -46,7 +39,7 @@ def convert(input_path: str, output_path: str) -> int:
 
         writer = csv.writer(outfile)
         writer.writerow([
-            'timestamp', 'rssi', 'snr', 'fcnt',
+            'timestamp', 'epoch', 'rssi', 'snr', 'fcnt',
             'gw_count', 'gateway_id', 'payload_b64'
         ])
 
@@ -68,6 +61,14 @@ def convert(input_path: str, output_path: str) -> int:
             if not received_at:
                 continue
 
+            try:
+                # Schneidet ggf. Nanosekunden ab, ersetzt Z durch +00:00 für sauberes Parsen
+                clean_ts = clean_iso(received_at).replace('Z', '+00:00')
+                # ISO-String in datetime-Objekt umwandeln und Epochen-Sekunden als Integer berechnen
+                epoch_val = int(datetime.fromisoformat(clean_ts).timestamp())
+            except Exception:
+                epoch_val = ''
+
             msg = rec.get('uplink_message', {})
             rx_metadata = msg.get('rx_metadata', [])
 
@@ -80,6 +81,7 @@ def convert(input_path: str, output_path: str) -> int:
 
             writer.writerow([
                 clean_iso(received_at),
+                epoch_val,
                 best_rssi,
                 best_snr,
                 msg.get('f_cnt', ''),
