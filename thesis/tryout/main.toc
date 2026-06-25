@@ -53,6 +53,9 @@
 \contentsline {subsubsection}{Treibermodelle als Brücke zwischen Hardware und Software}{54}{section*.83}%
 \contentsline {subsection}{\numberline {3.4.3}LoRaWAN-Netzwerkanbindung}{54}{subsection.3.4.3}%
 \contentsline {subsection}{\numberline {3.4.4}Integration von Peripherien}{57}{subsection.3.4.4}%
-\contentsline {subsection}{\numberline {3.4.5}Kartografische Auswertung der Messdaten}{58}{subsection.3.4.5}%
+\contentsline {section}{\numberline {3.5}Ergebnisse}{58}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Validierung der Netzwerkanbindung und Datenintegrität}{58}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Kartografische Evaluierung der TTN-Netzwerkabdeckung}{58}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Energieprofiling}{58}{subsection.3.5.3}%
 \contentsline {chapter}{\numberline {A}Angehängtes: Die Dateien des Pakets}{59}{appendix.A}%
 \contentsline {chapter}{Literatur- und Quellenverzeichnis}{61}{section*.86}%
