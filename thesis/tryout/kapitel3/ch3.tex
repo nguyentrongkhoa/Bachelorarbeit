@@ -1048,8 +1048,9 @@ nötig ist, wird die JoinEUI als Nullvektor \codebox{00 00 00 00 00 00 00 00} de
     \label{fig:ttn_register}
 \end{figure}
 
-Zur Aktivierung mit dem \acrshort{otaa}-Verfahren wird der LoRaWAN \codebox{class\_a} 
+Zur Aktivierung mit dem \acrshort{otaa}-Verfahren wird der LoRaWAN \codebox{class\_a}
 \href{https://github.com/zephyrproject-rtos/zephyr/blob/main/samples/subsys/lorawan/class_a/src/main.c}{Beispielcode}
+\footnote{https://github.com/zephyrproject-rtos/zephyr/blob/main/samples/subsys/lorawan/class_a/src/main.c}
 von Zephyr als Basis verwendet. In Zeile 95 des Codes wird auf ein Problem hingewiesen:
 
 \begin{lstlisting}[
