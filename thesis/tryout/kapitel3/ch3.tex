@@ -1241,8 +1241,55 @@ TTN"=Gateway der Zentral"= und Landesbibliothek Berlin (ZLB) identifizieren, was
 die Join"=Anfrage in unmittelbarer Nähe auf der Museumsinsel initiiert wurde.
 
 \subsection{Kartografische Evaluierung der TTN-Netzwerkabdeckung}
+% TODO: include graphics
+- 4 große Gateways ausgewählt und auf der Karte markiert in himmelsblau (3 in Steglitz und eine in Mitte), 
+- jedes GW mit ner Form (Kreis, Stern, Quadrat, Dreieck)
+- Messpunkte sind kleiner und farbig markiert je nach RSSI
+- Übereinstimmung mit der Karte von TTN-Mapper, was RSSI angeht
+- Erwähnt maximale Reichweite: 2km in Steglitz und 6km aufm Tempelhofer Feld (vom Gateway ttn-outdoor-02 in Steglitz empfangen)
+- Von 973 Datenpunkten taucht 2km und 6km nur einmal auf, also wahrscheinlichkeit für weite Übertragungen gering
+- On-board L80R GPS funktioniert nicht weil zu lange FIx-Zeit
+- GPS-Logger App auf Handy als Alternative nötig
+- In Mitte viele Messpunkte verloren gegangen wegen GPS Problem
+- Include graphics von ttn_log Positionen
+- Vllt ein paar Pics von den gateways im echten Leben
+- Erwähne maximale LoRaWAN-Reichweite in Städten
+- macht Sinn, weil ttn-outdoor-02 Antenne ist auf 90m Höhe
+- In Mitte bescheidene Reichweite (1km) wegen höherer Gebäudedichte
+- Vllt irgendwelche abrundenen Worte am Ende
+
+Testplanung Funkabdeckung (vllt passt nicht in diesen Ergebnisse-Teil): 
+- Routenplanung:
+    + Zuerst gute Gateways aussuchen, um die die Routen konstruiert werden sollen
+    + include graphics ttn mapper gateway+heatmap
+    + 4 GWs festgelegt: 3 in Steglitz mit max 90m und 1 in Mitte mit 12m, 12m ist in der Nähe meiner Wohnung deswegen gewählt
+    + Tabelle auf Basis von gateway_info.csv
+    + danach Viewshed analysis mit QGIS, um die genauen Straßen um die Gateways zu planen
+    + QGIS kurz vorstellen, was es macht aber nicht so werbungsartig schreiben
+    + Viewshed Schritte:
+        1. DOM von Berlin runterladen, erklären was DOM ist (muss nicht an dieser Stelle sein, aber wo auch immer angemessen)
+        2. EIn paar Infos zu Berlin DOM: 297 2kmx2km Tiles + includegraphics rasterkarte
+        2. DOM Nachverarbeitung (wenn relevant für Arbeit), damit VRT entsteht -> VRT in QGIS
+        3. Gateways als Viewpoints festlegen
+        4. Viewshed Analysis
+    + Für 6km radius analyse ungefähr 2 Stunden in QGIS
+    + include graphics viewshed results
+    + Schlussfolgerung: welche Straßen am besten + graphics of Route
+    + Zusatz: Tempelhofer Feld its weit weg von den GWs, aber erkläre trotzdem warum diese Route sinnvoll ist
+- Zeitliche Planung:
+    + Nachts: nach 22h-1h möglichst wenig Störung, Route um zlb-Gateway in Mitte
+    + Morgens: 10h- 12h GW in STeglitz
+- Durchführung:
+    + Routen belaufen, während das PCB ständig ans TTN-netzwerk Daten schickt
+    + GPS werden über L80R Modul auch geschickt, danach TTN-Message mit GPS-Daten matchen
 
 \subsection{Energieprofiling}
+
+\section{Fazit und Ausblick}
+
+\subsection{Ausblick}
+FUOTA: weil manche Endgeräte schwer zugänglich sind, und weil \dots
+Solarzelle testen für autarken Betrieb
 
 \newacronym{soc}{SoC}{System-on-Chip}
 \newacronym{bpsk}{BPSK}{Binary Phase Shift Keying}
