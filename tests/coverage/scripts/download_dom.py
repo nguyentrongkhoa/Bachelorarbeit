@@ -72,10 +72,14 @@ Postprocessing Pipeline Overview (Executed in WSL/Linux Terminal after running t
    Command: for f in berlin_dom_tiles/*.zip; do unzip -j "$f" -d ~/berlin_dom_txt; done
 2. RENAME: Change the file extension from .txt to .xyz to comply with standard GIS point cloud/grid formats.
    Command: 
-3. for file in *.xyz; 
+3. For some reason, the xyz files provided by the state of Berlin have a positive north-south (NS)-orientation
+   and therefore cannot be used to create VRT. Hence run the following bash script to do necessary conversions: 
+
+   for file in *.xyz; 
         # adjust NS resolution 
         do echo "$file"; gdalwarp -t_srs EPSG:25833 -overwrite "$file" "$(basename "$file" .xyz).tif" && rm "$file"
    done
+   
 4. VIRTUALIZE: Build a GDAL Virtual Raster (VRT) to stitch all 297 grid tiles into a single seamless map layer without memory overhead.
    Command: gdalbuildvrt berlin_dom_complete.vrt *.tif
 5. GIS IMPORT: Load the .vrt file into QGIS using the official Berlin coordinate reference system: EPSG:25833 (ETRS89 / UTM Zone 33N).
