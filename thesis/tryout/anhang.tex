@@ -74,19 +74,58 @@
     morestring=[b]"
 }
 
+\section{Zephyr-Projektstruktur}
+
+Zur Einordnung der in diesem Anhang aufgeführten Dateien zeigt die
+folgende Übersicht die relevanten Bestandteile der Zephyr-Projektstruktur.
+\texttt{prj.conf} konfiguriert zur Build-Zeit, welche Software-Subsysteme
+(z.\,B. der LoRaWAN-Stack oder das Settings-Subsystem) in die Firmware
+eingebunden werden. Das Devicetree-Overlay (\texttt{nucleo\_wl55jc.overlay})
+beschreibt hingegen die Hardware-Topologie der eigenen Platine und
+ergänzt damit die Standard-Boardbeschreibung um die eigene Sensorik
+und RF-Konfiguration. \texttt{main.c} enthält schließlich die eigentliche
+Anwendungslogik, die auf die in beiden Dateien definierten Fähigkeiten
+zugreift. % TODO: cite Zephyr official doc somewhere
+
+\begin{verbatim}
+my-app/
+|-- prj.conf              
+|-- boards/
+|   `-- nucleo_wl55jc.overlay   
+|-- src/
+|   `-- main.c            
+`-- CMakeLists.txt
+\end{verbatim}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{minipage}{0.6\textwidth} % Begrenzt die Breite für eine schöne Zentrierung
+        \dirtree{%
+            .1 my-app/.
+            .2 prj.conf.
+            .2 CMakeLists.txt.
+            .2 boards/.
+            .3 nucleo\_wl55jc.overlay.
+            .2 src/.
+            .3 main.c.
+        }
+    \end{minipage}
+    \caption{Verzeichnisstruktur des Zephyr-Projekts unter Verwendung von \texttt{dirtree}.}
+    \label{fig:dirtree_project}
+\end{figure}
+
 \section{prj.conf}
 
 \lstinputlisting[
     language=Kconfig, 
-    caption={Kconfig-Projektkonfiguration (\texttt{prj.conf}) für Kconfig-Treiber und LoRaWAN Subsysteme.}, 
     label={lst:prj_conf}
 ]{anhang/prj.conf}
 
+\newpage
 \section{DeviceTree-Overlay}
 
 \lstinputlisting[
-    language=DeviceTree, 
-    caption={DeviceTree-Hardwareerweiterung (\texttt{nucleo\_wl55jc.overlay}) zur Pinbelegung der Sensoren und Peripherie.}, 
+    language=DeviceTree,  
     label={lst:app_overlay}
 ]{anhang/nucleo\_wl55jc.overlay}
 
@@ -94,7 +133,6 @@
 
 \lstinputlisting[
     language=C, 
-    caption={Hauptprogramm (\texttt{main.c}) zur Sensorwertübertragung via LoRaWAN unter Zephyr RTOS.}, 
     label={lst:main_c}
 ]{anhang/main.c} 
 
