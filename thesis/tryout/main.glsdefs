@@ -2098,3 +2098,31 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{gis}%
+{%
+name={\acronymfont {\glsentryshort {gis}}},%
+sort={GIS},%
+type={acronym},%
+first={GIS},%
+firstplural={GISs},%
+text={GIS},%
+plural={GISs},%
+description={Geographic Information System},%
+descriptionplural={Geographic Information System},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Geographic Information System},%
+longplural={Geographic Information Systems},%
+short={GIS},%
+shortplural={GISs},%
+counter={page},%
+parent={},%
+%
+}%
+
