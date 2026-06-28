@@ -55,9 +55,11 @@
 \contentsline {subsection}{\numberline {3.4.4}Integration von Peripherien}{57}{subsection.3.4.4}%
 \contentsline {section}{\numberline {3.5}Ergebnisse}{58}{section.3.5}%
 \contentsline {subsection}{\numberline {3.5.1}Validierung der Netzwerkanbindung}{58}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Kartografische Evaluierung der TTN-Netzwerkabdeckung}{59}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3}Energieprofiling}{61}{subsection.3.5.3}%
-\contentsline {section}{\numberline {3.6}Fazit und Ausblick}{61}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Ausblick}{61}{subsection.3.6.1}%
-\contentsline {chapter}{\numberline {A}Angehängtes: Die Dateien des Pakets}{63}{appendix.A}%
-\contentsline {chapter}{Literatur- und Quellenverzeichnis}{65}{section*.87}%
+\contentsline {subsection}{\numberline {3.5.2}Kartografische Evaluierung der TTN-Netzwerkabdeckung}{60}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Energieprofiling}{63}{subsection.3.5.3}%
+\contentsline {section}{\numberline {3.6}Versuchsplanung und -durchführung}{63}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Auswahl der Gateways}{63}{subsection.3.6.1}%
+\contentsline {section}{\numberline {3.7}Fazit und Ausblick}{64}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}Ausblick}{64}{subsection.3.7.1}%
+\contentsline {chapter}{\numberline {A}Angehängtes: Die Dateien des Pakets}{65}{appendix.A}%
+\contentsline {chapter}{Literatur- und Quellenverzeichnis}{67}{section*.92}%
