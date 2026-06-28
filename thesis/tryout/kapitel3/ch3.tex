@@ -1050,7 +1050,6 @@ nötig ist, wird die JoinEUI als Nullvektor \codebox{00 00 00 00 00 00 00 00} de
 
 Zur Aktivierung mit dem \acrshort{otaa}-Verfahren wird der LoRaWAN \codebox{class\_a}
 \href{https://github.com/zephyrproject-rtos/zephyr/blob/main/samples/subsys/lorawan/class_a/src/main.c}{Beispielcode}
-\footnote{https://github.com/zephyrproject-rtos/zephyr/blob/main/samples/subsys/lorawan/class_a/src/main.c}
 von Zephyr als Basis verwendet. In Zeile 95 des Codes wird auf ein Problem hingewiesen:
 
 \begin{lstlisting}[
@@ -1251,19 +1250,41 @@ die Join"=Anfrage in unmittelbarer Nähe auf der Museumsinsel initiiert wurde.
 - On-board L80R GPS funktioniert nicht weil zu lange FIx-Zeit
 - GPS-Logger App auf Handy als Alternative nötig
 - In Mitte viele Messpunkte verloren gegangen wegen GPS Problem
-- Include graphics von ttn_log Positionen
+- Include graphics von ttn\_log Positionen
 - Vllt ein paar Pics von den gateways im echten Leben
 - Erwähne maximale LoRaWAN-Reichweite in Städten
 - macht Sinn, weil ttn-outdoor-02 Antenne ist auf 90m Höhe
 - In Mitte bescheidene Reichweite (1km) wegen höherer Gebäudedichte
 - Vllt irgendwelche abrundenen Worte am Ende
 
+Zur Visualisierung der Messergebnisse wurden vier ausgewählte Gateways auf der Karte hervorgehoben und in Himmelblau markiert: 
+drei davon befinden sich in Steglitz, eines in Mitte. Um die Gateways optisch unterscheidbar zu machen, wurde jedem eine 
+eigene geometrische Form zugeordnet (Kreis, Stern, Quadrat, Dreieck). Die eigentlichen Messpunkte sind als kleinere, 
+nach empfangener Signalstärke (RSSI) farbig kodierte Marker dargestellt. Ein Vergleich mit der öffentlich einsehbaren 
+Abdeckungskarte von TTN Mapper zeigt eine gute Übereinstimmung hinsichtlich der beobachteten RSSI-Verteilung im untersuchten 
+Gebiet, was die Plausibilität der eigenen Messung zusätzlich unterstützt.
+
+% TODO: look for all "plausibel"
+Die größte gemessene Reichweite betrug rund 6 km und wurde auf dem Tempelhofer Feld vom Gateway 
+in Steglitz empfangen; im unmittelbaren Steglitzer Stadtgebiet selbst lag die maximale Reichweite bei etwa 2 km. 
+Von insgesamt 973 erfassten Datenpunkten trat sowohl die 2-km- als auch die 6-km-Distanz jeweils nur ein einziges Mal auf, 
+was darauf hindeutet, dass derart weite Übertragungen im urbanen Raum eher die Ausnahme als die Regel darstellen. 
+Die vergleichsweise große Reichweite des Gateways \codebox{ttn-outdoor-02} lässt sich durch die Antennenhöhe von rund 90 m 
+über Grund erklären, die eine deutlich bessere Sichtverbindung zu entfernten Endgeräten ermöglicht als bodennahe Installationen.
+
+Im Gegensatz dazu fiel die maximale Reichweite in Mitte mit etwa 1 km deutlich geringer aus. 
+Dies lässt sich ebenfalls durch die Antennenhöhe begründen, welche in diesem Fall lediglich \SI{12}{m} beträgt.
+Dies lässt sich auf die dort 
+wesentlich höhere Gebäudedichte zurückführen, die zu stärkerer Signaldämpfung und häufigerer Abschattung durch 
+Sichtlinienhindernisse führt -- ein Effekt, der sich mit der allgemein bekannten Einschränkung maximaler LoRaWAN-Reichweiten 
+in dicht bebauten städtischen Umgebungen deckt.
+
 Testplanung Funkabdeckung (vllt passt nicht in diesen Ergebnisse-Teil): 
 - Routenplanung:
     + Zuerst gute Gateways aussuchen, um die die Routen konstruiert werden sollen
     + include graphics ttn mapper gateway+heatmap
     + 4 GWs festgelegt: 3 in Steglitz mit max 90m und 1 in Mitte mit 12m, 12m ist in der Nähe meiner Wohnung deswegen gewählt
-    + Tabelle auf Basis von gateway_info.csv
+    + Tabelle auf Basis von gateway\_info.csv
     + danach Viewshed analysis mit QGIS, um die genauen Straßen um die Gateways zu planen
     + QGIS kurz vorstellen, was es macht aber nicht so werbungsartig schreiben
     + Viewshed Schritte:
