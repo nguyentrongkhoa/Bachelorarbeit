@@ -141,13 +141,30 @@ Abbildung \ref{fig:messrouten} zeigt, welche Straßenzüge (als rote Pünktchen)
         \label{fig:route_tempelhof}
     \end{subfigure}
 
-    \caption{Endgültige Routen für Messfahrt}
+    \caption{Endgültige Routen für Feldtests}
     \label{fig:messrouten}
 \end{figure}
 
-Ein Sonderfall stellt die Route über das Tempelhofer Feld dar: Obwohl dieses Gebiet vergleichsweise weit von allen vier 
+Ein Sonderfall stellt die Route über das Tempelhofer Feld dar. Obwohl dieses Gebiet vergleichsweise weit von allen vier 
 ausgewählten Gateways entfernt liegt, wurde es bewusst in die Testroute aufgenommen, da die großen, unverbauten Freiflächen 
 des ehemaligen Flughafengeländes eine nahezu ungestörte Sichtverbindung über große Distanzen versprechen und sich damit ideal 
 zur Untersuchung der maximal erreichbaren Reichweite unter günstigen Ausbreitungsbedingungen eignen.
+
+\subsection{Zeitplanung}
+
+Da elektromagnetische Störfaktoren im urbanen Raum signifikanten tageszeitlichen Schwankungen unterliegen, wurden die 
+Messkampagnen strategisch auf unterschiedliche Zeitfenster verteilt. Die Evaluierung der Route im Bezirk Mitte (ZLB) 
+erfolgte in den Nachtstunden zwischen 22:00 und 01:00 Uhr, um eine möglichst störungsarme Umgebung zu gewährleisten. 
+Im Gegensatz dazu weisen die Testgebiete in Steglitz und Tempelhof 
+aufgrund ihrer morphologischen Struktur ein weniger kritisches Störprofil auf. Die dortigen Messfahrten konnten daher während 
+der regulären Tagesarbeitszeiten durchgeführt werden (10:00 bis 12:00 Uhr für Steglitz sowie 16:00 bis 18:00 Uhr für das 
+Tempelhofer Feld).
+
+\subsection{Durchführung der Messfahrten}
+
+Während der Testfahrten wurden die geplanten Routen zu Fuß abgegangen, während der PCB-Prototyp kontinuierlich Datenpakete 
+über das LoRaWAN-Netzwerk an TTN sendete. Zur Erfassung der Position wurden GPS-Koordinaten über das auf der Platine 
+integrierte L80-R-Modul ebenfalls als Bestandteil der gesendeten Pakete übertragen. 
+Auf diesem Wege können empfangene TTN-Nachrichten dazugehörigen Standortsinformationen zugeordnet werden.
 
 \newacronym{gis}{GIS}{Geographic Information System}
