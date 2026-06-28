@@ -70,4 +70,4 @@
 \contentsline {section}{\numberline {B.1}prj.conf}{79}{section.B.1}%
 \contentsline {section}{\numberline {B.2}DeviceTree-Overlay}{79}{section.B.2}%
 \contentsline {section}{\numberline {B.3}main.c}{79}{section.B.3}%
-\contentsline {chapter}{Literatur- und Quellenverzeichnis}{80}{section.B.3}%
+\contentsline {chapter}{Literatur- und Quellenverzeichnis}{87}{lstnumber.B.1.243}%
