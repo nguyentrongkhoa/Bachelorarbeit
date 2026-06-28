@@ -33,10 +33,11 @@
 \contentsline {figure}{\numberline {3.29}{\ignorespaces 3D-Ansichten der fertigen PCB}}{49}{figure.caption.78}%
 \contentsline {figure}{\numberline {3.30}{\ignorespaces Hierarchische Baumstruktur des beispielhaften Devicetrees.}}{53}{figure.caption.81}%
 \contentsline {figure}{\numberline {3.31}{\ignorespaces Registrierung eines neuen Endgeräts im LoRaWAN-Netzwerk bei The Things Network}}{55}{figure.caption.84}%
-\contentsline {figure}{\numberline {3.32}{\ignorespaces Screenshot von TTN-Konsole nach erfolgreichem Join-Request}}{59}{figure.caption.85}%
-\contentsline {figure}{\numberline {3.33}{\ignorespaces Ergebnisse der Netzabdeckungsanalyse in Berlin.}}{60}{figure.caption.86}%
-\contentsline {figure}{\numberline {3.34}{\ignorespaces Netzabdeckungsanalyse in Steglitz und Tempelhof.}}{61}{figure.caption.87}%
-\contentsline {figure}{\numberline {3.35}{\ignorespaces Netzabdeckungsanalyse in Mitte}}{62}{figure.caption.88}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Übersicht TTN-Gateways in Berlin}}{65}{figure.caption.89}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Übersicht TTN-Gateways in Berlin}}{59}{figure.caption.85}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Screenshot von TTN-Konsole nach erfolgreichem Join-Request}}{61}{figure.caption.87}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Ergebnisse der Netzabdeckungsanalyse in Berlin.}}{62}{figure.caption.88}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Netzabdeckungsanalyse in Steglitz und Tempelhof.}}{63}{figure.caption.89}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Netzabdeckungsanalyse in Mitte}}{64}{figure.caption.90}%
 \addvspace {10\p@ }

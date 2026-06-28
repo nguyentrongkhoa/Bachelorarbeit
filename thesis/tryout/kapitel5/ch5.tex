@@ -1,0 +1,101 @@
+% =============================================================================
+% Kapitel 5: Ergebnisse und Bewertung 
+% =============================================================================
+
+\chapter{Ergebnisse und Bewertung}
+
+\section{Ergebnisse}
+
+In diesem Kapitel werden die empirischen Messergebnisse des entwickelten LoRaWAN-Prototyps präsentiert und dokumentiert. 
+Die Evaluierung gliedert sich in die funktionale Überprüfung der TTN-Infrastruktur, die kartografische Analyse der 
+Funkreichweite im Berliner Stadtgebiet sowie die messtechnische Bestimmung des elektrischen Energiebedarfs im Laborbetrieb.
+
+\subsection{Validierung der Netzwerkanbindung}
+
+Vor der Durchführung der großflächigen Feldversuche im urbanen Raum wurde die grundlegende Funktionalität der 
+Kommunikationsarchitektur verifiziert. Der Fokus lag hierbei auf der fehlerfreien Initiierung des \acrshort{otaa}-Aktivierungsverfahrens sowie der 
+Korrektheit der empfangenen Datenpakete auf der TTN-Serverseite der Applikation.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{kapitel5/pictures/ttn_first_test.png}
+    \caption{Screenshot von TTN-Konsole nach erfolgreichem Join-Request}
+    \label{fig:ttn_first_test}
+\end{figure}
+
+Nachdem die Join-Anfrage über OTAA vom Netzwerkserver erfolgreich verarbeitet
+wurde, zeigt die TTN-Konsole für das Endgerät \codebox{rev-a-1} die korrekte
+DevEUI, JoinEUI sowie den Zeitstempel des Paketempfangs
+an (Abbildung~\ref{fig:ttn_first_test}). Diese Übereinstimmung mit den in
+der Firmware hinterlegten Werten  bestätigt, dass das Aktivierungsverfahren wie spezifiziert abgelaufen ist.
+
+Die in Zeile 36 sichtbare Payload wird im Base64"=Format kodiert
+übertragen (\codebox{MjIuNDE=}) und entspricht im Klartext dem
+Temperaturwert \enquote{22.41} (\si{\celsius}). 
+Anhand der in der Konsole angezeigten Gateway"=ID in Zeile 40 lässt sich das empfangende Gateway als das öffentliche
+TTN"=Gateway der Zentral"= und Landesbibliothek Berlin (ZLB) identifizieren, was damit übereinstimmt, dass 
+die Join"=Anfrage in unmittelbarer Nähe auf der Museumsinsel initiiert wurde. % TODO: maybe write transition
+
+\subsection{Kartografische Evaluierung der TTN-Netzwerkabdeckung}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{kapitel5/pictures/berlin_coverage.pdf} 
+    \caption{Ergebnisse der Netzabdeckungsanalyse in Berlin.}
+    \label{fig:berlin_coverage}
+\end{figure}
+
+Zur Visualisierung der Messergebnisse wurden vier ausgewählte Gateways auf der Karte hervorgehoben und in Himmelblau markiert 
+Um die Gateways optisch unterscheidbar zu machen, wurde jedem eine 
+eigene geometrische Form zugeordnet (Kreis, Stern, Quadrat, Dreieck). Die eigentlichen Messpunkte sind als kleinere, 
+nach empfangener Signalstärke (\acrshort{rssi}) farbig kodierte Marker dargestellt. Ein Vergleich mit der öffentlich einsehbaren 
+Abdeckungskarte von TTN-Mapper zeigt eine gute Übereinstimmung hinsichtlich der beobachteten RSSI-Verteilung in den untersuchten 
+Stadtteilen.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{kapitel5/pictures/steglitz-tempelhof_coverage.pdf} 
+    \caption{Netzabdeckungsanalyse in Steglitz und Tempelhof.}
+    \label{fig:steg_tphf_coverage}
+\end{figure}
+
+Die größte gemessene Reichweite betrug rund 6 km und wurde auf dem Tempelhofer Feld vom Gateway 
+in Steglitz empfangen; im unmittelbaren Steglitzer Stadtgebiet selbst lag die maximale Reichweite bei etwa 2 km. 
+Von insgesamt 973 erfassten Datenpunkten trat sowohl die 2-km- als auch die 6-km-Distanz jeweils nur ein einziges Mal auf, 
+was darauf hindeutet, dass derart weite Übertragungen im urbanen Raum eher die Ausnahme als die Regel darstellen. 
+Die vergleichsweise große Reichweite des Gateways \codebox{ttn-outdoor-02} lässt sich durch die Antennenhöhe von rund 90 m 
+über Grund erklären, die eine deutlich bessere Sichtverbindung zu entfernten Endgeräten ermöglicht als bodennahe Installationen.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{kapitel5/pictures/mitte_coverage.pdf} 
+    \caption{Netzabdeckungsanalyse in Mitte}
+    \label{fig:mitte_coverage}
+\end{figure}
+
+Im Gegensatz dazu fiel die reale maximale Reichweite im Bezirk Mitte mit etwa \SI{300}{\meter} deutlich geringer aus. Dies kann durch die geringe Antennenhöhe 
+begründet werden, welche in diesem Fall lediglich \SI{12}{\meter} beträgt (siehe Tabelle~\ref{tab:gateway_info}). 
+Die Sichtbarkeitsanalyse in Abbildung~\ref{fig:viewshed_results} deutet zwar auf eine theoretische maximale Sichtbarkeitsentfernung 
+von bis zu \SI{1}{\kilo\meter} hin, diese Werte würden jedoch ausschließlich auf den Gebäudedecken der Umgebung erreicht. 
+Für einen Messlauf auf Straßenhöhe resultiert daraus die Notwendigkeit, den Radius für eine zuverlässige Datenzustellung auf maximal 
+\SI{300}{\meter} bis \SI{500}{\meter} um das Gateway herum zu begrenzen. Des Weiteren herrscht in den zentralen Bezirken 
+Berlins eine ausgeprägte Gebäudedichte, die zu einer starken Signaldämpfung durch Absorption sowie zu häufiger Abschattung
+durch topografische Sichtlinienhindernisse führt. Das Zusammenspiel dieser zwei Faktoren – Antennenhöhe und urbane Morphologie – 
+rechfertigt die im Vergleich zu Steglitz bescheidenen Messergebnisse in Berlin-Mitte.
+
+Ein technisches Problem während der Messkampagne betraf die GPS-Positionsbestimmung: Das auf der Platine verbaute L80-R-GPS-Modul 
+erwies sich aufgrund einer zu langen Time-to-First-Fix als ungeeignet für den mobilen Messeinsatz, da Positionsdaten 
+oft erst nach erheblicher Verzögerung (bis zu 10 Minuten) oder gar nicht zur Verfügung standen. Als Workaround wurde stattdessen eine 
+GPS-Logger-App auf einem Smartphone verwendet, deren Aufzeichnungen anschließend mit den empfangenen LoRaWAN-Paketen 
+zeitlich abgeglichen wurden. Insbesondere im Gebiet Mitte gingen dadurch einige Messpunkte verloren, da die GPS-Aufzeichnung 
+dort zeitweise unterbrochen war.
+
+Insgesamt zeichnen die Messergebnisse ein realistisches Bild der Funkabdeckung im städtischen Raum: Während unter günstigen 
+Bedingungen -- insbesondere bei erhöhter Gateway-Antenne und freier Sichtlinie -- Reichweiten im einstelligen Kilometerbereich erreichbar sind, 
+dominieren im dicht bebauten Stadtgebiet deutlich kürzere Übertragungsdistanzen.
+
+\subsection{Energieprofiling}
+
+\subsection{Fazit und Ausblick}
+FUOTA: weil manche Endgeräte schwer zugänglich sind, und weil \dots
+Solarzelle testen für autarken Betrieb
