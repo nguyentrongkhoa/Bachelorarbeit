@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1782667957.77755 -1
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1782669546.99173 -1
   "LoRa.bib" 1775241387.62484 60839 c02c6e690a103761d288171c88f3c04c ""
-  "main.bcf" 1782667957.53235 107896 211a1597c331b6492d945b828a46567a "pdflatex"
+  "main.bcf" 1782669546.71854 107896 211a1597c331b6492d945b828a46567a "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1782667948.6524 "/home/tom/zephyrproject/descap_lorawan/thesis/tryout/main.tex" "main.pdf" "main" 1782667957.77789 0
+["pdflatex"] 1782669537.87659 "/home/tom/zephyrproject/descap_lorawan/thesis/tryout/main.tex" "main.pdf" "main" 1782669546.99212 0
   "/etc/texmf/web2c/texmf.cnf" 1773605240.045 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/tom/zephyrproject/descap_lorawan/thesis/tryout/main.tex" 1782660152.95421 4196 d03f28e456ceffea2c4ba49a04cabf84 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -381,11 +381,14 @@
   "kapitel3/pictures/zephyr_lora_send_calc.png" 1775216661.58663 73438 78d9f71f3bcdb9c66c40d1b28256fd6f ""
   "kapitel3/pictures/zephyr_lora_send_in_sdr_sharp.png" 1775046727.66939 95869 b0c73dc9209fbe0d1f813d166faa6b18 ""
   "kapitel3/pictures/zephyr_lora_send_setup.jpeg" 1775102832.63503 142312 be6f844d1213f89fd3bfc94101a1fe15 ""
-  "kapitel4/ch4.tex" 1782667936.90932 6053 891772242598b8e09265a7df63719263 ""
+  "kapitel4/ch4.tex" 1782669527.10494 7633 8b1cf78f2decfb32ce515131c5413511 ""
   "kapitel4/pictures/berlin_rasterkarte.png" 1782663521.95237 3465998 48a59f6e7f8436345c538e09ddca0fd5 ""
   "kapitel4/pictures/berlin_viewshed_color.pdf" 1782665735.20914 4866829 529282b88f7dcda56d4ad9d585870cf5 ""
+  "kapitel4/pictures/mitte_route.pdf" 1782668643.30728 3302457 3059ec1e9292a50838a1937c7e2ca7b1 ""
   "kapitel4/pictures/mitte_viewshed.pdf" 1782666779.90944 3493944 e521ac8eccfd7cf0a169fdca74d6c935 ""
+  "kapitel4/pictures/steglitz_route.pdf" 1782668894.44186 6752910 bc24c1bc8868e2dc9dbef661a702dd76 ""
   "kapitel4/pictures/steglitz_viewshed.pdf" 1782666380.8568 7160817 9236b25ea213f50336bb3aa2ac5bd3e6 ""
+  "kapitel4/pictures/tempelhof_route.pdf" 1782668799.31725 3283320 2af38ac89ab3377f3fd372d23f9a84f5 ""
   "kapitel4/pictures/tempelhof_viewshed.pdf" 1782666542.7669 3661650 1802d368e06bea0941fbdefa56be2e08 ""
   "kapitel4/pictures/ttn_mapper_berlin.png" 1782655509.43599 1711811 c7eb44ec8ed22239dbdf8498addfdb71 ""
   "kapitel5/ch5.tex" 1782660333.75027 6536 a1a2fda00e5167ab87389478cc7d9702 ""
@@ -394,17 +397,17 @@
   "kapitel5/pictures/steglitz-tempelhof_coverage.pdf" 1782634639.88683 4019115 581841ee93dd8ae2a25f5d46b74f9018 ""
   "kapitel5/pictures/ttn_first_test.png" 1781256038.27255 266215 5be134afddba29620f4b102c512e078b ""
   "main.acr" 1774707137.60362 4447 67daa0e4453a5d97077be8460fa38d6d ""
-  "main.aux" 1782667957.52004 29133 9c61951fab6d8dbe9539b621633a5231 "pdflatex"
+  "main.aux" 1782669546.71032 29838 a06d391c5f234f4014bc76b970c20194 "pdflatex"
   "main.bbl" 1775241752.89064 12050 4100a6fb0da437186f61199af838f408 "biber main"
-  "main.cb" 1782667949.37458 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.cb2" 1782667949.37051 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.cb" 1782669538.542 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.cb2" 1782669538.5379 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   "main.gls" 1774707137.13292 6 9f404503043ec80c08484be9f659189e ""
-  "main.glsdefs" 1782667957.52004 38599 aa78db1ca327412c6320f1dc78a548ac "pdflatex"
-  "main.lof" 1782667957.53235 4610 05bc6d885da75056472cf5313508b6db "pdflatex"
-  "main.out" 1782667957.52825 8290 a115f784b566ab23264f6e98ff57e818 "pdflatex"
-  "main.run.xml" 1782667957.53235 2426 93fe141410a974fef8dc2475c7eede99 "pdflatex"
+  "main.glsdefs" 1782669546.70621 38599 aa78db1ca327412c6320f1dc78a548ac "pdflatex"
+  "main.lof" 1782669546.71854 4737 34089a14f09c827c1ffb0ba5a63a8a48 "pdflatex"
+  "main.out" 1782669546.71443 8290 f2f275c4edf028192e06e93ef7aaeec2 "pdflatex"
+  "main.run.xml" 1782669546.71854 2426 93fe141410a974fef8dc2475c7eede99 "pdflatex"
   "main.tex" 1782660152.95421 4196 d03f28e456ceffea2c4ba49a04cabf84 ""
-  "main.toc" 1782667957.53235 5618 123694003e2310e5f238ed56cb8663a9 "pdflatex"
+  "main.toc" 1782669546.71854 5618 831c1507a3e3ba69736aa3055d3dba92 "pdflatex"
   "personalMacros.tex" 1771675946.07852 150 6e250442b75bf14149b4086972af6b8f ""
   "titelseiten.tex" 1774421168.87594 5629 778ebfa1edacbbdb516303546c18ae11 ""
   (generated)

@@ -57,11 +57,11 @@
 \contentsline {section}{\numberline {4.1}Funkabdeckungstest}{59}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Auswahl der Gateways}{59}{subsection.4.1.1}%
 \contentsline {subsection}{\numberline {4.1.2}Routenplanung}{60}{subsection.4.1.2}%
-\contentsline {chapter}{\numberline {5}Ergebnisse und Bewertung}{63}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Ergebnisse}{63}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Validierung der Netzwerkanbindung}{63}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Kartografische Evaluierung der TTN-Netzwerkabdeckung}{64}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Energieprofiling}{67}{subsection.5.1.3}%
-\contentsline {subsection}{\numberline {5.1.4}Fazit und Ausblick}{67}{subsection.5.1.4}%
-\contentsline {chapter}{\numberline {A}Angehängtes: Die Dateien des Pakets}{69}{appendix.A}%
-\contentsline {chapter}{Literatur- und Quellenverzeichnis}{71}{section*.94}%
+\contentsline {chapter}{\numberline {5}Ergebnisse und Bewertung}{65}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Ergebnisse}{65}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Validierung der Netzwerkanbindung}{65}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Kartografische Evaluierung der TTN-Netzwerkabdeckung}{66}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Energieprofiling}{69}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}Fazit und Ausblick}{69}{subsection.5.1.4}%
+\contentsline {chapter}{\numberline {A}Angehängtes: Die Dateien des Pakets}{71}{appendix.A}%
+\contentsline {chapter}{Literatur- und Quellenverzeichnis}{73}{section*.95}%

@@ -105,12 +105,49 @@ Abbildung~\ref{fig:viewshed_results} zeigt die Ergebnisse der Sichtbarkeitsanaly
     \label{fig:viewshed_results}
 \end{figure}
 
-Die finale Darstellung in Abbildung~\ref{fig:viewshed_results} basiert auf einer additiven Überlagerung der vier 
+Die Darstellung dieser Analyse basiert auf einer additiven Überlagerung der vier 
 Einzelberechnungen, sodass die Pixelwerte des resultierenden Rasters diskrete Werte zwischen 0 und 4 annehmen. 
 Ein Wert von 0 kennzeichnet hierbei Regionen im Funkschatten, bei denen topografische Hindernisse oder  
 urbane Gegebenheiten eine direkte Sichtlinie zu sämtlichen untersuchten Gateways blockieren. 
 Die Pixelwerte 1 bis 4 repräsentieren hingegen die Anzahl der Gateways, zu denen von dem jeweiligen geografischen Punkt aus 
 eine ungestörte Sichtverbindung besteht. Während eine 1 eine einfache Abdeckung ohne jegliche Redundanz anzeigt, 
 signalisieren die Werte 2 bis 4 eine zunehmende städtische Netzabdeckung und Ausfallsicherheit. 
+
+Abbildung \ref{fig:messrouten} zeigt, welche Straßenzüge (als rote Pünktchen) sich aus diesen Ergebnissen abgeleitet haben.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.6\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{kapitel4/pictures/mitte_route.pdf}
+        \caption{Mitte}
+        \label{fig:route_mitte}
+    \end{subfigure}
+    
+    % \vspace{0.4cm} % Vertikaler Abstand
+    \begin{subfigure}[b]{0.6\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{kapitel4/pictures/steglitz_route.pdf}
+        \caption{Steglitz}
+        \label{fig:route_steglitz}
+    \end{subfigure}
+    
+    % \vspace{0.4cm} % Vertikaler Abstand
+    
+    \begin{subfigure}[b]{0.6\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{kapitel4/pictures/tempelhof_route.pdf}
+        \caption{Tempelhof}
+        \label{fig:route_tempelhof}
+    \end{subfigure}
+
+    \caption{Endgültige Routen für Messfahrt}
+    \label{fig:messrouten}
+\end{figure}
+
+Ein Sonderfall stellt die Route über das Tempelhofer Feld dar: Obwohl dieses Gebiet vergleichsweise weit von allen vier 
+ausgewählten Gateways entfernt liegt, wurde es bewusst in die Testroute aufgenommen, da die großen, unverbauten Freiflächen 
+des ehemaligen Flughafengeländes eine nahezu ungestörte Sichtverbindung über große Distanzen versprechen und sich damit ideal 
+zur Untersuchung der maximal erreichbaren Reichweite unter günstigen Ausbreitungsbedingungen eignen.
 
 \newacronym{gis}{GIS}{Geographic Information System}
