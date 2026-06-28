@@ -1240,29 +1240,13 @@ TTN"=Gateway der Zentral"= und Landesbibliothek Berlin (ZLB) identifizieren, was
 die Join"=Anfrage in unmittelbarer Nähe auf der Museumsinsel initiiert wurde.
 
 \subsection{Kartografische Evaluierung der TTN-Netzwerkabdeckung}
-% TODO: include graphics
-- 4 große Gateways ausgewählt und auf der Karte markiert in himmelsblau (3 in Steglitz und eine in Mitte), 
-- jedes GW mit ner Form (Kreis, Stern, Quadrat, Dreieck)
-- Messpunkte sind kleiner und farbig markiert je nach RSSI
-- Übereinstimmung mit der Karte von TTN-Mapper, was RSSI angeht
-- Erwähnt maximale Reichweite: 2km in Steglitz und 6km aufm Tempelhofer Feld (vom Gateway ttn-outdoor-02 in Steglitz empfangen)
-- Von 973 Datenpunkten taucht 2km und 6km nur einmal auf, also wahrscheinlichkeit für weite Übertragungen gering
-- On-board L80R GPS funktioniert nicht weil zu lange FIx-Zeit
-- GPS-Logger App auf Handy als Alternative nötig
-- In Mitte viele Messpunkte verloren gegangen wegen GPS Problem
-- Include graphics von ttn\_log Positionen
-- Vllt ein paar Pics von den gateways im echten Leben
-- Erwähne maximale LoRaWAN-Reichweite in Städten
-- macht Sinn, weil ttn-outdoor-02 Antenne ist auf 90m Höhe
-- In Mitte bescheidene Reichweite (1km) wegen höherer Gebäudedichte
-- Vllt irgendwelche abrundenen Worte am Ende
 
-Zur Visualisierung der Messergebnisse wurden vier ausgewählte Gateways auf der Karte hervorgehoben und in Himmelblau markiert: 
-drei davon befinden sich in Steglitz, eines in Mitte. Um die Gateways optisch unterscheidbar zu machen, wurde jedem eine 
+Zur Visualisierung der Messergebnisse wurden vier ausgewählte Gateways auf der Karte hervorgehoben und in Himmelblau markiert 
+Um die Gateways optisch unterscheidbar zu machen, wurde jedem eine 
 eigene geometrische Form zugeordnet (Kreis, Stern, Quadrat, Dreieck). Die eigentlichen Messpunkte sind als kleinere, 
-nach empfangener Signalstärke (RSSI) farbig kodierte Marker dargestellt. Ein Vergleich mit der öffentlich einsehbaren 
-Abdeckungskarte von TTN Mapper zeigt eine gute Übereinstimmung hinsichtlich der beobachteten RSSI-Verteilung im untersuchten 
-Gebiet, was die Plausibilität der eigenen Messung zusätzlich unterstützt.
+nach empfangener Signalstärke (\acrshort{rssi}) farbig kodierte Marker dargestellt. Ein Vergleich mit der öffentlich einsehbaren 
+Abdeckungskarte von TTN-Mapper zeigt eine gute Übereinstimmung hinsichtlich der beobachteten RSSI-Verteilung in den untersuchten 
+Stadtteilen.
 
 % TODO: look for all "plausibel"
 Die größte gemessene Reichweite betrug rund 6 km und wurde auf dem Tempelhofer Feld vom Gateway 
@@ -1272,12 +1256,26 @@ was darauf hindeutet, dass derart weite Übertragungen im urbanen Raum eher die 
 Die vergleichsweise große Reichweite des Gateways \codebox{ttn-outdoor-02} lässt sich durch die Antennenhöhe von rund 90 m 
 über Grund erklären, die eine deutlich bessere Sichtverbindung zu entfernten Endgeräten ermöglicht als bodennahe Installationen.
 
-Im Gegensatz dazu fiel die maximale Reichweite in Mitte mit etwa 1 km deutlich geringer aus. 
-Dies lässt sich ebenfalls durch die Antennenhöhe begründen, welche in diesem Fall lediglich \SI{12}{m} beträgt.
-Dies lässt sich auf die dort 
-wesentlich höhere Gebäudedichte zurückführen, die zu stärkerer Signaldämpfung und häufigerer Abschattung durch 
-Sichtlinienhindernisse führt -- ein Effekt, der sich mit der allgemein bekannten Einschränkung maximaler LoRaWAN-Reichweiten 
-in dicht bebauten städtischen Umgebungen deckt.
+Im Gegensatz dazu fiel die reale maximale Reichweite im Bezirk Mitte mit etwa \SI{300}{\meter} deutlich geringer aus. Dies kann durch die geringe Antennenhöhe 
+begründet werden, welche in diesem Fall lediglich \SI{12}{\meter} beträgt (siehe Tabelle~\ref{tab:gateway_info}). 
+Die Sichtbarkeitsanalyse in Abbildung~\ref{fig:viewshed_results} deutet zwar auf eine theoretische maximale Sichtbarkeitsentfernung 
+von bis zu \SI{1}{\kilo\meter} hin, diese Werte würden jedoch ausschließlich auf den Gebäudedecken der Umgebung erreicht. 
+Für einen Messlauf auf Straßenhöhe resultiert daraus die Notwendigkeit, den Radius für eine zuverlässige Datenzustellung auf maximal 
+\SI{300}{\meter} bis \SI{500}{\meter} um das Gateway herum zu begrenzen. Des Weiteren herrscht in den zentralen Bezirken 
+Berlins eine ausgeprägte Gebäudedichte, die zu einer starken Signaldämpfung durch Absorption sowie zu häufiger Abschattung
+durch topografische Sichtlinienhindernisse führt. Das Zusammenspiel dieser zwei Faktoren – Antennenhöhe und urbane Morphologie – 
+rechfertigt die im Vergleich zu Steglitz bescheidenen Messergebnisse in Berlin-Mitte.
+
+Ein technisches Problem während der Messkampagne betraf die GPS-Positionsbestimmung: Das auf der Platine verbaute L80-R-GPS-Modul 
+erwies sich aufgrund einer zu langen Time-to-First-Fix als ungeeignet für den mobilen Messeinsatz, da Positionsdaten 
+oft erst nach erheblicher Verzögerung (bis zu 10 Minuten) oder gar nicht zur Verfügung standen. Als Workaround wurde stattdessen eine 
+GPS-Logger-App auf einem Smartphone verwendet, deren Aufzeichnungen anschließend mit den empfangenen LoRaWAN-Paketen 
+zeitlich abgeglichen wurden. Insbesondere im Gebiet Mitte gingen dadurch einige Messpunkte verloren, da die GPS-Aufzeichnung 
+dort zeitweise unterbrochen war.
+
+Insgesamt zeichnen die Messergebnisse ein realistisches Bild der Funkabdeckung im städtischen Raum: Während unter günstigen 
+Bedingungen -- insbesondere bei erhöhter Gateway-Antenne und freier Sichtlinie -- Reichweiten im einstelligen Kilometerbereich erreichbar sind, 
+dominieren im dicht bebauten Stadtgebiet deutlich kürzere Übertragungsdistanzen.
 
 Testplanung Funkabdeckung (vllt passt nicht in diesen Ergebnisse-Teil): 
 - Routenplanung:
