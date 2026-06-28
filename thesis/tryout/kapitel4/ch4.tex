@@ -67,6 +67,50 @@ erlaubt als ein reines Geländemodell ohne Bebauung. Das Berliner DOM liegt in F
 Anschließend wurden die vier ausgewählten Gateway-Standorte als Sichtpunkte (\emph{Viewpoints}) in QGIS festgelegt, 
 und für jeden Standort wurde eine Sichtbarkeitsanalyse mit einem Radius von 7\,km durchgeführt. 
 Die Berechnung einer einzelnen Analyse in diesem Radius nahm in QGIS jeweils etwa 45 Minuten Rechenzeit in Anspruch. 
-Abbildung~\ref{fig:viewshed_results} zeigt die Ergebnisse der Sichtbarkeitsanalyse für die vier untersuchten Gateways. % TODO: include graphics viewshed results
+Abbildung~\ref{fig:viewshed_results} zeigt die Ergebnisse der Sichtbarkeitsanalyse für die vier untersuchten Gateways. 
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{kapitel4/pictures/berlin_viewshed_color.pdf}
+        \caption{Übersicht}
+        \label{fig:vs}
+    \end{subfigure}
+    \hfill 
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{kapitel4/pictures/steglitz_viewshed.pdf}
+        \caption{Steglitz}
+        \label{fig:steglitz_vs}
+    \end{subfigure}
+    
+    \vspace{0.3cm} 
+    
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{kapitel4/pictures/tempelhof_viewshed.pdf}
+        \caption{Tempelhof}
+        \label{fig:tphf_vs}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{kapitel4/pictures/mitte_viewshed.pdf}
+        \caption{Mitte}
+        \label{fig:mitte_vs}
+    \end{subfigure}
+
+    \caption{Sichtbarkeitsanalyse für die vier ausgewählten Gateways}
+    \label{fig:viewshed_results}
+\end{figure}
+
+Die finale Darstellung in Abbildung~\ref{fig:viewshed_results} basiert auf einer additiven Überlagerung der vier 
+Einzelberechnungen, sodass die Pixelwerte des resultierenden Rasters diskrete Werte zwischen 0 und 4 annehmen. 
+Ein Wert von 0 kennzeichnet hierbei Regionen im Funkschatten, bei denen topografische Hindernisse oder  
+urbane Gegebenheiten eine direkte Sichtlinie zu sämtlichen untersuchten Gateways blockieren. 
+Die Pixelwerte 1 bis 4 repräsentieren hingegen die Anzahl der Gateways, zu denen von dem jeweiligen geografischen Punkt aus 
+eine ungestörte Sichtverbindung besteht. Während eine 1 eine einfache Abdeckung ohne jegliche Redundanz anzeigt, 
+signalisieren die Werte 2 bis 4 eine zunehmende städtische Netzabdeckung und Ausfallsicherheit. 
 
 \newacronym{gis}{GIS}{Geographic Information System}
