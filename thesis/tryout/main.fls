@@ -1008,6 +1008,9 @@ INPUT anhang/prj.conf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/bera/fvmb8t.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/bera/fvmb8t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/bera/fvmb8r.tfm
+INPUT ./anhang/nucleo_wl55jc.overlay
+INPUT ./anhang/nucleo_wl55jc.overlay
+INPUT anhang/nucleo_wl55jc.overlay
 INPUT ./anhang/main.c
 INPUT ./anhang/main.c
 INPUT anhang/main.c
