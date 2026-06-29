@@ -17,63 +17,63 @@
 \contentsline {subsection}{\numberline {2.2.1}LoRa-Modulation}{10}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Wichtige Kenngrößen und Formeln}{11}{subsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.2.3}Frequenzbänder und regulatorische Rahmenbedingungen}{14}{subsection.2.2.3}%
-\contentsline {section}{\numberline {2.3}LoRaWAN -- Network Layer}{14}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Endgeräte}{14}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Gateways}{15}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Network-Server}{16}{subsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.3.4}Join-Server}{17}{subsection.2.3.4}%
-\contentsline {chapter}{\numberline {3}Systementwurf und Implementierung}{19}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Hardwareauswahl}{19}{section.3.1}%
-\contentsline {paragraph}{Mikrokontroller}{19}{section*.24}%
-\contentsline {paragraph}{Gateway}{20}{section*.25}%
-\contentsline {paragraph}{Messinstrument}{20}{section*.26}%
-\contentsline {paragraph}{Radioempfänger}{20}{section*.27}%
-\contentsline {section}{\numberline {3.2}Erste Tests}{20}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Hardware-Entwicklung}{25}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Schematic und Komponentenauswahl}{25}{subsection.3.3.1}%
-\contentsline {subsubsection}{Blockschaltbild}{25}{section*.34}%
-\contentsline {subsubsection}{Wichtige Teilschaltungen}{26}{section*.36}%
-\contentsline {subsubsection}{Taktversorgung}{31}{section*.43}%
-\contentsline {subsubsection}{HF-Impedanzanpassung}{33}{section*.47}%
-\contentsline {paragraph}{Sendepfad (TX)}{34}{figure.caption.49}%
-\contentsline {paragraph}{Empfangspfad (RX)}{35}{figure.caption.51}%
-\contentsline {subsubsection}{Interner Schaltregler (SMPS)}{36}{section*.52}%
-\contentsline {subsubsection}{Spannungsversorgung und Entkopplung}{37}{section*.53}%
-\contentsline {subsubsection}{Reset-Schaltung}{38}{section*.56}%
-\contentsline {paragraph}{BOOT0-Konfiguration}{39}{figure.caption.59}%
-\contentsline {subsubsection}{I2C-Schnittstelle und Pullup-Beschaltung}{39}{section*.60}%
-\contentsline {subsubsection}{ESD-Schutz}{40}{section*.62}%
-\contentsline {subsubsection}{SPI-Flash-Speicher}{41}{section*.64}%
-\contentsline {subsubsection}{Status-LED}{42}{section*.66}%
-\contentsline {subsubsection}{Zusammenfassung der Signalnetze}{42}{section*.68}%
-\contentsline {subsection}{\numberline {3.3.2}PCB-Layout}{43}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Fertigung und Bestückung}{49}{subsection.3.3.3}%
-\contentsline {section}{\numberline {3.4}Firmware-Entwicklung}{50}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Wahl des Betriebssystems: Zephyr-RTOS}{50}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Zephyr-Architektur: Devicetree, KConfig, Treibermodelle}{51}{subsection.3.4.2}%
-\contentsline {subsubsection}{Devicetree zur Hardware-Beschreibung}{51}{section*.80}%
-\contentsline {subsubsection}{KConfig zur Software-Konfiguration}{53}{section*.82}%
-\contentsline {subsubsection}{Treibermodelle als Brücke zwischen Hardware und Software}{54}{section*.83}%
-\contentsline {subsection}{\numberline {3.4.3}LoRaWAN-Netzwerkanbindung}{54}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}Integration von Peripherien}{57}{subsection.3.4.4}%
-\contentsline {chapter}{\numberline {4}Testplanung und -durchführung}{59}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Funkabdeckungstest}{59}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Auswahl der Gateways}{59}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Routenplanung}{60}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}Zeitplanung}{63}{subsection.4.1.3}%
-\contentsline {subsection}{\numberline {4.1.4}Durchführung der Messfahrten}{63}{subsection.4.1.4}%
-\contentsline {chapter}{\numberline {5}Ergebnisse und Bewertung}{65}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Ergebnisse}{65}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Validierung der Netzwerkanbindung}{65}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Kartografische Evaluierung der TTN-Netzwerkabdeckung}{66}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Energieprofiling}{69}{subsection.5.1.3}%
-\contentsline {subsection}{\numberline {5.1.4}Fazit und Ausblick}{69}{subsection.5.1.4}%
-\contentsline {chapter}{\numberline {A}PCB-Dateien}{71}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Schematic}{71}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Layout}{78}{section.A.2}%
-\contentsline {section}{\numberline {A.3}Stückliste}{83}{section.A.3}%
-\contentsline {chapter}{\numberline {B}Firmware-Quellcode}{85}{appendix.B}%
-\contentsline {section}{\numberline {B.1}prj.conf}{85}{section.B.1}%
-\contentsline {section}{\numberline {B.2}DeviceTree-Overlay}{88}{section.B.2}%
-\contentsline {section}{\numberline {B.3}main.c}{90}{section.B.3}%
-\contentsline {chapter}{Literatur- und Quellenverzeichnis}{97}{lstnumber.-3.243}%
+\contentsline {section}{\numberline {2.3}LoRaWAN -- Network Layer}{15}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Endgeräte}{15}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Gateways}{17}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Network-Server}{17}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Join-Server}{18}{subsection.2.3.4}%
+\contentsline {chapter}{\numberline {3}Systementwurf und Implementierung}{21}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Hardwareauswahl}{21}{section.3.1}%
+\contentsline {paragraph}{Mikrokontroller}{21}{section*.25}%
+\contentsline {paragraph}{Gateway}{22}{section*.26}%
+\contentsline {paragraph}{Messinstrument}{22}{section*.27}%
+\contentsline {paragraph}{Radioempfänger}{22}{section*.28}%
+\contentsline {section}{\numberline {3.2}Erste Tests}{22}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Hardware-Entwicklung}{27}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Schematic und Komponentenauswahl}{27}{subsection.3.3.1}%
+\contentsline {subsubsection}{Blockschaltbild}{27}{section*.35}%
+\contentsline {subsubsection}{Wichtige Teilschaltungen}{28}{section*.37}%
+\contentsline {subsubsection}{Taktversorgung}{33}{section*.44}%
+\contentsline {subsubsection}{HF-Impedanzanpassung}{35}{section*.48}%
+\contentsline {paragraph}{Sendepfad (TX)}{36}{figure.caption.50}%
+\contentsline {paragraph}{Empfangspfad (RX)}{37}{figure.caption.52}%
+\contentsline {subsubsection}{Interner Schaltregler (SMPS)}{38}{section*.53}%
+\contentsline {subsubsection}{Spannungsversorgung und Entkopplung}{39}{section*.54}%
+\contentsline {subsubsection}{Reset-Schaltung}{40}{section*.57}%
+\contentsline {paragraph}{BOOT0-Konfiguration}{41}{figure.caption.60}%
+\contentsline {subsubsection}{I2C-Schnittstelle und Pullup-Beschaltung}{41}{section*.61}%
+\contentsline {subsubsection}{ESD-Schutz}{42}{section*.63}%
+\contentsline {subsubsection}{SPI-Flash-Speicher}{43}{section*.65}%
+\contentsline {subsubsection}{Status-LED}{44}{section*.67}%
+\contentsline {subsubsection}{Zusammenfassung der Signalnetze}{44}{section*.69}%
+\contentsline {subsection}{\numberline {3.3.2}PCB-Layout}{45}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Fertigung und Bestückung}{51}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.4}Firmware-Entwicklung}{52}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Wahl des Betriebssystems: Zephyr-RTOS}{52}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Zephyr-Architektur: Devicetree, KConfig, Treibermodelle}{53}{subsection.3.4.2}%
+\contentsline {subsubsection}{Devicetree zur Hardware-Beschreibung}{53}{section*.81}%
+\contentsline {subsubsection}{KConfig zur Software-Konfiguration}{55}{section*.83}%
+\contentsline {subsubsection}{Treibermodelle als Brücke zwischen Hardware und Software}{56}{section*.84}%
+\contentsline {subsection}{\numberline {3.4.3}LoRaWAN-Netzwerkanbindung}{56}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Integration von Peripherien}{59}{subsection.3.4.4}%
+\contentsline {chapter}{\numberline {4}Testplanung und -durchführung}{61}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Funkabdeckungstest}{61}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Auswahl der Gateways}{61}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Routenplanung}{62}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Zeitplanung}{65}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.4}Durchführung der Messfahrten}{65}{subsection.4.1.4}%
+\contentsline {chapter}{\numberline {5}Ergebnisse und Bewertung}{67}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Ergebnisse}{67}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Validierung der Netzwerkanbindung}{67}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Kartografische Evaluierung der TTN-Netzwerkabdeckung}{68}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Energieprofiling}{71}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}Fazit und Ausblick}{71}{subsection.5.1.4}%
+\contentsline {chapter}{\numberline {A}PCB-Dateien}{73}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Schematic}{73}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Layout}{80}{section.A.2}%
+\contentsline {section}{\numberline {A.3}Stückliste}{85}{section.A.3}%
+\contentsline {chapter}{\numberline {B}Firmware-Quellcode}{87}{appendix.B}%
+\contentsline {section}{\numberline {B.1}prj.conf}{87}{section.B.1}%
+\contentsline {section}{\numberline {B.2}DeviceTree-Overlay}{90}{section.B.2}%
+\contentsline {section}{\numberline {B.3}main.c}{92}{section.B.3}%
+\contentsline {chapter}{Literatur- und Quellenverzeichnis}{99}{lstnumber.-3.243}%

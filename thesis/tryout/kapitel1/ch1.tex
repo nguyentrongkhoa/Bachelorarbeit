@@ -54,9 +54,17 @@ Heutzutage erfreut sich LoRaWAN rasant zunehmeder Beliebtheit, dank einer Vielza
 
 \acrshort{lora} ist eine von der Firma Semtech entwickelte Modulationstechnologie und bildet die physikalische Grundlage des 
 \acrshort{lorawan}"=Protokolls.  Es basiert wie bereits erwähnt auf der CSS"=Modulation.
-bei der das zu übertragende Signal auf ein breiteres Frequenzband gespreizt wird, indem
-sogenannte Chirps-Signale mit kontinuierlich steigender oder fallender Frequenz
-als Trägersymbole verwendet. % TODO: \cite{augustin2016study}. add pics of chirps
+bei der das zu übertragende Signal auf ein breiteres Frequenzband gespreizt (spreaded) wird, indem
+sogenannte Chirps als Trägersymbole verwendet. % TODO:add pics of chirps
+Ein Chirp ist ein Signal, dessen Frequenz entweder linear ansteigt (Up-Chirp) oder abnimmt 
+(Down-Chirp) mit der Zeit.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{chirps.png} 
+    \caption{Zeitlicher Verlauf von Chirp-Signalen}
+    \label{fig:chirps}
+\end{figure}
 
 Ursprünglich für Militäranwendungen gedacht, hat das CSS-Verfahren in den letzten 20 Jahren in der Nachrichtentechnik 
 zunehmend an Bedeutung gewonnen dank seiner hervorragenden Eigenschaften\footfullcite{LoRaModulationBasics}:
