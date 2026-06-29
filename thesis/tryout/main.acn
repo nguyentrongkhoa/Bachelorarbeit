@@ -28,10 +28,8 @@
 \glossaryentry{MCU?\glossentry{mcu}|setentrycounter[]{page}"\glsnumberformat}{16}
 \glossaryentry{NS?\glossentry{ns}|setentrycounter[]{page}"\glsnumberformat}{19}
 \glossaryentry{ADR?\glossentry{adr}|setentrycounter[]{page}"\glsnumberformat}{19}
-\glossaryentry{JS?\glossentry{js}|setentrycounter[]{page}"\glsnumberformat}{19}
-\glossaryentry{EUI?\glossentry{eui}|setentrycounter[]{page}"\glsnumberformat}{19}
-\glossaryentry{NwkSKey?\glossentry{NwkSKey}|setentrycounter[]{page}"\glsnumberformat}{19}
 \glossaryentry{AppSKey?\glossentry{AppSKey}|setentrycounter[]{page}"\glsnumberformat}{19}
+\glossaryentry{NwkSKey?\glossentry{NwkSKey}|setentrycounter[]{page}"\glsnumberformat}{19}
 \glossaryentry{OTAA?\glossentry{otaa}|setentrycounter[]{page}"\glsnumberformat}{20}
 \glossaryentry{ABP?\glossentry{abp}|setentrycounter[]{page}"\glsnumberformat}{20}
 \glossaryentry{DevEUI?\glossentry{DevEUI}|setentrycounter[]{page}"\glsnumberformat}{20}

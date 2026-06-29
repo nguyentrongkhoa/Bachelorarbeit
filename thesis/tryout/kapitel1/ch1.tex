@@ -351,7 +351,7 @@ und für das Thema Off-Grid-Schutzsensorik keine Rolle spielen.
 
 \subsection{Gateways}
 
-Nach den Endgeräten schließen befinden sich direkt im Anschluss die \textbf{Gateways}, welche ebenfalls auf der Physical layer % TODO: translate
+Nach den Endgeräten schließen befinden sich direkt im Anschluss die \textbf{Gateways}, welche ebenfalls auf der Physical Layer 
 wirken. Bei der uplinkmäßigen Übertragung, also von Endgerät zu Server, empfangen sie die Signale der Endgeräte und leiten 
 diese an die Netzwerkserver weiter. Umgekehrt gilt für die Downlink-Richtung, 
 dass Gateways die Signale der Server Endgeräten zur Verfügung stellen. Da Gateways permanent auf allen Kanälen lauschen, 
@@ -373,14 +373,14 @@ um die Sichtlinie zu den Endgeräten zu garantieren und damit die Reichweite zu 
 
 \subsection{Network-Server}
 
-Mit den Gateways hört auch der Geltungsbereich von LoRa auf und wir verlassen somit die Physical Layer des OSI-Modells. % TODO: add pic of OSI model
+Mit den Gateways hört auch der Geltungsbereich von LoRa auf und die Physical Layer des OSI-Modells wird somit verlassen. 
 Die Informationspakete gelangen als Nächstes über eine Backhaul-Verbindung (bswp. Ethernet oder Mobilfunk) zu den Servern, 
 von welchen der \textbf{Network-Server} (\acrshort{ns}) der zentrale Knotenpunkt der LoRaWAN"=Sterntopologie ist. 
 An dieser Stelle tritt das Dokument \citetitle{LoRaWanBackendInterfaces2020} zum Vorschein. 
 
 Zu den Aufgaben eines Network-Servers gehören: Überprüfung von Endgerätadressen, Paketsauthentifizierung, Anpassung der Datenraten, Weiterleiten von Payloads bzw. Join-Anfragen an entsprechende 
 Application-Servers und Join-Server jeweils. Zusätzlich kümmern sich Network-Server um die Konsolidierung von Nachrichten, 
-die von mehreren Gateways empfangen wurden, sowie um die Überwachung der Netzwerk- und Gateway"=Leistung. % TODO: NRM model
+die von mehreren Gateways empfangen wurden, sowie um die Überwachung der Netzwerk- und Gateway"=Leistung. 
 
 \subsubsection*{Adaptive Data Rate}
 \label{subsec:adr}
@@ -394,19 +394,22 @@ Wird ein weiteres Gateway zum Netzwerk hinzugefügt, aktualisieren die Endgerät
 SF automatisch. ADR ist ausschließlich für stationäre
 Geräte geeignet, für mobile Anwendungen wie das hier betrachtete Schutzsensorsystem 
 muss ADR deaktiviert oder durch ein geeignetes mobilitätsbewusstes Verfahren ersetzt
-werden.
+werden. % TODO: find out why ADR must be turn off for mobile devices (for Rücksprache)
 
 \subsection{Join-Server}
 
-Der \textbf{Join-Server} verwaltet den Netzwerkbeitritt bzw. Aktivierung von Endgeräten. Jeder \acrshort{js} verfügt zur Identifikation über
-eine eindeutige JoinEUI (\acrlong{eui}), welche von den Endgeräten bei Join-Anfragen verwendet wird. Erfolgreiche Beitrittsanfragen bewirken
-die Erzeugung von Sitzungsschlüsseln (\acrshort{NwkSKey} und \acrshort{AppSKey}), somit ist die Anbindung von 
-Endgeräten an das LoRaWAN-Netzwerk abgeschlossen und sie können mit der Datenübertragung beginnen. % TODO: maybe rewrite this
+Der \textbf{Join-Server} (JS) verwaltet den sicheren Netzwerkbeitritt und die Aktivierung der Endgeräte. 
+Jedes Gerät adressiert den zuständigen JS über eine eindeutige \emph{JoinEUI} innerhalb des \emph{Join-Requests}. 
+Nach erfolgreicher Verifikation leitet der JS die Sitzungsschlüssel (\acrshort{AppSKey}) ab. 
+Der Netzwerksitzungsschlüssel (\acrshort{NwkSKey}) wird an den Network-Server übermittelt, während der AppSKey
+an den Application-Server weitergeleitet wird. Diese Trennung gewährleistet die Vertraulichkeit der 
+Anwendungsdaten auf Netzwerkesbene. Mit dem Empfang des \emph{Join-Accepts} durch das Endgerät gilt 
+die Aktivierung als abgeschlossen.
 
 \subsubsection*{Aktivierungsverfahren: OTAA und ABP}
 \label{subsec:aktivierung}
 
-Es wird zwischen zwei Aktivierungsverfahren unterschieden: \acrfull{otaa} und \acrfull{abp}.
+Zur Endgerätaktivierung werden zwei Methoden unterschieden: \acrfull{otaa} und \acrfull{abp}.
 
 Bei OTAA initiiert das Gerät beim ersten Start eine \textit{Join Request}, die sowohl seine \acrshort{DevEUI}
 als auch die Join-EUI des Join-Servers enthält. Zusätzlich wird noch eine DevNonce übermittelt, die bei jeder Anfrage
