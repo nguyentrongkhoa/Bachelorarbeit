@@ -1202,6 +1202,34 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{rf}%
+{%
+name={\acronymfont {\glsentryshort {rf}}},%
+sort={RF},%
+type={acronym},%
+first={RF},%
+firstplural={RFs},%
+text={RF},%
+plural={RFs},%
+description={Radiofrequenz},%
+descriptionplural={Radiofrequenz},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Radiofrequenz},%
+longplural={Radiofrequenzs},%
+short={RF},%
+shortplural={RFs},%
+counter={page},%
+parent={},%
+%
+}%
+
 \glsdefs@newdocentry{soc}%
 {%
 name={\acronymfont {\glsentryshort {soc}}},%

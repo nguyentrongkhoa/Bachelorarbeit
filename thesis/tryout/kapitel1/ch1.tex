@@ -52,26 +52,37 @@ Heutzutage erfreut sich LoRaWAN rasant zunehmeder Beliebtheit, dank einer Vielza
 
 \subsection{LoRa-Modulation}
 
-\acrshort{lora} ist eine von der Firma Semtech entwickelte Modulationstechnologie und bildet die physikalische Grundlage des 
+LoRa ist eine von der Firma Semtech entwickelte Modulationstechnologie und bildet die physikalische Grundlage des 
 \acrshort{lorawan}"=Protokolls.  Es basiert wie bereits erwähnt auf der CSS"=Modulation.
 bei der das zu übertragende Signal auf ein breiteres Frequenzband gespreizt (spreaded) wird, indem
-sogenannte Chirps als Trägersymbole verwendet. % TODO:add pics of chirps
-Ein Chirp ist ein Signal, dessen Frequenz entweder linear ansteigt (Up-Chirp) oder abnimmt 
-(Down-Chirp) mit der Zeit.
+sogenannte Chirps als Trägersymbole verwendet werden. 
+Ein Chirp ist ein Signal, dessen Momentanfrequenz zwischen zwei definierten Grenzfrequenzen über die Zeit linear ansteigt (Up-Chirp) 
+oder linear abfällt (Down-Chirp), wie in Abbildung \ref{fig:chirps_freq} dargestellt. Das Ergebnis dieser Frequenzvariation
+ist das Stauch- bzw. Streckverhalten in Abbildung \ref{fig:chirps}. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{chirps_freq.png} 
+    \caption{Chirp-Frequenz über die Zeit}
+    \label{fig:chirps_freq}
+\end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{chirps.png} 
-    \caption{Zeitlicher Verlauf von Chirp-Signalen}
+    \caption{Chirp-Amplitude über die Zeit}
     \label{fig:chirps}
 \end{figure}
 
-Ursprünglich für Militäranwendungen gedacht, hat das CSS-Verfahren in den letzten 20 Jahren in der Nachrichtentechnik 
-zunehmend an Bedeutung gewonnen dank seiner hervorragenden Eigenschaften\footfullcite{LoRaModulationBasics}:
+Es ist ersichtlich, dass die modulierenden Chirp-Signale eine konstante Einhüllende aufweisen, weshalb hocheffiziente
+Leistungsverstärker (der Klasse C z.B.) verwendet werden können, die sonst 
+bei großen Amplitudenschwungen wegen ihrer nicht-linearen Eigenschaft in die Sättigung gehen. 
+Hinsichtlich Stromverbrauch liegt bei \acrshort{rf}-Systemen die Schwachstelle in der Regel beim Leistungsverstärker, daher 
+hat der Begriff \enquote{konstante Einhüllende} eine besondere Bedeutung für Low-Power-Anwendungen.
 
-\paragraph*{Niedriger Energieverbrauch}
-Ähnlich wie \acrshort{fsk} besitzt LoRa eine konstante Einhüllende, wodurch kostengünstige, energieeffiziente
-Leistungsverstärker verwendet werden können.
+Darüber hinaus haben die Chirps-Signale zwei weitere entscheidende Vorteile dank ihrer Breitbändigkeit:
+die ausgeprägte Störfestigkeit einerseits, weil sich der Energiegehalt über das gesamte Frequenzspektrum verteilt 
+
 \paragraph*{Hohe Störfestigkeit} 
 Da ein LoRa-Symbol lang und ausgespreizt ist, haben kurz Rauschimpulse nur einen verschwindenen Einfluss auf die Demodulation. 
 Aus diesem Grund sind LoRa-Signale sehr resistent gegenüber In-Band- und Out-of-Band-Interferenzen.
@@ -417,3 +428,4 @@ können die fest eingebauten Schlüssel nicht mehr geändert werden, was zu eine
 \newacronym{srtm}{SRTM}{Shuttle Radar Topography Mission}
 \newacronym{dguv}{DGUV}{Deutsche Gesetzliche Unfallversicherung}
 \newacronym{mac}{MAC}{Media Access Control}
+\newacronym{rf}{RF}{Radiofrequenz}
