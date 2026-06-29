@@ -23,10 +23,21 @@ vierlagigen PCB-Prototyps dargestellt. Die vier Lagen werden in der Reihenfolge 
 
 \section{Stückliste}
 
+\begin{center}
 \csvreader[%
-  respect all,%
-  autolongtable%
-]{anhang/bom.csv}{}{\csvlinetotablerow}%
+  respect all,
+  longtable={|p{0.18\textwidth}|p{0.18\textwidth}|p{0.30\textwidth}|p{0.14\textwidth}|p{0.12\textwidth}|},
+  table head={\hline \textbf{Value} & \textbf{Designator} & \textbf{Footprint} & \textbf{LCSC} & \textbf{Quantity} \\\hline\hline},
+  late after line=\\\hline,
+  late after last line=\\\hline
+]{anhang/bom.csv}{%
+  % Hier ordnen wir die Spaltennamen aus deiner CSV internen Makros zu
+  Value=\comment, Designator=\designator, Footprint=\footprint, LCSC=\lcsc, Quantity=\quantity
+}{%
+  % Hier definieren wir, wie jede Zeile gedruckt wird
+  \comment & \designator & \footprint & \lcsc & \quantity
+}
+\end{center}
 
 \chapter{Firmware-Quellcode}
 

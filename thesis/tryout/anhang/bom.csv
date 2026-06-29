@@ -1,4 +1,4 @@
-Comment,Designator,Footprint,LCSC,Quantity
+Value,Designator,Footprint,LCSC,Quantity
 0,L8,L_0603_1608Metric,C21189,1
 0.75pF,C22,C_0402_1005Metric,C76914,1
 100K,R10,R_0805_2012Metric,C149504,1
