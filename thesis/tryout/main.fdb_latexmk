@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1782761560.59955 "main.bcf" "main.bbl" "main" 1782761585.22113 0
+["biber main"] 1782762671.47266 "main.bcf" "main.bbl" "main" 1782762687.78496 0
   "LoRa.bib" 1782731334.39988 62806 8c993fc97060999070cc189d931f3d78 ""
-  "main.bcf" 1782761584.62496 108350 3ee53844074442c4bc807af93d3dc8f7 "pdflatex"
+  "main.bcf" 1782762687.33722 108494 fa89822718477fd395dc031f189e538d "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1782761563.29393 "/home/tom/zephyrproject/descap_lorawan/thesis/tryout/main.tex" "main.pdf" "main" 1782761585.22255 0
+["pdflatex"] 1782762673.56647 "/home/tom/zephyrproject/descap_lorawan/thesis/tryout/main.tex" "main.pdf" "main" 1782762687.78546 0
   "/etc/texmf/web2c/texmf.cnf" 1773605240.045 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/tom/zephyrproject/descap_lorawan/thesis/tryout/main.tex" 1782745304.41669 4519 b86209adda232231d3024eab8de40be9 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -413,10 +413,11 @@
   "anhang/prj.conf" 1781617905.10899 1393 e1c3eae13272c581f215a4e8fd5691b8 ""
   "anhang/schematic.pdf" 1782674847.6068 900597 a1e77472e3900c03d670f647dbd59472 ""
   "bhtThesis.sty" 1774175586.51523 14008 684a2402a6d7dab5ea84941c979e7954 ""
-  "kapitel1/ch1.tex" 1782761539.2362 27226 29bc80a0f2674c37ee6d2211bffa9815 ""
+  "kapitel1/ch1.tex" 1782762655.54359 28056 6b27eda4786fbc517598b510f020b8fc ""
   "kapitel1/pictures/chirps.png" 1782747080.62295 128408 abe8d7f48c787a186a66b90121ede6a8 ""
   "kapitel1/pictures/chirps_freq.png" 1782748037.01463 77376 be75a2471a51a8a27ff01a04ddf91e91 ""
   "kapitel1/pictures/class_a_ts001.png" 1782761340.68959 39733 f44820f1a7dc51ac1f71a8dbb1d5cc96 ""
+  "kapitel1/pictures/class_b.png" 1782761650.56173 33136 eda0160f43cb0157050b39c77a08c2d1 ""
   "kapitel1/pictures/lorawan_arch.png" 1782756095.57347 498913 deed962f9a767a35943c947538416841 ""
   "kapitel2/ch2.tex" 1774705914.81908 14704 c2cc8b7ff5433632380c003224d3e24c ""
   "kapitel3/ch3.tex" 1782660326.80826 68968 e97686ee0742c67c72a30297be00ffa8 ""
@@ -468,17 +469,17 @@
   "kapitel5/pictures/steglitz-tempelhof_coverage.pdf" 1782634639.88683 4019115 581841ee93dd8ae2a25f5d46b74f9018 ""
   "kapitel5/pictures/ttn_first_test.png" 1781256038.27255 266215 5be134afddba29620f4b102c512e078b ""
   "main.acr" 1774707137.60362 4447 67daa0e4453a5d97077be8460fa38d6d ""
-  "main.aux" 1782761584.60847 33879 afee83b5a46b6b8a1b071f9d1932d6d9 "pdflatex"
-  "main.bbl" 1782761563.18801 17023 8f44018cede84fa3b921cb5c5ba5ccb9 "biber main"
-  "main.cb" 1782761564.89322 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.cb2" 1782761564.88496 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.aux" 1782762687.31201 34307 49513e1be891f91779721296c853e03c "pdflatex"
+  "main.bbl" 1782762673.52298 17023 8f44018cede84fa3b921cb5c5ba5ccb9 "biber main"
+  "main.cb" 1782762674.63615 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.cb2" 1782762674.632 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   "main.gls" 1774707137.13292 6 9f404503043ec80c08484be9f659189e ""
-  "main.glsdefs" 1782761584.60022 39450 1a2e3618021c708f8e08138d79e3e0f4 "pdflatex"
-  "main.lof" 1782761584.62908 5203 502c4880364b6d2b0b65db1043c8d324 "pdflatex"
-  "main.out" 1782761584.61671 9958 f16abf630191a00690ddea0e0e7950c3 "pdflatex"
-  "main.run.xml" 1782761584.62908 2426 876580090a193b1543ea980d4eafbac2 "pdflatex"
+  "main.glsdefs" 1782762687.30781 39450 1a2e3618021c708f8e08138d79e3e0f4 "pdflatex"
+  "main.lof" 1782762687.34142 5336 54c0daff351ffcc3ff82dfd4b50de68a "pdflatex"
+  "main.out" 1782762687.32882 9958 f16abf630191a00690ddea0e0e7950c3 "pdflatex"
+  "main.run.xml" 1782762687.34142 2426 876580090a193b1543ea980d4eafbac2 "pdflatex"
   "main.tex" 1782745304.41669 4519 b86209adda232231d3024eab8de40be9 ""
-  "main.toc" 1782761584.62908 6583 76d2b241b89d5428b1639469a0197043 "pdflatex"
+  "main.toc" 1782762687.34142 6583 c94cefc4b9b0c6e8267b69cd6c335d76 "pdflatex"
   "personalMacros.tex" 1771675946.07852 150 6e250442b75bf14149b4086972af6b8f ""
   "titelseiten.tex" 1774421168.87594 5629 778ebfa1edacbbdb516303546c18ae11 ""
   (generated)

@@ -309,14 +309,28 @@ nur gelegentlich Daten senden müssen, wie es bei vielen Schutzsensoren der Fall
     \label{fig:class_a_rx}
 \end{figure}
 
-Im Vergleich zur Klasse A ist die \textbf{Klasse B} flexibler, da sie einen periodischen Empfang durch zeitgesteuerte \acrshort{rx}-Fenster ermöglicht,
-die mittels Gateway"=\textbf{B}eacons synchronisiert werden. Dadurch würde unmittelbar der Network Server erfahren, sobald Endgeräte empfangsbereits sind.
-Dies erhöht die Reaktionsfähigkeit auf Kosten eines höheren Energieverbrauchs. Wenn ein Gerät sich als Klasse-B-Gerät Network-Server gegenüber 
-identifizieren will, muss der entsprechende \texttt{ClassB}-Bit in einem Uplink-Signal gesetzt werden. 
+Im Vergleich zur Klasse A bietet die \textbf{Klasse B} eine höhere Flexibilität bei der Downlink-Kommunikation, 
+da sie den periodischen Empfang durch zeitgesteuerte \emph{Ping Slots} ermöglicht. Die zeitliche Synchronisation zwischen dem 
+Endgerät und dem Netzwerk basiert auf sogenannten \emph{Beacons}, die das Gateway in regelmäßigen Intervallen 
+(standardmäßig alle $128\text{ s}$) als Broadcast aussendet. Diese Beacons enthalten einen präzisen Zeitstempel, sodass sich die 
+internen Clocks der Endgeräte der Netzwerkzeit anpassen können.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{class_b.png} 
+    \caption[Beacon- und Ping-Slots für Endgeräte der Klasse B]{Beacon- und Ping-Slots für Endgeräte der Klasse B (Quelle: \cite{LoRaWANL21042020})}
+    \label{fig:class_b}
+\end{figure}
+
+Durch diese feste zeitliche Kopplung kann der Network Server exakt vorausberechnen, wann ein 
+Endgerät seine \emph{Ping Slots} öffnet, um Downlink-Nachrichten entgegenzunehmen. Ein aktives Signalisieren der 
+Empfangsbereitschaft durch das Endgerät vor jedem Fenster ist daher nicht erforderlich. Diese deterministische Erreichbarkeit 
+erhöht die Reaktionsfähigkeit des Netzwerks, führt jedoch aufgrund der regelmäßigen Aktivierung des Empfängers 
+(sowohl für Beacons als auch für Ping Slots) zu einem höheren Energieverbrauch im Vergleich zur Klasse A.
 
 \textbf{Klasse C} ermöglicht einen kontinuierlichen Empfang, indem das Endgerät nur während des Sendens nicht empfängt. 
 Das hat konsequenterweise den Nachteil, dass Klasse-C-Geräte für batteriebetriebene Geräte ungeeignet sind
-und für das Thema Off-Grid-Schutzsensorik eine eher untergeordnete Rolle spielen.
+und für das Thema Off-Grid-Schutzsensorik keine Rolle spielen.
 
 \begin{table}[ht]
     \centering
