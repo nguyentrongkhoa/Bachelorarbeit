@@ -13,6 +13,21 @@
 
 \section{Layout}
 
+In diesem Anhang sind die detaillierten Fertigungs- und Routing-Ebenen des entwickelten 
+vierlagigen PCB-Prototyps dargestellt. Die vier Lagen werden in der Reihenfolge Top, Middle1, Middle2, Bottom aufgeführt. 
+
+\includepdf[pages=-]{anhang/layout_front.pdf}
+\includepdf[pages=-]{anhang/layout_in1.pdf}
+\includepdf[pages=-]{anhang/layout_in2.pdf}
+\includepdf[pages=-]{anhang/layout_back.pdf}
+
+\section{Stückliste}
+
+\csvreader[%
+  respect all,%
+  autolongtable%
+]{anhang/bom.csv}{}{\csvlinetotablerow}%
+
 \chapter{Firmware-Quellcode}
 
 % Farbdefinitionen für die Quelltexte

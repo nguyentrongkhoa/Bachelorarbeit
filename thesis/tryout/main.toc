@@ -68,8 +68,9 @@
 \contentsline {chapter}{\numberline {A}PCB-Dateien}{71}{appendix.A}%
 \contentsline {section}{\numberline {A.1}Schematic}{71}{section.A.1}%
 \contentsline {section}{\numberline {A.2}Layout}{78}{section.A.2}%
-\contentsline {chapter}{\numberline {B}Firmware-Quellcode}{79}{appendix.B}%
-\contentsline {section}{\numberline {B.1}prj.conf}{79}{section.B.1}%
-\contentsline {section}{\numberline {B.2}DeviceTree-Overlay}{82}{section.B.2}%
-\contentsline {section}{\numberline {B.3}main.c}{84}{section.B.3}%
-\contentsline {chapter}{Literatur- und Quellenverzeichnis}{91}{lstnumber.-3.243}%
+\contentsline {section}{\numberline {A.3}Stückliste}{83}{section.A.3}%
+\contentsline {chapter}{\numberline {B}Firmware-Quellcode}{85}{appendix.B}%
+\contentsline {section}{\numberline {B.1}prj.conf}{85}{section.B.1}%
+\contentsline {section}{\numberline {B.2}DeviceTree-Overlay}{88}{section.B.2}%
+\contentsline {section}{\numberline {B.3}main.c}{90}{section.B.3}%
+\contentsline {chapter}{Literatur- und Quellenverzeichnis}{97}{lstnumber.-3.243}%
