@@ -18,42 +18,42 @@
 \contentsline {subsection}{\numberline {2.2.2}Wichtige Kenngrößen und Formeln}{12}{subsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.2.3}Frequenzbänder und regulatorische Rahmenbedingungen}{15}{subsection.2.2.3}%
 \contentsline {section}{\numberline {2.3}LoRaWAN -- Network Layer}{15}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Endgeräte}{15}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.1}Endgeräte}{16}{subsection.2.3.1}%
 \contentsline {subsection}{\numberline {2.3.2}Gateways}{17}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Network-Server}{17}{subsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.3.4}Join-Server}{18}{subsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.3.3}Network-Server}{18}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Join-Server}{19}{subsection.2.3.4}%
 \contentsline {chapter}{\numberline {3}Systementwurf und Implementierung}{21}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Hardwareauswahl}{21}{section.3.1}%
-\contentsline {paragraph}{Mikrokontroller}{21}{section*.23}%
-\contentsline {paragraph}{Gateway}{22}{section*.24}%
-\contentsline {paragraph}{Messinstrument}{22}{section*.25}%
-\contentsline {paragraph}{Radioempfänger}{22}{section*.26}%
+\contentsline {paragraph}{Mikrokontroller}{21}{section*.24}%
+\contentsline {paragraph}{Gateway}{22}{section*.25}%
+\contentsline {paragraph}{Messinstrument}{22}{section*.26}%
+\contentsline {paragraph}{Radioempfänger}{22}{section*.27}%
 \contentsline {section}{\numberline {3.2}Erste Tests}{22}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Hardware-Entwicklung}{27}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Schematic und Komponentenauswahl}{27}{subsection.3.3.1}%
-\contentsline {subsubsection}{Blockschaltbild}{27}{section*.33}%
-\contentsline {subsubsection}{Wichtige Teilschaltungen}{28}{section*.35}%
-\contentsline {subsubsection}{Taktversorgung}{33}{section*.42}%
-\contentsline {subsubsection}{HF-Impedanzanpassung}{35}{section*.46}%
-\contentsline {paragraph}{Sendepfad (TX)}{36}{figure.caption.48}%
-\contentsline {paragraph}{Empfangspfad (RX)}{37}{figure.caption.50}%
-\contentsline {subsubsection}{Interner Schaltregler (SMPS)}{38}{section*.51}%
-\contentsline {subsubsection}{Spannungsversorgung und Entkopplung}{39}{section*.52}%
-\contentsline {subsubsection}{Reset-Schaltung}{40}{section*.55}%
-\contentsline {paragraph}{BOOT0-Konfiguration}{41}{figure.caption.58}%
-\contentsline {subsubsection}{I2C-Schnittstelle und Pullup-Beschaltung}{41}{section*.59}%
-\contentsline {subsubsection}{ESD-Schutz}{42}{section*.61}%
-\contentsline {subsubsection}{SPI-Flash-Speicher}{43}{section*.63}%
-\contentsline {subsubsection}{Status-LED}{44}{section*.65}%
-\contentsline {subsubsection}{Zusammenfassung der Signalnetze}{44}{section*.67}%
+\contentsline {subsubsection}{Blockschaltbild}{27}{section*.34}%
+\contentsline {subsubsection}{Wichtige Teilschaltungen}{28}{section*.36}%
+\contentsline {subsubsection}{Taktversorgung}{33}{section*.43}%
+\contentsline {subsubsection}{HF-Impedanzanpassung}{35}{section*.47}%
+\contentsline {paragraph}{Sendepfad (TX)}{36}{figure.caption.49}%
+\contentsline {paragraph}{Empfangspfad (RX)}{37}{figure.caption.51}%
+\contentsline {subsubsection}{Interner Schaltregler (SMPS)}{38}{section*.52}%
+\contentsline {subsubsection}{Spannungsversorgung und Entkopplung}{39}{section*.53}%
+\contentsline {subsubsection}{Reset-Schaltung}{40}{section*.56}%
+\contentsline {paragraph}{BOOT0-Konfiguration}{41}{figure.caption.59}%
+\contentsline {subsubsection}{I2C-Schnittstelle und Pullup-Beschaltung}{41}{section*.60}%
+\contentsline {subsubsection}{ESD-Schutz}{42}{section*.62}%
+\contentsline {subsubsection}{SPI-Flash-Speicher}{43}{section*.64}%
+\contentsline {subsubsection}{Status-LED}{44}{section*.66}%
+\contentsline {subsubsection}{Zusammenfassung der Signalnetze}{44}{section*.68}%
 \contentsline {subsection}{\numberline {3.3.2}PCB-Layout}{45}{subsection.3.3.2}%
 \contentsline {subsection}{\numberline {3.3.3}Fertigung und Bestückung}{51}{subsection.3.3.3}%
 \contentsline {section}{\numberline {3.4}Firmware-Entwicklung}{52}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}Wahl des Betriebssystems: Zephyr-RTOS}{52}{subsection.3.4.1}%
 \contentsline {subsection}{\numberline {3.4.2}Zephyr-Architektur: Devicetree, KConfig, Treibermodelle}{53}{subsection.3.4.2}%
-\contentsline {subsubsection}{Devicetree zur Hardware-Beschreibung}{53}{section*.79}%
-\contentsline {subsubsection}{KConfig zur Software-Konfiguration}{55}{section*.81}%
-\contentsline {subsubsection}{Treibermodelle als Brücke zwischen Hardware und Software}{56}{section*.82}%
+\contentsline {subsubsection}{Devicetree zur Hardware-Beschreibung}{53}{section*.80}%
+\contentsline {subsubsection}{KConfig zur Software-Konfiguration}{55}{section*.82}%
+\contentsline {subsubsection}{Treibermodelle als Brücke zwischen Hardware und Software}{56}{section*.83}%
 \contentsline {subsection}{\numberline {3.4.3}LoRaWAN-Netzwerkanbindung}{56}{subsection.3.4.3}%
 \contentsline {subsection}{\numberline {3.4.4}Integration von Peripherien}{59}{subsection.3.4.4}%
 \contentsline {chapter}{\numberline {4}Testplanung und -durchführung}{61}{chapter.4}%

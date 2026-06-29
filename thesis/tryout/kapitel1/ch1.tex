@@ -266,20 +266,26 @@ Die maximale Paketgröße in Europa beträgt 222\,Bytes bei hoher Datenrate und
 % -----------------------------------------------------------------------------
 
 Der Begriff \acrfull{lorawan} definiert den Netzwerkstandard, dem die LoRa-Modulationstechnologie zugrunde liegt.
-Der LoRaWAN-Standard wird von der sogenannten LoRa-Alliance - einem im Jahre 2015 gegründeten
-Bündnis internationaler Unternehmen - gepflegt und in ihren umfangreichen technischen Spezifikationen dokumentiert.
-Diese beginnen alle mit dem Präfix "TS", gefolgt von einer dreistelligen Dokumentennummer. 
+Der LoRaWAN-Standard wird von der LoRa-Alliance\textregistered gepflegt und in ihren umfangreichen 
+technischen Spezifikationen dokumentiert. Diese beginnen alle mit dem Präfix "TS", gefolgt von einer dreistelligen Dokumentennummer. 
 
 \subsection*{Netzwerkarchitektur}
 \label{subsec:netzwerkarchitektur}
 
 Eine LoRaWAN"=Kommunikationskette setzt sich aus drei Gliedern zusammen: Endgeräten/\acrfull{ed}, Gateways und Servern. 
-Die Server"=Seite gliedert sich weiter in \acrfull{ns}, \acrfull{js} und \acrfull{as}. % TODO: add pic
+Die Server"=Seite gliedert sich weiter in \acrfull{ns}, \acrfull{js} und \acrfull{as}. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{lorawan_arch.png} 
+    \caption[LoRaWAN-Netzwerkarchitektur]{LoRaWAN-Netzwerkarchitektur (Quelle: The Things Network)}
+    \label{fig:lorawan_arch}
+\end{figure}
 
 \subsection{Endgeräte}
 
-Auf der untersten Ebene befinden sich die \textbf{Endgeräte}, deren Zentraleinheit Mikrokontroller (\acrshort{mcu}) mit entsprechender
-Stromversorgung darstellen. Auf dem MCU ist ein LoRaWAN"=Stack integriert, der als Schnittstelle zur LoRa-Funkeinheit fungiert.
+Auf der untersten Ebene befinden sich die \textbf{Endgeräte}, gesteuert von einem Mikrokontroller (\acrshort{mcu}) mit entsprechender
+Stromversorgung. Auf dem MCU ist ein LoRaWAN"=Stack integriert, der als Schnittstelle zur LoRa-Funkeinheit fungiert.
 Diese übernimmt wie bereits beschrieben die physikalische Modulation und Demodulation der Signale, welche mithilfe einer Antenne
 in die Luft gesendet bzw. von der Luft empfangen werden können. Zusätzlich können Endgeräte mit anwendungsspezifischen Peripheriegeräten 
 wie Sensoren oder Aktoren ausgestattet sein. 
