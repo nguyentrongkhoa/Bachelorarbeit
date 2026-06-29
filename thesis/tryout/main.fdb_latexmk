@@ -1,14 +1,14 @@
 # Fdb version 4
-["biber main"] 1782680049.71812 "main.bcf" "main.bbl" "main" 1782680653.3837 0
+["biber main"] 1782680049.71812 "main.bcf" "main.bbl" "main" 1782715292.77355 0
   "LoRa.bib" 1775241387.62484 60839 c02c6e690a103761d288171c88f3c04c ""
-  "main.bcf" 1782680652.10176 107896 211a1597c331b6492d945b828a46567a "pdflatex"
+  "main.bcf" 1782715292.47434 107896 211a1597c331b6492d945b828a46567a "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1782680618.2085 "/home/tom/zephyrproject/descap_lorawan/thesis/tryout/main.tex" "main.pdf" "main" 1782680653.38518 0
+["pdflatex"] 1782715281.89249 "/home/tom/zephyrproject/descap_lorawan/thesis/tryout/main.tex" "main.pdf" "main" 1782715292.77397 0
   "/etc/texmf/web2c/texmf.cnf" 1773605240.045 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/tom/zephyrproject/descap_lorawan/thesis/tryout/main.tex" 1782680557.8017 4316 3d7c502050f449e161d1662ad36215ac ""
+  "/home/tom/zephyrproject/descap_lorawan/thesis/tryout/main.tex" 1782713300.05615 4388 d53296b95c8e426a9f74b6b64b52e5b5 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc" 1490131464 2933 9ad527ce78d7c5fa0a642dead095f172 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_7f4ce4.enc" 1490131464 3361 167488583337936b4a6376846148c8a9 ""
@@ -242,6 +242,7 @@
   "/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.cfg" 1429144587 7068 06f8d141725d114847527a66439066b6 ""
   "/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.def" 1663185836 21994 2bc2a882df92d97dbce35c06bb1d3541 ""
   "/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.sty" 1663185836 62761 3c92d495a9e03d7254b9a3266aa17164 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/csvsimple/csvsimple-l3.sty" 1705704289 47599 16c2afaf6d9401c6b7ef0b9c706b0ba0 ""
   "/usr/share/texlive/texmf-dist/tex/latex/datatool/datatool-base.sty" 1569706369 93620 4e9f9aa754a2337e89df3eeca1527291 ""
   "/usr/share/texlive/texmf-dist/tex/latex/datatool/datatool-fp.sty" 1569706369 3944 92aa06b5428fcc1b751c82409f23f92f ""
   "/usr/share/texlive/texmf-dist/tex/latex/draftwatermark/draftwatermark.sty" 1607465154 6990 c19f0e2ee25970cd4873c23ce67e5a94 ""
@@ -359,7 +360,7 @@
   "BHT-Logo-vertikal.pdf" 1771675946.44733 4604 ab5b60ffda74c1c05706080f71ed3cbb ""
   "BHT-Studiere-vertikal.pdf" 1771675946.47381 2541 51312e70e69c03f446094b09c46bbe72 ""
   "abstract_de.tex" 1771675946.13777 323 a0161c3507852da06c61f3b7b1b97975 ""
-  "anhang.tex" 1782680581.46223 4622 cdf05f521f56da0fda2da226ddf585dd ""
+  "anhang.tex" 1782713814.58918 3815 ce46d9801a009b67e85a38bc0cc94a3a ""
   "anhang/main.c" 1781704042.71184 7861 2b7f8ac8f8d5c967a20b81064b097921 ""
   "anhang/nucleo_wl55jc.overlay" 1781616767.03996 1916 1d39f2025996691553a3d3996243e560 ""
   "anhang/prj.conf" 1781617905.10899 1393 e1c3eae13272c581f215a4e8fd5691b8 ""
@@ -416,17 +417,17 @@
   "kapitel5/pictures/steglitz-tempelhof_coverage.pdf" 1782634639.88683 4019115 581841ee93dd8ae2a25f5d46b74f9018 ""
   "kapitel5/pictures/ttn_first_test.png" 1781256038.27255 266215 5be134afddba29620f4b102c512e078b ""
   "main.acr" 1774707137.60362 4447 67daa0e4453a5d97077be8460fa38d6d ""
-  "main.aux" 1782680652.07433 31563 e4be9da4f623f7b88f062fe0ad915e8e "pdflatex"
+  "main.aux" 1782715292.46309 31312 6cb5ac5d20483c051c45bb9c4ffce07f "pdflatex"
   "main.bbl" 1782680054.79181 12050 4100a6fb0da437186f61199af838f408 "biber main"
-  "main.cb" 1782680621.12457 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.cb2" 1782680621.11281 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.cb" 1782715282.66976 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.cb2" 1782715282.6659 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   "main.gls" 1774707137.13292 6 9f404503043ec80c08484be9f659189e ""
-  "main.glsdefs" 1782680652.07041 38599 aa78db1ca327412c6320f1dc78a548ac "pdflatex"
-  "main.lof" 1782680652.1096 4906 966c7635ec954a1644e1c84abf04ec4b "pdflatex"
-  "main.out" 1782680652.09 9117 2f886b4037a53829fff5faf1c151580d "pdflatex"
-  "main.run.xml" 1782680652.1096 2426 93fe141410a974fef8dc2475c7eede99 "pdflatex"
-  "main.tex" 1782680557.8017 4316 3d7c502050f449e161d1662ad36215ac ""
-  "main.toc" 1782680652.1096 6154 b216af08a06d150826567dc65d0290a8 "pdflatex"
+  "main.glsdefs" 1782715292.45934 38599 aa78db1ca327412c6320f1dc78a548ac "pdflatex"
+  "main.lof" 1782715292.47434 4745 2391ec81344a9731143fcfd069cedb5e "pdflatex"
+  "main.out" 1782715292.46684 9138 1284022e817ebf89c5a8c951144c8b8b "pdflatex"
+  "main.run.xml" 1782715292.47434 2426 93fe141410a974fef8dc2475c7eede99 "pdflatex"
+  "main.tex" 1782713300.05615 4388 d53296b95c8e426a9f74b6b64b52e5b5 ""
+  "main.toc" 1782715292.47434 6208 7dea145e6f7d0cb03e857361607bcc9a "pdflatex"
   "personalMacros.tex" 1771675946.07852 150 6e250442b75bf14149b4086972af6b8f ""
   "titelseiten.tex" 1774421168.87594 5629 778ebfa1edacbbdb516303546c18ae11 ""
   (generated)

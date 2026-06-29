@@ -8,8 +8,10 @@
 
 \chapter{PCB-Dateien}
 
-% Fügt alle Seiten der Datei im Originalformat ein
+\section{Schematic}
 \includepdf[pages=-]{anhang/schematic.pdf}
+
+\section{Layout}
 
 \chapter{Firmware-Quellcode}
 
@@ -74,32 +76,12 @@
     morestring=[b]"
 }
 
-\section{Zephyr-Projektstruktur}
-
-Zur Einordnung der in diesem Anhang aufgeführten Dateien zeigt die
-folgende Übersicht die relevanten Bestandteile der Zephyr-Projektstruktur.
-\texttt{prj.conf} konfiguriert zur Build-Zeit, welche Software-Subsysteme
-(z.\,B. der LoRaWAN-Stack oder das Settings-Subsystem) in die Firmware
-eingebunden werden. Das Devicetree-Overlay (\texttt{nucleo\_wl55jc.overlay})
-beschreibt hingegen die Hardware-Topologie der eigenen Platine und
-ergänzt damit die Standard-Boardbeschreibung um die eigene Sensorik
-und RF-Konfiguration. \texttt{main.c} enthält schließlich die eigentliche
-Anwendungslogik, die auf die in beiden Dateien definierten Fähigkeiten
-zugreift. % TODO: cite Zephyr official doc somewhere
-
-\begin{verbatim}
-my-app/
-|-- prj.conf              
-|-- boards/
-|   `-- nucleo_wl55jc.overlay   
-|-- src/
-|   `-- main.c            
-`-- CMakeLists.txt
-\end{verbatim}
+In diesem Anhang werden die drei wichtigsten Dateien für das Zephyr-Projekt dargestellt: nämlich \codebox{prj.conf},
+\codebox{nucleo\_wl55jc.overlay} und \codebox{main.c}. Zur besseren Einordnung wird hier die Ordnerstruktur gezeigt: 
 
 \begin{figure}[htbp]
     \centering
-    \begin{minipage}{0.6\textwidth} % Begrenzt die Breite für eine schöne Zentrierung
+    \begin{minipage}{0.8\textwidth} % Begrenzt die Breite für eine schöne Zentrierung
         \dirtree{%
             .1 my-app/.
             .2 prj.conf.
@@ -110,8 +92,6 @@ my-app/
             .3 main.c.
         }
     \end{minipage}
-    \caption{Verzeichnisstruktur des Zephyr-Projekts unter Verwendung von \texttt{dirtree}.}
-    \label{fig:dirtree_project}
 \end{figure}
 
 \section{prj.conf}
