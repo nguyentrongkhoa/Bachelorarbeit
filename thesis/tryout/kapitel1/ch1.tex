@@ -37,8 +37,11 @@ Mit der Gründung der Non-Profit-Organisation \emph{LoRa-Alliance\textregistered
 Heutzutage erfreut sich LoRaWAN rasant zunehmeder Beliebtheit, dank einer Vielzahl von Eigenschaften: \cite{WhatAreLoRa}
 
 \begin{itemize}
-  \item Geringer Strombedarf: LoRaWAN-Endgeräte können mit einer Knopfzellbatterie eine Betriebsdauer von bis zu 10 Jahren haben
-  \item Große Reichweite: bis zu \SI{10}{\kilo\meter} in ländlichen Gebieten und \SI{3}{\kilo\meter} in dichtbebauten Umgebungen möglich
+  \item Geringer Strombedarf: LoRaWAN-Endgeräte können mit einer Knopfzellbatterie eine Betriebsdauer von bis zu 10 Jahren haben.
+  \item Große Reichweite: bis zu \SI{10}{\kilo\meter} in ländlichen Gebieten und \SI{3}{\kilo\meter} in dichtbebauten Umgebungen möglich.LoRa
+  \item Lizenzfreies Spektrum: LoRaWAN-Netzwerke verwenden kostenfreie \acrshort{ism}-Frequenzbänder. (s. Unterkapitel \ref{subsec:frequenzbaender})
+  \item Fleixibilität: private Netzwerke aufzuspannen, ist unproblematisch, sodass man nicht auf öffentliche Infrastruktur angewiesen ist.
+  \item Over-the-Air-Updates: Endgeräte können ihre Firmware drahtlos während des Betriebs aktualisieren.
   \item 
 \end{itemize}
 
@@ -50,7 +53,7 @@ Heutzutage erfreut sich LoRaWAN rasant zunehmeder Beliebtheit, dank einer Vielza
 \subsection{LoRa-Modulation}
 
 \acrshort{lora} ist eine von der Firma Semtech entwickelte Modulationstechnologie und bildet die physikalische Grundlage des 
-\acrshort{lorawan}"=Protokolls.  Es basiert auf der \acrfull{css}"=Modulation.
+\acrshort{lorawan}"=Protokolls.  Es basiert wie bereits erwähnt auf der CSS"=Modulation.
 bei der das zu übertragende Signal auf ein breiteres Frequenzband gespreizt wird, indem
 sogenannte Chirps-Signale mit kontinuierlich steigender oder fallender Frequenz
 als Trägersymbole verwendet. % TODO: \cite{augustin2016study}. add pics of chirps
@@ -80,7 +83,7 @@ Um die Übertragungsqualität eines LoRa-Links zu charakterisieren und zu optimi
 sind grundlegende Parameter maßgeblich, unter anderem der \acrfull{sf}, die Bandbreite
 (\acrshort{bw}) sowie die \acrfull{cr}. Ihre Wechselwirkung bestimmt
 den Trade-off zwischen Reichweite, Datenrate und Energieverbrauch, also die drei
-zentralen Designziele des in dieser Arbeit entwickelten Systems. Für eine ausführliche Behandlung sei auf \cite{montagnyLoRaLoRaWANInternet} 
+zentralen Designziele des in dieser Arbeit entwickelten Systems. Für eine ausführlichere Behandlung sei auf \cite{montagnyLoRaLoRaWANInternet} 
 verwiesen. 
 
 Der SF gibt die Anzahl der Bits pro Symbol bzw Chirp an und kann Werte von 7 bis 12 annehmen. 
@@ -150,7 +153,6 @@ Tabelle~\ref{tab:sf_vergleich} stellt den Zusammenhang zwischen wichtigen Kenngr
 und einer CR von 4/5 ausgegangen, da dies die Standardkonfiguration für LoRaWAN ist. Die Payloadgröße wird willkürlich auf 50 Bytes 
 festgelegt, weil es dem maximal zulässigen Wert für SF12 entspricht. 
 
-% TODO: explain what Empfindlichkeit means
 \begin{table}[htbp]
   \centering
   \caption{Wichtige LoRa-Parameter in einem Blick}
@@ -192,7 +194,6 @@ erlaubt, ermöglicht erst die gemeinsame Betrachtung beider Größen eine fundie
 Bewertung der Linkqualität, insbesondere bei schwachen Signalen nahe der
 Empfangsempfindlichkeitsgrenze.
 
-% TODO: maybe delete MAPL completely if text is too long
 Das \textbf{\acrfull{mapl}}, oft auch als \textbf{Link-Budget} bekannt, beschreibt den maximal tolerierbaren Pfadverlust
 entlang der Übertragungsstrecke und ergibt sich aus der Differenz zwischen
 Sendeleistung und Empfangsempfindlichkeit unter Berücksichtigung aller Gewinne und Verluste: 
@@ -215,7 +216,7 @@ kompensieren~\cite{LoRaModulationBasics}.
 Aus dem MAPL lässt sich schließlich unter Verwendung des
 Freiraum"=Pfadverlustmodells (vgl. Abschnitt~\ref{subsec:pfadverlust}) die % TODO: correct section reference
 \textbf{theoretische Reichweite} der Übertragungsstrecke abschätzen. Für den Chip SX1272 von Semtech zum Beispiel kommt man 
-auf einen theoretischen Wert von \qty{1946}{km}. % TODO: cite sylvain montagny and look for max values in city areas
+auf einen theoretischen Wert von \qty{1946}{km}. \cite{montagnyLoRaLoRaWANInternet}
 
 \subsection{Frequenzbänder und regulatorische Rahmenbedingungen}
 \label{subsec:frequenzbaender}
@@ -237,7 +238,7 @@ Die maximale Paketgröße in Europa beträgt 222\,Bytes bei hoher Datenrate und
 13"=Byte"=Overhead zum Nutzdaten"=Payload. % TODO: add 14dBm somewhere
 
 % -----------------------------------------------------------------------------
-\section{LoRaWAN -- Network Layer} % TODO: remove --
+\section{LoRaWAN -- Network Layer} 
 \label{sec:lorawan-network}
 % -----------------------------------------------------------------------------
 
