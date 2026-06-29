@@ -145,12 +145,85 @@
       \verb PDF:C\:\\Users\\khoa1\\Zotero\\storage\\I9A6CRRD\\Chaudhari and Zennaro - 2020 - LPWAN technologies for IoT and M2M applications.pdf:application/pdf
       \endverb
     \endentry
+    \entry{slatsBriefHistoryLoRa}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=f3c3354ff66ebd12c0636d9405fd6e34}{%
+           family={Slats},
+           familyi={S\bibinitperiod},
+           given={Laurens},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en-us}%
+      }
+      \strng{namehash}{f3c3354ff66ebd12c0636d9405fd6e34}
+      \strng{fullhash}{f3c3354ff66ebd12c0636d9405fd6e34}
+      \strng{bibnamehash}{f3c3354ff66ebd12c0636d9405fd6e34}
+      \strng{authorbibnamehash}{f3c3354ff66ebd12c0636d9405fd6e34}
+      \strng{authornamehash}{f3c3354ff66ebd12c0636d9405fd6e34}
+      \strng{authorfullhash}{f3c3354ff66ebd12c0636d9405fd6e34}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Three inventors will share their personal story and shed light on the future of LoRa® devices and the LoRaWAN® protocol at The Things Conference in Amsterdam, January 30-31.}
+      \field{shorttitle}{A {Brief} {History} of {LoRa}}
+      \field{title}{A {Brief} {History} of {LoRa}: {Three} {Inventors} {Share} {Their} {Story}}
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\khoa1\\Zotero\\storage\\V75S6PDV\\a-brief-history-of-lora-three-inventors-share-their-personal-story-at-the-things-conference.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://blog.semtech.com/a-brief-history-of-lora-three-inventors-share-their-personal-story-at-the-things-conference
+      \endverb
+      \verb{url}
+      \verb https://blog.semtech.com/a-brief-history-of-lora-three-inventors-share-their-personal-story-at-the-things-conference
+      \endverb
+    \endentry
+    \entry{WhatAreLoRa}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=1ff1fd5dda3fe4310eebfb9545a8925b}{%
+           family={Network},
+           familyi={N\bibinitperiod},
+           given={The\bibnamedelima Things},
+           giveni={T\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en-us}%
+      }
+      \strng{namehash}{1ff1fd5dda3fe4310eebfb9545a8925b}
+      \strng{fullhash}{1ff1fd5dda3fe4310eebfb9545a8925b}
+      \strng{bibnamehash}{1ff1fd5dda3fe4310eebfb9545a8925b}
+      \strng{authorbibnamehash}{1ff1fd5dda3fe4310eebfb9545a8925b}
+      \strng{authornamehash}{1ff1fd5dda3fe4310eebfb9545a8925b}
+      \strng{authorfullhash}{1ff1fd5dda3fe4310eebfb9545a8925b}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Welcome to the first chapter of The Things Fundamentals on LoRaWAN. In this section, you’ll learn why LoRaWAN is so awesome, hear about some great LoRaWAN use cases, and learn the difference between LoRa and LoRaWAN. LoRa LoRa is a wireless modulation technique derived from Chirp Spread Spectrum (CSS) technology. It encodes information on radio waves using chirp pulses - similar to the way dolphins and bats communicate! LoRa modulated transmission is robust against disturbances and can be received across great distances.}
+      \field{journaltitle}{The Things Network}
+      \field{note}{Section: lorawan}
+      \field{title}{What are {LoRa} and {LoRaWAN}?}
+      \field{urlday}{29}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\khoa1\\Zotero\\storage\\62DMKB5A\\what-is-lorawan.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.thethingsnetwork.org/docs/lorawan/what-is-lorawan/
+      \endverb
+      \verb{url}
+      \verb https://www.thethingsnetwork.org/docs/lorawan/what-is-lorawan/
+      \endverb
+    \endentry
     \entry{LoRaModulationBasics}{report}{}
       \list{institution}{1}{%
         {Semtech}%
       }
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labeltitlesource}{title}
       \field{number}{AN1200.02}
       \field{title}{{LoRa}™ {Modulation} {Basics}}
@@ -159,12 +232,38 @@
       \verb PDF:C\:\\Users\\khoa1\\Zotero\\storage\\P2U75EW3\\LoRa™ Modulation Basics.pdf:application/pdf
       \endverb
     \endentry
+    \entry{montagnyLoRaLoRaWANInternet}{book}{}
+      \name{author}{1}{}{%
+        {{hash=5849c491a2193b32c0981f55f21f27db}{%
+           family={Montagny},
+           familyi={M\bibinitperiod},
+           given={Sylvain},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{5849c491a2193b32c0981f55f21f27db}
+      \strng{fullhash}{5849c491a2193b32c0981f55f21f27db}
+      \strng{bibnamehash}{5849c491a2193b32c0981f55f21f27db}
+      \strng{authorbibnamehash}{5849c491a2193b32c0981f55f21f27db}
+      \strng{authornamehash}{5849c491a2193b32c0981f55f21f27db}
+      \strng{authorfullhash}{5849c491a2193b32c0981f55f21f27db}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{LoRa}, {LoRaWAN} and {Internet} of {Things} for beginners}
+      \verb{urlraw}
+      \verb https://www.univ-smb.fr/lorawan/wp-content/uploads/2022/01/Book-LoRa-LoRaWAN-and-Internet-of-Things.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.univ-smb.fr/lorawan/wp-content/uploads/2022/01/Book-LoRa-LoRaWAN-and-Internet-of-Things.pdf
+      \endverb
+    \endentry
     \entry{LoRaWANL21042020}{report}{}
       \list{institution}{1}{%
         {LoRa Alliance}%
       }
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labeltitlesource}{title}
       \field{month}{10}
       \field{number}{TS001-1.0.4}
@@ -179,8 +278,8 @@
       \list{institution}{1}{%
         {LoRa Alliance}%
       }
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labeltitlesource}{title}
       \field{month}{10}
       \field{number}{TS002-1.1.0}
@@ -237,8 +336,8 @@
       \strng{authorbibnamehash}{587351eda4547b54286b68580f1875c9}
       \strng{authornamehash}{c50f2441d997c0c4afadc738d9917ac2}
       \strng{authorfullhash}{587351eda4547b54286b68580f1875c9}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{2020 {IEEE} 21st {International} {Workshop} on {Signal} {Processing} {Advances} in {Wireless} {Communications} ({SPAWC})}

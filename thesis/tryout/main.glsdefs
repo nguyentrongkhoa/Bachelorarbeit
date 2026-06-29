@@ -595,8 +595,8 @@ first={PHY},%
 firstplural={PHYs},%
 text={PHY},%
 plural={PHYs},%
-description={Physical Layer (Bitübertragungsschicht)},%
-descriptionplural={Physical Layer (Bitübertragungsschicht)},%
+description={Physical Layer},%
+descriptionplural={Physical Layer},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -605,8 +605,8 @@ user3={},%
 user4={},%
 user5={},%
 user6={},%
-long={Physical Layer (Bitübertragungsschicht)},%
-longplural={Physical Layer (Bitübertragungsschicht)s},%
+long={Physical Layer},%
+longplural={Physical Layers},%
 short={PHY},%
 shortplural={PHYs},%
 counter={page},%
@@ -1169,6 +1169,34 @@ long={Deutsche Gesetzliche Unfallversicherung},%
 longplural={Deutsche Gesetzliche Unfallversicherungs},%
 short={DGUV},%
 shortplural={DGUVs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{mac}%
+{%
+name={\acronymfont {\glsentryshort {mac}}},%
+sort={MAC},%
+type={acronym},%
+first={MAC},%
+firstplural={MACs},%
+text={MAC},%
+plural={MACs},%
+description={Media Access Control},%
+descriptionplural={Media Access Control},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Media Access Control},%
+longplural={Media Access Controls},%
+short={MAC},%
+shortplural={MACs},%
 counter={page},%
 parent={},%
 %

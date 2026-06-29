@@ -3,7 +3,7 @@
 %                   graphicx, hyperref, biblatex, siunitx, acronym
 % =============================================================================
 
-\chapter{Grundlagen}
+\chapter{Grundlagen von LoRa und LoRaWAN}
 \label{chap:grundlagen}
 % TODO: update this when done proofreading
 Dieses Kapitel legt das theoretische Fundament für die in den folgenden Kapiteln
@@ -14,11 +14,40 @@ Anschließend werden Sicherheitsmechanismen, Energieeffizienz sowie Methoden der
 RF"=Planung und Signalausbreitung behandelt. Abschließend wird ein kurzer Überblick
 über die Normierungsanforderungen im Bereich Schutzsensorik gegeben.
 
+\section{Überblick}
+
+\subsection{Historischer Hintergrund}
+
+Die Entwicklung der LoRa-Technologie begann 2009, als französische Ingenieure Nicolas Sornin und Olivier Seller eine neuartige 
+drahtlose Übertragungsmethode konzipierten. Ihr Ziel war die Entwicklung einer Funktechnologie, die sich durch eine 
+hohe Reichweite bei gleichzeitig minimalem Energiebedarf auszeichnet. Die Technologie war anfangs für die Zählerbranche 
+gedacht, um Gas-, Wasser- und Stromzähler flächendeckend mit drahtlosen Kommunikationsfähigkeiten auszustatten. \cite{slatsBriefHistoryLoRa}
+
+Sornin und Seller griffen auf das bewährte \acrfull{css}-Verfahren zurück, welches sich zu der Zeit bereits in der
+maritimen und Sonarindustrie etabliert hat. Die Franzosen haben also das CSS-Verfahren nicht erfunden, aber sie kamen als Erste auf die Idee,
+diese robuste Technologie für die digitale Datenübertragung im zivilen Bereich zu adaptieren.
+
+Die US-amerikanische Firma \emph{Semtech} übernahm im Jahr 2012 die Weiterentwicklung von LoRa und schuf zur gleichen Zeit das 
+\acrshort{mac}-Protokoll \emph{LoRaMAC}, womit die Grundsteine für ein Netzwerkprotokoll gelegt wurden. 
+Mit der Gründung der Non-Profit-Organisation \emph{LoRa-Alliance\textregistered} wurde \emph{LoRaMAC} in \emph{LoRaWAN} umbenannt. 
+
+\subsection{Eigenschaften von LoRa und LoRaWAN}
+\label{subsec:prop_lorawan}
+
+Heutzutage erfreut sich LoRaWAN rasant zunehmeder Beliebtheit, dank einer Vielzahl von Eigenschaften: \cite{WhatAreLoRa}
+
+\begin{itemize}
+  \item Geringer Strombedarf: LoRaWAN-Endgeräte können mit einer Knopfzellbatterie eine Betriebsdauer von bis zu 10 Jahren haben
+  \item Große Reichweite: bis zu \SI{10}{\kilo\meter} in ländlichen Gebieten und \SI{3}{\kilo\meter} in dichtbebauten Umgebungen möglich
+  \item 
+\end{itemize}
+
 % -----------------------------------------------------------------------------
-\section{LoRa-Modulation}
+\section{LoRa -- Physical Layer}
 \label{sec:lora-physical}
 % -----------------------------------------------------------------------------
-\subsection{Allgemeines}
+
+\subsection{LoRa-Modulation}
 
 \acrshort{lora} ist eine von der Firma Semtech entwickelte Modulationstechnologie und bildet die physikalische Grundlage des 
 \acrshort{lorawan}"=Protokolls.  Es basiert auf der \acrfull{css}"=Modulation.
@@ -46,11 +75,13 @@ Für eine gegebene Sendeleistung kann bei LoRa die Reichweite bis zu 4 mal so gr
 \label{subsec:param}
 
 \subsubsection*{Modulationskenngrößen}
+
 Um die Übertragungsqualität eines LoRa-Links zu charakterisieren und zu optimieren,
 sind grundlegende Parameter maßgeblich, unter anderem der \acrfull{sf}, die Bandbreite
 (\acrshort{bw}) sowie die \acrfull{cr}. Ihre Wechselwirkung bestimmt
 den Trade-off zwischen Reichweite, Datenrate und Energieverbrauch, also die drei
-zentralen Designziele des in dieser Arbeit entwickelten Systems. % TODO: cite sylvain montagny
+zentralen Designziele des in dieser Arbeit entwickelten Systems. Für eine ausführliche Behandlung sei auf \cite{montagnyLoRaLoRaWANInternet} 
+verwiesen. 
 
 Der SF gibt die Anzahl der Bits pro Symbol bzw Chirp an und kann Werte von 7 bis 12 annehmen. 
 Wenn zum Beispiel mit SF12 übertragen wird, enthält jeder Chirp 12 Bits. Es gibt in diesem Fall also $2^{12} = 4096$ mögliche Symbole, 
@@ -291,7 +322,7 @@ um die Sichtlinie zu den Endgeräten zu garantieren und damit die Reichweite zu 
 
 \subsection{Network-Server}
 
-Mit den Gateways hört auch der Geltungsbereich von LoRa auf und wir verlassen somit die Bitübertragungsschicht des OSI-Modells. % TODO: add pic of OSI model
+Mit den Gateways hört auch der Geltungsbereich von LoRa auf und wir verlassen somit die Physical Layer des OSI-Modells. % TODO: add pic of OSI model
 Die Informationspakete gelangen als Nächstes über eine Backhaul-Verbindung (bswp. Ethernet oder Mobilfunk) zu den Servern, 
 von welchen der \textbf{Network-Server} (\acrshort{ns}) der zentrale Knotenpunkt der LoRaWAN"=Sterntopologie ist. 
 An dieser Stelle tritt das Dokument \citetitle{LoRaWanBackendInterfaces2020} zum Vorschein. 
@@ -355,7 +386,7 @@ können die fest eingebauten Schlüssel nicht mehr geändert werden, was zu eine
 \newacronym{mcu}{MCU}{Microcontroller Unit}
 \newacronym{dc}{DC}{Direct Cycle}
 \newacronym{ism}{ISM}{Industrial, Scientific, and Medical}
-\newacronym{phy}{PHY}{Physical Layer (Bitübertragungsschicht)}
+\newacronym{phy}{PHY}{Physical Layer}
 \newacronym{ed}{ED}{End Device}
 \newacronym{ns}{NS}{Network Server}
 \newacronym{js}{JS}{Join Server}
@@ -376,3 +407,4 @@ können die fest eingebauten Schlüssel nicht mehr geändert werden, was zu eine
 \newacronym{fspl}{FSPL}{Free Space Path Loss}
 \newacronym{srtm}{SRTM}{Shuttle Radar Topography Mission}
 \newacronym{dguv}{DGUV}{Deutsche Gesetzliche Unfallversicherung}
+\newacronym{mac}{MAC}{Media Access Control}
