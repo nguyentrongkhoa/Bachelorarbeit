@@ -2376,8 +2376,10 @@
     <bcf:citekey order="9" intorder="1">LoRaModulationBasics</bcf:citekey>
     <bcf:citekey order="10" intorder="1">montagnyLoRaLoRaWANInternet</bcf:citekey>
     <bcf:citekey order="11" intorder="1">LoRaWANL21042020</bcf:citekey>
-    <bcf:citekey order="12" intorder="1">LoRaWanBackendInterfaces2020</bcf:citekey>
-    <bcf:citekey order="13" intorder="1">tapparelOpenSourceLoRaPhysical2020</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">LoRaWANL21042020</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">LoRaWANL21042020</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">LoRaWanBackendInterfaces2020</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">tapparelOpenSourceLoRaPhysical2020</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

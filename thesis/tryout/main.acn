@@ -14,12 +14,12 @@
 \glossaryentry{CR?\glossentry{cr}|setentrycounter[]{page}"\glsnumberformat}{12}
 \glossaryentry{BW?\glossentry{bw}|setentrycounter[]{page}"\glsnumberformat}{12}
 \glossaryentry{ToA?\glossentry{toa}|setentrycounter[]{page}"\glsnumberformat}{12}
-\glossaryentry{CR?\glossentry{cr}|setentrycounter[]{page}"\glsnumberformat}{13}
+\glossaryentry{CR?\glossentry{cr}|setentrycounter[]{page}"\glsnumberformat}{12}
 \glossaryentry{RSSI?\glossentry{rssi}|setentrycounter[]{page}"\glsnumberformat}{14}
 \glossaryentry{SNR?\glossentry{snr}|setentrycounter[]{page}"\glsnumberformat}{14}
 \glossaryentry{MAPL?\glossentry{mapl}|setentrycounter[]{page}"\glsnumberformat}{14}
-\glossaryentry{ISM?\glossentry{ism}|setentrycounter[]{page}"\glsnumberformat}{15}
-\glossaryentry{ISM?\glossentry{ism}|setentrycounter[]{page}"\glsnumberformat}{15}
+\glossaryentry{ISM?\glossentry{ism}|setentrycounter[]{page}"\glsnumberformat}{14}
+\glossaryentry{ISM?\glossentry{ism}|setentrycounter[]{page}"\glsnumberformat}{14}
 \glossaryentry{LoRaWAN?\glossentry{lorawan}|setentrycounter[]{page}"\glsnumberformat}{15}
 \glossaryentry{ED?\glossentry{ed}|setentrycounter[]{page}"\glsnumberformat}{15}
 \glossaryentry{NS?\glossentry{ns}|setentrycounter[]{page}"\glsnumberformat}{15}
@@ -28,7 +28,7 @@
 \glossaryentry{MCU?\glossentry{mcu}|setentrycounter[]{page}"\glsnumberformat}{16}
 \glossaryentry{RX?\glossentry{rx}|setentrycounter[]{page}"\glsnumberformat}{17}
 \glossaryentry{NS?\glossentry{ns}|setentrycounter[]{page}"\glsnumberformat}{18}
-\glossaryentry{ADR?\glossentry{adr}|setentrycounter[]{page}"\glsnumberformat}{18}
+\glossaryentry{ADR?\glossentry{adr}|setentrycounter[]{page}"\glsnumberformat}{19}
 \glossaryentry{JS?\glossentry{js}|setentrycounter[]{page}"\glsnumberformat}{19}
 \glossaryentry{EUI?\glossentry{eui}|setentrycounter[]{page}"\glsnumberformat}{19}
 \glossaryentry{NwkSKey?\glossentry{NwkSKey}|setentrycounter[]{page}"\glsnumberformat}{19}

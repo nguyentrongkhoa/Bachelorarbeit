@@ -53,11 +53,11 @@ Heutzutage erfreut sich LoRaWAN rasant zunehmeder Beliebtheit, dank einer Vielza
 \subsection{LoRa-Modulation}
 
 LoRa ist eine von der Firma Semtech entwickelte Modulationstechnologie und bildet die physikalische Grundlage des 
-\acrshort{lorawan}"=Protokolls.  Es basiert wie bereits erwähnt auf der CSS"=Modulation.
+\acrshort{lorawan}"=Protokolls. Es basiert wie bereits erwähnt auf der CSS"=Modulation.
 bei der das zu übertragende Signal auf ein breiteres Frequenzband gespreizt (spreaded) wird, indem
 sogenannte Chirps als Trägersymbole verwendet werden. 
 Ein Chirp ist ein Signal, dessen Momentanfrequenz zwischen zwei definierten Grenzfrequenzen über die Zeit linear ansteigt (Up-Chirp) 
-oder linear abfällt (Down-Chirp), wie in Abbildung \ref{fig:chirps_freq} dargestellt. Das Ergebnis dieser Frequenzvariation
+oder abfällt (Down-Chirp), wie in Abbildung \ref{fig:chirps_freq} dargestellt. Das Ergebnis dieser Frequenzvariation
 ist das Stauch- bzw. Streckverhalten in Abbildung \ref{fig:chirps}. 
 
 \begin{figure}[H]
@@ -76,7 +76,7 @@ ist das Stauch- bzw. Streckverhalten in Abbildung \ref{fig:chirps}.
 
 Es ist ersichtlich, dass die modulierenden Chirp-Signale eine konstante Einhüllende aufweisen, weshalb hocheffiziente
 Leistungsverstärker (der Klasse C z.B.) verwendet werden können, die sonst 
-bei großen Amplitudenschwungen wegen ihrer nicht-linearen Eigenschaft in die Sättigung gehen. 
+bei großen Amplitudenschwungen wegen ihrer nichtlinearen Eigenschaft in die Sättigung gehen. 
 Hinsichtlich Stromverbrauch liegt bei \acrshort{rf}-Systemen die Schwachstelle in der Regel beim Leistungsverstärker, daher 
 hat der Begriff \enquote{konstante Einhüllende} eine besondere Bedeutung für Low-Power-Anwendungen.
 
@@ -92,10 +92,10 @@ vielmehr mit Hindernissen und werden dabei gestreut, gebeugt oder gar reflektier
 Signalkopien gleichzeitig am Ziel eintreffen (Mehrwegeausbreitung).
 Bei schmalbandigen Modulationsverfahren wie FSK kann dies durch destruktive Interferenz zur fast vollständigen Auslöschung des 
 Signals führen (Fading). Da ein LoRa-Chirp seine Momentanfrequenz jedoch kontinuierlich über die Zeit verändert, 
-wird der Effekt einer solchen lokalen Auslöschung gering gehalten. 
+wird der Effekt einer solchen Auslöschung gering gehalten. 
 
-\paragraph*{Hohe Reichweite}
-Für eine gegebene Sendeleistung kann bei LoRa die Reichweite bis zu 4 mal so groß im Vergleich zu FSK.
+% TODO: write something about how that has anything to with Reichweite
+% TODO: write about the modulaion process
 
 \subsection{Wichtige Kenngrößen und Formeln} 
 \label{subsec:param}
@@ -300,7 +300,14 @@ Betriebs gewechselt werden.
 Nach jeder Uplink"=Übertragung öffnet das Gerät zwei kurze Fenster (RX1 und RX2) für das Empfangen von Downlink"=Nachrichten. 
 Außerhalb dieser Fenster befindet sich das Gerät im Schlafmodus, um den Stromverbrauch zu minimieren. Eine erneute Uplink-Kommunikation 
 darf erst nach Empfang einer Downlink-Nachricht oder nach Ablauf von RX2 erfolgen. Diese Klasse eignet sich besonders für batteriebetriebene Sensoren, die 
-nur gelegentlich Daten senden müssen, wie es bei vielen Schutzsensoren der Fall ist. % TODO: add pic on page 12 TS001
+nur gelegentlich Daten senden müssen, wie es bei vielen Schutzsensoren der Fall ist. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{class_a_ts001.png} 
+    \caption[Empfangsfenster für Endgeräte der Klasse A]{Empfangsfenster für Endgeräte der Klasse A (Quelle: \cite{LoRaWANL21042020})}
+    \label{fig:class_a_rx}
+\end{figure}
 
 Im Vergleich zur Klasse A ist die \textbf{Klasse B} flexibler, da sie einen periodischen Empfang durch zeitgesteuerte \acrshort{rx}-Fenster ermöglicht,
 die mittels Gateway"=\textbf{B}eacons synchronisiert werden. Dadurch würde unmittelbar der Network Server erfahren, sobald Endgeräte empfangsbereits sind.

@@ -16,10 +16,10 @@
 \contentsline {section}{\numberline {2.2}LoRa -- Physical Layer}{10}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}LoRa-Modulation}{10}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Wichtige Kenngrößen und Formeln}{12}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Frequenzbänder und regulatorische Rahmenbedingungen}{15}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.3}Frequenzbänder und regulatorische Rahmenbedingungen}{14}{subsection.2.2.3}%
 \contentsline {section}{\numberline {2.3}LoRaWAN -- Network Layer}{15}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}Endgeräte}{16}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Gateways}{17}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.2}Gateways}{18}{subsection.2.3.2}%
 \contentsline {subsection}{\numberline {2.3.3}Network-Server}{18}{subsection.2.3.3}%
 \contentsline {subsection}{\numberline {2.3.4}Join-Server}{19}{subsection.2.3.4}%
 \contentsline {chapter}{\numberline {3}Systementwurf und Implementierung}{21}{chapter.3}%
