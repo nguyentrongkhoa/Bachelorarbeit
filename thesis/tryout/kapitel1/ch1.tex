@@ -80,16 +80,20 @@ bei großen Amplitudenschwungen wegen ihrer nicht-linearen Eigenschaft in die S�
 Hinsichtlich Stromverbrauch liegt bei \acrshort{rf}-Systemen die Schwachstelle in der Regel beim Leistungsverstärker, daher 
 hat der Begriff \enquote{konstante Einhüllende} eine besondere Bedeutung für Low-Power-Anwendungen.
 
-Darüber hinaus haben die Chirps-Signale zwei weitere entscheidende Vorteile dank ihrer Breitbändigkeit:
-die ausgeprägte Störfestigkeit einerseits, weil sich der Energiegehalt über das gesamte Frequenzspektrum verteilt 
+Darüber hinaus haben die Chirps-Signale zwei weitere entscheidende Vorteile dank ihrer Breitbändigkeit.
+Der erste Vorteil liegt in der inhärenten Störfestigkeit der Modulation.
+Da der Energiegehalt des Nutzsignals über das gesamte Frequenzspektrum verteilt wird, betreffen schmalbandige Störimpulse stets 
+nur einen Bruchteil der beanspruchten Bandbreite. Die Gleichkanalunterdrückung beträgt
+bei LoRa 20dB, im Vergleich zu -6dB bei der \acrshort{fsk}-Modulation\cite{LoRaModulationBasics}. % TODO: what do the numbers mean
 
-\paragraph*{Hohe Störfestigkeit} 
-Da ein LoRa-Symbol lang und ausgespreizt ist, haben kurz Rauschimpulse nur einen verschwindenen Einfluss auf die Demodulation. 
-Aus diesem Grund sind LoRa-Signale sehr resistent gegenüber In-Band- und Out-of-Band-Interferenzen.
-Eine Gleichkanalsunterdrückung von über \SI{20}{\dB} kann erreicht werden, verglichen mit nur \SI{-6}{\dB} bei FSK.
-\paragraph*{Mehrwegeausbreitung und Fading}
-Das breitbandige Chirp-Signal bietet eine hohe Immunität gegenüber Mehrwegeausbreitung und Fading, was den
-Einsatz in urbanen und suburbanen Umgebungen begünstigt.
+Der zweite Vorteil betrifft die Robustheit gegenüber dem durch die Mehrwegeausbreitung verursachten \emph{Fading}.
+In städtischen Umgebungen erreichen Funksignale den Empfänger selten über die direkte Sichtverbindung; sie interagieren
+vielmehr mit Hindernissen und werden dabei gestreut, gebeugt oder gar reflektiert, wodurch verschiedene phasenverschobene 
+Signalkopien gleichzeitig am Ziel eintreffen (Mehrwegeausbreitung).
+Bei schmalbandigen Modulationsverfahren wie FSK kann dies durch destruktive Interferenz zur fast vollständigen Auslöschung des 
+Signals führen (Fading). Da ein LoRa-Chirp seine Momentanfrequenz jedoch kontinuierlich über die Zeit verändert, 
+wird der Effekt einer solchen lokalen Auslöschung gering gehalten. 
+
 \paragraph*{Hohe Reichweite}
 Für eine gegebene Sendeleistung kann bei LoRa die Reichweite bis zu 4 mal so groß im Vergleich zu FSK.
 
