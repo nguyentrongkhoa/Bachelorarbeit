@@ -19,9 +19,8 @@ und der Datenvisualisierung eingegangen wird.
 % -----------------------------------------------------------------------------
 
 Die für diese Arbeit verwendete Hardware lässt sich in zwei Kategorien
-unterteilen: Komponenten, die fest in den entwickelten PCB"=Prototyp
-integriert sind, sowie externe Mess"= und Testinstrumente, die
-ausschließlich zur Verifikation und Inbetriebnahme eingesetzt werden. % TODO: replace "Mess und Test" with sth else to include STLink
+unterteilen: Komponenten, die beim PCB"=Prototyp eingebaut werden
+sowie externe Hardware, die dem Programmieren, Messen oder Testen dienen. 
 
 \subsection{PCB-Hardware}
 
@@ -45,7 +44,17 @@ Eigenschaften besitzt:
         zu reduzieren. Die Wahl für Zephyr wird im Unterkapitel \ref{subsec:whyzephyr} begründet. 
 \end{description}
 
-\subsection{Mess- und Testinstrurmente}
+\paragraph{Sensorik}
+
+Zur Erfassung der relevanten Umweltparameter werden die Sensoren BME680 und BMV080 von 
+Bosch Sensortec verwendet. Der Umweltsensor BME680 fungiert als kombiniertes Messsystem, das die Umgebungstemperatur, 
+die relative Luftfeuchtigkeit, den Luftdruck sowie die Konzentration flüchtiger organischer Verbindungen (VOC) 
+in der Luft ermittelt. Da der BME680 nicht Feinstaubpartikelmessungen (PM2.5 oder PM10) fähig ist, ist eine
+Ergänzung um den BMV080 sinnvoll. Die Kombination beider Sensoren ermöglicht es, ein umfassendes Bild der atmosphärischen 
+Bedingungen im Zielgebiet zu zeichnen. % TODO: check that BME680 and BMV080 are not explained again in hardware-entwicklung part
+% TODO: maybe GPS
+
+\subsection{Externe Hardware}
 
 \begin{description}[leftmargin=*, widest=\textbf{RTL-SDR V3}, nosep]
     \item[\textbf{ST-LINK}:] 
@@ -60,15 +69,20 @@ Eigenschaften besitzt:
         LoRa"=Endgerät oder ein Gateway als Referenzempfänger benötigt wird.
 \end{description}
 
-\section{Erste Tests}
+\section{Proof-of-Concept} % TODO: maybe PoC auf Basis des DevBoards or sth like that
 
-Um die gekauften Komponenten zu überprüfen, wurde auf die Schnelle eine Reihe von Funktionstests durchgeführt.
-Zuerst erfolgte die Inbetriebnahme des Nucleo"=Boards mit Zephyr-RTOS, wobei der bereits gegebene Blinky-Code
+Bevor mit der tatsächlichen Entwicklung begonnen werden kann, wird in diesem Abschnitt ein Proof-of-Concept
+auf Basis der angeschafften Hardware durchgeführt. Ziel ist es, mit dem STM32WL55-Nucleo einfache Daten
+über LoRa senden sowie diese Daten mit dem RTL-SDR empfangen und dekodieren zu können. 
+
+Zuerst erfolgte die Inbetriebnahme des Nucleo"=Boards mit Zephyr-RTOS, wobei ein einfacher 
+\href{https://github.com/zephyrproject-rtos/zephyr/blob/main/samples/basic/blinky/src/main.c}{Blinky-Code}
 erfolgreich kompiliert und geflasht werden konnte. Anschließend wurde das Senden eines einfachen Pakets mit dem Nucleo 
-auf Basis des Beispielprogramms LoRa\_send \footnote{https://github.com/zephyrproject-rtos/zephyr/blob/main/samples/drivers/lora/send/src/main.c}
-getestet. In unmittelbarer Nähe des STM32-Nucleos befindet sich der RTL-SDR-Dongle, welcher am einen Ende über USB-Anschluss
-mit einem Rechner verbunden und am anderen Ende mit einer Dipolantenne ausgestattet ist (siehe Abbildung \ref{fig:zephyr_lora_send_setup}). 
-Die Stablänge $\ell$ muss auf \SI{868}{\MHz} abgestimmt sein: 
+auf Basis des Beispielprogramms 
+\href{https://github.com/zephyrproject-rtos/zephyr/blob/main/samples/drivers/lora/send/src/main.c}{lora\_send} getestet.
+In unmittelbarer Nähe des Nucleos befindet sich der RTL-SDR, welcher am einen Ende über USB-Anschluss
+mit dem Rechner verbunden und am anderen Ende mit einer Dipolantenne ausgestattet ist (Abbildung \ref{fig:zephyr_lora_send_setup}). 
+Die Stablänge $\ell$ muss dabei auf \SI{868}{\MHz} abgestimmt sein: 
 $\ell = \frac{\lambda}{4} = \frac{c}{4f} = \frac{\SI{3e8}{\m\per\s}}{4 \cdot \SI{868e6}{\Hz}} \approx \SI{8,64}{\cm}$
 
 \begin{figure}[H]
