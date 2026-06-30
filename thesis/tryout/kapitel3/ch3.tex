@@ -210,20 +210,20 @@ BME680              & Gas-Messung (Peak)         & < 2,0 mA                     
 Auf Basis dieser Informationen hat sich der TC1262-33 von Microchips als Sieger durchgesetzt. Er kann maximal 500mA liefern,
 was einem großzügigen Sicherheitsfaktor von mehr als 2 entspricht. Aufgrund der geringen Dropout-Spannung (275mV@211,5mA) 
 sowie des bescheidenen Stromverbrauchs (80-130$\mu \text{A}$) ist der TC1262-33 ideal für batteriebetriebene Anwendungen.
-Zwischen dem LDO und VDD ist zusätzlich noch ein Stecker (J10/SYS in Abbildung \ref{fig:usb}) zu sehen, wodurch der tatsächliche
+Zwischen dem LDO und VDD ist ein Stecker (J10/SYS in Abbildung \ref{fig:usb}) verbaut, wodurch der tatsächliche
 Energieverbrauch des Boards bei Bedarf mit dem PPK2 nachgemessen werden kann. 
 
 Die USB-Ladefunktion ist zwar praktisch für den ersten Prototyp zum schnellen Aufladen, aber in Gefahrgebieten oder schwer 
 zugänglichen Umgebungen könnte sie sich als Schwachstelle erweisen. Ein zuverlässiger Mechanismus zur Energieernte im autarken 
 Betrieb erweist sich also als notwendig. Das gelingt über eine kleine Solarzelle, über die der LiPo-Akku aufgeladen werden kann.
-Das Laden und Regeln übernimmt in diesem Fall nämlich der Chip SPV1050 von ST Microelectronics. Der Schaltung in Abbildung \ref{solar}
-liegt die Application Note AN4394 zugrunde. % TODO: add AN4394 to Zotero and footnote cite
+Das Laden und Regeln übernimmt in diesem Fall nämlich der Chip SPV1050 von ST Microelectronics. Der Schaltung in Abbildung \ref{fig:solar}
+liegt die Application Note AN4394 zugrunde. 
 Bei dieser Konfiguration wird der SPV1050 im Boost-Modus betrieben, um mit der niedrigen Spannung der \acrshort{pv}-Zelle (0,5 bis 2,5V)
 den LiPo-Akku bis 4,2V aufzuladen. Als Zelle wurde MPT2.4-21 von PowerFilm gewählt dank der kompakten Abmessungen (54mmx21mm).
-Die Solarzelle liefert bei voller Sonneneinstrahlung bis zu 2,4V und 16mA und eine Leistung von 0,035W. % TODO: cite 
+Die Solarzelle liefert bei voller Sonneneinstrahlung bis zu 2,4V und 16mA und eine Leistung von 0,035W.  
 Die approximate Ladezeit eines vollständig entleerten Akkus beträgt damit $\frac{1500\text{mAh}}{16\text{mA}} = 93,75\text{h}$, 
-was in der Praxis aufgrund von Wetterbedingungen und Ladeeffizienz wahrscheinlich eher 2-3 Wochen entspricht. Das klingt zwar nach wenig, 
-aber der evt. jahrelange Betrieb rechtfertigt die Integration dieser Solarzelle.
+was in der Praxis aufgrund von Wetterbedingungen und Ladeeffizienz wahrscheinlich eher 2-3 Wochen entspricht. Das hört sich zwar 
+nach wenig an, aber der evt. jahrelange Betrieb rechtfertigt die Integration dieser Solarzelle.
 
 \begin{figure}[H]
     \centering
@@ -239,8 +239,8 @@ wird jedoch hier nicht benutzt; LDO2 kann bis zu 200mA bei 3,3V ausgeben und kö
 das Stromprofil der einzelnen Komponenten bekannt ist. 
 
 Bezüglich der Batterie ist es wichtig, die Standzeit zu beobachten. Die Ladereglerchips verfolgen die Batteriespannung zwar zeitnah,
-aber allein diese gibt keine aussagekräftige Information, da eine Vielfalt anderer Faktoren wie Temperatur, Alterung und Entladungsrate 
-die tatsächliche Kapazität beeinflussen können. Daher wird der Fuel-Gauge-Chip MAX17048 von Maxim Integrated eingesetzt, 
+aber allein diese gibt keine aussagekräftige Information über die verbleibende Betriebsdauer, da eine Vielfalt anderer Faktoren wie Temperatur, Alterung und Entladungsrate 
+die tatsächliche Kapazität der Batterie beeinflussen können. Aus diesem Grund wird der Fuel-Gauge-Chip MAX17048 eingesetzt, 
 um den \acrfull{soc2} der Batterie zu verfolgen. Dieser schickt seine Daten über I2C an die MCU und benachrichtigt sie über die \texttt{ALERT} 
 Leitung, sobald unter einen bestimmten Schwellenwert fällt. 
 
@@ -252,28 +252,50 @@ Leitung, sobald unter einen bestimmten Schwellenwert fällt.
 \end{figure}
 
 Die MCU-Schaltung stellt die komplexeste Unterschaltung des Projekts dar. ST Microelectronics stellt für den STM32WL55 eine 
-Vielzahl von Referenzdesigns und Applikationsschaltungen zur Verfügung, Tabelle \ref{tab:ref_designs} fasst die für uns relevanten 
-Referenzen zusammen. Anfangs wurde das Design MB1842 als Vorlage ausgewählt, das \acrshort{ufbga}-Gehäuse erschwert
-allerdings das Routen erheblich, weil die Pads überall in der Footprintfläche verteilt sind. 
-Die \acrshort{ufqfpn}-Variante ist hingegen freundlicher, da die Pins nur an den Seiten liegen. Dazu kostet sie mit ihren 48 Pins 
-25\% weniger als das 73-Pin-\acrshort{bga}-Gehäuse (9,57\$ zu 12,77\$ auf JLCPCB). % TODO: add pics BGA and QFPn
+Vielzahl von Referenzdesigns und Applikationsschaltungen zur Verfügung, Tabelle \ref{tab:ref_designs} fasst die für dieses Projekt relevanten 
+Referenzen zusammen. 
 
 \begin{table}[h!]
-\centering
-\caption{STM32WL55 Referenzdesigns}
-\label{tab:ref_designs}
-\begin{tabular}{|l|l|c|l|l|c|}
-\hline
-\textbf{Referenz} & \textbf{Board / Gehäuse} & \textbf{Layer} & \textbf{Typ} & \textbf{Ziel-Spezifikation} & \textbf{RF Switch} \\ \hline
-STDES-WL514SBB & MB1842 UFBGA & 4 & SMD & [864:928 MHz] / 15 dBm  & Ja  \\ \hline
-STDES-WL514SBB & MB1842 UFBGA & 4 & SMD & [864:928 MHz] / 22 dBm  & Ja  \\ \hline
-STDES-WL5U4SBB & MB1720 UFQFPN & 4 & SMD & [864:928 MHz] / 15 dBm  & Ja  \\ \hline
-STDES-WL5U4SBB & MB1720 UFQFPN & 4 & SMD & [864:928 MHz] / 22 dBm  & Ja  \\ \hline
-STDES-WL5U4DLB & MB1789-LP UFQFPN & 4 & SMD & [864:928 MHz] / 15 dBm  & Nein  \\ \hline
-STDES-WL5U4DHB & MB1789-HP UFQFPN & 4 & SMD & [864:928 MHz] / 22 dBm  & Nein  \\ \hline
-STDES-WL514ILH & MB1849-LP UFBGA & 4 & IPD  & [864:928 MHz] / 15 dBm  & Ja  \\ \hline
-\end{tabular}
+    \centering
+    \caption{STM32WL55 Referenzdesigns}
+    \label{tab:ref_designs}
+    \begin{tabular}{|l|l|c|l|l|c|}
+        \hline
+        \textbf{Referenz} & \textbf{Board / Gehäuse} & \textbf{Layer} & \textbf{Typ} & \textbf{Ziel-Spezifikation} & \textbf{RF Switch} \\ \hline
+        STDES-WL514SBB & MB1842 UFBGA & 4 & SMD & [864:928 MHz] / 15 dBm  & Ja  \\ \hline
+        STDES-WL514SBB & MB1842 UFBGA & 4 & SMD & [864:928 MHz] / 22 dBm  & Ja  \\ \hline
+        STDES-WL5U4SBB & MB1720 UFQFPN & 4 & SMD & [864:928 MHz] / 15 dBm  & Ja  \\ \hline
+        STDES-WL5U4SBB & MB1720 UFQFPN & 4 & SMD & [864:928 MHz] / 22 dBm  & Ja  \\ \hline
+        STDES-WL5U4DLB & MB1789-LP UFQFPN & 4 & SMD & [864:928 MHz] / 15 dBm  & Nein  \\ \hline
+        STDES-WL5U4DHB & MB1789-HP UFQFPN & 4 & SMD & [864:928 MHz] / 22 dBm  & Nein  \\ \hline
+        STDES-WL514ILH & MB1849-LP UFBGA & 4 & IPD  & [864:928 MHz] / 15 dBm  & Ja  \\ \hline
+    \end{tabular}
 \end{table}
+
+Anfangs wurde das Design MB1842 als Vorlage ausgewählt, das \acrshort{ufbga}-Gehäuse erschwert
+allerdings das Routen erheblich, weil die Pads überall in der Footprintfläche verteilt sind. 
+Die \acrshort{ufqfpn}-Variante ist hingegen leichter zu handhaben, da die Pins nur an den Seiten liegen. Dazu kostet sie mit ihren 48 Pins 
+25\% weniger als das 73-Pin-\acrshort{bga}-Gehäuse (9,57\$ zu 12,77\$ auf JLCPCB). 
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        % \includegraphics[width=\textwidth, height=4cm, keepaspectratio=false]{bga.png} 
+        \includegraphics[width=\textwidth]{bga.png}
+        \caption{BGA}
+    \end{subfigure}
+    \hfill % Erzeugt einen flexiblen horizontalen Abstand zwischen den Bildern
+    % Rechtes Bild
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{qfn48.png}
+        \caption{QFPN}
+    \end{subfigure}
+    
+    \caption{Vergleich BGA und QFPN Gehäuse}
+    \label{fig:bga_qfpn}
+\end{figure}
 
 Die meisten Designs sehen eine externe Antenna und einen dazugehörigen \acrshort{sma}-Anschluss vor (überall wo \acrshort{smd} steht),
 aber es gibt auch die Möglichkeit, die Antenne direkt auf der PCB zu integrieren als Chip-Antenne (\acrshort{ipd}). 
