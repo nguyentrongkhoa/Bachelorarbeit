@@ -88,7 +88,7 @@ $\ell = \frac{\lambda}{4} = \frac{c}{4f} = \frac{\SI{3e8}{\m\per\s}}{4 \cdot \SI
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{kapitel3/pictures/zephyr_lora_send_setup.jpeg}
-    \caption{Erster Testaufbau}
+    \caption{Versuchsaufbau}
     \label{fig:zephyr_lora_send_setup}
 \end{figure}
 
@@ -99,24 +99,6 @@ $\ell = \frac{\lambda}{4} = \frac{c}{4f} = \frac{\SI{3e8}{\m\per\s}}{4 \cdot \SI
     \label{fig:868MHz_dipole}
 \end{figure}
 
-% TODO: maybe add pic of code
-Bevor dieser Test beginnen konnte, ist es wichtig, alle Übertragungsparameter im Quellcode sicherheitshalber zu überprüfen. Die 
-Sendeleistung wird auf \SI{4}{dBm} eingestellt, somit werden in dieser Hinsicht die EU-Grenzwerte eingehalten. Auch der RTL-SDR-Empfänger,
-welcher durch Tx-Leistungen höher als \SI{10}{dBm} beschädigt werden könnte, ist damit geschützt. Die \acrshort{toa} sowie 
-der \acrshort{dc} erzählen jedoch eine andere Geschichte: wenn man nämlich die restlichen Parameter in einen 
-\href{https://www.semtech.com/design-support/lora-calculator}{LoRa-Rechner} eingibt (Abbildung \ref{fig:zephyr_lora_send_calc}),
-beträgt die ToA \SI{330}{\ms}. Da in diesem Fall jede Sekunde ein Paket gesendet wird, ergibt sich ein DC von 33\%,
-weit über dem zulässigen Wert von 1\% für das EU868-Band. Aus diesem Grund musste im Vorfeld das Übertragungsintervall auf 
-\SI{34}{\s} verlängert werden.  
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{kapitel3/pictures/zephyr_lora_send_calc.png}
-    \caption{LoRa-Rechner}
-    \label{fig:zephyr_lora_send_calc}
-\end{figure}
-
-% TODO: maybe add waterfall diagram
 Abbildung \ref{fig:zephyr_lora_send_sdrsharp} zeigt das Frequenzspektrum um \SI{865,1}{\MHz} beim erfolgreichen Empfangen in SDR\#. 
 Es lässt sich erkennen, dass die meiste Energie im Bereich \SI{865,1}{\MHz}$\pm \frac{\text{BW}}{2}$ ist. Aufgrund dessen,
 dass SDR\# LoRa-Pakete nicht dekodieren kann, wird ein weiterer Test in GNU-Radio benötigt. 
