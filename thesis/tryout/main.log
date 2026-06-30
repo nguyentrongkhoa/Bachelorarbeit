@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.3.15)  30 JUN 2026 22:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.3.15)  30 JUN 2026 23:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2080,21 +2080,18 @@ File: kapitel3/pictures/3d_bottom.png Graphic file (type png)
 <use kapitel3/pictures/3d_bottom.png>
 Package pdftex.def Info: kapitel3/pictures/3d_bottom.png  used on input line 557.
 (pdftex.def)             Requested size: 192.03757pt x 108.29941pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [42 <./kapitel3/pictures/board_2d.png>]
+ [42 <./kapitel3/pictures/board_2d.png> <./kapitel3/pictures/3d_top.png> <./kapitel3/pictures/3d_bottom.png>]
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 10.95pt on input line 580.
- [43{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_7f4ce4.enc} <./kapitel3/pictures/3d_top.png> <./kapitel3/pictures/3d_bottom.png>] [44] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+ [43{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_7f4ce4.enc}] [44] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
-) [45]
+)
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 682.
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
 (Font)              scaled to size 8.30002pt on input line 682.
-
+ [45]
 Overfull \hbox (15.63809pt too wide) in paragraph at lines 707--713
 \T1/LinuxLibertineT-TLF/m/n/10.95 chen-ket-te im For-mat [][][][][][], die als ein-deu-ti-ger Schlüs-sel für das Treiber-Matching
  []
@@ -2102,37 +2099,34 @@ Overfull \hbox (15.63809pt too wide) in paragraph at lines 707--713
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
 (Font)              scaled to size 7.47002pt on input line 735.
 [46] [47]
-<kapitel3/pictures/ttn_register.png, id=1022, 415.5525pt x 373.99725pt>
+<kapitel3/pictures/ttn_register.png, id=1025, 415.5525pt x 373.99725pt>
 File: kapitel3/pictures/ttn_register.png Graphic file (type png)
 <use kapitel3/pictures/ttn_register.png>
 Package pdftex.def Info: kapitel3/pictures/ttn_register.png  used on input line 791.
 (pdftex.def)             Requested size: 426.79134pt x 384.12576pt.
+ [48 <./kapitel3/pictures/ttn_register.png>] [49]
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [48] [49 <./kapitel3/pictures/ttn_register.png>] [50]
-
-LaTeX Warning: Reference `subsec:mcu-schaltung' on page 51 undefined on input line 931.
+LaTeX Warning: Reference `subsec:mcu-schaltung' on page 50 undefined on input line 931.
 
 
 Overfull \hbox (2.26581pt too wide) in paragraph at lines 929--933
 []\T1/LinuxLibertineT-TLF/m/n/10.95 Nachdem die Lo-Ra-WAN-Netz-werkan-bin-dung er-folg-reich eta-bliert war, wur-de im nächs-ten Schritt
  []
 
-[51]
+[50]
 
 Package glossaries Warning: Entry `esd' has already been defined in the document environment (ignoring new definition) on input line 976.
 
-) (./kapitel4/ch4.tex [52]
+) (./kapitel4/ch4.tex [51] [52
+
+]
 Kapitel 4.
 <kapitel4/pictures/ttn_mapper_berlin.png, id=1104, 1009.371pt x 448.67625pt>
 File: kapitel4/pictures/ttn_mapper_berlin.png Graphic file (type png)
 <use kapitel4/pictures/ttn_mapper_berlin.png>
 Package pdftex.def Info: kapitel4/pictures/ttn_mapper_berlin.png  used on input line 19.
 (pdftex.def)             Requested size: 426.79134pt x 189.71614pt.
-[53
-
- <./kapitel4/pictures/ttn_mapper_berlin.png>]
+[53 <./kapitel4/pictures/ttn_mapper_berlin.png>]
 <kapitel4/pictures/berlin_rasterkarte.png, id=1115, 3770.085pt x 3137.7225pt>
 File: kapitel4/pictures/berlin_rasterkarte.png Graphic file (type png)
 <use kapitel4/pictures/berlin_rasterkarte.png>
@@ -2730,7 +2724,7 @@ pdfTeX warning (dest): name{glo:mac} has been referenced but does not exist, rep
 pdfTeX warning (dest): name{lstnumber.-3.243} has been referenced but does not exist, replaced by a fixed one
 
 </usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/bera/fvmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on main.pdf (108 pages, 49779813 bytes).
+Output written on main.pdf (108 pages, 49779874 bytes).
 PDF statistics:
  2482 PDF objects out of 2487 (max. 8388607)
  1981 compressed objects within 20 object streams

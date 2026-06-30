@@ -38,15 +38,15 @@
 \contentsline {subsubsection}{RF-Empfangspfad}{36}{section*.53}%
 \contentsline {subsubsection}{SPI-Flash-Speicher}{37}{section*.55}%
 \contentsline {subsection}{\numberline {3.3.2}PCB-Layout}{37}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Fertigung und Bestückung}{43}{subsection.3.3.3}%
-\contentsline {section}{\numberline {3.4}Firmware-Entwicklung}{44}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Wahl des Betriebssystems: Zephyr-RTOS}{44}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Zephyr-Architektur: Devicetree, KConfig, Treibermodelle}{45}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.3.3}Fertigung und Bestückung}{42}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.4}Firmware-Entwicklung}{43}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Wahl des Betriebssystems: Zephyr-RTOS}{43}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Zephyr-Architektur: Devicetree, KConfig, Treibermodelle}{44}{subsection.3.4.2}%
 \contentsline {subsubsection}{Devicetree zur Hardware-Beschreibung}{45}{section*.67}%
 \contentsline {subsubsection}{KConfig zur Software-Konfiguration}{47}{section*.69}%
-\contentsline {subsubsection}{Treibermodelle als Brücke zwischen Hardware und Software}{48}{section*.70}%
-\contentsline {subsection}{\numberline {3.4.3}LoRaWAN-Netzwerkanbindung}{48}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}Integration von Peripherien}{51}{subsection.3.4.4}%
+\contentsline {subsubsection}{Treibermodelle als Brücke zwischen Hardware und Software}{47}{section*.70}%
+\contentsline {subsection}{\numberline {3.4.3}LoRaWAN-Netzwerkanbindung}{47}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Integration von Peripherien}{50}{subsection.3.4.4}%
 \contentsline {chapter}{\numberline {4}Testplanung und -durchführung}{53}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Funkabdeckungstest}{53}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Auswahl der Gateways}{53}{subsection.4.1.1}%

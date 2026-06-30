@@ -498,13 +498,13 @@ sowie die Leiterbahnbreite und -dicke berücksichtigt.
 \end{figure}
 
 KiCad verfügt über einen eingebauten Rechner und die einzutragenden Informationen (gelb markiert) ergeben eine Leiterbahnbreite
-$W=\qty{0,35}{\milli\meter}$. Leichte Abweichungen von der \qty{50}{\ohm} können allerdings entstehen aufgrund von bswp.
+$W=$0,35 mm. Leichte Abweichungen von der \qty{50}{\ohm} können allerdings entstehen aufgrund von bswp.
 mechanischen Toleranzen oder Varianz der Dielektrizitätskonstante $\epsilon_r$ des verwendeten FR4-Materials. 
 
 Impedanzkritische Verbindungen müssen knickfrei sein. KiCad stellt Plugins bereits, mit denen eckige
 Übergangsstellen in Verrundungen verwandelt werden können. Problematisch bleiben allerdings die Übergänge von 
-Leiterbahnen zu Pads von SMD-Komponenten, da diese meist viel größer sind als die berechnete \qty{0,35}{\milli\meter}.
-Daher werden alle RF-SMD-Bauteile in der Größe 0402 (0,5mm Padbreite) gewählt, und die \qty{0,15}{\milli\meter} Differenz wird 
+Leiterbahnen zu Pads von SMD-Komponenten, da diese meist viel größer sind als die berechnete 0,35 mm.
+Daher werden alle RF-SMD-Bauteile in der Größe 0402 (0,5mm Padbreite) gewählt, und die 0,15 mm Differenz wird 
 durch ein Teardrop-Muster überbrückt. 
 
 \begin{figure}[H]
@@ -516,7 +516,7 @@ durch ein Teardrop-Muster überbrückt.
          \label{subfig:round_tracks}
      \end{subfigure}
 
-     %\hfill 
+     \hfill 
      
      \begin{subfigure}[b]{0.45\textwidth}
          \centering
@@ -545,14 +545,14 @@ Peripherien und Sensoren ringsum.
 
 \begin{figure}[H]
      \centering
-     \begin{subfigure}[H]{0.45\textwidth}
+     \begin{subfigure}[b]{0.45\textwidth}
          \centering
          \includegraphics[width=\textwidth, height=5cm, keepaspectratio]{kapitel3/pictures/3d_top.png}
          \caption{Oben} 
          \label{subfig:3d_top}
      \end{subfigure}
-     
-     \begin{subfigure}[H]{0.45\textwidth}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
          \centering
          \includegraphics[width=\textwidth, height=5cm, keepaspectratio]{kapitel3/pictures/3d_bottom.png}
          \caption{Unten} 
