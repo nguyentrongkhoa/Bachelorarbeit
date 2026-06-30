@@ -364,6 +364,29 @@
       \verb https://ieeexplore.ieee.org/document/9154273/
       \endverb
     \endentry
+    \entry{AN5457RFMatchingNetwork}{report}{}
+      \name{author}{1}{}{%
+        {{hash=aa04b82601830f7dbe66db21edeaf389}{%
+           family={AN5457},
+           familyi={A\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {ST Microelectronics}%
+      }
+      \strng{namehash}{aa04b82601830f7dbe66db21edeaf389}
+      \strng{fullhash}{aa04b82601830f7dbe66db21edeaf389}
+      \strng{bibnamehash}{aa04b82601830f7dbe66db21edeaf389}
+      \strng{authorbibnamehash}{aa04b82601830f7dbe66db21edeaf389}
+      \strng{authornamehash}{aa04b82601830f7dbe66db21edeaf389}
+      \strng{authorfullhash}{aa04b82601830f7dbe66db21edeaf389}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{number}{AN5457}
+      \field{title}{{RF} matching network design guide for {STM32WL} {Series}}
+      \field{type}{Application {Note}}
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

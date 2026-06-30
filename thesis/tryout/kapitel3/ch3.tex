@@ -299,12 +299,12 @@ Die \acrshort{ufqfpn}-Variante ist hingegen leichter zu handhaben, da die Pins n
 
 Die meisten Designs sehen eine externe Antenna und einen dazugehörigen \acrshort{sma}-Anschluss vor (überall wo \acrshort{smd} steht),
 aber es gibt auch die Möglichkeit, die Antenne direkt auf der PCB zu integrieren als Chip-Antenne (\acrshort{ipd}). 
-Letzteres spart zwar Kosten und Platz, zeugt jedoch von einer viel geringeren Performance. % TODO: add pic IPD and SMA
-Außerdem muss die im Kapitel \ref{chap:einleitung} angesprochene Sendeleistungsbegrenzung von 14dBm in Europa beachtet werden.
+Letzteres spart zwar Kosten und Platz, zeugt jedoch von einer viel geringeren Performance. 
+Außerdem muss die im Kapitel \ref{chap:grundlagen} angesprochene Sendeleistungsbegrenzung von 14dBm in Europa beachtet werden.
 
 All diese Überlegungen führten schließlich zum Design MB1720. Als Antenne hat sich nach der Recherche das Modell 
 AEACAC053010-S868 von der Firma Abracon durchgesetzt mit seiner omnidirektionalen Strahlungscharakteristik, 
-einem Gewinn von 2dBi und einer Impedanz von 50 Ohm. % TODO: add pic of antenna
+einem Gewinn von 2dBi und einer Impedanz von 50 Ohm. % TODO: move antenna up to hardware auswahl secction
 Bei künftigen Iterationen wird mit einer Chip-Antenne experimentiert, um die Kosten weiter zu senken. 
 
 Die vom Referenzdesign angepasste MCU-Schaltung für den ersten Prototyp sieht in ihrer Gesamheit folgendermaßen aus:
@@ -328,8 +328,8 @@ Als HSE"=Referenz wird ein \SI{32}{\MHz}"=\acrshort{tcxo} vom Typ
 \textbf{NDK NT2016SF} verwendet. Gegenüber einem passiven Quarzresonator bietet
 der TCXO eine deutlich höhere Frequenzstabilität: Während ein Standard"=Quarz
 über den Betriebstemperaturbereich Abweichungen von $\pm$20--30\,ppm aufweist,
-hält der NT2016SF eine Stabilität von $\pm$\SI{0{,}5}{ppm} ein. % TODO: cite ndk datasheet
-Bei \SI{868}{\MHz} entsprechen 30\,ppm einer absoluten Frequenzabweichung von
+hält der NT2016SF eine Stabilität von $\pm$\SI{0{,}5}{ppm} ein. 
+Bei \SI{868}{\MHz} entsprechen 30 \acrshort{ppm} einer absoluten Frequenzabweichung von
 \SI{26}{\kHz}, dadurch könnte der Kanalabstand bei hohen Spreizfaktoren überschritten und
 Demodulationsfehler hervorgerufen werden. Der TCXO vermeidet dieses Problem zuverlässig.
 
@@ -373,59 +373,34 @@ wobei $C_L$ die Nennlastkapazität des Quarzes und $C_S$ die parasitäre Kapazit
 die typischerweise zwischen 2 und 5\,pF liegt. Unter der Annahme von $C_S = 3,5\,\text{pF}$ ergibt sich ein Wert
 von 18pF. 
 
-% ─── Impedanzanpassung ───────────────────────────────────────────────────────
-\subsubsection{HF-Impedanzanpassung}
-\label{subsubsec:impedanzanpassung}
+\subsubsection{RF-Sendepfad}
+\label{subsubsec:rf_circuitss}
 
-Die HF"=Impedanzanpassung stellt den sendeseitigen Leistungsübergang zwischen
-dem integrierten Leistungsverstärker des STM32WL55 und der nachgelagerten RF"=Schalterplatine
-sowie den empfangsseitigen Übergang von der Antenne zur internen \acrfull{lna}
-sicher. Sämtliche Bauteile dieser Sektion entstammen der Murata GJM15"=Serie
+Sämtliche Bauteile dieser Sektion entstammen der Murata GJM15"=Serie
 (Kondensatoren) und der Murata LQW15AN"=Serie (Induktivitäten), da diese
 Komponenten im relevanten Frequenzbereich bei \SI{868}{\MHz} einen besonders
 hohen Gütefaktor ($Q > 100$) aufweisen und damit die Verluste im Anpassnetzwerk
-minimieren.
-
-\paragraph{Sendepfad (TX)}
+minimieren. % TODO:
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{kapitel3/pictures/tx_matching.png}
-    \caption{TX-Impedanzanpassung}
+    \caption{Sendeschaltung}
     \label{fig:tx_matching}
 \end{figure}
 
-Der Sendepfad führt vom Niedrigleistungsausgang \texttt{RFO\_LP} (max \SI{15}{dBm}) der MCU
-über das Anpassnetzwerk zum Signal \texttt{LORA\_TX}, das zur Antennen"=Teilschaltung
-weitergeleitet wird. Das Anpassnetzwerk besteht aus folgenden Elementen,
-deren Werte und Funktion in Anlehnung an den Applikationshinweis AN5406 von
-STMicroelectronics ausgelegt wurden:
-
-\begin{itemize}
-    \item \textbf{C18} (47\,nF): Entkoppelkondensator auf der VR\_PA"=Versorgungsleitung.
-    Er filtert Versorgungsrauschen vom internen PA"=Spannungsregler und ist
-    gemäß AN5406 in unmittelbarer Nähe des \texttt{VR\_PA}"=Pins zu platzieren.
-    \item \textbf{C19} (68\,pF) und \textbf{L3} (47\,nH): Bandsperre zur
-    Unterdrückung der zweiten Harmonischen bei \SI{1736}{\MHz}. Die % TODO: maybe add simulation to show bandsperre @ 1736 MHz
-    Kombination aus Parallelresonanzkreis wirkt als Sperrkreis bei $2f_0$
-    und reduziert so die Oberwellenemissionen, die für die
-    Konformität mit EN\,300\,220 relevant sind.
-    \item \textbf{L4} (2{,}7\,nH) und \textbf{C20} (8{,}2\,pF): L-Netzwerk
-    zur Impedanztransformation. Sie überführen die komplexe Ausgangsimpedanz
-    des PA in die Systemimpedanz von \SI{50}{\ohm}.
-    \item \textbf{C21} (3\,pF) und \textbf{C22} (0{,}75\,pF): Feinabstimmung
-    der Anpassung. Die sehr kleinen Kapazitätswerte sind empfindlich gegenüber
-    parasitären Effekten und machen eine sorgfältige HF"=gerechte Leiterbahnführung
-    auf der Leiterkartenebene erforderlich.
-    \item \textbf{C25} (3\,pF): DC"=Blockkondensator am Ausgang des
-    Anpassnetzwerks, der Gleichspannung von der Antennenseite fernhält.
-\end{itemize} % TODO: proofread this table
+Abbildung \ref{fig:tx_matching} zeigt den Weg von RF-Signalen vom Low-Power-Ausgang \texttt{RFO\_LP} des MCUs bis hin zum Eingang
+des RF-Schalters auf der rechten Seite. Der Ausgang des Leistungsverstärkers wird vom Pin \texttt{VR\_PA} des MCUs intern versorgt. 
+\textbf{L3} sorgt dafür, dass nur der DC-Anteil an \texttt{VR\_PA} gelangt. Da es aber nicht immer gelingt, müssen
+flüchtige RF-Störsignale doch von \textbf{C18} und \textbf{C19} abgefangen werden. 
+Die restlichen Bauteile in dieser Schaltung dienen dem Filtern des Signals am \texttt{RFO\_LP}. Ihre genauen Funktionen sowie
+Dimensionierung werden in der Application-Note \citeauthor{AN5457RFMatchingNetwork} näher beleuchtet.
 
 Der Hochleistungsausgang \texttt{RFO\_HP} (bis \SI{22}{dBm}) wird in dieser Designvariante nicht aktiv genutzt aufgrund
-der bereits erwähnten 14dBm-Grenze in der EU. Bei künftigen Iterationen könnte dieser Ausgang durchaus sinnvoll sein,
+der bereits erwähnten 14dBm-Grenze in der EU. Bei künftigen Iterationen könnte jedoch dieser Ausgang durchaus sinnvoll sein,
 um Leistungsverlusten im aktuellen Design entgegenzuwirken. 
 
-\paragraph{Empfangspfad (RX)}
+\subsubsection{RF-Empfangspfad}
 
 \begin{figure}[H]
     \centering
@@ -436,7 +411,7 @@ um Leistungsverlusten im aktuellen Design entgegenzuwirken.
 
 Der Empfangspfad führt vom Signal \texttt{LORA\_RX} über ein Balun"=Netzwerk
 zu den differenziellen Eingängen \texttt{RFI\_P} und \texttt{RFI\_N} des
-internen LNA. Das differentielle Eingangspaar erfordert eine Konvertierung
+internen \acrshort{lna} (\acrlong{lna}). Das differentielle Eingangspaar erfordert eine Konvertierung
 des einseitigen (single"=ended) \SI{50}{\ohm}"=Signals der Antenne in ein
 symmetrisches Differenzsignal:
 
@@ -1228,3 +1203,4 @@ sowie die TTN"=Netzwerkabdeckung treffen zu können.
 \newacronym{dt}{DT}{Devicetree}
 \newacronym{api}{API}{Application Programming Interface}\
 \newacronym{ttn}{TTN}{The Things Network}
+\newacronym{ppm}{ppm}{Parts-per-million}

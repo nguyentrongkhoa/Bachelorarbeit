@@ -2154,6 +2154,34 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{ppm}%
+{%
+name={\acronymfont {\glsentryshort {ppm}}},%
+sort={ppm},%
+type={acronym},%
+first={ppm},%
+firstplural={ppms},%
+text={ppm},%
+plural={ppms},%
+description={Parts-per-million},%
+descriptionplural={Parts-per-million},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Parts-per-million},%
+longplural={Parts-per-millions},%
+short={ppm},%
+shortplural={ppms},%
+counter={page},%
+parent={},%
+%
+}%
+
 \glsdefs@newdocentry{gis}%
 {%
 name={\acronymfont {\glsentryshort {gis}}},%
