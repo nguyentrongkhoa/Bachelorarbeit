@@ -29,33 +29,33 @@
 \contentsline {paragraph}{Sensorik}{22}{section*.31}%
 \contentsline {subsection}{\numberline {3.1.2}Externe Hardware}{22}{subsection.3.1.2}%
 \contentsline {section}{\numberline {3.2}Proof-of-Concept}{22}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Hardware-Entwicklung}{27}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Schematic und Komponentenauswahl}{27}{subsection.3.3.1}%
-\contentsline {subsubsection}{Blockschaltbild}{27}{section*.37}%
-\contentsline {subsubsection}{Wichtige Teilschaltungen}{28}{section*.39}%
-\contentsline {subsubsection}{Taktversorgung}{33}{section*.46}%
-\contentsline {subsubsection}{HF-Impedanzanpassung}{35}{section*.50}%
-\contentsline {paragraph}{Sendepfad (TX)}{36}{figure.caption.52}%
-\contentsline {paragraph}{Empfangspfad (RX)}{37}{figure.caption.54}%
-\contentsline {subsubsection}{Interner Schaltregler (SMPS)}{38}{section*.55}%
-\contentsline {subsubsection}{Spannungsversorgung und Entkopplung}{39}{section*.56}%
-\contentsline {subsubsection}{Reset-Schaltung}{40}{section*.59}%
-\contentsline {paragraph}{BOOT0-Konfiguration}{41}{figure.caption.62}%
-\contentsline {subsubsection}{I2C-Schnittstelle und Pullup-Beschaltung}{41}{section*.63}%
-\contentsline {subsubsection}{ESD-Schutz}{42}{section*.65}%
-\contentsline {subsubsection}{SPI-Flash-Speicher}{43}{section*.67}%
-\contentsline {subsubsection}{Status-LED}{44}{section*.69}%
-\contentsline {subsubsection}{Zusammenfassung der Signalnetze}{44}{section*.71}%
-\contentsline {subsection}{\numberline {3.3.2}PCB-Layout}{45}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Fertigung und Bestückung}{51}{subsection.3.3.3}%
-\contentsline {section}{\numberline {3.4}Firmware-Entwicklung}{52}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Wahl des Betriebssystems: Zephyr-RTOS}{52}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Zephyr-Architektur: Devicetree, KConfig, Treibermodelle}{53}{subsection.3.4.2}%
-\contentsline {subsubsection}{Devicetree zur Hardware-Beschreibung}{53}{section*.83}%
-\contentsline {subsubsection}{KConfig zur Software-Konfiguration}{55}{section*.85}%
-\contentsline {subsubsection}{Treibermodelle als Brücke zwischen Hardware und Software}{56}{section*.86}%
-\contentsline {subsection}{\numberline {3.4.3}LoRaWAN-Netzwerkanbindung}{56}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}Integration von Peripherien}{59}{subsection.3.4.4}%
+\contentsline {section}{\numberline {3.3}Hardware-Entwicklung}{26}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Schematic}{26}{subsection.3.3.1}%
+\contentsline {subsubsection}{Blockschaltbild}{26}{section*.37}%
+\contentsline {subsubsection}{Wichtige Teilschaltungen}{27}{section*.39}%
+\contentsline {subsubsection}{Taktversorgung}{32}{section*.46}%
+\contentsline {subsubsection}{HF-Impedanzanpassung}{34}{section*.50}%
+\contentsline {paragraph}{Sendepfad (TX)}{35}{figure.caption.52}%
+\contentsline {paragraph}{Empfangspfad (RX)}{36}{figure.caption.54}%
+\contentsline {subsubsection}{Interner Schaltregler (SMPS)}{37}{section*.55}%
+\contentsline {subsubsection}{Spannungsversorgung und Entkopplung}{38}{section*.56}%
+\contentsline {subsubsection}{Reset-Schaltung}{39}{section*.59}%
+\contentsline {paragraph}{BOOT0-Konfiguration}{40}{figure.caption.62}%
+\contentsline {subsubsection}{I2C-Schnittstelle und Pullup-Beschaltung}{40}{section*.63}%
+\contentsline {subsubsection}{ESD-Schutz}{41}{section*.65}%
+\contentsline {subsubsection}{SPI-Flash-Speicher}{42}{section*.67}%
+\contentsline {subsubsection}{Status-LED}{43}{section*.69}%
+\contentsline {subsubsection}{Zusammenfassung der Signalnetze}{43}{section*.71}%
+\contentsline {subsection}{\numberline {3.3.2}PCB-Layout}{44}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Fertigung und Bestückung}{50}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.4}Firmware-Entwicklung}{51}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Wahl des Betriebssystems: Zephyr-RTOS}{51}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Zephyr-Architektur: Devicetree, KConfig, Treibermodelle}{52}{subsection.3.4.2}%
+\contentsline {subsubsection}{Devicetree zur Hardware-Beschreibung}{52}{section*.83}%
+\contentsline {subsubsection}{KConfig zur Software-Konfiguration}{54}{section*.85}%
+\contentsline {subsubsection}{Treibermodelle als Brücke zwischen Hardware und Software}{55}{section*.86}%
+\contentsline {subsection}{\numberline {3.4.3}LoRaWAN-Netzwerkanbindung}{55}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Integration von Peripherien}{58}{subsection.3.4.4}%
 \contentsline {chapter}{\numberline {4}Testplanung und -durchführung}{61}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Funkabdeckungstest}{61}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Auswahl der Gateways}{61}{subsection.4.1.1}%

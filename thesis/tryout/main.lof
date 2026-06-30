@@ -8,35 +8,35 @@
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Beacon- und Ping-Slots für Endgeräte der Klasse B}}{17}{figure.caption.26}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Versuchsaufbau}}{23}{figure.caption.32}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Einstellung Antennenlänge}}{24}{figure.caption.33}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Einstellung Antennenlänge}}{23}{figure.caption.33}%
 \contentsline {figure}{\numberline {3.3}{\ignorespaces LoRa-Verkehr in SDR\#}}{24}{figure.caption.34}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Blockdiagramm zum Empfangen von LoRa-Testpaketen in GNU-Radio}}{25}{figure.caption.35}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Dekodierte Nutzdaten in GNU-Radio-Terminal}}{26}{figure.caption.36}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Blockschaltbild PCB-Prototyp}}{27}{figure.caption.38}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Ladeblock mit USB-C-Anschluss und BQ24074}}{29}{figure.caption.40}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Energiegewinnung durch Solarzelle mit SPv1050}}{31}{figure.caption.42}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Batterie-SoC-Tracking mit MAX17048}}{32}{figure.caption.43}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces MCU-Schaltung mit STM32WL55}}{33}{figure.caption.45}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Taktversorgung mit HSE}}{34}{figure.caption.47}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Überprüfung der TCXO"=Frequenz über MCO-Ausgang}}{34}{figure.caption.48}%
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Taktversorgung mit LSE}}{35}{figure.caption.49}%
-\contentsline {figure}{\numberline {3.14}{\ignorespaces TX-Impedanzanpassung}}{36}{figure.caption.52}%
-\contentsline {figure}{\numberline {3.15}{\ignorespaces RX-Impedanzanpassung}}{37}{figure.caption.54}%
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Entkopplungsschema der MCU}}{39}{figure.caption.57}%
-\contentsline {figure}{\numberline {3.17}{\ignorespaces MCU-Reset-Schaltung}}{40}{figure.caption.60}%
-\contentsline {figure}{\numberline {3.18}{\ignorespaces BOOT0-Konfiguration}}{41}{figure.caption.62}%
-\contentsline {figure}{\numberline {3.19}{\ignorespaces I2C-Schnittstelle}}{41}{figure.caption.64}%
-\contentsline {figure}{\numberline {3.20}{\ignorespaces ESD-Schutz für Testheaders}}{42}{figure.caption.66}%
-\contentsline {figure}{\numberline {3.21}{\ignorespaces SPI-Flash-Speicher}}{43}{figure.caption.68}%
-\contentsline {figure}{\numberline {3.22}{\ignorespaces Status-LED}}{44}{figure.caption.70}%
-\contentsline {figure}{\numberline {3.23}{\ignorespaces PCB-Stackup mit vier Lagen: Top (L1), Inner 1 (L2), Inner 2 (L3), Bottom (L4)}}{46}{figure.caption.74}%
-\contentsline {figure}{\numberline {3.24}{\ignorespaces Optimale Power-Plane-Auslegung laut AN5407}}{47}{figure.caption.75}%
-\contentsline {figure}{\numberline {3.25}{\ignorespaces Impedanzberechnung in KiCad}}{48}{figure.caption.77}%
-\contentsline {figure}{\numberline {3.26}{\ignorespaces Layout-Richtlinien für impedanzkontrollierte Leiterbahnen}}{49}{figure.caption.78}%
-\contentsline {figure}{\numberline {3.27}{\ignorespaces 2D-Ansicht der fertigen Leiterplatte}}{50}{figure.caption.80}%
-\contentsline {figure}{\numberline {3.28}{\ignorespaces 3D-Ansichten der fertigen PCB}}{51}{figure.caption.81}%
-\contentsline {figure}{\numberline {3.29}{\ignorespaces Hierarchische Baumstruktur des beispielhaften Devicetrees.}}{55}{figure.caption.84}%
-\contentsline {figure}{\numberline {3.30}{\ignorespaces Registrierung eines neuen Endgeräts im LoRaWAN-Netzwerk bei The Things Network}}{57}{figure.caption.87}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Blockdiagramm zum Empfangen von LoRa-Testpaketen in GNU-Radio}}{24}{figure.caption.35}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Dekodierte Nutzdaten in GNU-Radio-Terminal}}{25}{figure.caption.36}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Blockschaltbild PCB-Prototyp}}{26}{figure.caption.38}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Ladeblock mit USB-C-Anschluss und BQ24074}}{28}{figure.caption.40}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Energiegewinnung durch Solarzelle mit SPv1050}}{30}{figure.caption.42}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Batterie-SoC-Tracking mit MAX17048}}{31}{figure.caption.43}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces MCU-Schaltung mit STM32WL55}}{32}{figure.caption.45}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Taktversorgung mit HSE}}{33}{figure.caption.47}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Überprüfung der TCXO"=Frequenz über MCO-Ausgang}}{33}{figure.caption.48}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Taktversorgung mit LSE}}{34}{figure.caption.49}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces TX-Impedanzanpassung}}{35}{figure.caption.52}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces RX-Impedanzanpassung}}{36}{figure.caption.54}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Entkopplungsschema der MCU}}{38}{figure.caption.57}%
+\contentsline {figure}{\numberline {3.17}{\ignorespaces MCU-Reset-Schaltung}}{39}{figure.caption.60}%
+\contentsline {figure}{\numberline {3.18}{\ignorespaces BOOT0-Konfiguration}}{40}{figure.caption.62}%
+\contentsline {figure}{\numberline {3.19}{\ignorespaces I2C-Schnittstelle}}{40}{figure.caption.64}%
+\contentsline {figure}{\numberline {3.20}{\ignorespaces ESD-Schutz für Testheaders}}{41}{figure.caption.66}%
+\contentsline {figure}{\numberline {3.21}{\ignorespaces SPI-Flash-Speicher}}{42}{figure.caption.68}%
+\contentsline {figure}{\numberline {3.22}{\ignorespaces Status-LED}}{43}{figure.caption.70}%
+\contentsline {figure}{\numberline {3.23}{\ignorespaces PCB-Stackup mit vier Lagen: Top (L1), Inner 1 (L2), Inner 2 (L3), Bottom (L4)}}{45}{figure.caption.74}%
+\contentsline {figure}{\numberline {3.24}{\ignorespaces Optimale Power-Plane-Auslegung laut AN5407}}{46}{figure.caption.75}%
+\contentsline {figure}{\numberline {3.25}{\ignorespaces Impedanzberechnung in KiCad}}{47}{figure.caption.77}%
+\contentsline {figure}{\numberline {3.26}{\ignorespaces Layout-Richtlinien für impedanzkontrollierte Leiterbahnen}}{48}{figure.caption.78}%
+\contentsline {figure}{\numberline {3.27}{\ignorespaces 2D-Ansicht der fertigen Leiterplatte}}{49}{figure.caption.80}%
+\contentsline {figure}{\numberline {3.28}{\ignorespaces 3D-Ansichten der fertigen PCB}}{50}{figure.caption.81}%
+\contentsline {figure}{\numberline {3.29}{\ignorespaces Hierarchische Baumstruktur des beispielhaften Devicetrees.}}{54}{figure.caption.84}%
+\contentsline {figure}{\numberline {3.30}{\ignorespaces Registrierung eines neuen Endgeräts im LoRaWAN-Netzwerk bei The Things Network}}{56}{figure.caption.87}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Übersicht TTN-Gateways in Berlin}}{61}{figure.caption.88}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Rasterkarte Berlins}}{63}{figure.caption.90}%

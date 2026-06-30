@@ -4,14 +4,6 @@
 
 \chapter{Prototyp-Entwicklung}
 \label{chap:prot}
-TODO:  rewrite when done
-
-Dieses Kapitel beschreibt den Entwurf und die prototypische Umsetzung des
-Off"=Grid"=Schutzsensorsystems. Ausgehend von den in Kapitel~\ref{chap:einleitung}
-abgeleiteten Anforderungen werden zunächst die gewählten Hardware"=Komponenten
-vorgestellt und begründet. Anschließend wird die Systemarchitektur auf Software"=Ebene
-beschrieben, bevor auf die konkrete Implementierung der Firmware, des Network"=Servers
-und der Datenvisualisierung eingegangen wird.
  
 % -----------------------------------------------------------------------------
 \section{Hardwareauswahl}
@@ -22,7 +14,7 @@ Die für diese Arbeit verwendete Hardware lässt sich in zwei Kategorien
 unterteilen: Komponenten, die beim PCB"=Prototyp eingebaut werden
 sowie externe Hardware, die dem Programmieren, Messen oder Testen dienen. 
 
-\subsection{PCB-Hardware}
+\subsection{PCB-Hardware} % TODO: maybe add antenna
 
 \paragraph{Mikrokontroller}
 
@@ -137,12 +129,12 @@ Die dekodierten Payloads werden im Terminal ausgegeben (Abbildung \ref{fig:zephy
 
 \section{Hardware-Entwicklung}
 
-\subsection{Schematic und Komponentenauswahl}
+\subsection{Schematic}
 
 \subsubsection{Blockschaltbild}
 
-Im nächsten Schritt soll ein maßgeschneiderter PCB-Prototyp entworfen und gefertigt werden. 
-Abbildung \ref{fig:block_diag} stellt die Schaltung blockschaltbildmäßig dar. Im Zentrum befindet sich der STM32WL55 mit seinem 
+Im nächsten Schritt soll ein maßgeschneiderter PCB-Prototyp in KiCad entworfen und gefertigt werden. 
+Abbildung \ref{fig:block_diag} stellt die Schaltung blockschaltbildmäßig dar. Im Mittelpunkt befindet sich der STM32WL55 mit seinem 
 integrierten LoRa-Transceiver, der über einen SMA-Stecker mit der externen 868MHz-Antenne angeschlossen ist. Mithilfe eines RF-Schalters
 wird zwischen Empfangs- und Sendemodus gewechselt. Die Steuersignale für den RF-Schalter (RF\_SW\_V1 und V2 im Blockschaltbild) 
 kommen von der MCU und werden über Pullup- sowie Pulldown-Widerstände so konfiguriert, 
@@ -159,8 +151,8 @@ das Funkmodul beschädigen könnte.
 Als Programmierschnittstelle wird ein STDC14-Header vorgesehen, über den sich das Board mit einem STLinkV3-Minie verbinden kann. 
 Der Einfachheit halber wurde für das Protokoll \acrfull{swd} entschieden, denn dieses nimmt lediglich zwei Pins in Anspruch 
 (SWDIO und SWCLK) im Vergleich zu JTAG, welches zusätzlich noch TMS, TDI und TDO benötigt. In diesem Design wird darüber hinaus 
-von den Pins SWO (Serial Wire Output) sowie VCP-TX und RX  (Virtual COM Port) des STLinks Gebrauch gemacht, 
-um die Firmware-Entwicklung zu erleichtern. % TODO: maybe add pic of STLink
+von den Pins SWO (Serial Wire Output) sowie VCP-TX und VCP-RX  (Virtual COM Port) des STLinks Gebrauch gemacht, 
+damit Debug-Nachrichten am Rechner einsehbar sind. 
 
 Im Bereich Sensoren finden sich auf der PCB insgesamt drei. Zwei Gassensoren, nämlich BME680 und BMV080 von Bosch dienen 
 der Luftmessung und kommunizieren mit dem STM32 über einen geteilten \acrshort{i2c}-Bus. Der BME680 ermöglicht
