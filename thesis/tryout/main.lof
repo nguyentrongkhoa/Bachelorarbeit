@@ -24,24 +24,23 @@
 \contentsline {figure}{\numberline {3.15}{\ignorespaces Sendeschaltung}}{35}{figure.caption.52}%
 \contentsline {figure}{\numberline {3.16}{\ignorespaces RX-Impedanzanpassung}}{36}{figure.caption.54}%
 \contentsline {figure}{\numberline {3.17}{\ignorespaces SPI-Flash-Speicher}}{37}{figure.caption.56}%
-\contentsline {figure}{\numberline {3.18}{\ignorespaces Status-LED}}{38}{figure.caption.58}%
-\contentsline {figure}{\numberline {3.19}{\ignorespaces PCB-Stackup mit vier Lagen: Top (L1), Inner 1 (L2), Inner 2 (L3), Bottom (L4)}}{40}{figure.caption.62}%
-\contentsline {figure}{\numberline {3.20}{\ignorespaces Optimale Power-Plane-Auslegung laut AN5407}}{41}{figure.caption.63}%
-\contentsline {figure}{\numberline {3.21}{\ignorespaces Impedanzberechnung in KiCad}}{42}{figure.caption.65}%
-\contentsline {figure}{\numberline {3.22}{\ignorespaces Layout-Richtlinien für impedanzkontrollierte Leiterbahnen}}{43}{figure.caption.66}%
-\contentsline {figure}{\numberline {3.23}{\ignorespaces 2D-Ansicht der fertigen Leiterplatte}}{44}{figure.caption.68}%
-\contentsline {figure}{\numberline {3.24}{\ignorespaces 3D-Ansichten der fertigen PCB}}{45}{figure.caption.69}%
-\contentsline {figure}{\numberline {3.25}{\ignorespaces Hierarchische Baumstruktur des beispielhaften Devicetrees.}}{49}{figure.caption.72}%
-\contentsline {figure}{\numberline {3.26}{\ignorespaces Registrierung eines neuen Endgeräts im LoRaWAN-Netzwerk bei The Things Network}}{51}{figure.caption.75}%
+\contentsline {figure}{\numberline {3.18}{\ignorespaces PCB-Stackup mit vier Lagen: Top (L1), Inner 1 (L2), Inner 2 (L3), Bottom (L4)}}{38}{figure.caption.58}%
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Optimale Power-Plane-Auslegung laut AN5407}}{39}{figure.caption.59}%
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Impedanzberechnung in KiCad}}{40}{figure.caption.61}%
+\contentsline {figure}{\numberline {3.21}{\ignorespaces Layout-Richtlinien für impedanzkontrollierte Leiterbahnen}}{41}{figure.caption.62}%
+\contentsline {figure}{\numberline {3.22}{\ignorespaces 2D-Ansicht der fertigen Leiterplatte}}{42}{figure.caption.64}%
+\contentsline {figure}{\numberline {3.23}{\ignorespaces 3D-Ansichten der fertigen PCB}}{43}{figure.caption.65}%
+\contentsline {figure}{\numberline {3.24}{\ignorespaces Hierarchische Baumstruktur des beispielhaften Devicetrees.}}{47}{figure.caption.68}%
+\contentsline {figure}{\numberline {3.25}{\ignorespaces Registrierung eines neuen Endgeräts im LoRaWAN-Netzwerk bei The Things Network}}{49}{figure.caption.71}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Übersicht TTN-Gateways in Berlin}}{55}{figure.caption.76}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Rasterkarte Berlins}}{57}{figure.caption.78}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Sichtbarkeitsanalyse für die vier ausgewählten Gateways}}{58}{figure.caption.79}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Endgültige Routen für Feldtests}}{60}{figure.caption.80}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Übersicht TTN-Gateways in Berlin}}{53}{figure.caption.72}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Rasterkarte Berlins}}{55}{figure.caption.74}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Sichtbarkeitsanalyse für die vier ausgewählten Gateways}}{56}{figure.caption.75}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Endgültige Routen für Feldtests}}{58}{figure.caption.76}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Screenshot von TTN-Konsole nach erfolgreichem Join-Request}}{61}{figure.caption.81}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Ergebnisse der Netzabdeckungsanalyse in Berlin.}}{62}{figure.caption.82}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Netzabdeckungsanalyse in Steglitz und Tempelhof.}}{63}{figure.caption.83}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Netzabdeckungsanalyse in Mitte}}{64}{figure.caption.84}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Screenshot von TTN-Konsole nach erfolgreichem Join-Request}}{59}{figure.caption.77}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Ergebnisse der Netzabdeckungsanalyse in Berlin.}}{60}{figure.caption.78}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Netzabdeckungsanalyse in Steglitz und Tempelhof.}}{61}{figure.caption.79}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Netzabdeckungsanalyse in Mitte}}{62}{figure.caption.80}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

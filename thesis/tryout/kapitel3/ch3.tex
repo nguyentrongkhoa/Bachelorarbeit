@@ -439,56 +439,6 @@ des STM32WL55CCUx (256\,kB) nicht ausreicht, um gleichzeitig die laufende
 Firmware und ein neu empfangenes Firmware"=Image vorzuhalten, übernimmt
 der externe W25Q16JVSS (2\,MB) die Rolle eines Zwischenspeichers.
 
-% ─── Blinky-LED und MCO ───────────────────────────────────────────────────────
-\subsubsection{Status-LED}
-\label{subsubsec:led-mco}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{kapitel3/pictures/blinky.png}
-    \caption{Status-LED}
-    \label{fig:blinky}
-\end{figure}
-
-Eine Status"=LED D3 (\textit{blinky}) ist über den Vorwiderstand R30
-(\qty{1}{\kilo\ohm}) an den GPIO"=Pin PA0 angebunden. Sie dient beim ersten 
-Prototypen hauptsächlich der schnellen Überprüfung des Flashprozesses: nach Erhalt
-der PCBs wird ein einfaches blinky-Programm in die MCU eingeschleust, das die LED in 
-einem festen Intervall blinken lässt. Ist dies erst erfolgreich, kann die eigentliche Firmware-Entwicklung mit der 
-Sensoranbindung und LoRaWAN"=Funktionalität implementiert werden.
-
-% ─── Zusammenfassung ──────────────────────────────────────────────────────────
-\subsubsection{Zusammenfassung der Signalnetze}
-\label{subsubsec:netze-zusammenfassung}
-
-Tabelle~\ref{tab:mcu_netze} gibt einen Überblick über die wichtigsten
-Signalnetze, die die MCU"=Teilschaltung mit den übrigen Teilschaltungen
-des Prototyps verbinden.
-
-\begin{table}[H]
-    \centering
-    \caption{Externe Signalnetze der MCU-Teilschaltung}
-    \label{tab:mcu_netze}
-    \begin{tabularx}{\textwidth}{l l X}
-        \toprule
-        \textbf{Signal} & \textbf{Zielschaltung} & \textbf{Funktion} \\
-        \midrule
-        \texttt{LORA\_TX}       & Antenne (Sheet 5)     & Sendepfad 868\,MHz zum RF-Schalter \\
-        \texttt{LORA\_RX}       & Antenne (Sheet 5)     & Empfangspfad 868\,MHz vom RF-Schalter \\
-        \texttt{RF\_SW\_V1/V2}  & Antenne (Sheet 5)     & Steuersignale AS179-92LF RF-Schalter \\
-        \texttt{SDA1 / SCL1}    & GPS/Sensoren (Sheet 6)& I2C1-Bus (BME680, MAX17048) \\
-        \texttt{GPS\_RESET}     & GPS/Sensoren (Sheet 6)& Aktiv-Low Reset Quectel L80-R \\
-        \texttt{TX1 / RX1}      & GPS/Sensoren (Sheet 6)& UART1 zu GPS-Modul L80-R \\
-        \texttt{SCK1/MOSI1/MISO1/NSS1} & MCU-intern   & SPI1 zu Flash W25Q16JVSS \\
-        \texttt{SWDIO / SWCLK / SWO / NRST} & Prog. (Sheet 3) & SWD-Debugschnittstelle \\
-        \texttt{VCP\_TX / VCP\_RX} & Prog. (Sheet 3)    & Virtueller COM-Port (STLink V3) \\
-        \texttt{SDA\_FG / SCL\_FG (= SDA1/SCL1)} & Power (Sheet 4) & I2C1 zu Fuel Gauge MAX17048 \\
-        \texttt{\~{ALRT}}       & Power (Sheet 4)       & Low-Aktiv Interrupt MAX17048 \\
-        \texttt{\~{BATT\_CHG} / \~{BATT\_CONN}} & Power (Sheet 4) & Ladestatus BQ24074 \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
-
 \subsection{PCB-Layout}
 
 \subsubsection*{Aufbau}
