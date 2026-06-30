@@ -376,12 +376,6 @@ von 18pF.
 \subsubsection{RF-Sendepfad}
 \label{subsubsec:rf_circuitss}
 
-Sämtliche Bauteile dieser Sektion entstammen der Murata GJM15"=Serie
-(Kondensatoren) und der Murata LQW15AN"=Serie (Induktivitäten), da diese
-Komponenten im relevanten Frequenzbereich bei \SI{868}{\MHz} einen besonders
-hohen Gütefaktor ($Q > 100$) aufweisen und damit die Verluste im Anpassnetzwerk
-minimieren. % TODO:
-
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{kapitel3/pictures/tx_matching.png}
@@ -411,25 +405,15 @@ um Leistungsverlusten im aktuellen Design entgegenzuwirken.
 
 Der Empfangspfad führt vom Signal \texttt{LORA\_RX} über ein Balun"=Netzwerk
 zu den differenziellen Eingängen \texttt{RFI\_P} und \texttt{RFI\_N} des
-internen \acrshort{lna} (\acrlong{lna}). Das differentielle Eingangspaar erfordert eine Konvertierung
-des einseitigen (single"=ended) \SI{50}{\ohm}"=Signals der Antenne in ein
-symmetrisches Differenzsignal:
+internen \acrshort{lna} (\acrlong{lna}). Das single-ended \SI{50}{\ohm}"=Signals vom RF-Schalter bzw. von der Antenne 
+wird über \textbf{C26} entkoppelt und durch das Balun-Netzwerk (\textbf{C24} und \textbf{L6}) in ein symmetrisches Differentialpaar
+umgewandelt für die Eingänge \codebox{RFI\_P} und \codebox{RFI\_N}.
 
-\begin{itemize}
-    \item \textbf{C26} (3\,pF): Einkoppelkondensator am Eingang des
-    Balun"=Netzwerks. Blockiert Gleichspannung und dient als erstes
-    Anpasselement.
-    \item \textbf{L6} (10\,nH): Serien"=Induktivität im Signalpfad zu
-    \texttt{RFI\_P}. Bildet zusammen mit den Shunt"=Kapazitäten den
-    Impedanztransformator.
-    \item \textbf{C24} (4{,}7\,pF): Shunt"=Kapazität gegen Masse im
-    RFI\_P"=Pfad. Vervollständigt die Impedanztransformation zur
-    differenziellen Eingangsimpedanz des LNA.
-    \item \textbf{C23} (68\,pF): Shunt"=Kapazität im RFI\_N"=Pfad,
-    symmetrisch zur GJM15"=Kapazität im RFI\_P"=Zweig.
-    \item \textbf{L5} (10\,nH): Serien"=Induktivität im RFI\_N"=Pfad
-    zur Symmetrierung des Differenzsignals.
-\end{itemize} % TODO: think if this table is necessary
+Sämtliche RF-Bauteile dieser Sektion entstammen der Murata GJM15"=Serie
+(Kondensatoren) und der Murata LQW15AN"=Serie (Induktivitäten), da diese
+Komponenten im relevanten Frequenzbereich bei \SI{868}{\MHz} einen besonders
+hohen Gütefaktor ($Q > 100$) aufweisen und damit die Verluste im Anpassnetzwerk
+minimieren. 
 
 % ─── SMPS ────────────────────────────────────────────────────────────────────
 \subsubsection{Interner Schaltregler (SMPS)}

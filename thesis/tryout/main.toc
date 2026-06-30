@@ -35,10 +35,10 @@
 \contentsline {subsubsection}{Wichtige Teilschaltungen}{27}{section*.39}%
 \contentsline {subsubsection}{Taktversorgung}{33}{section*.47}%
 \contentsline {subsubsection}{RF-Sendepfad}{35}{section*.51}%
-\contentsline {subsubsection}{RF-Empfangspfad}{37}{section*.53}%
+\contentsline {subsubsection}{RF-Empfangspfad}{36}{section*.53}%
 \contentsline {subsubsection}{Interner Schaltregler (SMPS)}{37}{section*.55}%
 \contentsline {subsubsection}{Spannungsversorgung und Entkopplung}{38}{section*.56}%
-\contentsline {subsubsection}{Reset-Schaltung}{40}{section*.59}%
+\contentsline {subsubsection}{Reset-Schaltung}{39}{section*.59}%
 \contentsline {paragraph}{BOOT0-Konfiguration}{40}{figure.caption.62}%
 \contentsline {subsubsection}{I2C-Schnittstelle und Pullup-Beschaltung}{40}{section*.63}%
 \contentsline {subsubsection}{ESD-Schutz}{41}{section*.65}%

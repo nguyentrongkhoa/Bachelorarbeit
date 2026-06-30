@@ -21,12 +21,12 @@
 \contentsline {figure}{\numberline {3.12}{\ignorespaces Taktversorgung mit HSE}}{34}{figure.caption.48}%
 \contentsline {figure}{\numberline {3.13}{\ignorespaces Überprüfung der TCXO"=Frequenz über MCO-Ausgang}}{34}{figure.caption.49}%
 \contentsline {figure}{\numberline {3.14}{\ignorespaces Taktversorgung mit LSE}}{35}{figure.caption.50}%
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Sendeschaltung}}{36}{figure.caption.52}%
-\contentsline {figure}{\numberline {3.16}{\ignorespaces RX-Impedanzanpassung}}{37}{figure.caption.54}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Sendeschaltung}}{35}{figure.caption.52}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces RX-Impedanzanpassung}}{36}{figure.caption.54}%
 \contentsline {figure}{\numberline {3.17}{\ignorespaces Entkopplungsschema der MCU}}{38}{figure.caption.57}%
-\contentsline {figure}{\numberline {3.18}{\ignorespaces MCU-Reset-Schaltung}}{40}{figure.caption.60}%
+\contentsline {figure}{\numberline {3.18}{\ignorespaces MCU-Reset-Schaltung}}{39}{figure.caption.60}%
 \contentsline {figure}{\numberline {3.19}{\ignorespaces BOOT0-Konfiguration}}{40}{figure.caption.62}%
-\contentsline {figure}{\numberline {3.20}{\ignorespaces I2C-Schnittstelle}}{41}{figure.caption.64}%
+\contentsline {figure}{\numberline {3.20}{\ignorespaces I2C-Schnittstelle}}{40}{figure.caption.64}%
 \contentsline {figure}{\numberline {3.21}{\ignorespaces ESD-Schutz für Testheaders}}{41}{figure.caption.66}%
 \contentsline {figure}{\numberline {3.22}{\ignorespaces SPI-Flash-Speicher}}{42}{figure.caption.68}%
 \contentsline {figure}{\numberline {3.23}{\ignorespaces Status-LED}}{43}{figure.caption.70}%
