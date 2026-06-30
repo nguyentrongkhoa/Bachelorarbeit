@@ -1,9 +1,9 @@
 % =============================================================================
-% Kapitel 3: Systementwurf und Implementierung
+% Kapitel 3: Prototyp-Entwicklung
 % =============================================================================
 
-\chapter{Systementwurf und Implementierung}
-\label{chap:implementierung}
+\chapter{Prototyp-Entwicklung}
+\label{chap:prot}
 TODO:  rewrite when done
 
 Dieses Kapitel beschreibt den Entwurf und die prototypische Umsetzung des
@@ -12,13 +12,36 @@ abgeleiteten Anforderungen werden zunächst die gewählten Hardware"=Komponenten
 vorgestellt und begründet. Anschließend wird die Systemarchitektur auf Software"=Ebene
 beschrieben, bevor auf die konkrete Implementierung der Firmware, des Network"=Servers
 und der Datenvisualisierung eingegangen wird.
-
-TODO: Blockschaltbild des Gesamtsystems einfügen (Sensoreinheit → Gateway → RPi Network-Server)
  
 % -----------------------------------------------------------------------------
 \section{Hardwareauswahl}
 \label{sec:hardwareauswahl}
 % -----------------------------------------------------------------------------
+
+Die für diese Arbeit verwendete Hardware lässt sich in zwei Kategorien
+unterteilen: Komponenten, die fest in den entwickelten PCB"=Prototyp
+integriert sind, sowie externe Mess"= und Testinstrumente, die
+ausschließlich zur Verifikation und Inbetriebnahme eingesetzt werden. % TODO: replace "Mess und Test" with sth else to include STLink
+
+\subsection{PCB-Hardware}
+
+\subsection{Mess- und Testinstrurmente}
+
+Die nachfolgend aufgeführten Geräte sind nicht Bestandteil des finalen PCB-Prototyps, sondern dienten 
+ausschließlich der Inbetriebnahme, der messtechnischen Verifikation sowie der experimentellen Auswertung 
+(siehe Kapitel~\ref{chap:evaluation}).
+
+\begin{description}
+    \item[\textbf{ST-LINK V3 / V3 MINIE}:] 
+        Während der Firmware-Entwicklung auf dem Referenzboard wurde der 
+        integrierte ST-LINK V3E zur Programmierung und zum Debugging des STM32WL55 genutzt. 
+        Für die Inbetriebnahme des eigenen, dezentralen PCB-Prototyps, welcher über 
+        keinen integrierten Debugger verfügt, kam die kompakte Variante ST-LINK V3 MINIE 
+        über eine externe SWD-Schnittstelle zum Einsatz.
+    \item[\textbf{Nordic Power Profiler Kit II (PPK2)}:] Dieses Messgerät erlaubt eine hochauflösende Strommessung im Bereich von \qty{100}{\nano\ampere} bis \qty{1}{\ampere} zur experimentellen Verifikation des rechnerischen Energiebudgets (vgl. Anforderungen \texttt{[HW-003]} und \texttt{[HW-004]}). In Reihe zwischen Spannungsquelle und Prüfling geschaltet, erfasst der PPK2 das transiente Stromprofil über die Zeit, wodurch Schlafphasen und Sendezyklen quantifizierbar werden.
+    
+    \item[\textbf{RTL-SDR V3 (Software Defined Radio)}:] Zur unabhängigen Verifikation der Luftschnittstelle wurde dieser SDR-Empfänger in Kombination mit GNU Radio eingesetzt. Über das Plugin \texttt{gr-lora} können die emittierten LoRa-Signale direkt auf physikalischer Ebene demoduliert und dekodiert werden, wodurch funktionale Tests ohne die primäre Gateway-Infrastruktur möglich sind.
+\end{description}
 
 \subsection*{Mikrokontroller}
 \label{subsec:mcu}
@@ -57,9 +80,6 @@ Wichtige Eigenschaften des STM32WL55 für dieses Projekt lassen sich dem Datenbl
     einen integrierten Debugger und Programmer, sodass kein separates
     Programmiergerät erforderlich ist.
 \end{itemize}
-
-\paragraph{Gateway}
-TODO: write sth about DIY RPi as Gateway
 
 \paragraph{Messinstrument}
 
