@@ -25,8 +25,8 @@
 \contentsline {chapter}{\numberline {3}Prototyp-Entwicklung}{21}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Hardwareauswahl}{21}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}PCB-Hardware}{21}{subsection.3.1.1}%
-\contentsline {paragraph}{Mikrokontroller}{21}{section*.30}%
-\contentsline {paragraph}{Sensorik}{22}{section*.31}%
+\contentsline {subsubsection}{Mikrokontroller}{21}{section*.30}%
+\contentsline {subsubsection}{Sensorik}{22}{section*.31}%
 \contentsline {subsection}{\numberline {3.1.2}Externe Hardware}{22}{subsection.3.1.2}%
 \contentsline {section}{\numberline {3.2}Proof-of-Concept}{22}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Hardware-Entwicklung}{26}{section.3.3}%

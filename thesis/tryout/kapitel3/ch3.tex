@@ -16,27 +16,27 @@ sowie externe Hardware, die dem Programmieren, Messen oder Testen dienen.
 
 \subsection{PCB-Hardware} % TODO: maybe add antenna
 
-\paragraph{Mikrokontroller}
+\subsubsection{Mikrokontroller}
 
 Bei der MCU-Auswahl wurde für den STM32WL55 von ST Microelectronics entschieden, welcher für das Projekt gewünschte 
 Eigenschaften besitzt:
 
 \begin{description}[leftmargin=*, widest=\textbf{Niedriger Energieverbrauch:}, nosep]
-    \item[\textbf{Niedriger Energieverbrauch:}] 
+    \item[Niedriger Energieverbrauch:] 
         Im \emph{Deep-Stop}-Modus beträgt Strombedarf lediglich \qty{1{,}08}{\micro\ampere}, 
         was sich ideal für langfristige Off-Grid-Einsätze eignet. 
         Im RX- und TX-Modus (bei einer Sendeleistung von \qty{14}{dBm}) werden jeweils ca. \qty{5}{mA} und \qty{21}{mA} benötigt.
-    \item[\textbf{Kleiner Footprint:}] 
+    \item[Kleiner Footprint:] 
         Der STM32WL55 weist einen minimalen Footprint auf, da das Funkmodul bereits in den Chip eingebaut ist. Andere 
         beliebte Optionen auf dem Markt (wie bswp. MCUs der NRF52-Reihe von Nordic) müssen zusätzlich mit einem
         LoRa-Chip (wie bspw. SX1262 oder SX1272 von Semtech) auf dem PCB verdrahtet werden.
-    \item[\textbf{Zephyr-Unterstützung:}] 
-        Der STM32WL55 sowie das zugehörige Evaluierungsboard NUCLEO\_WL55JC werden offiziell durch das Echtzeitbetriebssystem 
+    \item[Zephyr-Unterstützung:] 
+        Der STM32WL55 sowie das zugehörige Nucleo-WL55JC werden offiziell durch das Echtzeitbetriebssystem 
         Zephyr unterstützt. Die von Zephyr zur Verfügung gestellten Beispielcodes helfen, die Firmware-Entwicklungszeit
         zu reduzieren. Die Wahl für Zephyr wird im Unterkapitel \ref{subsec:whyzephyr} begründet. 
 \end{description}
 
-\paragraph{Sensorik}
+\subsubsection{Sensorik}
 
 Zur Erfassung der relevanten Umweltparameter werden die Sensoren BME680 und BMV080 von 
 Bosch Sensortec verwendet. Der Umweltsensor BME680 fungiert als kombiniertes Messsystem, das die Umgebungstemperatur, 
@@ -445,14 +445,14 @@ der externe W25Q16JVSS (2\,MB) die Rolle eines Zwischenspeichers.
 
 Für das Design wurde ein \textit{4-Layer-Stackup} (vierlagige Leiterplatte) gewählt. Die zwei geläufigsten Anordnungen bei diesem 
 Aufbau sind SGN-GND-GND-SGN und SGN-GND-PWR-SGN, und es wurde für das Letztere entschieden aus persönlichem Vorzug. Die vier
-Lagen haben folgende Funktionen:
+Layers haben folgende Funktionen:
 
-\begin{itemize}
+\begin{description}[leftmargin=*, widest=\textbf{Bottom Layer (L4)}, nosep]
     \item \textbf{Top Layer (L1):} Platzierung der Bauteile und primäre Signalleitungen (inklusive der \acrshort{hf}-Leitungen)
     \item \textbf{Inner Layer 1 (L2):} Durchgehende Massenfläche (Ground Plane) als Potenzial
     \item \textbf{Inner Layer 2 (L3):} Stromversorgungsbussysteme (Power Plane) zur niederimpedanten Verteilung der Betriebsspannung (3,3V).
     \item \textbf{Bottom Layer (L4):} Sekundäre Signalleitungen 
-\end{itemize}
+\end{description}
 
 \begin{figure}[H]
     \centering
