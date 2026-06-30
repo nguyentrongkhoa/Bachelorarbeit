@@ -52,7 +52,6 @@ die relative Luftfeuchtigkeit, den Luftdruck sowie die Konzentration flüchtiger
 in der Luft ermittelt. Da der BME680 nicht Feinstaubpartikelmessungen (PM2.5 oder PM10) fähig ist, ist eine
 Ergänzung um den BMV080 sinnvoll. Die Kombination beider Sensoren ermöglicht es, ein umfassendes Bild der atmosphärischen 
 Bedingungen im Zielgebiet zu zeichnen. % TODO: check that BME680 and BMV080 are not explained again in hardware-entwicklung part
-% TODO: maybe GPS
 
 \subsection{Externe Hardware}
 
@@ -69,7 +68,7 @@ Bedingungen im Zielgebiet zu zeichnen. % TODO: check that BME680 and BMV080 are 
         LoRa"=Endgerät oder ein Gateway als Referenzempfänger benötigt wird.
 \end{description}
 
-\section{Proof-of-Concept} % TODO: maybe PoC auf Basis des DevBoards or sth like that
+\section{Proof-of-Concept} 
 
 Bevor mit der tatsächlichen Entwicklung begonnen werden kann, wird in diesem Abschnitt ein Proof-of-Concept
 auf Basis der angeschafften Hardware durchgeführt. Ziel ist es, mit dem STM32WL55-Nucleo einfache Daten
@@ -99,10 +98,11 @@ $\ell = \frac{\lambda}{4} = \frac{c}{4f} = \frac{\SI{3e8}{\m\per\s}}{4 \cdot \SI
     \label{fig:868MHz_dipole}
 \end{figure}
 
-% TODO: show lora param from sample code
-Abbildung \ref{fig:zephyr_lora_send_sdrsharp} zeigt das Frequenzspektrum um \SI{865,1}{\MHz} beim erfolgreichen Empfangen in SDR\#. 
-Es lässt sich erkennen, dass die meiste Energie im Bereich \SI{865,1}{\MHz}$\pm \frac{\text{BW}}{2}$ ist. Aufgrund dessen,
-dass SDR\# LoRa-Pakete nicht dekodieren kann, wird ein weiterer Test in GNU-Radio benötigt. 
+Zur Visualisierung die RTL-SDR-kompatible Software SDR\# verwendet.
+Abbildung \ref{fig:zephyr_lora_send_sdrsharp} zeigt das Spektrum um die Betriebsfrequenz nach Ausführen des Codes. 
+Die breitbändige Verteilung, die die \acrshort{css}"=Modulation auszeichnet, lässt sich hier wiedererkennen. 
+Daraus kann schlussfolgert werden, dass in der richtigen Frequenz gesendet wurde. Im Anschluss erfolgt die Nachrichtendekodierung
+in GNU-Radio. 
 
 \begin{figure}[H]
     \centering
