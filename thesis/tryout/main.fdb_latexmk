@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1782818027.55338 -1
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1782818778.90505 -1
   "LoRa.bib" 1782731334.39988 62806 8c993fc97060999070cc189d931f3d78 ""
-  "main.bcf" 1782818026.76313 108494 fa89822718477fd395dc031f189e538d "pdflatex"
+  "main.bcf" 1782818778.06476 108494 fa89822718477fd395dc031f189e538d "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1782817997.92916 "/home/tom/zephyrproject/descap_lorawan/thesis/tryout/main.tex" "main.pdf" "main" 1782818027.55507 0
+["pdflatex"] 1782818750.01776 "/home/tom/zephyrproject/descap_lorawan/thesis/tryout/main.tex" "main.pdf" "main" 1782818778.90642 0
   "/etc/texmf/web2c/texmf.cnf" 1773605240.045 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/tom/zephyrproject/descap_lorawan/thesis/tryout/main.tex" 1782800802.29805 4487 1c2895adca4b8b75f1362b02718358ff ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -411,7 +411,7 @@
   "kapitel1/pictures/class_b.png" 1782761650.56173 33136 eda0160f43cb0157050b39c77a08c2d1 ""
   "kapitel1/pictures/lorawan_arch.png" 1782756095.57347 498913 deed962f9a767a35943c947538416841 ""
   "kapitel2/ch2.tex" 1774705914.81908 14704 c2cc8b7ff5433632380c003224d3e24c ""
-  "kapitel3/ch3.tex" 1782817954.97183 68438 cee31f74eca669bc574b83933de0e073 ""
+  "kapitel3/ch3.tex" 1782818717.4771 68503 7900c6d0baf3eb04fe72275573f86a83 ""
   "kapitel3/pictures/3d_bottom.png" 1779646715.30199 57440 d92bf510684242bf7e05ff367c46547d ""
   "kapitel3/pictures/3d_top.png" 1779646674.14452 63880 ed95869779f927a0bb9ef9b2b1a65891 ""
   "kapitel3/pictures/868MHz_Dipole.jpeg" 1775102805.82105 169974 f2a22280bcd6f9d7a1042cc5df5485f9 ""
@@ -459,17 +459,17 @@
   "kapitel5/pictures/steglitz-tempelhof_coverage.pdf" 1782634639.88683 4019115 581841ee93dd8ae2a25f5d46b74f9018 ""
   "kapitel5/pictures/ttn_first_test.png" 1781256038.27255 266215 5be134afddba29620f4b102c512e078b ""
   "main.acr" 1774707137.60362 4447 67daa0e4453a5d97077be8460fa38d6d ""
-  "main.aux" 1782818026.72503 34117 e8a831bef924a8b7f686eed7fa0f14f5 "pdflatex"
+  "main.aux" 1782818778.0305 34117 4144448a916a8c87c7b26e632c090b57 "pdflatex"
   "main.bbl" 1782801318.16232 17023 8f44018cede84fa3b921cb5c5ba5ccb9 "biber main"
-  "main.cb" 1782818002.49243 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.cb2" 1782818002.48399 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.cb" 1782818754.61442 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.cb2" 1782818754.61019 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   "main.gls" 1774707137.13292 6 9f404503043ec80c08484be9f659189e ""
-  "main.glsdefs" 1782818026.7208 39450 1a2e3618021c708f8e08138d79e3e0f4 "pdflatex"
-  "main.lof" 1782818026.76736 5238 2a55dfefc2170fe41a901e1197d12143 "pdflatex"
-  "main.out" 1782818026.74196 10176 17b36ad837cc0dfd1cfa3198702d5328 "pdflatex"
-  "main.run.xml" 1782818026.76313 2426 93fe141410a974fef8dc2475c7eede99 "pdflatex"
+  "main.glsdefs" 1782818778.02621 39450 1a2e3618021c708f8e08138d79e3e0f4 "pdflatex"
+  "main.lof" 1782818778.06905 5238 2a55dfefc2170fe41a901e1197d12143 "pdflatex"
+  "main.out" 1782818778.04763 10176 17b36ad837cc0dfd1cfa3198702d5328 "pdflatex"
+  "main.run.xml" 1782818778.06905 2426 93fe141410a974fef8dc2475c7eede99 "pdflatex"
   "main.tex" 1782800802.29805 4487 1c2895adca4b8b75f1362b02718358ff ""
-  "main.toc" 1782818026.76736 6625 cca05ea644b02f769ae686e921069bea "pdflatex"
+  "main.toc" 1782818778.06905 6625 cca05ea644b02f769ae686e921069bea "pdflatex"
   "personalMacros.tex" 1771675946.07852 150 6e250442b75bf14149b4086972af6b8f ""
   "titelseiten.tex" 1774421168.87594 5629 778ebfa1edacbbdb516303546c18ae11 ""
   (generated)

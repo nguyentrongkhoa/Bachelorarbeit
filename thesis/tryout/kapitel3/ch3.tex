@@ -99,6 +99,7 @@ $\ell = \frac{\lambda}{4} = \frac{c}{4f} = \frac{\SI{3e8}{\m\per\s}}{4 \cdot \SI
     \label{fig:868MHz_dipole}
 \end{figure}
 
+% TODO: show lora param from sample code
 Abbildung \ref{fig:zephyr_lora_send_sdrsharp} zeigt das Frequenzspektrum um \SI{865,1}{\MHz} beim erfolgreichen Empfangen in SDR\#. 
 Es lässt sich erkennen, dass die meiste Energie im Bereich \SI{865,1}{\MHz}$\pm \frac{\text{BW}}{2}$ ist. Aufgrund dessen,
 dass SDR\# LoRa-Pakete nicht dekodieren kann, wird ein weiterer Test in GNU-Radio benötigt. 
@@ -110,13 +111,9 @@ dass SDR\# LoRa-Pakete nicht dekodieren kann, wird ein weiterer Test in GNU-Radi
     \label{fig:zephyr_lora_send_sdrsharp}
 \end{figure}
 
-GNU-Radio ist eine Open-Source=Software für die Entwicklung von \acrshort{sdr}=Anwendungen. Die \acrshort{gui} ähnelt der von 
-Simulinks und basiert auf einem Blockdiagramm, in dem die Blöcke die Signalverarbeitungsschritte darstellen. Ein primitives 
-Flussdiagramm wie in Abbildung \ref{fig:zephyr_lora_send_gnuradio} ist schon ausreichend. Es beginnt mit einem \texttt{RTL-SDR Source} 
-Block, der die Rohdaten vom Empfänger liest und verstärkt. Anschließend werden die Daten durch einen \texttt{LoRa-Rx}-Block 
-geführt, welcher die LoRa-Pakete demoduliert und dekodiert. Die LoRa-Blöcke kommen nicht vorinstalliert mit GNU-Radio und müssen 
-über das Erweiterungsmodul \texttt{gr-lora} (entwickelt von \citeauthor{tapparelOpenSourceLoRaPhysical2020}) eingebunden werden.
-Die dekodierten Payloads werden im Terminal ausgegeben (Abbildung \ref{fig:zephyr_lora_send_gnuradio_result})
+GNU-Radio ist eine Open-Source=Software für die Entwicklung von \acrshort{sdr}=Anwendungen. Die \acrshort{gui} basiert, ähnlich wie 
+Simulinks, einem Blockdiagramm, in dem die Blöcke die Signalverarbeitungsschritte darstellen. Mit einem einfachen
+Diagramm wie in Abbildung \ref{fig:zephyr_lora_send_gnuradio} können LoRa-Daten schon sichtbar gemacht werden. 
 
 \begin{figure}[H]
     \centering
@@ -124,6 +121,12 @@ Die dekodierten Payloads werden im Terminal ausgegeben (Abbildung \ref{fig:zephy
     \caption{Blockdiagramm zum Empfangen von LoRa-Testpaketen in GNU-Radio}
     \label{fig:zephyr_lora_send_gnuradio}
 \end{figure}
+
+Alles beginnt mit einem \codebox{RTL-SDR Source} 
+Block, der die Rohdaten vom Empfänger liest und verstärkt. Anschließend werden die Daten durch einen \texttt{LoRa-Rx}-Block 
+geführt, welcher die LoRa-Pakete demoduliert und dekodiert. Die LoRa-Blöcke kommen nicht vorinstalliert mit GNU-Radio und müssen 
+über das Erweiterungsmodul \codebox{gr-lora} (entwickelt von \citeauthor{tapparelOpenSourceLoRaPhysical2020}) eingebunden werden.
+Die dekodierten Payloads werden im Terminal ausgegeben (Abbildung \ref{fig:zephyr_lora_send_gnuradio_result})
 
 \begin{figure}[H]
     \centering
