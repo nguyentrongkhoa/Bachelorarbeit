@@ -447,11 +447,11 @@ Für das Design wurde ein \textit{4-Layer-Stackup} (vierlagige Leiterplatte) gew
 Aufbau sind SGN-GND-GND-SGN und SGN-GND-PWR-SGN, und es wurde für das Letztere entschieden aus persönlichem Vorzug. Die vier
 Layers haben folgende Funktionen:
 
-\begin{description}[leftmargin=*, widest=\textbf{Bottom Layer (L4)}, nosep]
-    \item \textbf{Top Layer (L1):} Platzierung der Bauteile und primäre Signalleitungen (inklusive der \acrshort{hf}-Leitungen)
-    \item \textbf{Inner Layer 1 (L2):} Durchgehende Massenfläche (Ground Plane) als Potenzial
-    \item \textbf{Inner Layer 2 (L3):} Stromversorgungsbussysteme (Power Plane) zur niederimpedanten Verteilung der Betriebsspannung (3,3V).
-    \item \textbf{Bottom Layer (L4):} Sekundäre Signalleitungen 
+\begin{description}[leftmargin=*, widest={\textbf{Inner Layer 2 (L3):}}, nosep]
+    \item[\textbf{Top Layer (L1):}] Platzierung der Bauteile und primäre Signalleitungen (inklusive der \acrshort{hf}-Leitungen).
+    \item[\textbf{Inner Layer 1 (L2):}] Durchgehende Massenfläche (Ground Plane) als Bezugspotenzial.
+    \item[\textbf{Inner Layer 2 (L3):}] Stromversorgungsbussysteme (Power Plane) zur niederimpedanten Verteilung der Betriebsspannung (\qty{3{,}3}{V}).
+    \item[\textbf{Bottom Layer (L4):}] Sekundäre Signalleitungen.
 \end{description}
 
 \begin{figure}[H]
