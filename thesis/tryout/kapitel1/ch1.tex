@@ -404,12 +404,12 @@ Nach erfolgreicher Verifikation leitet der JS die Sitzungsschlüssel (\acrshort{
 Der Netzwerksitzungsschlüssel (\acrshort{NwkSKey}) wird an den Network-Server übermittelt, während der AppSKey
 an den Application-Server weitergeleitet wird. Diese Trennung gewährleistet die Vertraulichkeit der 
 Anwendungsdaten auf Netzwerkesbene. Mit dem Empfang des \emph{Join-Accepts} durch das Endgerät gilt 
-die Aktivierung als abgeschlossen.
+die Aktivierung als abgeschlossen. % TODO: briefly applicatino server
 
 \subsubsection*{Aktivierungsverfahren: OTAA und ABP}
 \label{subsec:aktivierung}
 
-Zur Endgerätaktivierung werden zwei Methoden unterschieden: \acrfull{otaa} und \acrfull{abp}.
+Zur Endgeräteaktivierung werden zwei Methoden unterschieden: \acrfull{otaa} und \acrfull{abp}.
 
 Bei OTAA initiiert das Gerät beim ersten Start eine \textit{Join Request}, die sowohl seine \acrshort{DevEUI}
 als auch die Join-EUI des Join-Servers enthält. Zusätzlich wird noch eine DevNonce übermittelt, die bei jeder Anfrage
@@ -417,14 +417,12 @@ inkrementiert werden soll, andernfalls würde der die Aktivierung verweigert. Be
 Join-Server eine \textit{Join Accept} und stellt dabei die notwendigen Sitzungsschlüssel, \acrfull{NwkSKey} und \acrfull{AppSKey}, bereit.
 Das Gerät bekommt außerdem eine eindeutige \acrfull{DevAddr} vom Network-Server zugewiesen. Die LoRa-Alliance empfiehlt
 OTAA als bevorzugtes Aktivierungsverfahren, da die dynamische Ableitung von Sitzungsschlüsseln für Sicherheit sorgt. 
-% TODO: add pic illustrating OTAA
 
 Im Gegensatz zu OTAA werden bei \acrshort{abp} alle benötigten Parameter (\acrshort{DevEUI}, \acrshort{DevAddr} und Sitzungsschlüssel)
 vorab im Gerät fest einprogrammiert. Das Gerät kann sofort ohne Join"=Prozedur senden. Dieses Verfahren ist einfacher zu implementieren, 
 allerdings dafür weniger flexibel und gilt sicherheitstechnisch als suboptimal. Wenn beispielsweise ein Gerät kompromittiert wird, 
 können die fest eingebauten Schlüssel nicht mehr geändert werden, was zu einem dauerhaften Sicherheitsrisiko führt.
 
-% Format : \newacronym{label}{abbreviation}{full term}
 % TODO: remember to run makeglossaries main 
 \newacronym{lora}{LoRa}{Long Range}
 \newacronym{lorawan}{LoRaWAN}{Long-Range Wide-Area-Network}
