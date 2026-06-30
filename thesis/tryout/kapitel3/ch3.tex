@@ -25,6 +25,26 @@ ausschließlich zur Verifikation und Inbetriebnahme eingesetzt werden. % TODO: r
 
 \subsection{PCB-Hardware}
 
+\paragraph{Mikrokontroller}
+
+Bei der MCU-Auswahl wurde für den STM32WL55 von ST Microelectronics entschieden, welcher für das Projekt gewünschte 
+Eigenschaften besitzt:
+
+\begin{description}[leftmargin=*, widest=\textbf{Niedriger Energieverbrauch:}, nosep]
+    \item[\textbf{Niedriger Energieverbrauch:}] 
+        Im \emph{Deep-Stop}-Modus beträgt Strombedarf lediglich \qty{1{,}08}{\micro\ampere}, 
+        was sich ideal für langfristige Off-Grid-Einsätze eignet. 
+        Im RX- und TX-Modus (bei einer Sendeleistung von \qty{14}{dBm}) werden jeweils ca. \qty{5}{mA} und \qty{21}{mA} benötigt.
+    \item[\textbf{Kleiner Footprint:}] 
+        Der STM32WL55 weist einen minimalen Footprint auf, da das Funkmodul bereits in den Chip eingebaut ist. Andere 
+        beliebte Optionen auf dem Markt (wie bswp. MCUs der NRF52-Reihe von Nordic) müssen zusätzlich mit einem
+        LoRa-Chip (wie bspw. SX1262 oder SX1272 von Semtech) auf dem PCB verdrahtet werden.
+    \item[\textbf{Zephyr-Unterstützung:}] 
+        Der STM32WL55 sowie das zugehörige Evaluierungsboard NUCLEO\_WL55JC werden offiziell durch das Echtzeitbetriebssystem 
+        Zephyr unterstützt. Die von Zephyr zur Verfügung gestellten Beispielcodes helfen, die Firmware-Entwicklungszeit
+        zu reduzieren. Die Wahl für Zephyr wird im Unterkapitel \ref{subsec:whyzephyr} begründet. 
+\end{description}
+
 \subsection{Mess- und Testinstrurmente}
 
 \begin{description}[leftmargin=*, widest=\textbf{RTL-SDR V3}, nosep]
@@ -39,61 +59,6 @@ ausschließlich zur Verifikation und Inbetriebnahme eingesetzt werden. % TODO: r
         GNU-Radio und dem Plugin \codebox{gr-lora} LoRa"=Pakete demodulieren und dekodieren, ohne dass ein zweites
         LoRa"=Endgerät oder ein Gateway als Referenzempfänger benötigt wird.
 \end{description}
-
-\subsection*{Mikrokontroller}
-\label{subsec:mcu}
-
-\paragraph{Mikrokontroller}
-
-Für die Sensoreinheit wird der \textbf{STM32WL55CC} von STMicroelectronics
-eingesetzt, der auf dem Entwicklungsboard \textbf{NUCLEO"=WL55JC1} verfügbar
-ist. Der STM32WL55 ist der erste am Markt verfügbare \acrfull{soc},
-der einen ARM Cortex"=M4"=Applikationsprozessor, einen ARM Cortex"=M0+ für
-den LoRa"=Stack sowie einen integrierten Sub"=GHz"=Transceiver (SX126x"=kompatibel)
-auf einer einzigen Siliziumfläche vereint. Dadurch werden der Platzbedarf, Kostenpunkt und potenzielle
-Fehlerquellen an der Schnittstelle zwischen MCU und Funkmodul verringert.
-
-Wichtige Eigenschaften des STM32WL55 für dieses Projekt lassen sich dem Datenblatt entnehmen:
-
-\begin{itemize}
-    \item \textbf{Integrierter Sub"=GHz"=Transceiver:} Unterstützt LoRa (CSS),
-    \acrshort{fsk} und \acrshort{bpsk} im Frequenzbereich 150--960\,MHz,
-    damit nativ kompatibel mit dem europäischen \SI{868}{\MHz}"=Band.
-
-    \item \textbf{Sendeleistung:} bis zu \SI{22}{dBm} bei
-    $V_\text{DDPA} = \SI{3{,}3}{\V}$, was in Kombination mit SF12
-    Reichweiten von mehreren Kilometern im Freifeld ermöglicht. Es ist jedoch Vorsicht geboten,
-    dass in Europa die Sendeleistung auf \SI{14}{dBm} begrenzt ist. 
-
-    \item \textbf{Energieprofil:} Im Deep"=Stop"=Modus beträgt die
-    Stromaufnahme lediglich \SI{1{,}08}{\micro\ampere}, was einen
-    mehrschichtigen Betrieb auf Primärzellen ermöglicht.
-
-    \item \textbf{Zephyr-Support:} Das Board \texttt{nucleo\_wl55jc}
-    ist offiziell von Zephyr-\acrshort{rtos} unterstützt und begünstigt demgemäß die 
-    Firmware-Entwicklung mit dem integrierten LoRaWAN"=Stack.
-
-    \item \textbf{Integrierter ST"=LINK V3E:} Das NUCLEO"=Board enthält
-    einen integrierten Debugger und Programmer, sodass kein separates
-    Programmiergerät erforderlich ist.
-\end{itemize}
-
-\paragraph{Messinstrument}
-
-Der \textbf{Nordic Power Profiler Kit~II (PPK2)} ermöglicht eine
-hochauflösende Strommessung im Bereich von \SI{100}{\nano\ampere} bis
-\SI{1}{\ampere} und dient damit der Verifikation der
-theoretischen Energiebudgetberechnungen. Er wird zwischen Spannungsquelle
-und NUCLEO"=Board geschaltet und zeichnet das Stromprofil über die Zeit auf,
-sodass Schlafphasen, Aufwachvorgänge und Sendepulse direkt sichtbar werden.
-
-\paragraph{Radioempfänger}
-
-Der \textbf{RTL-SDR V3} ist ein kostengünstiger \acrfull{sdr}"=Empfänger,
-der in Kombination mit SDR\# (Windows) oder GNU-Radio (Linux) zur Spektrumanalyse
-eingesetzt wird. Mit dem GNU-Radio"=Plugin \texttt{gr-lora}
-können LoRaWAN"=Pakete vollständig demoduliert und dekodiert
-werden, ohne dass ein zweites LoRa"=Endgerät oder gar Gateway als Empfänger erforderlich ist.
 
 \section{Erste Tests}
 
@@ -871,7 +836,8 @@ Die 5 PCBs sind etwa zwei Wochen nach Bestellungsaufgabe in Berlin eingetroffen.
 
 \section{Firmware-Entwicklung}
 
-\subsection{Wahl des Betriebssystems: Zephyr-RTOS} % TODO: remove zephyr mentions in earlier chapters
+\subsection{Wahl des Betriebssystems: Zephyr-RTOS} 
+\label{subsec:whyzephyr}
 
 Für die Implementierung der Firmware auf dem STM32WL55 wurde die Entscheidung getroffen, 
 anstelle von Bare-Metal oder \acrshort{hal}-Verwendung (Hardware Abstraction Layer von ST Microelectronics) 

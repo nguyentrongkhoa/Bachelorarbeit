@@ -25,56 +25,54 @@
 \contentsline {chapter}{\numberline {3}Prototyp-Entwicklung}{21}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Hardwareauswahl}{21}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}PCB-Hardware}{21}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Mess- und Testinstrurmente}{21}{subsection.3.1.2}%
-\contentsline {paragraph}{Mikrokontroller}{22}{section*.31}%
-\contentsline {paragraph}{Messinstrument}{22}{section*.32}%
-\contentsline {paragraph}{Radioempfänger}{23}{section*.33}%
-\contentsline {section}{\numberline {3.2}Erste Tests}{23}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Hardware-Entwicklung}{28}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Schematic und Komponentenauswahl}{28}{subsection.3.3.1}%
-\contentsline {subsubsection}{Blockschaltbild}{28}{section*.40}%
-\contentsline {subsubsection}{Wichtige Teilschaltungen}{29}{section*.42}%
-\contentsline {subsubsection}{Taktversorgung}{34}{section*.49}%
-\contentsline {subsubsection}{HF-Impedanzanpassung}{36}{section*.53}%
-\contentsline {paragraph}{Sendepfad (TX)}{37}{figure.caption.55}%
-\contentsline {paragraph}{Empfangspfad (RX)}{38}{figure.caption.57}%
-\contentsline {subsubsection}{Interner Schaltregler (SMPS)}{39}{section*.58}%
-\contentsline {subsubsection}{Spannungsversorgung und Entkopplung}{40}{section*.59}%
-\contentsline {subsubsection}{Reset-Schaltung}{41}{section*.62}%
-\contentsline {paragraph}{BOOT0-Konfiguration}{42}{figure.caption.65}%
-\contentsline {subsubsection}{I2C-Schnittstelle und Pullup-Beschaltung}{42}{section*.66}%
-\contentsline {subsubsection}{ESD-Schutz}{43}{section*.68}%
-\contentsline {subsubsection}{SPI-Flash-Speicher}{44}{section*.70}%
-\contentsline {subsubsection}{Status-LED}{45}{section*.72}%
-\contentsline {subsubsection}{Zusammenfassung der Signalnetze}{45}{section*.74}%
-\contentsline {subsection}{\numberline {3.3.2}PCB-Layout}{46}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Fertigung und Bestückung}{52}{subsection.3.3.3}%
-\contentsline {section}{\numberline {3.4}Firmware-Entwicklung}{53}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Wahl des Betriebssystems: Zephyr-RTOS}{53}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Zephyr-Architektur: Devicetree, KConfig, Treibermodelle}{54}{subsection.3.4.2}%
-\contentsline {subsubsection}{Devicetree zur Hardware-Beschreibung}{54}{section*.86}%
-\contentsline {subsubsection}{KConfig zur Software-Konfiguration}{56}{section*.88}%
-\contentsline {subsubsection}{Treibermodelle als Brücke zwischen Hardware und Software}{57}{section*.89}%
-\contentsline {subsection}{\numberline {3.4.3}LoRaWAN-Netzwerkanbindung}{57}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}Integration von Peripherien}{60}{subsection.3.4.4}%
-\contentsline {chapter}{\numberline {4}Testplanung und -durchführung}{63}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Funkabdeckungstest}{63}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Auswahl der Gateways}{63}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Routenplanung}{64}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}Zeitplanung}{67}{subsection.4.1.3}%
-\contentsline {subsection}{\numberline {4.1.4}Durchführung der Messfahrten}{67}{subsection.4.1.4}%
-\contentsline {chapter}{\numberline {5}Ergebnisse und Bewertung}{69}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Ergebnisse}{69}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Validierung der Netzwerkanbindung}{69}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Kartografische Evaluierung der TTN-Netzwerkabdeckung}{70}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Energieprofiling}{73}{subsection.5.1.3}%
-\contentsline {subsection}{\numberline {5.1.4}Fazit und Ausblick}{73}{subsection.5.1.4}%
-\contentsline {chapter}{\numberline {A}PCB-Dateien}{75}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Schematic}{75}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Layout}{82}{section.A.2}%
-\contentsline {section}{\numberline {A.3}Stückliste}{87}{section.A.3}%
-\contentsline {chapter}{\numberline {B}Firmware-Quellcode}{89}{appendix.B}%
-\contentsline {section}{\numberline {B.1}prj.conf}{89}{section.B.1}%
-\contentsline {section}{\numberline {B.2}DeviceTree-Overlay}{92}{section.B.2}%
-\contentsline {section}{\numberline {B.3}main.c}{94}{section.B.3}%
-\contentsline {chapter}{Literatur- und Quellenverzeichnis}{101}{lstnumber.-3.243}%
+\contentsline {paragraph}{Mikrokontroller}{21}{section*.30}%
+\contentsline {subsection}{\numberline {3.1.2}Mess- und Testinstrurmente}{22}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Erste Tests}{22}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Hardware-Entwicklung}{27}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Schematic und Komponentenauswahl}{27}{subsection.3.3.1}%
+\contentsline {subsubsection}{Blockschaltbild}{27}{section*.37}%
+\contentsline {subsubsection}{Wichtige Teilschaltungen}{28}{section*.39}%
+\contentsline {subsubsection}{Taktversorgung}{33}{section*.46}%
+\contentsline {subsubsection}{HF-Impedanzanpassung}{35}{section*.50}%
+\contentsline {paragraph}{Sendepfad (TX)}{36}{figure.caption.52}%
+\contentsline {paragraph}{Empfangspfad (RX)}{37}{figure.caption.54}%
+\contentsline {subsubsection}{Interner Schaltregler (SMPS)}{38}{section*.55}%
+\contentsline {subsubsection}{Spannungsversorgung und Entkopplung}{39}{section*.56}%
+\contentsline {subsubsection}{Reset-Schaltung}{40}{section*.59}%
+\contentsline {paragraph}{BOOT0-Konfiguration}{41}{figure.caption.62}%
+\contentsline {subsubsection}{I2C-Schnittstelle und Pullup-Beschaltung}{41}{section*.63}%
+\contentsline {subsubsection}{ESD-Schutz}{42}{section*.65}%
+\contentsline {subsubsection}{SPI-Flash-Speicher}{43}{section*.67}%
+\contentsline {subsubsection}{Status-LED}{44}{section*.69}%
+\contentsline {subsubsection}{Zusammenfassung der Signalnetze}{44}{section*.71}%
+\contentsline {subsection}{\numberline {3.3.2}PCB-Layout}{45}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Fertigung und Bestückung}{51}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.4}Firmware-Entwicklung}{52}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Wahl des Betriebssystems: Zephyr-RTOS}{52}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Zephyr-Architektur: Devicetree, KConfig, Treibermodelle}{53}{subsection.3.4.2}%
+\contentsline {subsubsection}{Devicetree zur Hardware-Beschreibung}{53}{section*.83}%
+\contentsline {subsubsection}{KConfig zur Software-Konfiguration}{55}{section*.85}%
+\contentsline {subsubsection}{Treibermodelle als Brücke zwischen Hardware und Software}{56}{section*.86}%
+\contentsline {subsection}{\numberline {3.4.3}LoRaWAN-Netzwerkanbindung}{56}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Integration von Peripherien}{59}{subsection.3.4.4}%
+\contentsline {chapter}{\numberline {4}Testplanung und -durchführung}{61}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Funkabdeckungstest}{61}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Auswahl der Gateways}{61}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Routenplanung}{62}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Zeitplanung}{65}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.4}Durchführung der Messfahrten}{65}{subsection.4.1.4}%
+\contentsline {chapter}{\numberline {5}Ergebnisse und Bewertung}{67}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Ergebnisse}{67}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Validierung der Netzwerkanbindung}{67}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Kartografische Evaluierung der TTN-Netzwerkabdeckung}{68}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Energieprofiling}{71}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}Fazit und Ausblick}{71}{subsection.5.1.4}%
+\contentsline {chapter}{\numberline {A}PCB-Dateien}{73}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Schematic}{73}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Layout}{80}{section.A.2}%
+\contentsline {section}{\numberline {A.3}Stückliste}{85}{section.A.3}%
+\contentsline {chapter}{\numberline {B}Firmware-Quellcode}{87}{appendix.B}%
+\contentsline {section}{\numberline {B.1}prj.conf}{87}{section.B.1}%
+\contentsline {section}{\numberline {B.2}DeviceTree-Overlay}{90}{section.B.2}%
+\contentsline {section}{\numberline {B.3}main.c}{92}{section.B.3}%
+\contentsline {chapter}{Literatur- und Quellenverzeichnis}{99}{lstnumber.-3.243}%
