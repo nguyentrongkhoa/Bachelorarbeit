@@ -27,7 +27,7 @@
 \contentsline {subsection}{\numberline {3.1.1}PCB-Hardware}{21}{subsection.3.1.1}%
 \contentsline {subsection}{\numberline {3.1.2}Mess- und Testinstrurmente}{21}{subsection.3.1.2}%
 \contentsline {paragraph}{Mikrokontroller}{22}{section*.31}%
-\contentsline {paragraph}{Messinstrument}{23}{section*.32}%
+\contentsline {paragraph}{Messinstrument}{22}{section*.32}%
 \contentsline {paragraph}{Radioempfänger}{23}{section*.33}%
 \contentsline {section}{\numberline {3.2}Erste Tests}{23}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Hardware-Entwicklung}{28}{section.3.3}%

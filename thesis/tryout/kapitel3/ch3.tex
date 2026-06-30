@@ -27,20 +27,17 @@ ausschließlich zur Verifikation und Inbetriebnahme eingesetzt werden. % TODO: r
 
 \subsection{Mess- und Testinstrurmente}
 
-Die nachfolgend aufgeführten Geräte sind nicht Bestandteil des finalen PCB-Prototyps, sondern dienten 
-ausschließlich der Inbetriebnahme, der messtechnischen Verifikation sowie der experimentellen Auswertung 
-(siehe Kapitel~\ref{chap:evaluation}).
-
-\begin{description}
-    \item[\textbf{ST-LINK V3 / V3 MINIE}:] 
-        Während der Firmware-Entwicklung auf dem Referenzboard wurde der 
-        integrierte ST-LINK V3E zur Programmierung und zum Debugging des STM32WL55 genutzt. 
-        Für die Inbetriebnahme des eigenen, dezentralen PCB-Prototyps, welcher über 
-        keinen integrierten Debugger verfügt, kam die kompakte Variante ST-LINK V3 MINIE 
-        über eine externe SWD-Schnittstelle zum Einsatz.
-    \item[\textbf{Nordic Power Profiler Kit II (PPK2)}:] Dieses Messgerät erlaubt eine hochauflösende Strommessung im Bereich von \qty{100}{\nano\ampere} bis \qty{1}{\ampere} zur experimentellen Verifikation des rechnerischen Energiebudgets (vgl. Anforderungen \texttt{[HW-003]} und \texttt{[HW-004]}). In Reihe zwischen Spannungsquelle und Prüfling geschaltet, erfasst der PPK2 das transiente Stromprofil über die Zeit, wodurch Schlafphasen und Sendezyklen quantifizierbar werden.
-    
-    \item[\textbf{RTL-SDR V3 (Software Defined Radio)}:] Zur unabhängigen Verifikation der Luftschnittstelle wurde dieser SDR-Empfänger in Kombination mit GNU Radio eingesetzt. Über das Plugin \texttt{gr-lora} können die emittierten LoRa-Signale direkt auf physikalischer Ebene demoduliert und dekodiert werden, wodurch funktionale Tests ohne die primäre Gateway-Infrastruktur möglich sind.
+\begin{description}[leftmargin=*, widest=\textbf{RTL-SDR V3}, nosep]
+    \item[\textbf{ST-LINK}:] 
+        Ein ST"=LINK V3 MINIE wurde zum Programmieren und Debuggen des MCUs auf dem zu entwickelnden PCB beschafft.
+    \item[\textbf{PPK2}:] 
+        Das Strommessgerät \textbf{P}ower \textbf{P}rofiler \textbf{K}it II von Nordic ermöglicht    
+        hochauflösende Messungen im Bereich von \qty{100}{\nano\ampere} bis \qty{1}{\ampere} und wird zur Erfassung 
+        des Stromprofils von Sensoren und dem Funkmodul auf der Platine eingesetzt. 
+    \item[\textbf{RTL-SDR V3}:] 
+        Der RTL-SDR V3 ist ein kostengünstiger \acrfull{sdr}"=Empfänger, der in Kombination mit der Linux-Software
+        GNU-Radio und dem Plugin \codebox{gr-lora} LoRa"=Pakete demodulieren und dekodieren, ohne dass ein zweites
+        LoRa"=Endgerät oder ein Gateway als Referenzempfänger benötigt wird.
 \end{description}
 
 \subsection*{Mikrokontroller}
