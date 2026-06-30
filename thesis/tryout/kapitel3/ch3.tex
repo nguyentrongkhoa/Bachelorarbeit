@@ -461,18 +461,18 @@ Layers haben folgende Funktionen:
     \label{fig:stackup}
 \end{figure}
 
-Dieser Aufbau kostet im Vergleich zu einem einfachen zweilagigen Design zwar geringfügig mehr bei JLCPCB, 
+Dieser Aufbau kostet im Vergleich zu einem einfachen zweilagigen Design zwar geringfügig mehr bei der Fertigung, 
 bietet aber entscheidende Vorteile für Hochfrequenzanwendungen. Die durchgehende Massenfläche L2 dient als Rückstrompfad für
 HF-Signale, sodass die elektrischen Feldlinien sich nicht unkontrolliert ausbreiten und andere Komponenten stören.
 Der geringe L1-L2-Abstand (0,2mm) beim 4-Layer-Stackup sorgt auch für kleinere Stromschleifen. Beim 2-Layer hingegen beträgt 
-dieser Abstand 1,5mm, dadurch würde diese SGN-GND-Schleifen in diesem Fall 7,5-mal so stark Störungen abstrahlen/empfangen.  % TODO: add pic  
+dieser Abstand 1,5mm, dadurch würde diese SGN-GND-Schleifen in diesem Fall 7,5-mal so stark Störungen abstrahlen/empfangen.  
 
-Aus Abbildung \ref{fig:stackup} ist ersichtlich, dass die Signalschichten L1 und L4 bezüglich GND (L2) asymmetrisch sind. L1
+Abbildung \ref{fig:stackup} verdeutlicht, dass die Signalschichten L1 und L4 bezüglich GND (L2) asymmetrisch sind. L1
 ist viel näher an GND und soll daher für alle empfindlichen Leitungen (dazu RF-Leiterbahnen) verwendet werden. L4 hingegen 
 ist weiter von GND entfernt und eignet sich daher für weniger kritische Signale, wie z.B. die I2C-Leitungen zu den Sensoren.
 
 Auf L3 ist die ebenfalls durchgehende 3,3V Versorgungsschicht untergebracht. Aus \acrshort{emv}-technischer Sicht ist es jedoch
-suboptimal, da an den PCB-Kanten gestrahlt werden kann. Der Anwendungshinweis AN5407 von ST empfiehlt daher, Abstand % TODO: cite page 27 of AN5407
+suboptimal, da an den PCB-Kanten gestrahlt werden kann. Die Application-Note \citeauthor{AN5407} von ST empfiehlt daher, Abstand 
 von der Power Plane zur Boardrand zu lassen und einen GND-Ring vorzusehen, welcher über Via-Stitching mit L2 verbunden werden soll 
 (Abbildung \ref{fig:power_plane})
 
@@ -483,15 +483,11 @@ von der Power Plane zur Boardrand zu lassen und einen GND-Ring vorzusehen, welch
     \label{fig:power_plane}
 \end{figure}
 
-Aufgrund dessen, dass JLCPCB eine teurere Preisklasse für Leiterplatten größer als \qty{100}{\milli\meter}x\qty{100}{\milli\meter}
-ansetzt, wurde das Design trotz der Vielzahl an Modulen möglichst kompakt gehalten. Die finalen Dimensionen betragen 
-90x100 mm.
-
 \subsubsection*{Impedanzkontrolle}
 
 Sämtliche RF-Leiterbahnen (lilafarbene Verbindungen im Schaltplan) müssen auf eine charakteristische Impedanz von \SI{50}{\ohm} ausgelegt werden, um die Leistungsverluste
 durch Signalreflexionen an den Übergängen (bswp. zur MCU oder Antenne) zu vermeiden. Die Berechnung der Leiterbahngeometrie 
-erfolgt mit einem Impedanzrechner, der die Stackup-Parameter (Lagenabstände, Dielektrizitätskonstante) 
+erfolgt mit einem Impedanzrechner, der die Stackup-Parameter (Layer-Abstände, Dielektrizitätskonstante) 
 sowie die Leiterbahnbreite und -dicke berücksichtigt.
 
 \begin{figure}[H]
@@ -505,11 +501,11 @@ KiCad verfügt über einen eingebauten Rechner und die einzutragenden Informatio
 $W=\qty{0,35}{\milli\meter}$. Leichte Abweichungen von der \qty{50}{\ohm} können allerdings entstehen aufgrund von bswp.
 mechanischen Toleranzen oder Varianz der Dielektrizitätskonstante $\epsilon_r$ des verwendeten FR4-Materials. 
 
-Impedanzkritische Verbindungen müssen knickfrei sein. KiCad stellt diverse Erweiterungen bereits, mit denen eckige
+Impedanzkritische Verbindungen müssen knickfrei sein. KiCad stellt Plugins bereits, mit denen eckige
 Übergangsstellen in Verrundungen verwandelt werden können. Problematisch bleiben allerdings die Übergänge von 
 Leiterbahnen zu Pads von SMD-Komponenten, da diese meist viel größer sind als die berechnete \qty{0,35}{\milli\meter}.
 Daher werden alle RF-SMD-Bauteile in der Größe 0402 (0,5mm Padbreite) gewählt, und die \qty{0,15}{\milli\meter} Differenz wird 
-durch ein Teardrop-Muster überbrückt werden. 
+durch ein Teardrop-Muster überbrückt. 
 
 \begin{figure}[H]
      \centering

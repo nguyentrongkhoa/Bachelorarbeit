@@ -2383,6 +2383,7 @@
     <bcf:citekey order="16" intorder="1">LoRaWanBackendInterfaces2020</bcf:citekey>
     <bcf:citekey order="17" intorder="1">tapparelOpenSourceLoRaPhysical2020</bcf:citekey>
     <bcf:citekey order="18" intorder="1">AN5457RFMatchingNetwork</bcf:citekey>
+    <bcf:citekey order="19" intorder="1">AN5407</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

@@ -1,0 +1,18 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[1] Config.pm:310> INFO - Logfile is 'main.blg'
+[243] biber:340> INFO - === Tue Jun 30, 2026, 22:48:03
+[293] Biber.pm:419> INFO - Reading 'main.bcf'
+[453] Biber.pm:979> INFO - Found 12 citekeys in bib section 0
+[493] Biber.pm:4419> INFO - Processing section 0
+[529] Biber.pm:4610> INFO - Looking for bibtex file 'LoRa.bib' for section 0
+[594] bibtex.pm:1713> INFO - LaTeX decoding ...
+[1026] bibtex.pm:1519> INFO - Found BibTeX data source 'LoRa.bib'
+[1452] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1452] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1453] Biber.pm:4239> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'de-DE'
+[1454] Biber.pm:4245> INFO - No sort tailoring available for locale 'de-DE'
+[1516] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[1543] bbl.pm:763> INFO - Output to main.bbl
+[1544] Biber.pm:131> WARN - ISBN '978-0-367-41724-6 978-0-367-71260-0' in entry 'rumbleCRCHandbookChemistry2021' is invalid - run biber with '--validate_datamodel' for details.
+[1545] Biber.pm:131> WARN - ISBN '978-0-12-818880-4 978-0-12-818881-1' in entry 'chaudhariLPWANTechnologiesIoT2020' is invalid - run biber with '--validate_datamodel' for details.
+[1546] Biber.pm:133> INFO - WARNINGS: 2

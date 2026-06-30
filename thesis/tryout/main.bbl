@@ -387,6 +387,29 @@
       \field{title}{{RF} matching network design guide for {STM32WL} {Series}}
       \field{type}{Application {Note}}
     \endentry
+    \entry{AN5407}{report}{}
+      \name{author}{1}{}{%
+        {{hash=a11eac36f911d6042c1f3178eecbe11c}{%
+           family={AN5407},
+           familyi={A\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {ST Microelectronics}%
+      }
+      \strng{namehash}{a11eac36f911d6042c1f3178eecbe11c}
+      \strng{fullhash}{a11eac36f911d6042c1f3178eecbe11c}
+      \strng{bibnamehash}{a11eac36f911d6042c1f3178eecbe11c}
+      \strng{authorbibnamehash}{a11eac36f911d6042c1f3178eecbe11c}
+      \strng{authornamehash}{a11eac36f911d6042c1f3178eecbe11c}
+      \strng{authorfullhash}{a11eac36f911d6042c1f3178eecbe11c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{number}{AN5407}
+      \field{title}{How to optimize the {RF} board layout for {STM32WL5x}/{Ex} {MCUs}}
+      \field{type}{Application {Note}}
+    \endentry
   \enddatalist
 \endrefsection
 \endinput
