@@ -41,7 +41,7 @@ Eigenschaften besitzt:
 Zur Erfassung der relevanten Umweltparameter werden die Sensoren BME680 und BMV080 von 
 Bosch Sensortec verwendet. Der Umweltsensor BME680 fungiert als kombiniertes Messsystem, das die Umgebungstemperatur, 
 die relative Luftfeuchtigkeit, den Luftdruck sowie die Konzentration flüchtiger organischer Verbindungen (VOC) 
-in der Luft ermittelt. Da der BME680 nicht Feinstaubpartikelmessungen (PM2.5 oder PM10) fähig ist, ist eine
+in der Luft ermittelt. Da der BME680 nicht Feinstaubpartikelmessungen (PM1, PM2.5 oder PM10) fähig ist, ist eine
 Ergänzung um den BMV080 sinnvoll. Die Kombination beider Sensoren ermöglicht es, ein umfassendes Bild der atmosphärischen 
 Bedingungen im Zielgebiet zu zeichnen. % TODO: check that BME680 and BMV080 are not explained again in hardware-entwicklung part
 
@@ -154,22 +154,18 @@ Der Einfachheit halber wurde für das Protokoll \acrfull{swd} entschieden, denn 
 von den Pins SWO (Serial Wire Output) sowie VCP-TX und VCP-RX  (Virtual COM Port) des STLinks Gebrauch gemacht, 
 damit Debug-Nachrichten am Rechner einsehbar sind. 
 
-Im Bereich Sensoren finden sich auf der PCB insgesamt drei. Zwei Gassensoren, nämlich BME680 und BMV080 von Bosch dienen 
-der Luftmessung und kommunizieren mit dem STM32 über einen geteilten \acrshort{i2c}-Bus. Der BME680 ermöglicht
-das Messen von Temperatur, Luftfeuchtigkeit, Luftdruck und Gaswiderstand erschließt und eignet sich demzufolge
-für allgemeine IoT-Anwendungen. Hingegen ist der BMV080 auf die Erfassung von gesundheitsschädlichenFeinstaubteilchen spezialisiert und liefert 
-aussagekräftige Informationen über die Konzentration von PM1, PM2.5 und PM10 in der Luft. Das letzte Glied des Sensortrios bildet
-das GPS-Modul L80-R von Quectel. Es hat die Aufgabe, die Reichweite der Antenne zu bereits installierten Gateways zu bestimmen, 
-indem die eigenen GPS-Koordinaten mit denen der Gateways verglichen werden. Die Datenaustausch zwischen GPS-Modul und MCU erfolgt 
-über \acrshort{uart}.
+Was Peripherien anbetrifft, kommunizieren die Sensoren BME680 und BMV080 mit dem MCU über den gemeinsamen I2C1-Bus. Es wurde
+sichergestellt, dass keine Adressenverdopplung vorkommt, obwohl die Wahrscheinlichkeit dafür sehr gering ist. Der MCU pflegt
+zusätzlich noch einen Kommunikationskanal über \acrshort{uart} mit dem GPS-Modul, dessen Verwendung in Kapitel \ref{chap:test}
+erläutert wird. 
 
 Das Projekt wird von einer LiPo-Batterie mit einer Kapazität von 1500 mAh versorgt, die über einen USB-C-Anschluss 
-aufgeladen werden kann. Für einen autarken Betrieb steht ebenfalls eine kleine Solarzelle zur Verfügung. % TODO: add pic of bat and solar
+aufgeladen werden kann. Für einen autarken Betrieb steht ebenfalls eine kleine Solarzelle zur Verfügung. 
 
 \subsubsection{Wichtige Teilschaltungen}
 
-Die vollständige Schaltung wird hier aus Platzgründen nicht aufgeführt, sondern im Anhang A. % TODO: add full schematic in appendix
-Wir werden uns in diesem Abschnitt ausschließlich den Teilschaltungen \textbf{POWER} bzw. \textbf{MCU} widmen.
+Die vollständige Schaltung wird im Anhang \ref{anhang:schematic} und nicht hier aus Platzgründen angeführt. 
+Dieser Abschnitt widmet sich ausschließlich den Teilschaltungen \textbf{POWER} sowie \textbf{MCU}.
 
 Die Versorgungsschaltung gliedert sich in drei Blöcke: Ladeblock, Energy-Harvesting aus einer Solarzelle Tracking des Batterie-SoC (state-of-charge)
 Das Laden des LiPo-Akkus erfolgt wie bereits erwähnt über einen 6-poligen USB-C-Anschluss, der an seinem Ausgangspin VBUS 5V und maximal
@@ -184,10 +180,10 @@ zu berücksichtigen.
     \label{fig:usb}
 \end{figure}
 
-Der BQ247074 liefert am Ausgang (Pin OUT) laut Datenblatt 4,2V bei vollem und 3,0V bei leerem Akku. Aus diesem Grund wird an 
-dieser Stelle zusätzlich noch ein \acrshort{ldo} eingesetzt, um die Spannung auf 3,3V zu regeln. Der Ausgang VO des LDOs versorgt 
+Der BQ247074 liefert am Ausgang (Pin OUT) laut Datenblatt 4,2V bei vollem und 3,0V bei leerem Akkustand. Aus diesem Grund wird an 
+dieser Stelle ein \acrshort{ldo} eingesetzt, um die Spannung auf 3,3V zu regeln. Der Ausgang VO des LDOs versorgt 
 das gesamte System mit Strom, einschließlich der MCU und sämtlicher Sensoren. LDOs haben gegenüber Schaltreglern den Vorteil, 
-dass sie weniger Rauschen erzeugen, was für die empfindlichen Sensoren sowie die RF-Schaltung von Vorteil ist.
+dass sie weniger Rauschen erzeugen, was für die empfindlichen Sensoren sowie die RF-Schaltung unabdingbar ist.
 
 Um die richtige Auswahl des LDOs treffen zu können, muss im Vorfeld der maximale Strombedarf des Systems grob abgeschätzt werden. 
 Die energieaufwändigsten Komponenten sind die Sensoren (samt GPS) sowie das LoRa-Funkmodul auf dem STM32WL55, insbesondere im TX-Modus.
