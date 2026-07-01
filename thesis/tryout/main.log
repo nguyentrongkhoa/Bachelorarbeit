@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.3.15)  1 JUL 2026 11:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.3.15)  1 JUL 2026 14:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1745,7 +1745,7 @@ Overfull \hbox (2.95967pt too wide) in paragraph at lines 42--43
 []\T1/LinuxLibertineT-TLF/m/n/10.95 Lizenzfreies Spek-trum: LoRaWAN-Netzwerke ver-wen-den kos-ten-freie [][]ISM[]-Frequenzbänder.
  []
 
-<kapitel1/pictures/chirps_freq.png, id=601, 1011.78pt x 325.215pt>
+<kapitel1/pictures/chirps_freq.png, id=603, 1011.78pt x 325.215pt>
 File: kapitel1/pictures/chirps_freq.png Graphic file (type png)
 <use kapitel1/pictures/chirps_freq.png>
 Package pdftex.def Info: kapitel1/pictures/chirps_freq.png  used on input line 65.
@@ -1754,7 +1754,7 @@ Package pdftex.def Info: kapitel1/pictures/chirps_freq.png  used on input line 6
 Underfull \vbox (badness 1152) has occurred while \output is active []
 
  [10]
-<kapitel1/pictures/chirps.png, id=608, 867.24pt x 325.215pt>
+<kapitel1/pictures/chirps.png, id=610, 867.24pt x 325.215pt>
 File: kapitel1/pictures/chirps.png Graphic file (type png)
 <use kapitel1/pictures/chirps.png>
 Package pdftex.def Info: kapitel1/pictures/chirps.png  used on input line 72.
@@ -1786,7 +1786,7 @@ Underfull \hbox (badness 7030) in paragraph at lines 165--165
 LaTeX Warning: Reference `subsec:pfadverlust' on page 14 undefined on input line 240.
 
 [14]
-<kapitel1/pictures/lorawan_arch.png, id=665, 3306.3525pt x 2095.83pt>
+<kapitel1/pictures/lorawan_arch.png, id=667, 3306.3525pt x 2095.83pt>
 File: kapitel1/pictures/lorawan_arch.png Graphic file (type png)
 <use kapitel1/pictures/lorawan_arch.png>
 Package pdftex.def Info: kapitel1/pictures/lorawan_arch.png  used on input line 280.
@@ -1795,7 +1795,7 @@ Package pdftex.def Info: kapitel1/pictures/lorawan_arch.png  used on input line 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [15]
-<kapitel1/pictures/class_a_ts001.png, id=672, 412.54124pt x 169.8345pt>
+<kapitel1/pictures/class_a_ts001.png, id=674, 412.54124pt x 169.8345pt>
 File: kapitel1/pictures/class_a_ts001.png Graphic file (type png)
 <use kapitel1/pictures/class_a_ts001.png>
 Package pdftex.def Info: kapitel1/pictures/class_a_ts001.png  used on input line 307.
@@ -1805,7 +1805,7 @@ Overfull \hbox (29.45732pt too wide) in paragraph at lines 312--317
 []\T1/LinuxLibertineT-TLF/m/n/10.95 Im Ver-gleich zur Klas-se A bie-tet die \T1/LinuxLibertineT-TLF/b/n/10.95 Klas-se B \T1/LinuxLibertineT-TLF/m/n/10.95 ei-ne hö-he-re Fle-xi-bi-li-tät bei der Downlink-Kommunikation,
  []
 
-<kapitel1/pictures/class_b.png, id=680, 588.39825pt x 218.0145pt>
+<kapitel1/pictures/class_b.png, id=682, 588.39825pt x 218.0145pt>
 File: kapitel1/pictures/class_b.png Graphic file (type png)
 <use kapitel1/pictures/class_b.png>
 Package pdftex.def Info: kapitel1/pictures/class_b.png  used on input line 320.
@@ -1845,28 +1845,28 @@ Overfull \hbox (7.76076pt too wide) in paragraph at lines 34--37
 [21
 
 ] [22]
-<kapitel3/pictures/zephyr_lora_send_setup.jpeg, id=734, 2007.5pt x 1129.21875pt>
+<kapitel3/pictures/zephyr_lora_send_setup.jpeg, id=736, 2007.5pt x 1129.21875pt>
 File: kapitel3/pictures/zephyr_lora_send_setup.jpeg Graphic file (type jpg)
 <use kapitel3/pictures/zephyr_lora_send_setup.jpeg>
 Package pdftex.def Info: kapitel3/pictures/zephyr_lora_send_setup.jpeg  used on input line 81.
 (pdftex.def)             Requested size: 426.79134pt x 240.07211pt.
-<kapitel3/pictures/868MHz_Dipole.jpeg, id=735, 1541.76pt x 2055.68pt>
+<kapitel3/pictures/868MHz_Dipole.jpeg, id=737, 1541.76pt x 2055.68pt>
 File: kapitel3/pictures/868MHz_Dipole.jpeg Graphic file (type jpg)
 <use kapitel3/pictures/868MHz_Dipole.jpeg>
 Package pdftex.def Info: kapitel3/pictures/868MHz_Dipole.jpeg  used on input line 88.
 (pdftex.def)             Requested size: 1541.75624pt x 2055.675pt.
  [23 <./kapitel3/pictures/zephyr_lora_send_setup.jpeg> <./kapitel3/pictures/868MHz_Dipole.jpeg>]
-<kapitel3/pictures/zephyr_lora_send_in_sdr_sharp.png, id=745, 890.1255pt x 237.88875pt>
+<kapitel3/pictures/zephyr_lora_send_in_sdr_sharp.png, id=747, 890.1255pt x 237.88875pt>
 File: kapitel3/pictures/zephyr_lora_send_in_sdr_sharp.png Graphic file (type png)
 <use kapitel3/pictures/zephyr_lora_send_in_sdr_sharp.png>
 Package pdftex.def Info: kapitel3/pictures/zephyr_lora_send_in_sdr_sharp.png  used on input line 101.
 (pdftex.def)             Requested size: 426.79134pt x 114.06187pt.
-<kapitel3/pictures/lora_send_test_gnuradio_flowgraph.png, id=749, 420.3705pt x 166.221pt>
+<kapitel3/pictures/lora_send_test_gnuradio_flowgraph.png, id=751, 420.3705pt x 166.221pt>
 File: kapitel3/pictures/lora_send_test_gnuradio_flowgraph.png Graphic file (type png)
 <use kapitel3/pictures/lora_send_test_gnuradio_flowgraph.png>
 Package pdftex.def Info: kapitel3/pictures/lora_send_test_gnuradio_flowgraph.png  used on input line 112.
 (pdftex.def)             Requested size: 426.79134pt x 168.76956pt.
-<kapitel3/pictures/lora_send_test_gnuradio_result.png, id=751, 242.70676pt x 440.24475pt>
+<kapitel3/pictures/lora_send_test_gnuradio_result.png, id=753, 242.70676pt x 440.24475pt>
 File: kapitel3/pictures/lora_send_test_gnuradio_result.png Graphic file (type png)
 <use kapitel3/pictures/lora_send_test_gnuradio_result.png>
 Package pdftex.def Info: kapitel3/pictures/lora_send_test_gnuradio_result.png  used on input line 125.
@@ -1879,13 +1879,13 @@ Overfull \hbox (16.68619pt too wide) in paragraph at lines 136--143
 \T1/LinuxLibertineT-TLF/m/n/10.95 V2 im Block-schalt-bild) kom-men von der MCU und wer-den über Pullup- so-wie Pulldown-Widerstände
  []
 
-<kapitel3/pictures/block_diag.png, id=766, 514.92375pt x 305.34074pt>
+<kapitel3/pictures/block_diag.png, id=768, 514.92375pt x 305.34074pt>
 File: kapitel3/pictures/block_diag.png Graphic file (type png)
 <use kapitel3/pictures/block_diag.png>
 Package pdftex.def Info: kapitel3/pictures/block_diag.png  used on input line 146.
 (pdftex.def)             Requested size: 426.79134pt x 253.08331pt.
 [26 <./kapitel3/pictures/block_diag.png>]
-<kapitel3/pictures/usb.png, id=779, 392.06474pt x 323.40825pt>
+<kapitel3/pictures/usb.png, id=781, 392.06474pt x 323.40825pt>
 File: kapitel3/pictures/usb.png Graphic file (type png)
 <use kapitel3/pictures/usb.png>
 Package pdftex.def Info: kapitel3/pictures/usb.png  used on input line 178.
@@ -1901,7 +1901,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 Underfull \vbox (badness 3954) has occurred while \output is active []
 
  [28 <./kapitel3/pictures/usb.png>]
-<kapitel3/pictures/solar.png, id=796, 510.10574pt x 421.575pt>
+<kapitel3/pictures/solar.png, id=798, 510.10574pt x 421.575pt>
 File: kapitel3/pictures/solar.png Graphic file (type png)
 <use kapitel3/pictures/solar.png>
 Package pdftex.def Info: kapitel3/pictures/solar.png  used on input line 230.
@@ -1910,7 +1910,7 @@ Package pdftex.def Info: kapitel3/pictures/solar.png  used on input line 230.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [29]
-<kapitel3/pictures/fg.png, id=805, 561.297pt x 304.7385pt>
+<kapitel3/pictures/fg.png, id=807, 561.297pt x 304.7385pt>
 File: kapitel3/pictures/fg.png Graphic file (type png)
 <use kapitel3/pictures/fg.png>
 Package pdftex.def Info: kapitel3/pictures/fg.png  used on input line 249.
@@ -1923,12 +1923,12 @@ Overfull \hbox (41.24432pt too wide) in paragraph at lines 262--273
  [][] 
  []
 
-<kapitel3/pictures/bga.png, id=817, 1137.24875pt x 816.04875pt>
+<kapitel3/pictures/bga.png, id=819, 1137.24875pt x 816.04875pt>
 File: kapitel3/pictures/bga.png Graphic file (type png)
 <use kapitel3/pictures/bga.png>
 Package pdftex.def Info: kapitel3/pictures/bga.png  used on input line 285.
 (pdftex.def)             Requested size: 204.85802pt x 146.9945pt.
-<kapitel3/pictures/qfn48.png, id=818, 797.98125pt x 677.53125pt>
+<kapitel3/pictures/qfn48.png, id=820, 797.98125pt x 677.53125pt>
 File: kapitel3/pictures/qfn48.png Graphic file (type png)
 <use kapitel3/pictures/qfn48.png>
 Package pdftex.def Info: kapitel3/pictures/qfn48.png  used on input line 292.
@@ -1937,7 +1937,7 @@ Package pdftex.def Info: kapitel3/pictures/qfn48.png  used on input line 292.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [31 <./kapitel3/pictures/fg.png>]
-<kapitel3/pictures/mcu_schematic.png, id=834, 645.612pt x 446.8695pt>
+<kapitel3/pictures/mcu_schematic.png, id=836, 645.612pt x 446.8695pt>
 File: kapitel3/pictures/mcu_schematic.png Graphic file (type png)
 <use kapitel3/pictures/mcu_schematic.png>
 Package pdftex.def Info: kapitel3/pictures/mcu_schematic.png  used on input line 314.
@@ -1946,7 +1946,7 @@ Package pdftex.def Info: kapitel3/pictures/mcu_schematic.png  used on input line
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [32 <./kapitel3/pictures/bga.png> <./kapitel3/pictures/qfn48.png>]
-<kapitel3/pictures/hse.png, id=849, 221.02576pt x 151.767pt>
+<kapitel3/pictures/hse.png, id=851, 221.02576pt x 151.767pt>
 File: kapitel3/pictures/hse.png Graphic file (type png)
 <use kapitel3/pictures/hse.png>
 Package pdftex.def Info: kapitel3/pictures/hse.png  used on input line 338.
@@ -1955,12 +1955,12 @@ Package pdftex.def Info: kapitel3/pictures/hse.png  used on input line 338.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [33 <./kapitel3/pictures/mcu_schematic.png>]
-<kapitel3/pictures/mco.png, id=864, 289.68225pt x 103.587pt>
+<kapitel3/pictures/mco.png, id=866, 289.68225pt x 103.587pt>
 File: kapitel3/pictures/mco.png Graphic file (type png)
 <use kapitel3/pictures/mco.png>
 Package pdftex.def Info: kapitel3/pictures/mco.png  used on input line 351.
 (pdftex.def)             Requested size: 213.39566pt x 76.31018pt.
-<kapitel3/pictures/lse.png, id=865, 221.02576pt x 181.8795pt>
+<kapitel3/pictures/lse.png, id=867, 221.02576pt x 181.8795pt>
 File: kapitel3/pictures/lse.png Graphic file (type png)
 <use kapitel3/pictures/lse.png>
 Package pdftex.def Info: kapitel3/pictures/lse.png  used on input line 363.
@@ -1969,25 +1969,25 @@ Package pdftex.def Info: kapitel3/pictures/lse.png  used on input line 363.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [34 <./kapitel3/pictures/hse.png> <./kapitel3/pictures/mco.png>]
-<kapitel3/pictures/tx_matching.png, id=872, 452.892pt x 236.082pt>
+<kapitel3/pictures/tx_matching.png, id=874, 452.892pt x 236.082pt>
 File: kapitel3/pictures/tx_matching.png Graphic file (type png)
 <use kapitel3/pictures/tx_matching.png>
 Package pdftex.def Info: kapitel3/pictures/tx_matching.png  used on input line 381.
 (pdftex.def)             Requested size: 426.79134pt x 222.48265pt.
  [35 <./kapitel3/pictures/lse.png> <./kapitel3/pictures/tx_matching.png>]
-<kapitel3/pictures/rx_matching.png, id=881, 187.902pt x 193.9245pt>
+<kapitel3/pictures/rx_matching.png, id=883, 187.902pt x 193.9245pt>
 File: kapitel3/pictures/rx_matching.png Graphic file (type png)
 <use kapitel3/pictures/rx_matching.png>
 Package pdftex.def Info: kapitel3/pictures/rx_matching.png  used on input line 401.
 (pdftex.def)             Requested size: 213.39566pt x 220.24768pt.
  [36 <./kapitel3/pictures/rx_matching.png>]
-<kapitel3/pictures/spi_flash.png, id=891, 422.17725pt x 376.40625pt>
+<kapitel3/pictures/spi_flash.png, id=893, 422.17725pt x 376.40625pt>
 File: kapitel3/pictures/spi_flash.png Graphic file (type png)
 <use kapitel3/pictures/spi_flash.png>
 Package pdftex.def Info: kapitel3/pictures/spi_flash.png  used on input line 424.
 (pdftex.def)             Requested size: 320.09349pt x 285.39972pt.
  [37 <./kapitel3/pictures/spi_flash.png>]
-<kapitel3/pictures/stackup.png, id=903, 374.39874pt x 135.50626pt>
+<kapitel3/pictures/stackup.png, id=905, 374.39874pt x 135.50626pt>
 File: kapitel3/pictures/stackup.png Graphic file (type png)
 <use kapitel3/pictures/stackup.png>
 Package pdftex.def Info: kapitel3/pictures/stackup.png  used on input line 459.
@@ -1997,13 +1997,13 @@ Overfull \hbox (14.31122pt too wide) in paragraph at lines 474--478
 []\T1/LinuxLibertineT-TLF/m/n/10.95 Auf L3 ist die eben-falls durch-ge-hen-de 3,3V Ver-sor-gungs-schicht un-ter-ge-bracht. Aus [][]EMV[]-technischer
  []
 
-<kapitel3/pictures/power_plane.png, id=907, 326.4195pt x 239.6955pt>
+<kapitel3/pictures/power_plane.png, id=909, 326.4195pt x 239.6955pt>
 File: kapitel3/pictures/power_plane.png Graphic file (type png)
 <use kapitel3/pictures/power_plane.png>
 Package pdftex.def Info: kapitel3/pictures/power_plane.png  used on input line 481.
 (pdftex.def)             Requested size: 426.79134pt x 313.41087pt.
 [38 <./kapitel3/pictures/stackup.png>]
-<kapitel3/pictures/imp_calc_kicad.png, id=915, 597.432pt x 372.1905pt>
+<kapitel3/pictures/imp_calc_kicad.png, id=917, 597.432pt x 372.1905pt>
 File: kapitel3/pictures/imp_calc_kicad.png Graphic file (type png)
 <use kapitel3/pictures/imp_calc_kicad.png>
 Package pdftex.def Info: kapitel3/pictures/imp_calc_kicad.png  used on input line 495.
@@ -2012,12 +2012,12 @@ Package pdftex.def Info: kapitel3/pictures/imp_calc_kicad.png  used on input lin
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [39 <./kapitel3/pictures/power_plane.png>]
-<kapitel3/pictures/round_tracks.png, id=922, 281.853pt x 181.8795pt>
+<kapitel3/pictures/round_tracks.png, id=924, 281.853pt x 181.8795pt>
 File: kapitel3/pictures/round_tracks.png Graphic file (type png)
 <use kapitel3/pictures/round_tracks.png>
 Package pdftex.def Info: kapitel3/pictures/round_tracks.png  used on input line 514.
 (pdftex.def)             Requested size: 192.05746pt x 123.93451pt.
-<kapitel3/pictures/teardrop.png, id=923, 324.0105pt x 204.765pt>
+<kapitel3/pictures/teardrop.png, id=925, 324.0105pt x 204.765pt>
 File: kapitel3/pictures/teardrop.png Graphic file (type png)
 <use kapitel3/pictures/teardrop.png>
 Package pdftex.def Info: kapitel3/pictures/teardrop.png  used on input line 521.
@@ -2026,7 +2026,7 @@ Package pdftex.def Info: kapitel3/pictures/teardrop.png  used on input line 521.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [40 <./kapitel3/pictures/imp_calc_kicad.png>]
-<kapitel3/pictures/board_2d.png, id=930, 507.0945pt x 428.802pt>
+<kapitel3/pictures/board_2d.png, id=932, 507.0945pt x 428.802pt>
 File: kapitel3/pictures/board_2d.png Graphic file (type png)
 <use kapitel3/pictures/board_2d.png>
 Package pdftex.def Info: kapitel3/pictures/board_2d.png  used on input line 539.
@@ -2035,12 +2035,12 @@ Package pdftex.def Info: kapitel3/pictures/board_2d.png  used on input line 539.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [41 <./kapitel3/pictures/round_tracks.png> <./kapitel3/pictures/teardrop.png>]
-<kapitel3/pictures/3d_top.png, id=938, 1342.01375pt x 756.8275pt>
+<kapitel3/pictures/3d_top.png, id=940, 1342.01375pt x 756.8275pt>
 File: kapitel3/pictures/3d_top.png Graphic file (type png)
 <use kapitel3/pictures/3d_top.png>
 Package pdftex.def Info: kapitel3/pictures/3d_top.png  used on input line 548.
 (pdftex.def)             Requested size: 192.03757pt x 108.29941pt.
-<kapitel3/pictures/3d_bottom.png, id=939, 1342.01375pt x 756.8275pt>
+<kapitel3/pictures/3d_bottom.png, id=941, 1342.01375pt x 756.8275pt>
 File: kapitel3/pictures/3d_bottom.png Graphic file (type png)
 <use kapitel3/pictures/3d_bottom.png>
 Package pdftex.def Info: kapitel3/pictures/3d_bottom.png  used on input line 555.
@@ -2071,7 +2071,7 @@ LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [46]
-<kapitel3/pictures/ttn_register.png, id=998, 415.5525pt x 373.99725pt>
+<kapitel3/pictures/ttn_register.png, id=1000, 415.5525pt x 373.99725pt>
 File: kapitel3/pictures/ttn_register.png Graphic file (type png)
 <use kapitel3/pictures/ttn_register.png>
 Package pdftex.def Info: kapitel3/pictures/ttn_register.png  used on input line 782.
@@ -2089,13 +2089,13 @@ Package glossaries Warning: Entry `esd' has already been defined in the document
 
 ]
 Kapitel 4.
-<kapitel4/pictures/ttn_mapper_berlin.png, id=1086, 1009.371pt x 448.67625pt>
+<kapitel4/pictures/ttn_mapper_berlin.png, id=1088, 1009.371pt x 448.67625pt>
 File: kapitel4/pictures/ttn_mapper_berlin.png Graphic file (type png)
 <use kapitel4/pictures/ttn_mapper_berlin.png>
 Package pdftex.def Info: kapitel4/pictures/ttn_mapper_berlin.png  used on input line 19.
 (pdftex.def)             Requested size: 426.79134pt x 189.71614pt.
 [53 <./kapitel4/pictures/ttn_mapper_berlin.png>]
-<kapitel4/pictures/berlin_rasterkarte.png, id=1096, 3770.085pt x 3137.7225pt>
+<kapitel4/pictures/berlin_rasterkarte.png, id=1098, 3770.085pt x 3137.7225pt>
 File: kapitel4/pictures/berlin_rasterkarte.png Graphic file (type png)
 <use kapitel4/pictures/berlin_rasterkarte.png>
 Package pdftex.def Info: kapitel4/pictures/berlin_rasterkarte.png  used on input line 63.
@@ -2104,22 +2104,22 @@ Package pdftex.def Info: kapitel4/pictures/berlin_rasterkarte.png  used on input
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [54]
-<kapitel4/pictures/berlin_viewshed_color.pdf, id=1105, 845.1575pt x 597.23125pt>
+<kapitel4/pictures/berlin_viewshed_color.pdf, id=1107, 845.1575pt x 597.23125pt>
 File: kapitel4/pictures/berlin_viewshed_color.pdf Graphic file (type pdf)
 <use kapitel4/pictures/berlin_viewshed_color.pdf>
 Package pdftex.def Info: kapitel4/pictures/berlin_viewshed_color.pdf  used on input line 77.
 (pdftex.def)             Requested size: 204.85802pt x 144.76006pt.
-<kapitel4/pictures/steglitz_viewshed.pdf, id=1106, 845.1575pt x 597.23125pt>
+<kapitel4/pictures/steglitz_viewshed.pdf, id=1108, 845.1575pt x 597.23125pt>
 File: kapitel4/pictures/steglitz_viewshed.pdf Graphic file (type pdf)
 <use kapitel4/pictures/steglitz_viewshed.pdf>
 Package pdftex.def Info: kapitel4/pictures/steglitz_viewshed.pdf  used on input line 84.
 (pdftex.def)             Requested size: 204.85802pt x 144.76006pt.
-<kapitel4/pictures/tempelhof_viewshed.pdf, id=1107, 845.1575pt x 597.23125pt>
+<kapitel4/pictures/tempelhof_viewshed.pdf, id=1109, 845.1575pt x 597.23125pt>
 File: kapitel4/pictures/tempelhof_viewshed.pdf Graphic file (type pdf)
 <use kapitel4/pictures/tempelhof_viewshed.pdf>
 Package pdftex.def Info: kapitel4/pictures/tempelhof_viewshed.pdf  used on input line 93.
 (pdftex.def)             Requested size: 204.85802pt x 144.76006pt.
-<kapitel4/pictures/mitte_viewshed.pdf, id=1108, 845.1575pt x 597.23125pt>
+<kapitel4/pictures/mitte_viewshed.pdf, id=1110, 845.1575pt x 597.23125pt>
 File: kapitel4/pictures/mitte_viewshed.pdf Graphic file (type pdf)
 <use kapitel4/pictures/mitte_viewshed.pdf>
 Package pdftex.def Info: kapitel4/pictures/mitte_viewshed.pdf  used on input line 100.
@@ -2128,24 +2128,24 @@ Package pdftex.def Info: kapitel4/pictures/mitte_viewshed.pdf  used on input lin
 Underfull \vbox (badness 4181) has occurred while \output is active []
 
  [55 <./kapitel4/pictures/berlin_rasterkarte.png>] [56 <./kapitel4/pictures/berlin_viewshed_color.pdf> <./kapitel4/pictures/steglitz_viewshed.pdf> <./kapitel4/pictures/tempelhof_viewshed.pdf> <./kapitel4/pictures/mitte_viewshed.pdf>]
-<kapitel4/pictures/mitte_route.pdf, id=1140, 845.1575pt x 597.23125pt>
+<kapitel4/pictures/mitte_route.pdf, id=1142, 845.1575pt x 597.23125pt>
 File: kapitel4/pictures/mitte_route.pdf Graphic file (type pdf)
 <use kapitel4/pictures/mitte_route.pdf>
 Package pdftex.def Info: kapitel4/pictures/mitte_route.pdf  used on input line 123.
 (pdftex.def)             Requested size: 256.0774pt x 180.9569pt.
-<kapitel4/pictures/steglitz_route.pdf, id=1141, 845.1575pt x 597.23125pt>
+<kapitel4/pictures/steglitz_route.pdf, id=1143, 845.1575pt x 597.23125pt>
 File: kapitel4/pictures/steglitz_route.pdf Graphic file (type pdf)
 <use kapitel4/pictures/steglitz_route.pdf>
 Package pdftex.def Info: kapitel4/pictures/steglitz_route.pdf  used on input line 131.
 (pdftex.def)             Requested size: 256.0774pt x 180.9569pt.
-<kapitel4/pictures/tempelhof_route.pdf, id=1142, 845.1575pt x 597.23125pt>
+<kapitel4/pictures/tempelhof_route.pdf, id=1144, 845.1575pt x 597.23125pt>
 File: kapitel4/pictures/tempelhof_route.pdf Graphic file (type pdf)
 <use kapitel4/pictures/tempelhof_route.pdf>
 Package pdftex.def Info: kapitel4/pictures/tempelhof_route.pdf  used on input line 140.
 (pdftex.def)             Requested size: 256.0774pt x 180.9569pt.
 ) (./kapitel5/ch5.tex [57] [58 <./kapitel4/pictures/mitte_route.pdf> <./kapitel4/pictures/steglitz_route.pdf> <./kapitel4/pictures/tempelhof_route.pdf>]
 Kapitel 5.
-<kapitel5/pictures/ttn_first_test.png, id=1167, 1109.3445pt x 526.96875pt>
+<kapitel5/pictures/ttn_first_test.png, id=1169, 1109.3445pt x 526.96875pt>
 File: kapitel5/pictures/ttn_first_test.png Graphic file (type png)
 <use kapitel5/pictures/ttn_first_test.png>
 Package pdftex.def Info: kapitel5/pictures/ttn_first_test.png  used on input line 19.
@@ -2156,28 +2156,52 @@ Underfull \vbox (badness 1019) has occurred while \output is active []
  [59
 
  <./kapitel5/pictures/ttn_first_test.png>]
-<kapitel5/pictures/berlin_coverage.pdf, id=1174, 845.1575pt x 597.23125pt>
+<kapitel5/pictures/berlin_coverage.pdf, id=1176, 845.1575pt x 597.23125pt>
 File: kapitel5/pictures/berlin_coverage.pdf Graphic file (type pdf)
 <use kapitel5/pictures/berlin_coverage.pdf>
-Package pdftex.def Info: kapitel5/pictures/berlin_coverage.pdf  used on input line 41.
+Package pdftex.def Info: kapitel5/pictures/berlin_coverage.pdf  used on input line 42.
 (pdftex.def)             Requested size: 426.79134pt x 301.59483pt.
  [60 <./kapitel5/pictures/berlin_coverage.pdf>]
-<kapitel5/pictures/steglitz-tempelhof_coverage.pdf, id=1191, 845.1575pt x 597.23125pt>
+<kapitel5/pictures/steglitz-tempelhof_coverage.pdf, id=1193, 845.1575pt x 597.23125pt>
 File: kapitel5/pictures/steglitz-tempelhof_coverage.pdf Graphic file (type pdf)
 <use kapitel5/pictures/steglitz-tempelhof_coverage.pdf>
-Package pdftex.def Info: kapitel5/pictures/steglitz-tempelhof_coverage.pdf  used on input line 55.
+Package pdftex.def Info: kapitel5/pictures/steglitz-tempelhof_coverage.pdf  used on input line 56.
 (pdftex.def)             Requested size: 426.79134pt x 301.59483pt.
-<kapitel5/pictures/mitte_coverage.pdf, id=1192, 845.1575pt x 597.23125pt>
+<kapitel5/pictures/mitte_coverage.pdf, id=1194, 845.1575pt x 597.23125pt>
 File: kapitel5/pictures/mitte_coverage.pdf Graphic file (type pdf)
 <use kapitel5/pictures/mitte_coverage.pdf>
-Package pdftex.def Info: kapitel5/pictures/mitte_coverage.pdf  used on input line 69.
+Package pdftex.def Info: kapitel5/pictures/mitte_coverage.pdf  used on input line 70.
 (pdftex.def)             Requested size: 426.79134pt x 301.59483pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [61 <./kapitel5/pictures/steglitz-tempelhof_coverage.pdf>] [62 <./kapitel5/pictures/mitte_coverage.pdf>] [63]) (./anhang.tex [64]
+ [61 <./kapitel5/pictures/steglitz-tempelhof_coverage.pdf>] [62 <./kapitel5/pictures/mitte_coverage.pdf>]
+<kapitel5/pictures/ppk2_without_bmv080.png, id=1224, 722.7pt x 361.35pt>
+File: kapitel5/pictures/ppk2_without_bmv080.png Graphic file (type png)
+<use kapitel5/pictures/ppk2_without_bmv080.png>
+Package pdftex.def Info: kapitel5/pictures/ppk2_without_bmv080.png  used on input line 102.
+(pdftex.def)             Requested size: 426.79732pt x 213.39867pt.
+<kapitel5/pictures/ppk2_without_gps_bmv.png, id=1225, 722.7pt x 361.35pt>
+File: kapitel5/pictures/ppk2_without_gps_bmv.png Graphic file (type png)
+<use kapitel5/pictures/ppk2_without_gps_bmv.png>
+Package pdftex.def Info: kapitel5/pictures/ppk2_without_gps_bmv.png  used on input line 110.
+(pdftex.def)             Requested size: 426.79732pt x 213.39867pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [63] [64 <./kapitel5/pictures/ppk2_without_bmv080.png> <./kapitel5/pictures/ppk2_without_gps_bmv.png>]
+Overfull \hbox (9.03435pt too wide) in paragraph at lines 126--131
+\T1/LinuxLibertineT-TLF/m/n/10.95 ver-brauch des L80-R GPS-Moduls. Im Da-ten-blatt des Bau-teils lässt sich die-ser Wert dem \T1/LinuxLibertineT-TLF/m/it/10.95 Acquisition-
+ []
+
+
+Overfull \hbox (10.34865pt too wide) in paragraph at lines 132--135
+[]\T1/LinuxLibertineT-TLF/m/n/10.95 Ein wei-te-res tech-ni-sches Pro-blem wur-de bei den Strom-mes-sun-gen of-fen-bart: LoRa-Funktionalitäten
+ []
+
+[65]) (./anhang.tex [66]
 Anhang A.
-<anhang/schematic.pdf, id=1241, 845.0531pt x 597.52838pt>
+<anhang/schematic.pdf, id=1257, 845.0531pt x 597.52838pt>
 File: anhang/schematic.pdf Graphic file (type pdf)
 <use anhang/schematic.pdf>
 Package pdftex.def Info: anhang/schematic.pdf  used on input line 14.
@@ -2186,7 +2210,7 @@ File: anhang/schematic.pdf Graphic file (type pdf)
 <use anhang/schematic.pdf>
 Package pdftex.def Info: anhang/schematic.pdf  used on input line 14.
 (pdftex.def)             Requested size: 845.05103pt x 597.52692pt.
-<anhang/schematic.pdf, id=1244, page=1, 845.0531pt x 597.52838pt>
+<anhang/schematic.pdf, id=1260, page=1, 845.0531pt x 597.52838pt>
 File: anhang/schematic.pdf Graphic file (type pdf)
 <use anhang/schematic.pdf, page 1>
 Package pdftex.def Info: anhang/schematic.pdf , page1 used on input line 14.
@@ -2195,7 +2219,7 @@ File: anhang/schematic.pdf Graphic file (type pdf)
 <use anhang/schematic.pdf, page 1>
 Package pdftex.def Info: anhang/schematic.pdf , page1 used on input line 14.
 (pdftex.def)             Requested size: 597.54195pt x 422.51578pt.
-[65
+[67
 
 ]
 File: anhang/schematic.pdf Graphic file (type pdf)
@@ -2210,137 +2234,137 @@ File: anhang/schematic.pdf Graphic file (type pdf)
 <use anhang/schematic.pdf, page 1>
 Package pdftex.def Info: anhang/schematic.pdf , page1 used on input line 14.
 (pdftex.def)             Requested size: 597.54195pt x 422.51578pt.
- [66
-
- <./anhang/schematic.pdf>]
-<anhang/schematic.pdf, id=1682, page=2, 845.0531pt x 597.52838pt>
-File: anhang/schematic.pdf Graphic file (type pdf)
-<use anhang/schematic.pdf, page 2>
-Package pdftex.def Info: anhang/schematic.pdf , page2 used on input line 14.
-(pdftex.def)             Requested size: 597.54195pt x 422.51578pt.
-File: anhang/schematic.pdf Graphic file (type pdf)
-<use anhang/schematic.pdf, page 2>
-Package pdftex.def Info: anhang/schematic.pdf , page2 used on input line 14.
-(pdftex.def)             Requested size: 597.54195pt x 422.51578pt.
-File: anhang/schematic.pdf Graphic file (type pdf)
-<use anhang/schematic.pdf, page 2>
-Package pdftex.def Info: anhang/schematic.pdf , page2 used on input line 14.
-(pdftex.def)             Requested size: 597.54195pt x 422.51578pt.
- [67
-
- <./anhang/schematic.pdf>]
-<anhang/schematic.pdf, id=1688, page=3, 845.0531pt x 597.52838pt>
-File: anhang/schematic.pdf Graphic file (type pdf)
-<use anhang/schematic.pdf, page 3>
-Package pdftex.def Info: anhang/schematic.pdf , page3 used on input line 14.
-(pdftex.def)             Requested size: 597.54195pt x 422.51578pt.
-File: anhang/schematic.pdf Graphic file (type pdf)
-<use anhang/schematic.pdf, page 3>
-Package pdftex.def Info: anhang/schematic.pdf , page3 used on input line 14.
-(pdftex.def)             Requested size: 597.54195pt x 422.51578pt.
-File: anhang/schematic.pdf Graphic file (type pdf)
-<use anhang/schematic.pdf, page 3>
-Package pdftex.def Info: anhang/schematic.pdf , page3 used on input line 14.
-(pdftex.def)             Requested size: 597.54195pt x 422.51578pt.
  [68
 
  <./anhang/schematic.pdf>]
-<anhang/schematic.pdf, id=1693, page=4, 845.0531pt x 597.52838pt>
+<anhang/schematic.pdf, id=1699, page=2, 845.0531pt x 597.52838pt>
 File: anhang/schematic.pdf Graphic file (type pdf)
-<use anhang/schematic.pdf, page 4>
-Package pdftex.def Info: anhang/schematic.pdf , page4 used on input line 14.
+<use anhang/schematic.pdf, page 2>
+Package pdftex.def Info: anhang/schematic.pdf , page2 used on input line 14.
 (pdftex.def)             Requested size: 597.54195pt x 422.51578pt.
 File: anhang/schematic.pdf Graphic file (type pdf)
-<use anhang/schematic.pdf, page 4>
-Package pdftex.def Info: anhang/schematic.pdf , page4 used on input line 14.
+<use anhang/schematic.pdf, page 2>
+Package pdftex.def Info: anhang/schematic.pdf , page2 used on input line 14.
 (pdftex.def)             Requested size: 597.54195pt x 422.51578pt.
 File: anhang/schematic.pdf Graphic file (type pdf)
-<use anhang/schematic.pdf, page 4>
-Package pdftex.def Info: anhang/schematic.pdf , page4 used on input line 14.
+<use anhang/schematic.pdf, page 2>
+Package pdftex.def Info: anhang/schematic.pdf , page2 used on input line 14.
 (pdftex.def)             Requested size: 597.54195pt x 422.51578pt.
  [69
 
  <./anhang/schematic.pdf>]
-<anhang/schematic.pdf, id=1698, page=5, 845.0531pt x 597.52838pt>
+<anhang/schematic.pdf, id=1704, page=3, 845.0531pt x 597.52838pt>
 File: anhang/schematic.pdf Graphic file (type pdf)
-<use anhang/schematic.pdf, page 5>
-Package pdftex.def Info: anhang/schematic.pdf , page5 used on input line 14.
+<use anhang/schematic.pdf, page 3>
+Package pdftex.def Info: anhang/schematic.pdf , page3 used on input line 14.
 (pdftex.def)             Requested size: 597.54195pt x 422.51578pt.
 File: anhang/schematic.pdf Graphic file (type pdf)
-<use anhang/schematic.pdf, page 5>
-Package pdftex.def Info: anhang/schematic.pdf , page5 used on input line 14.
+<use anhang/schematic.pdf, page 3>
+Package pdftex.def Info: anhang/schematic.pdf , page3 used on input line 14.
 (pdftex.def)             Requested size: 597.54195pt x 422.51578pt.
 File: anhang/schematic.pdf Graphic file (type pdf)
-<use anhang/schematic.pdf, page 5>
-Package pdftex.def Info: anhang/schematic.pdf , page5 used on input line 14.
+<use anhang/schematic.pdf, page 3>
+Package pdftex.def Info: anhang/schematic.pdf , page3 used on input line 14.
 (pdftex.def)             Requested size: 597.54195pt x 422.51578pt.
  [70
 
  <./anhang/schematic.pdf>]
-<anhang/schematic.pdf, id=1703, page=6, 845.0531pt x 597.52838pt>
+<anhang/schematic.pdf, id=1709, page=4, 845.0531pt x 597.52838pt>
 File: anhang/schematic.pdf Graphic file (type pdf)
-<use anhang/schematic.pdf, page 6>
-Package pdftex.def Info: anhang/schematic.pdf , page6 used on input line 14.
+<use anhang/schematic.pdf, page 4>
+Package pdftex.def Info: anhang/schematic.pdf , page4 used on input line 14.
 (pdftex.def)             Requested size: 597.54195pt x 422.51578pt.
 File: anhang/schematic.pdf Graphic file (type pdf)
-<use anhang/schematic.pdf, page 6>
-Package pdftex.def Info: anhang/schematic.pdf , page6 used on input line 14.
+<use anhang/schematic.pdf, page 4>
+Package pdftex.def Info: anhang/schematic.pdf , page4 used on input line 14.
 (pdftex.def)             Requested size: 597.54195pt x 422.51578pt.
 File: anhang/schematic.pdf Graphic file (type pdf)
-<use anhang/schematic.pdf, page 6>
-Package pdftex.def Info: anhang/schematic.pdf , page6 used on input line 14.
+<use anhang/schematic.pdf, page 4>
+Package pdftex.def Info: anhang/schematic.pdf , page4 used on input line 14.
 (pdftex.def)             Requested size: 597.54195pt x 422.51578pt.
  [71
 
  <./anhang/schematic.pdf>]
+<anhang/schematic.pdf, id=1714, page=5, 845.0531pt x 597.52838pt>
+File: anhang/schematic.pdf Graphic file (type pdf)
+<use anhang/schematic.pdf, page 5>
+Package pdftex.def Info: anhang/schematic.pdf , page5 used on input line 14.
+(pdftex.def)             Requested size: 597.54195pt x 422.51578pt.
+File: anhang/schematic.pdf Graphic file (type pdf)
+<use anhang/schematic.pdf, page 5>
+Package pdftex.def Info: anhang/schematic.pdf , page5 used on input line 14.
+(pdftex.def)             Requested size: 597.54195pt x 422.51578pt.
+File: anhang/schematic.pdf Graphic file (type pdf)
+<use anhang/schematic.pdf, page 5>
+Package pdftex.def Info: anhang/schematic.pdf , page5 used on input line 14.
+(pdftex.def)             Requested size: 597.54195pt x 422.51578pt.
+ [72
 
-pdfTeX warning: pdflatex (file ./anhang/layout_front.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<anhang/layout_front.pdf, id=1708, 597.55246pt x 845.07724pt>
-File: anhang/layout_front.pdf Graphic file (type pdf)
-<use anhang/layout_front.pdf>
-Package pdftex.def Info: anhang/layout_front.pdf  used on input line 21.
-(pdftex.def)             Requested size: 597.551pt x 845.07518pt.
-
-
-pdfTeX warning: pdflatex (file ./anhang/layout_front.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-File: anhang/layout_front.pdf Graphic file (type pdf)
-<use anhang/layout_front.pdf>
-Package pdftex.def Info: anhang/layout_front.pdf  used on input line 21.
-(pdftex.def)             Requested size: 597.551pt x 845.07518pt.
-
-
-pdfTeX warning: pdflatex (file ./anhang/layout_front.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-
-
-pdfTeX warning: pdflatex (file ./anhang/layout_front.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<anhang/layout_front.pdf, id=1711, page=1, 597.55246pt x 845.07724pt>
-File: anhang/layout_front.pdf Graphic file (type pdf)
-<use anhang/layout_front.pdf, page 1>
-Package pdftex.def Info: anhang/layout_front.pdf , page1 used on input line 21.
-(pdftex.def)             Requested size: 597.551pt x 845.07518pt.
-File: anhang/layout_front.pdf Graphic file (type pdf)
-<use anhang/layout_front.pdf, page 1>
-Package pdftex.def Info: anhang/layout_front.pdf , page1 used on input line 21.
-(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
-[72]
-File: anhang/layout_front.pdf Graphic file (type pdf)
-<use anhang/layout_front.pdf, page 1>
-Package pdftex.def Info: anhang/layout_front.pdf , page1 used on input line 21.
-(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
-File: anhang/layout_front.pdf Graphic file (type pdf)
-<use anhang/layout_front.pdf, page 1>
-Package pdftex.def Info: anhang/layout_front.pdf , page1 used on input line 21.
-(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
-File: anhang/layout_front.pdf Graphic file (type pdf)
-<use anhang/layout_front.pdf, page 1>
-Package pdftex.def Info: anhang/layout_front.pdf , page1 used on input line 21.
-(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+ <./anhang/schematic.pdf>]
+<anhang/schematic.pdf, id=1719, page=6, 845.0531pt x 597.52838pt>
+File: anhang/schematic.pdf Graphic file (type pdf)
+<use anhang/schematic.pdf, page 6>
+Package pdftex.def Info: anhang/schematic.pdf , page6 used on input line 14.
+(pdftex.def)             Requested size: 597.54195pt x 422.51578pt.
+File: anhang/schematic.pdf Graphic file (type pdf)
+<use anhang/schematic.pdf, page 6>
+Package pdftex.def Info: anhang/schematic.pdf , page6 used on input line 14.
+(pdftex.def)             Requested size: 597.54195pt x 422.51578pt.
+File: anhang/schematic.pdf Graphic file (type pdf)
+<use anhang/schematic.pdf, page 6>
+Package pdftex.def Info: anhang/schematic.pdf , page6 used on input line 14.
+(pdftex.def)             Requested size: 597.54195pt x 422.51578pt.
  [73
+
+ <./anhang/schematic.pdf>]
+
+pdfTeX warning: pdflatex (file ./anhang/layout_front.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<anhang/layout_front.pdf, id=1725, 597.55246pt x 845.07724pt>
+File: anhang/layout_front.pdf Graphic file (type pdf)
+<use anhang/layout_front.pdf>
+Package pdftex.def Info: anhang/layout_front.pdf  used on input line 21.
+(pdftex.def)             Requested size: 597.551pt x 845.07518pt.
+
+
+pdfTeX warning: pdflatex (file ./anhang/layout_front.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+File: anhang/layout_front.pdf Graphic file (type pdf)
+<use anhang/layout_front.pdf>
+Package pdftex.def Info: anhang/layout_front.pdf  used on input line 21.
+(pdftex.def)             Requested size: 597.551pt x 845.07518pt.
+
+
+pdfTeX warning: pdflatex (file ./anhang/layout_front.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex (file ./anhang/layout_front.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<anhang/layout_front.pdf, id=1728, page=1, 597.55246pt x 845.07724pt>
+File: anhang/layout_front.pdf Graphic file (type pdf)
+<use anhang/layout_front.pdf, page 1>
+Package pdftex.def Info: anhang/layout_front.pdf , page1 used on input line 21.
+(pdftex.def)             Requested size: 597.551pt x 845.07518pt.
+File: anhang/layout_front.pdf Graphic file (type pdf)
+<use anhang/layout_front.pdf, page 1>
+Package pdftex.def Info: anhang/layout_front.pdf , page1 used on input line 21.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+[74]
+File: anhang/layout_front.pdf Graphic file (type pdf)
+<use anhang/layout_front.pdf, page 1>
+Package pdftex.def Info: anhang/layout_front.pdf , page1 used on input line 21.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: anhang/layout_front.pdf Graphic file (type pdf)
+<use anhang/layout_front.pdf, page 1>
+Package pdftex.def Info: anhang/layout_front.pdf , page1 used on input line 21.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: anhang/layout_front.pdf Graphic file (type pdf)
+<use anhang/layout_front.pdf, page 1>
+Package pdftex.def Info: anhang/layout_front.pdf , page1 used on input line 21.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+ [75
 
  <./anhang/layout_front.pdf>]
 
 pdfTeX warning: pdflatex (file ./anhang/layout_in1.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<anhang/layout_in1.pdf, id=1722, 597.55246pt x 845.07724pt>
+<anhang/layout_in1.pdf, id=1738, 597.55246pt x 845.07724pt>
 File: anhang/layout_in1.pdf Graphic file (type pdf)
 <use anhang/layout_in1.pdf>
 Package pdftex.def Info: anhang/layout_in1.pdf  used on input line 22.
@@ -2358,7 +2382,7 @@ pdfTeX warning: pdflatex (file ./anhang/layout_in1.pdf): PDF inclusion: found PD
 
 
 pdfTeX warning: pdflatex (file ./anhang/layout_in1.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<anhang/layout_in1.pdf, id=1725, page=1, 597.55246pt x 845.07724pt>
+<anhang/layout_in1.pdf, id=1741, page=1, 597.55246pt x 845.07724pt>
 File: anhang/layout_in1.pdf Graphic file (type pdf)
 <use anhang/layout_in1.pdf, page 1>
 Package pdftex.def Info: anhang/layout_in1.pdf , page1 used on input line 22.
@@ -2379,12 +2403,12 @@ File: anhang/layout_in1.pdf Graphic file (type pdf)
 <use anhang/layout_in1.pdf, page 1>
 Package pdftex.def Info: anhang/layout_in1.pdf , page1 used on input line 22.
 (pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
-[74
+[76
 
  <./anhang/layout_in1.pdf>]
 
 pdfTeX warning: pdflatex (file ./anhang/layout_in2.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<anhang/layout_in2.pdf, id=1731, 597.55246pt x 845.07724pt>
+<anhang/layout_in2.pdf, id=1747, 597.55246pt x 845.07724pt>
 File: anhang/layout_in2.pdf Graphic file (type pdf)
 <use anhang/layout_in2.pdf>
 Package pdftex.def Info: anhang/layout_in2.pdf  used on input line 23.
@@ -2402,7 +2426,7 @@ pdfTeX warning: pdflatex (file ./anhang/layout_in2.pdf): PDF inclusion: found PD
 
 
 pdfTeX warning: pdflatex (file ./anhang/layout_in2.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<anhang/layout_in2.pdf, id=1734, page=1, 597.55246pt x 845.07724pt>
+<anhang/layout_in2.pdf, id=1750, page=1, 597.55246pt x 845.07724pt>
 File: anhang/layout_in2.pdf Graphic file (type pdf)
 <use anhang/layout_in2.pdf, page 1>
 Package pdftex.def Info: anhang/layout_in2.pdf , page1 used on input line 23.
@@ -2423,12 +2447,12 @@ File: anhang/layout_in2.pdf Graphic file (type pdf)
 <use anhang/layout_in2.pdf, page 1>
 Package pdftex.def Info: anhang/layout_in2.pdf , page1 used on input line 23.
 (pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
-[75
+[77
 
  <./anhang/layout_in2.pdf>]
 
 pdfTeX warning: pdflatex (file ./anhang/layout_back.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<anhang/layout_back.pdf, id=1740, 597.55246pt x 845.07724pt>
+<anhang/layout_back.pdf, id=1756, 597.55246pt x 845.07724pt>
 File: anhang/layout_back.pdf Graphic file (type pdf)
 <use anhang/layout_back.pdf>
 Package pdftex.def Info: anhang/layout_back.pdf  used on input line 24.
@@ -2446,7 +2470,7 @@ pdfTeX warning: pdflatex (file ./anhang/layout_back.pdf): PDF inclusion: found P
 
 
 pdfTeX warning: pdflatex (file ./anhang/layout_back.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<anhang/layout_back.pdf, id=1743, page=1, 597.55246pt x 845.07724pt>
+<anhang/layout_back.pdf, id=1759, page=1, 597.55246pt x 845.07724pt>
 File: anhang/layout_back.pdf Graphic file (type pdf)
 <use anhang/layout_back.pdf, page 1>
 Package pdftex.def Info: anhang/layout_back.pdf , page1 used on input line 24.
@@ -2467,7 +2491,7 @@ File: anhang/layout_back.pdf Graphic file (type pdf)
 <use anhang/layout_back.pdf, page 1>
 Package pdftex.def Info: anhang/layout_back.pdf , page1 used on input line 24.
 (pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
-[76
+[78
 
  <./anhang/layout_back.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 41--41
@@ -2524,22 +2548,16 @@ Overfull \hbox (28.24933pt too wide) in alignment at lines 41--41
  [] [] [] [] [] 
  []
 
-[77] (./anhang/prj.conf [78]
+[79] (./anhang/prj.conf [80]
 LaTeX Font Info:    Font shape `T1/fvm/b/n' will be
 (Font)              scaled to size 8.30002pt on input line 6.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [79]) (./anhang/nucleo_wl55jc.overlay [80]
+ [81]) (./anhang/nucleo_wl55jc.overlay [82]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [81]) (./anhang/main.c [82]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [83]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [84]
+ [83]) (./anhang/main.c [84]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [85]
@@ -2549,6 +2567,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [87]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [88]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [89]
 LaTeX Font Info:    Trying to load font information for TS1+fvm on input line 221.
  (/usr/share/texlive/texmf-dist/tex/latex/bera/ts1fvm.fd
 File: ts1fvm.fd 2004/09/07 scalable font definitions for TS1/fvm.
@@ -2558,13 +2582,13 @@ LaTeX Font Info:    Font shape `TS1/fvm/m/n' will be
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [88])) [89] [90
+ [90])) [91] [92
 
 
 ]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/sc' will be
 (Font)              scaled to size 10.95pt on input line 154.
- [91{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_ncsllp.enc}] [92] (./main.aux)
+ [93{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_ncsllp.enc}] [94] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -2574,16 +2598,16 @@ L3 programming layer <2024-01-22>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 33353EA73757A72B1E0698C6C0E086F4;9877.
+(rerunfilecheck)             Checksum: 864C4222FC05AD01C200A4BE7B3C5413;9867.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 69062 strings out of 474222
- 1582034 string characters out of 5748733
- 2773556 words of memory out of 5000000
- 89523 multiletter control sequences out of 15000+600000
+ 69081 strings out of 474222
+ 1582766 string characters out of 5748733
+ 2773702 words of memory out of 5000000
+ 89539 multiletter control sequences out of 15000+600000
  663496 words of font info for 125 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  133i,17n,135p,2424b,2933s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2687,10 +2711,10 @@ pdfTeX warning (dest): name{glo:mac} has been referenced but does not exist, rep
 pdfTeX warning (dest): name{lstnumber.-3.243} has been referenced but does not exist, replaced by a fixed one
 
 </usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/bera/fvmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on main.pdf (104 pages, 49777644 bytes).
+Output written on main.pdf (106 pages, 50128143 bytes).
 PDF statistics:
- 2474 PDF objects out of 2487 (max. 8388607)
- 1977 compressed objects within 20 object streams
- 773 named destinations out of 1000 (max. 500000)
- 842 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2491 PDF objects out of 2984 (max. 8388607)
+ 1988 compressed objects within 20 object streams
+ 776 named destinations out of 1000 (max. 500000)
+ 852 words of extra memory for PDF output out of 10000 (max. 10000000)
 

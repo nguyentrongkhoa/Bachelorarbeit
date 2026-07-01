@@ -35,6 +35,7 @@ TTN"=Gateway der Zentral"= und Landesbibliothek Berlin (ZLB) identifizieren, was
 die Join"=Anfrage in unmittelbarer Nähe auf der Museumsinsel initiiert wurde. 
 
 \section{Kartografische Evaluierung der TTN-Netzwerkabdeckung}
+\label{sec:map_eval}
 
 \begin{figure}[H]
     \centering
@@ -92,7 +93,45 @@ Insgesamt zeichnen die Messergebnisse ein realistisches Bild der Funkabdeckung i
 Bedingungen -- insbesondere bei erhöhter Gateway-Antenne und freier Sichtlinie -- Reichweiten im einstelligen Kilometerbereich erreichbar sind, 
 dominieren im dicht bebauten Stadtgebiet deutlich kürzere Übertragungsdistanzen.
 
-\section{Strommessungen} % TODO: measure current
+\section{Strommessungen} 
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \includegraphics[width=\textwidth, height=10cm, keepaspectratio]{kapitel5/pictures/ppk2_without_bmv080.png}
+        \caption{Ohne BMV080} 
+    \end{subfigure}
+    
+    \hfill
+    
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \includegraphics[width=\textwidth, height=10cm, keepaspectratio]{kapitel5/pictures/ppk2_without_gps_bmv.png}
+        \caption{Ohne BMV080 und GPS} 
+    \end{subfigure}
+    
+    \caption{Strommessungsergebnisse mit PPK2} 
+    \label{fig:ppk2}
+\end{figure}
+
+Abbildung \ref{fig:ppk2} zeigt repräsentativ den Stromverbrauch des Systems, einmal mit deaktiviertem BMV080 und einmal zusätzlich
+mit deaktiviertem GPS-Modul. Es lassen sich u. a. hohe Stromsprünge (auf 70 und 60 mA jeweils) in 5-Sekunden-Intervallen erkennen,
+was auch der Sendehäufigkeit des Funkmoduls im Code entspricht. Der eigentliche Verbrauch des Funkmoduls ist die Amplitude des Sprungs
+und beträgt jeweils $70-17=53 \text{mA}$ und $60-3=57 \text{mA}$ in der oberen und unteren Abbildung. Vor dem ersten Sprung
+fällt ein kurzer Peak auf, der durch das Hochfahren des Funkmoduls nach einem Reset zustande kommt. 
+Es ist außerdem erkennbar, wann das Endgerät mit dem OTAA-Verfahren erfolgreich aktiviert wurde, denn nach der Aktivierung soll
+im Code die Status-LED 5-mal hintereinander blinken, was zu den 5 Ripple-Wellen um $t=13$ korrespondiert. 
+
+Die Differenz von ungefähr 14 mA zwischen den zwei Abbildungen ist zwangsläufig der Stromverbrauch des L80-R GPS-Moduls. 
+Im Datenblatt des Bauteils lässt sich dieser Wert dem \emph{Acquisition-Modus} zuordnen, während dessen das Modul aktiv versucht,
+erste Satelliten zu identifizieren. An dieser Stelle wird das GPS-Problem aus Abschnitt \ref{sec:map_eval} nochmal verdeutlicht:
+das Modul hängt minutenlang in der Acquisition, obwohl diese maximal 30 Sekunden dauern soll. Aus diesem Grund konnten bei
+Feldtests keine GPS-Daten geliefert werden. 
+
+Ein weiteres technisches Problem wurde bei den Strommessungen offenbart: LoRa-Funktionalitäten scheinen durch den 
+Anschluss des BMV080-Partikelsensors gestört zu werden, sodass das Stromprofil des Gesamtsystems (mit allen Sensoren aktiviert)
+nicht aufgezeichnet werden konnte. 
 
 \section{Fazit}
 
