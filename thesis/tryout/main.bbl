@@ -433,8 +433,8 @@
       \strng{authorbibnamehash}{2be44fdf4d75ef0795531af5617d8a8a}
       \strng{authornamehash}{2be44fdf4d75ef0795531af5617d8a8a}
       \strng{authorfullhash}{2be44fdf4d75ef0795531af5617d8a8a}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{Get up and running with the fundamentals of RTOS and apply them on STM32 Enhance your programming skills to design and build real-world embedded systems Get to grips with advanced techniques for implementing embedded systems Book DescriptionA real-time operating system (RTOS) is used to develop systems that respond to events within strict timelines. Real-time embedded systems have applications in various industries, from automotive and aerospace through to laboratory test equipment and consumer electronics. These systems provide consistent and reliable timing and are designed to run without intervention for years. This microcontrollers book starts by introducing you to the concept of RTOS and compares some other alternative methods for achieving real-time performance. Once you've understood the fundamentals, such as tasks, queues, mutexes, and semaphores, you'll learn what to look for when selecting a microcontroller and development environment. By working through examples that use an STM32F7 Nucleo board, the STM32CubeIDE, and SEGGER debug tools, including SEGGER J-Link, Ozone, and SystemView, you'll gain an understanding of preemptive scheduling policies and task communication. The book will then help you develop highly efficient low-level drivers and analyze their real-time performance and CPU utilization. Finally, you'll cover tips for troubleshooting and be able to take your new-found skills to the next level. By the end of this book, you'll have built on your embedded system skills and will be able to create real-time systems using microcontrollers and FreeRTOS}

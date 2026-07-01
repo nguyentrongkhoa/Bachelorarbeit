@@ -36,14 +36,14 @@ Mit der Gründung der Non-Profit-Organisation \emph{LoRa-Alliance\textregistered
 
 Heutzutage erfreut sich LoRaWAN rasant zunehmeder Beliebtheit, dank einer Vielzahl von Eigenschaften: \cite{WhatAreLoRa}
 
-\begin{itemize}
-  \item Geringer Strombedarf: LoRaWAN-Endgeräte können mit einer Knopfzellbatterie eine Betriebsdauer von bis zu 10 Jahren haben.
-  \item Große Reichweite: bis zu \SI{10}{\kilo\meter} in ländlichen Gebieten und \SI{3}{\kilo\meter} in dichtbebauten Umgebungen möglich.LoRa
-  \item Lizenzfreies Spektrum: LoRaWAN-Netzwerke verwenden kostenfreie \acrshort{ism}-Frequenzbänder. (s. Unterkapitel \ref{subsec:frequenzbaender})
-  \item Fleixibilität: private Netzwerke aufzuspannen, ist unproblematisch, sodass man nicht auf öffentliche Infrastruktur angewiesen ist.
-  \item Over-the-Air-Updates: Endgeräte können ihre Firmware drahtlos während des Betriebs aktualisieren.
+\begin{description}[leftmargin=*, widest=Lizenzfreies Spektrum, nosep]
+  \item[\textbf{Geringer Strombedarf:}] LoRaWAN-Endgeräte können mit einer Knopfzellbatterie eine Betriebsdauer von bis zu 10 Jahren haben.
+  \item[\textbf{Große Reichweite:}]bis zu \SI{10}{\kilo\meter} in ländlichen Gebieten und \SI{3}{\kilo\meter} in dichtbebauten Umgebungen möglich.LoRa
+  \item[\textbf{Lizenzfreies Spektrum:}] LoRaWAN-Netzwerke verwenden kostenfreie \acrshort{ism}-Frequenzbänder. (s. Unterkapitel \ref{subsec:frequenzbaender})
+  \item[\textbf{Fleixibilität:}] private Netzwerke aufzuspannen, ist unproblematisch, sodass man nicht auf öffentliche Infrastruktur angewiesen ist.
+  \item[\textbf{Over-the-Air-Updates:}] Endgeräte können ihre Firmware drahtlos während des Betriebs aktualisieren.
   \item 
-\end{itemize}
+\end{description}
 
 % -----------------------------------------------------------------------------
 \section{LoRa -- Physical Layer}
@@ -235,11 +235,6 @@ bezeichnen. Als maximaler Antennengewinn einer einfachen Dipolantenne gilt
 $G = \SI{2.15}{dBi}$. Eine Sicherheitsmarge von 5 bis \SI{10}{dB} wird
 empfohlen, um Schwundeffekte und nicht modellierte Hindernisse zu
 kompensieren~\cite{LoRaModulationBasics}.
-
-Aus dem MAPL lässt sich schließlich unter Verwendung des
-Freiraum"=Pfadverlustmodells (vgl. Abschnitt~\ref{subsec:pfadverlust}) die % TODO: correct section reference
-\textbf{theoretische Reichweite} der Übertragungsstrecke abschätzen. Für den Chip SX1272 von Semtech zum Beispiel kommt man 
-auf einen theoretischen Wert von \qty{1946}{km}. \cite{montagnyLoRaLoRaWANInternet}
 
 \subsection{Frequenzbänder und regulatorische Rahmenbedingungen}
 \label{subsec:frequenzbaender}

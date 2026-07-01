@@ -38,16 +38,18 @@
 \typeout{BHT-Abschlussarbeit V2.0 26.08.21 S.Tschirley}
 \linespread{1.5}
 
-% Eigenen, mehrspaltigen Stil für das Abkürzungsverzeichnis definieren
+% Neuer, kompatibler Stil für das mehrspaltige Abkürzungsverzeichnis
 \newglossarystyle{multicol-acronyms}{%
-  \setglossarystyle{long}% Nutzen den Tabellen-Stil als Basis
+  \setglossarystyle{long}% Als Basis-Stil verwenden
   \renewenvironment{theglossary}%
-    {\begin{multicols}{2}\raggedright\begin{description}} % {2} steht für zwei Spalten
+    {\begin{multicols}{2}\raggedright\begin{description}}%
     {\end{description}\end{multicols}}%
-  \renewcommand*{\glossaryentryfield}[5]{%
-    \item[\glstarget{##1}{##2}] ##3%
+  % Korrektur für neuere Versionen des Pakets:
+  \renewcommand*{\glossaryentry}[2]{%
+    \item[\glstarget{##1}{\glossaryentryheadline{##1}}] \glossaryentrydesc{##1}%
   }%
 }
+\renewcommand{\glossaryname}{Abkürzungsverzeichnis}
 
 \usepackage{blindtext}   %für Blindtext in Kapitel 2
 \usepackage{listings}
@@ -141,6 +143,7 @@
 % TODO: rename acronyms to Abkürzungen
 \printglossary[type=\acronymtype]
 \printglossary
+%\printglossary[type=\acronymtype, style=multicol-acronyms]
 
 \pagenumbering{arabic}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
