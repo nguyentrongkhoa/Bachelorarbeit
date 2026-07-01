@@ -28,6 +28,8 @@
 \usepackage{csvsimple-l3} % To include BOM as csv file in the appendix
 \usepackage{longtable}
 \usepackage{enumitem}
+\usepackage{multicol}
+\usepackage[acronym]{glossaries}
 \usepackage{tikz}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18} 
@@ -35,6 +37,17 @@
 \usepackage[abgabe]{bhtThesis} 
 \typeout{BHT-Abschlussarbeit V2.0 26.08.21 S.Tschirley}
 \linespread{1.5}
+
+% Eigenen, mehrspaltigen Stil für das Abkürzungsverzeichnis definieren
+\newglossarystyle{multicol-acronyms}{%
+  \setglossarystyle{long}% Nutzen den Tabellen-Stil als Basis
+  \renewenvironment{theglossary}%
+    {\begin{multicols}{2}\raggedright\begin{description}} % {2} steht für zwei Spalten
+    {\end{description}\end{multicols}}%
+  \renewcommand*{\glossaryentryfield}[5]{%
+    \item[\glstarget{##1}{##2}] ##3%
+  }%
+}
 
 \usepackage{blindtext}   %für Blindtext in Kapitel 2
 \usepackage{listings}
