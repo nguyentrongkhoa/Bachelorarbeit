@@ -4,13 +4,11 @@
 
 \chapter{Einleitung}
 \label{chap:einleitung}
-
-Dieses Kapitel widmet sich der Frage, warum LoRaWAN die Technologie der Wahl ist. Zunächst werden
-repräsentative Einsatzszenarien analysiert, um die spezifischen Anforderungen an
-Schutzsensorik in Gefahrgebieten zu definieren. Darauf aufbauend wird dargelegt,
-warum konventionelle Kommunikationstechnologien in diesen Umgebungen strukturell
-versagen. Abschließend erfolgt ein Vergleich von LPWAN"=Technologien, um die Entscheidung
-zugunstens LoRaWAN für das in dieser Arbeit entwickelte System zu begründen.
+Dieses Kapitel widmet sich der Motivation sowie Zielsetzung der vorliegenden Bachelorarbeit. 
+Zuerst wird der Kommunikationsbedarf in verschiedenen Anwendungen untersucht und daraus Anforderungen an die
+Kommunikationsinfrastruktur abgeleitet. Als Nächstes wird darauf eingegangen, inwiefern konventionelle Technologien
+wie WLAN, Bluetooth oder Mobilfunk hier versagen und warum LoRaWAN der genannten Anforderungen gerecht ist. Zum Schluss
+des Kapitels wird die Aufgabenstellung konkret definiert.  
 
 % -----------------------------------------------------------------------------
 \section{Kommunikationsbedarf in verschiedenen Anwendungen}
@@ -66,16 +64,16 @@ konsequente Nutzung von Tiefschlafmodi und ereignis"= oder zeitgesteuerte
 durch den Energiesparbetrieb so weit eingeschränkt werden, dass die Datenübertragung
 an die (oft ebenfalls entfernte) Basisstation nicht mehr zuverlässig möglich ist.
 
-\subsection{Operative Anforderungen an die Schutzsensorik}
+\subsection{Operative Anforderungen}
 \label{subsec:anforderungen-zusammenfassung}
 
 Aus den drei analysierten Szenarien lassen sich die zentralen technischen
 Anforderungen ableiten, die ein geeignetes Kommunikationssystem für
-Off"=Grid"=Schutzsensorik erfüllen muss: 
+Off"=Grid"=Sensorik erfüllen muss: 
 
 \begin{table}[htbp]
     \centering
-    \caption{Vergleich der Einsatzszenarien hinsichtlich operativer Anforderungen}
+    \caption{Vergleich der Anwendungen hinsichtlich operativer Anforderungen}
     \label{tab:usecases}
     \begin{tabularx}{\textwidth}{l X X X}
         \toprule
@@ -111,15 +109,15 @@ Off"=Grid"=Schutzsensorik erfüllen muss:
     \end{tabularx}
 \end{table}
 
-Die drei übergeordneten Anforderungen, die alle Szenarien gemeinsam haben, sind damit: 
-\begin{itemize}
-    \item \textbf{Infrastrukturunabhängigkeit}: das Netz muss ohne externe
+Die drei übergeordneten Anforderungen, die alle Anwendungen gemeinsam haben, sind damit: 
+\begin{description}[leftmargin=*, widest=Hohe Reichweite bei starker Dämpfung, nosep]
+    \item[\textbf{Infrastrukturunabhängigkeit}:] das Netz muss ohne externe
     Basisstationen oder Internetanbindung vollständig funktionsfähig sein.
-    \item \textbf{Hohe Reichweite bei starker Dämpfung}: das Signal muss Gestein,
+    \item[\textbf{Hohe Reichweite bei starker Dämpfung}:] das Signal muss Gestein,
     Beton und Vegetation durchdringen.
-    \item \textbf{Maximale Energieeffizienz}: der Stromverbrauch der Endgeräte
+    \item[\textbf{Maximale Energieeffizienz}:] der Stromverbrauch der Endgeräte
     muss einen Akkubetrieb über den gesamten Einsatzzeitraum ermöglichen.
-\end{itemize}
+\end{description}
 
 % -----------------------------------------------------------------------------
 \section{Grenzen konventioneller Kommunikationsinfrastrukturen}
@@ -133,15 +131,15 @@ Abschnitt~\ref{sec:einsatzszenarien} definierten Anforderungen weisen sie
 strukturelle Defizite auf, die einen zuverlässigen Einsatz in Gefahrgebieten
 ausschließen.
 
-\begin{itemize}
-    \item \textbf{Reichweite:} WLAN nach IEEE\,802.11 erreicht im
+\begin{description}[leftmargin=*, widest=Infrastrukturabhängigkeit:, nosep]
+    \item[\textbf{Reichweite:}] WLAN nach IEEE\,802.11 erreicht im
     Innenbereich typischerweise 30 bis \SI{100}{\m} und erfordert die Installation
-    von Access"=Points in regelmäßigen Abständen -- eine Voraussetzung, die im
+    von Access"=Points in regelmäßigen Abständen, was im 
     Untertagebau oder in Katastrophengebieten nicht erfüllbar ist. Bluetooth ist
     mit einer Reichweite von bis zu \SI{100}{\m} (Klasse\,1) für weiträumige
     Gefahrgebiete ebenfalls ungeeignet.
 
-    \item \textbf{Infrastrukturabhängigkeit:} Mobilfunknetze bieten zwar eine
+    \item[\textbf{Infrastrukturabhängigkeit:}] Mobilfunknetze bieten zwar eine
     großflächige Abdeckung, weisen jedoch einen systemimmanenten
     \textit{Single"=Point"=of"=Failure} auf: Basisstationen werden häufig durch
     dasselbe Ereignis zerstört oder überlastet, das den Notfall verursacht, wie zum Beispiel
@@ -151,12 +149,12 @@ ausschließen.
     Core"=Network"=Betrieb und eine erhebliche Infrastrukturinvestition, die
     für mobile Einsatzszenarien nicht praktikabel ist.
 
-    \item \textbf{Energieverbrauch:} Die für hohe Datenraten optimierten
+    \item[\textbf{Energieverbrauch:}] Die für hohe Datenraten optimierten
     Protokolle, insbesondere LTE und 5G, verursachen einen hohen
     Strombedarf, der den Langzeitbetrieb kleiner, batteriebetriebener Sensorknoten
     unmöglich macht. Ein LTE"=Modul im Sendebetrieb verbraucht typischerweise
     mehrere hundert Milliampere, was bei einer \SI{1000}{mAh}"=Zelle eine Betriebsdauer von wenigen Stunden ergäbe.
-\end{itemize}
+\end{description}
 
 % TODO: fact check, especially when it comes to LTE
 \begin{table}[htbp]
