@@ -75,5 +75,6 @@
 \glossaryentry{GIS?\glossentry{gis}|setentrycounter[]{page}"\glsnumberformat}{54}
 \glossaryentry{OTAA?\glossentry{otaa}|setentrycounter[]{page}"\glsnumberformat}{59}
 \glossaryentry{RSSI?\glossentry{rssi}|setentrycounter[]{page}"\glsnumberformat}{60}
-\glossaryentry{FUOTA?\glossentry{fuota}|setentrycounter[]{page}"\glsnumberformat}{65}
-\glossaryentry{VNA?\glossentry{vna}|setentrycounter[]{page}"\glsnumberformat}{66}
+\glossaryentry{OTAA?\glossentry{otaa}|setentrycounter[]{page}"\glsnumberformat}{65}
+\glossaryentry{FUOTA?\glossentry{fuota}|setentrycounter[]{page}"\glsnumberformat}{66}
+\glossaryentry{VNA?\glossentry{vna}|setentrycounter[]{page}"\glsnumberformat}{67}

@@ -144,7 +144,40 @@ allein von der LiPo-Batterie sowie der Solarzelle versorgt werden, ohne dass ein
 
 \section{Fazit}
 
+\section{Fazit}
+\label{sec:fazit}
 
+Ziel dieser Arbeit war die Entwicklung eines LoRaWAN"=Sensorknoten für den Einsatz in Gefahrgebieten, das
+unabhängig von bestehender Kommunikationsinfrastruktur betrieben werden kann. Die erzielten Ergebnisse zeigen, dass dieses 
+Ziel im Wesentlichen erreicht wurde.
+
+Auf der Hardwareseite wurde ein PCB"=Prototyp auf Basis des STM32WL55"=Mikrokontrollers entwickelt. 
+Die Firmware wurde mit Zephyr"=RTOS implementiert und ermöglicht die zuverlässige Anbindung des Prototyps an ein
+LoRaWAN"=Netzwerk mit dem \acrshort{otaa}-Verfahren. Die erfolgreiche Registrierung und Datenübertragung über das öffentliche
+TTN"=Netzwerk konnte praktisch nachgewiesen werden.
+
+Die durchgeführten Reichweitenmessungen im Berliner Stadtgebiet ergaben eine maximale Übertragungsdistanz von 6 km zwischen
+dem Tempelhofer Feld und einem TTN-Gateway in Steglitz, was die theoretisch prognostizierten Reichweiten 
+bestätigt und die Eignung der Technologie für weiträumige Gefahrgebietsszenarien unterstreicht. Im dicht bebauten Stadtgebiet
+lagen die typischen Reichweiten erwartungsgemäß deutlich darunter, was auf die erhöhte Signaldämpfung durch Bebauung zurückzuführen ist.
+
+Hinsichtlich der Energieversorgung wurde ein maximaler Momentanstrom
+von \SI{136{,}5}{\milli\ampere} gemessen. Dieser Wert liegt innerhalb
+des Leistungsbereichs des integrierten MPPT"=Ladereglers SPV1050,
+womit der autarke Betrieb des Systems über eine Solarzelle grundsätzlich
+realisierbar ist -- eine zentrale Anforderung für den dauerhaften
+Einsatz in infrastrukturarmen Gefahrgebieten. Für eine abschließende
+Bewertung der Energiebilanz sind jedoch weiterführende Langzeitmessungen
+unter variierenden Lastverhältnissen erforderlich, die im Rahmen dieser
+Arbeit nicht vollständig abgeschlossen werden konnten.
+
+Zusammenfassend lässt sich festhalten, dass der Einsatz von LoRaWAN
+als Kommunikationstechnologie für mobile Schutzsensorik in
+Gefahrgebieten sowohl technisch machbar als auch sinnvoll ist.
+Die erzielte Reichweite, die Möglichkeit des solarbetriebenen
+Betriebs und die Infrastrukturunabhängigkeit des gewählten Ansatzes
+sprechen für eine Weiterentwicklung des Prototyps in Richtung eines
+produktionsreifen Systems.
 
 \section{Ausblick}
 
