@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1782881484.5447 "main.bcf" "main.bbl" "main" 1782881933.83664 0
+["biber main"] 1782881484.5447 "main.bcf" "main.bbl" "main" 1782882619.24916 0
   "LoRa.bib" 1782880862.29152 66732 a49cae464a7cda6e8c29f2e4567ae795 ""
-  "main.bcf" 1782881933.08996 108726 dde9b8736a28e66fce94fac6107216a8 "pdflatex"
+  "main.bcf" 1782882618.49818 108726 dde9b8736a28e66fce94fac6107216a8 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1782881899.33858 "/home/tom/zephyrproject/descap_lorawan/thesis/tryout/main.tex" "main.pdf" "main" 1782881933.83742 0
+["pdflatex"] 1782882580.62145 "/home/tom/zephyrproject/descap_lorawan/thesis/tryout/main.tex" "main.pdf" "main" 1782882619.2498 0
   "/etc/texmf/web2c/texmf.cnf" 1773605240.045 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/tom/zephyrproject/descap_lorawan/thesis/tryout/main.tex" 1782800802.29805 4487 1c2895adca4b8b75f1362b02718358ff ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -393,8 +393,8 @@
   "BHT-Logo-vertikal.pdf" 1771675946.44733 4604 ab5b60ffda74c1c05706080f71ed3cbb ""
   "BHT-Studiere-vertikal.pdf" 1771675946.47381 2541 51312e70e69c03f446094b09c46bbe72 ""
   "abstract_de.tex" 1771675946.13777 323 a0161c3507852da06c61f3b7b1b97975 ""
-  "anhang.tex" 1782828248.83003 4940 5321dde0828e5c3ca3ccee08008be262 ""
-  "anhang/bom.csv" 1782719352.12016 2654 7b6f5557bef8c33f398588689d7d8506 ""
+  "anhang.tex" 1782882509.10787 4983 5302d27490c404d9a1d0a49bba224f13 ""
+  "anhang/bom.csv" 1782882371.68404 2627 571bec2823f83c1f833e51fb24213d22 ""
   "anhang/layout_back.pdf" 1782716121.16121 24201 dfa6a21581b84a097246f7fbcedbbba8 ""
   "anhang/layout_front.pdf" 1782715923.94702 100883 c23bd6bbcdc5a86823a09d31c7467d37 ""
   "anhang/layout_in1.pdf" 1782716101.4652 22149 429a61cf6c962a0ee3f166c67dc93dd7 ""
@@ -455,17 +455,17 @@
   "kapitel5/pictures/steglitz-tempelhof_coverage.pdf" 1782634639.88683 4019115 581841ee93dd8ae2a25f5d46b74f9018 ""
   "kapitel5/pictures/ttn_first_test.png" 1781256038.27255 266215 5be134afddba29620f4b102c512e078b ""
   "main.acr" 1774707137.60362 4447 67daa0e4453a5d97077be8460fa38d6d ""
-  "main.aux" 1782881933.06974 31476 214c659dd9498e6253ab93b92032cd6c "pdflatex"
+  "main.aux" 1782882618.47786 31584 c7ce87904c647941c05ce378727d7095 "pdflatex"
   "main.bbl" 1782881488.70208 21937 3c08a814bd959a63c4876d9d47d9998e "biber main"
-  "main.cb" 1782881906.04488 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.cb2" 1782881906.02557 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.cb" 1782882586.65664 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.cb2" 1782882586.64444 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   "main.gls" 1774707137.13292 6 9f404503043ec80c08484be9f659189e ""
-  "main.glsdefs" 1782881933.06569 39934 56d4371e4468e216c5b65ed2762cf280 "pdflatex"
-  "main.lof" 1782881933.094 4730 68a28fb1891af39a52eab8040d7112bd "pdflatex"
-  "main.out" 1782881933.08187 10055 0261e1bd7bced5a46bd79dc089a6bddb "pdflatex"
-  "main.run.xml" 1782881933.094 2426 93fe141410a974fef8dc2475c7eede99 "pdflatex"
+  "main.glsdefs" 1782882618.47379 39934 56d4371e4468e216c5b65ed2762cf280 "pdflatex"
+  "main.lof" 1782882618.50225 4710 00efa067a70145e7448895a6f58f9097 "pdflatex"
+  "main.out" 1782882618.49005 10188 f495388000bce5997c8e55c7614e7cd0 "pdflatex"
+  "main.run.xml" 1782882618.50225 2426 93fe141410a974fef8dc2475c7eede99 "pdflatex"
   "main.tex" 1782800802.29805 4487 1c2895adca4b8b75f1362b02718358ff ""
-  "main.toc" 1782881933.094 5942 daa27c075b54fa89044688a97fd3a7fe "pdflatex"
+  "main.toc" 1782882618.50225 6072 819e225e3354fcd46ae22bceacacd26d "pdflatex"
   "personalMacros.tex" 1771675946.07852 150 6e250442b75bf14149b4086972af6b8f ""
   "titelseiten.tex" 1774421168.87594 5629 778ebfa1edacbbdb516303546c18ae11 ""
   (generated)

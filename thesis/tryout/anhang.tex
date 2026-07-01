@@ -7,11 +7,13 @@
 
 \chapter{Anhang}
 
-\section{Schematic}
+\section{PCB-Dateien}
+
+\subsection{Schematic}
 \label{anhang:schematic}
 \includepdf[pages=-]{anhang/schematic.pdf}
 
-\section{Layout}
+\subsection{Layout}
 
 In diesem Anhang sind die detaillierten Fertigungs- und Routing-Ebenen des entwickelten 
 4-Layers PCB-Prototyps dargestellt. Die vier Layers werden in der Reihenfolge Top, Middle1, Middle2, Bottom aufgeführt. 
@@ -21,7 +23,7 @@ In diesem Anhang sind die detaillierten Fertigungs- und Routing-Ebenen des entwi
 \includepdf[pages=-]{anhang/layout_in2.pdf}
 \includepdf[pages=-]{anhang/layout_back.pdf}
 
-\section{Stückliste}
+\subsection{Stückliste}
 
 \begin{center}
 \csvreader[%
@@ -102,6 +104,8 @@ In diesem Anhang sind die detaillierten Fertigungs- und Routing-Ebenen des entwi
     morestring=[b]"
 }
 
+\section{Firmware-Quellcode}
+
 In diesem Anhang werden die drei wichtigsten Dateien für das Zephyr-Projekt dargestellt: nämlich \codebox{prj.conf},
 \codebox{nucleo\_wl55jc.overlay} und \codebox{main.c}. Zur besseren Einordnung wird hier die Ordnerstruktur gezeigt: 
 
@@ -120,22 +124,22 @@ In diesem Anhang werden die drei wichtigsten Dateien für das Zephyr-Projekt dar
     \end{minipage}
 \end{figure}
 
-\section{prj.conf}
+\subsection{prj.conf}
 
 \lstinputlisting[
     language=Kconfig, 
     label={lst:prj_conf}
 ]{anhang/prj.conf}
 
-\newpage
-\section{DeviceTree-Overlay}
+%\newpage
+\subsection{DeviceTree-Overlay}
 
 \lstinputlisting[
     language=DeviceTree,  
     label={lst:app_overlay}
 ]{anhang/nucleo\_wl55jc.overlay}
 
-\section{main.c}
+\subsection{main.c}
 
 \lstinputlisting[
     language=C, 
