@@ -61,6 +61,7 @@
 \contentsline {section}{\numberline {5.5}Ausblick}{63}{section.5.5}%
 \contentsline {paragraph}{SPI"=Flash"=Inbetriebnahme und FUOTA}{63}{section*.81}%
 \contentsline {paragraph}{Energieautarker Betrieb mit Solarzelle}{63}{section*.82}%
+\contentsline {paragraph}{Privates Gateway und RF"=Planung}{63}{section*.83}%
 \contentsline {chapter}{\numberline {A}Anhang}{65}{appendix.A}%
 \contentsline {section}{\numberline {A.1}PCB-Dateien}{65}{section.A.1}%
 \contentsline {subsection}{\numberline {A.1.1}Schematic}{65}{subsection.A.1.1}%

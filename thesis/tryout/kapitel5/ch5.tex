@@ -100,24 +100,24 @@ dominieren im dicht bebauten Stadtgebiet deutlich kürzere Übertragungsdistanze
 
 \paragraph{SPI"=Flash"=Inbetriebnahme und FUOTA}
 Der auf der Platine bestückte externe SPI"=Flash"=Speicher (W25Q16JVSS)
-wurde im Rahmen dieser Arbeit noch nicht aktiv genutzt. Seine
-Inbetriebnahme ist jedoch eine Voraussetzung für die Implementierung
-von \acrfull{fuota}, die für den praktischen Einsatz in Gefahrgebieten
-von besonderer Relevanz ist: Da Endgeräte in industriellen Anlagen,
-Untertagestollen oder anderen schwer zugänglichen Umgebungen nach dem
-Deployment häufig nicht mehr ohne erheblichen Aufwand physisch erreicht
-werden können, erlaubt FUOTA die drahtlose Aktualisierung der
-Geräte"=Firmware -- etwa zur Behebung von Fehlern, zur Anpassung von
-Betriebsparametern oder zur Erweiterung der Funktionalität -- ohne
-dass ein manueller Eingriff vor Ort erforderlich ist. Die technische
-Grundlage hierfür (LoRaWAN TS006, MCUboot"=Integration in Zephyr) wurde
-in Abschnitt~\ref{subsubsec:spi-flash} bereits beschrieben; die
-vollständige Implementierung und Validierung des FUOTA"=Ablaufs bleibt
-einer Folgearbeit vorbehalten.
+wurde im Rahmen dieser Arbeit noch nicht aktiv genutzt. Seine Inbetriebnahme ist jedoch eine Voraussetzung für die Implementierung
+von \acrfull{fuota}, die für den praktischen Einsatz in Gefahrgebieten von besonderer Relevanz ist: 
+Da Endgeräte in solchen schwer zugänglichen Umgebungen nach dem Deployment häufig nicht mehr ohne erheblichen Aufwand 
+physisch erreicht werden können, erlaubt FUOTA die drahtlose Aktualisierung der Firmware -- etwa zur Behebung von Fehlern, 
+zur Anpassung von Betriebsparametern oder zur Erweiterung der Funktionalität -- ohne
+dass ein manueller Eingriff vor Ort erforderlich ist. Aus diesem Grund bleibt die Umsetzung
+Validierung des FUOTA"=Ablaufs  einer Folgearbeit vorbehalten.
 
 \paragraph{Energieautarker Betrieb mit Solarzelle}
 Das verfügt bereits über einen MPPT"=Laderegler (SPV1050), der die Anbindung eines Solarpanels ermöglicht.
 Bislang wurde jedoch die LiPo-Batterie ausschließlich über den USB-C-Anschluss aufgeladen.
 Die Inbetriebnahme der Solarzelle sowie eine Langzeitmessung der Energiebilanz mit dem PPK2 stellt somit 
 einen sinnvollen nächsten Schritt dar, um die tatsächliche Betriebsdauer in Einsätzen zu ermitteln.
+
+\paragraph{Privates Gateway und RF"=Planung}
+Die Kapitel \ref{chap:test} beschriebenen und  durchgeführten Feldversuche stützten sich ausschließlich auf öffentliche TTN"=Gateways, was sowohl die
+geografische Flexibilität der Messrouten erheblich einschränkte. Eine Abwendung von TTN zugunstens der Plattform Chirpstack - 
+mit der sich private LoRaWAN-Netzwerke aufbauen lassen - in Kombination mit einer gezielten RF"=Planung (mithilfe Werkzeuge wie
+\href{https://github.com/UniCT-ARSLab/LWN-Simulator}{LoRaWAN-Simulator}) könnten bessere Vorhersagen bzlg. Reichweite oder
+Netzabdeckung getroffen werden.
 
