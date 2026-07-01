@@ -196,7 +196,7 @@ gehaltenen Datenrate, die für die periodische Übertragung von Sensormesswerten
 jedoch vollkommen ausreichend is. Im Folgenden werden die drei bekanntesten etablierten
 LPWAN=Standards, nämlich \textbf{SigFox}, \textbf{NB-IoT} und \textbf{LoRaWAN}, sich gegenübergestellt.
 
-\subsection{SigFox vs NB-IoT vs LoRaWAN: Ein Vergleich}
+\subsection*{SigFox vs NB-IoT vs LoRaWAN: Ein Vergleich}
 \label{subsec:lpwan-vergleich}
 
 Chaudhari und Borkar haben sich in \cite{chaudhariLPWANTechnologiesIoT2020} intensiv mit den Vor- und Nachteilen diverser LPWAN"=Technologien 
@@ -305,16 +305,13 @@ die wichtigsten Erkenntnisse ihrer Analyse dar, mit Fokus nur auf die drei o.g. 
         %\bottomrule
     \end{tabularx}
 \end{table}
-
-\subsection{Fazit}
-\label{subsec:technologiewahl}
-
-Die Vielfältigkeit der LPWAN-Welt zeugt einerseits von den zahlreichen Möglichkeiten dieser Technologie, 
-andererseits erschwert sie die Auswahl einer optimalen Lösung. Unsere hollistische Betrachtung der Anforderungen aus 
-Abschnitt~\ref{sec:einsatzszenarien} und der technischen Eigenschaften der drei führenden LPWAN-Standards zeigt, 
-dass LoRaWAN die beste Passung für die in dieser Arbeit adressierten Off-Grid-Gefahrgebiete bietet. Im nächsten Kapitel 
-werden die theoretischen Grundsteine von LoRa und LoRaWAN gelegt, um die spätere Implementierung und Evaluierung des Prototyps 
-zu fundieren.
+\section{Zielsetzung der Arbeit}
+Aus den identifizierten Herausforderungen und der Wahl von LoRaWAN als resilienter Kommunikationstechnologie lässt sich
+die Zielsetzung dieser Bachelorarbeit ableiten: es handelt sich um die Prototyp-Entwicklung (vom PCB-Entwurf bis hin zur 
+Programmierung der Firmware) eines Sensorknotens, welche im Anschluss an ein bereits existierendes LoRaWAN-Netzwerk
+angebunden wird. Daraufhin werde experimentelle Feldversuche durchgeführt, u. a. um die maximale Reichweite
+zu untersuchen. Auf dieser Basis kann zum Schluss beurteilt werden, ob der Einsatz eines solchen LoRaWAN-Prototyps
+in Gefahrgebieten denkbar wäre.   
 
 \newacronym{wlan}{WLAN}{Wireless Local Area Network}
 \newacronym{lpwan}{LPWAN}{Low Power Wide Area Network}
