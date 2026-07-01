@@ -4,13 +4,11 @@
 
 \chapter{Ergebnisse und Bewertung}
 
-\section{Ergebnisse}
-
 In diesem Kapitel werden die empirischen Messergebnisse des entwickelten LoRaWAN-Prototyps präsentiert und dokumentiert. 
 Die Evaluierung gliedert sich in die funktionale Überprüfung der TTN-Infrastruktur, die kartografische Analyse der 
 Funkreichweite im Berliner Stadtgebiet sowie die messtechnische Bestimmung des elektrischen Energiebedarfs im Laborbetrieb.
 
-\subsection{Validierung der Netzwerkanbindung}
+\section{Validierung der Netzwerkanbindung}
 
 Vor der Durchführung der großflächigen Feldversuche im urbanen Raum wurde die grundlegende Funktionalität der 
 Kommunikationsarchitektur verifiziert. Der Fokus lag hierbei auf der fehlerfreien Initiierung des \acrshort{otaa}-Aktivierungsverfahrens sowie der 
@@ -36,7 +34,7 @@ Anhand der in der Konsole angezeigten Gateway"=ID in Zeile 40 lässt sich das em
 TTN"=Gateway der Zentral"= und Landesbibliothek Berlin (ZLB) identifizieren, was damit übereinstimmt, dass 
 die Join"=Anfrage in unmittelbarer Nähe auf der Museumsinsel initiiert wurde. % TODO: maybe write transition
 
-\subsection{Kartografische Evaluierung der TTN-Netzwerkabdeckung}
+\section{Kartografische Evaluierung der TTN-Netzwerkabdeckung}
 
 \begin{figure}[H]
     \centering
@@ -94,8 +92,32 @@ Insgesamt zeichnen die Messergebnisse ein realistisches Bild der Funkabdeckung i
 Bedingungen -- insbesondere bei erhöhter Gateway-Antenne und freier Sichtlinie -- Reichweiten im einstelligen Kilometerbereich erreichbar sind, 
 dominieren im dicht bebauten Stadtgebiet deutlich kürzere Übertragungsdistanzen.
 
-\subsection{Energieprofiling}
+\section{Energieprofiling}
 
-\subsection{Fazit und Ausblick}
-FUOTA: weil manche Endgeräte schwer zugänglich sind, und weil \dots
-Solarzelle testen für autarken Betrieb
+\section{Fazit}
+
+\section{Ausblick}
+
+\paragraph{SPI"=Flash"=Inbetriebnahme und FUOTA}
+Der auf der Platine bestückte externe SPI"=Flash"=Speicher (W25Q16JVSS)
+wurde im Rahmen dieser Arbeit noch nicht aktiv genutzt. Seine
+Inbetriebnahme ist jedoch eine Voraussetzung für die Implementierung
+von \acrfull{fuota}, die für den praktischen Einsatz in Gefahrgebieten
+von besonderer Relevanz ist: Da Endgeräte in industriellen Anlagen,
+Untertagestollen oder anderen schwer zugänglichen Umgebungen nach dem
+Deployment häufig nicht mehr ohne erheblichen Aufwand physisch erreicht
+werden können, erlaubt FUOTA die drahtlose Aktualisierung der
+Geräte"=Firmware -- etwa zur Behebung von Fehlern, zur Anpassung von
+Betriebsparametern oder zur Erweiterung der Funktionalität -- ohne
+dass ein manueller Eingriff vor Ort erforderlich ist. Die technische
+Grundlage hierfür (LoRaWAN TS006, MCUboot"=Integration in Zephyr) wurde
+in Abschnitt~\ref{subsubsec:spi-flash} bereits beschrieben; die
+vollständige Implementierung und Validierung des FUOTA"=Ablaufs bleibt
+einer Folgearbeit vorbehalten.
+
+\paragraph{Energieautarker Betrieb mit Solarzelle}
+Das verfügt bereits über einen MPPT"=Laderegler (SPV1050), der die Anbindung eines Solarpanels ermöglicht.
+Bislang wurde jedoch die LiPo-Batterie ausschließlich über den USB-C-Anschluss aufgeladen.
+Die Inbetriebnahme der Solarzelle sowie eine Langzeitmessung der Energiebilanz mit dem PPK2 stellt somit 
+einen sinnvollen nächsten Schritt dar, um die tatsächliche Betriebsdauer in Einsätzen zu ermitteln.
+
