@@ -101,6 +101,7 @@ dominieren im dicht bebauten Stadtgebiet deutlich kürzere Übertragungsdistanze
         \centering
         \includegraphics[width=\textwidth, height=10cm, keepaspectratio]{kapitel5/pictures/ppk2_without_bmv080.png}
         \caption{Ohne BMV080} 
+        \label{fig:ppk2_1}
     \end{subfigure}
     
     \hfill
@@ -118,20 +119,28 @@ dominieren im dicht bebauten Stadtgebiet deutlich kürzere Übertragungsdistanze
 Abbildung \ref{fig:ppk2} zeigt repräsentativ den Stromverbrauch des Systems, einmal mit deaktiviertem BMV080 und einmal zusätzlich
 mit deaktiviertem GPS-Modul. Es lassen sich u. a. hohe Stromsprünge (auf 70 und 60 mA jeweils) in 5-Sekunden-Intervallen erkennen,
 was auch der Sendehäufigkeit des Funkmoduls im Code entspricht. Der eigentliche Verbrauch des Funkmoduls ist die Amplitude des Sprungs
-und beträgt jeweils $70-17=53 \text{mA}$ und $60-3=57 \text{mA}$ in der oberen und unteren Abbildung. Vor dem ersten Sprung
+und beträgt jeweils $70-17=53 \text{ mA}$ und $60-3=57 \text{ mA}$ in der oberen und unteren Abbildung. Vor dem ersten Sprung
 fällt ein kurzer Peak auf, der durch das Hochfahren des Funkmoduls nach einem Reset zustande kommt. 
 Es ist außerdem erkennbar, wann das Endgerät mit dem OTAA-Verfahren erfolgreich aktiviert wurde, denn nach der Aktivierung soll
 im Code die Status-LED 5-mal hintereinander blinken, was zu den 5 Ripple-Wellen um $t=13$ korrespondiert. 
 
-Die Differenz von ungefähr 14 mA zwischen den zwei Abbildungen ist zwangsläufig der Stromverbrauch des L80-R GPS-Moduls. 
+Die Differenz von ungefähr 14 mA zwischen den zwei Abbildungen ist der Stromverbrauch des L80-R GPS-Moduls. 
 Im Datenblatt des Bauteils lässt sich dieser Wert dem \emph{Acquisition-Modus} zuordnen, während dessen das Modul aktiv versucht,
 erste Satelliten zu identifizieren. An dieser Stelle wird das GPS-Problem aus Abschnitt \ref{sec:map_eval} nochmal verdeutlicht:
 das Modul hängt minutenlang in der Acquisition, obwohl diese maximal 30 Sekunden dauern soll. Aus diesem Grund konnten bei
 Feldtests keine GPS-Daten geliefert werden. 
 
-Ein weiteres technisches Problem wurde bei den Strommessungen offenbart: LoRa-Funktionalitäten scheinen durch den 
+Ein weiteres technisches Problem wurde bei den Strommessungen offenbart: LoRa-Funktionen scheinen durch den 
 Anschluss des BMV080-Partikelsensors gestört zu werden, sodass das Stromprofil des Gesamtsystems (mit allen Sensoren aktiviert)
-nicht aufgezeichnet werden konnte. 
+nicht aufgezeichnet werden konnte. Es wird vermutet, dass die Ursache dieses Problems in dem Wirkprinzip des Sensors liegt.
+Der BMV080 benutzt einen Laser zum Messen, welcher durch Hochfrequenz-Schaltungen erzeugt werden muss. Diese
+hohen Frequenzen sowie ihre Harmoniken könnten einen erheblichen Störfaktor für das Funkmodul darstellen.
+Bei künftigen Prototypen muss also der BMV080 noch mehr vom MCU getrennt werden, damit alles normal funktioniert.  
+
+Nichtsdestotrotz lässt sich auf Basis von Abbildung \ref{fig:ppk2_1} und Tabelle \ref{tab:approx_I} der Gesamtverbrauch
+auf 136,5 mA schätzen (82 mA Peak beim Hochfahren des Funkmoduls mit 54,5 mA vom BMV080). Der 200-mA-Grenzwert vom LDO des 
+SPV1050-Chips (s. Kapitel \ref{chap:prot}) wird damit bei Weitem eingehalten, und nachfolgende PCB-Iterationen können
+allein von der LiPo-Batterie sowie der Solarzelle versorgt werden, ohne dass ein USB-C-Ladeanschluss vorhanden sein muss.
 
 \section{Fazit}
 

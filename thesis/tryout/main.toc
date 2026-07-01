@@ -59,7 +59,7 @@
 \contentsline {section}{\numberline {5.4}Fazit}{65}{section.5.4}%
 \contentsline {section}{\numberline {5.5}Ausblick}{65}{section.5.5}%
 \contentsline {paragraph}{SPI"=Flash"=Inbetriebnahme und FUOTA}{65}{section*.78}%
-\contentsline {paragraph}{Energieautarker Betrieb mit Solarzelle}{65}{section*.79}%
+\contentsline {paragraph}{Energieautarker Betrieb mit Solarzelle}{66}{section*.79}%
 \contentsline {paragraph}{Antennenoptimierung}{66}{section*.80}%
 \contentsline {paragraph}{Privates Gateway und RF"=Planung}{66}{section*.81}%
 \contentsline {chapter}{\numberline {A}Anhang}{67}{appendix.A}%
