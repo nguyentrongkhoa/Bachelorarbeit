@@ -114,10 +114,18 @@ Bislang wurde jedoch die LiPo-Batterie ausschließlich über den USB-C-Anschluss
 Die Inbetriebnahme der Solarzelle sowie eine Langzeitmessung der Energiebilanz mit dem PPK2 stellt somit 
 einen sinnvollen nächsten Schritt dar, um die tatsächliche Betriebsdauer in Einsätzen zu ermitteln.
 
+\paragraph{Antennenoptimierung}
+Die verwendete Antenne wurde im Rahmen dieser Arbeit nicht messtechnisch überprüft. Eine 
+Dimensionierung des Anpassnetzwerks mittels eines \acrshort{vna} (Vector Network Analyzer) wie der NanoVNA
+sowie eine anschließende Strahlungscharakterisierung (Gewinn, Richtdiagramm) würden die
+weitere Optimierungsmöglichkeiten offenlegen. 
+
 \paragraph{Privates Gateway und RF"=Planung}
 Die Kapitel \ref{chap:test} beschriebenen und  durchgeführten Feldversuche stützten sich ausschließlich auf öffentliche TTN"=Gateways, was sowohl die
 geografische Flexibilität der Messrouten erheblich einschränkte. Eine Abwendung von TTN zugunstens der Plattform Chirpstack - 
 mit der sich private LoRaWAN-Netzwerke aufbauen lassen - in Kombination mit einer gezielten RF"=Planung (mithilfe Werkzeuge wie
 \href{https://github.com/UniCT-ARSLab/LWN-Simulator}{LoRaWAN-Simulator}) könnten bessere Vorhersagen bzlg. Reichweite oder
 Netzabdeckung getroffen werden.
+
+\newacronym{vna}{VNA}{Vector Network Analyzer}
 

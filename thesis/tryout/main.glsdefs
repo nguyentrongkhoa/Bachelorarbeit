@@ -2210,3 +2210,31 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{vna}%
+{%
+name={\acronymfont {\glsentryshort {vna}}},%
+sort={VNA},%
+type={acronym},%
+first={VNA},%
+firstplural={VNAs},%
+text={VNA},%
+plural={VNAs},%
+description={Vector Network Analyzer},%
+descriptionplural={Vector Network Analyzer},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Vector Network Analyzer},%
+longplural={Vector Network Analyzers},%
+short={VNA},%
+shortplural={VNAs},%
+counter={page},%
+parent={},%
+%
+}%
+
