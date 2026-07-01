@@ -591,9 +591,6 @@ zusammen aus:
 Die 5 PCBs sind etwa zwei Wochen nach Bestellungsaufgabe in Berlin eingetroffen. 
 \textbf{Der komplette Designprozess (von Schematic bis PCB-Erhalt) des ersten Prototyps hat also um die 6 Wochen gedauert.}
 
-% \subsection{Inbetriebnahme}
-% TODO: maybe do a subsection on testing
-
 \section{Firmware-Entwicklung}
 
 \subsection{Wahl des Betriebssystems: Zephyr-RTOS} 
@@ -614,22 +611,18 @@ abgearbeitet. Eine reine HAL-Implementierung für komplexe Anwendungen (hohe Per
 zu gegenseiten Ressourcenblockaden führen. Gerade das LoRaWAN-Protokoll stellt sehr stringente Timing-Anforderungen, wie in Kapitel
 \ref{chap:grundlagen} beschrieben, und erfordert eine präzise Koordination von Sende- und Empfangsfenstern. Es sind also 
 Multitasking-Features unbedingt notwendig, die ein RTOS zur Verfügung stellen. 
-% TODO: cite Brian Amos book hands on rtos on microcontrollers
+
 Ein RTOS hat an erster Stelle dafür zu sorgen, dass zeitkritische Tasks innerhalb einer vordefinierten Frist gestartet und 
 beendet werden (daher die Bezeichnung real-time). Ein RTOS ist also zeitlich deterministisch, im Gegensatz zu konventionellen
-Betriebssystemen wie Windows oder Linux, die nicht garantieren können, wann genau eine Task ausgeführt wird.
+Betriebssystemen wie Windows oder Linux, die nicht garantieren können, wann genau eine Task ausgeführt wird \cite{amosHandsonRTOSMicrocontrollers2020}.
 Um diesen Determinismus zu gewährleisten, macht sich der RTOS-Kernel das Konzept von \textbf{Preemptive Scheduling} zunutze:
 dabei bekommt jede Task eine Priorität zugewiesen, und der Scheduler sorgt dafür, 
 dass immer die Task mit der höchsten Priorität ausgeführt wird. Eine laufende Task mit niedriger Priorität wird also unterbrochen 
-(\emph{präemptiert}), sobald eine höherprioritäre Task bereit ist, ausgeführt zu werden. % TODO: write better transition
+(\emph{präemptiert}), sobald eine höherprioritäre Task bereit ist, ausgeführt zu werden. 
 
-Obwohl der Markt für eingebettete Echtzeitbetriebssysteme eine große Vielfalt an etablierten Lösungen bietet, 
-darunter das weit verbreitete FreeRTOS oder die herstellereigene Middleware STM32CubeOS, fiel die Wahl für dieses Projekt 
-gezielt auf Zephyr RTOS. Der entscheidende Vorteil von Zephyr liegt in seiner modernen, modular aufgebauten Architektur, 
-die speziell für vernetzte, ressourcenbeschränkte IoT-Knoten optimiert ist.
-
-Im Gegensatz zu FreeRTOS, das primär einen minimalen Kernel bereitstellt und die manuelle Integration von Netzwerk-Stacks 
-erfordert, bringt Zephyr den industriell erprobten Semtech-LoRaWAN-Stack (LoRaMac-node) als natives Subsystem direkt mit. 
+Für dieses Projekt wurde unter den verfügbaren \acrshort{rtos}"=Lösungen, darunter das weit verbreitete FreeRTOS, Zephyr gewählt.
+Im Gegensatz zu FreeRTOS, das einen minimalen Kernel bereitstellt und die manuelle Integration von Netzwerk-Stacks 
+erfordert, ist bei Zephyr der Semtech-LoRaWAN-Stack als Subsystem bereits integriert. 
 Dies reduziert nicht nur die Fehleranfälligkeit bei der Implementierung drastisch, sondern stellt auch die Einhaltung 
 regionaler Funkrestriktionen (wie des Duty-Cycles im EU868-Band) auf Betriebssystemebene sicher.
 
@@ -657,7 +650,7 @@ externen Komponenten (Sensoren, Funkmodule).
 Wie der Begriff \enquote{Baum} schon suggeriert, werden sämtliche Hardware-Bausteine durch sogenannte \emph{Nodes} (Knoten) dargestellt, die sich
 einer hierarchischen Struktur unterordnen. Jeder Node kann wiederum \emph{Properties} (Eigenschaften) besitzen, welche
 in Form von Schlüssel-Wert-Paaren angegeben werden. Ein kurzer DT-Ausschnitt in Listing \ref{lst:dts_syntax} hilft, die Syntax 
-zu verdeutlichen: % TODO: change "listing" to german
+zu verdeutlichen: 
 
 \begin{lstlisting}[
     language=C,
@@ -767,10 +760,10 @@ generische Treibermodell von Zephyr. Es stellt standardisierte \acrshort{api}s b
 
 Anstatt Peripherie über proprietäre Registerbefehle des jeweiligen Chipherstellers anzusprechen, interagiert die Anwendungsschicht 
 ausschließlich mit abstrakten Subsystemen (wie der \verb|sensor_driver_api| oder \verb|uart_driver_api|). 
-Für die Anwendungslogik ist es dadurch irrelevant, welcher konkrete Sensor- oder Bus-Typ physisch verbaut ist. Ein Wechsel des 
-Hardware-Bausteins erfordert lediglich eine Anpassung des \codebox{compatible}-Eintrags im DT; der Applikationscode 
-greift über identische Funktionsaufrufe auf die Daten zu, da der Kernel den hardwarespezifischen Treiber vollautomatisch 
-unter der standardisierten API kapselt. % TODO: maybe reread this
+Für die Anwendungslogik ist es dadurch irrelevant, welcher konkrete Sensor- oder Bus-Typ physisch verbaut ist. Ein Sensortausch würde 
+lediglich eine Anpassung des \codebox{compatible}-Eintrags im DT erfordern; der Applikationscode 
+greift über identische Funktionsaufrufe auf die Daten zu, da der Kernel den hardwarespezifischen Treiber automatisch 
+unter der standardisierten API kapselt. 
 
 \subsection{LoRaWAN-Netzwerkanbindung}
 
@@ -780,7 +773,7 @@ Privatnetzwerks den zeitlichen Rahmen dieser Arbeit sprengen würde, wird auf da
 zurückgegriffen. 
 
 Wie aus Kapitel \ref{chap:grundlagen} bekannt, sind drei Informationen für die Registrierung eines Endgeräts im Netzwerk erforderlich: 
-DevEUI, AppKey und JoinEUI. Zum Extrahieren der DevEUI wird Zephyr das Subsystem \codebox{hwinfo} zur Verfügung gestellt. % TODO: explain subsystem 
+DevEUI, AppKey und JoinEUI. Zum Extrahieren der DevEUI wird Zephyr das Subsystem \codebox{hwinfo} zur Verfügung gestellt. 
 TTN übernimmt die Rolle des Join-Servers und generiert selber den AppKey für unsere Applikation. Da kein externer Join-Server
 nötig ist, wird die JoinEUI als Nullvektor \codebox{00 00 00 00 00 00 00 00} definiert.  
 
@@ -887,7 +880,7 @@ In Zeilen 9 bis 11 im Listing \ref{lst:dev_nonce_incr} wird der im Flash-Speiche
 übertragen. Das Programm versucht anschließend, unter Verwendung der neugeladenen \codebox{dev\_nonce} sowie DevEUI, JoinEUI und AppKey 
 (diese werden im Struct \codebox{join\_cfg} zusammengefasst) dem Netzwerk beizutreten. Schlägt der Versuch fehl, wird eine Wartezeit von 20 Sekunden
 zum Nächstversuch eingehalten, um nicht gegen Duty-Cycle-Beschränkungen zu verstoßen. Ein erfolgreicher Verbindungsaufbau bewirkt,
-dass in Zeilen 21 und 22 die \codebox{dev\_nonce} inkrementiert und wiederum im Flash zurückgespeichert wird. % TODO: refer to ... for duty cycle limits
+dass in Zeilen 21 und 22 die \codebox{dev\_nonce} inkrementiert und wiederum im Flash zurückgespeichert wird. 
 Somit kann das Board bei Bedarf gültige Rejoin-Anfragen senden, etwa beim Verbindungsabbruch oder nach einem Reset-Ereignis. 
 
 Zu guter Letzt müssen beim Join-Verfahren die TX- und RX-Fenster zeitlich abgestimmt sowie koordiniert werden, weswegen 
@@ -926,7 +919,7 @@ der LoRaWAN-Stack Auskünfte über die Pinverbindungen des RF-Schalters braucht.
 
 Nachdem die LoRaWAN"=Netzwerkanbindung erfolgreich etabliert war, wurde im nächsten Schritt die Anbindung der Sensorik realisiert. Aus Vereinfachungsgründen
 wurden für den vorliegenden Prototyp ausschließlich der Gassensor BME680 sowie das GPS"=Modul L80"=R integriert; auf den Partikelsensors
-BMV080 wurde verzichtet, da dieser laut Schaltplan (vgl. Abschnitt~\ref{subsec:mcu-schaltung}) am selben I2C"=Bus wie der BME680 % TODO: check ref
+BMV080 wurde verzichtet, da dieser laut Schaltplan (Anhang \ref{anhang:schematic} am selben I2C"=Bus wie der BME680 
 betrieben wird und eine gleichzeitige Inbetriebnahme beider Sensoren den Rahmen dieser Arbeit nicht zusätzlich gerechtfertigt hätte.
 
 Für den Umgebungssensor BME680 stellt Zephyr einen nativen Hardware-Treiber bereit, welcher über die Property 
