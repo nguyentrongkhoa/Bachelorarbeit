@@ -2,19 +2,17 @@
 % Kapitel 4: Testplanung und -durchführung 
 % =============================================================================
 
-\chapter{Testplanung und -durchführung}
+\chapter{Funkabdeckungstest}
 \label{chap:test}
 
-\section{Funkabdeckungstest}
-
-\subsection{Auswahl der Gateways}
+\section{Auswahl der Gateways}
 
 Um eine systematische Untersuchung der Funkabdeckung im urbanen Raum durchführen zu können, wurden zunächst geeignete Gateways 
 identifiziert, um die herum die Testrouten konstruiert werden sollten. Als Grundlage diente die öffentlich zugängliche 
 Abdeckungskarte von TTN Mapper, die sowohl die Standorte registrierter Gateways als auch eine Heatmap historisch 
 beobachteter Signalstärken anzeigt. 
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{kapitel4/pictures/ttn_mapper_berlin.png} 
     \caption{Übersicht TTN-Gateways in Berlin}
@@ -45,7 +43,7 @@ es verfügt über eine geringe Montagehöhe wurde aufgrund seiner unmittelbaren 
     \end{tabular}
 \end{table}
 
-\subsection{Routenplanung}
+\section{Routenplanung}
 
 Um die genauen Straßenzüge für die Testfahrten sinnvoll zu planen, wurde im Anschluss eine sogenannte Viewshed-Analyse 
 (Sichtbarkeitsanalyse) mit der Open-Source-\acrshort{gis}-Software QGIS durchgeführt. QGIS ermöglicht die Verarbeitung 
@@ -58,7 +56,7 @@ Vegetation und Geländeoberfläche in hoher Auflösung enthält und damit eine d
 erlaubt als ein reines Geländemodell ohne Bebauung. Das Berliner DOM liegt in Form von 297 Kacheln zu je 2\,km\,× \,2\,km vor 
 (Abbildung~\ref{fig:berlin_raster}). 
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{kapitel4/pictures/berlin_rasterkarte.png} 
     \caption[Rasterkarte Berlins]{Rasterkarte Berlins (Quelle: Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen)}
@@ -151,7 +149,7 @@ ausgewählten Gateways entfernt liegt, wurde es bewusst in die Testroute aufgeno
 des ehemaligen Flughafengeländes eine nahezu ungestörte Sichtverbindung über große Distanzen versprechen und sich damit ideal 
 zur Untersuchung der maximal erreichbaren Reichweite unter günstigen Ausbreitungsbedingungen eignen.
 
-\subsection{Zeitplanung}
+\section{Zeitplanung}
 
 Da elektromagnetische Störfaktoren im urbanen Raum signifikanten tageszeitlichen Schwankungen unterliegen, wurden die 
 Messkampagnen strategisch auf unterschiedliche Zeitfenster verteilt. Die Evaluierung der Route im Bezirk Mitte (ZLB) 
@@ -161,7 +159,7 @@ aufgrund ihrer morphologischen Struktur ein weniger kritisches Störprofil auf. 
 der regulären Tagesarbeitszeiten durchgeführt werden (10:00 bis 12:00 Uhr für Steglitz sowie 16:00 bis 18:00 Uhr für das 
 Tempelhofer Feld).
 
-\subsection{Durchführung der Messfahrten}
+\section{Durchführung der Messfahrten}
 
 Während der Testfahrten wurden die geplanten Routen zu Fuß abgegangen, während der PCB-Prototyp kontinuierlich Datenpakete 
 über das LoRaWAN-Netzwerk an TTN sendete. Zur Erfassung der Position wurden GPS-Koordinaten über das auf der Platine 

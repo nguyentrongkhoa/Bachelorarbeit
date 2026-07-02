@@ -76,14 +76,14 @@ mit dem Rechner verbunden und am anderen Ende mit einer Dipolantenne ausgestatte
 Die Stablänge $\ell$ muss dabei auf \SI{868}{\MHz} abgestimmt sein: 
 $\ell = \frac{\lambda}{4} = \frac{c}{4f} = \frac{\SI{3e8}{\m\per\s}}{4 \cdot \SI{868e6}{\Hz}} \approx \SI{8,64}{\cm}$
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{kapitel3/pictures/zephyr_lora_send_setup.jpeg}
     \caption{Versuchsaufbau}
     \label{fig:zephyr_lora_send_setup}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[angle=90,width=\textwidth]{kapitel3/pictures/868MHz_Dipole.jpeg}
     \caption{Einstellung Antennenlänge}
@@ -96,7 +96,7 @@ Die breitbändige Verteilung, die die \acrshort{css}"=Modulation auszeichnet, l�
 Daraus kann schlussfolgert werden, dass in der richtigen Frequenz gesendet wurde. Im Anschluss erfolgt die Nachrichtendekodierung
 in GNU-Radio. 
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{kapitel3/pictures/zephyr_lora_send_in_sdr_sharp.png}
     \caption{LoRa-Verkehr in SDR\#}
@@ -107,7 +107,7 @@ GNU-Radio ist eine Open-Source=Software für die Entwicklung von \acrshort{sdr}=
 Simulinks, einem Blockdiagramm, in dem die Blöcke die Signalverarbeitungsschritte darstellen. Mit einem einfachen
 Diagramm wie in Abbildung \ref{fig:zephyr_lora_send_gnuradio} können LoRa-Daten schon sichtbar gemacht werden. 
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{kapitel3/pictures/lora_send_test_gnuradio_flowgraph.png}
     \caption{Blockdiagramm zum Empfangen von LoRa-Testpaketen in GNU-Radio}
@@ -120,7 +120,7 @@ geführt, welcher die LoRa-Pakete demoduliert und dekodiert. Die LoRa-Blöcke ko
 über das Erweiterungsmodul \codebox{gr-lora} (entwickelt von \citeauthor{tapparelOpenSourceLoRaPhysical2020}) eingebunden werden.
 Die dekodierten Payloads werden im Terminal ausgegeben (Abbildung \ref{fig:zephyr_lora_send_gnuradio_result})
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{kapitel3/pictures/lora_send_test_gnuradio_result.png}
     \caption{Dekodierte Nutzdaten in GNU-Radio-Terminal}
@@ -141,7 +141,7 @@ kommen von der MCU und werden über Pullup- sowie Pulldown-Widerstände so konfi
 dass per Default das Empfangen aktiviert ist, da fahrlässiges Senden ohne Antenne
 das Funkmodul beschädigen könnte.  
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{kapitel3/pictures/block_diag.png}
     \caption{Blockschaltbild PCB-Prototyp}
@@ -173,7 +173,7 @@ Das Laden des LiPo-Akkus erfolgt wie bereits erwähnt über einen 6-poligen USB-
 als Funktion der Batteriespannung regelt. Durch den 2K-Widerstand R4 wird der Ladestrom auf ca. 880mA begrenzt, um die Grenze des USB-Steckers
 zu berücksichtigen. 
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{kapitel3/pictures/usb.png}
     \caption{Ladeblock mit USB-C-Anschluss und BQ24074}
@@ -226,7 +226,7 @@ Die approximate Ladezeit eines vollständig entleerten Akkus beträgt damit $\fr
 was in der Praxis aufgrund von Wetterbedingungen und Ladeeffizienz wahrscheinlich eher 2-3 Wochen entspricht. Das hört sich zwar 
 nach wenig an, aber der evt. jahrelange Betrieb rechtfertigt die Integration dieser Solarzelle.
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{kapitel3/pictures/solar.png}
     \caption{Energiegewinnung durch Solarzelle mit SPv1050}
@@ -245,7 +245,7 @@ die tatsächliche Kapazität der Batterie beeinflussen können. Aus diesem Grund
 um den \acrfull{soc2} der Batterie zu verfolgen. Dieser schickt seine Daten über I2C an die MCU und benachrichtigt sie über die \texttt{ALERT} 
 Leitung, sobald unter einen bestimmten Schwellenwert fällt. 
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{kapitel3/pictures/fg.png}
     \caption{Batterie-SoC-Tracking mit MAX17048}
@@ -278,7 +278,7 @@ allerdings das Routen erheblich, weil die Pads überall in der Footprintfläche 
 Die \acrshort{ufqfpn}-Variante ist hingegen leichter zu handhaben, da die Pins nur an den Seiten liegen. Dazu kostet sie mit ihren 48 Pins 
 25\% weniger als das 73-Pin-\acrshort{bga}-Gehäuse (9,57\$ zu 12,77\$ auf JLCPCB). 
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
@@ -310,7 +310,7 @@ Bei künftigen Iterationen wird mit einer Chip-Antenne experimentiert, um die Ko
 
 Die vom Referenzdesign angepasste MCU-Schaltung für den ersten Prototyp sieht in ihrer Gesamheit folgendermaßen aus:
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{kapitel3/pictures/mcu_schematic.png}
     \caption{MCU-Schaltung mit STM32WL55}
@@ -334,7 +334,7 @@ Bei \SI{868}{\MHz} entsprechen 30 \acrshort{ppm} einer absoluten Frequenzabweich
 \SI{26}{\kHz}, dadurch könnte der Kanalabstand bei hohen Spreizfaktoren überschritten und
 Demodulationsfehler hervorgerufen werden. Der TCXO vermeidet dieses Problem zuverlässig.
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{kapitel3/pictures/hse.png}
     \caption{Taktversorgung mit HSE}
@@ -347,7 +347,7 @@ Dadurch kann der TCXO im Deep"=Stop"=Modus vollständig abgeschaltet werden,
 um den Ruhestromverbrauch zu minimieren. Die Ausgangsleitung des TCXO ist
 über C9 (1\,nF) entkoppelt und gelangt an den \texttt{OSC\_IN}"=Pin der MCU.
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{kapitel3/pictures/mco.png}
     \caption{Überprüfung der TCXO"=Frequenz über MCO-Ausgang}
@@ -359,7 +359,7 @@ ist an den Header J18 geführt. Dieser Ausgang kann in der Firmware so
 konfiguriert werden, dass er eine abgeleitete Taktfrequenz ausgibt,
 die mit dem Oszilloskop gemessen werden kann. 
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{kapitel3/pictures/lse.png}
     \caption{Taktversorgung mit LSE}
@@ -377,7 +377,7 @@ von 18pF.
 \subsubsection{RF-Sendepfad}
 \label{subsubsec:rf_circuitss}
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{kapitel3/pictures/tx_matching.png}
     \caption{Sendeschaltung}
@@ -397,7 +397,7 @@ um Leistungsverlusten im aktuellen Design entgegenzuwirken.
 
 \subsubsection{RF-Empfangspfad}
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{kapitel3/pictures/rx_matching.png}
     \caption{RX-Impedanzanpassung}
@@ -420,7 +420,7 @@ minimieren.
 \subsubsection{SPI-Flash-Speicher}
 \label{subsubsec:spi-flash}
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.75\textwidth]{kapitel3/pictures/spi_flash.png}
     \caption{SPI-Flash-Speicher}
@@ -455,7 +455,7 @@ Layers haben folgende Funktionen:
     \item[\textbf{Bottom Layer (L4):}] Sekundäre Signalleitungen.
 \end{description}
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{kapitel3/pictures/stackup.png}
     \caption{PCB-Stackup mit vier Lagen: Top (L1), Inner 1 (L2), Inner 2 (L3), Bottom (L4)}
@@ -477,7 +477,7 @@ suboptimal, da an den PCB-Kanten gestrahlt werden kann. Die Application-Note \ci
 von der Power Plane zur Boardrand zu lassen und einen GND-Ring vorzusehen, welcher über Via-Stitching mit L2 verbunden werden soll 
 (Abbildung \ref{fig:power_plane})
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{kapitel3/pictures/power_plane.png}
     \caption{Optimale Power-Plane-Auslegung laut AN5407}
@@ -491,7 +491,7 @@ durch Signalreflexionen an den Übergängen (bswp. zur MCU oder Antenne) zu verm
 erfolgt mit einem Impedanzrechner, der die Stackup-Parameter (Layer-Abstände, Dielektrizitätskonstante) 
 sowie die Leiterbahnbreite und -dicke berücksichtigt.
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{kapitel3/pictures/imp_calc_kicad.png}
     \caption{Impedanzberechnung in KiCad}
@@ -508,7 +508,7 @@ Leiterbahnen zu Pads von SMD-Komponenten, da diese meist viel größer sind als 
 Daher werden alle RF-SMD-Bauteile in der Größe 0402 (0,5mm Padbreite) gewählt, und die 0,15 mm Differenz wird 
 durch ein Teardrop-Muster überbrückt. 
 
-\begin{figure}[H]
+\begin{figure}[htbp]
      \centering
      \begin{subfigure}[b]{0.45\textwidth}
          \centering
@@ -535,14 +535,14 @@ wie sie in der Schematic aufgeführt sind. Oben links ist das Lademodul mit USB-
 die Energiegewinnungsschaltung mit 2 großen rechteckigen Pads zum Löten der Solarzelle. Die MCU ist mittig platziert mit ihren
 Peripherien und Sensoren ringsum. 
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{kapitel3/pictures/board_2d.png}
     \caption{2D-Ansicht der fertigen Leiterplatte}
     \label{fig:board_2d}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[htbp]
      \centering
      \begin{subfigure}[b]{0.45\textwidth}
          \centering
@@ -570,7 +570,7 @@ treiben, mussten zusätzlich über Mouser angeschafft werden. Dazu zählen z.B d
 die Solarzelle sowie THT-Pin-Headers, die händisch gelötet werden müssen. Eine approximative Kostenübersicht setzt sich 
 zusammen aus:  
 
-\begin{table}[H]
+\begin{table}[htbp]
     \centering
     \caption{Kostenaufstellung pro PCB}
     \label{tab:kosten_pcb}
@@ -778,7 +778,7 @@ DevEUI, AppKey und JoinEUI. Zum Extrahieren der DevEUI wird Zephyr das Subsystem
 TTN übernimmt die Rolle des Join-Servers und generiert selber den AppKey für unsere Applikation. Da kein externer Join-Server
 nötig ist, wird die JoinEUI als Nullvektor \codebox{00 00 00 00 00 00 00 00} definiert.  
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{kapitel3/pictures/ttn_register.png}
     \caption{Registrierung eines neuen Endgeräts im LoRaWAN-Netzwerk bei The Things Network}

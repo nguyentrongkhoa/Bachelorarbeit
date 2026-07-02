@@ -29,7 +29,6 @@
 \usepackage{longtable}
 \usepackage{enumitem}
 \usepackage{multicol}
-\usepackage[acronym]{glossaries}
 \usepackage{tikz}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18} 
@@ -37,19 +36,6 @@
 \usepackage[abgabe]{bhtThesis} 
 \typeout{BHT-Abschlussarbeit V2.0 26.08.21 S.Tschirley}
 \linespread{1.5}
-
-% Neuer, kompatibler Stil für das mehrspaltige Abkürzungsverzeichnis
-\newglossarystyle{multicol-acronyms}{%
-  \setglossarystyle{long}% Als Basis-Stil verwenden
-  \renewenvironment{theglossary}%
-    {\begin{multicols}{2}\raggedright\begin{description}}%
-    {\end{description}\end{multicols}}%
-  % Korrektur für neuere Versionen des Pakets:
-  \renewcommand*{\glossaryentry}[2]{%
-    \item[\glstarget{##1}{\glossaryentryheadline{##1}}] \glossaryentrydesc{##1}%
-  }%
-}
-\renewcommand{\glossaryname}{Abkürzungsverzeichnis}
 
 \usepackage{blindtext}   %für Blindtext in Kapitel 2
 \usepackage{listings}
@@ -133,6 +119,8 @@
 \makeglossaries % can only be used in preamble
 \newcommand{\codebox}[1]{\colorbox{gray!15}{\texttt{#1}}}
 
+\bibliography{LoRa}
+
 %%\renewcommand{\baselinestretch}{1.05} 
 \begin{document}
 \pagestyle{fancy}
@@ -141,9 +129,12 @@
 
 % TODO: remember to run makeglossaries main in the cmd line (when you are in /tryout/ folder), \makeglossaries is not enough
 % TODO: rename acronyms to Abkürzungen
-\printglossary[type=\acronymtype]
-\printglossary
-%\printglossary[type=\acronymtype, style=multicol-acronyms]
+% \printglossary[type=\acronymtype]
+\begin{multicols}{2}
+  \printglossary[type=\acronymtype, title=Abkürzungen]
+\end{multicols}
+% \printglossary
+
 
 \pagenumbering{arabic}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -161,10 +152,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Literaturverzeichnis
 
-\clearpage\newpage
 \addcontentsline{toc}{chapter}{Literatur- und Quellenverzeichnis}
 %\bibliographystyle{myapalike}
-%\bibliography{LoRa}
 
 % if this does not print, clean all auxiliary files and recompile
 \printbibliography

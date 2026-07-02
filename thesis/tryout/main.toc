@@ -15,11 +15,11 @@
 \contentsline {section}{\numberline {2.2}LoRa -- Physical Layer}{10}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}LoRa-Modulation}{10}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Wichtige Kenngrößen und Formeln}{12}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Frequenzbänder und regulatorische Rahmenbedingungen}{14}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.3}Frequenzbänder und regulatorische Rahmenbedingungen}{15}{subsection.2.2.3}%
 \contentsline {section}{\numberline {2.3}LoRaWAN -- Network Layer}{15}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Endgeräte}{16}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.1}Endgeräte}{15}{subsection.2.3.1}%
 \contentsline {subsection}{\numberline {2.3.2}Gateways}{18}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Network-Server}{18}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.3}Network-Server}{19}{subsection.2.3.3}%
 \contentsline {subsection}{\numberline {2.3.4}Join-Server}{19}{subsection.2.3.4}%
 \contentsline {chapter}{\numberline {3}Prototyp-Entwicklung}{21}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Hardwareauswahl}{21}{section.3.1}%
@@ -28,47 +28,46 @@
 \contentsline {subsubsection}{Sensorik}{22}{section*.27}%
 \contentsline {subsection}{\numberline {3.1.2}Externe Hardware}{22}{subsection.3.1.2}%
 \contentsline {section}{\numberline {3.2}Proof-of-Concept}{22}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Hardware-Entwicklung}{26}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Schematic}{26}{subsection.3.3.1}%
-\contentsline {subsubsection}{Blockschaltbild}{26}{section*.33}%
+\contentsline {section}{\numberline {3.3}Hardware-Entwicklung}{25}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Schematic}{25}{subsection.3.3.1}%
+\contentsline {subsubsection}{Blockschaltbild}{25}{section*.33}%
 \contentsline {subsubsection}{Wichtige Teilschaltungen}{27}{section*.35}%
-\contentsline {subsubsection}{Taktversorgung}{33}{section*.43}%
-\contentsline {subsubsection}{RF-Sendepfad}{35}{section*.47}%
-\contentsline {subsubsection}{RF-Empfangspfad}{36}{section*.49}%
-\contentsline {subsubsection}{SPI-Flash-Speicher}{37}{section*.51}%
-\contentsline {subsection}{\numberline {3.3.2}PCB-Layout}{37}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Fertigung und Bestückung}{42}{subsection.3.3.3}%
-\contentsline {section}{\numberline {3.4}Firmware-Entwicklung}{43}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Wahl des Betriebssystems: Zephyr-RTOS}{43}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Zephyr-Architektur: Devicetree, KConfig, Treibermodelle}{44}{subsection.3.4.2}%
-\contentsline {subsubsection}{Devicetree zur Hardware-Beschreibung}{45}{section*.63}%
-\contentsline {subsubsection}{KConfig zur Software-Konfiguration}{47}{section*.65}%
-\contentsline {subsubsection}{Treibermodelle als Brücke zwischen Hardware und Software}{47}{section*.66}%
-\contentsline {subsection}{\numberline {3.4.3}LoRaWAN-Netzwerkanbindung}{47}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}Integration von Peripherien}{50}{subsection.3.4.4}%
-\contentsline {chapter}{\numberline {4}Testplanung und -durchführung}{53}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Funkabdeckungstest}{53}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Auswahl der Gateways}{53}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Routenplanung}{54}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}Zeitplanung}{57}{subsection.4.1.3}%
-\contentsline {subsection}{\numberline {4.1.4}Durchführung der Messfahrten}{57}{subsection.4.1.4}%
-\contentsline {chapter}{\numberline {5}Ergebnisse und Bewertung}{59}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Validierung der Netzwerkanbindung}{59}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Kartografische Evaluierung der TTN-Netzwerkabdeckung}{60}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Strommessungen}{64}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Fazit}{65}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Ausblick}{66}{section.5.5}%
-\contentsline {paragraph}{SPI"=Flash"=Inbetriebnahme und FUOTA}{66}{section*.78}%
-\contentsline {paragraph}{Energieautarker Betrieb mit Solarzelle}{66}{section*.79}%
-\contentsline {paragraph}{Antennenoptimierung}{67}{section*.80}%
-\contentsline {paragraph}{Privates Gateway und RF"=Planung}{67}{section*.81}%
-\contentsline {chapter}{\numberline {A}Anhang}{69}{appendix.A}%
-\contentsline {section}{\numberline {A.1}PCB-Dateien}{69}{section.A.1}%
-\contentsline {subsection}{\numberline {A.1.1}Schematic}{69}{subsection.A.1.1}%
-\contentsline {subsection}{\numberline {A.1.2}Layout}{76}{subsection.A.1.2}%
-\contentsline {subsection}{\numberline {A.1.3}Stückliste}{81}{subsection.A.1.3}%
-\contentsline {section}{\numberline {A.2}Firmware-Quellcode}{82}{section.A.2}%
-\contentsline {subsection}{\numberline {A.2.1}prj.conf}{82}{subsection.A.2.1}%
-\contentsline {subsection}{\numberline {A.2.2}DeviceTree-Overlay}{84}{subsection.A.2.2}%
-\contentsline {subsection}{\numberline {A.2.3}main.c}{86}{subsection.A.2.3}%
-\contentsline {chapter}{Literatur- und Quellenverzeichnis}{94}{lstnumber.-3.243}%
+\contentsline {subsubsection}{Taktversorgung}{32}{section*.43}%
+\contentsline {subsubsection}{RF-Sendepfad}{34}{section*.47}%
+\contentsline {subsubsection}{RF-Empfangspfad}{35}{section*.49}%
+\contentsline {subsubsection}{SPI-Flash-Speicher}{36}{section*.51}%
+\contentsline {subsection}{\numberline {3.3.2}PCB-Layout}{36}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Fertigung und Bestückung}{41}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.4}Firmware-Entwicklung}{42}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Wahl des Betriebssystems: Zephyr-RTOS}{42}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Zephyr-Architektur: Devicetree, KConfig, Treibermodelle}{43}{subsection.3.4.2}%
+\contentsline {subsubsection}{Devicetree zur Hardware-Beschreibung}{43}{section*.63}%
+\contentsline {subsubsection}{KConfig zur Software-Konfiguration}{45}{section*.65}%
+\contentsline {subsubsection}{Treibermodelle als Brücke zwischen Hardware und Software}{45}{section*.66}%
+\contentsline {subsection}{\numberline {3.4.3}LoRaWAN-Netzwerkanbindung}{46}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Integration von Peripherien}{49}{subsection.3.4.4}%
+\contentsline {chapter}{\numberline {4}Funkabdeckungstest}{51}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Auswahl der Gateways}{51}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Routenplanung}{52}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Zeitplanung}{55}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Durchführung der Messfahrten}{55}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Ergebnisse und Bewertung}{57}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Validierung der Netzwerkanbindung}{57}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Kartografische Evaluierung der TTN-Netzwerkabdeckung}{58}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Strommessungen}{61}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Fazit}{62}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Ausblick}{63}{section.5.5}%
+\contentsline {paragraph}{SPI"=Flash"=Inbetriebnahme und FUOTA}{63}{section*.78}%
+\contentsline {paragraph}{Energieautarker Betrieb mit Solarzelle}{63}{section*.79}%
+\contentsline {paragraph}{Antennenoptimierung}{64}{section*.80}%
+\contentsline {paragraph}{Privates Gateway und RF"=Planung}{64}{section*.81}%
+\contentsline {chapter}{\numberline {A}Anhang}{65}{appendix.A}%
+\contentsline {section}{\numberline {A.1}PCB-Dateien}{65}{section.A.1}%
+\contentsline {subsection}{\numberline {A.1.1}Schematic}{65}{subsection.A.1.1}%
+\contentsline {subsection}{\numberline {A.1.2}Layout}{72}{subsection.A.1.2}%
+\contentsline {subsection}{\numberline {A.1.3}Stückliste}{77}{subsection.A.1.3}%
+\contentsline {section}{\numberline {A.2}Firmware-Quellcode}{78}{section.A.2}%
+\contentsline {subsection}{\numberline {A.2.1}prj.conf}{78}{subsection.A.2.1}%
+\contentsline {subsection}{\numberline {A.2.2}DeviceTree-Overlay}{80}{subsection.A.2.2}%
+\contentsline {subsection}{\numberline {A.2.3}main.c}{82}{subsection.A.2.3}%
+\contentsline {chapter}{Literatur- und Quellenverzeichnis}{89}{lstnumber.-3.243}%

@@ -60,14 +60,14 @@ Ein Chirp ist ein Signal, dessen Momentanfrequenz zwischen zwei definierten Gren
 oder abfällt (Down-Chirp), wie in Abbildung \ref{fig:chirps_freq} dargestellt. Das Ergebnis dieser Frequenzvariation
 ist das Stauch- bzw. Streckverhalten in Abbildung \ref{fig:chirps}. 
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{chirps_freq.png} 
     \caption{Chirp-Frequenz über die Zeit}
     \label{fig:chirps_freq}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{chirps.png} 
     \caption{Chirp-Amplitude über die Zeit}
@@ -270,7 +270,7 @@ technischen Spezifikationen dokumentiert. Diese beginnen alle mit dem Präfix "T
 Eine LoRaWAN"=Kommunikationskette setzt sich aus drei Gliedern zusammen: Endgeräten/\acrfull{ed}, Gateways und Servern. 
 Die Server"=Seite gliedert sich weiter in \acrfull{ns}, \acrfull{js} und \acrfull{as}. 
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{lorawan_arch.png} 
     \caption[LoRaWAN-Netzwerkarchitektur]{LoRaWAN-Netzwerkarchitektur (Quelle: The Things Network)}
@@ -297,7 +297,7 @@ Außerhalb dieser Fenster befindet sich das Gerät im Schlafmodus, um den Stromv
 darf erst nach Empfang einer Downlink-Nachricht oder nach Ablauf von RX2 erfolgen. Diese Klasse eignet sich besonders für batteriebetriebene Sensoren, die 
 nur gelegentlich Daten senden müssen, wie es bei vielen Schutzsensoren der Fall ist. 
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{class_a_ts001.png} 
     \caption[Empfangsfenster für Endgeräte der Klasse A]{Empfangsfenster für Endgeräte der Klasse A (Quelle: \cite{LoRaWANL21042020})}
@@ -310,7 +310,7 @@ Endgerät und dem Netzwerk basiert auf sogenannten \emph{Beacons}, die das Gatew
 (standardmäßig alle $128\text{ s}$) als Broadcast aussendet. Diese Beacons enthalten einen präzisen Zeitstempel, sodass sich die 
 internen Clocks der Endgeräte der Netzwerkzeit anpassen können.
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{class_b.png} 
     \caption[Beacon- und Ping-Slots für Endgeräte der Klasse B]{Beacon- und Ping-Slots für Endgeräte der Klasse B (Quelle: \cite{LoRaWANL21042020})}
