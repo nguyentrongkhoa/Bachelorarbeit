@@ -9,3 +9,8 @@ manifest:
     - name: nguyentrongkhoa
       url-base: https://github.com/nguyentrongkhoa
 
+  projects:
+    - name: Bachelorarbeit
+      remote: nguyentrongkhoa
+      revision: master
+      
