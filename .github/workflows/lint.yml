@@ -41,6 +41,8 @@ jobs:
           west update
 
       - name: Generate Compilation Database
+        env:
+          ZEPHYR_BASE: /workspaces/zephyr
         run: |
           # generate compile_commands.json for the desired board
           west build -b nucleo_wl55jc -- -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
