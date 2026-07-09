@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           submodules: recursive
 
@@ -26,16 +26,14 @@ jobs:
 
       - name: Initialize West Workspace
         run: |
-          # Initialisiert die Zephyr-Umgebung im CI-Server
           west init -l . || true
           west update
 
       - name: Generate Compilation Database
         run: |
-          # Erzeugt die compile_commands.json für das gewünschte Board
+          # generate compile_commands.json for the desired board
           west build -b nucleo_wl55jc -- -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
 
       - name: Run Clang-Tidy Linter
         run: |
-          # Führt den Linter auf Basis der generierten Datenbank aus
           run-clang-tidy -p build/ "src/.*\.c$"
