@@ -6,12 +6,12 @@ manifest:
     west-commands: scripts/west-commands.yml
 
   remotes:
-    - name: Bachelorarbeit
-      url-base: https://github.com/nguyentrongkhoa/Bachelorarbeit
+    - name: nguyentrongkhoa
+      url-base: https://github.com/nguyentrongkhoa
 
   projects:
-    - name: zephyr
-      remote: Bachelorarbeit
+    - name: Bachelorarbeit
+      remote: nguyentrongkhoa
       revision: master
       import:
         # By using name-allowlist we can clone only the modules that are
