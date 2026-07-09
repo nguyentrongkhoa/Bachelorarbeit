@@ -1,0 +1,41 @@
+name: Static Code Analysis
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    # official container of the Zephyr project
+    container:
+      image: ghcr.io/zephyrproject-rtos/zephyr-build:latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Install Linter Tools
+        run: |
+          # install clang for linting
+          sudo apt-get update && sudo apt-get install -y clang-tidy
+
+      - name: Initialize West Workspace
+        run: |
+          # Initialisiert die Zephyr-Umgebung im CI-Server
+          west init -l . || true
+          west update
+
+      - name: Generate Compilation Database
+        run: |
+          # Erzeugt die compile_commands.json für das gewünschte Board
+          west build -b nucleo_wl55jc -- -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+
+      - name: Run Clang-Tidy Linter
+        run: |
+          # Führt den Linter auf Basis der generierten Datenbank aus
+          run-clang-tidy -p build/ "src/.*\.c$"
