@@ -12,6 +12,7 @@ jobs:
     # official container of the Zephyr project
     container:
       image: ghcr.io/zephyrproject-rtos/zephyr-build:latest
+      options: --user root
 
     steps:
       - name: Checkout Code
