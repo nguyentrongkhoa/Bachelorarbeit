@@ -6,13 +6,13 @@ manifest:
     west-commands: scripts/west-commands.yml
 
   remotes:
-    - name: zephyrproject-rtos
-      url-base: https://github.com/zephyrproject-rtos
+    - name: Bachelorarbeit
+      url-base: https://github.com/nguyentrongkhoa/Bachelorarbeit
 
   projects:
     - name: zephyr
-      remote: zephyrproject-rtos
-      revision: main
+      remote: Bachelorarbeit
+      revision: master
       import:
         # By using name-allowlist we can clone only the modules that are
         # strictly needed by the application.

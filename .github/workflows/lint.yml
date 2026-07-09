@@ -27,6 +27,7 @@ jobs:
 
       - name: Initialize West Workspace
         run: |
+          cd software
           west init -l . || true
           west update
 
