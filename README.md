@@ -17,15 +17,15 @@ The project is divided into three main parts:
 
 ```
 .
-├── hardware/       # KiCad hardware design (submodule)
-├── firmware/       # Zephyr RTOS firmware source
-├── thesis/         # LaTeX thesis document and assets
+├── hardware/       # KiCad hardware design (included here as a submodule)
+├── software/       # Zephyr RTOS firmware source
+├── thesis         # bachelor thesis, Latex source code is somewhere else
 └── README.md
 ```
 
 ## Hardware
 
-- Designed in **KiCad**
+- Designed in **KiCad** 10
 - Maintained as a separate repository, linked here via Git submodule
 - Focus on low power consumption and durability for deployment in hazardous environments
 
