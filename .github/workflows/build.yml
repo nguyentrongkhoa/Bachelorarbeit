@@ -23,5 +23,5 @@ jobs:
           # Dem Docker-Container mitteilen, wo das vorinstallierte Zephyr liegt
           ZEPHYR_BASE: /workspaces/zephyr
         run: |
-          # Wir bauen das Blinky-Beispiel direkt mit der vorinstallierten Toolchain
+          west init -l /workspaces/zephyr
           west build -b qemu_cortex_m3 /workspaces/zephyr/samples/basic/blinky
