@@ -40,12 +40,10 @@ jobs:
           west init -l . || true
           west update
 
-      - name: Generate Compilation Database
-        env:
-          ZEPHYR_BASE: /workspaces/zephyr
+      - name: Generate Compilation Database via CMake
         run: |
-          # generate compile_commands.json for the desired board
-          west build -b nucleo_wl55jc -- -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+          # circumvent west build by using zephyr
+          cmake -B build -G Ninja -DBOARD=qemu_cortex_m3 -DZEPHYR_BASE=/workspaces/zephyr -DCMAKE_EXPORT_COMPILE_COMMANDS=ON .
 
       - name: Run Clang-Tidy Linter
         run: |
