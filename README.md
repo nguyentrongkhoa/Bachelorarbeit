@@ -4,6 +4,7 @@ Bachelor thesis project at **Berliner Hochschule für Technik (BHT)**
 **Duration:** April 2026 – July 2026
 
 ![Code](https://img.shields.io/github/actions/workflow/status/nguyentrongkhoa/Bachelorarbeit/lint.yml?branch=master&label=code&style=flat-square)
+![Code](https://img.shields.io/github/actions/workflow/status/nguyentrongkhoa/Bachelorarbeit/build.yml?branch=master&label=build&style=flat-square)
 
 ## Overview
 
