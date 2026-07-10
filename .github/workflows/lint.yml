@@ -27,8 +27,12 @@ jobs:
 
       - name: Generate Compilation Database via CMake
         run: |
-          # circumvent west build by using zephyr
-          cmake -B build -G Ninja -DBOARD=qemu_cortex_m3 -DZEPHYR_BASE=/workspaces/zephyr -DCMAKE_EXPORT_COMPILE_COMMANDS=ON software/app
+          # circumvent west build by using cmake
+          cmake -B build -G Ninja \
+            -DBOARD=qemu_cortex_m3 \
+            -DZEPHYR_BASE=/workspaces/zephyr \
+            -DCMAKE_PREFIX_PATH=/workspaces/zephyr/share/zephyr-package \
+            -DCMAKE_EXPORT_COMPILE_COMMANDS=ON software/app
 
       - name: Run Clang-Tidy Linter
         run: |
