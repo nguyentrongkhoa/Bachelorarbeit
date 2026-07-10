@@ -3,16 +3,12 @@ name: Static Code Analysis
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
+  # enable manual workflow execution from the Actions tab in GitHub
+  workflow-dispatch:
 
 jobs:
   lint:
     runs-on: ubuntu-latest
-    # official container of the Zephyr project
-    container:
-      image: ghcr.io/zephyrproject-rtos/zephyr-build:latest
-      options: --user root
 
     steps:
       - name: Checkout Code
@@ -20,20 +16,13 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Install Linter Tools
+      - name: Install Cppcheck
         run: |
-          # install clang for linting
-          sudo apt-get update && sudo apt-get install -y clang-tidy
+          sudo apt-get update && sudo apt-get install -y cppcheck
 
-      - name: Generate Compilation Database via CMake
+      - name: Run Static Analysis
         run: |
-          # circumvent west build by using cmake
-          cmake -B build -G Ninja \
-            -DBOARD=qemu_cortex_m3 \
-            -DZEPHYR_BASE=/workspaces/zephyr \
-            -CMAKE_PREFIX_PATH=/workspaces/zephyr/share/zephyr-package \
-            -DCMAKE_EXPORT_COMPILE_COMMANDS=ON software/app
-
-      - name: Run Clang-Tidy Linter
-        run: |
-          run-clang-tidy -p build/ "src/.*\.c$"
+          # --force: ignores #include from Zephyr
+          # --inline-suppr: suppress warnings in C code
+          # --error-exitcode=1: pipeline blinks red if cppcheck finds any issues
+          cppcheck --enable=warning,performance,portability --inline-suppr --force --error-exitcode=1 software/app/src/
