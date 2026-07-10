@@ -3,6 +3,8 @@
 Bachelor thesis project at **Berliner Hochschule für Technik (BHT)**
 **Duration:** April 2026 – July 2026
 
+![Code](https://img.shields.io/github/actions/workflow/status/nguyentrongkhoa/Bachelorarbeit/lint.yml?branch=master&label=code&style=flat-square)
+
 ## Overview
 
 This repository contains the work for a bachelor thesis focused on the development of a LoRaWAN-based sensor node designed for deployment in hazardous areas (*Gefahrgebiete*), such as environments with restricted access, elevated risk, or conditions unsuitable for frequent human intervention. The goal is to provide a robust, low-power, long-range wireless sensor platform suitable for remote monitoring in such conditions.
