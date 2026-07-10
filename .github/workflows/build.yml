@@ -4,6 +4,12 @@ on:
   push:
     branches: [ master ]
   workflow_dispatch:
+    inputs:
+      debug_enabled:
+        type: boolean
+        description: 'Run the build with tmate debugging enabled (https://github.com/marketplace/actions/debugging-with-tmate)'
+        required: false
+        default: false
 
 jobs: 
   build:
@@ -13,6 +19,10 @@ jobs:
       options: --user root
 
     steps:
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v4
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.debug_enabled }}
+
       - name: Checkout Code
         uses: actions/checkout@v5
         with:
