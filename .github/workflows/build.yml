@@ -8,6 +8,9 @@ on:
 jobs: 
   build:
     runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/zephyrproject-rtos/zephyr-build:latest
+      options: --user root
 
     steps:
       - name: Checkout Code
@@ -15,38 +18,10 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Select and update OS
+      - name: Build Zephyr Blinky sample
+        env:
+          # Dem Docker-Container mitteilen, wo das vorinstallierte Zephyr liegt
+          ZEPHYR_BASE: /workspaces/zephyr
         run: |
-          sudo apt update
-          sudo apt upgrade
-
-      - name: Install Dependencies
-        run: |
-          sudo apt install --no-install-recommends git cmake ninja-build gperf \
-          ccache dfu-util device-tree-compiler wget python3-dev python3-venv python3-tk \
-          xz-utils file make gcc gcc-multilib g++-multilib libsdl2-dev libmagic1
-
-      - name: Get Zephyr and install Python dependencies
-        run: |
-          python3 -m venv ~/zephyrproject/.venv 
-          source ~/zephyrproject/.venv/bin/activate
-          
-          pip install west
-
-          west init -m https://github.com/zephyrproject-rtos/zephyr ~/zephyrproject
-          cd ~/zephyrproject
-          west update
-
-          west zephyr-export
-
-          west packages pip --install
-      
-      - name: Install the Zephyr SDK
-        run: |
-          cd ~/zephyrproject/zephyr
-          west sdk install
-        
-      - name: Build the blinky sample
-        run: |
-          cd ~/zephyrproject/zephyr/samples/basic/blinky
-          west build -b qemu_cortex_m3
+          # Wir bauen das Blinky-Beispiel direkt mit der vorinstallierten Toolchain
+          west build -b qemu_cortex_m3 /workspaces/zephyr/samples/basic/blinky
