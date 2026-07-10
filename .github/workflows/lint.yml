@@ -3,6 +3,8 @@ name: Static Code Analysis
 on:
   push:
     branches: [ master ]
+    paths:
+      - 'software/app/src/**'
   # enable manual workflow execution from the Actions tab in GitHub
   workflow_dispatch:
 
