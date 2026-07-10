@@ -3,11 +3,13 @@ name: Build Zephyr Project
 on: 
   push:
     branches: [ master ]
+    paths:
+      - software/app/src/**
   workflow_dispatch:
     inputs:
       debug_enabled:
         type: boolean
-        description: 'Run the build with tmate debugging enabled (https://github.com/marketplace/actions/debugging-with-tmate)'
+        description: 'Enable TMate debugging'
         required: false
         default: false
 
@@ -15,7 +17,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/zephyrproject-rtos/zephyr-build:latest
+      image: ghcr.io/zephyrproject-rtos/ci-base:main
       options: --user root
 
     steps:
