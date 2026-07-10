@@ -4,7 +4,7 @@ on:
   push:
     branches: [ master ]
   # enable manual workflow execution from the Actions tab in GitHub
-  workflow-dispatch:
+  workflow_dispatch:
 
 jobs:
   lint:
