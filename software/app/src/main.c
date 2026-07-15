@@ -41,7 +41,7 @@ LOG_MODULE_REGISTER(lorawan_class_a);
 
 uint8_t dev_eui64[8]; // 8 bytes or 64 bits
 char dev_eui64_str[17]; // 16 characters for EUI-64 in hex + null terminator
-static uint8_t ttn_dev_nonce = 0u;
+static uint16_t ttn_dev_nonce = 0u;
 int ret; // return status
 
 // this function will be called by zephyr when data is being read
