@@ -5,7 +5,7 @@ Bachelor thesis project at **Berliner Hochschule für Technik (BHT)**
 
 ![code](https://img.shields.io/github/actions/workflow/status/nguyentrongkhoa/Bachelorarbeit/lint.yml?branch=master&label=code&style=flat-square)
 ![build](https://img.shields.io/github/actions/workflow/status/nguyentrongkhoa/Bachelorarbeit/build.yml?branch=master&label=build&style=flat-square)
-![KiCad Version](https://img.shields.io/badge/Made%20with-KiCad%2010.0-blue?logo=kicad&logoColor=white)](https://www.kicad.org/)
+![kicad](https://img.shields.io/badge/KiCad-v10.0-blue)
 
 ## Overview
 
