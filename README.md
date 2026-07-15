@@ -3,8 +3,9 @@
 Bachelor thesis project at **Berliner Hochschule für Technik (BHT)**
 **Duration:** April 2026 – July 2026
 
-![Code](https://img.shields.io/github/actions/workflow/status/nguyentrongkhoa/Bachelorarbeit/lint.yml?branch=master&label=code&style=flat-square)
-![Code](https://img.shields.io/github/actions/workflow/status/nguyentrongkhoa/Bachelorarbeit/build.yml?branch=master&label=build&style=flat-square)
+![code](https://img.shields.io/github/actions/workflow/status/nguyentrongkhoa/Bachelorarbeit/lint.yml?branch=master&label=code&style=flat-square)
+![build](https://img.shields.io/github/actions/workflow/status/nguyentrongkhoa/Bachelorarbeit/build.yml?branch=master&label=build&style=flat-square)
+![KiCad Version](https://img.shields.io/badge/Made%20with-KiCad%2010.0-blue?logo=kicad&logoColor=white)](https://www.kicad.org/)
 
 ## Overview
 
