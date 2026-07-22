@@ -6,6 +6,8 @@ Bachelor thesis project at **Berliner Hochschule für Technik (BHT)**
 ![code](https://img.shields.io/github/actions/workflow/status/nguyentrongkhoa/Bachelorarbeit/lint.yml?branch=master&label=code&style=flat-square)
 ![build](https://img.shields.io/github/actions/workflow/status/nguyentrongkhoa/Bachelorarbeit/build.yml?branch=master&label=build&style=flat-square)
 ![kicad](https://img.shields.io/badge/KiCad-v10.0-blue)
+![zephyr](https://img.shields.io/badge/Zephyr-v4.3.99-blue)
+![zephyrsdk](https://img.shields.io/badge/ZephyrSDK-v0.17.4-blue)
 
 ## Overview
 
