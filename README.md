@@ -13,9 +13,10 @@ This repository contains the work for a bachelor thesis focused on the developme
 
 The project is divided into three main parts:
 
-1. **Hardware Design** — PCB and schematic design created in KiCad, maintained in a separate repository and included here as a Git submodule.
+1. **Hardware Design** — PCB and schematic design created in KiCad, maintained in a separate repository and included here as a Git submodule. Visit the submodule's main page for further documentation.
 2. **Firmware** — Embedded firmware built on Zephyr RTOS, handling sensor data acquisition, power management, and LoRaWAN communication.
-3. **Thesis** — The written bachelor thesis document, typeset in LaTeX.
+3. **Tests** — Contains current consumption measurements using Nordic's PPK2 and antenna coverage planning in QGIS. More details can be found in the thesis. 
+4. **Thesis** — The written bachelor thesis document, typeset in LaTeX using the template provided by Prof. Dr. Sven Tschirley.
 
 ## Repository Structure
 
@@ -23,6 +24,7 @@ The project is divided into three main parts:
 .
 ├── hardware/       # KiCad hardware design (included here as a submodule)
 ├── software/       # Zephyr RTOS firmware source
+├── tests/       
 ├── thesis         # bachelor thesis, Latex source code is somewhere else
 └── README.md
 ```
@@ -37,6 +39,12 @@ To initialize the hardware submodule after cloning:
 
 ```bash
 git submodule update --init --recursive
+```
+
+To propagate all changes from the hardware submodule into this repo, use
+
+```bash
+git submodule update --remote --merge
 ```
 
 ## Firmware
