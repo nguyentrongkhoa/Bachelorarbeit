@@ -76,12 +76,22 @@ static void dl_callback(uint8_t port, uint8_t flags, int16_t rssi, int8_t snr, u
 	}
 }
 
-static void lorwan_datarate_changed(enum lorawan_datarate dr)
+static void lorawan_datarate_changed(enum lorawan_datarate dr)
 {
 	uint8_t unused, max_size;
 
 	lorawan_get_payload_sizes(&unused, &max_size);
 	LOG_INF("New Datarate: DR_%d, Max Payload %d", dr, max_size);
+}
+
+static void fuota_finished(void)
+{
+	LOG_INF("FUOTA finished. Reset device to apply firmware upgrade.");
+
+	/*
+	 * In an actual application the firmware should be rebooted here if
+	 * no important tasks are pending
+	 */
 }
 
 int main(void)
@@ -146,7 +156,7 @@ int main(void)
 	}
 
 	lorawan_register_downlink_callback(&downlink_cb);
-	lorawan_register_dr_changed_callback(lorwan_datarate_changed);
+	lorawan_register_dr_changed_callback(lorawan_datarate_changed);
 
 	join_cfg.mode = LORAWAN_ACT_OTAA;
 	join_cfg.dev_eui = dev_eui64;
