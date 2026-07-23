@@ -5,6 +5,7 @@ on:
     branches: [ master ]
     paths:
       - software/app/src/**
+      - software/app/prj.conf
   workflow_dispatch:
     inputs:
       debug_enabled:
