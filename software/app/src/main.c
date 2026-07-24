@@ -223,6 +223,8 @@ int main(void)
 	 * It could also be used in a class A session, but would take very long
 	 * in that case.
 	 */
+	// NOTE: when during the build process the error RAM overflowed by ... bytes is returned,
+	//       change CONFIG_LORAWAN_FRAG_TRANSPORT_MAX_FRAG_SIZE=30 to something smaller  
 	lorawan_frag_transport_run(fuota_finished); // receives fragmented data (usually firmware images) and stores them in the image-1 flash partition
 	lorawan_frag_transport_register_descriptor_callback(descriptor_cb);
 	// END FUOTA (firmware update over-the-air) implementation

@@ -64,6 +64,10 @@
     };
 };
 
+/* Remove partition with label "image-1" in the internal Flash memory so that FUOTA does not attempt to store new firmware image here*/
+/* causing memory overflow */
+/delete-node/ &slot1_partition;
+
 /* External SPI-Flash for FUOTA */
 &spi1 { 
     status = "okay";
@@ -80,10 +84,11 @@
             #address-cells = <1>;
             #size-cells = <1>;
 
-            /* Slot 1 for FUOTA-Updates is in external Flash */
-            slot11_partition: partition@0 {
-                label = "image-11";
-                reg = <0x00000000 0x00038000>; /* 224 KB für Upgrade-Image */
+            /* Slot 1 for FUOTA-Updates in external Flash */
+            slot1_partition: partition@0 {
+                label = "image-1";
+                /* Exakt selbe Größe wie slot0 im internen Flash (198 KB) */
+                reg = <0x00000000 DT_SIZE_K(198)>; /* 224 KB für Upgrade-Image 0x00038000 */ 
             };
         };
     };
