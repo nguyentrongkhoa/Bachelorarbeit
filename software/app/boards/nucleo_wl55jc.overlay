@@ -64,18 +64,32 @@
     };
 };
 
-&flash0 {
-    partitions {
-        compatible = "fixed-partitions";
-        #address-cells = <1>;
-        #size-cells = <1>;
+/* Remove partition with label "image-1" in the internal Flash memory so that FUOTA does not attempt to store new firmware image here*/
+/* causing memory overflow */
+/delete-node/ &slot1_partition;
 
-        /* 256KB total flash on STM32WL55
-         * Leave room for bootloader if using MCUboot,
-         * otherwise use the end of flash for settings */
-        nvs_partition: partition@3e000 {
-            label = "storage";
-            reg = <0x0003e000 0x00002000>; /* 8KB at end of flash */
+/* External SPI-Flash for FUOTA */
+&spi1 { 
+    status = "okay";
+    
+    external_flash: w25q16jvss@0 { 
+        compatible = "jedec,spi-nor"; /* generic Zephyr SPI-Flash driver */
+        reg = <0>;
+        spi-max-frequency = <10000000>;
+        size = <0x200000>; /* 16MBits = 2MB*/
+        status = "okay";
+
+        partitions {
+            compatible = "fixed-partitions";
+            #address-cells = <1>;
+            #size-cells = <1>;
+
+            /* Slot 1 for FUOTA-Updates in external Flash */
+            slot1_partition: partition@0 {
+                label = "image-1";
+                /* Exakt selbe Größe wie slot0 im internen Flash (198 KB) */
+                reg = <0x00000000 DT_SIZE_K(198)>; /* 224 KB für Upgrade-Image 0x00038000 */ 
+            };
         };
     };
 };

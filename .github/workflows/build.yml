@@ -5,6 +5,8 @@ on:
     branches: [ master ]
     paths:
       - software/app/src/**
+      - software/app/prj.conf
+      - software/app/boards/nucleo_wl55jc.overlay
   workflow_dispatch:
     inputs:
       debug_enabled:

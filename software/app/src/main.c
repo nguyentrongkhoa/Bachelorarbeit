@@ -76,7 +76,7 @@ static void dl_callback(uint8_t port, uint8_t flags, int16_t rssi, int8_t snr, u
 	}
 }
 
-static void lorwan_datarate_changed(enum lorawan_datarate dr)
+static void lorawan_datarate_changed(enum lorawan_datarate dr)
 {
 	uint8_t unused, max_size;
 
@@ -84,12 +84,34 @@ static void lorwan_datarate_changed(enum lorawan_datarate dr)
 	LOG_INF("New Datarate: DR_%d, Max Payload %d", dr, max_size);
 }
 
+static void fuota_finished(void)
+{
+	LOG_INF("FUOTA finished. Reset device to apply firmware upgrade.");
+
+	/*
+	 * In an actual application the firmware should be rebooted here if
+	 * no important tasks are pending
+	 */
+}
+
+int descriptor_cb(uint32_t descriptor)
+{
+	/*
+	 * In an actual application the firmware may be able to handle
+	 * the descriptor field
+	 */
+
+	LOG_INF("Received descriptor %u", descriptor);
+
+	return 0;
+}
+
 int main(void)
 {
 	led_init();
 	gps_init();
 
-	// START LoRaWAN setup block
+	// START LoRaWAN join process
 	// ---------------------------------------------------------------
 
 	// retrieve 64-bit/8-byte DevEUI to connect to TTN
@@ -146,7 +168,7 @@ int main(void)
 	}
 
 	lorawan_register_downlink_callback(&downlink_cb);
-	lorawan_register_dr_changed_callback(lorwan_datarate_changed);
+	lorawan_register_dr_changed_callback(lorawan_datarate_changed);
 
 	join_cfg.mode = LORAWAN_ACT_OTAA;
 	join_cfg.dev_eui = dev_eui64;
@@ -179,8 +201,34 @@ int main(void)
 	ret = settings_save_one("lorawan/devnonce", &ttn_dev_nonce, sizeof(ttn_dev_nonce)); 
 
 	ret = lorawan_send(1, "Start session", 13, LORAWAN_MSG_CONFIRMED);
-	// END LoRaWAN setup block
-	// ------------------------------------------------------
+	// END LoRaWAN join process
+	// ---------------------------------------------------------------
+
+	// START FUOTA (firmware update over-the-air) implementation
+	// ---------------------------------------------------------------
+	/*
+	 * Clock synchronization is required to schedule the multicast session
+	 * in class C mode. It can also be used independent of FUOTA.
+	 */
+	lorawan_clock_sync_run();
+
+	/*
+	 * The multicast session setup service is automatically started in the
+	 * background. It is also responsible for switching to class C at a
+	 * specified time.
+	 */
+
+	/*
+	 * The fragmented data transport transfers the actual firmware image.
+	 * It could also be used in a class A session, but would take very long
+	 * in that case.
+	 */
+	// NOTE: when during the build process the error RAM overflowed by ... bytes is returned,
+	//       change CONFIG_LORAWAN_FRAG_TRANSPORT_MAX_FRAG_SIZE=30 to something smaller  
+	lorawan_frag_transport_run(fuota_finished); // receives fragmented data (usually firmware images) and stores them in the image-1 flash partition
+	lorawan_frag_transport_register_descriptor_callback(descriptor_cb);
+	// END FUOTA (firmware update over-the-air) implementation
+	// ---------------------------------------------------------------
 
 	// START: BME680
 	const struct device *const bme680_dev = DEVICE_DT_GET_ANY(bosch_bme680);
@@ -241,4 +289,3 @@ int main(void)
 	}
 }
 
-// This line does nothing but test github linting action
