@@ -55,7 +55,7 @@ git submodule update --remote --merge
 - Implements LoRaWAN connectivity for long-range, low-power data transmission
 - Handles sensor interfacing and power-efficient operation
 
-*(Build and flashing instructions to be added as development progresses.)*
+*(Build and flashing instructions can be found in the software folder)*
 
 ## Thesis
 
