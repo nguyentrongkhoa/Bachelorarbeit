@@ -94,12 +94,24 @@ static void fuota_finished(void)
 	 */
 }
 
+int descriptor_cb(uint32_t descriptor)
+{
+	/*
+	 * In an actual application the firmware may be able to handle
+	 * the descriptor field
+	 */
+
+	LOG_INF("Received descriptor %u", descriptor);
+
+	return 0;
+}
+
 int main(void)
 {
 	led_init();
 	gps_init();
 
-	// START LoRaWAN setup block
+	// START LoRaWAN join process
 	// ---------------------------------------------------------------
 
 	// retrieve 64-bit/8-byte DevEUI to connect to TTN
@@ -189,8 +201,32 @@ int main(void)
 	ret = settings_save_one("lorawan/devnonce", &ttn_dev_nonce, sizeof(ttn_dev_nonce)); 
 
 	ret = lorawan_send(1, "Start session", 13, LORAWAN_MSG_CONFIRMED);
-	// END LoRaWAN setup block
-	// ------------------------------------------------------
+	// END LoRaWAN join process
+	// ---------------------------------------------------------------
+
+	// START FUOTA (firmware update over-the-air) implementation
+	// ---------------------------------------------------------------
+	/*
+	 * Clock synchronization is required to schedule the multicast session
+	 * in class C mode. It can also be used independent of FUOTA.
+	 */
+	lorawan_clock_sync_run();
+
+	/*
+	 * The multicast session setup service is automatically started in the
+	 * background. It is also responsible for switching to class C at a
+	 * specified time.
+	 */
+
+	/*
+	 * The fragmented data transport transfers the actual firmware image.
+	 * It could also be used in a class A session, but would take very long
+	 * in that case.
+	 */
+	lorawan_frag_transport_run(fuota_finished); // receives fragmented data (usually firmware images) and stores them in the image-1 flash partition
+	lorawan_frag_transport_register_descriptor_callback(descriptor_cb);
+	// END FUOTA (firmware update over-the-air) implementation
+	// ---------------------------------------------------------------
 
 	// START: BME680
 	const struct device *const bme680_dev = DEVICE_DT_GET_ANY(bosch_bme680);
@@ -251,4 +287,3 @@ int main(void)
 	}
 }
 
-// This line does nothing but test github linting action
